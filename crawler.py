@@ -196,10 +196,10 @@ class ReCrawler:
                         phone = ','.join(phone_list)
                     else:
                         phone = phone_list[0]
-                    # phone = re.sub(r'——', '-', phone)
+                    phone = re.sub(r'——', '-', phone)
                 except:
                     pass
-            phone = re.sub(r'——', '-', phone)
+            # phone = re.sub(r'——', '-', phone)
 
             # 邮箱
             email = None
@@ -217,9 +217,11 @@ class ReCrawler:
                     else:
                         email = email_list[0]
                     # email = re.sub(r'(?:\(at\)|\(AT\)|\[at]|\[AT])', '@', email)
+                    email = re.sub(r'\(?\s?at\s?\)?|\(?\s?AT\s?\)?|\[?\s?at\s?]?|\[?\s?AT\s?]?', '@', email)
+
                 except:
                     pass
-            email = re.sub(r'\(?\s?at\s?\)?|\(?\s?AT\s?\)?|\[?\s?at\s?]?|\[?\s?AT\s?]?', '@', email)
+            # email = re.sub(r'\(?\s?at\s?\)?|\(?\s?AT\s?\)?|\[?\s?at\s?]?|\[?\s?AT\s?]?', '@', email)
 
             # 职称
             job_title = None
