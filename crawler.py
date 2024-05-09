@@ -129,6 +129,13 @@ class ReCrawler:
         self.img_xpath = img_xpath
 
     def parse_index(self, index_page, url):
+        # 方法重写时引入包
+        global etree, parse
+        if not globals().get('etree'):
+            from lxml import etree
+        if not globals().get('parse'):
+            from urllib import parse
+
         page = etree.HTML(index_page)
         a_s = page.xpath(self.a_s_xpath_str)
         for a in a_s:
@@ -147,6 +154,15 @@ class ReCrawler:
             yield name, link
 
     def get_detail_page(self, index_result):
+        # 方法重写时引入包
+        global asyncio, aiohttp, get_response_async
+        if not globals().get('asyncio'):
+            import asyncio
+        if not globals().get('aiohttp'):
+            import aiohttp
+        if not globals().get('get_response_async'):
+            from utils import get_response_async
+
         loop = asyncio.get_event_loop()
         session = aiohttp.ClientSession()
         tasks = [get_response_async(url, session, name=name) for name, url in index_result if len(name) >= 2]
@@ -155,6 +171,15 @@ class ReCrawler:
         return detail_pages
 
     def parse_detail(self, detail_page, url):
+        # 方法重写时引入包
+        global etree, tostring, parse
+        if not globals().get('etree'):
+            from lxml import etree
+        if not globals().get('tostring'):
+            from lxml.html import tostring
+        if not globals().get('parse'):
+            from urllib import parse
+
         if detail_page:
             page, info_s = detail_page
             page_tree = etree.HTML(page)
@@ -168,7 +193,8 @@ class ReCrawler:
             )
             all_content = re.sub(r'-{5,}', '', all_content)
 
-            content_with_label = tostring(target_div, encoding='utf-8').decode('utf-8')
+            if self.api:
+                content_with_label = tostring(target_div, encoding='utf-8').decode('utf-8')
 
 
             # 姓名
@@ -561,6 +587,15 @@ class ReCrawler:
                 return result
 
     def parse_by_api(self, mid_result):
+        # 方法重写时引入包
+        global asyncio, aiohttp, api_parse
+        if not globals().get('asyncio'):
+            import asyncio
+        if not globals().get('aiohttp'):
+            import aiohttp
+        if not globals().get('api_parse'):
+            from utils import api_parse
+
         loop = asyncio.get_event_loop()
         session = aiohttp.ClientSession()
         tasks = [api_parse(result_gen, session) for result_gen in mid_result]
