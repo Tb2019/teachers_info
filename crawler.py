@@ -422,10 +422,10 @@ class ReCrawler:
             else:
                 try:
                     src = target_div.xpath('.//img[@src!=""]/@src')[0]
-                    # full_src = parse.urljoin(url, src)
+                    full_src = parse.urljoin(url, src)
                 except:
                     pass
-            full_src = parse.urljoin(url, src)
+            # full_src = parse.urljoin(url, src)
 
             # 学位、学历
             qualification = None
