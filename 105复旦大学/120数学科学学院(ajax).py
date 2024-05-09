@@ -34,7 +34,11 @@ for page in range(16):
         result['name'] = teacher_info['title']
         result['school_id'] = school_id
         result['college_id'] = college_id
+
         result['phone'] = teacher_info['f11'] if teacher_info['f11'] != '' else None
+        if result['phone'] and len(result['phone']) == 8:
+            result['phone'] = '021-' + result['phone']
+
         result['email'] = teacher_info['f12'] if teacher_info['f12'] != '' else None
         result['email'] = re.sub(r'\(?\s?at\s?\)?|\(?\s?AT\s?\)?|\[?\s?at\s?]?|\[?\s?AT\s?]?', '@', result['email'])
 
