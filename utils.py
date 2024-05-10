@@ -48,6 +48,8 @@ async def get_response_async(url, session, **kwargs):
             async with session.get(url, headers=headers) as resp:
                 if resp.ok:
                     return await resp.text(encoding='utf-8'), [*zip(kwargs.keys(), kwargs.values())]
+                else:
+                    print('请求失败', url)
         except:
             pass
 
