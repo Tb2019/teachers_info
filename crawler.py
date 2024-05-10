@@ -445,6 +445,8 @@ class ReCrawler:
                 try:
                     img_list = target_div.xpath(self.img_xpath)
                     src = ','.join(img_list) if ','.join(img_list) else None
+                    if src:
+                        full_src = parse.urljoin(url, src)
                 except:
                     print('img_xpath错误')
             else:
@@ -585,6 +587,8 @@ class ReCrawler:
                 return content_with_label, result
             else:
                 return result
+        else:
+            print('对应页面的请求失败,返回None')
 
     def parse_by_api(self, mid_result):
         # 方法重写时引入包
