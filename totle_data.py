@@ -17,9 +17,10 @@ if __name__ == '__main__':
     user = 'root'
     password = 'Shufang_@919'
 
-    num_teacher_old = get_totle_data(database='alpha_search', table='search_teacher', data_kind='教师_YGQ')
+    # num_teacher_old = get_totle_data(database='alpha_search', table='search_teacher', data_kind='教师_YGQ')
     # num_teacher_old = 12776
-    num_teacher_new = get_totle_data(database='data_test_teacher', table='search_teacher_simple', data_kind='教师_NEW')
-    num_equipment = get_totle_data(database='alpha_search', table='search_instrument', data_kind='设备')
-    totle = num_equipment + num_teacher_new + num_teacher_old
+    num_teacher_new = get_totle_data(database='alpha_search', table='search_teacher', data_kind='教师')
+    num_equipment = get_totle_data(database='alpha_search', table='search_instrument_souke', data_kind='设备_souke')
+    num_equipment_2 = get_totle_data(database='alpha_search', table='search_instrument_info', data_kind='设备_info')
+    totle = num_teacher_new + num_equipment + num_equipment_2
     print(f'总数据{totle}条')
