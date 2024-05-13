@@ -522,7 +522,7 @@ class SpecialSpider(ReCrawler):
                 'office_address': office_address
             }
             # return result
-            if self.api:# 使用第三方api解析
+            if self.api:  # 使用第三方api解析
                 return content_with_label, result
             else:
                 return result
