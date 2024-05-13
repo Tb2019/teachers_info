@@ -30,7 +30,7 @@ class ReCrawler:
                  project_pattern_list: [None, list] = None,
                  award_pattern_list: [None, list] = None,
                  social_job_pattern_list: [None, list] = None,
-                 job_title_pattern=re.compile(r'院士|教授|副教授|讲师|副?研究员|正?高级?助理?(?:工程师|实验师)|副?主任医师', re.S),
+                 job_title_pattern=re.compile(r'院士|教授|副教授|讲师|副?研究员|正?(?:高级)?(?:助理)?(?:工程师|实验师)|副?主任医师', re.S),
                  phone_pattern=re.compile(r'(?<!\d)1\d{10}(?!\d)|(?<!\d)\d{3,4}(?:-|——)\d{7,8}(?!\d)', re.S),
                  # email_pattern=re.compile(r'[a-zA-Z0-9._-]+@[a-zA-Z0-9_-]+\.[a-zA-Z0-9._-]+', re.S),
                  # email_pattern=re.compile(r'[a-zA-Z0-9._-]+(?:@|\(at\)|\(AT\)|\[at]|\[AT])(?=.{1,20}(?:\.com|\.cn))[a-zA-Z0-9_-]+\.[a-zA-Z._-]+', re.S),
