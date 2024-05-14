@@ -146,7 +146,7 @@ spider = ReCrawler(
                    # social_job_xpath=social_job_xpath,
                    # img_xpath=img_xpath,
 
-                   save2target='no',
+                   save2target='test',
                    api=False,
                    )
 
