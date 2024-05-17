@@ -29,6 +29,7 @@ class ReCrawler:
                  patent_pattern_list: [None, list] = None,
                  project_pattern_list: [None, list] = None,
                  award_pattern_list: [None, list] = None,
+                 paper_pattern_list: [None, list] = None,
                  social_job_pattern_list: [None, list] = None,
                  job_title_pattern=re.compile(r'院士|教授|副教授|讲师|副?研究员|正?(?:高级)?(?:助理)?(?:工程师|实验师)|副?主任医师', re.S),
                  phone_pattern=re.compile(r'(?<!\d)1\d{10}(?!\d)|(?<!\d)\d{3,4}(?:-|——)\d{7,8}(?!\d)', re.S),
@@ -54,6 +55,7 @@ class ReCrawler:
                  patent_xpath: [None, str] = None,
                  project_xpath: [None, str] = None,
                  award_xpath: [None, str] = None,
+                 paper_xpath: [None, str] = None,
                  social_job_xpath: [None, str] = None,
                  img_xpath: [None, str] = None
                  ):
@@ -96,6 +98,7 @@ class ReCrawler:
         self.patent_pattern_list = patent_pattern_list
         self.project_pattern_list = project_pattern_list
         self.award_pattern_list = award_pattern_list
+        self.paper_pattern_list = paper_pattern_list
         self.social_job_pattern_list = social_job_pattern_list
 
         self.job_title_pattern = job_title_pattern
@@ -125,6 +128,7 @@ class ReCrawler:
         self.patent_xpath = patent_xpath
         self.project_xpath = project_xpath
         self.award_xpath = award_xpath
+        self.paper_xpath = paper_xpath
         self.social_job_xpath = social_job_xpath
         self.img_xpath = img_xpath
 
@@ -439,6 +443,7 @@ class ReCrawler:
                                 continue
                         except:
                             continue
+
             # 图片
             full_src = None
             if self.img_xpath:
@@ -456,6 +461,28 @@ class ReCrawler:
                 except:
                     pass
             # full_src = parse.urljoin(url, src)
+
+            # 论文
+            paper = None
+            if self.paper_xpath:
+                try:
+                    paper_list = target_div.xpath(self.paper_xpath)
+                    paper = ','.join(paper_list) if ','.join(paper_list) else None
+                except:
+                    print('paper_xpath错误')
+            else:
+                if self.paper_pattern_list:
+                    for paper_pattern in self.paper_pattern_list:
+                        try:
+                            paper = paper_pattern.findall(all_content)[0]
+                            if paper:
+                                if isinstance(paper, tuple):
+                                    paper = ';'.join(paper)
+                                break
+                            else:
+                                continue
+                        except:
+                            continue
 
             # 学位、学历
             qualification = None
@@ -574,6 +601,7 @@ class ReCrawler:
                 'patent': patent,
                 'project': project,
                 'award': award,
+                'paper': paper,
                 'social_job': social_job,
                 'picture': full_src,
                 'education': education,
