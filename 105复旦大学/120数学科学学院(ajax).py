@@ -35,6 +35,11 @@ for page in range(16):
         result['school_id'] = school_id
         result['college_id'] = college_id
 
+        link = teacher_info['url']
+        resp = requests.get(link, headers=headers)
+        resp.encoding = 'utf-8'
+        page = resp.text
+
         result['phone'] = teacher_info['f11'] if teacher_info['f11'] != '' else None
         if result['phone'] and len(result['phone']) == 8:
             result['phone'] = '021-' + result['phone']
@@ -62,6 +67,16 @@ for page in range(16):
         result['job_information'] = 1
         result['responsibilities'] = teacher_info['phColName'] if teacher_info['phColName'] else None
         result['office_address'] = teacher_info['f10'] if teacher_info['f10'] else None
+
+        try:
+            if re.search(r'代表论著：</strong></p>(.*?)<strong.*?><span.*?>个人主页', page, re.S):
+                result['paper'] = re.search(r'代表论著：</strong></p>(.*?)(?:<strong.*?>)?<span.*?>个人主页', page, re.S).group(1)
+            elif re.search(r'代表论著：</strong></p>(.*?)<p><strong>个人主页', page, re.S):
+                result['paper'] = re.search(r'代表论著：</strong></p>(.*?)<p><strong>个人主页', page, re.S).group(1)
+            else:
+                result['paper'] = None
+        except:
+            result['paper'] = None
         print(result)
         result_df = result_dict_2_df(result_df, result)
 

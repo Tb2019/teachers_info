@@ -32,12 +32,13 @@ target_div_xpath_str = '//div[@class="Article_Content"]'
 # # 学位
 # qualification_xpath = None
 
-# # 研究方向
+# 研究方向
 # directions_pattern_list = [
-#                             re.compile(r'', re.S),
-#                             re.compile(r'', re.S)
+#                             re.compile(r'(?<!教学与)研究领域(?:：|:)(.*?(?:\.|。)?)(?:\^\^)?[A-Z]', re.S),
+#                             re.compile(r'教学与研究领域(?:：|:)(.*?(?:\.|。)?)(?:\^\^)?[A-Z]', re.S)
 #                           ]
-# directions_xpath = None
+directions_xpath = '//*[contains(text(), "教学与研究领域")]/ancestor::p[1]/self::*|//*[contains(text(), "教学与研究领域")]/ancestor::p/following-sibling::*'
+paper_xpath = '//*[contains(text(), "Publications")]/ancestor::p[1]/self::*|//*[contains(text(), "Publications")]/ancestor::p/following-sibling::*'
 
 # # 简介
 # abstracts_pattern_list = [
@@ -208,8 +209,7 @@ class SpecialSpider(ReCrawler):
                     except:
                         pass
                 if phone:
-                    phone = re.sub(r'——', '-', phone)
-                    phone = re.sub(r'-', '', phone)
+                    phone = re.sub(r'\+?86-(\d+-)?', '', phone)
             if phone and len(phone) == 8:
                 phone = '021-' + phone
 
@@ -282,8 +282,13 @@ class SpecialSpider(ReCrawler):
             directions = None
             if self.directions_xpath:
                 try:
+                    directions = ''
                     directions_list = target_div.xpath(self.directions_xpath)
-                    directions = ','.join(directions_list) if ','.join(directions_list) else None
+                    for direction_element in directions_list:
+                        directions += tostring(direction_element, encoding='utf-8').decode('utf-8')
+                    if not directions:
+                        directions = None
+
                 except:
                     print('directions_xpath错误')
             else:
@@ -447,6 +452,33 @@ class SpecialSpider(ReCrawler):
                     pass
             full_src = parse.urljoin(url, src)
 
+            # 论文
+            paper = None
+            if self.paper_xpath:
+                try:
+                    paper = ''
+                    paper_list = target_div.xpath(self.paper_xpath)
+                    for paper_element in paper_list:
+                        paper += tostring(paper_element, encoding='utf-8').decode('utf-8')
+                    if not paper:
+                        paper = None
+
+                except:
+                    print('paper_xpath错误')
+            else:
+                if self.paper_pattern_list:
+                    for paper_pattern in self.paper_pattern_list:
+                        try:
+                            paper = paper_pattern.findall(all_content)[0]
+                            if paper:
+                                if isinstance(paper, tuple):
+                                    paper = ';'.join(paper)
+                                break
+                            else:
+                                continue
+                        except:
+                            continue
+
             # 学位、学历
             qualification = None
             education = None
@@ -567,6 +599,7 @@ class SpecialSpider(ReCrawler):
                 'patent': patent,
                 'project': project,
                 'award': award,
+                'paper': paper,
                 'social_job': social_job,
                 'picture': full_src,
                 'education': education,
@@ -602,6 +635,7 @@ spider = SpecialSpider(
                    # project_pattern_list=project_pattern_list,
                    # award_pattern_list=award_pattern_list,
                    # social_job_pattern_list=social_job_pattern_list,
+                   phone_pattern=re.compile(r'(?<!\d)(?:\+?86-)?1\d{10}(?!\d)|(?<!\d)\d{3,4}(?:-|——)\d{7,8}(?!\d)|(?:\+?86-\d+-)\d{8}', re.S),
                    email_pattern=re.compile(r'[a-zA-Z0-9._-]+(?:@|\(at\)|\(AT\)|\[at]|\[AT])(?=.{1,10}(?:\.com|\.cn|\.net))[a-zA-Z0-9_-]+\.[0-9a-zA-Z._-]+',re.S),
 
                    # phone_xpath=phone_xpath,
@@ -617,11 +651,13 @@ spider = SpecialSpider(
                    # work_experience_xpath=work_experience_xpath,
                    # patent_xpath=patent_xpath,
                    # project_xpath=project_xpath,
+                   directions_xpath=directions_xpath,
+                   paper_xpath=paper_xpath,
                    # award_xpath=award_xpath,
                    # social_job_xpath=social_job_xpath,
                    # img_xpath=img_xpath,
 
-                   save2target='target',
+                   save2target='test',
                    # api=False,
                    )
 
