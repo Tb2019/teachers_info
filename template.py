@@ -27,12 +27,36 @@ target_div_xpath_str = ''
 # # 学位
 # qualification_xpath = None
 
-# # 研究方向
+# # 图片
+# img_xpath = None
+
+# 研究方向
 # directions_pattern_list = [
 #                             re.compile(r'', re.S),
 #                             re.compile(r'', re.S)
 #                           ]
 # directions_xpath = None
+
+# 专利
+# patent_pattern_list = [
+#                                     re.compile(r'', re.S),
+#                                     re.compile(r'', re.S)
+#                                 ]
+# patent_xpath = None
+
+# # 科研项目
+# project_pattern_list = [
+#                                     re.compile(r'', re.S),
+#                                     re.compile(r'', re.S)
+#                                 ]
+# project_xpath = None
+
+# # 奖励/荣誉
+# award_pattern_list = [
+#                                     re.compile(r'', re.S),
+#                                     re.compile(r'', re.S)
+#                                 ]
+# award_xpath = None
 
 # # 简介
 # abstracts_pattern_list = [
@@ -75,36 +99,12 @@ target_div_xpath_str = ''
 #                                 ]
 # work_experience_xpath = None
 
-# # 专利
-# patent_pattern_list = [
-#                                     re.compile(r'', re.S),
-#                                     re.compile(r'', re.S)
-#                                 ]
-# patent_xpath = None
-
-# # 科研项目
-# project_pattern_list = [
-#                                     re.compile(r'', re.S),
-#                                     re.compile(r'', re.S)
-#                                 ]
-# project_xpath = None
-
-# # 奖励/荣誉
-# award_pattern_list = [
-#                                     re.compile(r'', re.S),
-#                                     re.compile(r'', re.S)
-#                                 ]
-# award_xpath = None
-
 # # 社会兼职
 # social_job_pattern_list = [
 #                                     re.compile(r'', re.S),
 #                                     re.compile(r'', re.S)
 #                                 ]
 # social_job_xpath = None
-
-# # 图片
-# img_xpath = None
 
 spider = ReCrawler(
                    school_name=school_name,
@@ -126,6 +126,7 @@ spider = ReCrawler(
                    # patent_pattern_list=patent_pattern_list,
                    # project_pattern_list=project_pattern_list,
                    # award_pattern_list=award_pattern_list,
+                   # paper_pattern_list=paper_pattern_list,
                    # social_job_pattern_list=social_job_pattern_list,
                    # email_pattern=re.compile(r'[a-zA-Z0-9._-]+(?:@|\(at\)|\(AT\)|\[at]|\[AT])(?=.{1,10}(?:\.com|\.cn|\.net))[a-zA-Z0-9_-]+\.[0-9a-zA-Z._-]+',re.S),
 
@@ -143,6 +144,7 @@ spider = ReCrawler(
                    # patent_xpath=patent_xpath,
                    # project_xpath=project_xpath,
                    # award_xpath=award_xpath,
+                   # paper_xpath=paper_xpath,
                    # social_job_xpath=social_job_xpath,
                    # img_xpath=img_xpath,
 
