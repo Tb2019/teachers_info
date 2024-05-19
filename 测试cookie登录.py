@@ -15,10 +15,22 @@ cookies = cookie_get
 for cookie in cookies:
     driver.add_cookie(cookie)
 driver.refresh()
-#
-# time.sleep(5)
+
+time.sleep(2)
+# 主页问答
 # driver.find_element(by=By.XPATH, value='//textarea[@class="rc-textarea textarea--oTXB57QK8bQN2BKYJ2Bi textarea--oTXB57QK8bQN2BKYJ2Bi"]').send_keys('你可以干什么')
-#
+# driver.find_element(by=By.XPATH, value='//button[@class="semi-button semi-button-primary semi-button-size-small semi-button-borderless send-button--tqxhKsM_tI4KvPKo9dkI semi-button-with-icon semi-button-with-icon-only"]').click()
+# 切换到个人空间
+driver.find_element(by=By.XPATH, value='//div[@class="item-inner--EUdR7GaW9jMUZmdET6Te" and contains(.//text(), "个人空间")]').click()
+time.sleep(1)
+# 选择目标机器人
+driver.find_element(by=By.XPATH, value='//a[@class="card-link--qE9ervT2yNAKfT4J70Mn"]').click()
+time.sleep(1)
+# 输入框
+driver.find_element(by=By.XPATH, value='//textarea[@class="rc-textarea textarea--oTXB57QK8bQN2BKYJ2Bi textarea--oTXB57QK8bQN2BKYJ2Bi"]').send_keys('你可以干什么')
+# 发送
+driver.find_element(by=By.XPATH, value='//div[@class="textarea-actions-right--vr4WgM3FUuUicP3kJDOU"]').click()
+
 # # sucess_index = driver.find_element(by=By.XPATH, value='//div[@class="des--LwdZfGwrna85Y4fCeLBR"]')
 # success_bot = driver.find_element(by=By.XPATH, value='//div[@class="left-sheet-config--PLf9q929mqs4ZlidOgkc"]')
 # print(success_bot)

@@ -9,12 +9,12 @@ options = webdriver.ChromeOptions()
 options.add_experimental_option('detach', True)
 
 class CookiePool:
-    def __init__(self,host='localhost', port=6379, password='123456', db=1):
+    def __init__(self, host='localhost', port=6379, password='123456', db=1):
         self.user_name = input('请输入你的姓名:')
         # self.phone_num = input('请输入你的电话号码:')
         self.db = redis.StrictRedis(host=host, port=port, password=password, db=db, decode_responses=True)
 
-    def get_cookie(self):
+    def update_cookie(self):
         self.driver = webdriver.Chrome(options=options)
         self.driver.get('https://www.coze.cn/home')
         time.sleep(1)
@@ -52,14 +52,17 @@ class CookiePool:
         self.driver.close()
 
         self.save_cookie(self.cookie_get)
-        logger.info('cookie保存成功')
 
     def save_cookie(self, cookie):
-        self.db.sadd(self.user_name, cookie)
+        self.db.set(self.user_name, cookie)
+        logger.info('cookie保存成功')
 
     def random_get_cookie(self):
-        pass
+        key = self.db.randomkey()
+        value = self.db.get(key)
+        value = json.loads(value)  # 转化为对象
+        return value
 
 
 if __name__ == '__main__':
-    CookiePool().get_cookie()
+    CookiePool().update_cookie()
