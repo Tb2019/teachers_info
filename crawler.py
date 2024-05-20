@@ -1,12 +1,19 @@
+import json
+import time
 from lxml import etree
 from lxml.html import fromstring, tostring
 import asyncio
 import aiohttp
 import re
 import pandas as pd
+from loguru import logger
 from urllib import parse
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
 from utils import get_response, get_response_async, result_dict_2_df, df2mysql, local_engine, sf_engine, \
     drop_duplicate_collage, save_as_json, truncate_table, api_parse
+from gptparser import GptParser
 
 
 class ReCrawler:
@@ -40,6 +47,7 @@ class ReCrawler:
                  qualification_pattern=re.compile(r'博士|硕士|学士', re.S),
                  save2target='test',
                  api=False,
+                 selenium_gpt=False,
                  # is_regular=False,
                  phone_xpath: [None, str] = None,
                  email_xpath: [None, str] = None,
@@ -111,6 +119,7 @@ class ReCrawler:
         self.save2target = save2target
 
         self.api = api
+        self.selenium_gpt = selenium_gpt
 
         # self.is_regular = is_regular
 
@@ -197,7 +206,7 @@ class ReCrawler:
             )
             all_content = re.sub(r'-{5,}', '', all_content)
 
-            if self.api:
+            if self.api or self.selenium_gpt:
                 content_with_label = tostring(target_div, encoding='utf-8').decode('utf-8')
 
 
@@ -611,7 +620,7 @@ class ReCrawler:
                 'office_address': office_address
             }
             # return result
-            if self.api:# 使用第三方api解析
+            if self.api or self.selenium_gpt:  # 使用第三方api解析
                 return content_with_label, result
             else:
                 return result
@@ -639,14 +648,114 @@ class ReCrawler:
         #     api_result, direct_result = result
 
 
+    def parse_detail_gpt(self, text, result_direct):
+        # 清空对话记录
+        try:
+            logger.info('尝试清除记录...')
+            self.driver.find_element(by=By.XPATH,
+                                     value='//div[@class="left-actions-container--NyvVfPwFXFYvQFyXUtTl"]').click()
+            logger.info('记录清除成功')
+        except:
+            logger.warning('无记录')
+
+        # 输入框
+        text = re.sub(r'\r|\n', '', text)
+        self.driver.find_element(by=By.XPATH,
+                            value='//textarea[@class="rc-textarea textarea--oTXB57QK8bQN2BKYJ2Bi textarea--oTXB57QK8bQN2BKYJ2Bi"]').send_keys(text)
+        # 发送
+        self.driver.find_element(by=By.XPATH, value='//div[@class="textarea-actions-right--vr4WgM3FUuUicP3kJDOU"]').click()
+        # 等待内容
+        try:
+            WebDriverWait(self.driver, 60).until(EC.presence_of_element_located((By.CSS_SELECTOR, '#root > div:nth-child(2) > div > div > div > div > div.container--aSIvzUFX9dAs4AK6bTj0 > div.sidesheet-container.wrapper-single--UMf9npeM8cVkDi0CDqZ0 > div.message-area--TH9DlQU1qwg_KGXdDYzk > div > div.scroll-view--R_WS6aCLs2gN7PUhpDB0.scroll-view--JlYYJX7uOFwGV6INj0ng > div > div > div.wrapper--nIVxVV6ZU7gCM5i4VQIL.message-group-wrapper > div > div > div:nth-child(1) > div > div > div > div > div.chat-uikit-message-box-container__message > div > div.chat-uikit-message-box-container__message__message-box__footer > div > div.message-info-text--tTSrEd1mQwEgF4_szmBb > div:nth-child(3) > div > div')))
+        except:
+            print('超时未出现等待元素')
+            return None
+
+        # 解析过程
+        content = self.driver.find_element(by=By.XPATH,
+                                           value='//div[@class="auto-hide-last-sibling-br paragraph_4183d"]').text
+        if isinstance(content, list):
+            content = ''.join(content)
+        print(content)
+        content = json.loads(content)
+
+        # 清空对话记录
+        try:
+            logger.info('尝试清除记录...')
+            self.driver.find_element(by=By.XPATH,
+                                     value='//div[@class="left-actions-container--NyvVfPwFXFYvQFyXUtTl"]').click()
+            logger.info('记录清除成功')
+        except:
+            logger.warning('无记录')
+
+        self.driver.refresh()
+        time.sleep(2)
+
+        result = {
+            'name': result_direct['name'],
+            'school_id': result_direct['school_id'],
+            'college_id': result_direct['college_id'],
+            'phone': content.get('电话') if content.get('电话') else result_direct['phone'],
+            'email': content.get('邮箱') if content.get('邮箱') else result_direct['email'],
+            'job_title': content.get('职称') if content.get('职称') else result_direct['job_title'],
+            'abstracts': content.get('个人简介') if content.get('个人简介') else result_direct['abstracts'],
+            'directions': content.get('研究方向') if content.get('研究方向') else result_direct['directions'],
+            'education_experience': content.get('教育经历') if content.get('教育经历') else result_direct['education_experience'],
+            'work_experience': content.get('工作经历') if content.get('工作经历') else result_direct['work_experience'],
+            'patent': content.get('专利') if content.get('专利') else result_direct['patent'],
+            'project': content.get('科研项目') if content.get('科研项目') else result_direct['project'],
+            'award': content.get('获奖') if content.get('获奖') else result_direct['award'],
+            'paper': content.get('科研论文') if content.get('科研论文') else result_direct['paper'],
+            'social_job': content.get('社会兼职') if content.get('社会兼职') else result_direct['social_job'],
+            'picture': parse.urljoin(result_direct['picture'], content.get('照片地址')),
+            'education': result_direct['education'],
+            'qualification': result_direct['qualification'],
+            'job_information': result_direct['job_information'],
+            'responsibilities': content.get('职位') if content.get('职位') else result_direct['responsibilities'],
+            'office_address': content.get('办公地点') if content.get('办公地点') else result_direct['office_address']
+        }
+        return result
+
+
+    def parse_by_gpt(self, mid_results):
+        count = 0
+        parser = GptParser()
+        self.driver = parser.init_driver()
+        for mid_result in mid_results:
+            text, result_direct = mid_result
+            result_gpt = self.parse_detail_gpt(text, result_direct)
+            print(result_gpt)
+            # 防止网页本身为空
+            if result_gpt:
+                self.result_df = result_dict_2_df(self.result_df, result_gpt)
+            else:
+                continue
+
+            count += 1
+            if count > 2:
+                self.driver.close()
+                self.driver = parser.init_driver()
+
+
+
+
     def run(self):
-        result_df = pd.DataFrame()
+        self.result_df = pd.DataFrame()
         for url in self.start_urls:
             index_page = get_response(url)
             index_result = self.parse_index(index_page, url)
 
             detail_pages = self.get_detail_page(index_result)
-            if not self.api:
+            if self.api:
+                print('接入api')
+                mid_results = [self.parse_detail(detail_page, url) for detail_page in detail_pages]
+                result = self.parse_by_api(mid_results)
+            elif self.selenium_gpt:
+                print('接入gpt')
+                mid_results = [self.parse_detail(detail_page, url) for detail_page in detail_pages]
+                self.parse_by_gpt(mid_results)
+
+            else:
                 print('直接解析')
                 for detail_page in detail_pages:
                     # print('detail', detail_page)
@@ -655,18 +764,14 @@ class ReCrawler:
                     print(result)
                     # 防止网页本身为空
                     if result:
-                        result_df = result_dict_2_df(result_df, result)
+                        self.result_df = result_dict_2_df(self.result_df, result)
                     else:
                         continue
-            else:
-                print('接入api')
-                mid_result = [self.parse_detail(detail_page, url) for detail_page in detail_pages]
-                result = self.parse_by_api(mid_result)
 
 
         # 去重
         # result_df.drop_duplicates(inplace=True, keep='first', subset=['name', 'email'])
-        result_df = drop_duplicate_collage(result_df)
+        result_df = drop_duplicate_collage(self.result_df)
 
         # 保存至数据库
         if self.save2target == 'no':

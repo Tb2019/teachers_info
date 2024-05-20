@@ -4,17 +4,19 @@ import time
 import json
 from loguru import logger
 import redis
+import random
 
 options = webdriver.ChromeOptions()
 options.add_experimental_option('detach', True)
 
 class CookiePool:
     def __init__(self, host='localhost', port=6379, password='123456', db=1):
-        self.user_name = input('请输入你的姓名:')
         # self.phone_num = input('请输入你的电话号码:')
         self.db = redis.StrictRedis(host=host, port=port, password=password, db=db, decode_responses=True)
+        self.key_list = ['myself', '乐放文', '刘宇', '吴蒙恩', '张新正', '张涛', '徐金花', '王宇', '程修杰', '鲍康俊']
 
     def update_cookie(self):
+        self.user_name = input('请输入你的姓名:')
         self.driver = webdriver.Chrome(options=options)
         self.driver.get('https://www.coze.cn/home')
         time.sleep(1)
@@ -54,15 +56,15 @@ class CookiePool:
         self.save_cookie(self.cookie_get)
 
     def save_cookie(self, cookie):
-        self.db.set(self.user_name, cookie)
+        self.db.sadd(self.user_name, cookie)
         logger.info('cookie保存成功')
 
     def random_get_cookie(self):
         key = self.db.randomkey()
-        value = self.db.get(key)
+        value = list(self.db.smembers(key))[0]
         value = json.loads(value)  # 转化为对象
         return value
 
 
 if __name__ == '__main__':
-    CookiePool().update_cookie()
+    CookiePool().random_get_cookie()
