@@ -1,5 +1,6 @@
 import json
-
+import pyperclip
+from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support import expected_conditions as EC
 from selenium import webdriver
 import time
@@ -33,17 +34,21 @@ time.sleep(1)
 driver.find_element(by=By.XPATH, value='//a[@class="card-link--qE9ervT2yNAKfT4J70Mn"]').click()
 time.sleep(1)
 # 输入框
-driver.find_element(by=By.XPATH, value='//textarea[@class="rc-textarea textarea--oTXB57QK8bQN2BKYJ2Bi textarea--oTXB57QK8bQN2BKYJ2Bi"]').send_keys('你可以干什么')
+# element = driver.find_element(by=By.XPATH, value='//textarea[@class="rc-textarea textarea--oTXB57QK8bQN2BKYJ2Bi textarea--oTXB57QK8bQN2BKYJ2Bi"]')  #.send_keys('你可以干什么')
+# content = '今天天气怎么样'
+# pyperclip.copy(content)
+# element.send_keys(Keys.CONTROL, 'v')
+# time.sleep(2)
 # 发送
-driver.find_element(by=By.XPATH, value='//div[@class="textarea-actions-right--vr4WgM3FUuUicP3kJDOU"]').click()
-
-try:
-    WebDriverWait(driver, 60).until(EC.presence_of_element_located((By.CSS_SELECTOR, '#root > div:nth-child(2) > div > div > div > div > div.container--aSIvzUFX9dAs4AK6bTj0 > div.sidesheet-container.wrapper-single--UMf9npeM8cVkDi0CDqZ0 > div.message-area--TH9DlQU1qwg_KGXdDYzk > div > div.scroll-view--R_WS6aCLs2gN7PUhpDB0.scroll-view--JlYYJX7uOFwGV6INj0ng > div > div > div.wrapper--nIVxVV6ZU7gCM5i4VQIL.message-group-wrapper > div > div > div:nth-child(1) > div > div > div > div > div.chat-uikit-message-box-container__message > div > div.chat-uikit-message-box-container__message__message-box__footer > div > div.message-info-text--tTSrEd1mQwEgF4_szmBb > div:nth-child(3) > div > div')))
-    print('已经出现元素')
-except:
-    print('超时或者未出现等待元素')
-content = driver.find_element(by=By.XPATH, value='//div[@class="auto-hide-last-sibling-br paragraph_4183d"]').text
-if isinstance(content, list):
-    content = ''.join(content)
-content = json.loads(content)
-print(content)
+# driver.find_element(by=By.XPATH, value='//div[@class="textarea-actions-right--vr4WgM3FUuUicP3kJDOU"]').click()
+#
+# try:
+#     WebDriverWait(driver, 60).until(EC.presence_of_element_located((By.CSS_SELECTOR, '#root > div:nth-child(2) > div > div > div > div > div.container--aSIvzUFX9dAs4AK6bTj0 > div.sidesheet-container.wrapper-single--UMf9npeM8cVkDi0CDqZ0 > div.message-area--TH9DlQU1qwg_KGXdDYzk > div > div.scroll-view--R_WS6aCLs2gN7PUhpDB0.scroll-view--JlYYJX7uOFwGV6INj0ng > div > div > div.wrapper--nIVxVV6ZU7gCM5i4VQIL.message-group-wrapper > div > div > div:nth-child(1) > div > div > div > div > div.chat-uikit-message-box-container__message > div > div.chat-uikit-message-box-container__message__message-box__footer > div > div.message-info-text--tTSrEd1mQwEgF4_szmBb > div:nth-child(3) > div > div')))
+#     print('已经出现元素')
+# except:
+#     print('超时或者未出现等待元素')
+# content = driver.find_element(by=By.XPATH, value='//div[@class="auto-hide-last-sibling-br paragraph_4183d"]').text
+# if isinstance(content, list):
+#     content = ''.join(content)
+# content = json.loads(content)
+# print(content)

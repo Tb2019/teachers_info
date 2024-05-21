@@ -5,6 +5,9 @@ import time
 
 options = webdriver.ChromeOptions()
 options.add_experimental_option('detach', True)
+# 过检测
+# options.add_experimental_option("excludeSwitches", ["enable-automation"])
+# options.add_experimental_option('useAutomationExtension', False)
 
 class GptParser:
     def __init__(self):
@@ -13,6 +16,18 @@ class GptParser:
     def init_driver(self):
         cookies = self.pool.random_get_cookie()
         driver = webdriver.Chrome(options=options)
+
+        # 过检测
+        # driver.execute_cdp_cmd("Page.addScriptToEvaluateOnNewDocument", {
+        #     "source": """
+        #     Object.defineProperty(navigator, 'webdriver', {
+        #       get: () => undefined
+        #     })
+        #   """
+        # })
+        # driver.execute_cdp_cmd("Network.enable", {})
+        # driver.execute_cdp_cmd("Network.setExtraHTTPHeaders", {"headers": {"User-Agent": "browser1"}})
+
         driver.get('https://www.coze.cn/home')
         for cookie in cookies:
             driver.add_cookie(cookie)

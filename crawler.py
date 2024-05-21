@@ -4,6 +4,8 @@ from lxml import etree
 from lxml.html import fromstring, tostring
 import asyncio
 import aiohttp
+from retry import retry
+import pyperclip
 import re
 import pandas as pd
 from loguru import logger
@@ -11,6 +13,7 @@ from urllib import parse
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.common.keys import Keys
 from utils import get_response, get_response_async, result_dict_2_df, df2mysql, local_engine, sf_engine, \
     drop_duplicate_collage, save_as_json, truncate_table, api_parse
 from gptparser import GptParser
@@ -647,7 +650,7 @@ class ReCrawler:
         # for result in results:
         #     api_result, direct_result = result
 
-
+    @retry(exceptions=Exception, tries=1, delay=1)
     def parse_detail_gpt(self, text, result_direct):
         # 清空对话记录
         try:
@@ -659,9 +662,24 @@ class ReCrawler:
             logger.warning('无记录')
 
         # 输入框
-        text = re.sub(r'\r|\n', '', text)
-        self.driver.find_element(by=By.XPATH,
-                            value='//textarea[@class="rc-textarea textarea--oTXB57QK8bQN2BKYJ2Bi textarea--oTXB57QK8bQN2BKYJ2Bi"]').send_keys(text)
+        # text = re.sub(r'\r|\n', '', text)
+        # 刷新，避免retry时报错
+        while True:
+            try:
+                WebDriverWait(self.driver, 3).until(EC.presence_of_element_located((By.XPATH,
+                                                                                    '//textarea[@class="rc-textarea textarea--oTXB57QK8bQN2BKYJ2Bi textarea--oTXB57QK8bQN2BKYJ2Bi"]')))
+                break
+            except:
+                self.driver.refresh()
+                time.sleep(2)
+                continue
+
+        element = self.driver.find_element(by=By.XPATH,
+                            value='//textarea[@class="rc-textarea textarea--oTXB57QK8bQN2BKYJ2Bi textarea--oTXB57QK8bQN2BKYJ2Bi"]')  # .send_keys(text)
+        # send输入较慢换为使用pyperclip粘贴
+        pyperclip.copy(text)
+        element.send_keys(Keys.CONTROL, 'v')
+        time.sleep(1)
         # 发送
         self.driver.find_element(by=By.XPATH, value='//div[@class="textarea-actions-right--vr4WgM3FUuUicP3kJDOU"]').click()
         # 等待内容
@@ -669,13 +687,30 @@ class ReCrawler:
             WebDriverWait(self.driver, 60).until(EC.presence_of_element_located((By.CSS_SELECTOR, '#root > div:nth-child(2) > div > div > div > div > div.container--aSIvzUFX9dAs4AK6bTj0 > div.sidesheet-container.wrapper-single--UMf9npeM8cVkDi0CDqZ0 > div.message-area--TH9DlQU1qwg_KGXdDYzk > div > div.scroll-view--R_WS6aCLs2gN7PUhpDB0.scroll-view--JlYYJX7uOFwGV6INj0ng > div > div > div.wrapper--nIVxVV6ZU7gCM5i4VQIL.message-group-wrapper > div > div > div:nth-child(1) > div > div > div > div > div.chat-uikit-message-box-container__message > div > div.chat-uikit-message-box-container__message__message-box__footer > div > div.message-info-text--tTSrEd1mQwEgF4_szmBb > div:nth-child(3) > div > div')))
         except:
             print('超时未出现等待元素')
+            self.gpt_cant.append(result_direct['name'])
+
+            # 清空对话记录
+            try:
+                logger.info('尝试清除记录...')
+                self.driver.find_element(by=By.XPATH,
+                                         value='//div[@class="left-actions-container--NyvVfPwFXFYvQFyXUtTl"]').click()
+                logger.info('记录清除成功')
+            except:
+                logger.warning('无记录')
+
+            self.driver.refresh()
+            time.sleep(2)
+
             return None
 
         # 解析过程
         content = self.driver.find_element(by=By.XPATH,
                                            value='//div[@class="auto-hide-last-sibling-br paragraph_4183d"]').text
         if isinstance(content, list):
+            for li in content:
+                re.sub(r'')
             content = ''.join(content)
+        content = re.sub(r'\r|\n', '', content)
         print(content)
         content = json.loads(content)
 
@@ -688,8 +723,15 @@ class ReCrawler:
         except:
             logger.warning('无记录')
 
-        self.driver.refresh()
-        time.sleep(2)
+        # 等待刷新成功
+        while True:
+            self.driver.refresh()
+            try:
+                WebDriverWait(self.driver, 3).until(EC.presence_of_element_located((By.XPATH,
+                                '//textarea[@class="rc-textarea textarea--oTXB57QK8bQN2BKYJ2Bi textarea--oTXB57QK8bQN2BKYJ2Bi"]')))
+                break
+            except:
+                continue
 
         result = {
             'name': result_direct['name'],
@@ -716,7 +758,6 @@ class ReCrawler:
         }
         return result
 
-
     def parse_by_gpt(self, mid_results):
         count = 0
         parser = GptParser()
@@ -732,15 +773,17 @@ class ReCrawler:
                 continue
 
             count += 1
-            if count > 2:
+            if count > 3:
                 self.driver.close()
                 self.driver = parser.init_driver()
-
-
-
+                count = 0
+        self.driver.close()
+        logger.info('处理完毕')
 
     def run(self):
         self.result_df = pd.DataFrame()
+        self.gpt_cant = []
+
         for url in self.start_urls:
             index_page = get_response(url)
             index_result = self.parse_index(index_page, url)
@@ -754,6 +797,7 @@ class ReCrawler:
                 print('接入gpt')
                 mid_results = [self.parse_detail(detail_page, url) for detail_page in detail_pages]
                 self.parse_by_gpt(mid_results)
+                print('*** too long to use gpt ***', self.gpt_cant)
 
             else:
                 print('直接解析')
@@ -767,7 +811,6 @@ class ReCrawler:
                         self.result_df = result_dict_2_df(self.result_df, result)
                     else:
                         continue
-
 
         # 去重
         # result_df.drop_duplicates(inplace=True, keep='first', subset=['name', 'email'])
