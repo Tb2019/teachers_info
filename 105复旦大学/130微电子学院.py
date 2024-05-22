@@ -560,6 +560,7 @@ class SpecialSpider(ReCrawler):
 
 
 spider = SpecialSpider(
+                   partition_num='021',
                    school_name=school_name,
                    college_name=college_name,
                    school_id=school_id,
@@ -599,7 +600,7 @@ spider = SpecialSpider(
                    # social_job_xpath=social_job_xpath,
                    # img_xpath=img_xpath,
 
-                   save2target='no',
+                   save2target='target',
                    selenium_gpt=True,
                    api=False,
                    )
