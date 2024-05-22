@@ -1,5 +1,7 @@
 import os
 import json
+import re
+
 import pymysql
 import requests
 import pandas as pd
@@ -183,3 +185,27 @@ def truncate_table(host, user, password: str, database, port, table_name):
     except:
         logger.info('truncate {table_name} failed, rollback')
         conn.rollback()
+
+def clean_phone(partition_num, dirty_phone):
+    if not dirty_phone:
+        return None
+
+    phone = re.sub(r'—', '-', dirty_phone)
+    phone = re.sub(r'\s', '', phone)
+    phone = re.sub(r'\+?86-', '', phone)
+    phone = re.sub(r'-(\d{4}$)', r'\1', phone)
+    phone = re.sub(r'\d{2}-(\d+$)', '\1', phone)
+
+    try:
+        int(re.sub('-|^0', '', phone))
+    except:
+        return None
+
+    if re.match(r'1\d{}10$|\d{3,4}-\d{7,8}$', phone):
+        return phone
+    else:
+        # if len(phone) == 8:
+        phone = partition_num + '-' + phone
+        return phone
+
+
