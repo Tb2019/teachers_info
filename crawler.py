@@ -15,12 +15,13 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.keys import Keys
 from utils import get_response, get_response_async, result_dict_2_df, df2mysql, local_engine, sf_engine, \
-    drop_duplicate_collage, save_as_json, truncate_table, api_parse
+    drop_duplicate_collage, save_as_json, truncate_table, api_parse, clean_phone
 from gptparser import GptParser
 
 
 class ReCrawler:
     def __init__(self,
+                 partition_num: str,
                  school_name: str,
                  college_name: str,
                  school_id: int,
@@ -90,6 +91,7 @@ class ReCrawler:
         :param save2target: 默认false，不保存至目标表；true则保存至before表
         :return:
         """
+        self.partition_num = partition_num
         self.school_name = school_name
         self.college_name = college_name
         self.school_id = school_id
@@ -650,7 +652,7 @@ class ReCrawler:
         # for result in results:
         #     api_result, direct_result = result
 
-    @retry(exceptions=Exception, tries=1, delay=1)
+    # @retry(exceptions=Exception, tries=1, delay=1)
     def parse_detail_gpt(self, text, result_direct):
         # 清空对话记录
         try:
@@ -671,7 +673,7 @@ class ReCrawler:
                 break
             except:
                 self.driver.refresh()
-                time.sleep(2)
+                # time.sleep(2)
                 continue
 
         element = self.driver.find_element(by=By.XPATH,
@@ -707,12 +709,33 @@ class ReCrawler:
         content = self.driver.find_element(by=By.XPATH,
                                            value='//div[@class="auto-hide-last-sibling-br paragraph_4183d"]').text
         if isinstance(content, list):
-            for li in content:
-                re.sub(r'')
+            # for li in content:
+            #     re.sub(r'')
             content = ''.join(content)
-        content = re.sub(r'\r|\n', '', content)
-        print(content)
-        content = json.loads(content)
+        # content = re.sub(r'\r|\n', '', content)
+        # print(content)
+        try:
+            content = json.loads(content, strict=False)
+        # 重新解析
+        except:
+            print('无法解析')
+            print(content)
+            while True:
+                # 点击重新生成按钮
+                self.driver.find_element(By.CSS_SELECTOR, '#root > div:nth-child(2) > div > div > div > div > div.container--aSIvzUFX9dAs4AK6bTj0 > div.sidesheet-container.wrapper-single--UMf9npeM8cVkDi0CDqZ0 > div.message-area--TH9DlQU1qwg_KGXdDYzk > div > div.scroll-view--R_WS6aCLs2gN7PUhpDB0.scroll-view--JlYYJX7uOFwGV6INj0ng > div > div > div.wrapper--nIVxVV6ZU7gCM5i4VQIL.message-group-wrapper > div > div > div:nth-child(1) > div > div > div > div > div.chat-uikit-message-box-container__message > div > div.chat-uikit-message-box-container__message__message-box__footer > div > div.semi-space.semi-space-align-center.semi-space-horizontal > div:nth-child(2)').click()
+
+                # 等待重新生成
+                try:
+                    WebDriverWait(self.driver, 60).until(EC.presence_of_element_located((By.CSS_SELECTOR,
+                                                                                         '#root > div:nth-child(2) > div > div > div > div > div.container--aSIvzUFX9dAs4AK6bTj0 > div.sidesheet-container.wrapper-single--UMf9npeM8cVkDi0CDqZ0 > div.message-area--TH9DlQU1qwg_KGXdDYzk > div > div.scroll-view--R_WS6aCLs2gN7PUhpDB0.scroll-view--JlYYJX7uOFwGV6INj0ng > div > div > div.wrapper--nIVxVV6ZU7gCM5i4VQIL.message-group-wrapper > div > div > div:nth-child(1) > div > div > div > div > div.chat-uikit-message-box-container__message > div > div.chat-uikit-message-box-container__message__message-box__footer > div > div.message-info-text--tTSrEd1mQwEgF4_szmBb > div:nth-child(3) > div > div')))
+                    content = self.driver.find_element(by=By.XPATH,
+                                                       value='//div[@class="auto-hide-last-sibling-br paragraph_4183d"]').text
+                    if isinstance(content, list):
+                        content = ''.join(content)
+                    content = json.loads(content, strict=False)
+                    break
+                except:
+                    continue
 
         # 清空对话记录
         try:
@@ -733,11 +756,13 @@ class ReCrawler:
             except:
                 continue
 
+        phone = clean_phone(self.partition_num, content.get('电话'))
+
         result = {
             'name': result_direct['name'],
             'school_id': result_direct['school_id'],
             'college_id': result_direct['college_id'],
-            'phone': content.get('电话') if content.get('电话') else result_direct['phone'],
+            'phone': phone if phone else result_direct['phone'],
             'email': content.get('邮箱') if content.get('邮箱') else result_direct['email'],
             'job_title': content.get('职称') if content.get('职称') else result_direct['job_title'],
             'abstracts': content.get('个人简介') if content.get('个人简介') else result_direct['abstracts'],
