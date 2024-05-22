@@ -65,6 +65,20 @@ class CookiePool:
         value = json.loads(value)  # 转化为对象
         return value
 
+    def from_key_get_cookie(self, key):
+        value = list(self.db.smembers(key))[0]
+        value = json.loads(value)  # 转化为对象
+        return value
+
+    def get_keys(self):
+        keys = self.db.keys()
+        return keys
+
 
 if __name__ == '__main__':
-    CookiePool().random_get_cookie()
+    pool = CookiePool()
+    pool.update_cookie()
+    # keys = pool.get_keys()
+    # value = pool.from_key_get_cookie('myself')
+    # print(keys)
+    # print(value)
