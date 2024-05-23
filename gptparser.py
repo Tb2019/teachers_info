@@ -20,8 +20,9 @@ options.add_experimental_option('detach', True)
 # options.add_experimental_option('useAutomationExtension', False)
 
 class GptParser:
-    def __init__(self):
-        self.pool = CookiePool()
+    def __init__(self, cn_com):
+        self.pool = CookiePool(cn_com)
+        self.cn_com = cn_com
 
     def init_driver(self):
         cookies = self.pool.random_get_cookie()
@@ -37,8 +38,10 @@ class GptParser:
         # })
         # driver.execute_cdp_cmd("Network.enable", {})
         # driver.execute_cdp_cmd("Network.setExtraHTTPHeaders", {"headers": {"User-Agent": "browser1"}})
-
-        driver.get('https://www.coze.cn/home')
+        if self.cn_com == 'cn':
+            driver.get('https://www.coze.cn/home')
+        else:
+            driver.get('https://www.coze.com/')
         for cookie in cookies:
             driver.add_cookie(cookie)
         driver.refresh()
@@ -46,7 +49,10 @@ class GptParser:
         # time.sleep(2)
         while True:
             try:
-                WebDriverWait(driver, 3).until(EC.presence_of_element_located((By.XPATH, '//div[@class="item-inner--EUdR7GaW9jMUZmdET6Te" and contains(.//text(), "个人空间")]')))
+                if self.cn_com == 'cn':
+                    WebDriverWait(driver, 3).until(EC.presence_of_element_located((By.XPATH, '//div[@class="item-inner--EUdR7GaW9jMUZmdET6Te" and contains(.//text(), "个人空间")]')))
+                else:
+                    WebDriverWait(driver, 3).until(EC.presence_of_element_located((By.CSS_SELECTOR, '#root > div:nth-child(2) > section > aside > div > div > div > div.semi-navigation-header-list-outer > div.semi-navigation-list-wrapper > ul > div > div > div:nth-child(1) > li > div')))
                 break
             except:
                 driver.refresh()
@@ -54,23 +60,42 @@ class GptParser:
                 continue
 
         # 切换到个人空间
-        driver.find_element(by=By.XPATH,
+        if self.cn_com == 'cn':
+            driver.find_element(by=By.XPATH,
                             value='//div[@class="item-inner--EUdR7GaW9jMUZmdET6Te" and contains(.//text(), "个人空间")]').click()
+        else:
+            driver.find_element(By.CSS_SELECTOR, '#root > div:nth-child(2) > section > aside > div > div > div > div.semi-navigation-header-list-outer > div.semi-navigation-list-wrapper > ul > div > div > div:nth-child(1) > li > div').click()
+            try:
+                # 接受cookies
+                time.sleep(1)
+                driver.execute_script('document.querySelector("body > cookie-banner").shadowRoot.querySelector("div > div.button-wrapper > banner-button:nth-child(3)").shadowRoot.querySelector("button").click()')
+            except:
+                print('未发现元素')
+                pass
         # time.sleep(1)
         while True:
             try:
-                WebDriverWait(driver, 3).until(EC.presence_of_element_located((By.XPATH, '//a[@class="card-link--qE9ervT2yNAKfT4J70Mn"]')))
+                if self.cn_com == 'cn':
+                    WebDriverWait(driver, 3).until(EC.presence_of_element_located((By.XPATH, '//a[@class="card-link--qE9ervT2yNAKfT4J70Mn"]')))
+                else:
+                    WebDriverWait(driver, 3).until(EC.presence_of_element_located((By.XPATH, '//a[@class="qE9ervT2yNAKfT4J70Mn"]')))
                 break
             except:
                 driver.refresh()
                 # time.sleep(2)
                 continue
         # 选择目标机器人
-        driver.find_element(by=By.XPATH, value='//a[@class="card-link--qE9ervT2yNAKfT4J70Mn"]').click()
+        if self.cn_com == 'cn':
+            driver.find_element(by=By.XPATH, value='//a[@class="card-link--qE9ervT2yNAKfT4J70Mn"]').click()
+        else:
+            driver.find_element(by=By.XPATH, value='//a[@class="qE9ervT2yNAKfT4J70Mn"]').click()
         # time.sleep(1)
         while True:
             try:
-                WebDriverWait(driver, 3).until(EC.presence_of_element_located((By.XPATH, '//textarea[@class="rc-textarea textarea--oTXB57QK8bQN2BKYJ2Bi textarea--oTXB57QK8bQN2BKYJ2Bi"]')))
+                if self.cn_com == 'cn':
+                    WebDriverWait(driver, 3).until(EC.presence_of_element_located((By.XPATH, '//textarea[@class="rc-textarea textarea--oTXB57QK8bQN2BKYJ2Bi textarea--oTXB57QK8bQN2BKYJ2Bi"]')))
+                else:
+                    WebDriverWait(driver, 3).until(EC.presence_of_element_located((By.XPATH, '//textarea[@class="rc-textarea oTXB57QK8bQN2BKYJ2Bi oTXB57QK8bQN2BKYJ2Bi"]')))
                 break
             except:
                 driver.refresh()
