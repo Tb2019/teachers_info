@@ -11,18 +11,35 @@ from selenium.webdriver.support.wait import WebDriverWait
 options = webdriver.ChromeOptions()
 options.add_experimental_option('detach', True)
 
-pool = CookiePool()
+# # 原手工获得
+# cookie_get = '''[{"domain": ".coze.com", "expiry": 1747979986, "httpOnly": true, "name": "store-country-code-src", "path": "/", "sameSite": "Lax", "secure": false, "value": "uid"}, {"domain": ".coze.com", "expiry": 1747979986, "httpOnly": true, "name": "store-idc", "path": "/", "sameSite": "Lax", "secure": false, "value": "alisg"}, {"domain": ".coze.com", "expiry": 1721627986, "httpOnly": true, "name": "ssid_ucp_v1", "path": "/", "sameSite": "None", "secure": true, "value": "1.0.0-KGVjNWU5OTU0N2QwYTdmMTEyYWNmMTY2MTJjNjY4MjM4MTU0N2RmYmIKIQiRiM7C_-S2p2YQ0ra7sgYY1J0fIAww0ra7sgY4AkDsBxADGgNzZzEiIGEyYTIwYzY3MWVmMjQ0MmEzZGYzOTI5NjJmMGVjMmYx"}, {"domain": ".coze.com", "expiry": 1721627986, "httpOnly": true, "name": "sid_ucp_v1", "path": "/", "sameSite": "Lax", "secure": true, "value": "1.0.0-KGVjNWU5OTU0N2QwYTdmMTEyYWNmMTY2MTJjNjY4MjM4MTU0N2RmYmIKIQiRiM7C_-S2p2YQ0ra7sgYY1J0fIAww0ra7sgY4AkDsBxADGgNzZzEiIGEyYTIwYzY3MWVmMjQ0MmEzZGYzOTI5NjJmMGVjMmYx"}, {"domain": ".coze.com", "expiry": 1721627986, "httpOnly": true, "name": "sessionid_ss", "path": "/", "sameSite": "None", "secure": true, "value": "a2a20c671ef2442a3df392962f0ec2f1"}, {"domain": ".coze.com", "expiry": 1721627986, "httpOnly": true, "name": "sessionid", "path": "/", "sameSite": "Lax", "secure": false, "value": "a2a20c671ef2442a3df392962f0ec2f1"}, {"domain": ".coze.com", "expiry": 1721627986, "httpOnly": true, "name": "uid_tt", "path": "/", "sameSite": "Lax", "secure": false, "value": "3a1c25ad7202bde4b83466141ea42edc3c1373cfa7f33083c64b4e67054a17e6"}, {"domain": ".coze.com", "expiry": 1747547986, "httpOnly": true, "name": "sid_guard", "path": "/", "sameSite": "Lax", "secure": false, "value": "a2a20c671ef2442a3df392962f0ec2f1%7C1716443986%7C5184000%7CMon%2C+22-Jul-2024+05%3A59%3A46+GMT"}, {"domain": ".coze.com", "expiry": 1747979986, "httpOnly": true, "name": "store-country-code", "path": "/", "sameSite": "Lax", "secure": false, "value": "sg"}, {"domain": ".coze.com", "expiry": 1747979934, "httpOnly": true, "name": "ttwid", "path": "/", "sameSite": "None", "secure": true, "value": "1%7CT7m5MaNtP30z5BHLtTCSujilv8g7V3a3Vyurla8LinY%7C1716443935%7C9a9c4b6271b7c6bef898109639b3c59e380bd7b86e3d7c6e09f192003a042f72"}, {"domain": ".coze.com", "expiry": 1719035986, "httpOnly": true, "name": "passport_auth_status", "path": "/", "sameSite": "Lax", "secure": false, "value": "031e2c1d22c69cd9386834c7f5fc8dc7%2C"}, {"domain": ".coze.com", "expiry": 1717307938, "httpOnly": false, "name": "msToken", "path": "/", "sameSite": "None", "secure": true, "value": "pF8uLf4lFGPlUJRMgK5VLXxuySbbG-9dHS_RdcU_PMbpktizpLhMrlV24so5ggHbS6_Y0fBOHROK2JIYTMtuAOkCJYbA0Afu_cATVjWJ6nzrbd71-RkYoDVVjF78Ias-"}, {"domain": ".coze.com", "expiry": 1747979986, "httpOnly": true, "name": "odin_tt", "path": "/", "sameSite": "Lax", "secure": false, "value": "e6a49eeb07fabf1ef45343715b4cd3459cb0d140bfbc57b61b1815f8bd30307ef7a826523d35e227e311ed8749befa26fbb5180d1e4dc0cdd34fbe636863e381"}, {"domain": ".coze.com", "expiry": 1721627956, "httpOnly": false, "name": "passport_csrf_token", "path": "/", "sameSite": "None", "secure": true, "value": "5ed4edb9c28c08c5b72fd60a16d76dfa"}, {"domain": ".coze.com", "expiry": 1719035986, "httpOnly": true, "name": "passport_auth_status_ss", "path": "/", "sameSite": "None", "secure": true, "value": "031e2c1d22c69cd9386834c7f5fc8dc7%2C"}, {"domain": ".www.coze.com", "expiry": 1747979991, "httpOnly": false, "name": "consent_cookie", "path": "/", "sameSite": "None", "secure": true, "value": "{%22analytics_and_performance%22:{%22active%22:true%2C%22disabled%22:false}}"}, {"domain": ".coze.com", "expiry": 1721627986, "httpOnly": true, "name": "sid_tt", "path": "/", "sameSite": "Lax", "secure": false, "value": "a2a20c671ef2442a3df392962f0ec2f1"}, {"domain": ".coze.com", "expiry": 1721627986, "httpOnly": true, "name": "uid_tt_ss", "path": "/", "sameSite": "None", "secure": true, "value": "3a1c25ad7202bde4b83466141ea42edc3c1373cfa7f33083c64b4e67054a17e6"}, {"domain": ".coze.com", "expiry": 1721627956, "httpOnly": false, "name": "passport_csrf_token_default", "path": "/", "sameSite": "Lax", "secure": false, "value": "5ed4edb9c28c08c5b72fd60a16d76dfa"}, {"domain": "www.coze.com", "expiry": 1747979935, "httpOnly": false, "name": "i18next", "path": "/", "sameSite": "Strict", "secure": false, "value": "en"}, {"domain": ".coze.com", "expiry": 1747979986, "httpOnly": true, "name": "d_ticket", "path": "/", "sameSite": "Lax", "secure": false, "value": "a5495994bfe748c52edf6923a3ee9e48d5587"}, {"domain": "www.coze.com", "expiry": 1724219938, "httpOnly": false, "name": "msToken", "path": "/", "sameSite": "Lax", "secure": false, "value": "pF8uLf4lFGPlUJRMgK5VLXxuySbbG-9dHS_RdcU_PMbpktizpLhMrlV24so5ggHbS6_Y0fBOHROK2JIYTMtuAOkCJYbA0Afu_cATVjWJ6nzrbd71-RkYoDVVjF78Ias-"}, {"domain": "www.coze.com", "httpOnly": false, "name": "s_v_web_id", "path": "/", "sameSite": "Lax", "secure": false, "value": "verify_lwiuegov_hhImObyU_4OsN_4HUl_ArGE_OoMFSk9tbd1G"}]'''
+# cookie_get = json.loads(cookie_get)
+# driver = webdriver.Chrome(options=options)
+# driver.get('https://www.coze.com/')
+# cookies = cookie_get
+# for cookie in cookies:
+#     driver.add_cookie(cookie)
+# driver.refresh()
+# time.sleep(2)
+
+# 循环获得
+pool = CookiePool('com')
 keys = pool.get_keys()
 # keys = ['宁仁波']
-
+cn_com = input('修改国内机器人请输入cn,否则输入com：')
+if cn_com == 'cn':
+    keys = [key for key in keys if 'cn:' in key]
+else:
+    keys = [key for key in keys if 'com:' in key]
+# print(keys)
 for key in keys:
     cookie_get = pool.from_key_get_cookie(key)
 
-    # 原手工获得
-    # cookie_get = '''[{"domain": ".coze.cn", "expiry": 1716543186, "httpOnly": false, "name": "msToken", "path": "/", "sameSite": "None", "secure": true, "value": "N31QYw4AsITQp7gP4TmBIZdG1sedCgpUvJHGxjdcdvJEo2zQHHsaVDcmKFNkVEIKLNNGxRgMaMdOlPCI3Q32BMKrJveV2XGUIvKkH4hW"}, {"domain": ".coze.cn", "expiry": 1747474387, "httpOnly": true, "name": "store-region-src", "path": "/", "sameSite": "Lax", "secure": false, "value": "uid"}, {"domain": ".coze.cn", "expiry": 1747474387, "httpOnly": true, "name": "store-region", "path": "/", "sameSite": "Lax", "secure": false, "value": "cn-ah"}, {"domain": ".coze.cn", "expiry": 1721122387, "httpOnly": true, "name": "sessionid_ss", "path": "/", "sameSite": "None", "secure": true, "value": "0ab6475d0dda01b42c82ca26ac5f9b18"}, {"domain": ".coze.cn", "expiry": 1721122387, "httpOnly": true, "name": "sessionid", "path": "/", "sameSite": "Lax", "secure": false, "value": "0ab6475d0dda01b42c82ca26ac5f9b18"}, {"domain": ".coze.cn", "expiry": 1721122387, "httpOnly": true, "name": "uid_tt_ss", "path": "/", "sameSite": "None", "secure": true, "value": "cc7d1776a061583ef0185fc9907bb626"}, {"domain": ".coze.cn", "expiry": 1721122387, "httpOnly": true, "name": "uid_tt", "path": "/", "sameSite": "Lax", "secure": false, "value": "cc7d1776a061583ef0185fc9907bb626"}, {"domain": ".coze.cn", "expiry": 1718530387, "httpOnly": true, "name": "passport_auth_status_ss", "path": "/", "sameSite": "None", "secure": true, "value": "4c1a1723b35fe5e3145e16f4ee1b4c3b%2C"}, {"domain": ".coze.cn", "expiry": 1726306387, "httpOnly": true, "name": "n_mh", "path": "/", "sameSite": "Lax", "secure": false, "value": "kCDBxze9oPGf8i6oa5WKcMVhiM683JSna70bsrUJC7A"}, {"domain": ".coze.cn", "expiry": 1721122387, "httpOnly": false, "name": "passport_csrf_token", "path": "/", "sameSite": "None", "secure": true, "value": "42baa84aca79f267c6e03706ca7a4c93"}, {"domain": ".coze.cn", "expiry": 1721122387, "httpOnly": false, "name": "passport_csrf_token_default", "path": "/", "sameSite": "Lax", "secure": false, "value": "42baa84aca79f267c6e03706ca7a4c93"}, {"domain": ".coze.cn", "expiry": 1747474385, "httpOnly": true, "name": "ttwid", "path": "/", "sameSite": "None", "secure": true, "value": "1%7CJ_T5EBGpnXZ22lk4lezHR_eRAqICw_94M0qbPcuPsBQ%7C1715938386%7C3b4d16bf036d303ca4353703b9b2d7811b487233a0c8822cab9372cdc4d4cf81"}, {"domain": ".coze.cn", "expiry": 1747042387, "httpOnly": true, "name": "sid_guard", "path": "/", "sameSite": "Lax", "secure": false, "value": "0ab6475d0dda01b42c82ca26ac5f9b18%7C1715938388%7C5184000%7CTue%2C+16-Jul-2024+09%3A33%3A08+GMT"}, {"domain": ".coze.cn", "expiry": 1721122387, "httpOnly": true, "name": "sid_ucp_v1", "path": "/", "sameSite": "Lax", "secure": true, "value": "1.0.0-KGJmOTFlYzg1MDY5ZjUyODk3MGQ1NjAxZmFiODI0ODAyMzZjY2EwNGEKHwjQofCMx8z1ARDUyJyyBhjHkB8gDDD-s5yyBjgIQCYaAmhsIiAwYWI2NDc1ZDBkZGEwMWI0MmM4MmNhMjZhYzVmOWIxOA"}, {"domain": ".coze.cn", "expiry": 1747474387, "httpOnly": true, "name": "d_ticket", "path": "/", "sameSite": "Lax", "secure": false, "value": "e09b82cec224506ed454d886d4d3ccd5c5f49"}, {"domain": ".coze.cn", "expiry": 1747474387, "httpOnly": true, "name": "odin_tt", "path": "/", "sameSite": "Lax", "secure": false, "value": "e560e1a7e39f8badce7814556b36329c594287ee38f7762b01775c9e38992b5b0e84d8cc9256f589b9984143d3af3e55578974c8f0d86e9fbafb12eaf8d7d0d0"}, {"domain": ".coze.cn", "expiry": 1718530387, "httpOnly": true, "name": "passport_auth_status", "path": "/", "sameSite": "Lax", "secure": false, "value": "4c1a1723b35fe5e3145e16f4ee1b4c3b%2C"}, {"domain": ".coze.cn", "expiry": 1721122387, "httpOnly": true, "name": "sid_tt", "path": "/", "sameSite": "Lax", "secure": false, "value": "0ab6475d0dda01b42c82ca26ac5f9b18"}, {"domain": "www.coze.cn", "expiry": 1747474386, "httpOnly": false, "name": "i18next", "path": "/", "sameSite": "Strict", "secure": false, "value": "zh-CN"}, {"domain": ".coze.cn", "expiry": 1721122387, "httpOnly": true, "name": "ssid_ucp_v1", "path": "/", "sameSite": "None", "secure": true, "value": "1.0.0-KGJmOTFlYzg1MDY5ZjUyODk3MGQ1NjAxZmFiODI0ODAyMzZjY2EwNGEKHwjQofCMx8z1ARDUyJyyBhjHkB8gDDD-s5yyBjgIQCYaAmhsIiAwYWI2NDc1ZDBkZGEwMWI0MmM4MmNhMjZhYzVmOWIxOA"}, {"domain": "www.coze.cn", "expiry": 1716543177, "httpOnly": true, "name": "x-jupiter-uuid", "path": "/", "sameSite": "Lax", "secure": false, "value": "17159383785236268"}]'''
-    # cookie_get = json.loads(cookie_get)
     driver = webdriver.Chrome(options=options)
-    driver.get('https://www.coze.cn/home')
+    if cn_com == 'cn':
+        driver.get('https://www.coze.cn/home')
+    else:
+        driver.get('https://www.coze.com/')
     cookies = cookie_get
     for cookie in cookies:
         driver.add_cookie(cookie)
@@ -34,17 +51,25 @@ for key in keys:
     # driver.find_element(by=By.XPATH, value='//button[@class="semi-button semi-button-primary semi-button-size-small semi-button-borderless send-button--tqxhKsM_tI4KvPKo9dkI semi-button-with-icon semi-button-with-icon-only"]').click()
 
     # 切换到个人空间
-    driver.find_element(by=By.XPATH,
-                        value='//div[@class="item-inner--EUdR7GaW9jMUZmdET6Te" and contains(.//text(), "个人空间")]').click()
-    time.sleep(1)
-    # 选择目标机器人
-    driver.find_element(by=By.XPATH, value='//a[@class="card-link--qE9ervT2yNAKfT4J70Mn"]').click()
-    time.sleep(2)
+    if cn_com == 'cn':
+        driver.find_element(by=By.XPATH,
+                            value='//div[@class="item-inner--EUdR7GaW9jMUZmdET6Te" and contains(.//text(), "个人空间")]').click()
+        time.sleep(1)
+        # 选择目标机器人
+        driver.find_element(by=By.XPATH, value='//a[@class="card-link--qE9ervT2yNAKfT4J70Mn"]').click()
+        time.sleep(2)
+    else:
+        driver.find_element(by=By.CSS_SELECTOR, value='#root > div:nth-child(2) > section > aside > div > div > div > div.semi-navigation-header-list-outer > div.semi-navigation-list-wrapper > ul > div > div > div:nth-child(1) > li > div').click()
+        time.sleep(1)
+        driver.find_element(by=By.CSS_SELECTOR, value='#root > div:nth-child(2) > section > section > main > div > div > div.vuk1mP3tjtI8AZHu5ttC > div > div.coz-layout-content.A9l8HaYtxRUQbdaECyjA > div > div > div > a').click()
+        time.sleep(2)
+        pass
 
     if_over = input('结束了吗？是请输入1:')
     if if_over == '1':
         driver.close()
         continue
+
 
 
 
