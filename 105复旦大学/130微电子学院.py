@@ -602,6 +602,7 @@ spider = SpecialSpider(
 
                    save2target='target',
                    selenium_gpt=True,
+                   cn_com='com',
                    api=False,
                    )
 
