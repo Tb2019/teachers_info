@@ -12,6 +12,12 @@ from fake_headers import Headers
 from urllib.parse import quote_plus
 from sqlalchemy import create_engine
 
+
+proxy = {
+    'http': '127.0.0.1:7890',
+    'https': '127.0.0.1:7890',
+}
+
 headers = Headers(headers=True).generate()
 api_headers =  {
     'Authorization': 'Bearer pat_BeF0pCJRtoqSyqesxUUtaQgajL9EAcHzRjlI1ZqFyhGhFV3mTRfIuyKvU5nRHhIB',
@@ -33,9 +39,12 @@ local_engine = create_engine('mysql+pymysql://root:123456@127.0.0.1:3306/alpha_s
 sf_engine = create_engine(f'mysql+pymysql://root:{quote_plus(sf_password)}@192.168.2.12:3306/alpha_search?charset=utf8')
 
 
-def get_response(url):
+def get_response(url, cn_com):
     logger.info(f'crawling {url}...')
-    resp = requests.get(url, headers=headers)
+    if cn_com == 'com':
+        resp = requests.get(url, headers=headers, proxies=proxy)
+    else:
+        resp = requests.get(url, headers=headers)
     if resp.status_code == 200:
         resp.encoding = 'utf-8'
         logger.info(f'successfully get {url}')
@@ -203,9 +212,10 @@ def clean_phone(partition_num, dirty_phone):
 
     if re.match(r'1\d{}10$|\d{3,4}-\d{7,8}$', phone):
         return phone
-    else:
-        # if len(phone) == 8:
+    elif len(phone) == 8:
         phone = partition_num + '-' + phone
+        return phone
+    else:
         return phone
 
 
