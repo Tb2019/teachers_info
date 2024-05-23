@@ -26,6 +26,7 @@ class ReCrawler:
                  college_name: str,
                  school_id: int,
                  college_id: int,
+                 cn_com,
                  start_urls: list,
                  a_s_xpath_str: [str, None],
                  target_div_xpath_str: [str, None],
@@ -125,6 +126,7 @@ class ReCrawler:
 
         self.api = api
         self.selenium_gpt = selenium_gpt
+        self.cn_com = cn_com
 
         # self.is_regular = is_regular
 
@@ -657,8 +659,11 @@ class ReCrawler:
         # 清空对话记录
         try:
             logger.info('尝试清除记录...')
-            self.driver.find_element(by=By.XPATH,
+            if self.cn_com == 'cn':
+                self.driver.find_element(by=By.XPATH,
                                      value='//div[@class="left-actions-container--NyvVfPwFXFYvQFyXUtTl"]').click()
+            else:
+                self.driver.find_element(By.CSS_SELECTOR, '#root > div:nth-child(2) > div > div > div > div > div.aSIvzUFX9dAs4AK6bTj0 > div.sidesheet-container.UMf9npeM8cVkDi0CDqZ0 > div.TH9DlQU1qwg_KGXdDYzk > div > div.nIP4BqLGD8csFme4CavI > div.WfXRc6x8M2gbaaX2HSxJ > div > div.k7y7pgLJN2EYTHcUikQA > div.AXzy5aeT38Mdxk6pvvuE > div.NyvVfPwFXFYvQFyXUtTl > button').click()
             logger.info('记录清除成功')
         except:
             logger.warning('无记录')
@@ -668,25 +673,37 @@ class ReCrawler:
         # 刷新，避免retry时报错
         while True:
             try:
-                WebDriverWait(self.driver, 3).until(EC.presence_of_element_located((By.XPATH,
+                if self.cn_com == 'cn':
+                    WebDriverWait(self.driver, 3).until(EC.presence_of_element_located((By.XPATH,
                                                                                     '//textarea[@class="rc-textarea textarea--oTXB57QK8bQN2BKYJ2Bi textarea--oTXB57QK8bQN2BKYJ2Bi"]')))
+                else:
+                    WebDriverWait(self.driver, 3).until(EC.presence_of_element_located((By.XPATH, '//textarea[@class="rc-textarea oTXB57QK8bQN2BKYJ2Bi oTXB57QK8bQN2BKYJ2Bi"]')))
                 break
             except:
                 self.driver.refresh()
                 # time.sleep(2)
                 continue
-
-        element = self.driver.find_element(by=By.XPATH,
+        if self.cn_com == 'cn':
+            element = self.driver.find_element(by=By.XPATH,
                             value='//textarea[@class="rc-textarea textarea--oTXB57QK8bQN2BKYJ2Bi textarea--oTXB57QK8bQN2BKYJ2Bi"]')  # .send_keys(text)
+        else:
+            element = self.driver.find_element(By.CSS_SELECTOR, '#root > div:nth-child(2) > div > div > div > div > div.aSIvzUFX9dAs4AK6bTj0 > div.sidesheet-container.UMf9npeM8cVkDi0CDqZ0 > div.TH9DlQU1qwg_KGXdDYzk > div > div.nIP4BqLGD8csFme4CavI > div.WfXRc6x8M2gbaaX2HSxJ > div > div.k7y7pgLJN2EYTHcUikQA > div.AXzy5aeT38Mdxk6pvvuE > div.k5ePpJvczIMzaNIaOwKS > div > textarea')
         # send输入较慢换为使用pyperclip粘贴
         pyperclip.copy(text)
         element.send_keys(Keys.CONTROL, 'v')
         time.sleep(1)
+
         # 发送
-        self.driver.find_element(by=By.XPATH, value='//div[@class="textarea-actions-right--vr4WgM3FUuUicP3kJDOU"]').click()
+        if self.cn_com == 'cn':
+            self.driver.find_element(by=By.XPATH, value='//div[@class="textarea-actions-right--vr4WgM3FUuUicP3kJDOU"]').click()
+        else:
+            self.driver.find_element(By.CSS_SELECTOR, '#root > div:nth-child(2) > div > div > div > div > div.aSIvzUFX9dAs4AK6bTj0 > div.sidesheet-container.UMf9npeM8cVkDi0CDqZ0 > div.TH9DlQU1qwg_KGXdDYzk > div > div.nIP4BqLGD8csFme4CavI > div.WfXRc6x8M2gbaaX2HSxJ > div > div.k7y7pgLJN2EYTHcUikQA > div.AXzy5aeT38Mdxk6pvvuE > div.k5ePpJvczIMzaNIaOwKS > div > div > div.vr4WgM3FUuUicP3kJDOU > button').click()
         # 等待内容
         try:
-            WebDriverWait(self.driver, 60).until(EC.presence_of_element_located((By.CSS_SELECTOR, '#root > div:nth-child(2) > div > div > div > div > div.container--aSIvzUFX9dAs4AK6bTj0 > div.sidesheet-container.wrapper-single--UMf9npeM8cVkDi0CDqZ0 > div.message-area--TH9DlQU1qwg_KGXdDYzk > div > div.scroll-view--R_WS6aCLs2gN7PUhpDB0.scroll-view--JlYYJX7uOFwGV6INj0ng > div > div > div.wrapper--nIVxVV6ZU7gCM5i4VQIL.message-group-wrapper > div > div > div:nth-child(1) > div > div > div > div > div.chat-uikit-message-box-container__message > div > div.chat-uikit-message-box-container__message__message-box__footer > div > div.message-info-text--tTSrEd1mQwEgF4_szmBb > div:nth-child(3) > div > div')))
+            if self.cn_com == 'cn':
+                WebDriverWait(self.driver, 60).until(EC.presence_of_element_located((By.CSS_SELECTOR, '#root > div:nth-child(2) > div > div > div > div > div.container--aSIvzUFX9dAs4AK6bTj0 > div.sidesheet-container.wrapper-single--UMf9npeM8cVkDi0CDqZ0 > div.message-area--TH9DlQU1qwg_KGXdDYzk > div > div.scroll-view--R_WS6aCLs2gN7PUhpDB0.scroll-view--JlYYJX7uOFwGV6INj0ng > div > div > div.wrapper--nIVxVV6ZU7gCM5i4VQIL.message-group-wrapper > div > div > div:nth-child(1) > div > div > div > div > div.chat-uikit-message-box-container__message > div > div.chat-uikit-message-box-container__message__message-box__footer > div > div.message-info-text--tTSrEd1mQwEgF4_szmBb > div:nth-child(3) > div > div')))
+            else:
+                WebDriverWait(self.driver, 30).until(EC.presence_of_element_located((By.CSS_SELECTOR, '#root > div:nth-child(2) > div > div > div > div > div.aSIvzUFX9dAs4AK6bTj0 > div.sidesheet-container.UMf9npeM8cVkDi0CDqZ0 > div.TH9DlQU1qwg_KGXdDYzk > div > div.R_WS6aCLs2gN7PUhpDB0.JlYYJX7uOFwGV6INj0ng > div > div > div.nIVxVV6ZU7gCM5i4VQIL.message-group-wrapper > div > div > div:nth-child(1) > div > div > div > div > div.chat-uikit-message-box-container__message > div > div.chat-uikit-message-box-container__message__message-box__footer > div > div.tTSrEd1mQwEgF4_szmBb > div:nth-child(3) > div > div')))
         except:
             print('超时未出现等待元素')
             self.gpt_cant.append(result_direct['name'])
@@ -694,8 +711,12 @@ class ReCrawler:
             # 清空对话记录
             try:
                 logger.info('尝试清除记录...')
-                self.driver.find_element(by=By.XPATH,
-                                         value='//div[@class="left-actions-container--NyvVfPwFXFYvQFyXUtTl"]').click()
+                if self.cn_com == 'cn':
+                    self.driver.find_element(by=By.XPATH,
+                                             value='//div[@class="left-actions-container--NyvVfPwFXFYvQFyXUtTl"]').click()
+                else:
+                    self.driver.find_element(By.CSS_SELECTOR,
+                                             '#root > div:nth-child(2) > div > div > div > div > div.aSIvzUFX9dAs4AK6bTj0 > div.sidesheet-container.UMf9npeM8cVkDi0CDqZ0 > div.TH9DlQU1qwg_KGXdDYzk > div > div.nIP4BqLGD8csFme4CavI > div.WfXRc6x8M2gbaaX2HSxJ > div > div.k7y7pgLJN2EYTHcUikQA > div.AXzy5aeT38Mdxk6pvvuE > div.NyvVfPwFXFYvQFyXUtTl > button').click()
                 logger.info('记录清除成功')
             except:
                 logger.warning('无记录')
@@ -706,8 +727,11 @@ class ReCrawler:
             return None
 
         # 解析过程
-        content = self.driver.find_element(by=By.XPATH,
+        if self.cn_com == 'cn':
+            content = self.driver.find_element(by=By.XPATH,
                                            value='//div[@class="auto-hide-last-sibling-br paragraph_4183d"]').text
+        else:
+            content = self.driver.find_element(By.XPATH, '//div[@class="auto-hide-last-sibling-br paragraph_c9271 paragraph-element"]').text
         if isinstance(content, list):
             # for li in content:
             #     re.sub(r'')
@@ -722,14 +746,20 @@ class ReCrawler:
             print(content)
             while True:
                 # 点击重新生成按钮
-                self.driver.find_element(By.CSS_SELECTOR, '#root > div:nth-child(2) > div > div > div > div > div.container--aSIvzUFX9dAs4AK6bTj0 > div.sidesheet-container.wrapper-single--UMf9npeM8cVkDi0CDqZ0 > div.message-area--TH9DlQU1qwg_KGXdDYzk > div > div.scroll-view--R_WS6aCLs2gN7PUhpDB0.scroll-view--JlYYJX7uOFwGV6INj0ng > div > div > div.wrapper--nIVxVV6ZU7gCM5i4VQIL.message-group-wrapper > div > div > div:nth-child(1) > div > div > div > div > div.chat-uikit-message-box-container__message > div > div.chat-uikit-message-box-container__message__message-box__footer > div > div.semi-space.semi-space-align-center.semi-space-horizontal > div:nth-child(2)').click()
-
+                if self.cn_com == 'cn':
+                    self.driver.find_element(By.CSS_SELECTOR, '#root > div:nth-child(2) > div > div > div > div > div.container--aSIvzUFX9dAs4AK6bTj0 > div.sidesheet-container.wrapper-single--UMf9npeM8cVkDi0CDqZ0 > div.message-area--TH9DlQU1qwg_KGXdDYzk > div > div.scroll-view--R_WS6aCLs2gN7PUhpDB0.scroll-view--JlYYJX7uOFwGV6INj0ng > div > div > div.wrapper--nIVxVV6ZU7gCM5i4VQIL.message-group-wrapper > div > div > div:nth-child(1) > div > div > div > div > div.chat-uikit-message-box-container__message > div > div.chat-uikit-message-box-container__message__message-box__footer > div > div.semi-space.semi-space-align-center.semi-space-horizontal > div:nth-child(2)').click()
+                else:
+                    self.driver.find_element(By.CSS_SELECTOR, '#root > div:nth-child(2) > div > div > div > div > div.aSIvzUFX9dAs4AK6bTj0 > div.sidesheet-container.UMf9npeM8cVkDi0CDqZ0 > div.TH9DlQU1qwg_KGXdDYzk > div > div.R_WS6aCLs2gN7PUhpDB0.JlYYJX7uOFwGV6INj0ng > div > div > div.nIVxVV6ZU7gCM5i4VQIL.message-group-wrapper > div > div > div:nth-child(1) > div > div > div > div > div.chat-uikit-message-box-container__message > div > div.chat-uikit-message-box-container__message__message-box__footer > div > div.semi-space.semi-space-align-center.semi-space-horizontal > div:nth-child(2)').click()
                 # 等待重新生成
                 try:
-                    WebDriverWait(self.driver, 60).until(EC.presence_of_element_located((By.CSS_SELECTOR,
+                    if self.cn_com == 'cn':
+                        WebDriverWait(self.driver, 60).until(EC.presence_of_element_located((By.CSS_SELECTOR,
                                                                                          '#root > div:nth-child(2) > div > div > div > div > div.container--aSIvzUFX9dAs4AK6bTj0 > div.sidesheet-container.wrapper-single--UMf9npeM8cVkDi0CDqZ0 > div.message-area--TH9DlQU1qwg_KGXdDYzk > div > div.scroll-view--R_WS6aCLs2gN7PUhpDB0.scroll-view--JlYYJX7uOFwGV6INj0ng > div > div > div.wrapper--nIVxVV6ZU7gCM5i4VQIL.message-group-wrapper > div > div > div:nth-child(1) > div > div > div > div > div.chat-uikit-message-box-container__message > div > div.chat-uikit-message-box-container__message__message-box__footer > div > div.message-info-text--tTSrEd1mQwEgF4_szmBb > div:nth-child(3) > div > div')))
-                    content = self.driver.find_element(by=By.XPATH,
+                        content = self.driver.find_element(by=By.XPATH,
                                                        value='//div[@class="auto-hide-last-sibling-br paragraph_4183d"]').text
+                    else:
+                        WebDriverWait(self.driver, 30).until(EC.presence_of_element_located((By.CSS_SELECTOR, '#root > div:nth-child(2) > div > div > div > div > div.aSIvzUFX9dAs4AK6bTj0 > div.sidesheet-container.UMf9npeM8cVkDi0CDqZ0 > div.TH9DlQU1qwg_KGXdDYzk > div > div.R_WS6aCLs2gN7PUhpDB0.JlYYJX7uOFwGV6INj0ng > div > div > div.nIVxVV6ZU7gCM5i4VQIL.message-group-wrapper > div > div > div:nth-child(1) > div > div > div > div > div.chat-uikit-message-box-container__message > div > div.chat-uikit-message-box-container__message__message-box__footer > div > div.tTSrEd1mQwEgF4_szmBb > div:nth-child(3) > div > div')))
+                        content = self.driver.find_element(By.XPATH, '//div[@class="auto-hide-last-sibling-br paragraph_c9271 paragraph-element"]').text
                     if isinstance(content, list):
                         content = ''.join(content)
                     content = json.loads(content, strict=False)
@@ -740,8 +770,12 @@ class ReCrawler:
         # 清空对话记录
         try:
             logger.info('尝试清除记录...')
-            self.driver.find_element(by=By.XPATH,
-                                     value='//div[@class="left-actions-container--NyvVfPwFXFYvQFyXUtTl"]').click()
+            if self.cn_com == 'cn':
+                self.driver.find_element(by=By.XPATH,
+                                         value='//div[@class="left-actions-container--NyvVfPwFXFYvQFyXUtTl"]').click()
+            else:
+                self.driver.find_element(By.CSS_SELECTOR,
+                                         '#root > div:nth-child(2) > div > div > div > div > div.aSIvzUFX9dAs4AK6bTj0 > div.sidesheet-container.UMf9npeM8cVkDi0CDqZ0 > div.TH9DlQU1qwg_KGXdDYzk > div > div.nIP4BqLGD8csFme4CavI > div.WfXRc6x8M2gbaaX2HSxJ > div > div.k7y7pgLJN2EYTHcUikQA > div.AXzy5aeT38Mdxk6pvvuE > div.NyvVfPwFXFYvQFyXUtTl > button').click()
             logger.info('记录清除成功')
         except:
             logger.warning('无记录')
@@ -750,8 +784,11 @@ class ReCrawler:
         while True:
             self.driver.refresh()
             try:
-                WebDriverWait(self.driver, 3).until(EC.presence_of_element_located((By.XPATH,
+                if self.cn_com == 'cn':
+                    WebDriverWait(self.driver, 3).until(EC.presence_of_element_located((By.XPATH,
                                 '//textarea[@class="rc-textarea textarea--oTXB57QK8bQN2BKYJ2Bi textarea--oTXB57QK8bQN2BKYJ2Bi"]')))
+                else:
+                    WebDriverWait(self.driver, 3).until(EC.presence_of_element_located((By.XPATH, '//textarea[@class="rc-textarea oTXB57QK8bQN2BKYJ2Bi oTXB57QK8bQN2BKYJ2Bi"]')))
                 break
             except:
                 continue
@@ -785,7 +822,7 @@ class ReCrawler:
 
     def parse_by_gpt(self, mid_results):
         count = 0
-        parser = GptParser()
+        parser = GptParser(self.cn_com)
         self.driver = parser.init_driver()
         for mid_result in mid_results:
             text, result_direct = mid_result
@@ -810,7 +847,7 @@ class ReCrawler:
         self.gpt_cant = []
 
         for url in self.start_urls:
-            index_page = get_response(url)
+            index_page = get_response(url, self.cn_com)  # cn_com转化为是否代理
             index_result = self.parse_index(index_page, url)
 
             detail_pages = self.get_detail_page(index_result)
