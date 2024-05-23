@@ -615,6 +615,7 @@ class SpecialSpider(ReCrawler):
                 return result
 
 spider = SpecialSpider(
+                   partition_num='021',
                    school_name=school_name,
                    college_name=college_name,
                    school_id=school_id,
@@ -638,6 +639,7 @@ spider = SpecialSpider(
                    phone_pattern=re.compile(r'(?<!\d)(?:\+?86-)?1\d{10}(?!\d)|(?<!\d)\d{3,4}(?:-|——)\d{7,8}(?!\d)|(?:\+?86-\d+-)\d{8}', re.S),
                    email_pattern=re.compile(r'[a-zA-Z0-9._-]+(?:@|\(at\)|\(AT\)|\[at]|\[AT])(?=.{1,10}(?:\.com|\.cn|\.net))[a-zA-Z0-9_-]+\.[0-9a-zA-Z._-]+',re.S),
 
+                   cn_com=None,
                    # phone_xpath=phone_xpath,
                    # email_xpath=email_xpath,
                    # job_title_xpath=job_title_xpath,
