@@ -109,6 +109,7 @@ target_div_xpath_str = ''
 spider = ReCrawler(
                    school_name=school_name,
                    college_name=college_name,
+                   partition_num='',
                    school_id=school_id,
                    college_id=college_id,
                    name_filter_re=r'简介',
@@ -149,7 +150,8 @@ spider = ReCrawler(
                    # img_xpath=img_xpath,
 
                    save2target='test',
-                   selenium_gpt=True,
+                   selenium_gpt=False,
+                   cn_com='',
                    api=False,
                    )
 
