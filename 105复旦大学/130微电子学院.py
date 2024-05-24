@@ -130,7 +130,7 @@ class SpecialSpider(ReCrawler):
             )
             all_content = re.sub(r'-{5,}', '', all_content)
 
-            if self.api:
+            if self.api or self.selenium_gpt:
                 content_with_label = tostring(target_div, encoding='utf-8').decode('utf-8')
 
 
@@ -483,6 +483,28 @@ class SpecialSpider(ReCrawler):
                         except:
                             continue
 
+            # 论文
+            paper = None
+            if self.paper_xpath:
+                try:
+                    paper_list = target_div.xpath(self.paper_xpath)
+                    paper = ','.join(paper_list) if ','.join(paper_list) else None
+                except:
+                    print('paper_xpath错误')
+            else:
+                if self.paper_pattern_list:
+                    for paper_pattern in self.paper_pattern_list:
+                        try:
+                            paper = paper_pattern.findall(all_content)[0]
+                            if paper:
+                                if isinstance(paper, tuple):
+                                    paper = ';'.join(paper)
+                                break
+                            else:
+                                continue
+                        except:
+                            continue
+
             # 办公室地点
             office_address = None
             if self.office_address_xpath:
@@ -525,10 +547,11 @@ class SpecialSpider(ReCrawler):
                 'qualification': qualification,
                 'job_information': job_information,
                 'responsibilities': responsibilities,
-                'office_address': office_address
+                'office_address': office_address,
+                'paper': paper
             }
             # return result
-            if self.api:# 使用第三方api解析
+            if self.api or self.selenium_gpt:# 使用第三方api解析
                 return content_with_label, result
             else:
                 return result
@@ -537,6 +560,7 @@ class SpecialSpider(ReCrawler):
 
 
 spider = SpecialSpider(
+                   partition_num='021',
                    school_name=school_name,
                    college_name=college_name,
                    school_id=school_id,
@@ -577,6 +601,8 @@ spider = SpecialSpider(
                    # img_xpath=img_xpath,
 
                    save2target='target',
+                   selenium_gpt=True,
+                   cn_com='com',
                    api=False,
                    )
 

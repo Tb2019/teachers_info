@@ -149,6 +149,7 @@ spider = ReCrawler(
                    # img_xpath=img_xpath,
 
                    save2target='test',
+                   selenium_gpt=True,
                    api=False,
                    )
 
