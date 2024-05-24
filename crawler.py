@@ -14,6 +14,8 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.keys import Keys
+
+from drop_duplicate_school import update_rel_table
 from utils import get_response, get_response_async, result_dict_2_df, df2mysql, local_engine, sf_engine, \
     drop_duplicate_collage, save_as_json, truncate_table, api_parse, clean_phone
 from gptparser import GptParser
@@ -936,3 +938,5 @@ class ReCrawler:
         #     df2mysql(engine=sf_engine, df=result_df, table_name='search_teacher_simple')
         #     # 保存成json至本地
         #     save_as_json(result_df, self.school_name, self.college_name)
+
+        # update_rel_table(schoolid=self.school_id)
