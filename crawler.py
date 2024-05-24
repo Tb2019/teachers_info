@@ -14,8 +14,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.keys import Keys
-
-from drop_duplicate_school import update_rel_table
+# from drop_duplicate_school import update_rel_table
 from utils import get_response, get_response_async, result_dict_2_df, df2mysql, local_engine, sf_engine, \
     drop_duplicate_collage, save_as_json, truncate_table, api_parse, clean_phone
 from gptparser import GptParser
@@ -772,11 +771,38 @@ class ReCrawler:
                 return None
 
         # 解析过程
-        if self.cn_com == 'cn':
-            content = self.driver.find_element(by=By.XPATH,
-                                           value='//div[@class="auto-hide-last-sibling-br paragraph_4183d"]').text
-        else:
-            content = self.driver.find_element(By.XPATH, '//div[@class="auto-hide-last-sibling-br paragraph_c9271 paragraph-element"]').text
+        try:
+            if self.cn_com == 'cn':
+                content = self.driver.find_element(by=By.XPATH,
+                                               value='//div[@class="auto-hide-last-sibling-br paragraph_4183d"]').text
+            else:
+                content = self.driver.find_element(By.XPATH, '//div[@class="auto-hide-last-sibling-br paragraph_c9271 paragraph-element"]').text
+        except:  # 第一次就出现了json  元素的定位方式不一样导致报错
+            while True:
+                # 点击重新生成按钮
+                # todo:cn的json格式重新生成不知道在哪，暂未完善,遇到再处理
+                if self.cn_com == 'cn':
+                    self.driver.find_element(By.CSS_SELECTOR, '#root > div:nth-child(2) > div > div > div > div > div.container--aSIvzUFX9dAs4AK6bTj0 > div.sidesheet-container.wrapper-single--UMf9npeM8cVkDi0CDqZ0 > div.message-area--TH9DlQU1qwg_KGXdDYzk > div > div.scroll-view--R_WS6aCLs2gN7PUhpDB0.scroll-view--JlYYJX7uOFwGV6INj0ng > div > div > div.wrapper--nIVxVV6ZU7gCM5i4VQIL.message-group-wrapper > div > div > div:nth-child(1) > div > div > div > div > div.chat-uikit-message-box-container__message > div > div.chat-uikit-message-box-container__message__message-box__footer > div > div.semi-space.semi-space-align-center.semi-space-horizontal > div:nth-child(2)').click()
+                    print('请完善cn的css选择器')
+                else:
+                    self.driver.find_element(By.CSS_SELECTOR, '#root > div:nth-child(2) > div > div > div > div > div.aSIvzUFX9dAs4AK6bTj0 > div.sidesheet-container.UMf9npeM8cVkDi0CDqZ0 > div.TH9DlQU1qwg_KGXdDYzk > div > div.R_WS6aCLs2gN7PUhpDB0.JlYYJX7uOFwGV6INj0ng > div > div > div.nIVxVV6ZU7gCM5i4VQIL.message-group-wrapper > div > div > div:nth-child(1) > div > div > div > div > div.chat-uikit-message-box-container__message > div > div.chat-uikit-message-box-container__message__message-box__footer > div > div.semi-space.semi-space-align-center.semi-space-horizontal > div:nth-child(2) > button').click()
+                # 等待重新生成
+                try:
+                    if self.cn_com == 'cn':
+                        WebDriverWait(self.driver, 60).until(EC.presence_of_element_located((By.CSS_SELECTOR,
+                                                                                         '#root > div:nth-child(2) > div > div > div > div > div.container--aSIvzUFX9dAs4AK6bTj0 > div.sidesheet-container.wrapper-single--UMf9npeM8cVkDi0CDqZ0 > div.message-area--TH9DlQU1qwg_KGXdDYzk > div > div.scroll-view--R_WS6aCLs2gN7PUhpDB0.scroll-view--JlYYJX7uOFwGV6INj0ng > div > div > div.wrapper--nIVxVV6ZU7gCM5i4VQIL.message-group-wrapper > div > div > div:nth-child(1) > div > div > div > div > div.chat-uikit-message-box-container__message > div > div.chat-uikit-message-box-container__message__message-box__footer > div > div.message-info-text--tTSrEd1mQwEgF4_szmBb > div:nth-child(3) > div > div')))
+                        content = self.driver.find_element(by=By.XPATH,
+                                                       value='//div[@class="auto-hide-last-sibling-br paragraph_4183d"]').text
+                    else:
+                        WebDriverWait(self.driver, 60).until(EC.presence_of_element_located((By.CSS_SELECTOR, '#root > div:nth-child(2) > div > div > div > div > div.aSIvzUFX9dAs4AK6bTj0 > div.sidesheet-container.UMf9npeM8cVkDi0CDqZ0 > div.TH9DlQU1qwg_KGXdDYzk > div > div.R_WS6aCLs2gN7PUhpDB0.JlYYJX7uOFwGV6INj0ng > div > div > div.nIVxVV6ZU7gCM5i4VQIL.message-group-wrapper > div > div > div:nth-child(1) > div > div > div > div > div.chat-uikit-message-box-container__message > div > div.chat-uikit-message-box-container__message__message-box__footer > div > div.tTSrEd1mQwEgF4_szmBb > div:nth-child(3) > div > div')))
+                        content = self.driver.find_element(By.XPATH, '//div[@class="auto-hide-last-sibling-br paragraph_c9271 paragraph-element"]').text
+                    if isinstance(content, list):
+                        content = ''.join(content)
+                    content = json.loads(content, strict=False)
+                    break
+                except:
+                    continue
+
         if isinstance(content, list):
             # for li in content:
             #     re.sub(r'')
