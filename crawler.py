@@ -16,7 +16,7 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.keys import Keys
 # from drop_duplicate_school import update_rel_table
 from utils import get_response, get_response_async, result_dict_2_df, df2mysql, local_engine, sf_engine, \
-    drop_duplicate_collage, save_as_json, truncate_table, api_parse, clean_phone
+    drop_duplicate_collage, save_as_json, truncate_table, api_parse, clean_phone, replace_quotes_in_text
 from gptparser import GptParser
 
 
@@ -215,6 +215,8 @@ class ReCrawler:
             all_content = re.sub(r'-{5,}', '', all_content)
 
             if self.api or self.selenium_gpt:
+                # 替代引号
+                replace_quotes_in_text(target_div)
                 content_with_label = tostring(target_div, encoding='utf-8').decode('utf-8')
 
 

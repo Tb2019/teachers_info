@@ -219,3 +219,10 @@ def clean_phone(partition_num, dirty_phone):
         return phone
 
 
+def replace_quotes_in_text(node):
+    if node.text and '"' in node.text:
+        node.text = node.text.replace('"', '“').replace('"', '”')
+    if node.tail and '"' in node.tail:
+        node.tail = node.tail.replace('"', '“').replace('"', '”')
+    for child in node:
+        replace_quotes_in_text(child)
