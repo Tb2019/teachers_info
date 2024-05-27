@@ -906,7 +906,7 @@ class ReCrawler:
                 continue
 
             count += 1
-            if count > 3:
+            if count > 4:
                 self.driver.close()
                 self.driver = parser.init_driver()
                 count = 0
