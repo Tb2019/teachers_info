@@ -804,7 +804,7 @@ class ReCrawler:
                                                        value='//div[@class="auto-hide-last-sibling-br paragraph_4183d"]').text
                     else:
                         WebDriverWait(self.driver, 60).until(EC.presence_of_element_located((By.CSS_SELECTOR, '#root > div:nth-child(2) > div > div > div > div > div.aSIvzUFX9dAs4AK6bTj0 > div.sidesheet-container.UMf9npeM8cVkDi0CDqZ0 > div.TH9DlQU1qwg_KGXdDYzk > div > div.R_WS6aCLs2gN7PUhpDB0.JlYYJX7uOFwGV6INj0ng > div > div > div.nIVxVV6ZU7gCM5i4VQIL.message-group-wrapper > div > div > div:nth-child(1) > div > div > div > div > div.chat-uikit-message-box-container__message > div > div.chat-uikit-message-box-container__message__message-box__footer > div > div.tTSrEd1mQwEgF4_szmBb > div:nth-child(3) > div > div')))
-                        content = self.driver.find_element(By.XPATH, '//div[@auto-hide-last-sibling-br paragraph_1252f paragraph-element"]').text
+                        content = self.driver.find_element(By.XPATH, '//div[@class="auto-hide-last-sibling-br paragraph_1252f paragraph-element"]').text
                     # if isinstance(content, list):
                     #     content = ''.join(content)
                     # content = json.loads(content, strict=False)
@@ -841,7 +841,7 @@ class ReCrawler:
                                                        value='//div[@class="auto-hide-last-sibling-br paragraph_4183d"]').text
                     else:
                         WebDriverWait(self.driver, 60).until(EC.presence_of_element_located((By.CSS_SELECTOR, '#root > div:nth-child(2) > div > div > div > div > div.aSIvzUFX9dAs4AK6bTj0 > div.sidesheet-container.UMf9npeM8cVkDi0CDqZ0 > div.TH9DlQU1qwg_KGXdDYzk > div > div.R_WS6aCLs2gN7PUhpDB0.JlYYJX7uOFwGV6INj0ng > div > div > div.nIVxVV6ZU7gCM5i4VQIL.message-group-wrapper > div > div > div:nth-child(1) > div > div > div > div > div.chat-uikit-message-box-container__message > div > div.chat-uikit-message-box-container__message__message-box__footer > div > div.tTSrEd1mQwEgF4_szmBb > div:nth-child(3) > div > div')))
-                        content = self.driver.find_element(By.XPATH, '//div[@auto-hide-last-sibling-br paragraph_1252f paragraph-element"]').text
+                        content = self.driver.find_element(By.XPATH, '//div[@class="auto-hide-last-sibling-br paragraph_1252f paragraph-element"]').text
                     if isinstance(content, list):
                         content = ''.join(content)
                     content = json.loads(content, strict=False)
