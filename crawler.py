@@ -674,8 +674,9 @@ class ReCrawler:
         # 输入框
         # text = re.sub(r'\r|\n', '', text)
         # 刷新，避免retry时报错
+
+        # 等待出现对话框，超时刷新页面
         while True:
-            # 等待出现对话框，超时刷新页面
             try:
                 if self.cn_com == 'cn':
                     WebDriverWait(self.driver, 3).until(EC.presence_of_element_located((By.XPATH,
@@ -709,8 +710,9 @@ class ReCrawler:
                 WebDriverWait(self.driver, 60).until(EC.presence_of_element_located((By.CSS_SELECTOR, '#root > div:nth-child(2) > div > div > div > div > div.container--aSIvzUFX9dAs4AK6bTj0 > div.sidesheet-container.wrapper-single--UMf9npeM8cVkDi0CDqZ0 > div.message-area--TH9DlQU1qwg_KGXdDYzk > div > div.scroll-view--R_WS6aCLs2gN7PUhpDB0.scroll-view--JlYYJX7uOFwGV6INj0ng > div > div > div.wrapper--nIVxVV6ZU7gCM5i4VQIL.message-group-wrapper > div > div > div:nth-child(1) > div > div > div > div > div.chat-uikit-message-box-container__message > div > div.chat-uikit-message-box-container__message__message-box__footer > div > div.message-info-text--tTSrEd1mQwEgF4_szmBb > div:nth-child(3) > div > div')))
             else:
                 WebDriverWait(self.driver, 60).until(EC.presence_of_element_located((By.CSS_SELECTOR, '#root > div:nth-child(2) > div > div > div > div > div.aSIvzUFX9dAs4AK6bTj0 > div.sidesheet-container.UMf9npeM8cVkDi0CDqZ0 > div.TH9DlQU1qwg_KGXdDYzk > div > div.R_WS6aCLs2gN7PUhpDB0.JlYYJX7uOFwGV6INj0ng > div > div > div.nIVxVV6ZU7gCM5i4VQIL.message-group-wrapper > div > div > div:nth-child(1) > div > div > div > div > div.chat-uikit-message-box-container__message > div > div.chat-uikit-message-box-container__message__message-box__footer > div > div.tTSrEd1mQwEgF4_szmBb > div:nth-child(3) > div > div')))
+        # 超时刷新页面，再试一次
         except:
-            # 超时刷新页面，再试一次
+            logger.warning('首次等待内容完成超时，重新刷新页面')
             self.driver.refresh()
             while True:
                 try:
@@ -753,7 +755,7 @@ class ReCrawler:
                     WebDriverWait(self.driver, 60).until(EC.presence_of_element_located((By.CSS_SELECTOR,
                                                                                          '#root > div:nth-child(2) > div > div > div > div > div.aSIvzUFX9dAs4AK6bTj0 > div.sidesheet-container.UMf9npeM8cVkDi0CDqZ0 > div.TH9DlQU1qwg_KGXdDYzk > div > div.R_WS6aCLs2gN7PUhpDB0.JlYYJX7uOFwGV6INj0ng > div > div > div.nIVxVV6ZU7gCM5i4VQIL.message-group-wrapper > div > div > div:nth-child(1) > div > div > div > div > div.chat-uikit-message-box-container__message > div > div.chat-uikit-message-box-container__message__message-box__footer > div > div.tTSrEd1mQwEgF4_szmBb > div:nth-child(3) > div > div')))
             except:
-                print('超时未出现等待元素')
+                logger.warning('刷新页面后，仍未等到目标回复文本出现。将返回空值，并记录姓名')
                 self.gpt_cant.append(result_direct['name'])
 
                 # 清空对话记录
@@ -767,7 +769,7 @@ class ReCrawler:
                                                  '#root > div:nth-child(2) > div > div > div > div > div.aSIvzUFX9dAs4AK6bTj0 > div.sidesheet-container.UMf9npeM8cVkDi0CDqZ0 > div.TH9DlQU1qwg_KGXdDYzk > div > div.nIP4BqLGD8csFme4CavI > div.WfXRc6x8M2gbaaX2HSxJ > div > div.k7y7pgLJN2EYTHcUikQA > div.AXzy5aeT38Mdxk6pvvuE > div.NyvVfPwFXFYvQFyXUtTl > button').click()
                     logger.info('记录清除成功')
                 except:
-                    logger.warning('无记录')
+                    logger.info('无记录')
 
                 self.driver.refresh()
                 time.sleep(2)
@@ -781,10 +783,13 @@ class ReCrawler:
                                                value='//div[@class="auto-hide-last-sibling-br paragraph_4183d"]').text
             else:
                 content = self.driver.find_element(By.XPATH, '//div[@class="auto-hide-last-sibling-br paragraph_1252f paragraph-element"]').text
-        except:  # 第一次就出现了json  元素的定位方式不一样导致报错
+        # 第一次就出现了json/元素的定位方式不一样导致报错
+        except:
+            logger.warning('找不到回复文本，或者返回的内容是json框。即将重新解析')
             while True:
                 # 点击重新生成按钮
                 # todo:cn的json格式重新生成不知道在哪，暂未完善,遇到再处理
+                logger.info('重新生成--1')
                 if self.cn_com == 'cn':
                     self.driver.find_element(By.CSS_SELECTOR, '#root > div:nth-child(2) > div > div > div > div > div.container--aSIvzUFX9dAs4AK6bTj0 > div.sidesheet-container.wrapper-single--UMf9npeM8cVkDi0CDqZ0 > div.message-area--TH9DlQU1qwg_KGXdDYzk > div > div.scroll-view--R_WS6aCLs2gN7PUhpDB0.scroll-view--JlYYJX7uOFwGV6INj0ng > div > div > div.wrapper--nIVxVV6ZU7gCM5i4VQIL.message-group-wrapper > div > div > div:nth-child(1) > div > div > div > div > div.chat-uikit-message-box-container__message > div > div.chat-uikit-message-box-container__message__message-box__footer > div > div.semi-space.semi-space-align-center.semi-space-horizontal > div:nth-child(2)').click()
                     print('请完善cn的css选择器')
@@ -800,9 +805,9 @@ class ReCrawler:
                     else:
                         WebDriverWait(self.driver, 60).until(EC.presence_of_element_located((By.CSS_SELECTOR, '#root > div:nth-child(2) > div > div > div > div > div.aSIvzUFX9dAs4AK6bTj0 > div.sidesheet-container.UMf9npeM8cVkDi0CDqZ0 > div.TH9DlQU1qwg_KGXdDYzk > div > div.R_WS6aCLs2gN7PUhpDB0.JlYYJX7uOFwGV6INj0ng > div > div > div.nIVxVV6ZU7gCM5i4VQIL.message-group-wrapper > div > div > div:nth-child(1) > div > div > div > div > div.chat-uikit-message-box-container__message > div > div.chat-uikit-message-box-container__message__message-box__footer > div > div.tTSrEd1mQwEgF4_szmBb > div:nth-child(3) > div > div')))
                         content = self.driver.find_element(By.XPATH, '//div[@auto-hide-last-sibling-br paragraph_1252f paragraph-element"]').text
-                    if isinstance(content, list):
-                        content = ''.join(content)
-                    content = json.loads(content, strict=False)
+                    # if isinstance(content, list):
+                    #     content = ''.join(content)
+                    # content = json.loads(content, strict=False)
                     break
                 except:
                     continue
@@ -817,10 +822,11 @@ class ReCrawler:
             content = json.loads(content, strict=False)
         # 重新解析
         except:
-            print('无法解析')
+            logger.warning('内容格式无法解析，即将重新生成')
             print(content)
             while True:
                 # 点击重新生成按钮
+                logger.info('重新生成--2')
                 if self.cn_com == 'cn':
                     self.driver.find_element(By.CSS_SELECTOR, '#root > div:nth-child(2) > div > div > div > div > div.container--aSIvzUFX9dAs4AK6bTj0 > div.sidesheet-container.wrapper-single--UMf9npeM8cVkDi0CDqZ0 > div.message-area--TH9DlQU1qwg_KGXdDYzk > div > div.scroll-view--R_WS6aCLs2gN7PUhpDB0.scroll-view--JlYYJX7uOFwGV6INj0ng > div > div > div.wrapper--nIVxVV6ZU7gCM5i4VQIL.message-group-wrapper > div > div > div:nth-child(1) > div > div > div > div > div.chat-uikit-message-box-container__message > div > div.chat-uikit-message-box-container__message__message-box__footer > div > div.semi-space.semi-space-align-center.semi-space-horizontal > div:nth-child(2)').click()
                 else:
