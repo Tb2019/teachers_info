@@ -68,12 +68,16 @@ class GptParser:
             try:
                 # 接受cookies
                 time.sleep(1)
-                driver.execute_script('document.querySelector("body > cookie-banner").shadowRoot.querySelector("div > div.button-wrapper > banner-button:nth-child(3)").shadowRoot.querySelector("button").click()')
+                # 2024/5/28以前
+                # driver.execute_script('document.querySelector("body > cookie-banner").shadowRoot.querySelector("div > div.button-wrapper > banner-button:nth-child(3)").shadowRoot.querySelector("button").click()')
+                # 2024/5/28以后
+                driver.find_element(By.CSS_SELECTOR, 'body > div._Wn1JRJHd8jh44aWsWKh > div > button').click()
             except:
-                print('未发现元素')
+                print('未发现cookie元素')
                 pass
         # time.sleep(1)
         while True:
+            # 等待目标机器人出现
             try:
                 if self.cn_com == 'cn':
                     WebDriverWait(driver, 3).until(EC.presence_of_element_located((By.XPATH, '//a[@class="card-link--qE9ervT2yNAKfT4J70Mn"]')))
