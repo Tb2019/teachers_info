@@ -627,5 +627,3 @@ spider = SpecialSpider(
                    )
 
 spider.run()
-
-
