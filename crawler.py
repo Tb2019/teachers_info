@@ -675,6 +675,7 @@ class ReCrawler:
         # text = re.sub(r'\r|\n', '', text)
         # 刷新，避免retry时报错
         while True:
+            # 等待出现对话框，超时刷新页面
             try:
                 if self.cn_com == 'cn':
                     WebDriverWait(self.driver, 3).until(EC.presence_of_element_located((By.XPATH,
@@ -686,6 +687,7 @@ class ReCrawler:
                 self.driver.refresh()
                 # time.sleep(2)
                 continue
+        # 找到对话框的元素element
         if self.cn_com == 'cn':
             element = self.driver.find_element(by=By.XPATH,
                             value='//textarea[@class="rc-textarea textarea--oTXB57QK8bQN2BKYJ2Bi textarea--oTXB57QK8bQN2BKYJ2Bi"]')  # .send_keys(text)
@@ -696,7 +698,7 @@ class ReCrawler:
         element.send_keys(Keys.CONTROL, 'v')
         time.sleep(1)
 
-        # 发送
+        # 点击发送按钮
         if self.cn_com == 'cn':
             self.driver.find_element(by=By.XPATH, value='//div[@class="textarea-actions-right--vr4WgM3FUuUicP3kJDOU"]').click()
         else:
@@ -708,7 +710,7 @@ class ReCrawler:
             else:
                 WebDriverWait(self.driver, 60).until(EC.presence_of_element_located((By.CSS_SELECTOR, '#root > div:nth-child(2) > div > div > div > div > div.aSIvzUFX9dAs4AK6bTj0 > div.sidesheet-container.UMf9npeM8cVkDi0CDqZ0 > div.TH9DlQU1qwg_KGXdDYzk > div > div.R_WS6aCLs2gN7PUhpDB0.JlYYJX7uOFwGV6INj0ng > div > div > div.nIVxVV6ZU7gCM5i4VQIL.message-group-wrapper > div > div > div:nth-child(1) > div > div > div > div > div.chat-uikit-message-box-container__message > div > div.chat-uikit-message-box-container__message__message-box__footer > div > div.tTSrEd1mQwEgF4_szmBb > div:nth-child(3) > div > div')))
         except:
-            # 超时就再刷新一次，尝试
+            # 超时刷新页面，再试一次
             self.driver.refresh()
             while True:
                 try:
@@ -778,7 +780,7 @@ class ReCrawler:
                 content = self.driver.find_element(by=By.XPATH,
                                                value='//div[@class="auto-hide-last-sibling-br paragraph_4183d"]').text
             else:
-                content = self.driver.find_element(By.XPATH, '//div[@class="auto-hide-last-sibling-br paragraph_c9271 paragraph-element"]').text
+                content = self.driver.find_element(By.XPATH, '//div[@class="auto-hide-last-sibling-br paragraph_1252f paragraph-element"]').text
         except:  # 第一次就出现了json  元素的定位方式不一样导致报错
             while True:
                 # 点击重新生成按钮
@@ -797,7 +799,7 @@ class ReCrawler:
                                                        value='//div[@class="auto-hide-last-sibling-br paragraph_4183d"]').text
                     else:
                         WebDriverWait(self.driver, 60).until(EC.presence_of_element_located((By.CSS_SELECTOR, '#root > div:nth-child(2) > div > div > div > div > div.aSIvzUFX9dAs4AK6bTj0 > div.sidesheet-container.UMf9npeM8cVkDi0CDqZ0 > div.TH9DlQU1qwg_KGXdDYzk > div > div.R_WS6aCLs2gN7PUhpDB0.JlYYJX7uOFwGV6INj0ng > div > div > div.nIVxVV6ZU7gCM5i4VQIL.message-group-wrapper > div > div > div:nth-child(1) > div > div > div > div > div.chat-uikit-message-box-container__message > div > div.chat-uikit-message-box-container__message__message-box__footer > div > div.tTSrEd1mQwEgF4_szmBb > div:nth-child(3) > div > div')))
-                        content = self.driver.find_element(By.XPATH, '//div[@class="auto-hide-last-sibling-br paragraph_c9271 paragraph-element"]').text
+                        content = self.driver.find_element(By.XPATH, '//div[@auto-hide-last-sibling-br paragraph_1252f paragraph-element"]').text
                     if isinstance(content, list):
                         content = ''.join(content)
                     content = json.loads(content, strict=False)
@@ -825,6 +827,7 @@ class ReCrawler:
                     self.driver.find_element(By.CSS_SELECTOR, '#root > div:nth-child(2) > div > div > div > div > div.aSIvzUFX9dAs4AK6bTj0 > div.sidesheet-container.UMf9npeM8cVkDi0CDqZ0 > div.TH9DlQU1qwg_KGXdDYzk > div > div.R_WS6aCLs2gN7PUhpDB0.JlYYJX7uOFwGV6INj0ng > div > div > div:nth-child(2) > div > div > div:nth-child(1) > div > div > div > div > div.chat-uikit-message-box-container__message > div > div.chat-uikit-message-box-container__message__message-box__footer > div > div.semi-space.semi-space-align-center.semi-space-horizontal > div:nth-child(2) > button').click()
                 # 等待重新生成
                 try:
+                    # 等待tokens出现
                     if self.cn_com == 'cn':
                         WebDriverWait(self.driver, 60).until(EC.presence_of_element_located((By.CSS_SELECTOR,
                                                                                          '#root > div:nth-child(2) > div > div > div > div > div.container--aSIvzUFX9dAs4AK6bTj0 > div.sidesheet-container.wrapper-single--UMf9npeM8cVkDi0CDqZ0 > div.message-area--TH9DlQU1qwg_KGXdDYzk > div > div.scroll-view--R_WS6aCLs2gN7PUhpDB0.scroll-view--JlYYJX7uOFwGV6INj0ng > div > div > div.wrapper--nIVxVV6ZU7gCM5i4VQIL.message-group-wrapper > div > div > div:nth-child(1) > div > div > div > div > div.chat-uikit-message-box-container__message > div > div.chat-uikit-message-box-container__message__message-box__footer > div > div.message-info-text--tTSrEd1mQwEgF4_szmBb > div:nth-child(3) > div > div')))
@@ -832,7 +835,7 @@ class ReCrawler:
                                                        value='//div[@class="auto-hide-last-sibling-br paragraph_4183d"]').text
                     else:
                         WebDriverWait(self.driver, 60).until(EC.presence_of_element_located((By.CSS_SELECTOR, '#root > div:nth-child(2) > div > div > div > div > div.aSIvzUFX9dAs4AK6bTj0 > div.sidesheet-container.UMf9npeM8cVkDi0CDqZ0 > div.TH9DlQU1qwg_KGXdDYzk > div > div.R_WS6aCLs2gN7PUhpDB0.JlYYJX7uOFwGV6INj0ng > div > div > div.nIVxVV6ZU7gCM5i4VQIL.message-group-wrapper > div > div > div:nth-child(1) > div > div > div > div > div.chat-uikit-message-box-container__message > div > div.chat-uikit-message-box-container__message__message-box__footer > div > div.tTSrEd1mQwEgF4_szmBb > div:nth-child(3) > div > div')))
-                        content = self.driver.find_element(By.XPATH, '//div[@class="auto-hide-last-sibling-br paragraph_c9271 paragraph-element"]').text
+                        content = self.driver.find_element(By.XPATH, '//div[@auto-hide-last-sibling-br paragraph_1252f paragraph-element"]').text
                     if isinstance(content, list):
                         content = ''.join(content)
                     content = json.loads(content, strict=False)
