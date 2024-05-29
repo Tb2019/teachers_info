@@ -201,18 +201,19 @@ def clean_phone(partition_num, dirty_phone):
 
     phone = re.sub(r'—', '-', dirty_phone)
     phone = re.sub(r'\s', '', phone)
-    phone = re.sub(r'\+?86-', '', phone)
-    phone = re.sub(r'-(\d{4}$)', r'\1', phone)
+    phone = re.sub(r'\+?86-?', '', phone)
     phone = re.sub(r'\d{2}-(\d+$)', '\1', phone)
+    phone = re.sub(r'(?<=\d{3})-(\d{4}$)', r'\1', phone)
+    phone = re.sub(r'(?<=\d{4})-(\d{4}$)', r'\1', phone)
 
     try:
         int(re.sub('-|^0', '', phone))
     except:
         return None
 
-    if re.match(r'1\d{}10$|\d{3,4}-\d{7,8}$', phone):
+    if re.match(r'1\d{10}$|\d{3,4}-\d{7,8}$', phone):
         return phone
-    elif len(phone) == 8:
+    elif len(phone) == 8 or len(phone) == 7:
         phone = partition_num + '-' + phone
         return phone
     else:
