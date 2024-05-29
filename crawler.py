@@ -218,6 +218,8 @@ class ReCrawler:
                 # 替代引号
                 replace_quotes_in_text(target_div)
                 content_with_label = tostring(target_div, encoding='utf-8').decode('utf-8')
+                # 去掉空白字符
+                content_with_label = re.sub(r'\s', '', content_with_label)
 
 
             # 姓名
