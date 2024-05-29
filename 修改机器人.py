@@ -44,7 +44,11 @@ for key in keys:
     for cookie in cookies:
         driver.add_cookie(cookie)
     driver.refresh()
-    time.sleep(2)
+    # time.sleep(10)
+    if cn_com == 'cn':
+        time.sleep(3)
+    else:
+        WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.CSS_SELECTOR, '#root > div:nth-child(2) > section > aside > div > div > div > div.semi-navigation-header-list-outer > div.semi-navigation-list-wrapper > ul > div > div > div:nth-child(1) > li > div')))
 
     # 主页问答
     # driver.find_element(by=By.XPATH, value='//textarea[@class="rc-textarea textarea--oTXB57QK8bQN2BKYJ2Bi textarea--oTXB57QK8bQN2BKYJ2Bi"]').send_keys('你可以干什么')
@@ -60,10 +64,10 @@ for key in keys:
         time.sleep(2)
     else:
         driver.find_element(by=By.CSS_SELECTOR, value='#root > div:nth-child(2) > section > aside > div > div > div > div.semi-navigation-header-list-outer > div.semi-navigation-list-wrapper > ul > div > div > div:nth-child(1) > li > div').click()
-        time.sleep(1)
+        # time.sleep(1)
+        WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.CSS_SELECTOR, '#root > div:nth-child(2) > section > section > main > div > div > div.vuk1mP3tjtI8AZHu5ttC > div > div.coz-layout-content.A9l8HaYtxRUQbdaECyjA > div > div > div > a')))
         driver.find_element(by=By.CSS_SELECTOR, value='#root > div:nth-child(2) > section > section > main > div > div > div.vuk1mP3tjtI8AZHu5ttC > div > div.coz-layout-content.A9l8HaYtxRUQbdaECyjA > div > div > div > a').click()
         time.sleep(2)
-        pass
 
     if_over = input('结束了吗？是请输入1:')
     if if_over == '1':
