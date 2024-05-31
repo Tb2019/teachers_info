@@ -1,23 +1,19 @@
 # -*- coding: utf-8 -*-
 import re
+import requests
+# from fake_headers import Headers
 from crawler import ReCrawler
 
-school_name = '北京理工大学'
-college_name = '物理学院'
-school_id = 98
-college_id = 142
+school_name = '东南大学'
+college_name = '自动化学院'
+school_id = 97
+college_id = 143
 start_urls = [
-                'https://physics.bit.edu.cn/szdw/szml/zgjzc/ALL/index.htm',
-                'https://physics.bit.edu.cn/szdw/szml/fgjzc/ALL_01/index.htm',
-                'https://physics.bit.edu.cn/szdw/szml/fgjzc/ALL_01/index1.htm',
-                'https://physics.bit.edu.cn/szdw/szml/zjzc/ALL_02/index.htm',
-                'https://physics.bit.edu.cn/szdw/szml/zjzc/ALL_02/index1.htm',
-                'https://physics.bit.edu.cn/szdw/szml/zzsyry/ALL_03/index.htm',
-                'https://physics.bit.edu.cn/szdw/szml/dxwljxysyzx/ALL2022/index.htm'
+                'https://automation.seu.edu.cn/32668/list.htm'
               ]
 
-a_s_xpath_str = '//ul[@class="tabListBox gp-avg-lg-4 gp-avg-md-4 gp-avg-sm-2 gp-avg-xs-2 gp-avg-xxs-1"]//a[@href!="#"]'
-target_div_xpath_str = '//div[@class="introduction"]'
+a_s_xpath_str = '//ul[@class="cols_list clearfix"]/li/a[@href!="#"]'
+target_div_xpath_str = '//div[@frag="窗口11"]'
 
 # # 电话
 # phone_xpath = None
@@ -110,37 +106,58 @@ target_div_xpath_str = '//div[@class="introduction"]'
 #                                 ]
 # social_job_xpath = None
 
+headers = {
+    "Accept": "application/json, text/javascript, */*; q=0.01",
+    "Accept-Language": "zh-CN,zh;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6",
+    "Cache-Control": "no-cache",
+    "Connection": "keep-alive",
+    "Content-Type": "application/x-www-form-urlencoded; charset=UTF-8",
+    "DNT": "1",
+    "Origin": "https://automation.seu.edu.cn",
+    "Pragma": "no-cache",
+    "Referer": "https://automation.seu.edu.cn/32668/list.htm",
+    "Sec-Fetch-Dest": "empty",
+    "Sec-Fetch-Mode": "cors",
+    "Sec-Fetch-Site": "same-origin",
+    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36 Edg/125.0.0.0",
+    "X-Requested-With": "XMLHttpRequest",
+    "sec-ch-ua": "\"Microsoft Edge\";v=\"125\", \"Chromium\";v=\"125\", \"Not.A/Brand\";v=\"24\"",
+    "sec-ch-ua-mobile": "?0",
+    "sec-ch-ua-platform": "\"Windows\""
+}
+cookies = {
+    "JSESSIONID": "0656442192EEAB4C3B58BCC243EB0011",
+    "NSC_xfcqmvt-05-iuuqt": "ffffffff0948650845525d5f4f58455e445a4a423660"
+}
+params = {
+    "queryObj": "teacherHome"
+}
+
 class SpecialSpider(ReCrawler):
     def parse_index(self, index_page, url):
-        # 方法重写时引入包
-        global etree, parse
-        if not globals().get('etree'):
-            from lxml import etree
-        if not globals().get('parse'):
-            from urllib import parse
-
-        page = etree.HTML(index_page)
-        a_s = page.xpath(self.a_s_xpath_str)
-        for a in a_s:
-            name = a.xpath('./div[@class="namet gp-f16"]/text()')
-            # print(name)
-            if name:
-                name = ''.join(name)
-                if not re.match(r'[A-Za-z\s]*$', name, re.S):  # 中文名替换空格
-                    name = re.sub(r'\s*', '', name)
-                name = re.sub(self.name_filter_re, '', name)
-                link = a.xpath('./@href')[0]
-                link = parse.urljoin(url, link)
-            else:
-                print('未解析到name，请检查：a_s_xpath_str')
-                continue
-            yield name, link
+        base_url = 'https://automation.seu.edu.cn/_wp3services/generalQuery'
+        for i in range(11):
+            data = {
+               "siteId": "338",
+               "pageIndex": f"{i+1}",
+               "rows": "8",
+               "conditions": "[{\"field\":\"published\",\"value\":\"1\",\"judge\":\"=\"}]",
+               "orders": "[{\"field\":\"letter\",\"type\":\"asc\"}]",
+               "returnInfos": "[{\"field\":\"title\",\"name\":\"title\"},{\"field\":\"exField1\",\"name\":\"exField1\"},{\"field\":\"degree\",\"name\":\"degree\"},{\"field\":\"post\",\"name\":\"post\"},{\"field\":\"cnUrl\",\"name\":\"cnUrl\"},{\"field\":\"headerPic\",\"name\":\"headerPic\"}]",
+               "articleType": "1",
+               "level": "1"
+            }
+            resp = requests.post(base_url, data=data, headers=headers, cookies=cookies, params=params).json()
+            for info in resp['data']:
+                name = info['title']
+                link = info['cnUrl']
+                yield name, link
 
 
 spider = SpecialSpider(
                    school_name=school_name,
                    college_name=college_name,
-                   partition_num='010',
+                   partition_num='025',
                    school_id=school_id,
                    college_id=college_id,
                    name_filter_re=r'简介',
