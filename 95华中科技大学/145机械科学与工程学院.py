@@ -1,19 +1,18 @@
+# -*- coding: utf-8 -*-
 import re
 from crawler import ReCrawler
 
-school_name = ''
-college_name = ''
-school_id = None
-college_id = None
+school_name = '华中科技大学'
+college_name = '机械科学与工程学院'
+school_id = 95
+college_id = 145
 start_urls = [
-                '',
-                '',
-                '',
-                ''
+                'https://mse.hust.edu.cn/szdw/jsml/jsml/qb.htm',
+                'https://mse.hust.edu.cn/szdw/sygcry.htm'
               ]
 
-a_s_xpath_str = ''
-target_div_xpath_str = ''
+a_s_xpath_str = '//div[@class="munu_js"]//ul/li/a[contains(@href, "htm")]|//div[@class="jsml"]/ul/li/div[@class="bt"]//a[contains(@href, "htm")]'
+target_div_xpath_str = '//form[@name="_newscontent_fromname"]'
 
 # # 电话
 # phone_xpath = None
@@ -109,7 +108,7 @@ target_div_xpath_str = ''
 spider = ReCrawler(
                    school_name=school_name,
                    college_name=college_name,
-                   partition_num='',
+                   partition_num='027',
                    school_id=school_id,
                    college_id=college_id,
                    name_filter_re=r'简介',
@@ -149,9 +148,9 @@ spider = ReCrawler(
                    # social_job_xpath=social_job_xpath,
                    # img_xpath=img_xpath,
 
-                   save2target='no',
-                   selenium_gpt=False,
-                   cn_com='',
+                   save2target='target',
+                   selenium_gpt=True,
+                   cn_com='com',
                    api=False,
                    )
 

@@ -1,4 +1,6 @@
+import csv
 import json
+import os
 import time
 from lxml import etree
 from lxml.html import fromstring, tostring
@@ -16,7 +18,8 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.keys import Keys
 # from drop_duplicate_school import update_rel_table
 from utils import get_response, get_response_async, result_dict_2_df, df2mysql, local_engine, sf_engine, \
-    drop_duplicate_collage, save_as_json, truncate_table, api_parse, clean_phone, replace_quotes_in_text
+    drop_duplicate_collage, save_as_json, truncate_table, api_parse, clean_phone, replace_quotes_in_text, csv_header, \
+    csv_2_df
 from gptparser import GptParser
 
 
@@ -709,9 +712,9 @@ class ReCrawler:
         # 等待内容 --出现消耗的token数
         try:
             if self.cn_com == 'cn':
-                WebDriverWait(self.driver, 120).until(EC.presence_of_element_located((By.CSS_SELECTOR, '#root > div:nth-child(2) > div > div > div > div > div.container--aSIvzUFX9dAs4AK6bTj0 > div.sidesheet-container.wrapper-single--UMf9npeM8cVkDi0CDqZ0 > div.message-area--TH9DlQU1qwg_KGXdDYzk > div > div.scroll-view--R_WS6aCLs2gN7PUhpDB0.scroll-view--JlYYJX7uOFwGV6INj0ng > div > div > div.wrapper--nIVxVV6ZU7gCM5i4VQIL.message-group-wrapper > div > div > div:nth-child(1) > div > div > div > div > div.chat-uikit-message-box-container__message > div > div.chat-uikit-message-box-container__message__message-box__footer > div > div.message-info-text--tTSrEd1mQwEgF4_szmBb > div:nth-child(3) > div > div')))
+                WebDriverWait(self.driver, 180).until(EC.presence_of_element_located((By.CSS_SELECTOR, '#root > div:nth-child(2) > div > div > div > div > div.container--aSIvzUFX9dAs4AK6bTj0 > div.sidesheet-container.wrapper-single--UMf9npeM8cVkDi0CDqZ0 > div.message-area--TH9DlQU1qwg_KGXdDYzk > div > div.scroll-view--R_WS6aCLs2gN7PUhpDB0.scroll-view--JlYYJX7uOFwGV6INj0ng > div > div > div.wrapper--nIVxVV6ZU7gCM5i4VQIL.message-group-wrapper > div > div > div:nth-child(1) > div > div > div > div > div.chat-uikit-message-box-container__message > div > div.chat-uikit-message-box-container__message__message-box__footer > div > div.message-info-text--tTSrEd1mQwEgF4_szmBb > div:nth-child(3) > div > div')))
             else:
-                WebDriverWait(self.driver, 120).until(EC.presence_of_element_located((By.CSS_SELECTOR, '#root > div:nth-child(2) > div > div > div > div > div.aSIvzUFX9dAs4AK6bTj0 > div.sidesheet-container.UMf9npeM8cVkDi0CDqZ0 > div.TH9DlQU1qwg_KGXdDYzk > div > div.R_WS6aCLs2gN7PUhpDB0.JlYYJX7uOFwGV6INj0ng > div > div > div.nIVxVV6ZU7gCM5i4VQIL.message-group-wrapper > div > div > div:nth-child(1) > div > div > div > div > div.chat-uikit-message-box-container__message > div > div.chat-uikit-message-box-container__message__message-box__footer > div > div.tTSrEd1mQwEgF4_szmBb > div:nth-child(3) > div > div')))
+                WebDriverWait(self.driver, 180).until(EC.presence_of_element_located((By.CSS_SELECTOR, '#root > div:nth-child(2) > div > div > div > div > div.aSIvzUFX9dAs4AK6bTj0 > div.sidesheet-container.UMf9npeM8cVkDi0CDqZ0 > div.TH9DlQU1qwg_KGXdDYzk > div > div.R_WS6aCLs2gN7PUhpDB0.JlYYJX7uOFwGV6INj0ng > div > div > div.nIVxVV6ZU7gCM5i4VQIL.message-group-wrapper > div > div > div:nth-child(1) > div > div > div > div > div.chat-uikit-message-box-container__message > div > div.chat-uikit-message-box-container__message__message-box__footer > div > div.tTSrEd1mQwEgF4_szmBb > div:nth-child(3) > div > div')))
         # 超时刷新页面，再试一次
         except:
             logger.warning('首次等待内容完成超时，重新刷新页面')
@@ -751,10 +754,10 @@ class ReCrawler:
             # 等待内容
             try:
                 if self.cn_com == 'cn':
-                    WebDriverWait(self.driver, 120).until(EC.presence_of_element_located((By.CSS_SELECTOR,
+                    WebDriverWait(self.driver, 180).until(EC.presence_of_element_located((By.CSS_SELECTOR,
                                                                                          '#root > div:nth-child(2) > div > div > div > div > div.container--aSIvzUFX9dAs4AK6bTj0 > div.sidesheet-container.wrapper-single--UMf9npeM8cVkDi0CDqZ0 > div.message-area--TH9DlQU1qwg_KGXdDYzk > div > div.scroll-view--R_WS6aCLs2gN7PUhpDB0.scroll-view--JlYYJX7uOFwGV6INj0ng > div > div > div.wrapper--nIVxVV6ZU7gCM5i4VQIL.message-group-wrapper > div > div > div:nth-child(1) > div > div > div > div > div.chat-uikit-message-box-container__message > div > div.chat-uikit-message-box-container__message__message-box__footer > div > div.message-info-text--tTSrEd1mQwEgF4_szmBb > div:nth-child(3) > div > div')))
                 else:
-                    WebDriverWait(self.driver, 120).until(EC.presence_of_element_located((By.CSS_SELECTOR,
+                    WebDriverWait(self.driver, 180).until(EC.presence_of_element_located((By.CSS_SELECTOR,
                                                                                          '#root > div:nth-child(2) > div > div > div > div > div.aSIvzUFX9dAs4AK6bTj0 > div.sidesheet-container.UMf9npeM8cVkDi0CDqZ0 > div.TH9DlQU1qwg_KGXdDYzk > div > div.R_WS6aCLs2gN7PUhpDB0.JlYYJX7uOFwGV6INj0ng > div > div > div.nIVxVV6ZU7gCM5i4VQIL.message-group-wrapper > div > div > div:nth-child(1) > div > div > div > div > div.chat-uikit-message-box-container__message > div > div.chat-uikit-message-box-container__message__message-box__footer > div > div.tTSrEd1mQwEgF4_szmBb > div:nth-child(3) > div > div')))
             except:
                 logger.warning('刷新页面后，仍未等到目标回复文本出现。将返回空值，并记录姓名')
@@ -800,12 +803,12 @@ class ReCrawler:
                 # 等待重新生成
                 try:
                     if self.cn_com == 'cn':
-                        WebDriverWait(self.driver, 120).until(EC.presence_of_element_located((By.CSS_SELECTOR,
+                        WebDriverWait(self.driver, 180).until(EC.presence_of_element_located((By.CSS_SELECTOR,
                                                                                          '#root > div:nth-child(2) > div > div > div > div > div.container--aSIvzUFX9dAs4AK6bTj0 > div.sidesheet-container.wrapper-single--UMf9npeM8cVkDi0CDqZ0 > div.message-area--TH9DlQU1qwg_KGXdDYzk > div > div.scroll-view--R_WS6aCLs2gN7PUhpDB0.scroll-view--JlYYJX7uOFwGV6INj0ng > div > div > div.wrapper--nIVxVV6ZU7gCM5i4VQIL.message-group-wrapper > div > div > div:nth-child(1) > div > div > div > div > div.chat-uikit-message-box-container__message > div > div.chat-uikit-message-box-container__message__message-box__footer > div > div.message-info-text--tTSrEd1mQwEgF4_szmBb > div:nth-child(3) > div > div')))
                         content = self.driver.find_element(by=By.XPATH,
                                                        value='//div[@class="auto-hide-last-sibling-br paragraph_4183d"]').text
                     else:
-                        WebDriverWait(self.driver, 120).until(EC.presence_of_element_located((By.CSS_SELECTOR, '#root > div:nth-child(2) > div > div > div > div > div.aSIvzUFX9dAs4AK6bTj0 > div.sidesheet-container.UMf9npeM8cVkDi0CDqZ0 > div.TH9DlQU1qwg_KGXdDYzk > div > div.R_WS6aCLs2gN7PUhpDB0.JlYYJX7uOFwGV6INj0ng > div > div > div.nIVxVV6ZU7gCM5i4VQIL.message-group-wrapper > div > div > div:nth-child(1) > div > div > div > div > div.chat-uikit-message-box-container__message > div > div.chat-uikit-message-box-container__message__message-box__footer > div > div.tTSrEd1mQwEgF4_szmBb > div:nth-child(3) > div > div')))
+                        WebDriverWait(self.driver, 180).until(EC.presence_of_element_located((By.CSS_SELECTOR, '#root > div:nth-child(2) > div > div > div > div > div.aSIvzUFX9dAs4AK6bTj0 > div.sidesheet-container.UMf9npeM8cVkDi0CDqZ0 > div.TH9DlQU1qwg_KGXdDYzk > div > div.R_WS6aCLs2gN7PUhpDB0.JlYYJX7uOFwGV6INj0ng > div > div > div.nIVxVV6ZU7gCM5i4VQIL.message-group-wrapper > div > div > div:nth-child(1) > div > div > div > div > div.chat-uikit-message-box-container__message > div > div.chat-uikit-message-box-container__message__message-box__footer > div > div.tTSrEd1mQwEgF4_szmBb > div:nth-child(3) > div > div')))
                         content = self.driver.find_element(By.XPATH, '//div[@class="auto-hide-last-sibling-br paragraph_1252f paragraph-element"]').text
                     # if isinstance(content, list):
                     #     content = ''.join(content)
@@ -837,12 +840,12 @@ class ReCrawler:
                 try:
                     # 等待tokens出现
                     if self.cn_com == 'cn':
-                        WebDriverWait(self.driver, 120).until(EC.presence_of_element_located((By.CSS_SELECTOR,
+                        WebDriverWait(self.driver, 180).until(EC.presence_of_element_located((By.CSS_SELECTOR,
                                                                                          '#root > div:nth-child(2) > div > div > div > div > div.container--aSIvzUFX9dAs4AK6bTj0 > div.sidesheet-container.wrapper-single--UMf9npeM8cVkDi0CDqZ0 > div.message-area--TH9DlQU1qwg_KGXdDYzk > div > div.scroll-view--R_WS6aCLs2gN7PUhpDB0.scroll-view--JlYYJX7uOFwGV6INj0ng > div > div > div.wrapper--nIVxVV6ZU7gCM5i4VQIL.message-group-wrapper > div > div > div:nth-child(1) > div > div > div > div > div.chat-uikit-message-box-container__message > div > div.chat-uikit-message-box-container__message__message-box__footer > div > div.message-info-text--tTSrEd1mQwEgF4_szmBb > div:nth-child(3) > div > div')))
                         content = self.driver.find_element(by=By.XPATH,
                                                        value='//div[@class="auto-hide-last-sibling-br paragraph_4183d"]').text
                     else:
-                        WebDriverWait(self.driver, 120).until(EC.presence_of_element_located((By.CSS_SELECTOR, '#root > div:nth-child(2) > div > div > div > div > div.aSIvzUFX9dAs4AK6bTj0 > div.sidesheet-container.UMf9npeM8cVkDi0CDqZ0 > div.TH9DlQU1qwg_KGXdDYzk > div > div.R_WS6aCLs2gN7PUhpDB0.JlYYJX7uOFwGV6INj0ng > div > div > div.nIVxVV6ZU7gCM5i4VQIL.message-group-wrapper > div > div > div:nth-child(1) > div > div > div > div > div.chat-uikit-message-box-container__message > div > div.chat-uikit-message-box-container__message__message-box__footer > div > div.tTSrEd1mQwEgF4_szmBb > div:nth-child(3) > div > div')))
+                        WebDriverWait(self.driver, 180).until(EC.presence_of_element_located((By.CSS_SELECTOR, '#root > div:nth-child(2) > div > div > div > div > div.aSIvzUFX9dAs4AK6bTj0 > div.sidesheet-container.UMf9npeM8cVkDi0CDqZ0 > div.TH9DlQU1qwg_KGXdDYzk > div > div.R_WS6aCLs2gN7PUhpDB0.JlYYJX7uOFwGV6INj0ng > div > div > div.nIVxVV6ZU7gCM5i4VQIL.message-group-wrapper > div > div > div:nth-child(1) > div > div > div > div > div.chat-uikit-message-box-container__message > div > div.chat-uikit-message-box-container__message__message-box__footer > div > div.tTSrEd1mQwEgF4_szmBb > div:nth-child(3) > div > div')))
                         content = self.driver.find_element(By.XPATH, '//div[@class="auto-hide-last-sibling-br paragraph_1252f paragraph-element"]').text
                     if isinstance(content, list):
                         content = ''.join(content)
@@ -915,6 +918,7 @@ class ReCrawler:
             # 防止网页本身为空
             if result_gpt:
                 self.result_df = result_dict_2_df(self.result_df, result_gpt)
+                self.writter.writerow(result_gpt.values())
             else:
                 continue
 
@@ -927,6 +931,13 @@ class ReCrawler:
         logger.info('处理完毕')
 
     def run(self):
+        if os.path.exists(f'{self.college_id}.csv'):
+            file = open(f'{self.college_id}.csv', mode='a', newline='', encoding='ansi')
+            self.writter = csv.writer(file)
+        else:
+            file = open(f'{self.college_id}.csv', mode='a', newline='', encoding='ansi')
+            self.writter = csv.writer(file)
+            self.writter.writerow(csv_header)
         self.result_df = pd.DataFrame()
         self.gpt_cant = []
 
@@ -957,25 +968,80 @@ class ReCrawler:
                         self.result_df = result_dict_2_df(self.result_df, result)
                     else:
                         continue
+            file.close()
 
         # 去重
         # result_df.drop_duplicates(inplace=True, keep='first', subset=['name', 'email'])
         result_df = drop_duplicate_collage(self.result_df)
 
         # 保存至数据库
-        if self.save2target == 'no':
+        if self.api:
             pass
-        elif self.save2target == 'test':
-            truncate_table(host='localhost', user='root', password='123456', database='alpha_search', port=3306, table_name='search_teacher_test')
-            df2mysql(engine=local_engine, df=result_df, table_name='search_teacher_test')
-        # elif self.save2target == 'local':
-        #     df2mysql(engine=local_engine, df=result_df, table_name='search_teacher')
-        elif self.save2target == 'target':
-            df2mysql(engine=sf_engine, df=result_df, table_name='search_teacher')
-            save_as_json(result_df, self.school_name, self.college_name)
-        # elif self.save2target == 'simple':
-        #     df2mysql(engine=sf_engine, df=result_df, table_name='search_teacher_simple')
-        #     # 保存成json至本地
-        #     save_as_json(result_df, self.school_name, self.college_name)
+        # gpt改用csv文件存储数据至数据库
+        elif self.selenium_gpt:
+            try:
+                result_df = csv_2_df(f'./{self.college_id}.csv')
+                result_df = drop_duplicate_collage(result_df)
+                if self.save2target == 'no':
+                    pass
+                elif self.save2target == 'test':
+                    truncate_table(host='localhost', user='root', password='123456', database='alpha_search', port=3306,
+                                   table_name='search_teacher_test')
+                    df2mysql(engine=local_engine, df=result_df, table_name='search_teacher_test')
+                # elif self.save2target == 'local':
+                #     df2mysql(engine=local_engine, df=result_df, table_name='search_teacher')
+                elif self.save2target == 'target':
+                    df2mysql(engine=sf_engine, df=result_df, table_name='search_teacher')
+                    save_as_json(result_df, self.school_name, self.college_name)
+                logger.info('数据保存成功')
+                # 删除csv
+                # os.remove(f'./{self.college_id}.csv')
+                # logger.info('csv文件已删除')
+            except:
+                wait = input('数据有问题，请在excel中修改，修改完成后请输入1：')
+                if wait == '1':
+                    try:
+                        result_df = csv_2_df(f'./{self.college_id}.csv')
+                        result_df = drop_duplicate_collage(result_df)
+                        print(result_df)
+                        logger.info('再次保存中...')
+                        if self.save2target == 'no':
+                            pass
+                        elif self.save2target == 'test':
+                            truncate_table(host='localhost', user='root', password='123456', database='alpha_search',
+                                           port=3306,
+                                           table_name='search_teacher_test')
+                            df2mysql(engine=local_engine, df=result_df, table_name='search_teacher_test')
+                        # elif self.save2target == 'local':
+                        #     df2mysql(engine=local_engine, df=result_df, table_name='search_teacher')
+                        elif self.save2target == 'target':
+                            df2mysql(engine=sf_engine, df=result_df, table_name='search_teacher')
+                            save_as_json(result_df, self.school_name, self.college_name)
+                        logger.info('数据保存成功')
+                        # 删除csv
+                        # os.remove(f'./{self.college_id}.csv')
+                        # logger.info('csv文件已删除')
+                    except:
+                        logger.warning('文件仍有错误，请修改，之后手动存储，并删除csv文件')
+        else:
+            if self.save2target == 'no':
+                pass
+            elif self.save2target == 'test':
+                truncate_table(host='localhost', user='root', password='123456', database='alpha_search', port=3306, table_name='search_teacher_test')
+                df2mysql(engine=local_engine, df=result_df, table_name='search_teacher_test')
+            # elif self.save2target == 'local':
+            #     df2mysql(engine=local_engine, df=result_df, table_name='search_teacher')
+            elif self.save2target == 'target':
+                df2mysql(engine=sf_engine, df=result_df, table_name='search_teacher')
+                save_as_json(result_df, self.school_name, self.college_name)
+            # elif self.save2target == 'simple':
+            #     df2mysql(engine=sf_engine, df=result_df, table_name='search_teacher_simple')
+            #     # 保存成json至本地
+            #     save_as_json(result_df, self.school_name, self.college_name)
 
-        # update_rel_table(schoolid=self.school_id)
+            # update_rel_table(schoolid=self.school_id)
+            # 删除csv
+            os.remove(f'./{self.college_id}.csv')
+            logger.info('csv文件已删除')
+
+

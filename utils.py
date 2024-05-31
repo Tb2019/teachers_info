@@ -1,7 +1,6 @@
 import os
 import json
 import re
-
 import pymysql
 import requests
 import pandas as pd
@@ -37,6 +36,8 @@ sf_password = 'Shufang_@919'
 # engine = create_engine('mysql+pymysql://root:123456@127.0.0.1:3306/alpha_search?charset=utf8')
 local_engine = create_engine('mysql+pymysql://root:123456@127.0.0.1:3306/alpha_search?charset=utf8')
 sf_engine = create_engine(f'mysql+pymysql://root:{quote_plus(sf_password)}@192.168.2.12:3306/alpha_search?charset=utf8')
+
+csv_header = ['name', 'school_id', 'college_id', 'phone', 'email', 'job_title', 'abstracts', 'directions', 'education_experience', 'work_experience', 'patent', 'project', 'award', 'paper', 'social_job', 'picture', 'education', 'qualification', 'job_information', 'responsibilities', 'office_address']
 
 
 def get_response(url, cn_com):
@@ -227,3 +228,7 @@ def replace_quotes_in_text(node):
         node.tail = node.tail.replace('"', '“').replace('"', '”')
     for child in node:
         replace_quotes_in_text(child)
+
+def csv_2_df(path):
+    df = pd.read_csv(path, encoding='ansi')
+    return df

@@ -1,0 +1,703 @@
+name,school_id,college_id,phone,email,job_title,abstracts,directions,education_experience,work_experience,patent,project,award,paper,social_job,picture,education,qualification,job_information,responsibilities,office_address
+Akhil Garg,95,145,,akhilgarg@hust.edu.cn,副教授,"Akhil Garg (Associate Professor)，男，1988年3月生，印度籍，博士，华中科技大学机械学院副教授，硕士生导师，2010年5月获得印度国立理工学院机械工程专业学士学位。2014年8月获新加坡南洋理工大学机械与航天工程专业博士学位。2014年9月至2016年3月在新加坡南洋理工大学工程学院从事博士后研究工作。2016年3月至2016年8月就职于汕头大学工学院，任讲师。2016年9月至2019年7月就职于汕头大学工学院，任副教授。2019年8月任教于华中科技大学机械学院。主要研究方向包括进化算法和人工智能在工程设计或设计优化中的应用，如储能系统设计等。近五年在Structural and Multidisciplinary Optimization, Swarm and Evolutionary Computation, Applied Soft Computing, Expert Systems with Applications, Engineering Applications of Artificial Intelligence, Journal of Intelligent Manufacturing, Journal of Power Sources, Energy等期刊上发表SCI论文96篇，其中有2篇ESI热点论文和10篇ESI高被引论文，H指数21。主持广东省“扬帆计划”引进紧缺拔尖人才项目。担任30多个SCI期刊的审稿人。","储能系统设计, 计算智能方法, 制造系统设计, 拓扑优化设计",,,,广东省“扬帆计划”引进紧缺拔尖人才项目，2017.01-2019.12,"Engineering Applications of Artificial Intelligence, Journal of Cleaner Production, Chemometrics and Intelligent Laboratory Systems, Measurement等国际学术期刊优秀审稿人
+SCI期刊Frontiers of Mechanical Engineering颁发的“年度最佳论文奖”，2018年
+IPRoMM国际会议最佳论文奖，2016年","[1] Garg A, Shankhwar K, Jiang DZ, Vijayaraghavan V, Panda BN, Panda SS. An evolutionary framework in modelling of multi-output characteristics of the bone drilling process. Neural Comput Appl. 2018; 29:1233-41.
+[2] Garg A, Li JH, Hou JJ, Berretta C, Garg A. A new computational approach for estimation of wilting point for green infrastructure. Measurement. 2017; 111:351-8.
+[3] Garg A, Lam JSL, Panda BN. A hybrid computational intelligence framework in modelling of coal-oil agglomeration phenomenon. Appl Soft Comput. 2017; 55:402-12.
+[4] Garg A, Vijayaraghavan V, Zhang J, Lam JSL. Robust model design for evaluation of power characteristics of the cleaner energy system. Renew Energ. 2017; 112:302-13.
+[5] Garg A, Lam JSL, Gao L. Energy conservation in manufacturing operations: modelling the milling process by a new complexity-based evolutionary approach. J Clean Prod. 2015; 108:34-45.",,https://mse.hust.edu.cn/__local/5/6E/30/5CD78420E722B17F99B00BA73A5_2E8086B5_122B9.jpg,研究生,博士,1,,
+白坤,95,145,,kbai@hust.edu.cn,教授,白坤（Bai Kun，Professor），华中科技大学教授，博士生导师。本科毕业于浙江大学控制科学与工程系，博士毕业于美国佐治亚理工学院机械系。主要从事电磁系统的感知、控制、驱动，代表性成果如三自由度球形电机在新型制造、机器人中的获得创新应用。近5年主持国基金项目2项，作为核心成员参与国家973、国基金重点等项目。出版一作英文专著1部，在IEEE Trans. on Robotics、IEEE/ASME Trans. on Mechatronics、IEEE Trans. on Industrial Electronics、IEEE Trans. on Industrial Informatics等期刊及重要国际会议发表论文40余篇，获中国、美国授权发明专利18项。研究成果获ASME年度机电一体化最佳论文奖、日内瓦国际发明金奖、银奖，多次受邀在ACC，AIM等领域代表性国际会议做主题报告及邀请报告。课题组招收博士后、学术/工程博士、学术/工程硕士，欢迎对驱动控制、机器人、医工交叉方向感兴趣的同学加入。课题组网站：,球形电机及创新应用医疗机器人,,,,"1. 国家自然科学基金面上项目“面向主从机器人力操作的一体化机电设计和控制”，负责人。
+2. 武汉市科技重大专项，“三维影像导航手术机器人整机系统研发”，子课题负责人。
+3. 武汉联影智融技术开发项目，“医疗机器人电磁驱动关键技术”，负责人。
+4. 中国科学院光电技术研究所，“球关节驱动光电跟踪系统技术验证实验平台”，负责人。
+5. 国家自然科学基金重点项目，“基于人体关节模型的顺应康复外骨骼设计和控制”，骨干成员。
+6. 973国家重点基础研究项目，“高品质复杂零件智能制造基础研究”的子课题“加工过程中力-热-变形在线感知与多场重构”，骨干成员。","1. 专著获建国70周年百种科技新书奖，入选第十八届输出版优秀图书。
+2. ASME机电一体化年度最佳论文（通讯作者）
+3. 国际会议DSCC优秀论文奖
+4. 日内瓦国际发明展特别金奖、银奖
+5. 湖北省优秀学士学位论文奖指导教师；指导4人次获得校优秀毕业设计奖
+6. 第七届中国大学生机械工程创新创意大赛全国一等奖指导教师","[1] K. Bai*, W. Chen, K.-M. Lee, Z. Que, R. Huang,“Spherical Wrist with Hybrid Motion-Impedance Control for Enhanced Robotic Manipulations”, IEEE Trans. on Robotics, vol. 38, no. 2, pp. 1174-1185, 2022.
+[2] K. Bai*, Y. Ding, Z. Que, H. Yan, X. Chen*, S. Wen, K.-M. Lee,“Regulation and Tracking Control of Omni-Directional Rotation for Spherical Motors,” IEEE Trans. on Industrial Electronics, vol. 70, no. 2, pp. 1696-1705, Feb. 2023.
+[3] J. Li, K.-M. Lee*, and K. Bai*,“Analytical and Experimental Investigation of Temporal Interference for Selective Neuromuscular Activation,“ IEEE Trans. on Neural Systems and Rehabilitation Engineering, vol. 28, no. 12, pp. 3100-3112, Dec., 2020. DOI: 10.1109/TNSRE.2020.3038025.
+[4] B. Hao, K.-M. Lee*, and K. Bai*,“Distributed current source modeling method for 3D eddy current problem in magnetic conductor with discrete state-space J-φ formulation,“ Journal of Computational Physics, vol. 401, p. 109027, Jan. 2020. DOI: 10.1016/j.jcp.2019.109027.
+[5] K.-M. Lee*, B. Hao, M. Li and K. Bai*,“Multi-parameter Eddy-current Sensor Design for Conductivity Estimation and Simultaneous Distance and Thickness Measurements,” IEEE Trans. on Industrial Informatics, vol. 15, no. 3, pp. 1647-1657, March 2019. DOI: 10.1109/TII.2018.2843319.",,https://mse.hust.edu.cn/__local/5/23/2F/18FB77FF9A156B1E8DC409C8EAF_C0B95E2C_13887.jpg,研究生,博士,1,,机械大楼B210
+白龙,95,145,,bailong@hust.edu.cn,副研究员,"白龙（BaiLong，AssociateResearcher）,华中科技大学机械学院副研究员，博士生导师，湖北省高层次人才。2010年、2013年先后于北京大学元培学院、北京大学工学院获得学士学位与硕士学位，2018年1月毕业于英国布里斯托大学机械工程系，获博士学位。2018年至2020年在英国布里斯托大学超声无损检测实验室从事博士后研究工作，于2020年5月进入华中科技大学。主要研究方向为超声无损检测、智能制造、智能机器人等，在IEEETrans.Ultrason.Ferroelectr.Freq.Control，NDTEInt.，J.Acoust.Soc.Am.等期刊上发表论文10余篇。主持国家重点研发计划课题、国家自然科学基金青年基金项目、湖北省重点研发计划项目各一项。",超声无损检测智能制造智能机器人,,,,"[1]国家重点研发计划课题，“工业机器人离线编程与免示教部署技术研究”，462.5万，2022—2024（负责人）
+[2]国家自然科学基金青年项目，“基于超声散射矩阵的小缺陷表征技术”，24万，2021—2023（负责人）
+[3]湖北省重点研发计划项目，“面向航天核心部件亚表层损伤的新型相控阵检测技术与系统研究”，100万，2023—2025（负责人）
+[4]欧盟地平线2020计划项目，“AdvancedInspectionofComplexStructures”，2017—2020（参与人）
+[5]英国EPSRC项目，“UKResearchCouncilinNon-DestructiveEvaluation”，2014—2017（参与人）","[1]UniversityofBristolPostgraduateResearchScholarship2013-2017
+[2]北京市优秀毕业生2013
+[3]硕士研究生国家奖学金2012","[1]L.Bai,Q.Yang,X.Cheng,Y.Ding,J.Xu*.Ahybridphysics-data-drivensurfaceroughnesspredictionmodelforultra-precisionmachining.ScienceChinaTechnologicalSciences2023,inpress.
+[2]L.Bai,X.Cheng,Q.Yang,J.Xu*.Predictivemodelofsurfaceroughnessinmillingof7075Albasedonchatterstabilityanalysisandbackpropagationneuralnetwork.TheInternationalJournalofAdvancedManufacturingTechnology2023,126:1347-1361.
+[3]C.Guo,J.Ren,J.Xu,L.Bai*.UltrasonicdefectcharacterizationusingBayesianinversionandscatteringmatrixdenoisingneuralnetworks.NDT&EInternational2023,136:102813.
+[4]L.Bai,F.Xu,X.Chen,X.Su,F.Lai,J.Xu*.Ahybriddeeplearningmodelforrobustpredictionofthedimensionalaccuracyinprecisionmillingofthin-walledstructuralcomponents.FrontiersofMechanicalEngineering2022,17(3):32.
+[5]L.Bai,N.Liu,C.Guo,J.Xu*.Ultrasonicdefectcharacterizationusingtime-domainscatteringmatricesandconvolutionalsparsecoding.NDT&EInternational2022,131:102699.",,https://mse.hust.edu.cn/__local/6/0E/77/7E0D225A9B5EB902024A7CB6FBB_8FD3CD65_10E29.jpg,研究生,博士,1,博士生导师,先进制造大楼东楼B507
+布天昭,95,145,,butianzhao@hust.edu.cn,助理研究员,"布天昭（Bu Tianzhao, Assistant Research Fellow），助理研究员。博士毕业于中国科学院大学，入选中国科协青年人才托举工程。主要研究领域为柔性传感器设计制造与机器人触觉感知/人体健康监测应用领域研究，相关研究成果共发表论文40余篇，引用1900余次，H因子24，其中以第一作者和共同第一作者在Nature Communications、Advanced Materials、Science Bulletin、Soft Robotics等国际权威期刊上发表论文11篇，获授权专利3项。主持国家重点研发计划课题、国家自然科学基金委青年基金等项目。获选“博士后国际交流计划”派出项目、“小米青年学者”，获得第19届机械设计国际会议ICMD 2017 Best Paper Award等荣誉。招生专业方向：机械、电子、材料、光电、力学、物理、计算机等。竭诚欢迎学生咨询并加入课题组共同成长！",机器人触觉感知、人体健康监测,,,"[1]摩擦电光智能皮肤、机械手及机器人,2020-10-2,2017114978475.
+[2]液态金属栅控摩擦电子学晶体管、电子水平仪,2020-9-15,201810679333X.
+[3]纳米发电机系统及供电器件,2020-12-11,201810324788X.","[1]国家重点研发计划项目课题，摩擦电触觉敏感元件的设计与制造，主持
+[2]国家自然科学基金青年科学基金项目，基于微纳尺度摩擦电子器件的高性能触觉传感技术研究，主持
+[3]博士后国际交流计划派出项目（加州大学洛杉矶分校），基于可穿戴电子器件的自驱动智能健康监测系统，主持
+[4]中国科学院大学优秀教师科研能力提升项目，基于摩擦电-光器件的可视化触觉传感技术研究，主持","[1]第19届机械设计国际会议ICMD Best Paper Award，2017年
+[2]“小米青年学者”，2023年","[1] Tianzhao Bu, Liang Xu, Zhiwei Yang, et al., Nanoscale triboelectrification gated transistor, Nature Communications, 2020, 11(1): 1054.
+[2] Tianzhao Bu, Tianxiao Xiao, Zhiwei Yang, et al., Stretchable Triboelectric-Photonic Smart Skin for Tactile and Gesture Sensing, Advanced Materials, 2018, 30(16): 1800066.
+[3] Tianzhao Bu, Hang Yang, Wenbo Liu, et al., Triboelectric Effect-Driven Liquid Metal Actuators, Soft Robotics, 2019, 6(5): 664-670.
+[4] Tianzhao Bu, Dongdong Jiang, Xiang Yang, et al., Liquid Metal Gated Tribotronic Transistors as an Electronic Gradienter for Angle Measurement, Advanced Electronic Materials, 2018, 4(9): 1800269.
+[5] Tianzhao Bu, Chi Zhang*, Sustained energy harvesting from ambient humidity, Science Bulletin, 2020, 65: 1783-1784.",,https://mse.hust.edu.cn/__local/A/69/29/BEF78E0C865C7938F50C9A984A6_C25AB6A3_1047D.jpg,研究生,博士,1,,先进制造大楼东楼C704
+曹树平,95,145,027-87559717,0000010101@hust.edu.cn,副教授,曹树平（CaoShuping，AssociateProfessor）长期从事机械电子工程、流体传动与控制领域的科研与教学工作。,（1）重型车辆油气悬架系统；（2）电液伺服控制系统；（3）船舶操舵控制系统；（4）非流变流体的粉末成型。,,,,"1.重型越野车转型系统实验台
+2.重型越野车振动试验台
+3.重型越野车半主动悬架控制系统
+4.六自由度飞行训练模拟器
+5.高速压片机的微机控制系统
+6.电液伺服试验台的微机控制
+7.大型动态结构加载系统
+8.电液伺服核燃料成型机",,"1.“重型越野车油气悬架系统的非线性建模研究”，《机械科学与技术》
+2.“油气悬架系统非线性刚度的统计线性化分析”，《华中科技大学学报》
+3.“被动式油气悬架的动态仿真”，《中国机械工程》
+4.“李氏迷宫算法在液压阀块CAD中的应用”，《机械科学与技术》
+5.“多自由度振动台横向耦合干扰的补偿”，《华中科技大学学报》",,https://mse.hust.edu.cn/__local/7/D7/57/56BE8DA9D3646B323E90A8C9CEA_C2C73FC3_11926.jpg?e=.jpg,,,1,,
+陈立平,95,145,027-87559821,chenlp@hust.edu.cn,教授,设计学科依附于各个专业学科，致使设计学与技术分散化、碎片化，不利于多学科融合的系统协同设计，为此致力于提出独立的跨学科的系统原理（广义机械原理），建立知识驱动的可计算的系统设计方法及工具。在几何约束求解、多体系统动力学、多领域建模分析等数字化设计支撑技术方面进行研究，承担了国家自然基金、863及企业合作等多层次项目。近年来，密切关注复杂机电系统建模分析与优化技术发展，在多领域物理建模理论方面进行了深入研究，在国内率先研究了多领域物理建模规范语言modelica，承担2006年863目标导向项目《基于多领域物理建模的复杂产品协同仿真平台》并组织研发多领域物理建模与仿真系统Mworks。作为亚太地区第一个基于modelica的仿真分析平台，MWorks在维也纳MODELICA2006大会上受到国际同行关注和肯定。十年来，在计算机学报、软件学报、Computer&Struct.等国内外重要学刊上发表论文90余篇。,基于模型的系统工程多领域物理统一建模理论与技术系统动力学云设计,,,,复杂系统建模与仿真中的多领域约束融合原理研究国基金（60574053）时间域与空间域耦合物理系统多领域统一建模研究国基金（60874064）基于多领域物理建模的复杂产品协同设计仿真平台863目标导向（2006AA04Z162）机械系统动力学CAE平台863重点（2009AA044501）基于MODELICA技术体系的复杂产品分析仿真软件研发（SS2013AA041301）江苏省创新团队计划姑苏领军计划,,"[1] Chenchang, Ding Jianwan, Chen Liping et al. Media Modeling for Distillation Procrdd with Modelica/MWorks. In: Proceedings of the 8th International Modelica Conference, Dresden, Germany, 2011: 239-245.
+[2] Chen Liping, Zhao Yan, Zhou Fanli et al. Modeling and Simulation of Gear Pumps based on Modelica/MWorks. In: Proceedings of the 8th International Modelica Conference, Dresden, Germany, 2011: 421-429.
+[3] He Li, Wang Xiaolong, Zhang Yunqing, Chen Liping. Modeling and Simulation Vehicle Air Brake System. In: Proceedings of the 8th International Modelica Conference, Dresden, Germany, 2011: 430-435.
+[4] Sun Ying, Chen Wei, Zhang Yunqing, Chen Liping. Modeling and Simulation of Heavy Truck with MWorks. In: Proceedings of the 8th International Modelica Conference, Dresden, Germany, 2011: 725-729.
+[5] Jiang Ming, Zhou Jiangang, Chen Wei, Chen Liping. Modeling and Simulation of AMT with MWorks. In: Proceedings of the 8th International Modelica Conference, Dresden, Germany, 2011: 829-839.",,https://mse.hust.edu.cn/__local/8/59/94/ADD78DCF230A3B10EF93A7E95E8_97E60CED_FB00.jpg,,,1,,
+陈钢,95,145,,chenghll@hust.edu.cn,讲师,,,,,,,,,,https://mse.hust.edu.cn/__local/8/84/FB/8B743C6773E86C89479E4178D3E_0460F9F0_119F7.jpg?e=.jpg,,,1,,
+陈继勇,95,145,,chenjy@hust.edu.cn,讲师,长期从事制造业信息化关键技术研究，并重点进行科研成果转化，先后完成了国家“七五”、“八五”、“九五”、“十五”攻关项目和国家863高科技项目以及省部级以上科研项目共20余项，参与并主持CAD中心软件产品InteCAD、IntePDM的早期开发工作。,,,,,,"1990年获国家七五重大科技成果奖2项（参加）
+1998年荣获湖北省科技进步二等奖1项
+2000年荣获湖北省科技推广二等奖1项
+2002年荣获湖北省科技进步二等奖1项
+2003年荣获湖北省科技进步二等奖1项，国家重大新产品奖1项
+2005年度中国汽车工业科技进步二等奖
+2005年湖北省科技进步三等奖",,,https://mse.hust.edu.cn/__local/C/00/75/BFAC0672FE398C0A18D37A623E7_4F334265_123AE.jpg,,,1,,
+陈永府,95,145,027-87543973,Chenyf@hust.edu.cn,讲师,陈永府(1972－)，男，汉族，湖北武汉，华中科技大学CAD中心，长期以来一直从事CAD/CAPP/数字水印/信息安全等方向的研究。先后获得中国高校科技进步一等奖、国家科学技术进步二等奖、华中科技大学教学质量奖和教学竞赛奖。,CADCAPP数字水印信息安全智能手机应用,,,,"1.基金项目：面向过程支持重用的同步分析建模与形状灵敏度分析方法；
+2.国家重大专项：动梁无滑枕立式铣车复合加工中心；
+3.863项目：汽车行业CAPP解决方案研发与应用推广；
+4.863项目：基于三维CAD的集成化CAPP系统研究及应用；
+5.横向课题：面向设计模型的数字水印技术研究。",中国高校科技进步一等奖国家科学技术进步二等奖华中科技大学教学质量奖和教学竞赛奖,"1. Yongfu Chen, Zhengdong Huang, Liping Chen, Qifu Wang, Parametric Process Planning Based on Feature Parameters of Parts [J]. The International Journal of Advanced Manufacturing Technology, 2006, 28:727-736
+2. 陈永府, 杨小献, 陈立平, 朱林. 面向决策支持的数据重构技术 [J]. 计算机辅助设计与图形学学报, 2004, 16(6):831-837
+3. 陈永府, 杨朋. 递进式网络数据包解析与过滤方法研究 [J]. 计算机工程与设计, 2011.03:781-783
+4. 陈永府, 罗易. 3D网格脆弱水印中孤立水印顶点研究 [J]. 计算机应用与软件, 2012.07:239-242
+5. 陈永府, 周峰, 王启富, 陈立平. 基于虚拟卷的U盘安全技术研究 [J]. 计算机工程与科学. 2014.01:68-72",,https://mse.hust.edu.cn/__local/3/97/12/561A49A53CC9E020CDABCE6F1DA_F22DD4F4_106EE.jpg,,,1,,
+程远雄,95,145,027-87543971,yuanxcheng@hust.edu.cn,副教授,程远雄（ChengYuanxiong，AssociateProfessor），长期从事机械工程和车辆工程学科的研究和教学工作，承担本科《机械原理》和研究生《精密机械》等课程的教学工作。曾在澳大利亚悉尼大学和加拿大瑞尔森大学进修。先后任职机械设计系副主任、东莞工研院副院长、湖北省专用汽车研究院副院长等职。担任湖北省创新方法研究会理事、中南地区机械原理课程教学研究会秘书长。,精密机械系统设计理论与方法永磁同步电机伺服传动系统车辆智能化与电动化技术,,,"[1]程远雄，杨家军，一种各相绕组线圈拆分布置的永磁同步直线电机，2011，中国，201020661543.5
+[2]程远雄，杨家军，郤能，一种基于组合铁芯初级的永磁同步直线电机，2012，中国，201010290770.6","近年完成项目：线电机驱动高速高精直线运动单元的研制，广东省科技厅资助项目（编号：2008B090500015）
+在研项目：高性能永磁同步直线电机的研制电动车辆在轮电机驱动技术研究，省专用车研究院预研项目",,"[1]Xi,Neng，YangJiajun，LiuWenwei，ShenJingfang，ChengYuanxiong．Anovelapproachofthrustrippleminimizationbycombinationaliron–coredprimaryinpermanentmagnetlinearsynchronousmotor，AppliedMechanicsandMaterials，2012,v190–191,p638–641.
+[2]YuanxiongCheng,YangJiajun,HuangQibai.CharacteristicsofinductanceparametersandthrustlinearmodelingofPMLSMwithcombinationaliron–coredprimary.ProceedingofIEEEInternationalConferenceonCECNet,2011,1:142–145.
+[3]YuanxiongCheng,JiajunYang,QibaiHuang.Anewequivalentmethodofpermanentmagnetsandanalyticalsolutionofair–gapmagneticfieldofpermanentmagnetlinearsynchronousmotors.ProceedingofIEEEInternationalConferenceonCECNet,2011,6:4667–4670.
+[4]YuanxiongCheng,YangJiajun,LiuGuoxian.Anovellowthrustripple3–phase6–slotpermanentmagnetlinearsynchronousmotor.ProceedingofIEEEInternationalConferenceonCECNet,2011,1:49–53.
+[5]NengXi,JiajunYang*,YuanxiongCheng,ShiweiZhu.DetentForceAnalysisandStructureImprovementofPMLSM.ProceedingofIEEEInternationalConferenceonCECNet,2011,1:260–263.",,https://mse.hust.edu.cn/__local/F/D3/CE/116093BB09A414FB7F135C0892D_18EC3BC3_1466F.jpg,,,1,,
+程敏,95,145,,cmzpc@hust.edu.cn,讲师,,,,,,,,,,https://mse.hust.edu.cn/__local/1/39/32/217228FDF5035073228474219FD_699A8797_17FC4.jpg,,,1,,
+陈修国,95,145,027-87558045,xiuguochen@hust.edu.cn,教授,"陈修国（Chen Xiuguo, Professor），教授、博士生导师，国家优秀青年科学基金获得者。2013年6月博士毕业于华中科技大学机械电子工程专业，同年进入华中科技大学材料学院博士后流动站，2016年6月出站并留校工作。2016年12月至2018年8月期间，作为日本学术振兴会(JSPS)外国人特别研究员赴日本东北大学进行合作交流。主要从事光学纳米测量技术与仪器，集成电路(IC)制造在线测量技术与装备，先进仪器研制与新型光电、能源材料表征测量等方面的研究工作。近年来，作为负责人主持国家自然科学基金4项，作为骨干人员参与国家自然科学基金重大科研仪器研制项目、首批国家重大科学仪器设备开发专项、国家科技重大专项等国家级科研项目10余项。申请和授权国际国内发明专项30余项，在Appl. Phys. Lett.、Opt. Express、Opt. Lett.等期刊发表SCI论文80余篇。曾获上银优秀机械博士论文奖、湖北省自然科学优秀学术论文一等奖、日内瓦国际发明金奖、湖北省技术发明一等奖、华中科技大学“学术新人奖”等荣誉。课题组主页：",1. 面向集成电路IC制造的纳米测量技术与装备面向集成电路(IC)、有机显示(OLED)、光伏太阳能(PV)、柔性电子制造中的工艺控制与良率管理，研究纳米薄膜、纳米结构三维形貌、套刻误差(overlay)等测量新原理与新方法，解决IC制造纳米测量装备中的“卡脖子”技术难题。2. 先进仪器研制与新型光电、能源材料表征测量研制宽光谱椭偏仪、高分辨成像椭偏仪、快照式椭偏仪等新型椭偏仪器，以及小角X射线散射仪(SAXS)、X射线光电子能谱仪(XPS)、X射线成像仪器，实现石墨烯、过渡金属硫族化合物、黑磷、硅烯等新型二维材料，以及新型半导体光电材料与能源材料的电学、光学、力学等物理特性表征测量。,,,,"1. 国家自然科学基金优秀青年科学基金，52022034，纳米测量技术与仪器，2021-2023，在研，主持
+2. 国家自然科学基金面上项目，62175075，快照式成像椭偏测量原理与方法研究，2022-2025，在研，主持
+3. 国家自然科学基金面上项目，51775217，基于离焦扫描穆勒显微镜的纳米结构缺陷检测理论与方法研究，2018-2021，在研，主持
+4. 国家自然科学基金青年基金，51405172，纳米结构几何参数广义成像椭偏测量理论与方法研究，2015-2017，已结题，主持
+5. 湖北省重点研发计划重点项目，2020BAA008，复杂IC纳米结构三维形貌测量关键技术研究，2020-2022，在研，主持
+6. 湖北省自然科学基金面上项目，2018CFB605，基于层析穆勒矩阵散射仪的三维纳米结构测量理论与方法研究，2018-2019，已结题，主持
+7. 国家自然科学基金重大科研仪器研制项目，51727809，高分辨层析成像穆勒矩阵椭偏仪研制与应用基础研究，2018-2022，在研，参与
+8. 国家科技重大专项子课题，2017ZX02101006-004，套刻误差光学测量技术研究，2017-2020，在研，参与","1. 日本学术振兴会外国人特别研究员
+2. 华中科技大学学术新人奖
+3. 2019年湖北省技术发明一等奖（排名2）
+4. 2020年度华中科技大学重大学术进展（排名2）
+5. 湖北省第十六届自然科学优秀学术论文一等奖
+6. 华中科技大学优秀博士后
+7. 第四届上银优秀机械博士论文奖","1. S. Sheng, X. Chen*, C. Chen, J. Zhuang, C. Wang, H. Gu, and S. Liu, “Eigenvalue calibration method for dual rotating-compensator Mueller matrix polarimetry,” Opt. Lett. 46, 4618-4621 (2021)
+2. C. Wang, X. Chen*, C. Chen, S. Sheng, L. Song, H. Gu, H. Jiang, C. Zhang, and S. Liu, “Reconstruction of finite deep sub-wavelength nanostructures by Mueller-matrix scattered-field microscopy,” Opt. Express 29, 32158-32168 (2021)
+3. C. Chen, X. Chen*, C. Wang, S. Sheng, L. Song, H. Gu, and S. Liu, “Imaging Mueller matrix ellipsometry with sub-micron resolution based on back focal plane scanning,” Opt. Express 29, 32712-32727 (2021) [Editors’ Pick]
+4. S. Yang, B. Qu, G. Liu, D. Deng, S. Liu, and X. Chen*, “Unsupervised learning polarimetric underwater image recovery under nonuniform optical fields,” Appl. Opt. 60, 8198-8205 (2021) [Spotlight on Optics]
+5. C. Wang, X. Chen*, H. Gu, H. Jiang, C. Zhang, and S. Liu, “On the limits of low-numerical-aperture imaging scatterometry,” Opt. Express 28, 8445-8462 (2020)",,https://mse.hust.edu.cn/__local/5/12/11/A073AEAEC0E8C911102632D6C37_A720CB33_EDEA.jpg,研究生,博士,1,,
+陈冰,95,145,027-87557224,chenbing@hust.edu.cn,副教授,陈冰（Chen Bing，Associate Professor），本科毕业于北方交通大学电气工程系，硕士和博士毕业于华中科技大学机械学院，一直从事电机控制、运动控制、智能机器人和制造自动化等相关研究工作。,运动控制智能机器人电机控制,,,,国家自然科学基金“高性能并条机的纤维运动参数在线辨识和智能自调匀整研究”,,"[1] Variable angle compensation control of noncircular turning. The International Journal of Advanced Manufacturing Technology, 2014, 70:735–746
+[2] Operation characteristics of the brushless doubly-fed machine with a double-sine wound rotor in the stand-alone generation system，2014 International Conference on Automation, Mechanical and Electrical Engineering，2014
+[3] A Disturbance Rejection Control Method for Positioning of PMLSM，Second International Conference on Electric Information and Control Engineering, 2012",,https://mse.hust.edu.cn/__local/D/E6/1F/0EC3471BC3AE0A6A61668A07E74_6AA5BC3E_11F97.jpg,研究生,博士,1,,
+陈吉红,95,145,027-87559921,jihong@hust.edu.cn,教授,"陈吉红（ChenJihong，Professor），1965年8月出生,湖南省攸县人。华中科技大学教授、博士生导师。现任国家数控系统工程技术研究中心主任、武汉华中数控股份有限公司董事长、“高档数控系统创新团队”国家重大领域创新团队负责人。陈吉红教授长期从事数控、精密测量、CAD/CAM技术的研究开发和产业化工作。组织和承担完成了国家重大科技攻关项目、国家重大科技专项、国家863项目、国家自然科学基金等四十余项。2009年至今，组织国家数控系统工程中心和华中数控，获得“高档数控机床与基础制造装备”国家重大专项的12项课题立项，获得中央国拨经费3亿多元。2014年，“高档数控系统创新团队”入选科技部重点领域创新团队,2016年,该团队被评为“'十二五'机械工业优秀创新团队”。获得发明专利25项、实用新型6项、软件著作权20多项；制订和起草了数控系统国家标准和行业标准11项；在国内外学术期刊和会议上发表学术论文近百篇。主编出版教材《数控机床实验指南》、《数控机床电气控制》、《数控机床现代加工工艺》等。参加指导的博士后7人，博士生25人、硕士生30人先后获得了学位。领导国家数控系统工程技术研究中心，在四年一次的国家级评估中，连续3次评优。领导华中数控公司发展成为国产数控系统的龙头企业，我国数控系统行业唯一的上市公司。研制的具有自主技术创新的华中8型高性能数控系统，打破了国外技术封锁，在高速高精、现场总线、双轴同步、双通道多主轴控制、大功率驱动器及大功率伺服电机、直线电机控制、电主轴驱动器、力矩电机控制、绝对式编码器/光栅尺接入、在线测量等一系列关键技术实现突破。目前，华中8型高性能数控系统已累计销售数万套，伺服电机近百万套，取得了显著的经济社会效益。主要社会兼职：“高档数控机床与基础制造装备”国家重大科技专项总体组专家教育部第七届科学技术委员会先进制造学部委员中国机床工具协会副理事长，兼任数控系统分会理事长国家发改委、工信部专家委员会专家国家智能制造标准化专家咨询组专家全国机床数控系统标准化委员会（TC367）副主任委员",智能化/网络化数控技术机器人技术CAD/CAM技术,,,,"国家重大专项（04）：开放式高档数控系统、伺服装置和电机成套产品开发与综合验证，2012.1-2015.12
+国家重大专项（04）：华中标准型数控系统和专用数控系统开发与规模化推广应用，2012.1-2015.12
+国家重大专项（04）：与工艺融合的高端多轴加工工艺与编程方法研究，2013.1-2015.12
+国家支撑计划项目：云计算结构，2012.12-2015.12
+国家重大专项（04）：国产数控系统应用技术规范，2014.1-2016.12
+国家重大专项（04）：基于开放式数控系统二次开发平台的航天领域专用数控系统开发，2014.1-2016.12
+国家重大专项（04）：国产高档数控机床与技术在航空领域综合应用验证及工艺研究，2014.1-2016.12
+国家重大专项（04）：高档数控系统关键共性技术创新能力平台（二期），2015.1-2017.12
+国家重大专项（04）:高档数控装备及工艺在XX大型整体舱段集成制造中的示范应用,2015.1-2017.12
+智能制造专项：数控机床互联通讯协议标准与试验验证，2016.6-2018.7","2017年，国家科技进步二等奖，高性能数控系统关键技术及产业化
+2016年，中国机械工业科学技术一等奖，高性能数控系统关键技术及应用
+2016年，湖北省科技进步一等奖，华中8型高性能数控系统
+2014年，湖北省技术发明一等奖，高档数控系统NCUC-Bus现场总线技术及应用
+2012年，湖北高校十大科技成果转化特等奖，华中高性能数控系统产业化
+2010年，国务院享受特殊津贴专家
+2009年，教育部科技进步奖一等奖，高性能全数字伺服驱动和电机关键技术及应用
+2009年，武汉市科技进步一等奖，高性能数控系统产业化
+2008年，湖北省科技进步一等奖，高档数控系统关键技术研究及推广应用
+2007年，湖北省科技进步二等奖，HNC-21数控装置、伺服及主轴驱动成套系统
+2006年，获湖北省五四青年奖章
+2004年，湖北省科技进步三等奖，全数字交流伺服驱动单元
+2004年，湖北省政府专项津贴专家
+2003年，入选湖北省跨世纪人才工程（第一层次）
+2002年，武汉市享受特殊津贴专家
+2001年，获中国优秀博士后奖
+2000年，国家科技进步奖二等奖，华中I型数控系统","1.JihongChen,JianzhongYang*,HuichengZhou,HuaXiang,ZhihongZhu,YesongLI,Chen-HanLee,GuangdaXu.CPSModelingofCNCMachineToolWorkProcessesUsinganInstruction-DomainBasedApproach，Engineering，2015,1（2）：247-260.
+2.XieChuanning,TangXiaoqi,ChenJihong,SongBao,*JinJian,andZhangHangjun.HumidityThresholdModelofCNCMultilayerPrintedCircuitBoardforElectrochemicalMigration.QualityandReliabilityEngineeringInternational,2015,31(4):567–578.
+3.WeiFan,Chen-HanLee,JihongChen.Arealtimecurvature-smoothinterpolationschemeandmotionplanningforCNCmachiningofshortlinesegments.InternationlaJournalofmachineToolandManufacture,2015,96:27-46.
+4.WeiFan,Chen-HanLee,JihongChen;XiaoYao.Real-timeBezierinterpolationsatisfyingchorderrorconstraintforCNCtoolpath.ScienceChinaTechnologicalSciences,2016，59（2）：203-213.",,https://mse.hust.edu.cn/__local/B/26/CA/DEBCF822C8CA3CBCD78CACBEFF9_F1D3855F_11745.jpg,研究生,博士,1,,
+陈於学,95,145,,chenyuxue@hust.edu.cn,副教授,陈於学（ChenYuxue，AssociateProfessor），1988年大学本科毕业后到襄阳汽车轴承股份有限公司工作12年，并于1998年在企业被评为高级工程师。2000年至2005年在华中科技大学机械学院学习，硕、博连读，获博士学位。2005年至2006年到日本恩斯克中国技术中心工作一年，2006年进入华中科技大学机械学院仪器系工作。长期从事滚动轴承相关技术研究。在滚动轴承接触振动、轴承的故障诊断、轴承检测和轴承的自动化装配等方面有独到的见解。,精密仪器自动检测自动化装备轴承振动轴承故障诊断,,,,"1、襄阳汽车轴承股份有限公司《混合式驱动轴总成装配线改造》
+2、襄阳汽车轴承股份有限公司《圆锥滚子轴承自动装配线》
+3、数控一代国家科技支撑计划《圆锥滚子轴承数字化高速自动装配线》
+4、重庆长江轴承股份有限公司《三代轮毂轴承在线测振技术开发》
+5、重庆长江轴承股份有限公司《三代轮毂轴承刚度（负游隙）在线测量技术开发》
+6、重庆长江轴承股份有限公司《深沟球轴承全自动振动测量仪》",,"1、DynamicMeasurementofBearingRadialClearances(SCI)：KeyEngineeringMaterials,v295-296,2005,p361-366
+2、弹性体线接触副的非线性振动研究：轴承，2007(11),336:8-11
+3、On-linetestsystemforvibrationmeasurementandsortingofballbearings(SCI):KeyEngineeringMaterials,p502-506MeasurementTechnologyandIntelligentInstrumentsIX,ISSN1013-9826v437,2010
+4、ResearchonOn-LineAutomaticDiagnosticTechnologyforScratchDefectofRollingElementBearings(SCI)：INTJPRECISENGMAN：ISSN：2234-7593，2012,Vol.13,No.3,pp.357-362",,https://mse.hust.edu.cn/__local/2/06/81/C7AFDC0AFAD8A591B15E244AD4D_FD2DD5E5_14116.jpg,研究生,博士,1,,
+陈文斌,95,145,,wbchen@hust.edu.cn,教授,陈文斌（ChenWenbin，Professor），2012年毕业于华中科技大学机械电子工程专业，获工学博士学位，2013-2014赴英国林肯大学从事博士后研究。主要从事人体运动行为与认知、穿戴式机器人、人机混合智能系统和机器人运动规划等方向的研究工作。作为项目负责人先后主持国家自然科学基金面上项目、国家重点研发计划子课题、NSFC-深圳联合基金重点项目、JKW重点项目子课题等。获中国机械工业联合会科学技术发明奖技术发明一等奖1项、湖北省技术发明一等奖1项和日内瓦国际发明博览会金奖2项，获中国医疗器械注册证3项。研究成果发表在包括SoftRobotics、IEEETrans.Cybern.、IEEEIEEE/ASMETrans.Mechatron.、IEEETNeur.Sys.Reh.、Gait&Posture等机器人与康复医学工程等领域的国际顶级期刊，受到人机一体化领域国际著名学者和机构的引用与正面评述“在外骨骼机器人领域提出了非常先进的变革性技术”。出版机器人学教材1部，先后获国家出版领域最高奖-中国出版政府奖、教育部首届全国优秀教材一等奖。,人体运动行为与认知穿戴式机器人人机混合智能系统机器人运动规划,,,"医疗器械许可证：手指关节康复评估系统，苏械注准20192191549
+医疗器械许可证：便携式手功能康复训练系统，苏械注准20212190847
+医疗器械许可证：手功能康复训练系统，苏械注准20192191550","[1]华中科技大学交叉研究计划重点项目，大脑运动功能机制及其在人手运动功能再造中的验证，2024.1-2026.12，主持。
+[2]湖北省重点研发计划，活动肿瘤靶区实时精准定位放疗机器人关键技术研究，2024.1-2026.12，主持。
+[3]国家自然科学基金面上项目，基于剪切增稠效应的被动变刚度关节设计原理及其在被动外骨骼中的应用研究，2021.1-2024.12，主持。
+[4]JKW重点项目课题“**
+
+
+
+
+
+
+,CaihuaXiong*,BoHuang,LongfeiChengandBaiyangSun,Exploringtheeffectsofskeletalarchitectureandmusclepropertiesonbipedalstandinginthecommonchimpanzee(Pantroglodytes)fromtheperspectiveofbiomechanics,FrontiersinBioengineeringandBiotechnology,11:1-18,2023.
+[2]WenbinChen,XiangFang,JingmingChe,CaihuaXiong*,Designandanalysisofpassivevariablestiffnessdevicebasedonshearstiffeninggel,SmartMaterialsandStructures,31(12):125007,2022.
+[3]TianchengZhou,ZhijieZhou,HanwenZhang,WenbinChen*，Modulatingmultiarticularenergyduringhumanwalkingandrunningwithanunpoweredexoskeleton,Sensors,22(21):8539,2022.
+[4]QuanlinLi,YangXia,XianzongWang,PeiyangXin,WenbinChen,CaihuaXiong,Muscle-Effort-Minimization-InspiredKinematicRedundancyResolutionforReplicatingNaturalPostureofHumanArm,IEEETrans.onNeuralSystems&RehabilitationEngineering,30:2341-2351,2022.
+[5]陈文斌，张宇霖，付豪，范翔，熊蔡华等，基于3-RRR非对称球面并联机构的假肢肩关节机构优化设计，中国科学：技术科学，2022.(DOI:10.1360/SST-2021-0425)",,,,https://mse.hust.edu.cn/__local/5/18/AF/53BB52CABC5B7386CB7D398E593_78D7BE65_11FB8.jpg,研究生,博士,1,,
+曹颖,95,145,,caoying@mail.hust.edu.cn,副教授,曹颖（CaoYing，AssociateProfessor），女，1983年1月出生，籍贯湖北大冶，中共党员。2007年硕士毕业于华中科技大学建筑与城市规划学院设计艺术学专业，同年进入机械科学与工程学院工业设计系担任教师。现任工业设计系党支部副书记，热爱本职工作，认真负责，在教学上对学生严格要求，倾心指导，民主交流。善于以教学结合思政的方式引导学生，运用多种教学方法，强调与学生的互动，用生动有趣的启发式讲授和丰富多彩的多媒体手段来调动学生的学习兴趣和创造性，对学生进行及时的辅导和帮助，带领学生参与国内外工业设计竞赛并获奖，使学生更好的学到知识和能力。现任中国人工智能学会会员，近年来，作为学术骨干主持或参与完成“本科教学协同计划”“设计学专业基础核心课程《设计初步》的教学改革与实践”等教研项目，“青年教师基金项目”“省自然科学基金面上项目”等纵向科研项目，以及“工业产品创新设计研发”“海洋三用工作船工业设计”“激光器外观设计”等横向科研项目。在国内外核心期刊和会议上发表论文多篇。,展示空间设计产品设计用户体验,,,专利（软件）名称：电磁炉，2010。,教研项目情况：1.《设计速写》基础课程获校精品课程，排名第三；2.本科教学协同计划——设计基础(Ⅱ)-业界课程（特邀腾讯），3.项目来源“985”拔尖创新，2013年3月-6月，排名第二；4.设计学专业基础核心课程《设计初步》的教学改革与实践，5.2014年教学研究项目，面上项目，2014年3月至2016年6月，排名第二；6.参与教育部质量工程-艺术设计人才培养模式创新实验区（工业设计方向）。纵向科研项目:1.设计艺术中的“行为语意态”研究，青年教师基金项目，2013年1月-2014年12月，排名第一；2.数字媒体中的人机交互方式与形式研究，青年教师基金项目，2013年1月-2014年12月，排名第二；3.面向复杂产品概念设计的协同决策方法研究，青年教师基金项目，2011年1月-2012年12月，排名第四；4.参与省基金一项，排名第三；5.基于拓扑优化的机械产品工业设计与结构设计一体化技术，省自然科学基金面上项目，排名第三。横向科研项目情况：1.参与工业产品创新设计研发，民用横向，2011年2月-2011年8月；2.参与海洋三用工作船工业设计，民用横向，2012年12月-2014年1月；3.参与激光器外观设计，民用横向，2013年3月-2014年3月；4.参与湖北省科技馆“身边的科学”系列展品展项设计研发。,1.华中科技大学青年教师教学竞赛二等奖，2010年度；2.华中科技大学教学质量奖二等奖，2011年度；3.华中科技大学优秀辅导员，2010年度；4.华中科技大学优秀教师班主任，2013年度；5.华中科技大学教学质量奖二等奖，2014年度。,1.创意产业背景下的展示设计及教学思考，科教导刊，2010；2.科技展示中的主角-科技展品设计研究，重庆大学出版社，2010；3.Researchontheuserexperienceinthesci-techdisplaydesign，Computer-AidedIndustrialDesign&ConceptualDesign，2011；4.王屋山-黛眉山国家地质公园研究报告封面系列设计，包装工程，2012；5.金刚台国家地质博物馆展厅室内设计，中国地质大学学报，2013。,,https://mse.hust.edu.cn/__local/5/8A/2C/DBA9439A1E1E883B20DAAFE340F_4DB32753_113FA.jpg,研究生,硕士,1,,东一楼四楼
+曹淮,95,145,027-87541744,caohuai@hust.edu.cn,副教授,曹淮（CaoHuai，AssociateProfessor）博士、副教授，硕士研究生导师，工业设计系主任。中国人工智能学会智能创意与数字艺术专业委员会委员中国工业设计协会用户体验产业分会常务理事广东华中科技大学工业技术研究院设计服务中心主任机械学院数字装备工业设计研究室主任华中科技大学-中道善品创新设计团队负责人东莞市创新创业领军人才,工业品牌战略研究与设计智能装备工业设计服务设计/用户体验设计工业&科技空间营造区域经济转型升级策略,,,,,,,,https://mse.hust.edu.cn/__local/D/D5/6D/3A7B3E695FFF412A053F0957F23_1E017E62_10F92.jpg,研究生,博士,1,,东一楼四楼
+陈建魁,95,145,027-87559840,chenjk@hust.edu.cn,研究员,陈建魁（ChenJiankui，Professor），男，研究员，博士生导师。在数字制造装备与技术国家重点实验室开展前沿领域科研工作，致力于柔性电子制造与人工智能领域的关键技术突破、机理探索、智能算法开发等研究。所研究成果在RoboticsandComputer-IntegratedManufacturing、IEEETransactions、Thin-WalledStructures、ManufacturingProcesses、MechanicalSciences、MeasurementScienceandTechnology等期刊发表SCI论文40余篇，获国家技术发明奖二等奖、国家科学技术进步奖二等奖、湖北省技术发明奖一等奖、湖南省科技进步奖一等奖、日内瓦国际发明展特别金奖与金奖等，以第一发明人获授权国家发明专利100余项、美国发明专利3项，获“武汉黄鹤英才”、“湖北省百名专利发明领军人才”等。,柔性电子制造装备与技术新型显示制造工艺、技术与装备智能制造与人工智能,,,"ChenJiankui,JinYiwei,YinZhouping,HuangYongan.LaserStrippingMass-transferDeviceandMethodforMicrodevicesBasedonWindingProcess.US17041464
+ChenJiankui,YinZhouping,HuangYongan,etal.ManufacturingSystemandMethodforInkjetPrintingFlexibleDisplayDevice.US11214077
+陈建魁，尹周平，黄永安，杨华，等：一种喷墨打印柔性显示器件制造系统及方法.PCT国际，PCT/CN2020/090592
+陈建魁,尹周平,等:一种基于卷绕工艺的微器件激光剥离巨量转移装置及方法.PCT国际，PCT/CN2019/094133
+陈建魁,尹周平,黄永安,等:一种用于飞行墨滴状态观测的装置.中国,ZL201910757979.X","[1]自然科学基金面上项目：电流体喷印飞升级墨滴阵列调控机理研究
+[2]广东省重点领域研发计划项目：印刷OLED显示高精度喷墨打印设备研发及应用
+[3]国家重点研发计划项目：高性能印刷电子器件的高精度跨尺度喷印制造基础研究
+[4]自然科学基金面上项目：柔性电子卷到卷制造中异质结构可控转移与层合机理
+[5]科技支撑计划项目：无菌制剂机器人自动化生产线研制与应用
+[6]自然科学基金重点项目：大面积柔性电子曲面共形制造及智能蒙皮应用
+[7]国家重大科研仪器设备研制专项：高超音速流场实时精确测量系统的研制与应用
+[8]科技支撑计划项目：燃料电池膜电极（MEA）专用装备研发与示范
+[9]国家973计划项目：高密度倒装键合中多物理量协同控制机制与实现","[1]2021年湖北省技术发明奖一等奖
+[2]2018年日内瓦国际发明展特别金奖
+[3]2017年国家科学技术进步奖二等奖
+[4]2016年湖南省科学技术进步奖一等奖
+[5]2016年武汉市“黄鹤英才（科技）计划”
+[6]2014年日内瓦国际发明展金奖
+[7]2013年国家技术发明奖二等奖
+[8]2011年湖北省技术发明奖一等奖","[1]QiangqiangLiu,JiankuiChen*,HuaYang,ZhoupingYin.AccurateStereo-Vision-BasedFlyingDropletVolumeMeasurementMethod,IEEETransactionsonInstrumentationandMeasurement,2021
+[2]Jinyiwei,ChenJiankui*,YinZhouping,Liyiqun,HuangMengmeng.PositionerrorlimitforthelastdropletdepositionintomicrocavityinmanufacturingofprintedOLEDs,Langmuir,2021
+[3]JiankuiChen,SihuiYang,YiqunLi*,ZhoulongXu,Yong'anHuang.ActiveCurvedSurfaceDeformingofFlexibleConformalElectronicsbyMulti-FingeredActuator,RoboticsandComputer-IntegratedManufacturing,2020
+[4]YiqunLi,RazikhovaMeiramgul,JiankuiChen*,ZhoupingYin.GeometricSpectralAlgorithmsfortheSimulationofRigidBodies,JournalofComputationalandNonlinearDynamics,2019
+[5]JianKuiChen,TengLiu,HuaYang*,ZhouZhang,YongAnHuang,ZhouPingYin.Polygonal-feature-basedshapecontextforflexiblesurfacevisionpositioning.MeasurementScienceandTechnology,2019",,https://mse.hust.edu.cn/__local/4/CD/57/2F45259EED0A04E45C5265CB823_264DB3C9_1270E.jpg,研究生,博士,1,,先进制造大楼东楼B216
+陈蓉,95,145,"027-87558744,102-2020010",rongchen@hust.edu.cn,教授,陈蓉（Chen Rong，Professor），女，1978年出生，湖北武汉人，九三学社社员。华中科技大学教授（二级）、博士生导师。机械科学与工程学院副院长，华中科技大学柔性电子研究中心副主任。华中科技大学集成电路学院、 武汉国际微电子学院、光学与电子信息学院、中欧清洁与可再生能源学院特聘教授。2001年获得中国科学技术大学学士学位、2006年获得美国斯坦福大学博士学位。毕业后分别在美国应用材料和英特尔研究院担任高级技术职务。2011年回国，加入华中科技大学至今。担任第十一、十二届湖北省政协委员（优秀委员），中国科协第十届全国委员会委员，欧美同学会（中国留学人员联谊会）第八届理事会理事，武汉市欧美同学会副秘书长，华中科技大学欧美同学会秘书长，湖北省妇女人才促进会副会长。国家重大人才工程特聘教授（2023），国家级创新领军人才（2019），海外高层次青年人才（2011），2021年“科学探索奖”获得者。从事微纳制造的前沿交叉领域，开展原子层沉积方法、工艺与装备的研究。承担国家重点研发计划颠覆性技术创新项目、国基金重点项目、973青年项目等多项微电子与新能源相关项目，在Nat. Comm.，Adv Mater，Angew. Chem. Int. Ed，Small，Sci. Bullet.，IJEM，OEA等国内外期刊上发表SCI论文180余篇，主编撰写中英文出版物3部，获授权专利80余项、含10余项国际专利。兼任中国工程院Engineering期刊青年通讯专家、美国真空学会JVST A&B Editorial Board member、爱思唯尔PhysicaB期刊编辑等。以排名第一荣获湖北省技术发明一等奖2项、湖北省专利奖、全国颠覆性技术创新大赛优胜奖、入选2020“科创中国-先导技术榜单”等。在国际上，获得IEEE SMC杰出学术贡献奖、日内瓦发明展特别金奖、金奖等，作为召集人制定并发布国际标准“Atomic layer deposition –Vocabulary”（ISO 8181：2023）。,主要为用实验手段研究纳米材料、纳米器件、和其工艺过程的研究，以及用它们来解决未来能源和电子工业所即刻面临的挑战。研究的重点在于控制材料的生长、结构、及其性能，用于制造和表征具有精确的物质组成、以及原子尺度上可控的纳米结构，并且将其整合成纳米器件。具体的研究领域包括: 选择性原子层沉积方法 纳米颗粒制备与改性 柔性电子制造薄膜生长工艺与装备 光电显示、光电转换器件制备与开发 具体内容可参见,,,,"[1] 国家自然科学基金指南引导类原创探索计划项目(52350349)，185万，负责人
+[2] 国家重点研发计划颠覆性技术创新项目(2022YFF1500400) ，1000万，负责人
+[3] 科学探索奖项目，300万，负责人
+[4] 机械学院STAR自主创新研究基金“恒星”项目，100万，负责人
+[5] 制造基础技术与关键部件国家重点研发计划，76.2万，课题研究任务负责人
+[6] 横向产学研项目，595万，负责人
+[7] 国家自然科学基金重点项目(51835005)，351.8万，项目负责人
+[8] 973国家重大科学研究计划青年项目（2013CB934800），476万，首席科学家
+[9] 国家自然科学基金面上项目（51575217），79.2万，项目负责人
+[10] 国家自然科学基金国际(地区)合作与交流项目(51911540476)，9万，负责人","[1] 2024年 2023年度湖北省技术发明奖一等奖
+[2] 2023年 第二十五届中国科协求是杰出青年成果转化奖
+[3] 2022年 第十七届中国青年科技奖
+[4] 2021年 中国工程院-中国工程前沿杰出青年学者
+[5] 2021年 全国颠覆性技术创新大赛优胜奖
+[6] 2021年 第三届“科学探索奖（先进制造）”获得者
+[7] 2021年 华中科技大学“国际交流与合作先进个人”","[1] Yicheng Li#, Zilian Qi#, Yuxiao Lan, Kun Cao*, Yanwei Wen, Jingming Zhang, Eryan Gu, Junzhou Long, Jin Yan, Bin Shan, Rong Chen* “Self-Aligned Patterning of Tantalum Oxide on SiO2/Cu through Redox-coupled Inherently Selective Atomic Layer Deposition” Nature Communt. 2023, 14, 4493.
+[2] Rong Chen*, Kun Cao, Yanwei Wen, Fan Yang, Jian Wang, Xiao Liu, Bin Shan “Atomic layer deposition in advanced display technologies: from photoluminescence to encapsulation” Int. J. Extrem. Manuf. 2024, 6, 022003.
+[3] Zoushuang Li, Yuanxiao Chen, Yufeng Nie, Fan Yang, Xiao Liu, Yuan Gao, Bin Shan, Rong Chen* “Multiscale Computational Fluid Dynamics Modelling of spatial ALD on porous Li-ion battery electrodes” Chem. Eng. J. 2024, 479, 147486.
+[4] Xiao Liu, Shuangfeng Jia, Ming Yang, Yuanting Tang, Yanwei Wen, Shengqi Chu, Jianbo Wang, Bin Shan*, Rong Chen*, “Activation of subnanometric Pt on Cu-modified CeO2 via redox-coupled atomic layer deposition for CO oxidation” Nature Comm. 2020, 11, 4240.
+[5] Jianfeng Wanyan, Kun Cao, Zhiping Chen, Yun Li, Chenxi Liu, Runqing Wu, Xiao-Dong Zhang*, Rong Chen* “Predictive tool for sensitive and expedited measurement of ultra-barrier permeation” Engineering 2021, 7 (10), 1461.",,https://mse.hust.edu.cn/__local/2/2F/82/8279E47E94499C3AC4A0793ACAB_295850C4_118C9.jpg,研究生,博士,1,机械科学与工程学院副院长，华中科技大学柔性电子研究中心副主任,
+陈蓉,95,145,"102-2020010,027-87558744",rongchen@hust.edu.cn,教授,陈蓉（Chen Rong，Professor），女，1978年出生，湖北武汉人，九三学社社员。华中科技大学教授（二级）、博士生导师。机械科学与工程学院副院长，华中科技大学柔性电子研究中心副主任。华中科技大学集成电路学院、 武汉国际微电子学院、光学与电子信息学院、中欧清洁与可再生能源学院特聘教授。2001年获得中国科学技术大学学士学位、2006年获得美国斯坦福大学博士学位。毕业后分别在美国应用材料和英特尔研究院担任高级技术职务。2011年回国，加入华中科技大学至今。担任第十一、十二届湖北省政协委员（优秀委员），中国科协第十届全国委员会委员，欧美同学会（中国留学人员联谊会）第八届理事会理事，武汉市欧美同学会副秘书长，华中科技大学欧美同学会秘书长，湖北省妇女人才促进会副会长。国家重大人才工程特聘教授（2023），国家级创新领军人才（2019），海外高层次青年人才（2011），2021年“科学探索奖”获得者。从事微纳制造的前沿交叉领域，开展原子层沉积方法、工艺与装备的研究。承担国家重点研发计划颠覆性技术创新项目、国基金重点项目、973青年项目等多项微电子与新能源相关项目，在Nat. Comm.，Adv Mater，Angew. Chem. Int. Ed，Small，Sci. Bullet.，IJEM，OEA等国内外期刊上发表SCI论文180余篇，主编撰写中英文出版物3部，获授权专利80余项、含10余项国际专利。兼任中国工程院Engineering期刊青年通讯专家、美国真空学会JVST A&B Editorial Board member、爱思唯尔PhysicaB期刊编辑等。以排名第一荣获湖北省技术发明一等奖2项、湖北省专利奖、全国颠覆性技术创新大赛优胜奖、入选2020“科创中国-先导技术榜单”等。在国际上，获得IEEE SMC杰出学术贡献奖、日内瓦发明展特别金奖、金奖等，作为召集人制定并发布国际标准“Atomic layer deposition –Vocabulary”（ISO 8181：2023）。,主要为用实验手段研究纳米材料、纳米器件、和其工艺过程的研究，以及用它们来解决未来能源和电子工业所即刻面临的挑战。研究的重点在于控制材料的生长、结构、及其性能，用于制造和表征具有精确的物质组成、以及原子尺度上可控的纳米结构，并且将其整合成纳米器件。具体的研究领域包括: 选择性原子层沉积方法 纳米颗粒制备与改性 柔性电子制造薄膜生长工艺与装备 光电显示、光电转换器件制备与开发,,,,"[1] 国家自然科学基金指南引导类原创探索计划项目(52350349)，185万，负责人
+[2] 国家重点研发计划颠覆性技术创新项目(2022YFF1500400) ，1000万，负责人
+[3] 科学探索奖项目，300万，负责人
+[4] 4机械学院STAR自主创新研究基金“恒星”项目，100万，负责人
+[5] 制造基础技术与关键部件国家重点研发计划，76.2万，课题研究任务负责人
+[6] 横向产学研项目，595万，负责人
+[7] 国家自然科学基金重点项目(51835005)，351.8万，项目负责人
+[8] 973国家重大科学研究计划青年项目（2013CB934800），476万，首席科学家
+[9] 国家自然科学基金面上项目（51575217），79.2万，项目负责人
+[10] 国家自然科学基金国际(地区)合作与交流项目(51911540476)，9万，负责人","[1] 2024年 2023年度湖北省技术发明奖一等奖
+[2] 2023年 第二十五届中国科协求是杰出青年成果转化奖
+[3] 2022年 第十七届中国青年科技奖
+[4] 2021年 中国工程院-中国工程前沿杰出青年学者
+[5] 2021年 全国颠覆性技术创新大赛优胜奖","[1] Yicheng Li#, Zilian Qi#, Yuxiao Lan, Kun Cao*, Yanwei Wen, Jingming Zhang, Eryan Gu, Junzhou Long, Jin Yan, Bin Shan, Rong Chen* “Self-Aligned Patterning of Tantalum Oxide on SiO2/Cu through Redox-coupled Inherently Selective Atomic Layer Deposition” Nature Communt. 2023, 14, 4493.
+[2] Rong Chen*, Kun Cao, Yanwei Wen, Fan Yang, Jian Wang, Xiao Liu, Bin Shan “Atomic layer deposition in advanced display technologies: from photoluminescence to encapsulation” Int. J. Extrem. Manuf. 2024, 6, 022003.
+[3] Zoushuang Li, Yuanxiao Chen, Yufeng Nie, Fan Yang, Xiao Liu, Yuan Gao, Bin Shan, Rong Chen* “Multiscale Computational Fluid Dynamics Modelling of spatial ALD on porous Li-ion battery electrodes” Chem. Eng. J. 2024, 479, 147486.
+[4] Xiao Liu, Shuangfeng Jia, Ming Yang, Yuanting Tang, Yanwei Wen, Shengqi Chu, Jianbo Wang, Bin Shan*, Rong Chen*, “Activation of subnanometric Pt on Cu-modified CeO2 via redox-coupled atomic layer deposition for CO oxidation” Nature Comm. 2020, 11, 4240.
+[5] Jianfeng Wanyan, Kun Cao, Zhiping Chen, Yun Li, Chenxi Liu, Runqing Wu, Xiao-Dong Zhang*, Rong Chen* “Predictive tool for sensitive and expedited measurement of ultra-barrier permeation” Engineering 2021, 7 (10), 1461.",,https://mse.hust.edu.cn/__local/2/2F/82/8279E47E94499C3AC4A0793ACAB_295850C4_118C9.jpg,研究生,博士,1,,
+陈蓉,95,145,"102-2020010,027-87558744",rongchen@hust.edu.cn,教授,陈蓉（ChenRong，Professor），女，1978年出生，湖北武汉人，九三学社社员。华中科技大学教授（二级）、博士生导师。机械科学与工程学院副院长，华中科技大学柔性电子研究中心副主任。华中科技大学集成电路学院、武汉国际微电子学院、光学与电子信息学院、中欧清洁与可再生能源学院特聘教授。2001年获得中国科学技术大学学士学位、2006年获得美国斯坦福大学博士学位。毕业后分别在美国应用材料和英特尔研究院担任高级技术职务。2011年回国，加入华中科技大学至今。担任第十一、十二届湖北省政协委员（优秀委员），中国科协第十届全国委员会委员，欧美同学会（中国留学人员联谊会）第八届理事会理事，武汉市欧美同学会副秘书长，华中科技大学欧美同学会秘书长，湖北省妇女人才促进会副会长。国家重大人才工程特聘教授（2023），国家级创新领军人才（2019），海外高层次青年人才（2011），2021年“科学探索奖”获得者。从事微纳制造的前沿交叉领域，开展原子层沉积方法、工艺与装备的研究。承担国家重点研发计划颠覆性技术创新项目、国基金重点项目、973青年项目等多项微电子与新能源相关项目，在Nat.Comm.，AdvMater，Angew.Chem.Int.Ed，Small，Sci.Bullet.，IJEM，OEA等国内外期刊上发表SCI论文180余篇，主编撰写中英文出版物3部，获授权专利80余项、含10余项国际专利。兼任中国工程院Engineering期刊青年通讯专家、美国真空学会JVSTA&BEditorialBoardmember、爱思唯尔PhysicaB期刊编辑等。以排名第一荣获湖北省技术发明一等奖2项、湖北省专利奖、全国颠覆性技术创新大赛优胜奖、入选2020“科创中国-先导技术榜单”等。在国际上，获得IEEESMC杰出学术贡献奖、日内瓦发明展特别金奖、金奖等，作为召集人制定并发布国际标准“Atomiclayerdeposition–Vocabulary”（ISO8181：2023）。,主要为用实验手段研究纳米材料、纳米器件、和其工艺过程的研究，以及用它们来解决未来能源和电子工业所即刻面临的挑战。研究的重点在于控制材料的生长、结构、及其性能，用于制造和表征具有精确的物质组成、以及原子尺度上可控的纳米结构，并且将其整合成纳米器件。具体的研究领域包括:选择性原子层沉积方法纳米颗粒制备与改性柔性电子制造薄膜生长工艺与装备光电显示、光电转换器件制备与开发具体内容可参见,,,,"[1]国家自然科学基金指南引导类原创探索计划项目(52350349)，185万，负责人
+[2]国家重点研发计划颠覆性技术创新项目(2022YFF1500400)，1000万，负责人
+[3]科学探索奖项目，300万，负责人
+[4]4机械学院STAR自主创新研究基金“恒星”项目，100万，负责人
+[5]制造基础技术与关键部件国家重点研发计划，76.2万，课题研究任务负责人
+[6]横向产学研项目，595万，负责人
+[7]国家自然科学基金重点项目(51835005)，351.8万，项目负责人
+[8]973国家重大科学研究计划青年项目（2013CB934800），476万，首席科学家
+[9]国家自然科学基金面上项目（51575217），79.2万，项目负责人
+[10]国家自然科学基金国际(地区)合作与交流项目(51911540476)，9万，负责人","[1]2024年2023年度湖北省技术发明奖一等奖
+[2]2023年第二十五届中国科协求是杰出青年成果转化奖
+[3]2022年第十七届中国青年科技奖
+[4]2021年中国工程院-中国工程前沿杰出青年学者
+[5]2021年全国颠覆性技术创新大赛优胜奖
+[6]2021年第三届“科学探索奖（先进制造）”获得者
+[7]2021年华中科技大学“国际交流与合作先进个人”
+[8]2020年“湖北省女性科技创新人才”
+[9]2020年华中科技大学“外事先进个人”
+[10]2019年华中科技大学师德先进个人","[1]YichengLi#,ZilianQi#,YuxiaoLan,KunCao*,YanweiWen,JingmingZhang,EryanGu,JunzhouLong,JinYan,BinShan,RongChen*“Self-AlignedPatterningofTantalumOxideonSiO2/CuthroughRedox-coupledInherentlySelectiveAtomicLayerDeposition”NatureCommunt.2023,14,4493.
+[2]RongChen*,KunCao,YanweiWen,FanYang,JianWang,XiaoLiu,BinShan“Atomiclayerdepositioninadvanceddisplaytechnologies:fromphotoluminescencetoencapsulation”Int.J.Extrem.Manuf.2024,6,022003.
+[3]ZoushuangLi,YuanxiaoChen,YufengNie,FanYang,XiaoLiu,YuanGao,BinShan,RongChen*“MultiscaleComputationalFluidDynamicsModellingofspatialALDonporousLi-ionbatteryelectrodes”Chem.Eng.J.2024,479,147486.
+[4]XiaoLiu,ShuangfengJia,MingYang,YuantingTang,YanweiWen,ShengqiChu,JianboWang,BinShan*,RongChen*,“ActivationofsubnanometricPtonCu-modifiedCeO2viaredox-coupledatomiclayerdepositionforCOoxidation”NatureComm.2020,11,4240.
+[5]JianfengWanyan,KunCao,ZhipingChen,YunLi,ChenxiLiu,RunqingWu,Xiao-DongZhang*,RongChen*“Predictivetoolforsensitiveandexpeditedmeasurementofultra-barrierpermeation”Engineering2021,7(10),1461.",,https://mse.hust.edu.cn/__local/2/2F/82/8279E47E94499C3AC4A0793ACAB_295850C4_118C9.jpg,研究生,博士,1,机械科学与工程学院副院长，华中科技大学柔性电子研究中心副主任,
+胡中旭,95,145,,zhongxu_hu@hust.edu.cn,教授,"胡中旭（HUZhongxu, Professor），男，1993年5月出生于河南省汤阴县。现任华中科技大学机械科学与工程学院教授，入选国家海外高层次（青年）人才、华中大“华中卓越学者”等人才计划。2018年于华中科技大学博士毕业后，先后在上海华为技术有限公司（高级工程师）、新加坡南洋理工大学（研究员）、日本理化学研究所（研究员（破格））等单位从事科研工作。2024年5月加入华中科技大学机械科学与工程学院。围绕制造系统数字化与智能化，先后参与承担了国家科技部重点基础研究发展计划、新加坡国家机器人计划、德国大陆-NTU联合项目等重大科研项目。以第一作者出版Springer英文专著1部；累计在IEEETIE、T-ITS、TIV、TPAMI等期刊发表论文50余篇，包含一作论文17篇、ESI高被引8篇、热点论文2篇、IEEE热门论文2篇；授权专利7项，含国际专利1项并实现成果转化；荣获Actuators2023TravelAward等学术奖项；此外兼任AUIN、工程科学学报等多个期刊的青年编委、学术编辑和客座编辑以及国际会议分论坛主席等学术任职。课题组与新加坡、香港、日本、美国、英国和法国等多个国家的前沿课题组保持长期合作。欢迎每一位人品端正、踏实严谨、有责任心、有探索欲的同学加入课题组。除机械专业外，也特别鼓励具有人工智能、计算机和数学等基础学科背景的同学联系课题组，一起从事研究工作。",智能人机交互与协作数字孪生驱动智能运维,,,7项，含国际专利1项并实现成果转化,"[1]南洋理工大学-Continental公司联合项目(A6)，Cobot with Adaptive aAGV(S$1,076,730,2021.08-2023.04)
+[2]新加坡科技局A*Star国家机器人计划(1922500046)，Intelligent shared control interface for aging operators of heavy machineries(S$985,000,2020.01-2022.08)
+[3]阿里巴巴集团达摩院创新项目(AN-GC-2020-013)，Human-machine collaboration for safe operation of automated vehicles(S$36,000,2021.03-2022.07)","[1]Actuators 2023 Travel Award(唯一获得者)
+[2]第二名(sAUC),第一名(AUC) SALICON Saliency Prediction Challenge(LSUN 2017)
+[3]第三届“中国创翼”武汉赛区优秀项目(负责人)","[1]Z.Hu, C.Lv, P.Hang, C.Huang and Y.Xing, Data-Driven Estimation of Driver Attention Using Calibration-Free Eye Gaze and Scene Features, IEEE Transactions on Industrial Electronics, vol.69, no.2, pp.1800-1808, Feb.2022.(ESI Highly Cited Paper，ESI Hot Paper)
+[2]Z.Hu, Y.Wang, M.Ge, J.Liu. Data-driven fault diagnosis method based on compressed sensing and improved multiscale network. IEEE Transactions on Industrial Electronics, 67(4), 3216-3225, 2019.(ESI Highly Cited Paper）
+[3]Z.Hu, Y.Zhang, Y.Xing, Y.Zhao, D.Cao, C.Lv. Toward Human-Centered Automated Driving: A Novel Spatiotemporal Vision Transformer-Enabled Head Tracker, IEEE Vehicular Technology Magazine, doi:10.1109/MVT.2021.3140047, 2022.(ESI Highly Cited Paper)
+[4]Z.Hu, Y.Xing, D.Cao, C.Lv. Driver Anomaly Quantification for Intelligent Vehicles: A Contrastive Learning Approach with Representation Clustering, IEEE Transactions on Intelligent Vehicles, doi:10.1109/TIV.2022.3163458, 2022.(ESI Highly Cited Paper)
+[5]Z.Hu, Y.Xing, D.Cao, C.Lv. Review and Perspectives on Driver Digital Twin and Enabling Technologies for Intelligent Vehicles, IEEE Transactions on Intelligent Vehicles, 2022.(IEEE Popular Paper)",,https://mse.hust.edu.cn/__local/7/1A/8D/35F71C6A17A8C70370E79730012_7601A9A7_16051.jpg,研究生,博士,1,教授,
+刘红奇,95,145,027-87542613,liuhq@hust.edu.cn,研究员,刘红奇（LiuHongqi，ResearchFellow），男，工学博士，国家数控系统工程研究中心研究员，博士生导师。中国人工智能学会智能制造专委会秘书长，中国计量测试学会几何量专业委员会委员，国家自然科学基金通讯评议专家，InternationalJournalofMachineTools&Manufacture，MeasurementScienceandTechnology等权威期刊的审稿人。2008年获得华中科技大学博士学位，2011年清华大学精仪系博士后出站，2012年至今在华中科技大学机械与科学工程国家数控系统工程研究中心从事教学与科研工作。主要从事数控技术、机床动力学、装备智能化监控、机床误差建模与分析、制造大数据等方面的研究工作。主持和参与了国家自然科学基金面上项目、国家支撑计划课题、863课题、民口973课题、国家智能制造专项、国家数控专项等国家级重大科研项目17项和企业合作项目10项；发表文章SCI/EI收录论文50多篇；授权发明专利40多项，获得软件著作权1项；相关成果获得湖北省科技进步一等奖1项和三等奖1项。,数控技术加工过程智能监控技术装备健康状态监测技术制造大数据,,,"基于坐标变换的导轨滑台运动的几何误差辨识方法（201810568930.5）
+一种导轨基面直线度误差的解耦辨识方法（201710187911.3）
+一种基于深度学习的数控机床刀具磨损监测方法（201711117628.X）
+一种基于二维卷积理论的工序信号数据提取及存储方法（201710131445.7）
+一种基于电机电流的铣削刀具碰撞快速辨识方法（201510283806.0）
+一种铣削加工刀具破损监测方法（201510900583.8）","薄壁结构复杂时变工况切削过程在线监测与自适应调控，工信部，310万，2021-2023年，负责人；（在研）
+基于信息物理系统（CPS）的计算机服务制造系统，工信部工业互联网工程，1600万，2020-2022年，参与；（在研）
+基于零件批量加工数据分析的加工工艺与流程优化，科技部重点研发计划，460万，2019-2022年，第二负责人；（在研）
+甲板机械及其关键零部件可靠性数据库，高技术船舶科研项目，工信部，150万，2019-2021年，第二；（结题）
+高精度薄壁零件加工的动力学特性分析与工艺在线精化方法研究，国家自然科学基金（面上项目），80万，2018.01-2021.12,负责人；（结题）
+船海工程机电设备核心产品远程运维关键技术标准研究及试验验证,国家智能制造专项，24万，2018.1-2019.12负责人；（结题）
+船海工程机电设备数字化车间，国家智能制造专项，100万，2017.1-2019.12，负责人；（结题）
+大型清洁高效发电设备智能制造数字化车间建设，国家智能制造专项，480万，2016.1-2018.12，负责人；（在研）
+中小型航空发动机轴类零件智能制造数字化车间建设，国家智能制造专项，100万，2017.1-2019.12,负责人；（结题）
+汽油发动机缸体、缸盖加工应用验证平台，国家重大专项（数控），339万，2014.1-2018.12，第二负责人；（结题）","湖北省科技进步一等奖
+湖北省科技进步三等奖","[1]YXie,KLian,QLiu,CZhang,HLiu.twinforcuttingtoolmodeling,serviceandapplicationstrategy,JournalofManufacturingSystems,01/2021,Volume58.
+[2]Liu,Hongqi;Lin,Hai;Jiang,Xuchu;Mao,Xinyong;Liu,Quanxin;Li,Bin.Estimationofmassmatrixinmachinetool‘sweakcomponentsresearchbyusingsymbolicregression,COMPUTERS&INDUSTRIALENGINEERING,01/2019,Volume127
+[3]Zhong,Xuemin;Liu,Hongqi;Mao,Xinyong;Li,Bin.AnOptimalMethodforImprovingVolumetricErrorCompensationinMachineToolsBasedonSquarenessErrorIdentification,InternationalJournalofPrecisionEngineeringandManufacturing,08/2019,Volume20,Issue10
+[4]Liu,Hongqi;Lin,Hai;Mao,Xinyong;Jiang,Xuchu;Liu,Quanxin;Li,Bin.SurfaceroughnessoptimalestimationfordiscpartsturningusingGaussian-process-basedBayesiancombinedmodel,PROCEEDINGSOFTHEINSTITUTIONOFMECHANICALENGINEERSPARTC-JOURNALOFMECHANICALENGINEERINGSCIENCE,06/2019,Volume233,Issue11.
+[5]Shi,Chengming;Panoutsos,George;Luo,Bo;Liu,Hongqi,Li,Bin,Lin,Xu.Usingmultiplefeaturespaces-baseddeeplearningfortoolconditionmonitoringinultra-precisionmanufacturing,07/2018",,https://mse.hust.edu.cn/__local/9/05/AC/48EECCE18EEADCEF6081D43E42E_A405AE6D_118F6.jpg,研究生,博士,1,,
+吴志刚,95,145,027-87544054,zgwu@hust.edu.cn,,吴志刚（Zhigang Wu，Professor），长期从事人形结构仿生机器人、具身智能软体机器人、数字（AI）驱动的智能软体设计与制造，承担了多项国家基金重点、面上项目，重大研发课题等科研项目，取得了多项创新成果。相关学术成果荣获2022年华中科技大学“重大科学进展”。在 Sci. Robot.、Nat. Commun.、Adv. Mater.、Natl. Sci. Rev. 等国际权威期刊共发表学术论文100余篇，多篇文章作为亮点文章或者封面文章介绍。所发表的论文被 SCI 期刊共引用大于5000次，目前 h 指数30。数篇论文分别进入当年（月）度热点文章，为《自然》、《美国科学院院刊》、《（英国皇家）化学协会评论》、《德国应用化学》等诸多顶尖杂志引用多次。申报境外专利6项，已授权4项，申报中国发明专利60余项，已授权36项。联合创办“柔性电子国际研讨会（ISFSE）”并多次担任 Program Chair，担任第五届“软体机器人理论与技术研讨会暨软体机器人创新设计”竞赛组织委员会主席。指导硕士生获中国研究生机器人创新设计大赛一等奖一次，指导本科生荣获全国机械创新设计大赛一等奖，湖北省挑战杯一等奖等。目前集中针对数字化、智能化的具身智能机器人开展深入研究，主要研究方向为人形结构仿生机器人、具身智能软体机器人和数字（AI）驱动的智能软体设计与制造等。欢迎各位对智能机器人设计制造、感知控制、算法设计的同学加入我们。详情见本课题组官网：,人形结构仿生机器人 具身智能软体机器人 数字（AI）驱动的智能软体设计与制造,,,"[1] Johan Kreuger, Sara Thorslund, Zhigang Wu, New use of a fluidic device, WO/2015/005863，已授权。
+[2] 一种延性电路制作方法，发明人：吴志刚、朱斌、彭鹏，国际申请号：PCT/CN2021/091381，德国实用新型专利，已授权，授权时间：2022.07.26。
+[3] 一种具备主动形变的抽吸切割式多点取样针，发明人：吴志刚、龙俊杰、吕良雄、陈贤文，国际申请号：PCT/CN2017/112770，日本专利，已授权，授权时间：2020.11.18。
+[4] 一种用于自动计分可重复使用的箭靶盘，发明人：吴志刚、邹华平，已授权，专利号：ZL201710176811.0，授权日：2018.01.05；
+[5] 一种便携式无动力源的微流控细胞分离芯片，发明人：吴志刚 刘振华 徐文超 张硕 彭鹏 张攀 邓杰，已授权，专利号：ZL201610827910.6，授权日：2018.03.13；
+[6] 一种聚合物的调控改性方法，发明人：吴志刚、郑升喜、张硕，已授权，专利号：ZL201611096454.9，授权日：2018.03.13。","[1] 科技部智能机器人专项，国家重点研发项目课题，具备形变可控功能的柔性手术器械研制，2017/12-2021/05，160万，在研，主持。
+[2] 国家自然科学基金深圳机器人基础研究中心联合基金项目，智能感知软体机器人材料设计制造一体化研究，2017/1-2020/12, 265万，已结题，主持。
+[3] 国家自然科学基金重点项目，大面积柔性电子曲面共形制造及智能蒙皮应用，2017/1-2020/12，285万，已结题，参与。
+[4] 国家自然科学基金面上项目，基于贴体热成形的准三维表面顺形电子新的制造方法的研究，2016/01-2019/12，74.64万，已结题，主持。
+[5] 湖北省自然科学基金，用于病变早期诊断微流控芯片的关键技术，2015-2017，10万，已结题，主持。",,"[1] Haochen Yong, Xingxing Ke, Fukang Xu, Shuo Zhang, Han Ding, Zhigang Wu*. Bioinspired Synergy Strategies Empower Small-Scale Robots with Higher Performance，2023, 2300061.(in press)
+[2] Han Chen, Jiaqi Zhu, Yu Cao, Zhisheng Xia, Zhiping Chai, Han Ding, Zhigang Wu*. Soft-rigid coupling grippers: collaboration strategies and integrated fabrication methods. Science China Technological Sciences, 2023, accepted.
+[3] Qin Jiang, Zhiping Chai, Zisheng Zong, Zhitong Hu, Shuo Zhang, Zhigang Wu*. Micro/Nano Soft Film Sensors for Intelligent Plant Systems: Materials, Fabrications, and Applications. Chemosensors, 2023, 11(3), 197.
+[4] Qin Jiang, Zhitong Hu, Yaping Xie, Kefan Wu, Shuo Zhang*, Zhigang Wu*. Liquid-Metal-Based Magnetic Controllable Soft Microswitch with Rapid and Reliable Response for Intelligent Soft Systems. Micromachines, 2022, 13(12): 2255.
+[5] Zisheng Zong, Shuo Zhang, Zhigang Wu*, Anisotropic Contraction in A Magnetically hard but Mechanically Ultra-Soft Foam for Precise Drug Delivery, Advanced Materials Technologies, 2022, 8(4): 2201255.",,https://mse.hust.edu.cn/__local/A/75/91/263E21B5B78639B7AE736FE68EC_D634F6CB_4D9DE.jpg,研究生,硕士,1,,
+夏兆辉,95,145,,xiaz@hust.edu.cn,副教授,夏兆辉（XiaZhaohui，AssociateProfessor），江西丰城人，副教授，国家重点研发计划青年项目首席科学家，湖北省高层次海外人才。华中科技大学机械制造及其自动化专业工学博士；长期从事CAD/CAE数字化设计核心算法与软件研发工作。2016年至2020年在美国伦斯勒理工学院与哈佛大学BIDMC从事医工交叉研究工作。目前担任CAD中心党支部书记。主要从事机械产品数字化设计及其工业软件方向的教学与科研工作，主讲《机械设计理论与方法（三）》等课程3门，围绕航空航天、武器等重点领域关键产品设计需求，从事自主可控CAD/CAE设计分析优化一体化软件技术等研究。相关成果在ComputerMethodsinAppliedMechanicsandEngineering、InternationalJournalofMechanicalSciences等权威期刊发表SCI论文20余篇，ESI高被引论文1篇，长期担任多个SCI期刊审稿人。主持和承担国家重点研发计划、工信部高质量发展专项、国家自然科学基金青年基金、国家重点研发项目子任务、国家重点实验室开放基金等项目。目前兼任中国仿真学会医疗仿真专委会委员，《机械设计》青年编委。,1、CAD/CAE设计分析优化一体化方法及软件开发技术研究2、智能设计方法及智能制造技术研究3、深度学习在智能设计、医工交叉领域的应用研究,,,"[1]一种基于在线机器学习的等几何拓扑优化方法，CN202211122338.5
+[2]一种基于体表达模型的多材料产品建模分析一体化方法，202111055883.2
+[3]一种用于模拟气管内插管术的方法及其系统，CN112587233B
+[4]一种基于等几何分析的渐进式结构拓扑优化方法，CN2021110558832
+[5]基于等几何拓扑优化的人辅助设计软件，2022SR0721830
+[6]基于Vulkan的三维图形引擎软件，2021SR1537711
+[7]三维有限元可视化软件V1.0，2020SR1132250","[1]国家重点研发计划青年科学家项目（“工业软件”重点专项），“复杂设计域超大规模高效等几何拓扑优化方法”，2022/11-2025/10，项目负责人；
+[2]国家自然科学基金青年项目，“基于体表达模型的三维复杂异质材料产品建模、等几何分析设计方法研究”，2021/01-2023/12，项目负责人；
+[3]工信部高质量发展专项，“XXXX仿真试验软件”，2021/09-2023/08，参与单位负责人
+[4]国家重点研发计划，“优化驱动的设计分析一体化技术”，2020/11-2023/10，子任务负责人；
+[5]湖北省高等学校省级教学研究项目，“基于VR/AI的临床技能虚拟仿真教学平台的建设与研究”，2021/09-2024/08，工科负责人
+[6]虚拟现实技术与系统国家重点实验室开放基金（VRLAB2021C08），“基于智能辅助的气管内插管虚拟手术系统及其应用研究”，2021/04-2023/03，项目负责人","[1]2022年湖北省高层次海外人才计划
+[2]2021/2022年华中科技大学“优秀教师班主任”
+[3]2021年第四届中国高校智能机器人创意大赛一等奖指导教师","[1]WenkeQiu,QifuWang,JianHe,YiXiong,LiangGao,ZhaohuiXia*.Phase-fieldfractureanalysisforimplicitgeometricmodelviaadaptiveextendedisogeometricanalysis.ComputerMethodsinAppliedMechanicsandEngineering.2024,420:116742.
+[2]ZhaohuiXia,HaoboZhang,ChenYu,JinguiYu,LiangGao*.AmachinelearningframeworkforIsogeometrictopologyoptimization.StructuralandMultidisciplinaryOptimization.2023,66(4):83.
+[3]ZhaohuiXia,BaichuangGao,ChenYu*,HaotianHan,HaoboZhang,ShutingWang.AHybridParallelStrategyforIsogeometricTopologyOptimizationviaCPU/GPUHeterogeneousComputing.ComputerModelinginEngineering&Sciences.2023,138(2):1103-1137.
+[4]WenkeQiu,QifuWang,LiangGao,ZhaohuiXia*.Stress-basedevolutionarytopologyoptimizationviaXIGAwithexplicitgeometricboundaries.InternationalJournalofMechanicalSciences.2023,256:108512
+[5]YongfengZheng,BaoshouLiu,WenjunChen,ZhaohuiXia*,ChuanzengZhang.Topologyoptimizationofhierarchicalstructuresbasedonfloatingprojection.InternationalJournalofMechanicalSciences.2022,231:107595.",,https://mse.hust.edu.cn/__local/5/89/C4/6A4D511352E90B289C62565ADB1_3FE410CE_116EE.jpg,研究生,博士,1,CAD中心党支部书记,先进制造大楼西楼B620
+杨吉祥,95,145,,jixiangyang@hust.edu.cn,教授,"杨吉祥（YangJixiang，Professor），教授、博士生导师，获批国家优秀青年基金（2021年）、国家重点研发计划“智能机器人”重点专项青年科学家项目、湖北省杰出青年基金、熊有伦智湖优秀青年学者奖，入选湖北省高层次人才计划。曾获上银优秀机械博士论文佳作奖、湖北省优秀博士论文奖、全国优秀教材一等奖、机械工业科学技术特等奖等。华中科技大学与加拿大英属哥伦比亚大学（UBC）联合培养博士，并分别在华中科技大学和UBC从事博士后研究。目前在华中科技大学机械学院智能制造装备与技术全国重点实验室开展教学与科研工作。承担《机器人学》、《机器人操作》等本科和研究生教学任务，获华中科技大学教学竞赛二等奖。获评华中科技大学“校优秀教师班主任”、华中科技大学机械学院“我最喜爱的教师班主任”。主要研究方向为机器人和数控智能加工技术与装备，围绕复杂曲面零件多轴数控智能铣削加工、机器人测量-铣削-磨抛加工的轮廓精度和表面质量控制开展研究。主持国家自然科学基金、科技部重点研发计划青年科学家项目及重点研发课题、航发技术委托攻关项目、装备预研航天科工联合基金等10余项课题，研究成果应用于航发机匣机器人化测量-铣削-磨抛加工、整体叶盘的机器人力控柔顺磨抛，多联体叶片的机器人等离子喷涂等。以第一或通讯作者发表SCI论文35篇，其中14篇发表在机器人和多轴机床领域高影响力期刊Robot.&Comp.-Int.Manuf.（IF=10.4）和Int.J.Mach.ToolsManuf.（IF=14）。申请/授权发明专利30项。担任SCI期刊Adv.Mech.Eng.编委,EI期刊Nanomanuf.&Metro.青年编委。",机器人和数控智能加工技术与装备欢迎机械、控制、材料物理方向的同学报考硕士和博士研究生；欢迎多学科背景的博士后加入课题组共同成长。,,,"杨吉祥，彭沛阳，伍乘星，丁汉，基于非刚性配准的机器人去毛刺加工路径校正方法及设备，发明专利，申请号：ZL202311230999.4
+杨吉祥，倪昌，丁汉，一种基于无监督域对抗算法的切削力监测方法及设备，发明专利，申请号：ZL2023110879527
+杨吉祥，倪昌，丁汉，一种铣削加工切削力监测方法、系统及电子设备，发明专利，申请号：ZL202311406403.1
+杨吉祥，李智洋，王立成，丁汉，机器人磨削轮廓误差补偿方法、系统及磨削机器人，发明专利，申请号：2023104709533
+杨吉祥，陈海清，王立成，丁汉，一种复杂曲面零件柔顺磨抛串联弹性执行器刚度优化方法，发明专利，申请号：2023101611459
+杨吉祥，张瑾贤，丁汉，一种复杂机匣腔体点云分割方法、装置及设备，发明专利，申请号：2023100668093
+杨吉祥，李智洋，丁汉，一种双机器人协作喷涂时的最优初始加工位姿确定方法，发明专利，申请号：2023100898339
+杨吉祥，涂梦倩，丁汉，一种整体叶盘磨抛加工无干涉区域生成方法，发明专利，申请号：ZL202211645621.6
+杨吉祥，漆琪，丁汉，一种工业机器人加转台的喷涂路径规划方法及系统，发明专利，申请号：ZL202211564837.X
+杨吉祥，孙鸿威，丁汉，基于非对称FIR滤波器的刀具位姿轨迹插补与光顺方法，发明专利，申请号：202211308131.7","国家优秀青年基金：高性能数控加工技术与装备。
+国家重点研发计划青年科学家项目：机器人刚柔耦合动力学建模与高精度辨识。
+湖北省杰出青年基金：复杂曲面零件机器人化精准磨抛的力位协同优化与控制。
+国家重点研发计划课题：复杂产品加工过程的多物理全要素数字孪生系统建模。
+华中科技大学交叉研究支持计划：大型复杂曲面零件机器人化铣削加工的数字孪生建模与精度调控方法研究。
+行业委托技术攻关项目：发动机轮盘高效抛磨光整技术研究。
+行业委托技术攻关项目：整体叶盘的机器人柔性力控磨抛技术开发。
+装备预研航天科工联合基金项目：涡轮泵叶轮的机器人智能磨抛技术研究。
+行业委托技术攻关项目：复杂曲面零件的机器人自动化铣削磨抛工艺研究。
+行业委托技术攻关项目：复杂曲面零件的机器人自动化喷涂的离线编程研究与软件开发。","国家优秀青年基金
+湖北省杰出青年基金
+熊有伦智湖青年学者奖
+湖北省高层次人才
+华中科技大学优秀教师班主任
+华中科技大学机械学院我最喜爱的教师班主任
+湖北省优秀博士学位论文奖
+上银优秀博士学位论文佳作奖
+华中科技大学教学竞赛二等奖
+2021度全国优秀教材一等奖,“《机器人学：建模、控制与视觉》（第2版）华中科技大学出版社”，获奖人：熊有伦,李文龙,陈文斌,杨华,丁烨,赵欢,李益群,杨吉祥.
+2022年度机械工业科学技术特等奖，大型复杂曲面机器人加工关键技术及应用，排名：13/30。","HongweiSun,JixiangYang*,HanDing,Anoveltoolpathsmoothingalgorithmof6Rmanipulatorconsideringpose-dependentdynamicsbydesigningasymmetricalFIRfilters,RoboticsandComputer-IntegratedManufacturing,2024,86,102681.
+HaiqingChen,JixiangYang*,HanDing,Roboticcompliantgrindingofcurvedpartsbasedonadesignedactiveforce-controlledend-effectorwithoptimizedserieselasticcomponent,RoboticsandComputer-IntegratedManufacturing,2024,86,102646.
+CongcongYe,JixiangYang*,ZekaiMuratKilic,DingChen,HanDing,Experimentalmodaltransferringofindustrialrobotwithdataaugmentationthroughdomainadaptationandtransferboosting,MechanicalSystemsandSignalProcessing,2023,200:110547.
+JixiangYang*,HaiqingChen,RuibinQi,HanDing,YuehongYin,Anovelapproachtoroboticgrindingguaranteeingprofileaccuracyusingrigid-flexiblecouplingforcecontrolforfree-formedsurfaces,CIRPAnnalsManufacturingTechnology,2023,Doi:https://doi.org/10.1016/j.cirp.2023.04.069.
+JixiangYang*,AblikemuAdli,HanDing,Analyticaltoolpathsmoothingalgorithmsof6Rrobotusingasymmetricalsplines,SCIENCECHINA-TechnologicalSciences,2023,66(3):1-15.",,https://mse.hust.edu.cn/__local/E/56/28/A58926BD7034FA05AB4DD84B00B_57A716EA_1262A.jpg,研究生,博士,1,,
+朱志娟,95,145,,zhuzhijuan@mail.hust.edu.cn,副教授,朱志娟（ZhuZhijuan，AssociateProfessor），博士，副教授，硕士研究生导师，工业设计系副主任（主管研究生教学）。2014-2015国家留学基金委公派美国普渡大学访问学者（1年）。中国人类工效学学会会员，中国人工智能学会智能CAD与数字艺术专业委员会会员，华中科技大学-中道善品创新设计团队导师，华中科技大学-阿修罗创新设计竞赛项目管理团队核心成员。获2017华中科技大学教师教学竞赛一等奖。主持2016湖北省教育厅教学研究项目和2018校级教学研究项目，参与省部级教学研究项目3项、校级教学研究项目多项。多次获教学竞赛奖、教学质量奖、教学成果奖，四次获湖北省优秀学士论文指导教师奖。近年来主持了多次国际交流活动，邀请包括美国、台湾等地同行专家前来我校讲座交流等，并带队学生到台湾、迪拜学习和交流。参与我系阿修罗项目的校企合作，已成功筹备设计竞赛6届。指导学生参加各类比赛，获多项国内外设计大奖。在包括SSCI期刊、中文核心期刊、HCII/AHFE等国际会议发表各类学术研究论文近30篇，发表教学研究论文6篇，获外观/实用新型专利6项。主持中国人类工效学学会优秀青年学者研究基金、华中科技大学自主创新基金。参与/主持教育部人文社科青年基金、湖北省基金，以及广东科学中心展品与多媒体设计、武汉重型机床集团有限公司产品设计、多家企业产品和品牌设计等横向设计课题。,产品设计、企业品牌设计、人机工程、社会创新设计,,,外观/实用新型专利6项,"1.湖北省教学研究项目：产品设计专业课程“参与式教学”方法体系研究与实践，2016-2018，已结题（项目主持）
+2.华中科技大学教改项目：基于研究性学习的设计专业《人机工程学》教学研究与实践，2018-，在研（项目主持）
+3.湖北省教学研究项目：基于PBL教学模式的产品设计类专业课程教学研究与实践，2017-2019，在研（主要参与人）
+4.湖北省教学研究项目：产品设计专业“多维度”课程评价体系研究与实践2015-2018，已结题（主要参与人）
+5.华中科技大学教改项目：“项目式教学”在产品设计教学环节中的研究与实践，2013-2014，已结题（主要参与人）
+6.教育部“基于工程技术平台的艺术设计人才培养模式创新实验区”工业设计创新基地，2009-2012，已结题（主要参与人）
+7.水系统信息化产品识别设计，横向，2017-2018（项目主持）
+8.基于木工数控界面操作绩效评价的脑力和体力疲劳影响机制研究，中国人类工效学学会-津发科技优秀青年学者联合研究基金（CES-KF-2016-05），2016-2018（项目主持）
+9.中央高校基本科研业务费项目：面向数控装备的感性意象设计方法与评估研究，2015-2016（项目主持）
+10.老年人肢体康复型智能家居产品及服务系统设计研究，教育部人文社会科学研究青年基金（项目号：17YJCZH231），2017-2019（参与第3）","1.2019年，中国大学生计算机设计大赛国奖一等奖（2项）、二等奖（1项）、三等奖（1项），中南赛区一等奖（2项）、二等奖（2项）、三等奖（1项）（指导教师）
+2.2019年，湖北省优秀学士论文导师
+3.2018年，中国大学生计算机设计大赛国奖二等奖（3项）、三等奖（2项），中南赛区二等奖（5项）、三等奖（2项）（指导教师）
+4.2017年，华中科技大学教师教学竞赛，校级一等奖
+5.2017年，中国大学生计算机设计大赛国奖二等奖（2项）、三等奖（2项），中南赛区一等奖（1项）、二等奖（3项）、三等奖（6项）（指导教师）
+6.2017年，湖北省优秀学士论文导师
+7.2016-2017，华中科技大学教学质量二等奖
+8.2016年，校级教学成果奖三等奖
+9.2015-2016，华中科技大学优秀教师班主任
+10.2015-2016，华中科技大学教学质量二等奖
+11.2014年，研究生国际化课程在校级高水平国际化课程评估中获优秀
+12.2012-2013，华中科技大学教学质量二等奖
+13.2012年，华中科技大学青年教师教学竞赛，校级三等奖
+14.2012、2016、2017，年度考核优秀
+15.2011年，湖北省优秀学士论文导师（2人次）
+16.2008年，华中科技大学青年教师教学竞赛，校级二等奖","1.ResearchonLogoDesignandEvaluationofYouthEducationBrandsBasedonVisualRepresentation[J].JournalofProductandBrandManagement,2017,Vol.26Issue:7,p722-733（Emerald出版，SSCI检索，IF=2.757，2区，第一作者）
+2.基于人机工程的LED芯片检测机外观改良设计[J].机械设计，ISSN1001-2354，CN12-1120/TH，2014.（中文核心期刊，CSCD检索，第一作者）
+3.Researchonhuman-computerinteractiondesignofbedrehabilitationequipmentfortheelderly[C]//AdvancesinErgonomicsinDesign-ProceedingsoftheAHFE2019InternationalConferenceonErgonomicsinDesign,AHFEInternationalConferenceonErgonomicsinDesign,Washington,DC,USA,July24-28,2019,p275-286.（Springer出版，EI:20192507069618，第一作者）
+4.ANewMethodofBannerColorDesign[C]//PerspectivesonDesign-ThematicArea,HeldasPartofthe21stHCIInternationalConference,HCII2019,Orlando,FL,USA,July26–31,p245-255.（Springer出版，EI:20193107248652，第一作者）
+5.EnlightenmentofDesignEducationinPurdueUniversity:ResearchandPracticeonAssessmentMethodinProject-BasedLearningofIndustrialDesignDiscipline[C]//20197thInternationalForumonIndustrialDesign（IFID2019）（EI：20193307315718，第一作者）",,https://mse.hust.edu.cn/__local/2/98/04/A9F3C171BD0834EA8118FAE1A0F_DEEB58E8_11805.jpg,研究生,博士,1,,东一楼四楼
+李鹏,95,145,,lipeng2023@hust.edu.cn,教授,李鹏（LiPeng，Professor），山西太原人。博士，教授，博士生导师。华中科技大学机械学院教授。获得国家自然科学基金优秀青年科学基金资助。2007年，天津大学电子科学与技术专业本科毕业，获学士学位；2012年，清华大学仪器科学与技术专业博士毕业，获博士学位；2009-2011年、2013年-2014年，美国明尼苏达大学联合培养/交流访问，开展微纳传感器方面的研究工作。2015年-2023年，清华大学助理教授、副教授。兼任中国仪器仪表学会微纳器件与系统技术分会理事、中国微纳纳米学会高级会员、NanotechnologyandPrecisionEngineering期刊青年编委等。主要从事微纳传感器/智能微系统等方面的研究工作。先后主持国家自然基金项目、173基础加强、国家重点研发项目课题等项目10余项。获中国仪器仪表学会青年科技人才奖、日内瓦国际发明金奖（排名第一）、Nano-MicroLettersESI杰出论文奖等。研究团队承担了国家重大项目，欢迎机械、光学、物理、仪器、材料、能源、电子等专业的博士毕业生加入团队开展博士后研究。,低维材料超灵敏微纳传感器原子尺度极端制造技术近零功耗感知微系统,,,,"[1]二维材料微纳生化传感器基础研究国家自然科学基金
+[2]悬空单晶MoS2场效应管重金属离子传感器基础研究国家自然科学基金
+[3]单晶石墨烯射频机械开关研究国家自然科学基金
+[4]石墨烯/二硫化钼肿瘤标记物传感器基础研究北京市自然科学基金
+[5]XXMEMS传感器及微系统173基础加强
+[6]二维材料XX敏感单元研究173重点项目","[1]中国仪器仪表学会青年科技人才奖
+[2]日内瓦国际发明金奖（评审团特别嘉许金奖）
+[3]Nano-MicroLettersESI杰出论文奖
+[4]MINESummit2019YoungScientistAwardFinalist
+[5]清华大学青年教师教学大赛二等奖
+[6]清华大学优秀博士后","[1]Two-DimensionalTransitionMetalDichalcogenideTunnelFieldEffectTransistorsforBiosensingApplications，ACSAppliedMaterials&Interfaces,2023,15,23583.
+[2]Near-zero-powerinfraredrelaybasedonmicrofluidicswitchandmetamaterialabsorber,AppliedPhysicsLetters,2023,123,123507.
+[3]High-temperatureflexibleWSe2photodetectorswithultrahighphotoresponsivity,NatureCommunications,2022,13,4372.
+[4]ElectrospinningofFlexiblePoly(vinylalcohol)/MXeneNanofberBasedHumiditySensorSelfPoweredbyMonolayerMolybdenumDiselenidePiezoelectricNanogenerator,Nano-MicroLetters,2021,13,57.
+[5]Aself-powered2D-materialsensorunitdrivenbyaSnSepiezoelectricnanogenerator,JournalofMaterialsChemistryA,2021,9,4716.",,https://mse.hust.edu.cn/__local/6/DE/F8/10209C4FDD3002BF0EB9D797FE2_A4E0B665_173F7.jpg,研究生,博士,1,,先进制造大楼东楼C513
+李鹏,95,145,,lipeng2023@hust.edu.cn,教授,李鹏（LiPeng，Professor），山西太原人。博士，教授，博士生导师。华中科技大学机械学院教授。获得国家自然科学基金优秀青年科学基金资助。2007年，天津大学电子科学与技术专业本科毕业，获学士学位；2012年，清华大学仪器科学与技术专业博士毕业，获博士学位；2009-2011年、2013年-2014年，美国明尼苏达大学联合培养/交流访问，开展微纳传感器方面的研究工作。2015年-2023年，清华大学助理教授、副教授。兼任中国仪器仪表学会微纳器件与系统技术分会理事、中国微纳纳米学会高级会员、NanotechnologyandPrecisionEngineering期刊青年编委等。主要从事微纳传感器/智能微系统等方面的研究工作。先后主持国家自然基金项目、173基础加强、国家重点研发项目课题等项目10余项。获中国仪器仪表学会青年科技人才奖、日内瓦国际发明金奖（排名第一）、Nano-MicroLettersESI杰出论文奖等。研究团队承担了国家重大项目，欢迎机械、光学、物理、仪器、材料、能源、电子等专业的博士毕业生加入团队开展博士后研究。,低维材料超灵敏微纳传感器原子尺度极端制造技术近零功耗感知微系统,,,,"[1]二维材料微纳生化传感器基础研究国家自然科学基金
+[2]悬空单晶MoS2场效应管重金属离子传感器基础研究国家自然科学基金
+[3]单晶石墨烯射频机械开关研究国家自然科学基金
+[4]石墨烯/二硫化钼肿瘤标记物传感器基础研究北京市自然科学基金
+[5]XXMEMS传感器及微系统173基础加强
+[6]二维材料XX敏感单元研究173重点项目","[1]中国仪器仪表学会青年科技人才奖
+[2]日内瓦国际发明金奖（评审团特别嘉许金奖）
+[3]Nano-MicroLettersESI杰出论文奖
+[4]MINESummit2019YoungScientistAwardFinalist
+[5]清华大学青年教师教学大赛二等奖
+[6]清华大学优秀博士后","[1]Two-DimensionalTransitionMetalDichalcogenideTunnelFieldEffectTransistorsforBiosensingApplications，ACSAppliedMaterials&Interfaces,2023,15,23583.
+[2]Near-zero-powerinfraredrelaybasedonmicrofluidicswitchandmetamaterialabsorber,AppliedPhysicsLetters,2023,123,123507.
+[3]High-temperatureflexibleWSe2photodetectorswithultrahighphotoresponsivity,NatureCommunications,2022,13,4372.
+[4]ElectrospinningofFlexiblePoly(vinylalcohol)/MXeneNanofberBasedHumiditySensorSelfPoweredbyMonolayerMolybdenumDiselenidePiezoelectricNanogenerator,Nano-MicroLetters,2021,13,57.
+[5]Aself-powered2D-materialsensorunitdrivenbyaSnSepiezoelectricnanogenerator,JournalofMaterialsChemistryA,2021,9,4716.",,https://mse.hust.edu.cn/__local/6/DE/F8/10209C4FDD3002BF0EB9D797FE2_A4E0B665_173F7.jpg,研究生,博士,1,,先进制造大楼东楼C513
+李鹏,95,145,,lipeng2023@hust.edu.cn,教授,李鹏（LiPeng，Professor），山西太原人。博士，教授，博士生导师。华中科技大学机械学院教授。获得国家自然科学基金优秀青年科学基金资助。2007年，天津大学电子科学与技术专业本科毕业，获学士学位；2012年，清华大学仪器科学与技术专业博士毕业，获博士学位；2009-2011年、2013年-2014年，美国明尼苏达大学联合培养/交流访问，开展微纳传感器方面的研究工作。2015年-2023年，清华大学助理教授、副教授。兼任中国仪器仪表学会微纳器件与系统技术分会理事、中国微纳纳米学会高级会员、NanotechnologyandPrecisionEngineering期刊青年编委等。主要从事微纳传感器/智能微系统等方面的研究工作。先后主持国家自然基金项目、173基础加强、国家重点研发项目课题等项目10余项。获中国仪器仪表学会青年科技人才奖、日内瓦国际发明金奖（排名第一）、Nano-MicroLettersESI杰出论文奖等。研究团队承担了国家重大项目，欢迎机械、光学、物理、仪器、材料、能源、电子等专业的博士毕业生加入团队开展博士后研究。,低维材料超灵敏微纳传感器原子尺度极端制造技术近零功耗感知微系统,,,,"[1]二维材料微纳生化传感器基础研究国家自然科学基金
+[2]悬空单晶MoS2场效应管重金属离子传感器基础研究国家自然科学基金
+[3]单晶石墨烯射频机械开关研究国家自然科学基金
+[4]石墨烯/二硫化钼肿瘤标记物传感器基础研究北京市自然科学基金
+[5]XXMEMS传感器及微系统173基础加强
+[6]二维材料XX敏感单元研究173重点项目","[1]中国仪器仪表学会青年科技人才奖
+[2]日内瓦国际发明金奖（评审团特别嘉许金奖）
+[3]Nano-MicroLettersESI杰出论文奖
+[4]MINESummit2019YoungScientistAwardFinalist
+[5]清华大学青年教师教学大赛二等奖
+[6]清华大学优秀博士后","[1]Two-DimensionalTransitionMetalDichalcogenideTunnelFieldEffectTransistorsforBiosensingApplications，ACSAppliedMaterials&Interfaces,2023,15,23583.
+[2]Near-zero-powerinfraredrelaybasedonmicrofluidicswitchandmetamaterialabsorber,AppliedPhysicsLetters,2023,123,123507.
+[3]High-temperatureflexibleWSe2photodetectorswithultrahighphotoresponsivity,NatureCommunications,2022,13,4372.
+[4]ElectrospinningofFlexiblePoly(vinylalcohol)/MXeneNanofberBasedHumiditySensorSelfPoweredbyMonolayerMolybdenumDiselenidePiezoelectricNanogenerator,Nano-MicroLetters,2021,13,57.
+[5]Aself-powered2D-materialsensorunitdrivenbyaSnSepiezoelectricnanogenerator,JournalofMaterialsChemistryA,2021,9,4716.",,https://mse.hust.edu.cn/__local/6/DE/F8/10209C4FDD3002BF0EB9D797FE2_A4E0B665_173F7.jpg,研究生,博士,1,,先进制造大楼东楼C513
+Akhil Garg,95,145,,akhilgarg@hust.edu.cn,副教授,"Akhil Garg (Associate Professor)，男，1988年3月生，印度籍，博士，华中科技大学机械学院副教授，硕士生导师，2010年5月获得印度国立理工学院机械工程专业学士学位。2014年8月获新加坡南洋理工大学机械与航天工程专业博士学位。2014年9月至2016年3月在新加坡南洋理工大学工程学院从事博士后研究工作。2016年3月至2016年8月就职于汕头大学工学院，任讲师。2016年9月至2019年7月就职于汕头大学工学院，任副教授。2019年8月任教于华中科技大学机械学院。主要研究方向包括进化算法和人工智能在工程设计或设计优化中的应用，如储能系统设计等。近五年在Structural and Multidisciplinary Optimization, Swarm and Evolutionary Computation, Applied Soft Computing, Expert Systems with Applications, Engineering Applications of Artificial Intelligence, Journal of Intelligent Manufacturing, Journal of Power Sources, Energy等期刊上发表SCI论文96篇，其中有2篇ESI热点论文和10篇ESI高被引论文，H指数21。主持广东省“扬帆计划”引进紧缺拔尖人才项目。担任30多个SCI期刊的审稿人。",储能系统设计 计算智能方法 制造系统设计 拓扑优化设计,,,,主持的科研项目：广东省“扬帆计划”引进紧缺拔尖人才项目，2017.01-2019.12,"1. Engineering Applications of Artificial Intelligence, Journal of Cleaner Production, Chemometrics and Intelligent Laboratory Systems, Measurement等国际学术期刊优秀审稿人
+2. SCI期刊Frontiers of Mechanical Engineering颁发的“年度最佳论文奖”，2018年
+3. IPRoMM国际会议最佳论文奖，2016年","1. Garg A, Shankhwar K, Jiang DZ, Vijayaraghavan V, Panda BN, Panda SS. An evolutionary framework in modelling of multi-output characteristics of the bone drilling process. Neural Comput Appl. 2018;29:1233-41.
+2. Garg A, Li JH, Hou JJ, Berretta C, Garg A. A new computational approach for estimation of wilting point for green infrastructure. Measurement. 2017;111:351-8.
+3. Garg A, Lam JSL, Panda BN. A hybrid computational intelligence framework in modelling of coal-oil agglomeration phenomenon. Appl Soft Comput. 2017;55:402-12.
+4. Garg A, Vijayaraghavan V, Zhang J, Lam JSL. Robust model design for evaluation of power characteristics of the cleaner energy system. Renew Energ. 2017;112:302-13.
+5. Garg A, Lam JSL, Gao L. Energy conservation in manufacturing operations: modelling the milling process by a new complexity-based evolutionary approach. J Clean Prod. 2015;108:34-45.",,https://mse.hust.edu.cn/__local/5/6E/30/5CD78420E722B17F99B00BA73A5_2E8086B5_122B9.jpg,研究生,博士,1,,
+白坤,95,145,,kbai@hust.edu.cn,教授,白坤（BaiKun，Professor），华中科技大学教授，博士生导师。本科毕业于浙江大学控制科学与工程系，博士毕业于美国佐治亚理工学院机械系。主要从事电磁系统的感知、控制、驱动，代表性成果如三自由度球形电机在新型制造、机器人中的获得创新应用。近5年主持国基金项目2项，作为核心成员参与国家973、国基金重点等项目。出版一作英文专著1部，在IEEETrans.onRobotics、IEEE/ASMETrans.onMechatronics、IEEETrans.onIndustrialElectronics、IEEETrans.onIndustrialInformatics等期刊及重要国际会议发表论文40余篇，获中国、美国授权发明专利18项。研究成果获ASME年度机电一体化最佳论文奖、日内瓦国际发明金奖、银奖，多次受邀在ACC，AIM等领域代表性国际会议做主题报告及邀请报告。课题组招收博士后、学术/工程博士、学术/工程硕士，欢迎对驱动控制、机器人、医工交叉方向感兴趣的同学加入。课题组网站：,球形电机及创新应用医疗机器人,,,,"1.国家自然科学基金面上项目“面向主从机器人力操作的一体化机电设计和控制”，负责人。
+2.武汉市科技重大专项，“三维影像导航手术机器人整机系统研发”,子课题负责人。
+3.武汉联影智融技术开发项目，“医疗机器人电磁驱动关键技术”，负责人。
+4.中国科学院光电技术研究所，“球关节驱动光电跟踪系统技术验证实验平台”，负责人。
+5.国家自然科学基金重点项目，“基于人体关节模型的顺应康复外骨骼设计和控制”，骨干成员。
+6.973国家重点基础研究项目，“高品质复杂零件智能制造基础研究”的子课题“加工过程中力-热-变形在线感知与多场重构”，骨干成员。","1.专著获建国70周年百种科技新书奖，入选第十八届输出版优秀图书。
+2.ASME机电一体化年度最佳论文（通讯作者）
+3.国际会议DSCC优秀论文奖
+4.日内瓦国际发明展特别金奖、银奖
+5.湖北省优秀学士学位论文奖指导教师；指导4人次获得校优秀毕业设计奖
+6.第七届中国大学生机械工程创新创意大赛全国一等奖指导教师","[1]K.Bai*,W.Chen,K.-M.Lee,Z.Que,R.Huang,“SphericalWristwithHybridMotion-ImpedanceControlforEnhancedRoboticManipulations”,IEEETrans.onRobotics,vol.38,no.2,pp.1174-1185,2022.
+[2]K.Bai*,Y.Ding,Z.Que,H.Yan,X.Chen*,S.Wen,K.-M.Lee,“RegulationandTrackingControlofOmni-DirectionalRotationforSphericalMotors,”IEEETrans.onIndustrialElectronics,vol.70,no.2,pp.1696-1705,Feb.2023.
+[3]J.Li,K.-M.Lee*,andK.Bai*,“AnalyticalandExperimentalInvestigationofTemporalInterferenceforSelectiveNeuromuscularActivation,“IEEETrans.onNeuralSystemsandRehabilitationEngineering,vol.28,no.12,pp.3100-3112,Dec.,2020.DOI:10.1109/TNSRE.2020.3038025.
+[4]B.Hao,K.-M.Lee*,andK.Bai*,“Distributedcurrentsourcemodelingmethodfor3Deddycurrentprobleminmagneticconductorwithdiscretestate-spaceJ-φformulation,“JournalofComputationalPhysics,vol.401,p.109027,Jan.2020.DOI:10.1016/j.jcp.2019.109027.
+[5]K.-M.Lee*,B.Hao,M.LiandK.Bai*,“MultiparameterEddy-currentSensorDesignforConductivityEstimationandSimultaneousDistanceandThicknessMeasurements,”IEEETrans.onIndustrialInformatics,vol.15,no.3,pp.1647-1657,March2019.DOI:10.1109/TII.2018.2843319。",,https://mse.hust.edu.cn/__local/5/23/2F/18FB77FF9A156B1E8DC409C8EAF_C0B95E2C_13887.jpg,研究生,博士,1,,机械大楼B210
+白龙,95,145,,bailong@hust.edu.cn,副研究员,白龙（Bai Long，Associate Researcher），华中科技大学机械学院副研究员，博士生导师，湖北省高层次人才。2010年、2013年先后于北京大学元培学院、北京大学工学院获得学士学位与硕士学位，2018年1月毕业于英国布里斯托大学机械工程系，获博士学位。2018年至2020年在英国布里斯托大学超声无损检测实验室从事博士后研究工作，于2020年5月进入华中科技大学。主要研究方向为超声无损检测、智能制造、智能机器人等，在IEEE Trans. Ultrason. Ferroelectr. Freq. Control，NDT & E Int.，J. Acoust. Soc. Am.等期刊上发表论文10余篇。主持国家重点研发计划课题、国家自然科学基金青年基金项目、湖北省重点研发计划项目各一项。,"超声无损检测, 智能制造, 智能机器人",,,,"[1] 国家重点研发计划课题，“工业机器人离线编程与免示教部署技术研究”，462.5万，2022—2024（负责人）
+[2] 国家自然科学基金青年项目，“基于超声散射矩阵的小缺陷表征技术”，24万，2021—2023（负责人）
+[3] 湖北省重点研发计划项目，“面向航天核心部件亚表层损伤的新型相控阵检测技术与系统研究”，100万，2023—2025（负责人）
+[4] 欧盟地平线2020计划项目，“Advanced Inspection of Complex Structures”，2017—2020（参与人）
+[5] 英国EPSRC项目，“UK Research Council in Non-Destructive Evaluation”，2014—2017（参与人）","[1] University of Bristol Postgraduate Research Scholarship 2013-2017
+[2] 北京市优秀毕业生 2013
+[3] 硕士研究生国家奖学金 2012","[1] L. Bai, Q. Yang, X. Cheng, Y. Ding, J. Xu*. A hybrid physics-data-driven surface roughness prediction model for ultra-precision machining. Science China Technological Sciences 2023, in press.
+[2] L. Bai, X. Cheng, Q. Yang, J. Xu*. Predictive model of surface roughness in milling of 7075 Al based on chatter stability analysis and backpropagation neural network. The International Journal of Advanced Manufacturing Technology 2023, 126: 1347-1361.
+[3] C. Guo, J. Ren, J. Xu, L. Bai*. Ultrasonic defect characterization using Bayesian inversion and scattering matrix denoising neural networks. NDT & E International 2023, 136: 102813.
+[4] L. Bai, F. Xu, X. Chen, X. Su, F. Lai, J. Xu*. A hybrid deep learning model for robust prediction of the dimensional accuracy in precision milling of thin-walled structural components. Frontiers of Mechanical Engineering 2022, 17(3): 32.
+[5] L. Bai, N. Liu, C. Guo, J. Xu*. Ultrasonic defect characterization using time-domain scattering matrices and convolutional sparse coding. NDT & E International 2022, 131: 102699.",,https://mse.hust.edu.cn/__local/6/0E/77/7E0D225A9B5EB902024A7CB6FBB_8FD3CD65_10E29.jpg,研究生,博士,1,,先进制造大楼东楼B507
+布天昭,95,145,,butianzhao@hust.edu.cn,助理研究员,"布天昭（Bu Tianzhao, Assistant Research Fellow），助理研究员。博士毕业于中国科学院大学，入选中国科协青年人才托举工程。主要研究领域为柔性传感器设计制造与机器人触觉感知/人体健康监测应用领域研究，相关研究成果共发表论文40余篇，引用1900余次，H因子24，其中以第一作者和共同第一作者在Nature Communications、Advanced Materials、Science Bulletin、Soft Robotics等国际权威期刊上发表论文11篇，获授权专利3项。主持国家重点研发计划课题、国家自然科学基金委青年基金等项目。获选“博士后国际交流计划”派出项目、“小米青年学者”，获得第19届机械设计国际会议ICMD 2017 Best Paper Award等荣誉。招生专业方向：机械、电子、材料、光电、力学、物理、计算机等。竭诚欢迎学生咨询并加入课题组共同成长！",机器人触觉感知、人体健康监测,,,"[1]摩擦电光智能皮肤、机械手及机器人,2020-10-2,2017114978475.
+[2]液态金属栅控摩擦电子学晶体管、电子水平仪,2020-9-15,201810679333X.
+[3]纳米发电机系统及供电器件,2020-12-11,201810324788X.","[1]国家重点研发计划项目课题，摩擦电触觉敏感元件的设计与制造，主持
+[2]国家自然科学基金青年科学基金项目，基于微纳尺度摩擦电子器件的高性能触觉传感技术研究，主持
+[3]博士后国际交流计划派出项目（加州大学洛杉矶分校），基于可穿戴电子器件的自驱动智能健康监测系统，主持
+[4]中国科学院大学优秀教师科研能力提升项目，基于摩擦电-光器件的可视化触觉传感技术研究，主持","[1]第19届机械设计国际会议ICMD Best Paper Award，2017年
+[2]“小米青年学者”，2023年","[1]Tianzhao Bu, Liang Xu, Zhiwei Yang, et al., Nanoscale triboelectrification gated transistor, Nature Communications, 2020, 11(1):1054.
+[2]Tianzhao Bu, Tianxiao Xiao, Zhiwei Yang, et al., Stretchable Triboelectric-Photonic Smart Skin for Tactile and Gesture Sensing, Advanced Materials, 2018, 30(16):1800066.
+[3]Tianzhao Bu, Hang Yang, Wenbo Liu, et al., Triboelectric Effect-Driven Liquid Metal Actuators, Soft Robotics, 2019, 6(5):664-670.
+[4]Tianzhao Bu, Dongdong Jiang, Xiang Yang, et al., Liquid Metal Gated Tribotronic Transistors as an Electronic Gradienter for Angle Measurement, Advanced Electronic Materials, 2018, 4(9):1800269.
+[5]Tianzhao Bu, Chi Zhang*, Sustained energy harvesting from ambient humidity, Science Bulletin, 2020, 65:1783-1784.",,https://mse.hust.edu.cn/__local/A/69/29/BEF78E0C865C7938F50C9A984A6_C25AB6A3_1047D.jpg,研究生,博士,1,,先进制造大楼东楼C704
+曹树平,95,145,027-87559717,0000010101@hust.edu.cn,副教授,曹树平（CaoShuping，AssociateProfessor）长期从事机械电子工程、流体传动与控制领域的科研与教学工作。,（1）重型车辆油气悬架系统；（2）电液伺服控制系统；（3）船舶操舵控制系统；（4）非流变流体的粉末成型。,,,,"1.重型越野车转型系统实验台
+2.重型越野车振动试验台
+3.重型越野车半主动悬架控制系统
+4.六自由度飞行训练模拟器
+5.高速压片机的微机控制系统
+6.电液伺服试验台的微机控制
+7.大型动态结构加载系统
+8.电液伺服核燃料成型机",,"1.“重型越野车油气悬架系统的非线性建模研究”，《机械科学与技术》
+2.“油气悬架系统非线性刚度的统计线性化分析”，《华中科技大学学报》
+3.“被动式油气悬架的动态仿真”，《中国机械工程》
+4.“李氏迷宫算法在液压阀块CAD中的应用”，《机械科学与技术》
+5.“多自由度振动台横向耦合干扰的补偿”，《华中科技大学学报》",,https://mse.hust.edu.cn/__local/7/D7/57/56BE8DA9D3646B323E90A8C9CEA_C2C73FC3_11926.jpg?e=.jpg,,,1,,
+陈立平,95,145,027-87559821,chenlp@hust.edu.cn,教授,设计学科依附于各个专业学科，致使设计学与技术分散化、碎片化，不利于多学科融合的系统协同设计，为此致力于提出独立的跨学科的系统原理（广义机械原理），建立知识驱动的可计算的系统设计方法及工具。在几何约束求解、多体系统动力学、多领域建模分析等数字化设计支撑技术方面进行研究，承担了国家自然基金、863及企业合作等多层次项目。近年来，密切关注复杂机电系统建模分析与优化技术发展，在多领域物理建模理论方面进行了深入研究，在国内率先研究了多领域物理建模规范语言modelica，承担2006年863目标导向项目《基于多领域物理建模的复杂产品协同仿真平台》并组织研发多领域物理建模与仿真系统Mworks。作为亚太地区第一个基于modelica的仿真分析平台，MWorks在维也纳MODELICA2006大会上受到国际同行关注和肯定。十年来，在计算机学报、软件学报、Computer&Struct.等国内外重要学刊上发表论文90余篇。,基于模型的系统工程多领域物理统一建模理论与技术系统动力学云设计,,,,"复杂系统建模与仿真中的多领域约束融合原理研究国基金（60574053）
+时间域与空间域耦合物理系统多领域统一建模研究国基金（60874064）
+基于多领域物理建模的复杂产品协同设计仿真平台863目标导向（2006AA04Z162）
+机械系统动力学CAE平台863重点（2009AA044501）
+基于MODELICA技术体系的复杂产品分析仿真软件研发（SS2013AA041301）
+江苏省创新团队计划姑苏领军计划",,"[1] Chenchang, Ding Jianwan, Chen Liping et al. Media Modeling for Distillation Procrdd with Modelica/MWorks. In: Proceedings of the 8th International Modelica Conference, Dresden, Germany, 2011: 239-245.
+[2] Chen Liping, Zhao Yan, Zhou Fanli et al. Modeling and Simulation of Gear Pumps based on Modelica/MWorks. In: Proceedings of the 8th International Modelica Conference, Dresden, Germany, 2011: 421-429.
+[3] He Li, Wang Xiaolong, Zhang Yunqing, Chen Liping. Modeling and Simulation Vehicle Air Brake System. In: Proceedings of the 8th International Modelica Conference, Dresden, Germany, 2011: 430-435.
+[4] Sun Ying, Chen Wei, Zhang Yunqing, Chen Liping. Modeling and Simulation of Heavy Truck with MWorks. In: Proceedings of the 8th International Modelica Conference, Dresden, Germany, 2011: 725-729.
+[5] Jiang Ming, Zhou Jiangang, Chen Wei, Chen Liping. Modeling and Simulation of AMT with MWorks. In: Proceedings of the 8th International Modelica Conference, Dresden, Germany, 2011: 829-839.",,https://mse.hust.edu.cn/__local/8/59/94/ADD78DCF230A3B10EF93A7E95E8_97E60CED_FB00.jpg,,,1,,
+陈钢,95,145,,chenghll@hust.edu.cn,讲师,,,,,,,,,,https://mse.hust.edu.cn/__local/8/84/FB/8B743C6773E86C89479E4178D3E_0460F9F0_119F7.jpg?e=.jpg,,,1,,
+陈继勇,95,145,,chenjy@hust.edu.cn,讲师,长期从事制造业信息化关键技术研究，并重点进行科研成果转化，先后完成了国家“七五”、“八五”、“九五”、“十五”攻关项目和国家863高科技项目以及省部级以上科研项目共20余项，参与并主持CAD中心软件产品InteCAD、IntePDM的早期开发工作。,,,,,,"1990年获国家七五重大科技成果奖2项（参加）
+1998年荣获湖北省科技进步二等奖1项
+2000年荣获湖北省科技推广二等奖1项
+2002年荣获湖北省科技进步二等奖1项
+2003年荣获湖北省科技进步二等奖1项，国家重大新产品奖1项
+2005年度中国汽车工业科技进步二等奖
+2005年湖北省科技进步三等奖",,,https://mse.hust.edu.cn/__local/C/00/75/BFAC0672FE398C0A18D37A623E7_4F334265_123AE.jpg,,,1,,
+陈永府,95,145,027-87543973,Chenyf@hust.edu.cn,讲师,陈永府(1972－)，男，汉族，湖北武汉，华中科技大学CAD中心，长期以来一直从事CAD/CAPP/数字水印/信息安全等方向的研究。先后获得中国高校科技进步一等奖、国家科学技术进步二等奖、华中科技大学教学质量奖和教学竞赛奖。,CADCAPP数字水印信息安全智能手机应用,,,,1.基金项目：面向过程支持重用的同步分析建模与形状灵敏度分析方法；2.国家重大专项：动梁无滑枕立式铣车复合加工中心；3.863项目：汽车行业CAPP解决方案研发与应用推广；4.863项目：基于三维CAD的集成化CAPP系统研究及应用；5.横向课题：面向设计模型的数字水印技术研究。,中国高校科技进步一等奖国家科学技术进步二等奖华中科技大学教学质量奖和教学竞赛奖,"1.Yongfu Chen, Zhengdong Huang, Liping Chen, Qifu Wang, Parametric Process Planning Based on Feature Parameters of Parts[J]. The International Journal of Advanced Manufacturing Technology, 2006, 28: 727-7362. 陈永府, 杨小献, 陈立平, 朱林. 面向决策支持的数据重构技术[J]. 计算机辅助设计与图形学学报, 2004, 16(6): 831-8373. 陈永府, 杨朋. 递进式网络数据包解析与过滤方法研究[J]. 计算机工程与设计, 2011.03: 781-7834. 陈永府, 罗易. 3D网格脆弱水印中孤立水印顶点研究[J]. 计算机应用与软件, 2012.07: 239-2425. 陈永府, 周峰, 王启富, 陈立平. 基于虚拟卷的U盘安全技术研究[J]. 计算机工程与科学. 2014.01: 68-72",,https://mse.hust.edu.cn/__local/3/97/12/561A49A53CC9E020CDABCE6F1DA_F22DD4F4_106EE.jpg,,,1,,
+程远雄,95,145,027-87543971,yuanxcheng@hust.edu.cn,副教授,程远雄（Cheng Yuanxiong，Associate Professor），长期从事机械工程和车辆工程学科的研究和教学工作，承担本科《机械原理》和研究生《精密机械》等课程的教学工作。曾在澳大利亚悉尼大学和加拿大瑞尔森大学进修。先后任职机械设计系副主任、东莞工研院副院长、湖北省专用汽车研究院副院长等职。担任湖北省创新方法研究会理事、中南地区机械原理课程教学研究会秘书长。,精密机械系统设计理论与方法 永磁同步电机伺服传动系统 车辆智能化与电动化技术,,,"[1]程远雄，杨家军，一种各相绕组线圈拆分布置的永磁同步直线电机，2011，中国，201020661543.5
+[2]程远雄，杨家军，郤能，一种基于组合铁芯初级的永磁同步直线电机，2012，中国，201010290770.6","近年完成项目：线电机驱动高速高精直线运动单元的研制，广东省科技厅资助项目（编号：2008B090500015）
+在研项目：高性能永磁同步直线电机的研制
+电动车辆在轮电机驱动技术研究，省专用车研究院预研项目",,"[1]Xi,Neng，Yang Jiajun，Liu Wenwei，Shen Jingfang，Cheng Yuanxiong．A novel approach of thrust ripple minimization by combinational iron–cored primary in permanent magnet linear synchronous motor，Applied Mechanics and Materials，2012,v190–191,p638–641.
+[2]Yuanxiong Cheng,Yang Jiajun,Huang Qibai. Characteristics of inductance parameters and thrust linear modeling of PMLSM with combinational iron–cored primary. Proceeding of IEEE International Conference on CECNet,2011,1:142–145.
+[3]Yuanxiong Cheng,Jiajun Yang,Qibai Huang. A new equivalent method of permanent magnets and analytical solution of air–gap magnetic field of permanent magnet linear synchronous motors. Proceeding of IEEE International Conference on CECNet,2011,6:4667–4670.
+[4]Yuanxiong Cheng,Yang Jiajun,Liu Guoxian. A novel low thrust ripple 3–phase 6–slot permanent magnet linear synchronous motor. Proceeding of IEEE International Conference on CECNet,2011,1:49–53.
+[5]Neng Xi,Jiajun Yang*,Yuanxiong Cheng,Shiwei Zhu. Detent Force Analysis and Structure Improvement of PMLSM. Proceeding of IEEE International Conference on CECNet,2011,1:260–263.",,https://mse.hust.edu.cn/__local/F/D3/CE/116093BB09A414FB7F135C0892D_18EC3BC3_1466F.jpg,,,1,,
+程敏,95,145,,cmzpc@hust.edu.cn,讲师,,,,,,,,,,https://mse.hust.edu.cn/__local/1/39/32/217228FDF5035073228474219FD_699A8797_17FC4.jpg,,,1,,
+陈修国,95,145,027-87558045,xiuguochen@hust.edu.cn,教授,"陈修国（ChenXiuguo,Professor），教授、博士生导师，国家优秀青年科学基金获得者。2013年6月博士毕业于华中科技大学机械电子工程专业，同年进入华中科技大学材料学院博士后流动站，2016年6月出站并留校工作。2016年12月至2018年8月期间，作为日本学术振兴会(JSPS)外国人特别研究员赴日本东北大学进行合作交流。主要从事光学纳米测量技术与仪器，集成电路(IC)制造在线测量技术与装备，先进仪器研制与新型光电、能源材料表征测量等方面的研究工作。近年来，作为负责人主持国家自然科学基金4项，作为骨干人员参与国家自然科学基金重大科研仪器研制项目、首批国家重大科学仪器设备开发专项、国家科技重大专项等国家级科研项目10余项。申请和授权国际国内发明专项30余项，在Appl.Phys.Lett.、Opt.Express、Opt.Lett.等期刊发表SCI论文80余篇。曾获上银优秀机械博士论文奖、湖北省自然科学优秀学术论文一等奖、日内瓦国际发明金奖、湖北省技术发明一等奖、华中科技大学“学术新人奖”等荣誉。课题组主页：",1.面向集成电路IC制造的纳米测量技术与装备面向集成电路(IC)、有机显示(OLED)、光伏太阳能(PV)、柔性电子制造中的工艺控制与良率管理，研究纳米薄膜、纳米结构三维形貌、套刻误差(overlay)等测量新原理与新方法，解决IC制造纳米测量装备中的“卡脖子”技术难题。2.先进仪器研制与新型光电、能源材料表征测量研制宽光谱椭偏仪、高分辨成像椭偏仪、快照式椭偏仪等新型椭偏仪器，以及小角X射线散射仪(SAXS)、X射线光电子能谱仪(XPS)、X射线成像仪器，实现石墨烯、过渡金属硫族化合物、黑磷、硅烯等新型二维材料，以及新型半导体光电材料与能源材料的电学、光学、力学等物理特性表征测量。,,,,"1.国家自然科学基金优秀青年科学基金，52022034，纳米测量技术与仪器，2021-2023，在研，主持
+2.国家自然科学基金面上项目，62175075，快照式成像椭偏测量原理与方法研究，2022-2025，在研，主持
+3.国家自然科学基金面上项目，51775217，基于离焦扫描穆勒显微镜的纳米结构缺陷检测理论与方法研究，2018-2021，在研，主持
+4.国家自然科学基金青年基金，51405172，纳米结构几何参数广义成像椭偏测量理论与方法研究，2015-2017，已结题，主持
+5.湖北省重点研发计划重点项目，2020BAA008，复杂IC纳米结构三维形貌测量关键技术研究，2020-2022，在研，主持
+6.湖北省自然科学基金面上项目，2018CFB605，基于层析穆勒矩阵散射仪的三维纳米结构测量理论与方法研究，2018-2019，已结题，主持
+7.国家自然科学基金重大科研仪器研制项目，51727809，高分辨层析成像穆勒矩阵椭偏仪研制与应用基础研究，2018-2022，在研，参与
+8.国家科技重大专项子课题，2017ZX02101006-004，套刻误差光学测量技术研究，2017-2020，在研，参与","1.日本学术振兴会外国人特别研究员
+2.华中科技大学学术新人奖
+3.2019年湖北省技术发明一等奖（排名2）
+4.2020年度华中科技大学重大学术进展（排名2）
+5.湖北省第十六届自然科学优秀学术论文一等奖
+6.华中科技大学优秀博士后
+7.第四届上银优秀机械博士论文奖","1.S.Sheng,X.Chen*,C.Chen,J.Zhuang,C.Wang,H.Gu,andS.Liu,“Eigenvaluecalibrationmethodfordualrotating-compensatorMuellermatrixpolarimetry,”Opt.Lett.46,4618-4621(2021)
+2.C.Wang,X.Chen*,C.Chen,S.Sheng,L.Song,H.Gu,H.Jiang,C.Zhang,andS.Liu,“Reconstructionoffinitedeepsub-wavelengthnanostructuresbyMueller-matrixscattered-fieldmicroscopy,”Opt.Express29,32158-32168(2021)
+3.C.Chen,X.Chen*,C.Wang,S.Sheng,L.Song,H.Gu,andS.Liu,“ImagingMuellermatrixellipsometrywithsub-micronresolutionbasedonbackfocalplanescanning,”Opt.Express29,32712-32727(2021)[Editors’Pick]
+4.S.Yang,B.Qu,G.Liu,D.Deng,S.Liu,andX.Chen*,“Unsupervisedlearningpolarimetricunderwaterimagerecoveryundernonuniformopticalfields,”Appl.Opt.60,8198-8205(2021)[SpotlightonOptics]
+5.C.Wang,X.Chen*,H.Gu,H.Jiang,C.Zhang,andS.Liu,“Onthelimitsoflow-numerical-apertureimagingscatterometry,”Opt.Express28,8445-8462(2020)",,https://mse.hust.edu.cn/__local/5/12/11/A073AEAEC0E8C911102632D6C37_A720CB33_EDEA.jpg,研究生,博士,1,,
+陈冰,95,145,027-87557224,chenbing@hust.edu.cn,副教授,陈冰（ChenBing，AssociateProfessor），本科毕业于北方交通大学电气工程系，硕士和博士毕业于华中科技大学机械学院，一直从事电机控制、运动控制、智能机器人和制造自动化等相关研究工作。,运动控制智能机器人电机控制,,,,国家自然科学基金“高性能并条机的纤维运动参数在线辨识和智能自调匀整研究”,,"[1]Variable angle compensation control of noncircular turning. The International Journal of Advanced Manufacturing Technology, 2014, 70: 735–746
+[2]Operation characteristics of the brushless doubly-fed machine with a double-sine wound rotor in the stand-alone generation system, 2014 International Conference on Automation, Mechanical and Electrical Engineering, 2014
+[3]A Disturbance Rejection Control Method for Positioning of PMLSM, Second International Conference on Electric Information and Control Engineering, 2012",,https://mse.hust.edu.cn/__local/D/E6/1F/0EC3471BC3AE0A6A61668A07E74_6AA5BC3E_11F97.jpg,研究生,博士,1,,
+陈吉红,95,145,027-87559921,jihong@hust.edu.cn,教授,"陈吉红（ChenJihong，Professor），1965年8月出生,湖南省攸县人。华中科技大学教授、博士生导师。现任国家数控系统工程技术研究中心主任、武汉华中数控股份有限公司董事长、“高档数控系统创新团队”国家重大领域创新团队负责人。陈吉红教授长期从事数控、精密测量、CAD/CAM技术的研究开发和产业化工作。组织和承担完成了国家重大科技攻关项目、国家重大科技专项、国家863项目、国家自然科学基金等四十余项。2009年至今，组织国家数控系统工程中心和华中数控，获得“高档数控机床与基础制造装备”国家重大专项的12项课题立项，获得中央国拨经费3亿多元。2014年，“高档数控系统创新团队”入选科技部重点领域创新团队,2016年,该团队被评为“'十二五'机械工业优秀创新团队”。获得发明专利25项、实用新型6项、软件著作权20多项；制订和起草了数控系统国家标准和行业标准11项；在国内外学术期刊和会议上发表学术论文近百篇。主编出版教材《数控机床实验指南》、《数控机床电气控制》、《数控机床现代加工工艺》等。参加指导的博士后7人，博士生25人、硕士生30人先后获得了学位。领导国家数控系统工程技术研究中心，在四年一次的国家级评估中，连续3次评优。领导华中数控公司发展成为国产数控系统的龙头企业，我国数控系统行业唯一的上市公司。研制的具有自主技术创新的华中8型高性能数控系统，打破了国外技术封锁，在高速高精、现场总线、双轴同步、双通道多主轴控制、大功率驱动器及大功率伺服电机、直线电机控制、电主轴驱动器、力矩电机控制、绝对式编码器/光栅尺接入、在线测量等一系列关键技术实现突破。目前，华中8型高性能数控系统已累计销售数万套，伺服电机近百万套，取得了显著的经济社会效益。主要社会兼职：“高档数控机床与基础制造装备”国家重大科技专项总体组专家教育部第七届科学技术委员会先进制造学部委员中国机床工具协会副理事长，兼任数控系统分会理事长国家发改委、工信部专家委员会专家国家智能制造标准化专家咨询组专家全国机床数控系统标准化委员会（TC367）副主任委员",智能化/网络化数控技术机器人技术CAD/CAM技术,,,发明专利25项、实用新型6项、软件著作权20多项,"国家重大专项（04）：开放式高档数控系统、伺服装置和电机成套产品开发与综合验证，2012.1-2015.12
+国家重大专项（04）：华中标准型数控系统和专用数控系统开发与规模化推广应用，2012.1-2015.12
+国家重大专项（04）：与工艺融合的高端多轴加工工艺与编程方法研究，2013.1-2015.12
+国家支撑计划项目：云计算结构，2012.12-2015.12
+国家重大专项（04）：国产数控系统应用技术规范，2014.1-2016.12
+国家重大专项（04）：基于开放式数控系统二次开发平台的航天领域专用数控系统开发，2014.1-2016.12
+国家重大专项（04）：国产高档数控机床与技术在航空领域综合应用验证及工艺研究，2014.1-2016.12
+国家重大专项（04）：高档数控系统关键共性技术创新能力平台（二期），2015.1-2017.12
+国家重大专项（04）:高档数控装备及工艺在XX大型整体舱段集成制造中的示范应用,2015.1-2017.12
+智能制造专项：数控机床互联通讯协议标准与试验验证，2016.6-2018.7","2017年，国家科技进步二等奖，高性能数控系统关键技术及产业化
+2016年，中国机械工业科学技术一等奖，高性能数控系统关键技术及应用
+2016年，湖北省科技进步一等奖，华中8型高性能数控系统
+2014年，湖北省技术发明一等奖，高档数控系统NCUC-Bus现场总线技术及应用
+2012年，湖北高校十大科技成果转化特等奖，华中高性能数控系统产业化
+2010年，国务院享受特殊津贴专家
+2009年，教育部科技进步奖一等奖，高性能全数字伺服驱动和电机关键技术及应用
+2009年，武汉市科技进步一等奖，高性能数控系统产业化
+2008年，湖北省科技进步一等奖，高档数控系统关键技术研究及推广应用
+2007年，湖北省科技进步二等奖，HNC-21数控装置、伺服及主轴驱动成套系统
+2006年，获湖北省五四青年奖章
+2004年，湖北省科技进步三等奖，全数字交流伺服驱动单元
+2004年，湖北省政府专项津贴专家
+2003年，入选湖北省跨世纪人才工程（第一层次）
+2002年，武汉市享受特殊津贴专家
+2001年，获中国优秀博士后奖
+2000年，国家科技进步奖二等奖，华中I型数控系统","1.JihongChen,JianzhongYang*,HuichengZhou,HuaXiang,ZhihongZhu,YesongLI,Chen-HanLee,GuangdaXu.CPSModelingofCNCMachineToolWorkProcessesUsinganInstruction-DomainBasedApproach，Engineering，2015,1（2）：247-260.
+2.XieChuanning,TangXiaoqi,ChenJihong,SongBao,*JinJian,andZhangHangjun.HumidityThresholdModelofCNCMultilayerPrintedCircuitBoardforElectrochemicalMigration.QualityandReliabilityEngineeringInternational,2015,31(4):567–578.
+3.WeiFan,Chen-HanLee,JihongChen.Arealtimecurvature-smoothinterpolationschemeandmotionplanningforCNCmachiningofshortlinesegments.InternationlaJournalofmachineToolandManufacture,2015,96:27-46.
+4.WeiFan,Chen-HanLee,JihongChen;XiaoYao.Real-timeBezierinterpolationsatisfyingchorderrorconstraintforCNCtoolpath.ScienceChinaTechnologicalSciences,2016，59（2）：203-213.",,https://mse.hust.edu.cn/__local/B/26/CA/DEBCF822C8CA3CBCD78CACBEFF9_F1D3855F_11745.jpg,研究生,博士,1,,
+陈於学,95,145,,chenyuxue@hust.edu.cn,副教授,陈於学（Chen Yuxue，Associate Professor），1988年大学本科毕业后到襄阳汽车轴承股份有限公司工作12年，并于1998年在企业被评为高级工程师。2000年至2005年在华中科技大学机械学院学习，硕、博连读，获博士学位。2005年至2006年到日本恩斯克中国技术中心工作一年，2006年进入华中科技大学机械学院仪器系工作。长期从事滚动轴承相关技术研究。在滚动轴承接触振动、轴承的故障诊断、轴承检测和轴承的自动化装配等方面有独到的见解。,精密仪器 自动检测 自动化装备 轴承振动 轴承故障诊断,,,,"1、襄阳汽车轴承股份有限公司《混合式驱动轴总成装配线改造》
+2、襄阳汽车轴承股份有限公司《圆锥滚子轴承自动装配线》
+3、数控一代国家科技支撑计划《圆锥滚子轴承数字化高速自动装配线》
+4、重庆长江轴承股份有限公司《三代轮毂轴承在线测振技术开发》
+5、重庆长江轴承股份有限公司《三代轮毂轴承刚度（负游隙）在线测量技术开发》
+6、重庆长江轴承股份有限公司《深沟球轴承全自动振动测量仪》",,"1、Dynamic Measurement of Bearing Radial Clearances (SCI)：Key Engineering Materials, v295-296, 2005, p361-366
+2、弹性体线接触副的非线性振动研究：轴承，2007(11), 336:8-11
+3、On-line test system for vibration measurement and sorting of ball bearings (SCI): Key Engineering Materials, p502-506 Measurement Technology and Intelligent Instruments IX, ISSN 1013-9826 v437, 2010
+4、Research on On-Line Automatic Diagnostic Technology for Scratch Defect of Rolling Element Bearings (SCI)：INT J PRECIS ENG MAN：ISSN：2234-7593，2012, Vol.13, No.3, pp.357-362",,https://mse.hust.edu.cn/__local/2/06/81/C7AFDC0AFAD8A591B15E244AD4D_FD2DD5E5_14116.jpg,研究生,博士,1,,
+陈文斌,95,145,,wbchen@hust.edu.cn,教授,陈文斌（ChenWenbin，Professor），2012年毕业于华中科技大学机械电子工程专业，获工学博士学位，2013-2014赴英国林肯大学从事博士后研究。主要从事人体运动行为与认知、穿戴式机器人、人机混合智能系统和机器人运动规划等方向的研究工作。作为项目负责人先后主持国家自然科学基金面上项目、国家重点研发计划子课题、NSFC-深圳联合基金重点项目、JKW重点项目子课题等。获中国机械工业联合会科学技术发明奖技术发明一等奖1项、湖北省技术发明一等奖1项和日内瓦国际发明博览会金奖2项，获中国医疗器械注册证3项。研究成果发表在包括SoftRobotics、IEEETrans.Cybern.、IEEEIEEE/ASMETrans.Mechatron.、IEEETNeur.Sys.Reh.、Gait&Posture等机器人与康复医学工程等领域的国际顶级期刊，受到人机一体化领域国际著名学者和机构的引用与正面评述“在外骨骼机器人领域提出了非常先进的变革性技术”。出版机器人学教材1部，先后获国家出版领域最高奖-中国出版政府奖、教育部首届全国优秀教材一等奖。,人体运动行为与认知穿戴式机器人人机混合智能系统机器人运动规划,,,"医疗器械许可证：手指关节康复评估系统，苏械注准20192191549
+医疗器械许可证：便携式手功能康复训练系统，苏械注准20212190847
+医疗器械许可证：手功能康复训练系统，苏械注准20192191550","[1]华中科技大学交叉研究计划重点项目，大脑运动功能机制及其在人手运动功能再造中的验证，2024.1-2026.12，主持。
+[2]湖北省重点研发计划，活动肿瘤靶区实时精准定位放疗机器人关键技术研究，2024.1-2026.12，主持。
+[3]国家自然科学基金面上项目，基于剪切增稠效应的被动变刚度关节设计原理及其在被动外骨骼中的应用研究，2021.1-2024.12，主持。
+[4]JKW重点项目课题“”，2019.1-2020.12，主持。
+[9]JKW重点项目课题“**
+
+
+
+
+
+
+,CaihuaXiong*,BoHuang,LongfeiChengandBaiyangSun,Exploringtheeffectsofskeletalarchitectureandmusclepropertiesonbipedalstandinginthecommonchimpanzee(Pantroglodytes)fromtheperspectiveofbiomechanics,FrontiersinBioengineeringandBiotechnology,11:1-18,2023.
+[2]WenbinChen,XiangFang,JingmingChe,CaihuaXiong*,Designandanalysisofpassivevariablestiffnessdevicebasedonshearstiffeninggel,SmartMaterialsandStructures,31(12):125007,2022.
+[3]TianchengZhou,ZhijieZhou,HanwenZhang,WenbinChen*，Modulatingmultiarticularenergyduringhumanwalkingandrunningwithanunpoweredexoskeleton,Sensors,22(21):8539,2022.
+[4]QuanlinLi,YangXia,XianzongWang,PeiyangXin,WenbinChen,CaihuaXiong,Muscle-Effort-Minimization-InspiredKinematicRedundancyResolutionforReplicatingNaturalPostureofHumanArm,IEEETrans.onNeuralSystems&RehabilitationEngineering,30:2341-2351,2022.
+[5]陈文斌，张宇霖，付豪，范翔，熊蔡华等，基于3-RRR非对称球面并联机构的假肢肩关节机构优化设计，中国科学：技术科学，2022.(DOI:10.1360/SST-2021-0425)",,,,https://mse.hust.edu.cn/__local/5/18/AF/53BB52CABC5B7386CB7D398E593_78D7BE65_11FB8.jpg,研究生,博士,1,,
+曹颖,95,145,,caoying@mail.hust.edu.cn,副教授,曹颖（CaoYing，AssociateProfessor），女，1983年1月出生，籍贯湖北大冶，中共党员。2007年硕士毕业于华中科技大学建筑与城市规划学院设计艺术学专业，同年进入机械科学与工程学院工业设计系担任教师。现任工业设计系党支部副书记，热爱本职工作，认真负责，在教学上对学生严格要求，倾心指导，民主交流。善于以教学结合思政的方式引导学生，运用多种教学方法，强调与学生的互动，用生动有趣的启发式讲授和丰富多彩的多媒体手段来调动学生的学习兴趣和创造性，对学生进行及时的辅导和帮助，带领学生参与国内外工业设计竞赛并获奖，使学生更好的学到知识和能力。现任中国人工智能学会会员，近年来，作为学术骨干主持或参与完成“本科教学协同计划”“设计学专业基础核心课程《设计初步》的教学改革与实践”等教研项目，“青年教师基金项目”“省自然科学基金面上项目”等纵向科研项目，以及“工业产品创新设计研发”“海洋三用工作船工业设计”“激光器外观设计”等横向科研项目。在国内外核心期刊和会议上发表论文多篇。,展示空间设计产品设计用户体验,,,专利（软件）名称：电磁炉，2010。,教研项目情况：1.《设计速写》基础课程获校精品课程，排名第三；2.本科教学协同计划——设计基础(Ⅱ)-业界课程（特邀腾讯），3.项目来源“985”拔尖创新，2013年3月-6月，排名第二；4.设计学专业基础核心课程《设计初步》的教学改革与实践，5.2014年教学研究项目，面上项目，2014年3月至2016年6月，排名第二；6.参与教育部质量工程-艺术设计人才培养模式创新实验区（工业设计方向）。纵向科研项目:1.设计艺术中的“行为语意态”研究，青年教师基金项目，2013年1月-2014年12月，排名第一；2.数字媒体中的人机交互方式与形式研究，青年教师基金项目，2013年1月-2014年12月，排名第二；3.面向复杂产品概念设计的协同决策方法研究，青年教师基金项目，2011年1月-2012年12月，排名第四；4.参与省基金一项，排名第三；5.基于拓扑优化的机械产品工业设计与结构设计一体化技术，省自然科学基金面上项目，排名第三。横向科研项目情况：1.参与工业产品创新设计研发，民用横向，2011年2月-2011年8月；2.参与海洋三用工作船工业设计，民用横向，2012年12月-2014年1月；3.参与激光器外观设计，民用横向，2013年3月-2014年3月；4.参与湖北省科技馆“身边的科学”系列展品展项设计研发。,1.华中科技大学青年教师教学竞赛二等奖，2010年度；2.华中科技大学教学质量奖二等奖，2011年度；3.华中科技大学优秀辅导员，2010年度；4.华中科技大学优秀教师班主任，2013年度；5.华中科技大学教学质量奖二等奖，2014年度。,1.创意产业背景下的展示设计及教学思考，科教导刊，2010；2.科技展示中的主角-科技展品设计研究，重庆大学出版社，2010；3.Researchontheuserexperienceinthesci-techdisplaydesign，Computer-AidedIndustrialDesign&ConceptualDesign，2011；4.王屋山-黛眉山国家地质公园研究报告封面系列设计，包装工程，2012；5.金刚台国家地质博物馆展厅室内设计，中国地质大学学报，2013,,https://mse.hust.edu.cn/__local/5/8A/2C/DBA9439A1E1E883B20DAAFE340F_4DB32753_113FA.jpg,研究生,硕士,1,,东一楼四楼
+曹淮,95,145,027-87541744,caohuai@hust.edu.cn,副教授,曹淮（CaoHuai，AssociateProfessor）博士、副教授，硕士研究生导师，工业设计系主任。中国人工智能学会智能创意与数字艺术专业委员会委员中国工业设计协会用户体验产业分会常务理事广东华中科技大学工业技术研究院设计服务中心主任机械学院数字装备工业设计研究室主任华中科技大学-中道善品创新设计团队负责人东莞市创新创业领军人才,工业品牌战略研究与设计智能装备工业设计服务设计/用户体验设计工业&科技空间营造区域经济转型升级策略,,,,,,长期从事品牌策略与产品创新设计、用户体验设计、区域经济转型升级策略、文创项目孵化等领域研究和项目实践。在国内外专业核心期刊上累计发表论文及作品30余篇（幅），参与教育部“基于工程技术平台的艺术设计人才培养模式创新实验区”项目（工业设计部分），获湖北省高等教学成果奖二等奖；累计申请发明、实用新型、外观专利30余项；带领团队师生在国内、外重大工业设计竞赛中（Braun、IF、RED-DOT、CarDesignNewsAward、广东省“省长杯”等）屡获大奖。兼任广东华中科技大学工业技术研究院设计服务中心主任，主持中道善品联合设计机构及华科中道国家级众创空间工作，专注以设计思维驱动产业创新，先后主持近百家大、中型企业的设计战略导入和产品创新开发，积累了丰富的商业设计实战经验，先后服务：三一重工、大族激光、广东科学中心、东莞科博馆、宜安科技、黄鹤楼科技园、许昌烟机、湖北中烟、安徽中烟、四川中烟、利元亨、武重集团、中电45所、南兴木工、科硕机械、非遗吴罗等知名品牌，助力我国自主工业品牌转型升级，提升品牌核心竞争力。,,https://mse.hust.edu.cn/__local/D/D5/6D/3A7B3E695FFF412A053F0957F23_1E017E62_10F92.jpg,研究生,博士,1,,东一楼四楼
+陈建魁,95,145,027-87559840,chenjk@hust.edu.cn,研究员,陈建魁（ChenJiankui，Professor），男，研究员，博士生导师。在数字制造装备与技术国家重点实验室开展前沿领域科研工作，致力于柔性电子制造与人工智能领域的关键技术突破、机理探索、智能算法开发等研究。所研究成果在RoboticsandComputer-IntegratedManufacturing、IEEETransactions、Thin-WalledStructures、ManufacturingProcesses、MechanicalSciences、MeasurementScienceandTechnology等期刊发表SCI论文40余篇，获国家技术发明奖二等奖、国家科学技术进步奖二等奖、湖北省技术发明奖一等奖、湖南省科技进步奖一等奖、日内瓦国际发明展特别金奖与金奖等，以第一发明人获授权国家发明专利100余项、美国发明专利3项，获“武汉黄鹤英才”、“湖北省百名专利发明领军人才”等。,柔性电子制造装备与技术新型显示制造工艺、技术与装备智能制造与人工智能,,,"[1]ChenJiankui,JinYiwei,YinZhouping,HuangYongan.LaserStrippingMass-transferDeviceandMethodforMicrodevicesBasedonWindingProcess.US17041464
+[2]ChenJiankui,YinZhouping,HuangYongan,etal.ManufacturingSystemandMethodforInkjetPrintingFlexibleDisplayDevice.US11214077
+[3]陈建魁，尹周平，黄永安，杨华，等：一种喷墨打印柔性显示器件制造系统及方法.PCT国际，PCT/CN2020/090592
+[4]陈建魁,尹周平,等:一种基于卷绕工艺的微器件激光剥离巨量转移装置及方法.PCT国际，PCT/CN2019/094133
+[5]陈建魁,尹周平,黄永安,等:一种用于飞行墨滴状态观测的装置.中国,ZL201910757979.X","[1]自然科学基金面上项目：电流体喷印飞升级墨滴阵列调控机理研究
+[2]广东省重点领域研发计划项目：印刷OLED显示高精度喷墨打印设备研发及应用
+[3]国家重点研发计划项目：高性能印刷电子器件的高精度跨尺度喷印制造基础研究
+[4]自然科学基金面上项目：柔性电子卷到卷制造中异质结构可控转移与层合机理
+[5]科技支撑计划项目：无菌制剂机器人自动化生产线研制与应用
+[6]自然科学基金重点项目：大面积柔性电子曲面共形制造及智能蒙皮应用
+[7]国家重大科研仪器设备研制专项：高超音速流场实时精确测量系统的研制与应用
+[8]科技支撑计划项目：燃料电池膜电极（MEA）专用装备研发与示范
+[9]国家973计划项目：高密度倒装键合中多物理量协同控制机制与实现","[1]2021年湖北省技术发明奖一等奖
+[2]2018年日内瓦国际发明展特别金奖
+[3]2017年国家科学技术进步奖二等奖
+[4]2016年湖南省科学技术进步奖一等奖
+[5]2016年武汉市“黄鹤英才（科技）计划”
+[6]2014年日内瓦国际发明展金奖
+[7]2013年国家技术发明奖二等奖
+[8]2011年湖北省技术发明奖一等奖","[1]QiangqiangLiu,JiankuiChen*,HuaYang,ZhoupingYin.AccurateStereo-Vision-BasedFlyingDropletVolumeMeasurementMethod,IEEETransactionsonInstrumentationandMeasurement,2021
+[2]Jinyiwei,ChenJiankui*,YinZhouping,Liyiqun,HuangMengmeng.PositionerrorlimitforthelastdropletdepositionintomicrocavityinmanufacturingofprintedOLEDs,Langmuir,2021
+[3]JiankuiChen,SihuiYang,YiqunLi*,ZhoulongXu,Yong'anHuang.ActiveCurvedSurfaceDeformingofFlexibleConformalElectronicsbyMulti-FingeredActuator,RoboticsandComputer-IntegratedManufacturing,2020
+[4]YiqunLi,RazikhovaMeiramgul,JiankuiChen*,ZhoupingYin.GeometricSpectralAlgorithmsfortheSimulationofRigidBodies,JournalofComputationalandNonlinearDynamics,2019
+[5]JianKuiChen,TengLiu,HuaYang*,ZhouZhang,YongAnHuang,ZhouPingYin.Polygonal-feature-basedshapecontextforflexiblesurfacevisionpositioning.MeasurementScienceandTechnology,2019",,https://mse.hust.edu.cn/__local/4/CD/57/2F45259EED0A04E45C5265CB823_264DB3C9_1270E.jpg,研究生,博士,1,,先进制造大楼东楼B216
+陈蓉,95,145,"027-87558744,102-2020010",rongchen@hust.edu.cn,教授,陈蓉（ChenRong，Professor），女，1978年出生，湖北武汉人，九三学社社员。华中科技大学教授（二级）、博士生导师。机械科学与工程学院副院长，华中科技大学柔性电子研究中心副主任。华中科技大学集成电路学院、武汉国际微电子学院、光学与电子信息学院、中欧清洁与可再生能源学院特聘教授。2001年获得中国科学技术大学学士学位、2006年获得美国斯坦福大学博士学位。毕业后分别在美国应用材料和英特尔研究院担任高级技术职务。2011年回国，加入华中科技大学至今。担任第十一、十二届湖北省政协委员（优秀委员），中国科协第十届全国委员会委员，欧美同学会（中国留学人员联谊会）第八届理事会理事，武汉市欧美同学会副秘书长，华中科技大学欧美同学会秘书长，湖北省妇女人才促进会副会长。国家重大人才工程特聘教授（2023），国家级创新领军人才（2019），海外高层次青年人才（2011），2021年“科学探索奖”获得者。从事微纳制造的前沿交叉领域，开展原子层沉积方法、工艺与装备的研究。承担国家重点研发计划颠覆性技术创新项目、国基金重点项目、973青年项目等多项微电子与新能源相关项目，在Nat.Comm.，AdvMater，Angew.Chem.Int.Ed，Small，Sci.Bullet.，IJEM，OEA等国内外期刊上发表SCI论文180余篇，主编撰写中英文出版物3部，获授权专利80余项、含10余项国际专利。兼任中国工程院Engineering期刊青年通讯专家、美国真空学会JVSTA&BEditorialBoardmember、爱思唯尔PhysicaB期刊编辑等。以排名第一荣获湖北省技术发明一等奖2项、湖北省专利奖、全国颠覆性技术创新大赛优胜奖、入选2020“科创中国-先导技术榜单”等。在国际上，获得IEEESMC杰出学术贡献奖、日内瓦发明展特别金奖、金奖等，作为召集人制定并发布国际标准“Atomiclayerdeposition–Vocabulary”（ISO8181：2023）。,主要为用实验手段研究纳米材料、纳米器件、和其工艺过程的研究，以及用它们来解决未来能源和电子工业所即刻面临的挑战。研究的重点在于控制材料的生长、结构、及其性能，用于制造和表征具有精确的物质组成、以及原子尺度上可控的纳米结构，并且将其整合成纳米器件。具体的研究领域包括:选择性原子层沉积方法纳米颗粒制备与改性柔性电子制造薄膜生长工艺与装备光电显示、光电转换器件制备与开发,,,,"[1]国家自然科学基金指南引导类原创探索计划项目(52350349)，185万，负责人
+[2]国家重点研发计划颠覆性技术创新项目(2022YFF1500400)，1000万，负责人
+[3]科学探索奖项目，300万，负责人
+[4]4机械学院STAR自主创新研究基金“恒星”项目，100万，负责人
+[5]制造基础技术与关键部件国家重点研发计划，76.2万，课题研究任务负责人
+[6]横向产学研项目，595万，负责人
+[7]国家自然科学基金重点项目(51835005)，351.8万，项目负责人
+[8]973国家重大科学研究计划青年项目（2013CB934800），476万，首席科学家
+[9]国家自然科学基金面上项目（51575217），79.2万，项目负责人
+[10]国家自然科学基金国际(地区)合作与交流项目(51911540476)，9万，负责人","[1]2024年2023年度湖北省技术发明奖一等奖
+[2]2023年第二十五届中国科协求是杰出青年成果转化奖
+[3]2022年第十七届中国青年科技奖
+[4]2021年中国工程院-中国工程前沿杰出青年学者
+[5]2021年全国颠覆性技术创新大赛优胜奖
+[6]2021年第三届“科学探索奖（先进制造）”获得者
+[7]2021年华中科技大学“国际交流与合作先进个人”
+[8]2020年“湖北省女性科技创新人才”
+[9]2020年华中科技大学“外事先进个人”
+[10]2019年华中科技大学师德先进个人","[1]YichengLi#,ZilianQi#,YuxiaoLan,KunCao*,YanweiWen,JingmingZhang,EryanGu,JunzhouLong,JinYan,BinShan,RongChen*“Self-AlignedPatterningofTantalumOxideonSiO2/CuthroughRedox-coupledInherentlySelectiveAtomicLayerDeposition”NatureCommunt.2023,14,4493.
+[2]RongChen*,KunCao,YanweiWen,FanYang,JianWang,XiaoLiu,BinShan“Atomiclayerdepositioninadvanceddisplaytechnologies:fromphotoluminescencetoencapsulation”Int.J.Extrem.Manuf.2024,6,022003.
+[3]ZoushuangLi,YuanxiaoChen,YufengNie,FanYang,XiaoLiu,YuanGao,BinShan,RongChen*“MultiscaleComputationalFluidDynamicsModellingofspatialALDonporousLi-ionbatteryelectrodes”Chem.Eng.J.2024,479,147486.
+[4]XiaoLiu,ShuangfengJia,MingYang,YuantingTang,YanweiWen,ShengqiChu,JianboWang,BinShan*,RongChen*“ActivationofsubnanometricPtonCu-modifiedCeO2viaredox-coupledatomiclayerdepositionforCOoxidation”NatureComm.2020,11,4240.
+[5]JianfengWanyan,KunCao,ZhipingChen,YunLi,ChenxiLiu,RunqingWu,Xiao-DongZhang*,RongChen*“Predictivetoolforsensitiveandexpeditedmeasurementofultra-barrierpermeation”Engineering2021,7(10),1461.",,https://mse.hust.edu.cn/__local/2/2F/82/8279E47E94499C3AC4A0793ACAB_295850C4_118C9.jpg,研究生,博士,1,,
+陈学东,95,145,027-87557325,chenxd@hust.edu.cn,中国工程院院士、教授,陈学东（ChenXuedong，Professor），华中科技大学智能制造装备与技术全国重点实验室常务副主任、教授、博士生导师，2023年当选中国工程院院士。长期从事机械动力学与控制研究，面向我国高端装备发展战略，攻克了尖端仪器减振动、重载装备增强度、超精装备控精度的系统技术，发明了准零刚度减振器，用于天空地海5类国防重器的机载仪器，以及IC光刻机与扫描电镜等超精密制造和测量装备；研制了大型重载结构动力学设计-模态试验平台，用于世界首台极地超深钻机等；发明了纳米精度运动工作台技术，用于国产封装光刻机和制造光刻机，为我国装备技术发展作出重要贡献。以第一完成人获国家技术发明二等奖2项、国家科技进步二等奖1项、省部级一等奖5项，发表SCI论文103篇，出版专著2部，获授权中外发明专利134项、软著30项、标准4项。2008年被聘为教育部“长江学者”特聘教授、2013年入选“国家百千万人才工程”、2021年获评首批湖北省特级专家、2022年荣获第十四届光华工程科技奖、2023年荣获第三届全国创新争先奖状。,机电系统动力学及控制机器人及其控制等,,,,,,,,https://mse.hust.edu.cn/__local/2/39/D2/AA093F089E9DDAF7AF9D660D64E_9F6DF3BD_A39DB.jpg,研究生,博士,1,,
+陈明祥,95,145,,chimish@hust.edu.cn,教授,陈明祥（ChenMingxiang，Professor），博士、教授、博士生导师。华中科技大学机械学院工艺装备及自动化系主任，广东省珠江学者讲座教授。本科和硕士毕业于武汉理工大学材料学院，博士毕业于华中科技大学光电系，美国佐治亚理工学院封装研究中心博士后。主要从事先进电子封装与微纳制造等方面的教学与科研工作，主持科研项目包括国家自然科学基金、国家重点研发计划、GF领域基金重点项目、广东省产学研合作重点项目、湖北省科技创新重点项目、武汉市科技成果转化重大项目等。先后培养博士/硕士研究生30余名；发表学术论文60余篇（其中SCI检索50篇），申请和授权发明专利20余项（其中多项通过专利许可或转让实现产业化）；荣获2020年湖北省专利银奖、2016年国家技术发明二等奖、2015年湖北省优秀硕士学位论文（指导老师）等。招生：欢迎材料学和材料成型（优先）、机械等专业的学生，加入本课题组攻读硕士或博士学位。,1）先进电子封装材料：陶瓷基板（DPC/2.5DPC/3DPC）、纳米金属焊膏、荧光玻璃（PiG）等；2）光电器件封装技术：功率器件（LED/LD/VCSEL/TEC/CPV等）封装，第三代半导体（GaN/SiC/AlN等）器件封装，高温等恶劣环境下电子器件封装等；3）微纳制造关键技术：低温键合、异质集成、三维系统封装、纳米封装技术等。,,,"1）陈明祥，一种荧光玻璃片及其制备方法，ZL201210492751.0
+2）陈明祥，刘松坡，程浩，陈珍，一种含导电铜柱的陶瓷基板制备方法，ZL201510583151.9
+3）陈明祥，彭洋，程浩，罗小兵，刘胜，一种紫外LED封装结构及其制备方法，ZL201610288910.3
+4）陈明祥，程浩，郝自亮，一种三维陶瓷基板及其制备方法，ZL201711227522.5
+5）陈明祥，刘佳欣，低温键合用微纳米铜颗粒焊膏及其制备方法，ZL202010281490.2","1）湖北省重点研发计划项目：第三代半导体器件封装用陶瓷基板研发与应用（2021-2023）
+2）GF创新成果转化应用重点项目：集成无源器件一体化三维布线陶瓷基板技术（2021-2023）
+3）武汉市科技成果转化重大项目：电子封装陶瓷基板制备技术成果转化（2019-2021）
+4）GF预研领域基金重点项目：耐高温微系统封装技术（2018-2021）
+5）国家自然科学基金：深紫外LED封装制造中化学键合理论与实验研究（2018-2021）
+6）国家重点研发计划项目：第三代半导体固态紫外光源封装关键技术研究（2017-2021）","1）湖北专利奖银奖（2020.9，排名第一）
+2）广东省珠江学者讲座教授（2017.08）
+3）国家技术发明奖二等奖（2016.12，排名第三）
+4）湖北省优秀硕士学位论文（2015.12，导师）
+5）武汉东湖高新区“3551光谷人才计划”入选者（2012.6）","[1]HaoCheng,YangPeng,YunMou,QingleiSun,andMingxiangChen.Low-temperaturefabricationof3Dceramicsubstratebymoldinginorganicaluminosilicatepaste,JournalofElectronicPackaging,2019,141,041330
+[2]YangPeng,RenliLiang,YunMou,JiangnanDai,MingxiangChen,andXiaobingLuo.Review:Progressandperspectiveofnear-ultravioletanddeep-ultravioletlight-emittingdiodepackagingtechnologies.JournalofElectronicPackaging,2019,141,040804
+[3]YunMou,HaoWang,YangPeng,HaoCheng,QingleiSun,andMingxiangChen.Enhancedheatdissipationofhigh-powerlight-emittingdiodesbyCunanoparticlepaste,IEEEElectronDeviceLetters,2019,40,949-952
+[4]YangPeng,RuixinLi,HaoCheng,ZhenChen,HongLi,andMingxiangChen,Facilepreparationofpatternedphosphor-in-glasswithexcellentluminouspropertiesthroughscreen-printingforhigh-powerwhitelight-emittingdiodes,JournalofAlloysandCompounds,2017,693:279–284（ESI高被引论文）
+[5]程浩，陈明祥，罗小兵，彭洋，刘松坡，电子封装陶瓷基板，现代技术陶瓷2019，40（4）：265-292",,https://mse.hust.edu.cn/__local/2/CF/E2/3156F4E6BAADBAEC96BCE161923_5272B2D9_8134.jpg,研究生,博士,1,,先进制造大楼东楼D513
+常素萍,95,145,027-87557994,Changsp@mail.hust.edu.cn,副教授,常素萍（ChangSuping，AssociateProfessor），博士，副教授。1998年和2004年分别获得华中科技大学材料加工工程专业的学士和硕士学位，2007年获得华中科技大学测试计量技术及仪器专业博士学位，并留校任教，从事测量计量技术和精密仪器等方面的教学和科研。2008年获得华中科技大学优秀博士学位论文。现已承担和参加国家自然基金、863重点项目、国家重大仪器开发专项、湖北省自然基金、横向科研课题十多项，发表文章三十多篇，申请专利7项，授权专利4项。,光学精密测量技术及仪器表面测量及分析精密工程,,,"1.一种大量程直线型相位光栅轮廓测量位移传感器发明专利
+2.一种激光相位光栅干涉位移传感器发明专利
+3.一种白光干涉光学轮廓仪发明专利
+4.一种基于显微白光干涉的纳米探针装置发明专利
+5.一种基于激光显微干涉的多功能测量装置发明专利
+6.一种多探针平面度检测仪及其检测方法发明专利
+7.一种触针式轮廓仪传感器非线性误差的校正方法发明专利","1.钢板毛化表面形貌特征的区域法分析和评定理论的研究，2013.01-2015.12，国家自然科学基金（青年资助项目）
+2.衍生多功能二、三维微纳图像综合测量系统，2010.01-2012.12，国家自然科学基金（仪器项目）
+3.微纳三维测量技术与装置的子课题—精密表面形貌测量，2008.10-2010.10，863重点项目
+4.高端表面形貌测量系列仪器研究与开发，2011.10-2015.9，国家重大科学仪器专项
+5.三维表面形貌综合测量分析与评定，2008.1-2009.12，湖北省自然科学基金重点项目",,"1.Awhitelightinterferencebasedatomicforceprobescanningmicroscopy.MeasurementScienceandTechnology，2011
+2.Scanningwhite-lightinterferometricmeasurementoffreeformsurfacebasedoninterferencefringetracing.Proc.ofSPIE，2010
+3.Acontrolled-forcelaserinterferenceprofilometer.ProceedingsoftheSPIE，2011
+4.Designandrealizationofcontrollablemeasuringforceprofilometer.ProceedingsoftheSPIE，2010
+5.Non-uniforminterpolationandre-samplingfortactilescanningmeasurement.ProceedingsoftheSPIE，2011",,https://mse.hust.edu.cn/__local/F/E9/6F/94EF6E090DF644F93428D12981F_A80C5895_11DEC.jpg,研究生,博士,1,,
+陈良洲,95,145,027-87543970,chenlz@hust.edu.cn,副教授,陈良洲（ChenLiangzhou，AssociateProfessor），男，河南光山人。1994年进入华中科技大学学习，1998年获得学士学位、2001年获得工学硕士学位。2006年上海交通大学博士毕业，后到华中科技大学任教，一直从事先进传感及自动检测技术、精密仪器及机械、信息融合及精密测量等方面的科研和教学工作。承担国家自然科学基金项目、国家发改委项目等纵向项目及企业横向项目多项。发表论文20余篇。,先进传感及自动检测技术精密仪器及机械,,,,"1.国家自然科学基金面上项目:非侵入眼内压连续监测的关键技术与系统研究.（主持）
+2.国家发改委海洋工程装备专项:溢油回收装置研发及产业化.（主持）
+3.湖北省自然科学基金面上项目:基于MEMS的非侵入眼压监测研究.（主持）
+4.企业横向:滚齿机传动链检测系统.（主持）
+5.企业横向:粮油仓储信息化管理集成系统.（主持）
+6.国家自然科学基金面上项目:一种新型角膜微变形测量系统研究.（第二）
+7.国家自然科学基金面上项目:基于本体的GPS信息语义互操作方法.（第二）
+6.国家自然科学基金面上项目:白光同步相移显微干涉动态表面形貌测量.（第三）
+9.863专项子项目:微纳三维测量技术与装置-精密表面形貌测量技术.（第三）
+10.湖北省科技厅重大专项：宽带光同步相移干涉表面动态测量研究.（第三）",,,,https://mse.hust.edu.cn/__local/0/D8/A2/AED76459D1D3D86576D13559A29_D6264E39_126D3.jpg,研究生,博士,1,,
+陈雪,95,145,,whitesnow515@hust.edu.cn,讲师,陈雪（ChenXue，Lecturer）教育背景：湖北工业大学艺术设计学院本科华中科技大学机械科学与工程学院工业设计系硕士研究生华中科技大学机械科学与工程学院工业设计系讲师,展示设计工业设计,,,2013年申报实用新型专利“一种能释放与广告视频内容相似气味的自动售货机”,"2011年参与横向基金“工业产品创新设计研发”
+2012年参与校教学研究基金“项目式教学在“产品设计“教学环节中的研究和实践”
+2012年参与校自主创新研究基金“视觉信息图表设计趋势研究”
+2014年主持校自主创新研究基金“基于产品语义学的楚文化符号应用研究”","2009年度华中科技大学青年教师教学竞赛二等奖
+2012年度华中科技大学教学质量奖二等奖
+2013年作品“黄鹤楼薄片技术研究所工业展示整合设计”参展2013世界华人工业设计优秀设计作品展（台湾）","浅议城市景观中的展示设计华中科技大学学报
+功能化产品形式设计包装工程
+Accessibledesignofthekitchentableforwheelchairusers,HydraulicEngineeringandSustainableCityDevelopment
+BriefAnalysisofKitchenDesignBasedontheHistoryofWesternSociety,HydraulicEngineeringandSustainableCityDevelopment",,https://mse.hust.edu.cn/__local/5/FF/D7/AC2828C24C88987FD0BBFBFADBF_8D9CCF59_13B7B.jpg,研究生,硕士,1,,东一楼四楼
+曹坤,95,145,,kuncao@hust.edu.cn,副教授,曹坤（Cao Kun，Associate Professor），华中科技大学机械科学与工程学院副教授，硕士/博士生导师。主要研究方向为微纳制造领域，选择性原子层沉积原理、方法与装备等，应用于集成电路、光通讯光芯片等器件结构制造。以第一/通讯作者在Nature Communications、Small、Chemistry of Materials、ACS Materials Letters等国内外期刊发表SCI论文40余篇。获湖北省优秀科技论文，国际极端制造期刊IJEM年度最佳论文，J. Vac. Sci. Technol. A期刊年度“most read”论文等。相关研究成果获美国真空协会AVS，国际科技杂志C&EN封面专栏报道，受到台积电、三星、IMEC等企业跟踪研究与引用报道。授权国家发明专利20余项，参研项目获湖北省技术发明一等奖、日内瓦国际发明展评审团特别嘉许金奖等。国家重点研发计划课题负责人，主持国家自然科学基金面上项目、青年项目。作为技术骨干参与国基金重点项目/国际合作交流项目，湖北省创新群体项目等。,"选择性原子层沉积技术,原子层沉积装备,光电子器件制造与封装",,,"Nanoparticle continuous-coating device and method based on spatial atomic layer deposition (ZL201710423764.5) US Patent 10,914,006; PCT/CN2017/088371.
+磁光薄膜、光隔离器以及制造磁光薄膜的方法（202111040113.0）
+通孔填充方法及通孔填充装置（PCT/CN2022/083792）
+原子层沉积设备及原子层沉积薄膜的制备方法（PCT/CN2022/083025）
+渗透率检测设备与检测方法（ZL202110706803.9，PCT/CN2021/115362）
+气体释放率测量系统及控制方法（ZL202110090792.6）
+原子层沉积装置与方法（ZL202110067367.5）
+氧化铝基复合纤维及其制备方法和制件（ZL202011629302.7）
+基于等离子体原子层沉积的包覆纳米晶薄膜的方法及产品（ZL201911003733.X）
+一种钙钛矿量子点发光二极管的制备方法及产品（ZL201910906165.8）","[1]国家重点研发计划课题：面向芯片先进制程的选择性原子层沉积工艺与装备开发
+[2]国家自然科学基金面上项目：金属纳米颗粒束缚稳定化构型原子尺度精准制备与烧结机理研究
+[3]国家自然科学基金青年项目：包覆型镍基催化剂原子层沉积制备方法及其DRM反应稳定化机理研究
+[4]国家自然科学基金重点项目：面向柔性量子点显示稳定化的原子层沉积跨尺度制造方法研究
+[5]湖北省创新群体：原子尺度制造与测量","湖北省技术发明一等奖（2018年）
+第十一届湖北省专利奖银奖（2019年）
+中国稀土学会科学技术二等奖（2019年）
+湖北省优秀科技论文（2023年）
+Nanomanufacturing and Metrology Excellent Article Contribution（2023年）","[1]Yicheng Li, Zilian Qi, Yuxiao Lan, Kun Cao*, Yanwei Wen, Jingming Zhang, Eryan Gu, Junzhou Long, Jin Yan, Bin Shan, Rong Chen* “Self-Aligned Patterning of Tantalum Oxide on SiO2/Cu through Redox-coupled Inherently Selective Atomic Layer Deposition” Nature Communications. 2023, 14, 4493.
+[2]Zerui Jin, Huajun Zhou, Xiao-dong Zhang, Kun Cao*, Rong Chen* “Interface-mediated YIG/Ce:YIG Bilayers Structure with Enhanced Magneto-optical Properties via Pulsed Laser Deposition” ACS Materials Letters. 2023, 5, 803.
+[3]Kun Cao, Jiaming Cai, Rong Chen, “Inherently Selective Atomic Layer Deposition and Applications”, Chemistry of Materials, 2020, 32, 6, 2195
+[4]Kun Cao, Jiaming Cai, Bin Shan, Rong Chen*, “Surface functionalization on nanoparticles via atomic layer deposition”, Science Bulletin, 2020, 65, 678
+[5]Jiaming Cai, Zhang Liu, Kun Cao*, Yun Lang, Shengqi Chu, Bin Shan, Rong Chen*, “Highly dispersed Pt studded on CoOx nanoclusters for CO preferential oxidation in H2”, Journal of Materials Chemistry A, 2020, 8, 10180",,https://mse.hust.edu.cn/__local/F/5F/71/B09A9D0A7188F80BD5878EEA144_4C308D25_159DD.jpg,研究生,博士,1,,
