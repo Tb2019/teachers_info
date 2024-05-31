@@ -1,23 +1,16 @@
-# -*- coding: utf-8 -*-
 import re
 from crawler import ReCrawler
 
-school_name = '北京理工大学'
-college_name = '物理学院'
-school_id = 98
-college_id = 142
+school_name = '武汉大学'
+college_name = '化学与分子科学学院'
+school_id = 96
+college_id = 144
 start_urls = [
-                'https://physics.bit.edu.cn/szdw/szml/zgjzc/ALL/index.htm',
-                'https://physics.bit.edu.cn/szdw/szml/fgjzc/ALL_01/index.htm',
-                'https://physics.bit.edu.cn/szdw/szml/fgjzc/ALL_01/index1.htm',
-                'https://physics.bit.edu.cn/szdw/szml/zjzc/ALL_02/index.htm',
-                'https://physics.bit.edu.cn/szdw/szml/zjzc/ALL_02/index1.htm',
-                'https://physics.bit.edu.cn/szdw/szml/zzsyry/ALL_03/index.htm',
-                'https://physics.bit.edu.cn/szdw/szml/dxwljxysyzx/ALL2022/index.htm'
+                'https://chem.whu.edu.cn/szdw1/zzjs.htm'
               ]
 
-a_s_xpath_str = '//ul[@class="tabListBox gp-avg-lg-4 gp-avg-md-4 gp-avg-sm-2 gp-avg-xs-2 gp-avg-xxs-1"]//a[@href!="#"]'
-target_div_xpath_str = '//div[@class="introduction"]'
+a_s_xpath_str = '//div[@class="teacher-wap"]/div[@class="teacher-lists"]//a[contains(@href, "htm")]'
+target_div_xpath_str = '//form[@name="_newscontent_fromname"]|//div[@class="container clearfix" or @class="wrap clearfix" or @class="subt" or @class="w1170 mat70 padt20" or @class="personal_list clearfix" or @class="subject"]'
 
 # # 电话
 # phone_xpath = None
@@ -110,37 +103,10 @@ target_div_xpath_str = '//div[@class="introduction"]'
 #                                 ]
 # social_job_xpath = None
 
-class SpecialSpider(ReCrawler):
-    def parse_index(self, index_page, url):
-        # 方法重写时引入包
-        global etree, parse
-        if not globals().get('etree'):
-            from lxml import etree
-        if not globals().get('parse'):
-            from urllib import parse
-
-        page = etree.HTML(index_page)
-        a_s = page.xpath(self.a_s_xpath_str)
-        for a in a_s:
-            name = a.xpath('./div[@class="namet gp-f16"]/text()')
-            # print(name)
-            if name:
-                name = ''.join(name)
-                if not re.match(r'[A-Za-z\s]*$', name, re.S):  # 中文名替换空格
-                    name = re.sub(r'\s*', '', name)
-                name = re.sub(self.name_filter_re, '', name)
-                link = a.xpath('./@href')[0]
-                link = parse.urljoin(url, link)
-            else:
-                print('未解析到name，请检查：a_s_xpath_str')
-                continue
-            yield name, link
-
-
-spider = SpecialSpider(
+spider = ReCrawler(
                    school_name=school_name,
                    college_name=college_name,
-                   partition_num='010',
+                   partition_num='027',
                    school_id=school_id,
                    college_id=college_id,
                    name_filter_re=r'简介',
