@@ -4,6 +4,7 @@ import re
 import pymysql
 import requests
 import pandas as pd
+import numpy as np
 from loguru import logger
 from itertools import chain
 from asyncio import Semaphore
@@ -230,5 +231,5 @@ def replace_quotes_in_text(node):
         replace_quotes_in_text(child)
 
 def csv_2_df(path):
-    df = pd.read_csv(path, encoding='ansi')
+    df = pd.read_csv(path, encoding='ansi').replace(np.nan, None)  # 不replace，则转换为json时空值为NaN，转换后为null
     return df
