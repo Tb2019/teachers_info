@@ -60,9 +60,9 @@ class CookiePool:
                                 value='#root > div:nth-child(2) > div > div > div.GjMJhecDH0IAXY5UglqL > div.semi-row.DBHgS49fQaSdIcqTWN0X.aj87zumsXsAG2eYfYoAc.px-4.md\:px-6.lg\:px-5 > div.semi-col.semi-col-12.fr68NbKoRPRM9DUOOqkQ > div > button').click()
             phone_num = input('输入电话号码：')
             self.driver.find_element(by=By.CSS_SELECTOR,
-                                value='#root > div:nth-child(2) > div > div > div.PcNBZFM8YkYYLzqkBhP7 > div > div.Azse3ip8UIVP1CiUvIAE > span > div.semi-input-wrapper.xvGZPISkD6otW1hPuBlJ.WYouJkFwBBco8KBy87Xe.semi-input-wrapper-default > input').send_keys(phone_num)
+                                value='#root > div:nth-child(2) > div > div > div.PcNBZFM8YkYYLzqkBhP7 > div > div.s2nbARByiH8yjwzcqFYA > span > div.semi-input-wrapper.LDr0_dN0WYQnbHJpewjx.WYouJkFwBBco8KBy87Xe.semi-input-wrapper-default > input').send_keys(phone_num)
             self.driver.find_element(by=By.CSS_SELECTOR,
-                                value='#root > div:nth-child(2) > div > div > div.PcNBZFM8YkYYLzqkBhP7 > div > button.semi-button.semi-button-primary.VIyhWVCBbsIu6Xy2eVwX.yJDwteqjbdkspQ0V7XOl.eg1Na7tSNArMfjcoOnY9').click()
+                                value='#root > div:nth-child(2) > div > div > div.PcNBZFM8YkYYLzqkBhP7 > div > button.semi-button.semi-button-primary.zgSTbY8Fb3UnrxBlBag1.yJDwteqjbdkspQ0V7XOl.eg1Na7tSNArMfjcoOnY9').click()
             while True:
                 try:
                     WebDriverWait(self.driver, 3).until(EC.presence_of_element_located((By.CSS_SELECTOR, '#root > div:nth-child(2) > section > section > main > div > div > div > div.EcePERynzs86olVhIBk6.px-4.md\:px-6 > div > div.semi-col.semi-col-16')))
