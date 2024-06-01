@@ -932,10 +932,10 @@ class ReCrawler:
 
     def run(self):
         if os.path.exists(f'{self.college_id}.csv'):
-            file = open(f'{self.college_id}.csv', mode='a', newline='', encoding='ansi')
+            file = open(f'{self.college_id}.csv', mode='a', newline='', encoding='utf-8')
             self.writter = csv.writer(file)
         else:
-            file = open(f'{self.college_id}.csv', mode='a', newline='', encoding='ansi')
+            file = open(f'{self.college_id}.csv', mode='a', newline='', encoding='utf-8')
             self.writter = csv.writer(file)
             self.writter.writerow(csv_header)
         self.result_df = pd.DataFrame()

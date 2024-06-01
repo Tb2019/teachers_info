@@ -231,5 +231,5 @@ def replace_quotes_in_text(node):
         replace_quotes_in_text(child)
 
 def csv_2_df(path):
-    df = pd.read_csv(path, encoding='ansi').replace(np.nan, None)  # 不replace，则转换为json时空值为NaN，转换后为null
+    df = pd.read_csv(path, encoding='utf-8').replace(np.nan, None)  # 不replace，则转换为json时空值为NaN，转换后为null
     return df
