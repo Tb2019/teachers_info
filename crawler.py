@@ -968,7 +968,7 @@ class ReCrawler:
                         self.result_df = result_dict_2_df(self.result_df, result)
                     else:
                         continue
-            file.close()
+        file.close()
 
         # 去重
         # result_df.drop_duplicates(inplace=True, keep='first', subset=['name', 'email'])
