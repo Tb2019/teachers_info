@@ -834,7 +834,7 @@ class ReCrawler:
                 if count > 2:
                     logger.warning(f'重新生成了3次均无法解析，可能{result_direct["name"]}内容过长')
                     self.gpt_cant.append(result_direct['name'])
-                    break
+                    return None
                 # 点击重新生成按钮
                 logger.info('重新生成--2')
                 if self.cn_com == 'cn':
