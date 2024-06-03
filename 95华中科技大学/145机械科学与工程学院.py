@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+# todo:王平江/吴德发/赵欢过长
 import re
 from crawler import ReCrawler
 
@@ -12,6 +13,8 @@ start_urls = [
               ]
 
 a_s_xpath_str = '//div[@class="munu_js"]//ul/li/a[contains(@href, "htm")]|//div[@class="jsml"]/ul/li/div[@class="bt"]//a[contains(@href, "htm")]'
+# 吴昌林 中断后继续
+# a_s_xpath_str = '//div[@id="X" or @id="Y" or @id="Z"]//ul/li/a[contains(@href, "htm")]|//div[@class="jsml"]/ul/li/div[@class="bt"]//a[contains(@href, "htm")]'
 target_div_xpath_str = '//form[@name="_newscontent_fromname"]'
 
 # # 电话
