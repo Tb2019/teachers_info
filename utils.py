@@ -102,8 +102,12 @@ def df2mysql(engine, df, table_name):
         df.to_sql(name=table_name, con=conn, if_exists='append', index=False)
 
 
-def save_as_json(df, school_name, college_name):
-    path = f'../Results/{school_name}'
+def save_as_json(df, school_name, college_name, path=None):
+    if not path:
+        path = f'../Results/{school_name}'
+    # 手动保存csv时，路径要变化
+    else:
+        path = f'./Results/{school_name}'
     os.path.exists(path) or os.makedirs(path)
 
     # json_format = df.drop('id', axis=1).to_dict('records')
