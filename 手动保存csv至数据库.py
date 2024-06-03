@@ -14,7 +14,7 @@ data = {}
 
 add = input('是否需要手动增加数据？是请输入1：')
 if add == '1':
-    file = open('./{school_id}{school_name}/{college_id}.csv', mode='a', encoding='ansi', newline='')
+    file = open('./{school_id}{school_name}/{college_id}.csv', mode='a', encoding='utf-8', newline='')
     writter = csv.writer(file)
     writter.writerow(data)
     file.close()
