@@ -222,7 +222,7 @@ class ReCrawler:
                 replace_quotes_in_text(target_div)
                 content_with_label = tostring(target_div, encoding='utf-8').decode('utf-8')
                 # 去掉空白字符
-                content_with_label = re.sub(r'\s', '', content_with_label)
+                content_with_label = re.sub(r'\n|\r\n', '', content_with_label)
 
 
             # 姓名
@@ -829,7 +829,12 @@ class ReCrawler:
         except:
             logger.warning('内容格式无法解析，即将重新生成')
             print(content)
+            count = 0
             while True:
+                if count > 2:
+                    logger.warning(f'重新生成了3次均无法解析，可能{result_direct["name"]}内容过长')
+                    self.gpt_cant.append(result_direct['name'])
+                    break
                 # 点击重新生成按钮
                 logger.info('重新生成--2')
                 if self.cn_com == 'cn':
@@ -852,6 +857,7 @@ class ReCrawler:
                     content = json.loads(content, strict=False)
                     break
                 except:
+                    count += 1
                     continue
 
         # 清空对话记录
@@ -912,21 +918,22 @@ class ReCrawler:
         parser = GptParser(self.cn_com)
         self.driver = parser.init_driver()
         for mid_result in mid_results:
-            text, result_direct = mid_result
-            result_gpt = self.parse_detail_gpt(text, result_direct)
-            print(result_gpt)
-            # 防止网页本身为空
-            if result_gpt:
-                self.result_df = result_dict_2_df(self.result_df, result_gpt)
-                self.writter.writerow(result_gpt.values())
-            else:
-                continue
+            if mid_result:
+                text, result_direct = mid_result
+                result_gpt = self.parse_detail_gpt(text, result_direct)
+                print(result_gpt)
+                # 防止网页本身为空
+                if result_gpt:
+                    self.result_df = result_dict_2_df(self.result_df, result_gpt)
+                    self.writter.writerow(result_gpt.values())
+                else:
+                    continue
 
-            count += 1
-            if count > 4:
-                self.driver.close()
-                self.driver = parser.init_driver()
-                count = 0
+                count += 1
+                if count > 4:
+                    self.driver.close()
+                    self.driver = parser.init_driver()
+                    count = 0
         self.driver.close()
         logger.info('处理完毕')
 
