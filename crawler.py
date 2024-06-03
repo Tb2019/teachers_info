@@ -997,10 +997,11 @@ class ReCrawler:
                     df2mysql(engine=local_engine, df=result_df, table_name='search_teacher_test')
                 # elif self.save2target == 'local':
                 #     df2mysql(engine=local_engine, df=result_df, table_name='search_teacher')
+                    logger.info('数据保存成功')
                 elif self.save2target == 'target':
                     df2mysql(engine=sf_engine, df=result_df, table_name='search_teacher')
                     save_as_json(result_df, self.school_name, self.college_name)
-                logger.info('数据保存成功')
+                    logger.info('数据保存成功')
                 # 删除csv
                 # os.remove(f'./{self.college_id}.csv')
                 # logger.info('csv文件已删除')
@@ -1019,12 +1020,13 @@ class ReCrawler:
                                            port=3306,
                                            table_name='search_teacher_test')
                             df2mysql(engine=local_engine, df=result_df, table_name='search_teacher_test')
+                            logger.info('数据保存成功')
                         # elif self.save2target == 'local':
                         #     df2mysql(engine=local_engine, df=result_df, table_name='search_teacher')
                         elif self.save2target == 'target':
                             df2mysql(engine=sf_engine, df=result_df, table_name='search_teacher')
                             save_as_json(result_df, self.school_name, self.college_name)
-                        logger.info('数据保存成功')
+                            logger.info('数据保存成功')
                         # 删除csv
                         # os.remove(f'./{self.college_id}.csv')
                         # logger.info('csv文件已删除')
