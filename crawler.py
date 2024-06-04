@@ -2,6 +2,7 @@ import csv
 import json
 import os
 import time
+from bs4 import BeautifulSoup
 from lxml import etree
 from lxml.html import fromstring, tostring
 import asyncio
@@ -35,6 +36,7 @@ class ReCrawler:
                  a_s_xpath_str: [str, None],
                  target_div_xpath_str: [str, None],
                  name_filter_re=r'\s*',
+                 img_url_head: str = None,
                  directions_pattern_list: [None, list] = None,
                  abstracts_pattern_list: [None, list] = None,
                  office_address_pattern_list: [None, list] = None,
@@ -134,6 +136,7 @@ class ReCrawler:
 
         # self.is_regular = is_regular
 
+        self.img_url_head = img_url_head
         self.phone_xpath = phone_xpath
         self.email_xpath = email_xpath
         self.job_title_xpath = job_title_xpath
@@ -221,8 +224,14 @@ class ReCrawler:
                 # 替代引号
                 replace_quotes_in_text(target_div)
                 content_with_label = tostring(target_div, encoding='utf-8').decode('utf-8')
-                # 去掉空白字符
-                content_with_label = re.sub(r'\n|\r\n', '', content_with_label)
+                # 去除base64编码的图片标签
+                soup = BeautifulSoup(content_with_label, 'html.parser')
+                base64_imgs = soup.find_all('img', src=re.compile(r'base64'))
+                for img in base64_imgs:
+                    img.decompose()
+                content_with_label = str(soup)
+                # 去掉标签之间空白字符
+                content_with_label = re.sub(r'>\s*<', r'><', content_with_label)
 
 
             # 姓名
@@ -481,7 +490,9 @@ class ReCrawler:
             else:
                 try:
                     src = target_div.xpath('.//img[@src!=""]/@src')[0]
-                    full_src = parse.urljoin(url, src)
+                    src = re.sub(r'^.*?base64.*$', '', src)
+                    if src:
+                        full_src = parse.urljoin(url, src)
                 except:
                     pass
             # full_src = parse.urljoin(url, src)
@@ -904,7 +915,7 @@ class ReCrawler:
             'award': content.get('荣誉/获奖') if content.get('荣誉/获奖') else result_direct['award'],
             'paper': content.get('科研论文') if content.get('科研论文') else result_direct['paper'],
             'social_job': content.get('社会兼职') if content.get('社会兼职') else result_direct['social_job'],
-            'picture': parse.urljoin(result_direct['picture'], content.get('照片地址')),
+            'picture': parse.urljoin(result_direct['picture'], content.get('照片地址')) if not self.img_url_head else parse.urljoin(self.img_url_head, content.get('照片地址')),
             'education': result_direct['education'],
             'qualification': result_direct['qualification'],
             'job_information': result_direct['job_information'],
