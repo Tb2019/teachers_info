@@ -6,29 +6,29 @@ from asyncio.log import logger
 from utils import csv_2_df, truncate_table, df2mysql, drop_duplicate_collage, local_engine, sf_engine, save_as_json
 from urllib import parse
 
-school_id = 94
-college_id = 146
-school_name = '西安交通大学'
+school_id = 93
+college_id = 147
+school_name = '南开大学'
 college_name = '化学学院'
 
-url = ''
+img_url_head = ''
 
 data_real = {
-"姓名": "王淑娟",
-"电话": "",
-"邮箱": "shujuanwang@mail.xjtu.edu.cn",
-"职称": "副教授",
-"个人简介": "王淑娟，女，博士，副教授，博士生导师,应用化学系主任。主要从事功能和智能高分子的设计、合成及其应用研究，主持国家重点研发计划项目子课题1项、国家自然科学基金项目2项、军品配套项目2项、陕西省重点研发计划项目1项、陕西省自然科学基金1项、企业合作项目10余项、中央高校基本科研业务费1项。近年来以第一作者/通讯作者身份在Journal of the American Chemical Society、Journal of Materials Chemistry A、Composite Part A: Applied Science and Manufacturing和Applied Surface Science等国内外知名刊物上发表SCI收录论文30余篇，并多次受邀在国际、国内学术会议上报告相关研究进展。目前长期担任Composite Part A: Applied Science and Manufacturing、Applied Surface Science和Polymer Degradation and Stability等期刊特约审稿人。",
-"研究方向": "1. 航天耐烧蚀复合材料基体树脂研究；\n2. 动态交联可再生高分子；\n3. 绿色可再生复合材料的制备和性能；\n4. 智能可穿戴材料；\n5. 3D打印材料。",
-"专利": "",
-"科研项目": "",
-"荣誉/获奖": "",
-"照片地址": "https://gr.xjtu.edu.cn/documents/2606997/0/4yy19-h…29f36-4877-3340-34ae-ba23ded117ca?t=1679989268911",
-"最高学历": "研究生",
-"最高学位": "博士",
-"职位": "应用化学系主任",
-"办公地点": "西安交通大学化学学院化学楼215室",
-"科研论文": ""
+"姓名":"王浩",
+"电话":"16622807600",
+"邮箱":"hao@nankai.edu.cn",
+"职称":"特聘副研究员",
+"个人简介":"王浩，博士，副研究员，元素有机化学研究所，毕业于南开大学，山东诸城人。",
+"研究方向":"有机合成化学与理论计算化学",
+"专利":"申请中国发明专利 4 项，其中3项已授权",
+"科研项目":"王浩博士先后主持国家自然科学基金委青年项目 (2019), 中国博士后科学基金面上一等项目 (2018) 和特别资助项目 (2019) 和南开大学百名青年学科带头人培养项目 (2023), 骨干参与国家基金委重大项目-集成项目 (2023) 等科研项目",
+"荣誉/获奖":"曾获首届全国博士后创新创业大赛优胜奖 (2021)、南开大学优秀博士学位论文 (2019)、研究生国家奖学金 (2014, 2017) 等奖励。",
+"照片地址":"https://chem.nankai.edu.cn/_upload/article/images/…ac1265be/033e1447-2e1a-498a-a66e-6d5a57e4d950.png",
+"最高学历":"研究生",
+"最高学位":"博士",
+"职位":"博士生导师",
+"办公地点":"天津市南开区卫津路94号南开大学天南楼D703室",
+"科研论文":"1. Wang, H., Jung, H., Song, F., Zhu, S., Bai, Z., Chen, D., He, G., Chang, S.,* Chen, G.* Nitrene-Mediated Intermolecular N–N Coupling for Efficient Synthesis of Hydrazides. Nat. Chem. 2021, 13, 378-385.\n2. Bai, Z., Zhu, S., Hu, Y., Yang, P., Chu, X., He, G., Wang, H.,* Chen, G.* Copper-catalyzed Amidation of Thiols with Dioxazolones: New Sulfenamide Reagents for Synthesis of Unsymmetrical Disulfides Nat. Commun. 2022, 13, 6645.\n3. Jia, S., Huang, Y., Wang, Z., Fan, F., Fan, B., Sun, H., Wang, H.,* Wang, F.* Hydroamination of Unactivated Alkenes with Aliphatic Azides J. Am. Soc. Chem. 2022, 144, 16316-16324.\n4. Bai, Z., Song, F., Wang, H.,* Cheng, W., Zhu, S., Huang, Y., He, G., Chen, G.* Nitrene-mediated P–N Coupling Under Iron Catalysis. CCS Chem. 2022, 4, 2258–2266. \n5. Chen, X.#, Wang, H.# (co-first author), Du, S., Driess, M., Mo, Z* Deoxygenation of Nitrous Oxide and Nitro Compounds Using Bis(N-Heterocyclic Silylene)Amido Iron Complexes as Catalysts. Angew. Chem., Int. Ed. 2022, 61, e202114598."
 }
 
 data = {
@@ -47,7 +47,7 @@ data = {
     "荣誉/获奖": data_real["荣誉/获奖"],
     "科研论文": data_real["科研论文"],
     "社会兼职": "",
-    "照片地址": parse.urljoin(url, data_real["照片地址"]),
+    "照片地址": parse.urljoin(img_url_head, data_real["照片地址"]),
     "最高学历": data_real["最高学历"],
     "最高学位": data_real["最高学位"],
     "在职信息": 1,
