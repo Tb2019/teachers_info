@@ -1,10 +1,10 @@
 import os
 import json
 import re
-
 import pymysql
 import requests
 import pandas as pd
+import numpy as np
 from loguru import logger
 from itertools import chain
 from asyncio import Semaphore
@@ -37,6 +37,8 @@ sf_password = 'Shufang_@919'
 # engine = create_engine('mysql+pymysql://root:123456@127.0.0.1:3306/alpha_search?charset=utf8')
 local_engine = create_engine('mysql+pymysql://root:123456@127.0.0.1:3306/alpha_search?charset=utf8')
 sf_engine = create_engine(f'mysql+pymysql://root:{quote_plus(sf_password)}@192.168.2.12:3306/alpha_search?charset=utf8')
+
+csv_header = ['name', 'school_id', 'college_id', 'phone', 'email', 'job_title', 'abstracts', 'directions', 'education_experience', 'work_experience', 'patent', 'project', 'award', 'paper', 'social_job', 'picture', 'education', 'qualification', 'job_information', 'responsibilities', 'office_address']
 
 
 def get_response(url, cn_com):
@@ -100,8 +102,12 @@ def df2mysql(engine, df, table_name):
         df.to_sql(name=table_name, con=conn, if_exists='append', index=False)
 
 
-def save_as_json(df, school_name, college_name):
-    path = f'../Results/{school_name}'
+def save_as_json(df, school_name, college_name, path=None):
+    if not path:
+        path = f'../Results/{school_name}'
+    # 手动保存csv时，路径要变化
+    else:
+        path = f'./Results/{school_name}'
     os.path.exists(path) or os.makedirs(path)
 
     # json_format = df.drop('id', axis=1).to_dict('records')
@@ -227,3 +233,7 @@ def replace_quotes_in_text(node):
         node.tail = node.tail.replace('"', '“').replace('"', '”')
     for child in node:
         replace_quotes_in_text(child)
+
+def csv_2_df(path):
+    df = pd.read_csv(path, encoding='utf-8').replace(np.nan, None)  # 不replace，则转换为json时空值为NaN，转换后为null
+    return df

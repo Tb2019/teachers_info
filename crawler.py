@@ -1,5 +1,8 @@
+import csv
 import json
+import os
 import time
+from bs4 import BeautifulSoup
 from lxml import etree
 from lxml.html import fromstring, tostring
 import asyncio
@@ -16,7 +19,8 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.keys import Keys
 # from drop_duplicate_school import update_rel_table
 from utils import get_response, get_response_async, result_dict_2_df, df2mysql, local_engine, sf_engine, \
-    drop_duplicate_collage, save_as_json, truncate_table, api_parse, clean_phone, replace_quotes_in_text
+    drop_duplicate_collage, save_as_json, truncate_table, api_parse, clean_phone, replace_quotes_in_text, csv_header, \
+    csv_2_df
 from gptparser import GptParser
 
 
@@ -32,6 +36,7 @@ class ReCrawler:
                  a_s_xpath_str: [str, None],
                  target_div_xpath_str: [str, None],
                  name_filter_re=r'\s*',
+                 img_url_head: str = None,
                  directions_pattern_list: [None, list] = None,
                  abstracts_pattern_list: [None, list] = None,
                  office_address_pattern_list: [None, list] = None,
@@ -131,6 +136,7 @@ class ReCrawler:
 
         # self.is_regular = is_regular
 
+        self.img_url_head = img_url_head
         self.phone_xpath = phone_xpath
         self.email_xpath = email_xpath
         self.job_title_xpath = job_title_xpath
@@ -218,8 +224,14 @@ class ReCrawler:
                 # 替代引号
                 replace_quotes_in_text(target_div)
                 content_with_label = tostring(target_div, encoding='utf-8').decode('utf-8')
-                # 去掉空白字符
-                content_with_label = re.sub(r'\s', '', content_with_label)
+                # 去除base64编码的图片标签
+                soup = BeautifulSoup(content_with_label, 'html.parser')
+                base64_imgs = soup.find_all('img', src=re.compile(r'base64'))
+                for img in base64_imgs:
+                    img.decompose()
+                content_with_label = str(soup)
+                # 去掉标签之间空白字符
+                content_with_label = re.sub(r'>\s*<', r'><', content_with_label)
 
 
             # 姓名
@@ -478,7 +490,9 @@ class ReCrawler:
             else:
                 try:
                     src = target_div.xpath('.//img[@src!=""]/@src')[0]
-                    full_src = parse.urljoin(url, src)
+                    src = re.sub(r'^.*?base64.*$', '', src)
+                    if src:
+                        full_src = parse.urljoin(url, src)
                 except:
                     pass
             # full_src = parse.urljoin(url, src)
@@ -709,9 +723,9 @@ class ReCrawler:
         # 等待内容 --出现消耗的token数
         try:
             if self.cn_com == 'cn':
-                WebDriverWait(self.driver, 120).until(EC.presence_of_element_located((By.CSS_SELECTOR, '#root > div:nth-child(2) > div > div > div > div > div.container--aSIvzUFX9dAs4AK6bTj0 > div.sidesheet-container.wrapper-single--UMf9npeM8cVkDi0CDqZ0 > div.message-area--TH9DlQU1qwg_KGXdDYzk > div > div.scroll-view--R_WS6aCLs2gN7PUhpDB0.scroll-view--JlYYJX7uOFwGV6INj0ng > div > div > div.wrapper--nIVxVV6ZU7gCM5i4VQIL.message-group-wrapper > div > div > div:nth-child(1) > div > div > div > div > div.chat-uikit-message-box-container__message > div > div.chat-uikit-message-box-container__message__message-box__footer > div > div.message-info-text--tTSrEd1mQwEgF4_szmBb > div:nth-child(3) > div > div')))
+                WebDriverWait(self.driver, 180).until(EC.presence_of_element_located((By.CSS_SELECTOR, '#root > div:nth-child(2) > div > div > div > div > div.container--aSIvzUFX9dAs4AK6bTj0 > div.sidesheet-container.wrapper-single--UMf9npeM8cVkDi0CDqZ0 > div.message-area--TH9DlQU1qwg_KGXdDYzk > div > div.scroll-view--R_WS6aCLs2gN7PUhpDB0.scroll-view--JlYYJX7uOFwGV6INj0ng > div > div > div.wrapper--nIVxVV6ZU7gCM5i4VQIL.message-group-wrapper > div > div > div:nth-child(1) > div > div > div > div > div.chat-uikit-message-box-container__message > div > div.chat-uikit-message-box-container__message__message-box__footer > div > div.message-info-text--tTSrEd1mQwEgF4_szmBb > div:nth-child(3) > div > div')))
             else:
-                WebDriverWait(self.driver, 120).until(EC.presence_of_element_located((By.CSS_SELECTOR, '#root > div:nth-child(2) > div > div > div > div > div.aSIvzUFX9dAs4AK6bTj0 > div.sidesheet-container.UMf9npeM8cVkDi0CDqZ0 > div.TH9DlQU1qwg_KGXdDYzk > div > div.R_WS6aCLs2gN7PUhpDB0.JlYYJX7uOFwGV6INj0ng > div > div > div.nIVxVV6ZU7gCM5i4VQIL.message-group-wrapper > div > div > div:nth-child(1) > div > div > div > div > div.chat-uikit-message-box-container__message > div > div.chat-uikit-message-box-container__message__message-box__footer > div > div.tTSrEd1mQwEgF4_szmBb > div:nth-child(3) > div > div')))
+                WebDriverWait(self.driver, 180).until(EC.presence_of_element_located((By.CSS_SELECTOR, '#root > div:nth-child(2) > div > div > div > div > div.aSIvzUFX9dAs4AK6bTj0 > div.sidesheet-container.UMf9npeM8cVkDi0CDqZ0 > div.TH9DlQU1qwg_KGXdDYzk > div > div.R_WS6aCLs2gN7PUhpDB0.JlYYJX7uOFwGV6INj0ng > div > div > div.nIVxVV6ZU7gCM5i4VQIL.message-group-wrapper > div > div > div:nth-child(1) > div > div > div > div > div.chat-uikit-message-box-container__message > div > div.chat-uikit-message-box-container__message__message-box__footer > div > div.tTSrEd1mQwEgF4_szmBb > div:nth-child(3) > div > div')))
         # 超时刷新页面，再试一次
         except:
             logger.warning('首次等待内容完成超时，重新刷新页面')
@@ -751,10 +765,10 @@ class ReCrawler:
             # 等待内容
             try:
                 if self.cn_com == 'cn':
-                    WebDriverWait(self.driver, 120).until(EC.presence_of_element_located((By.CSS_SELECTOR,
+                    WebDriverWait(self.driver, 180).until(EC.presence_of_element_located((By.CSS_SELECTOR,
                                                                                          '#root > div:nth-child(2) > div > div > div > div > div.container--aSIvzUFX9dAs4AK6bTj0 > div.sidesheet-container.wrapper-single--UMf9npeM8cVkDi0CDqZ0 > div.message-area--TH9DlQU1qwg_KGXdDYzk > div > div.scroll-view--R_WS6aCLs2gN7PUhpDB0.scroll-view--JlYYJX7uOFwGV6INj0ng > div > div > div.wrapper--nIVxVV6ZU7gCM5i4VQIL.message-group-wrapper > div > div > div:nth-child(1) > div > div > div > div > div.chat-uikit-message-box-container__message > div > div.chat-uikit-message-box-container__message__message-box__footer > div > div.message-info-text--tTSrEd1mQwEgF4_szmBb > div:nth-child(3) > div > div')))
                 else:
-                    WebDriverWait(self.driver, 120).until(EC.presence_of_element_located((By.CSS_SELECTOR,
+                    WebDriverWait(self.driver, 180).until(EC.presence_of_element_located((By.CSS_SELECTOR,
                                                                                          '#root > div:nth-child(2) > div > div > div > div > div.aSIvzUFX9dAs4AK6bTj0 > div.sidesheet-container.UMf9npeM8cVkDi0CDqZ0 > div.TH9DlQU1qwg_KGXdDYzk > div > div.R_WS6aCLs2gN7PUhpDB0.JlYYJX7uOFwGV6INj0ng > div > div > div.nIVxVV6ZU7gCM5i4VQIL.message-group-wrapper > div > div > div:nth-child(1) > div > div > div > div > div.chat-uikit-message-box-container__message > div > div.chat-uikit-message-box-container__message__message-box__footer > div > div.tTSrEd1mQwEgF4_szmBb > div:nth-child(3) > div > div')))
             except:
                 logger.warning('刷新页面后，仍未等到目标回复文本出现。将返回空值，并记录姓名')
@@ -782,9 +796,9 @@ class ReCrawler:
         try:
             if self.cn_com == 'cn':
                 content = self.driver.find_element(by=By.XPATH,
-                                               value='//div[@class="auto-hide-last-sibling-br paragraph_4183d"]').text
+                                               value='//div[@class="auto-hide-last-sibling-br paragraph_4183d"]').get_attribute('innerText')
             else:
-                content = self.driver.find_element(By.XPATH, '//div[@class="auto-hide-last-sibling-br paragraph_1252f paragraph-element"]').text
+                content = self.driver.find_element(By.XPATH, '//div[@class="auto-hide-last-sibling-br paragraph_1252f paragraph-element"]').get_attribute('innerText')
         # 第一次就出现了json/元素的定位方式不一样导致报错
         except:
             logger.warning('找不到回复文本，或者返回的内容是json框。即将重新解析')
@@ -800,13 +814,13 @@ class ReCrawler:
                 # 等待重新生成
                 try:
                     if self.cn_com == 'cn':
-                        WebDriverWait(self.driver, 120).until(EC.presence_of_element_located((By.CSS_SELECTOR,
+                        WebDriverWait(self.driver, 180).until(EC.presence_of_element_located((By.CSS_SELECTOR,
                                                                                          '#root > div:nth-child(2) > div > div > div > div > div.container--aSIvzUFX9dAs4AK6bTj0 > div.sidesheet-container.wrapper-single--UMf9npeM8cVkDi0CDqZ0 > div.message-area--TH9DlQU1qwg_KGXdDYzk > div > div.scroll-view--R_WS6aCLs2gN7PUhpDB0.scroll-view--JlYYJX7uOFwGV6INj0ng > div > div > div.wrapper--nIVxVV6ZU7gCM5i4VQIL.message-group-wrapper > div > div > div:nth-child(1) > div > div > div > div > div.chat-uikit-message-box-container__message > div > div.chat-uikit-message-box-container__message__message-box__footer > div > div.message-info-text--tTSrEd1mQwEgF4_szmBb > div:nth-child(3) > div > div')))
                         content = self.driver.find_element(by=By.XPATH,
-                                                       value='//div[@class="auto-hide-last-sibling-br paragraph_4183d"]').text
+                                                       value='//div[@class="auto-hide-last-sibling-br paragraph_4183d"]').get_attribute('innerText')
                     else:
-                        WebDriverWait(self.driver, 120).until(EC.presence_of_element_located((By.CSS_SELECTOR, '#root > div:nth-child(2) > div > div > div > div > div.aSIvzUFX9dAs4AK6bTj0 > div.sidesheet-container.UMf9npeM8cVkDi0CDqZ0 > div.TH9DlQU1qwg_KGXdDYzk > div > div.R_WS6aCLs2gN7PUhpDB0.JlYYJX7uOFwGV6INj0ng > div > div > div.nIVxVV6ZU7gCM5i4VQIL.message-group-wrapper > div > div > div:nth-child(1) > div > div > div > div > div.chat-uikit-message-box-container__message > div > div.chat-uikit-message-box-container__message__message-box__footer > div > div.tTSrEd1mQwEgF4_szmBb > div:nth-child(3) > div > div')))
-                        content = self.driver.find_element(By.XPATH, '//div[@class="auto-hide-last-sibling-br paragraph_1252f paragraph-element"]').text
+                        WebDriverWait(self.driver, 180).until(EC.presence_of_element_located((By.CSS_SELECTOR, '#root > div:nth-child(2) > div > div > div > div > div.aSIvzUFX9dAs4AK6bTj0 > div.sidesheet-container.UMf9npeM8cVkDi0CDqZ0 > div.TH9DlQU1qwg_KGXdDYzk > div > div.R_WS6aCLs2gN7PUhpDB0.JlYYJX7uOFwGV6INj0ng > div > div > div.nIVxVV6ZU7gCM5i4VQIL.message-group-wrapper > div > div > div:nth-child(1) > div > div > div > div > div.chat-uikit-message-box-container__message > div > div.chat-uikit-message-box-container__message__message-box__footer > div > div.tTSrEd1mQwEgF4_szmBb > div:nth-child(3) > div > div')))
+                        content = self.driver.find_element(By.XPATH, '//div[@class="auto-hide-last-sibling-br paragraph_1252f paragraph-element"]').get_attribute('innerText')
                     # if isinstance(content, list):
                     #     content = ''.join(content)
                     # content = json.loads(content, strict=False)
@@ -826,7 +840,12 @@ class ReCrawler:
         except:
             logger.warning('内容格式无法解析，即将重新生成')
             print(content)
+            count = 0
             while True:
+                if count > 2:
+                    logger.warning(f'重新生成了3次均无法解析，可能{result_direct["name"]}内容过长')
+                    self.gpt_cant.append(result_direct['name'])
+                    return None
                 # 点击重新生成按钮
                 logger.info('重新生成--2')
                 if self.cn_com == 'cn':
@@ -837,18 +856,19 @@ class ReCrawler:
                 try:
                     # 等待tokens出现
                     if self.cn_com == 'cn':
-                        WebDriverWait(self.driver, 120).until(EC.presence_of_element_located((By.CSS_SELECTOR,
+                        WebDriverWait(self.driver, 180).until(EC.presence_of_element_located((By.CSS_SELECTOR,
                                                                                          '#root > div:nth-child(2) > div > div > div > div > div.container--aSIvzUFX9dAs4AK6bTj0 > div.sidesheet-container.wrapper-single--UMf9npeM8cVkDi0CDqZ0 > div.message-area--TH9DlQU1qwg_KGXdDYzk > div > div.scroll-view--R_WS6aCLs2gN7PUhpDB0.scroll-view--JlYYJX7uOFwGV6INj0ng > div > div > div.wrapper--nIVxVV6ZU7gCM5i4VQIL.message-group-wrapper > div > div > div:nth-child(1) > div > div > div > div > div.chat-uikit-message-box-container__message > div > div.chat-uikit-message-box-container__message__message-box__footer > div > div.message-info-text--tTSrEd1mQwEgF4_szmBb > div:nth-child(3) > div > div')))
                         content = self.driver.find_element(by=By.XPATH,
-                                                       value='//div[@class="auto-hide-last-sibling-br paragraph_4183d"]').text
+                                                       value='//div[@class="auto-hide-last-sibling-br paragraph_4183d"]').get_attribute('innerText')
                     else:
-                        WebDriverWait(self.driver, 120).until(EC.presence_of_element_located((By.CSS_SELECTOR, '#root > div:nth-child(2) > div > div > div > div > div.aSIvzUFX9dAs4AK6bTj0 > div.sidesheet-container.UMf9npeM8cVkDi0CDqZ0 > div.TH9DlQU1qwg_KGXdDYzk > div > div.R_WS6aCLs2gN7PUhpDB0.JlYYJX7uOFwGV6INj0ng > div > div > div.nIVxVV6ZU7gCM5i4VQIL.message-group-wrapper > div > div > div:nth-child(1) > div > div > div > div > div.chat-uikit-message-box-container__message > div > div.chat-uikit-message-box-container__message__message-box__footer > div > div.tTSrEd1mQwEgF4_szmBb > div:nth-child(3) > div > div')))
-                        content = self.driver.find_element(By.XPATH, '//div[@class="auto-hide-last-sibling-br paragraph_1252f paragraph-element"]').text
+                        WebDriverWait(self.driver, 180).until(EC.presence_of_element_located((By.CSS_SELECTOR, '#root > div:nth-child(2) > div > div > div > div > div.aSIvzUFX9dAs4AK6bTj0 > div.sidesheet-container.UMf9npeM8cVkDi0CDqZ0 > div.TH9DlQU1qwg_KGXdDYzk > div > div.R_WS6aCLs2gN7PUhpDB0.JlYYJX7uOFwGV6INj0ng > div > div > div.nIVxVV6ZU7gCM5i4VQIL.message-group-wrapper > div > div > div:nth-child(1) > div > div > div > div > div.chat-uikit-message-box-container__message > div > div.chat-uikit-message-box-container__message__message-box__footer > div > div.tTSrEd1mQwEgF4_szmBb > div:nth-child(3) > div > div')))
+                        content = self.driver.find_element(By.XPATH, '//div[@class="auto-hide-last-sibling-br paragraph_1252f paragraph-element"]').get_attribute('innerText')
                     if isinstance(content, list):
                         content = ''.join(content)
                     content = json.loads(content, strict=False)
                     break
                 except:
+                    count += 1
                     continue
 
         # 清空对话记录
@@ -895,7 +915,7 @@ class ReCrawler:
             'award': content.get('荣誉/获奖') if content.get('荣誉/获奖') else result_direct['award'],
             'paper': content.get('科研论文') if content.get('科研论文') else result_direct['paper'],
             'social_job': content.get('社会兼职') if content.get('社会兼职') else result_direct['social_job'],
-            'picture': parse.urljoin(result_direct['picture'], content.get('照片地址')),
+            'picture': parse.urljoin(result_direct['picture'], content.get('照片地址')) if not self.img_url_head else parse.urljoin(self.img_url_head, content.get('照片地址')),
             'education': result_direct['education'],
             'qualification': result_direct['qualification'],
             'job_information': result_direct['job_information'],
@@ -909,24 +929,33 @@ class ReCrawler:
         parser = GptParser(self.cn_com)
         self.driver = parser.init_driver()
         for mid_result in mid_results:
-            text, result_direct = mid_result
-            result_gpt = self.parse_detail_gpt(text, result_direct)
-            print(result_gpt)
-            # 防止网页本身为空
-            if result_gpt:
-                self.result_df = result_dict_2_df(self.result_df, result_gpt)
-            else:
-                continue
+            if mid_result:
+                text, result_direct = mid_result
+                result_gpt = self.parse_detail_gpt(text, result_direct)
+                print(result_gpt)
+                # 防止网页本身为空
+                if result_gpt:
+                    self.result_df = result_dict_2_df(self.result_df, result_gpt)
+                    self.writter.writerow(result_gpt.values())
+                else:
+                    continue
 
-            count += 1
-            if count > 4:
-                self.driver.close()
-                self.driver = parser.init_driver()
-                count = 0
+                count += 1
+                if count > 4:
+                    self.driver.close()
+                    self.driver = parser.init_driver()
+                    count = 0
         self.driver.close()
         logger.info('处理完毕')
 
     def run(self):
+        if os.path.exists(f'{self.college_id}.csv'):
+            file = open(f'{self.college_id}.csv', mode='a', newline='', encoding='utf-8')
+            self.writter = csv.writer(file)
+        else:
+            file = open(f'{self.college_id}.csv', mode='a', newline='', encoding='utf-8')
+            self.writter = csv.writer(file)
+            self.writter.writerow(csv_header)
         self.result_df = pd.DataFrame()
         self.gpt_cant = []
 
@@ -957,25 +986,85 @@ class ReCrawler:
                         self.result_df = result_dict_2_df(self.result_df, result)
                     else:
                         continue
+        file.close()
 
         # 去重
         # result_df.drop_duplicates(inplace=True, keep='first', subset=['name', 'email'])
         result_df = drop_duplicate_collage(self.result_df)
 
         # 保存至数据库
-        if self.save2target == 'no':
+        if self.api:
             pass
-        elif self.save2target == 'test':
-            truncate_table(host='localhost', user='root', password='123456', database='alpha_search', port=3306, table_name='search_teacher_test')
-            df2mysql(engine=local_engine, df=result_df, table_name='search_teacher_test')
-        # elif self.save2target == 'local':
-        #     df2mysql(engine=local_engine, df=result_df, table_name='search_teacher')
-        elif self.save2target == 'target':
-            df2mysql(engine=sf_engine, df=result_df, table_name='search_teacher')
-            save_as_json(result_df, self.school_name, self.college_name)
-        # elif self.save2target == 'simple':
-        #     df2mysql(engine=sf_engine, df=result_df, table_name='search_teacher_simple')
-        #     # 保存成json至本地
-        #     save_as_json(result_df, self.school_name, self.college_name)
+        # gpt改用csv文件存储数据至数据库
+        elif self.selenium_gpt:
+            if not self.gpt_cant:
+                try:
+                    result_df = csv_2_df(f'./{self.college_id}.csv')
+                    result_df = drop_duplicate_collage(result_df)
+                    if self.save2target == 'no':
+                        pass
+                    elif self.save2target == 'test':
+                        truncate_table(host='localhost', user='root', password='123456', database='alpha_search', port=3306,
+                                       table_name='search_teacher_test')
+                        df2mysql(engine=local_engine, df=result_df, table_name='search_teacher_test')
+                    # elif self.save2target == 'local':
+                    #     df2mysql(engine=local_engine, df=result_df, table_name='search_teacher')
+                        logger.info('数据保存成功')
+                    elif self.save2target == 'target':
+                        df2mysql(engine=sf_engine, df=result_df, table_name='search_teacher')
+                        save_as_json(result_df, self.school_name, self.college_name)
+                        logger.info('数据保存成功')
+                    # 删除csv
+                    # os.remove(f'./{self.college_id}.csv')
+                    # logger.info('csv文件已删除')
+                except:
+                    wait = input('数据有问题，请在excel中修改，修改完成后请输入1：')
+                    if wait == '1':
+                        try:
+                            result_df = csv_2_df(f'./{self.college_id}.csv')
+                            result_df = drop_duplicate_collage(result_df)
+                            print(result_df)
+                            logger.info('再次保存中...')
+                            if self.save2target == 'no':
+                                pass
+                            elif self.save2target == 'test':
+                                truncate_table(host='localhost', user='root', password='123456', database='alpha_search',
+                                               port=3306,
+                                               table_name='search_teacher_test')
+                                df2mysql(engine=local_engine, df=result_df, table_name='search_teacher_test')
+                                logger.info('数据保存成功')
+                            # elif self.save2target == 'local':
+                            #     df2mysql(engine=local_engine, df=result_df, table_name='search_teacher')
+                            elif self.save2target == 'target':
+                                df2mysql(engine=sf_engine, df=result_df, table_name='search_teacher')
+                                save_as_json(result_df, self.school_name, self.college_name)
+                                logger.info('数据保存成功')
+                            # 删除csv
+                            # os.remove(f'./{self.college_id}.csv')
+                            # logger.info('csv文件已删除')
+                        except:
+                            logger.warning('文件仍有错误，请修改，之后手动存储，并删除csv文件')
+            else:
+                logger.info('存在未能解析的数据，请手动补充数据之后再手动存储数据')
+        else:
+            if self.save2target == 'no':
+                pass
+            elif self.save2target == 'test':
+                truncate_table(host='localhost', user='root', password='123456', database='alpha_search', port=3306, table_name='search_teacher_test')
+                df2mysql(engine=local_engine, df=result_df, table_name='search_teacher_test')
+            # elif self.save2target == 'local':
+            #     df2mysql(engine=local_engine, df=result_df, table_name='search_teacher')
+            elif self.save2target == 'target':
+                df2mysql(engine=sf_engine, df=result_df, table_name='search_teacher')
+                save_as_json(result_df, self.school_name, self.college_name)
+            # elif self.save2target == 'simple':
+            #     df2mysql(engine=sf_engine, df=result_df, table_name='search_teacher_simple')
+            #     # 保存成json至本地
+            #     save_as_json(result_df, self.school_name, self.college_name)
 
-        # update_rel_table(schoolid=self.school_id)
+            # update_rel_table(schoolid=self.school_id)
+            # 删除csv
+            os.remove(f'./{self.college_id}.csv')
+            logger.info('csv文件已删除')
+
+
