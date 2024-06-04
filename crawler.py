@@ -997,52 +997,55 @@ class ReCrawler:
             pass
         # gpt改用csv文件存储数据至数据库
         elif self.selenium_gpt:
-            try:
-                result_df = csv_2_df(f'./{self.college_id}.csv')
-                result_df = drop_duplicate_collage(result_df)
-                if self.save2target == 'no':
-                    pass
-                elif self.save2target == 'test':
-                    truncate_table(host='localhost', user='root', password='123456', database='alpha_search', port=3306,
-                                   table_name='search_teacher_test')
-                    df2mysql(engine=local_engine, df=result_df, table_name='search_teacher_test')
-                # elif self.save2target == 'local':
-                #     df2mysql(engine=local_engine, df=result_df, table_name='search_teacher')
-                    logger.info('数据保存成功')
-                elif self.save2target == 'target':
-                    df2mysql(engine=sf_engine, df=result_df, table_name='search_teacher')
-                    save_as_json(result_df, self.school_name, self.college_name)
-                    logger.info('数据保存成功')
-                # 删除csv
-                # os.remove(f'./{self.college_id}.csv')
-                # logger.info('csv文件已删除')
-            except:
-                wait = input('数据有问题，请在excel中修改，修改完成后请输入1：')
-                if wait == '1':
-                    try:
-                        result_df = csv_2_df(f'./{self.college_id}.csv')
-                        result_df = drop_duplicate_collage(result_df)
-                        print(result_df)
-                        logger.info('再次保存中...')
-                        if self.save2target == 'no':
-                            pass
-                        elif self.save2target == 'test':
-                            truncate_table(host='localhost', user='root', password='123456', database='alpha_search',
-                                           port=3306,
-                                           table_name='search_teacher_test')
-                            df2mysql(engine=local_engine, df=result_df, table_name='search_teacher_test')
-                            logger.info('数据保存成功')
-                        # elif self.save2target == 'local':
-                        #     df2mysql(engine=local_engine, df=result_df, table_name='search_teacher')
-                        elif self.save2target == 'target':
-                            df2mysql(engine=sf_engine, df=result_df, table_name='search_teacher')
-                            save_as_json(result_df, self.school_name, self.college_name)
-                            logger.info('数据保存成功')
-                        # 删除csv
-                        # os.remove(f'./{self.college_id}.csv')
-                        # logger.info('csv文件已删除')
-                    except:
-                        logger.warning('文件仍有错误，请修改，之后手动存储，并删除csv文件')
+            if not self.gpt_cant:
+                try:
+                    result_df = csv_2_df(f'./{self.college_id}.csv')
+                    result_df = drop_duplicate_collage(result_df)
+                    if self.save2target == 'no':
+                        pass
+                    elif self.save2target == 'test':
+                        truncate_table(host='localhost', user='root', password='123456', database='alpha_search', port=3306,
+                                       table_name='search_teacher_test')
+                        df2mysql(engine=local_engine, df=result_df, table_name='search_teacher_test')
+                    # elif self.save2target == 'local':
+                    #     df2mysql(engine=local_engine, df=result_df, table_name='search_teacher')
+                        logger.info('数据保存成功')
+                    elif self.save2target == 'target':
+                        df2mysql(engine=sf_engine, df=result_df, table_name='search_teacher')
+                        save_as_json(result_df, self.school_name, self.college_name)
+                        logger.info('数据保存成功')
+                    # 删除csv
+                    # os.remove(f'./{self.college_id}.csv')
+                    # logger.info('csv文件已删除')
+                except:
+                    wait = input('数据有问题，请在excel中修改，修改完成后请输入1：')
+                    if wait == '1':
+                        try:
+                            result_df = csv_2_df(f'./{self.college_id}.csv')
+                            result_df = drop_duplicate_collage(result_df)
+                            print(result_df)
+                            logger.info('再次保存中...')
+                            if self.save2target == 'no':
+                                pass
+                            elif self.save2target == 'test':
+                                truncate_table(host='localhost', user='root', password='123456', database='alpha_search',
+                                               port=3306,
+                                               table_name='search_teacher_test')
+                                df2mysql(engine=local_engine, df=result_df, table_name='search_teacher_test')
+                                logger.info('数据保存成功')
+                            # elif self.save2target == 'local':
+                            #     df2mysql(engine=local_engine, df=result_df, table_name='search_teacher')
+                            elif self.save2target == 'target':
+                                df2mysql(engine=sf_engine, df=result_df, table_name='search_teacher')
+                                save_as_json(result_df, self.school_name, self.college_name)
+                                logger.info('数据保存成功')
+                            # 删除csv
+                            # os.remove(f'./{self.college_id}.csv')
+                            # logger.info('csv文件已删除')
+                        except:
+                            logger.warning('文件仍有错误，请修改，之后手动存储，并删除csv文件')
+            else:
+                logger.info('存在未能解析的数据，请手动补充数据之后再手动存储数据')
         else:
             if self.save2target == 'no':
                 pass
