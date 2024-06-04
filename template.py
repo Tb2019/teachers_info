@@ -5,6 +5,8 @@ school_name = ''
 college_name = ''
 school_id = None
 college_id = None
+img_url_head = None
+partition_num = ''
 start_urls = [
                 '',
                 '',
@@ -109,11 +111,12 @@ target_div_xpath_str = ''
 spider = ReCrawler(
                    school_name=school_name,
                    college_name=college_name,
-                   partition_num='',
+                   partition_num=partition_num,
                    school_id=school_id,
                    college_id=college_id,
                    name_filter_re=r'简介',
                    start_urls=start_urls,
+                   img_url_head=img_url_head,
                    a_s_xpath_str=a_s_xpath_str,
                    target_div_xpath_str=target_div_xpath_str,
 
