@@ -14,21 +14,21 @@ college_name = '化学学院'
 img_url_head = ''
 
 data_real = {
-"姓名":"王浩",
-"电话":"16622807600",
-"邮箱":"hao@nankai.edu.cn",
-"职称":"特聘副研究员",
-"个人简介":"王浩，博士，副研究员，元素有机化学研究所，毕业于南开大学，山东诸城人。",
-"研究方向":"有机合成化学与理论计算化学",
-"专利":"申请中国发明专利 4 项，其中3项已授权",
-"科研项目":"王浩博士先后主持国家自然科学基金委青年项目 (2019), 中国博士后科学基金面上一等项目 (2018) 和特别资助项目 (2019) 和南开大学百名青年学科带头人培养项目 (2023), 骨干参与国家基金委重大项目-集成项目 (2023) 等科研项目",
-"荣誉/获奖":"曾获首届全国博士后创新创业大赛优胜奖 (2021)、南开大学优秀博士学位论文 (2019)、研究生国家奖学金 (2014, 2017) 等奖励。",
-"照片地址":"https://chem.nankai.edu.cn/_upload/article/images/…ac1265be/033e1447-2e1a-498a-a66e-6d5a57e4d950.png",
+"姓名":"于勐",
+"电话":"",
+"邮箱":"nkyu2023@nankai.edu.cn",
+"职称":"副教授",
+"个人简介":"于勐，博士，副教授，应用化学与工程研究所，毕业于南开大学，天津人。",
+"研究方向":"能源材料化学，电催化材料与器件",
+"专利":"获发明专利授权专利1项",
+"科研项目":"作为项目负责人或骨干成员承担国家自然科学基金青年项目、国家重点研发计划“催化科学”专项等科研任务。",
+"荣誉/获奖":"2022年天津市自然科学二等奖（第二完成人）\n第二十次全国电化学大会优秀论文奖\nJournal of Energy Chemistry2022年作者交流会最佳报告奖",
+"照片地址":"https://chem.nankai.edu.cn/_upload/article/images/…e78a505d/3263b494-6b8c-452d-9e90-c1fb364996f5.jpg",
 "最高学历":"研究生",
 "最高学位":"博士",
-"职位":"博士生导师",
-"办公地点":"天津市南开区卫津路94号南开大学天南楼D703室",
-"科研论文":"1. Wang, H., Jung, H., Song, F., Zhu, S., Bai, Z., Chen, D., He, G., Chang, S.,* Chen, G.* Nitrene-Mediated Intermolecular N–N Coupling for Efficient Synthesis of Hydrazides. Nat. Chem. 2021, 13, 378-385.\n2. Bai, Z., Zhu, S., Hu, Y., Yang, P., Chu, X., He, G., Wang, H.,* Chen, G.* Copper-catalyzed Amidation of Thiols with Dioxazolones: New Sulfenamide Reagents for Synthesis of Unsymmetrical Disulfides Nat. Commun. 2022, 13, 6645.\n3. Jia, S., Huang, Y., Wang, Z., Fan, F., Fan, B., Sun, H., Wang, H.,* Wang, F.* Hydroamination of Unactivated Alkenes with Aliphatic Azides J. Am. Soc. Chem. 2022, 144, 16316-16324.\n4. Bai, Z., Song, F., Wang, H.,* Cheng, W., Zhu, S., Huang, Y., He, G., Chen, G.* Nitrene-mediated P–N Coupling Under Iron Catalysis. CCS Chem. 2022, 4, 2258–2266. \n5. Chen, X.#, Wang, H.# (co-first author), Du, S., Driess, M., Mo, Z* Deoxygenation of Nitrous Oxide and Nitro Compounds Using Bis(N-Heterocyclic Silylene)Amido Iron Complexes as Catalysts. Angew. Chem., Int. Ed. 2022, 61, e202114598."
+"职位":"副教授",
+"办公地点":"天津市南开区卫津路94号南开大学联合楼A703室",
+"科研论文":"1. Jinhan Li, Keqiang Xu, Fangming Liu, Youzeng Li, Yanfang Hu, Xijie Chen, Huan Wang*, Wence Xu, Youxuan Ni, Guoyu Ding, Tete Zhao, Meng Yu*, Wei Xie, Fangyi Cheng*. Hollow Hierarchical Cu2O-Derived Electrocatalysts Steering CO2 Reduction to Multi-Carbon Chemicals at Low Overpotentials. Advanced Materials 2023, 35, 2301127.\n2. Tete Zhao, Jinhan Li, Jiuding Liu, Fangming Liu, Keqiang Xu, Meng Yu*, Wence Xu, Fangyi Cheng*. Tailoring the Catalytic Microenvironment of Cu2O with SiO2 to Enhance C2+ Product Selectivity in CO2 Electroreduction. ACS Catalysis 2023, 13, 4444.\n3. Tete Zhao, Xupeng Zong, Jiuding Liu, Jialei Chen, Keqiang Xu, Xiao Wang, Xijie Chen, Wutong Yang, Fangming Liu, Meng Yu*, Fangyi Cheng*. Functionalizing Cu nanoparticles with fluoric polymer to enhance C2+ roduct selectivity in membraned CO2 reduction. Applied Catalysis B: Environmental 2024, 340, 123281.\n4. Meng Yu#, Fangming Liu#, Jinhan Li, Jiuding Liu, Yudong Zhang, Fangyi Cheng*. Multidimensional nonstoichiometric electrode materials for electrochemical energy conversion and storage. Advanced Energy Materials 2021, 2100640.\n5. Meng Yu, Jinhan Li, Fangming Liu, Jiuding Liu, Wence Xu, Honglu Hu, Xijie Chen, Weichao Wang, Fangyi Cheng*. Anionic formulation of electrolyte additive towards stable lectrocatalytic oxygen evolution in seawater splitting. Journal of Energy Chemistry 2022, 72, 361."
 }
 
 data = {
