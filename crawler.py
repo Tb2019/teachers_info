@@ -802,10 +802,16 @@ class ReCrawler:
                 content = self.driver.find_element(by=By.XPATH,
                                                value='//div[@class="auto-hide-last-sibling-br paragraph_4183d"]').get_attribute('innerText')
             else:
-                content = self.driver.find_element(By.XPATH, '//div[@class="auto-hide-last-sibling-br paragraph_1252f paragraph-element"]').get_attribute('innerText')
+                # gemini系列
+                content = self.driver.find_element(By.XPATH, '//pre[@class="language-json light-scrollbar_97dc0"]').get_attribute('innerText')
+                # gpt系列
+                # content = self.driver.find_element(By.XPATH, '//div[@class="auto-hide-last-sibling-br paragraph_1252f paragraph-element"]').get_attribute('innerText')
         # 第一次就出现了json/元素的定位方式不一样导致报错
         except:
-            logger.warning('找不到回复文本，或者返回的内容是json框。即将重新解析')
+            # gemini系列
+            logger.warning('找不到回复文本，即将重新解析')
+            # gpt系列
+            # logger.warning('找不到回复文本，或者返回的内容是json框。即将重新解析')
             while True:
                 # 点击重新生成按钮
                 # todo:cn的json格式重新生成不知道在哪，暂未完善,遇到再处理
@@ -824,7 +830,10 @@ class ReCrawler:
                                                        value='//div[@class="auto-hide-last-sibling-br paragraph_4183d"]').get_attribute('innerText')
                     else:
                         WebDriverWait(self.driver, 180).until(EC.presence_of_element_located((By.CSS_SELECTOR, '#root > div:nth-child(2) > div > div > div > div > div.aSIvzUFX9dAs4AK6bTj0 > div.sidesheet-container.UMf9npeM8cVkDi0CDqZ0 > div.TH9DlQU1qwg_KGXdDYzk > div > div.R_WS6aCLs2gN7PUhpDB0.JlYYJX7uOFwGV6INj0ng > div > div > div.nIVxVV6ZU7gCM5i4VQIL.message-group-wrapper > div > div > div:nth-child(1) > div > div > div > div > div.chat-uikit-message-box-container__message > div > div.chat-uikit-message-box-container__message__message-box__footer > div > div.tTSrEd1mQwEgF4_szmBb > div:nth-child(3) > div > div')))
-                        content = self.driver.find_element(By.XPATH, '//div[@class="auto-hide-last-sibling-br paragraph_1252f paragraph-element"]').get_attribute('innerText')
+                        # gemini系列
+                        content = self.driver.find_element(By.XPATH, '//pre[@class="language-json light-scrollbar_97dc0"]').get_attribute('innerText')
+                        # gpt系列
+                        # content = self.driver.find_element(By.XPATH, '//div[@class="auto-hide-last-sibling-br paragraph_1252f paragraph-element"]').get_attribute('innerText')
                     # if isinstance(content, list):
                     #     content = ''.join(content)
                     # content = json.loads(content, strict=False)
@@ -866,7 +875,10 @@ class ReCrawler:
                                                        value='//div[@class="auto-hide-last-sibling-br paragraph_4183d"]').get_attribute('innerText')
                     else:
                         WebDriverWait(self.driver, 180).until(EC.presence_of_element_located((By.CSS_SELECTOR, '#root > div:nth-child(2) > div > div > div > div > div.aSIvzUFX9dAs4AK6bTj0 > div.sidesheet-container.UMf9npeM8cVkDi0CDqZ0 > div.TH9DlQU1qwg_KGXdDYzk > div > div.R_WS6aCLs2gN7PUhpDB0.JlYYJX7uOFwGV6INj0ng > div > div > div.nIVxVV6ZU7gCM5i4VQIL.message-group-wrapper > div > div > div:nth-child(1) > div > div > div > div > div.chat-uikit-message-box-container__message > div > div.chat-uikit-message-box-container__message__message-box__footer > div > div.tTSrEd1mQwEgF4_szmBb > div:nth-child(3) > div > div')))
-                        content = self.driver.find_element(By.XPATH, '//div[@class="auto-hide-last-sibling-br paragraph_1252f paragraph-element"]').get_attribute('innerText')
+                        # gemini系列
+                        content = self.driver.find_element(By.XPATH, '//pre[@class="language-json light-scrollbar_97dc0"]').get_attribute('innerText')
+                        # gpt系列
+                        # content = self.driver.find_element(By.XPATH, '//div[@class="auto-hide-last-sibling-br paragraph_1252f paragraph-element"]').get_attribute('innerText')
                     if isinstance(content, list):
                         content = ''.join(content)
                     content = json.loads(content, strict=False)
