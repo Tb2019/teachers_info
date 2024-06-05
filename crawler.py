@@ -229,6 +229,10 @@ class ReCrawler:
                 base64_imgs = soup.find_all('img', src=re.compile(r'base64'))
                 for img in base64_imgs:
                     img.decompose()
+                # 去除除img标签外的所有标签属性
+                for tag in soup.find_all(True):
+                    if tag.name != 'img':
+                        tag.attrs = {}
                 content_with_label = str(soup)
                 # 去掉标签之间空白字符
                 content_with_label = re.sub(r'>\s*<', r'><', content_with_label)
@@ -842,8 +846,8 @@ class ReCrawler:
             print(content)
             count = 0
             while True:
-                if count > 2:
-                    logger.warning(f'重新生成了3次均无法解析，可能{result_direct["name"]}内容过长')
+                if count > 1:
+                    logger.warning(f'重新生成了2次均无法解析，可能{result_direct["name"]}内容过长')
                     self.gpt_cant.append(result_direct['name'])
                     return None
                 # 点击重新生成按钮
