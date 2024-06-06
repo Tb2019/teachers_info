@@ -320,7 +320,7 @@ def change_model(count, driver):
 def restore_model(driver):
     driver.find_element(By.CSS_SELECTOR, selector.get('com-change-css')).click()
     time.sleep(0.5)
-    driver.find_element(By.CSS_SELECTOR, selector.get('com-model-list-xpath')).click()
+    driver.find_element(By.XPATH, selector.get('com-model-list-xpath')).click()
     time.sleep(0.5)
     action = ActionChains(driver)
 
