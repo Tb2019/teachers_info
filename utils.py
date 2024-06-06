@@ -1,6 +1,7 @@
 import os
 import json
 import re
+import time
 import pymysql
 import requests
 import pandas as pd
@@ -10,6 +11,9 @@ from itertools import chain
 from asyncio import Semaphore
 from fake_headers import Headers
 from urllib.parse import quote_plus
+from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.common.action_chains import ActionChains
+from selenium.webdriver.common.by import By
 from sqlalchemy import create_engine
 
 
@@ -18,8 +22,54 @@ proxy = {
     'https': '127.0.0.1:7890',
 }
 
+selector = {
+    # 清除记录
+    'com-clear-css': '#root > div:nth-child(2) > div > div > div > div > div.aSIvzUFX9dAs4AK6bTj0 > div.sidesheet-container.UMf9npeM8cVkDi0CDqZ0 > div.TH9DlQU1qwg_KGXdDYzk > div > div.nIP4BqLGD8csFme4CavI > div.WfXRc6x8M2gbaaX2HSxJ > div > div.k7y7pgLJN2EYTHcUikQA > div.AXzy5aeT38Mdxk6pvvuE > div.NyvVfPwFXFYvQFyXUtTl > button',
+
+    'cn-clear-xpath': '//div[@class="left-actions-container--NyvVfPwFXFYvQFyXUtTl"]',
+
+    # 文本框
+    'com-textarea-xpath': '//textarea[@class="rc-textarea oTXB57QK8bQN2BKYJ2Bi oTXB57QK8bQN2BKYJ2Bi"]',
+    'com-textarea-css': '#root > div:nth-child(2) > div > div > div > div > div.aSIvzUFX9dAs4AK6bTj0 > div.sidesheet-container.UMf9npeM8cVkDi0CDqZ0 > div.TH9DlQU1qwg_KGXdDYzk > div > div.nIP4BqLGD8csFme4CavI > div.WfXRc6x8M2gbaaX2HSxJ > div > div.k7y7pgLJN2EYTHcUikQA > div.AXzy5aeT38Mdxk6pvvuE > div.k5ePpJvczIMzaNIaOwKS > div > textarea',
+
+    'cn-textarea-xpath': '//textarea[@class="rc-textarea textarea--oTXB57QK8bQN2BKYJ2Bi textarea--oTXB57QK8bQN2BKYJ2Bi"]',
+
+    # 发送
+    'com-sendtext-css': '#root > div:nth-child(2) > div > div > div > div > div.aSIvzUFX9dAs4AK6bTj0 > div.sidesheet-container.UMf9npeM8cVkDi0CDqZ0 > div.TH9DlQU1qwg_KGXdDYzk > div > div.nIP4BqLGD8csFme4CavI > div.WfXRc6x8M2gbaaX2HSxJ > div > div.k7y7pgLJN2EYTHcUikQA > div.AXzy5aeT38Mdxk6pvvuE > div.k5ePpJvczIMzaNIaOwKS > div > div > div.vr4WgM3FUuUicP3kJDOU > button',
+
+    'cn-sendtext-xpath': '//div[@class="textarea-actions-right--vr4WgM3FUuUicP3kJDOU"]',
+    # tokens
+    'com-tokens-css': '#root > div:nth-child(2) > div > div > div > div > div.aSIvzUFX9dAs4AK6bTj0 > div.sidesheet-container.UMf9npeM8cVkDi0CDqZ0 > div.TH9DlQU1qwg_KGXdDYzk > div > div.R_WS6aCLs2gN7PUhpDB0.JlYYJX7uOFwGV6INj0ng > div > div > div.nIVxVV6ZU7gCM5i4VQIL.message-group-wrapper > div > div > div:nth-child(1) > div > div > div > div > div.chat-uikit-message-box-container__message > div > div.chat-uikit-message-box-container__message__message-box__footer > div > div.tTSrEd1mQwEgF4_szmBb > div:nth-child(3) > div > div',
+
+    'cn-tokens-css': '#root > div:nth-child(2) > div > div > div > div > div.container--aSIvzUFX9dAs4AK6bTj0 > div.sidesheet-container.wrapper-single--UMf9npeM8cVkDi0CDqZ0 > div.message-area--TH9DlQU1qwg_KGXdDYzk > div > div.scroll-view--R_WS6aCLs2gN7PUhpDB0.scroll-view--JlYYJX7uOFwGV6INj0ng > div > div > div.wrapper--nIVxVV6ZU7gCM5i4VQIL.message-group-wrapper > div > div > div:nth-child(1) > div > div > div > div > div.chat-uikit-message-box-container__message > div > div.chat-uikit-message-box-container__message__message-box__footer > div > div.message-info-text--tTSrEd1mQwEgF4_szmBb > div:nth-child(3) > div > div',
+    # 内容
+    'com-content-gemini-xpath': '//pre[@class="language-json light-scrollbar_97dc0"]',
+    'com-content-gpt-xpath': '//div[@class="auto-hide-last-sibling-br paragraph_1252f paragraph-element"]',
+
+    'cn-content-xpath': '//div[@class="auto-hide-last-sibling-br paragraph_4183d"]',
+    # 重新生成
+    'com-regenerate-css': '#root > div:nth-child(2) > div > div > div > div > div.aSIvzUFX9dAs4AK6bTj0 > div.sidesheet-container.UMf9npeM8cVkDi0CDqZ0 > div.TH9DlQU1qwg_KGXdDYzk > div > div.R_WS6aCLs2gN7PUhpDB0.JlYYJX7uOFwGV6INj0ng > div > div > div.nIVxVV6ZU7gCM5i4VQIL.message-group-wrapper > div > div > div:nth-child(1) > div > div > div > div > div.chat-uikit-message-box-container__message > div > div.chat-uikit-message-box-container__message__message-box__footer > div > div.semi-space.semi-space-align-center.semi-space-horizontal > div:nth-child(2) > button',
+
+    'cn-regenerate-css': '#root > div:nth-child(2) > div > div > div > div > div.container--aSIvzUFX9dAs4AK6bTj0 > div.sidesheet-container.wrapper-single--UMf9npeM8cVkDi0CDqZ0 > div.message-area--TH9DlQU1qwg_KGXdDYzk > div > div.scroll-view--R_WS6aCLs2gN7PUhpDB0.scroll-view--JlYYJX7uOFwGV6INj0ng > div > div > div.wrapper--nIVxVV6ZU7gCM5i4VQIL.message-group-wrapper > div > div > div:nth-child(1) > div > div > div > div > div.chat-uikit-message-box-container__message > div > div.chat-uikit-message-box-container__message__message-box__footer > div > div.semi-space.semi-space-align-center.semi-space-horizontal > div:nth-child(2)',
+
+    # 切换模型
+    'com-change-css': '#root > div:nth-child(2) > div > div > div > div > div.aSIvzUFX9dAs4AK6bTj0 > div.sidesheet-container.UMf9npeM8cVkDi0CDqZ0 > div.IoQhh3vVUhwDTJi9EIDK > div.LxUy6g0wgIgIWCGkQHkC.coz-bg-plus.coz-fg-secondary.Zo84sv5CjcC2ObBGEGDy.SKIazToEhtUg8ZweE2b6 > div.IJW2oexGFSA7_n0W_IUb > div > div.PLf9q929mqs4ZlidOgkc > button',
+
+    # 下拉列表
+    'com-model-list-xpath': '//div[@class="qNKhq1IFxcAMuhECsZz9"]',
+
+    # 选择模型
+    'com-gemini-1.5-flash-xpath': '//div[contains(@id, "-option-0")]',
+    'com-gemini-1.5-pro-xpath': '//div[contains(@id, "-option-1")]',
+    'com-gpt-4o-xpath': '//div[contains(@id, "-option-2")]',
+    'com-gpt-4-turbo-xpath': '//div[contains(@id, "-option-3")]',
+
+    # 模型输出文本长度
+    'com-text-length-xpath': '//input[@class="semi-input semi-input-default" and @aria-valuemin="1"]',
+}
+
 headers = Headers(headers=True).generate()
-api_headers =  {
+api_headers = {
     'Authorization': 'Bearer pat_BeF0pCJRtoqSyqesxUUtaQgajL9EAcHzRjlI1ZqFyhGhFV3mTRfIuyKvU5nRHhIB',
     'Content-Type': 'application/json',
     'Accept': '*/*',
@@ -237,3 +287,46 @@ def replace_quotes_in_text(node):
 def csv_2_df(path):
     df = pd.read_csv(path, encoding='utf-8').replace(np.nan, None)  # 不replace，则转换为json时空值为NaN，转换后为null
     return df
+
+
+def change_model(count, driver):
+    driver.find_element(By.CSS_SELECTOR, selector.get('com-change-css')).click()
+    time.sleep(0.5)
+    driver.find_element(By.XPATH, selector.get('com-model-list-xpath')).click()
+    time.sleep(0.5)
+    action = ActionChains(driver)
+    if count == 1:
+        driver.find_element(By.XPATH, selector.get('com-gemini-1.5-pro-xpath')).click()
+        time.sleep(0.5)
+        driver.find_element(By.XPATH, selector.get('com-text-length-xpath')).send_keys('8192')
+        action.send_keys(Keys.ESCAPE).perform()
+        time.sleep(0.5)
+        logger.info('第二次重新生成，使用Gemini-pro')
+    if count == 2:
+        driver.find_element(By.XPATH, selector.get('com-gpt-4o-xpath')).click()
+        time.sleep(0.5)
+        driver.find_element(By.XPATH, selector.get('com-text-length-xpath')).send_keys('4096')
+        action.send_keys(Keys.ESCAPE).perform()
+        time.sleep(0.5)
+        logger.info('第三次重新生成，使用gpt-4o')
+    if count == 3:
+        driver.find_element(By.XPATH, selector.get('com-gpt-4-turbo-xpath')).click()
+        time.sleep(0.5)
+        driver.find_element(By.XPATH, selector.get('com-text-length-xpath')).send_keys('4096')
+        action.send_keys(Keys.ESCAPE).perform()
+        time.sleep(0.5)
+        logger.info('第四次重新生成，使用gpt-4-turbo')
+
+def restore_model(driver):
+    driver.find_element(By.CSS_SELECTOR, selector.get('com-change-css')).click()
+    time.sleep(0.5)
+    driver.find_element(By.CSS_SELECTOR, selector.get('com-model-list-xpath')).click()
+    time.sleep(0.5)
+    action = ActionChains(driver)
+
+    driver.find_element(By.XPATH, selector.get('com-gemini-1.5-flash-xpath')).click()
+    time.sleep(0.5)
+    driver.find_element(By.XPATH, selector.get('com-text-length-xpath')).send_keys('8192')
+    action.send_keys(Keys.ESCAPE).perform()
+    time.sleep(0.5)
+    logger.info('模型已切换回gemini-flash')
