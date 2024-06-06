@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 import json
 import time
-
+from utils import change_model, restore_model
 from loguru import logger
 from selenium.webdriver import Keys
 from selenium.webdriver.support import expected_conditions as EC
@@ -245,6 +245,9 @@ if __name__ == '__main__':
     element.send_keys(Keys.CONTROL, 'v')
     time.sleep(1)
 
+    # for i in range(1, 4):
+    #     count = i
+    #     change_model(i, driver)
     # 点击发送按钮
     driver.find_element(By.CSS_SELECTOR,
                                  '#root > div:nth-child(2) > div > div > div > div > div.aSIvzUFX9dAs4AK6bTj0 > div.sidesheet-container.UMf9npeM8cVkDi0CDqZ0 > div.TH9DlQU1qwg_KGXdDYzk > div > div.nIP4BqLGD8csFme4CavI > div.WfXRc6x8M2gbaaX2HSxJ > div > div.k7y7pgLJN2EYTHcUikQA > div.AXzy5aeT38Mdxk6pvvuE > div.k5ePpJvczIMzaNIaOwKS > div > div > div.vr4WgM3FUuUicP3kJDOU > button').click()
@@ -274,7 +277,6 @@ if __name__ == '__main__':
         pyperclip.copy(text)
         element.send_keys(Keys.CONTROL, 'v')
         time.sleep(1)
-
         # 发送
         driver.find_element(By.CSS_SELECTOR,
                                      '#root > div:nth-child(2) > div > div > div > div > div.aSIvzUFX9dAs4AK6bTj0 > div.sidesheet-container.UMf9npeM8cVkDi0CDqZ0 > div.TH9DlQU1qwg_KGXdDYzk > div > div.nIP4BqLGD8csFme4CavI > div.WfXRc6x8M2gbaaX2HSxJ > div > div.k7y7pgLJN2EYTHcUikQA > div.AXzy5aeT38Mdxk6pvvuE > div.k5ePpJvczIMzaNIaOwKS > div > div > div.vr4WgM3FUuUicP3kJDOU > button').click()
