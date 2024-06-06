@@ -867,13 +867,39 @@ class ReCrawler:
                     self.gpt_cant.append(result_direct['name'])
                     # 还原模型
                     restore_model(self.driver)
-                    time.sleep(2)
+                    time.sleep(5)
+
+                    # 刷新页面，防止下一个出问题
+                    while True:
+                        self.driver.refresh()
+                        try:
+                            if self.cn_com == 'cn':
+                                WebDriverWait(self.driver, 3).until(
+                                    EC.presence_of_element_located((By.XPATH, selector.get('cn-textarea-xpath'))))
+                            else:
+                                WebDriverWait(self.driver, 3).until(EC.presence_of_element_located(
+                                    (By.XPATH, selector.get('com-textarea-xpath'))))
+                            break
+                        except:
+                            # time.sleep(2)
+                            continue
                     return None
                 elif count > 0:
                     change_model(count, self.driver)
                     time.sleep(5)
                 else:
                     logger.info('第一次重新生成，使用Gemini-flash')
+                # 等待重新生成按钮出现,一般情况下不需要等待
+                while True:
+                    try:
+                        if self.cn_com == 'cn':
+                            WebDriverWait(self.driver, 5).until(EC.presence_of_element_located((By.CSS_SELECTOR, selector.get('cn-regenerate-css'))))
+                        else:
+                            WebDriverWait(self.driver, 5).until(EC.presence_of_element_located((By.CSS_SELECTOR, selector.get('com-regenerate-css'))))
+                        break
+                    except:
+                        logger.info('等待重新生成按钮的出现')
+                        continue
                 # 点击重新生成按钮
                 # logger.info('重新生成--2')
                 if self.cn_com == 'cn':
@@ -904,6 +930,20 @@ class ReCrawler:
                     if count > 0:
                         restore_model(self.driver)
                         time.sleep(5)
+                    # 刷新页面，防止下一个出问题
+                    while True:
+                        self.driver.refresh()
+                        try:
+                            if self.cn_com == 'cn':
+                                WebDriverWait(self.driver, 3).until(
+                                    EC.presence_of_element_located((By.XPATH, selector.get('cn-textarea-xpath'))))
+                            else:
+                                WebDriverWait(self.driver, 3).until(EC.presence_of_element_located(
+                                    (By.XPATH, selector.get('com-textarea-xpath'))))
+                            break
+                        except:
+                            # time.sleep(2)
+                            continue
                     break
                 except:
                     count += 1
