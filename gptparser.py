@@ -6,7 +6,7 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
 options = webdriver.ChromeOptions()
-options.binary_location = r'D:\Software\chrome-win64\chrome.exe'
+# options.binary_location = r'D:\Software\chrome-win64\chrome.exe'
 options.add_experimental_option('detach', True)
 
 # options.add_argument('--headless')
