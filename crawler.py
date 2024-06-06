@@ -715,11 +715,19 @@ class ReCrawler:
         pyperclip.copy(text)
         element.send_keys(Keys.CONTROL, 'v')
 
-        if self.cn_com == 'cn':
-            WebDriverWait(self.driver, 3).until(EC.presence_of_element_located((By.CSS_SELECTOR, selector.get('cn-sendtext-xpath'))))
-        else:
-            WebDriverWait(self.driver, 3).until(EC.presence_of_element_located((By.CSS_SELECTOR, selector.get('com-sendtext-css'))))
-        time.sleep(0.5)
+        # 等待发送按钮  todo:若仍报错，尝试使用xpath，附带可点击的属性
+        while True:
+            try:
+                if self.cn_com == 'cn':
+                    WebDriverWait(self.driver, 5).until(EC.presence_of_element_located((By.CSS_SELECTOR, selector.get('cn-sendtext-xpath'))))
+                else:
+                    WebDriverWait(self.driver, 5).until(EC.presence_of_element_located((By.CSS_SELECTOR, selector.get('com-sendtext-css'))))
+            except:
+                element.clear()
+                logger.info('等待发送按钮的出现')
+                element.send_keys(Keys.CONTROL, 'v')
+                continue
+        # time.sleep(0.5)
 
         # 点击发送按钮
         if self.cn_com == 'cn':
@@ -758,13 +766,21 @@ class ReCrawler:
             pyperclip.copy(text)
             element.send_keys(Keys.CONTROL, 'v')
 
-            if self.cn_com == 'cn':
-                WebDriverWait(self.driver, 3).until(
-                    EC.presence_of_element_located((By.CSS_SELECTOR, selector.get('cn-sendtext-xpath'))))
-            else:
-                WebDriverWait(self.driver, 3).until(
-                    EC.presence_of_element_located((By.CSS_SELECTOR, selector.get('com-sendtext-css'))))
-            time.sleep(0.5)
+            # 等待发送按钮 todo:若仍报错，尝试使用xpath，附带可点击的属性
+            while True:
+                try:
+                    if self.cn_com == 'cn':
+                        WebDriverWait(self.driver, 5).until(
+                            EC.presence_of_element_located((By.CSS_SELECTOR, selector.get('cn-sendtext-xpath'))))
+                    else:
+                        WebDriverWait(self.driver, 5).until(
+                            EC.presence_of_element_located((By.CSS_SELECTOR, selector.get('com-sendtext-css'))))
+                except:
+                    element.clear()
+                    logger.info('等待发送按钮的出现-p2')
+                    element.send_keys(Keys.CONTROL, 'v')
+                    continue
+            # time.sleep(0.5)
 
             # 发送
             if self.cn_com == 'cn':
