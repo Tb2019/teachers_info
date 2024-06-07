@@ -719,21 +719,22 @@ class ReCrawler:
         while True:
             try:
                 if self.cn_com == 'cn':
-                    WebDriverWait(self.driver, 5).until(EC.presence_of_element_located((By.CSS_SELECTOR, selector.get('cn-sendtext-xpath'))))
+                    WebDriverWait(self.driver, 5).until(EC.presence_of_element_located((By.XPATH, selector.get('cn-sendtext-xpath'))))
                 else:
-                    WebDriverWait(self.driver, 5).until(EC.presence_of_element_located((By.CSS_SELECTOR, selector.get('com-sendtext-css'))))
+                    WebDriverWait(self.driver, 5).until(EC.presence_of_element_located((By.XPATH, selector.get('com-sendtext-xpath'))))
+                break
             except:
                 element.clear()
-                logger.info('等待发送按钮的出现')
+                logger.info('等待发送按钮的出现-p1')
                 element.send_keys(Keys.CONTROL, 'v')
                 continue
-        # time.sleep(0.5)
+        time.sleep(0.5)
 
         # 点击发送按钮
         if self.cn_com == 'cn':
             self.driver.find_element(by=By.XPATH, value=selector.get('cn-sendtext-xpath')).click()
         else:
-            self.driver.find_element(By.CSS_SELECTOR, selector.get('com-sendtext-css')).click()
+            self.driver.find_element(By.XPATH, selector.get('com-sendtext-xpath')).click()
         # 等待内容 --出现消耗的token数
         try:
             if self.cn_com == 'cn':
@@ -771,23 +772,24 @@ class ReCrawler:
                 try:
                     if self.cn_com == 'cn':
                         WebDriverWait(self.driver, 5).until(
-                            EC.presence_of_element_located((By.CSS_SELECTOR, selector.get('cn-sendtext-xpath'))))
+                            EC.presence_of_element_located((By.XPATH, selector.get('cn-sendtext-xpath'))))
                     else:
                         WebDriverWait(self.driver, 5).until(
-                            EC.presence_of_element_located((By.CSS_SELECTOR, selector.get('com-sendtext-css'))))
+                            EC.presence_of_element_located((By.XPATH, selector.get('com-sendtext-xpath'))))
+                    break
                 except:
                     element.clear()
                     logger.info('等待发送按钮的出现-p2')
                     element.send_keys(Keys.CONTROL, 'v')
                     continue
-            # time.sleep(0.5)
+            time.sleep(0.5)
 
             # 发送
             if self.cn_com == 'cn':
                 self.driver.find_element(by=By.XPATH,
                                          value=selector.get('cn-sendtext-xpath')).click()
             else:
-                self.driver.find_element(By.CSS_SELECTOR, selector.get('com-sendtext-css')).click()
+                self.driver.find_element(By.XPATH, selector.get('com-sendtext-xpath')).click()
             # 等待内容
             try:
                 if self.cn_com == 'cn':

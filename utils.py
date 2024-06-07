@@ -36,6 +36,7 @@ selector = {
 
     # 发送
     'com-sendtext-css': '#root > div:nth-child(2) > div > div > div > div > div.aSIvzUFX9dAs4AK6bTj0 > div.sidesheet-container.UMf9npeM8cVkDi0CDqZ0 > div.TH9DlQU1qwg_KGXdDYzk > div > div.nIP4BqLGD8csFme4CavI > div.WfXRc6x8M2gbaaX2HSxJ > div > div.k7y7pgLJN2EYTHcUikQA > div.AXzy5aeT38Mdxk6pvvuE > div.k5ePpJvczIMzaNIaOwKS > div > div > div.vr4WgM3FUuUicP3kJDOU > button',
+    'com-sendtext-xpath': '//button[@class="semi-button semi-button-primary semi-button-size-small semi-button-borderless tqxhKsM_tI4KvPKo9dkI semi-button-with-icon semi-button-with-icon-only" and @aria-disabled="false"]',
 
     'cn-sendtext-xpath': '//div[@class="textarea-actions-right--vr4WgM3FUuUicP3kJDOU"]',
     # tokens
