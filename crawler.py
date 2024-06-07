@@ -20,7 +20,7 @@ from selenium.webdriver.common.keys import Keys
 # from drop_duplicate_school import update_rel_table
 from utils import get_response, get_response_async, result_dict_2_df, df2mysql, local_engine, sf_engine, \
     drop_duplicate_collage, save_as_json, truncate_table, api_parse, clean_phone, replace_quotes_in_text, csv_header, \
-    csv_2_df
+    csv_2_df, selector, change_model, restore_model
 from gptparser import GptParser
 
 
@@ -683,10 +683,9 @@ class ReCrawler:
         try:
             logger.info('尝试清除记录...')
             if self.cn_com == 'cn':
-                self.driver.find_element(by=By.XPATH,
-                                     value='//div[@class="left-actions-container--NyvVfPwFXFYvQFyXUtTl"]').click()
+                self.driver.find_element(by=By.XPATH, value=selector.get('cn-clear-xpath')).click()
             else:
-                self.driver.find_element(By.CSS_SELECTOR, '#root > div:nth-child(2) > div > div > div > div > div.aSIvzUFX9dAs4AK6bTj0 > div.sidesheet-container.UMf9npeM8cVkDi0CDqZ0 > div.TH9DlQU1qwg_KGXdDYzk > div > div.nIP4BqLGD8csFme4CavI > div.WfXRc6x8M2gbaaX2HSxJ > div > div.k7y7pgLJN2EYTHcUikQA > div.AXzy5aeT38Mdxk6pvvuE > div.NyvVfPwFXFYvQFyXUtTl > button').click()
+                self.driver.find_element(By.CSS_SELECTOR, selector.get('com-clear-css')).click()
             logger.info('记录清除成功')
         except:
             logger.info('无记录')
@@ -699,10 +698,9 @@ class ReCrawler:
         while True:
             try:
                 if self.cn_com == 'cn':
-                    WebDriverWait(self.driver, 3).until(EC.presence_of_element_located((By.XPATH,
-                                                                                    '//textarea[@class="rc-textarea textarea--oTXB57QK8bQN2BKYJ2Bi textarea--oTXB57QK8bQN2BKYJ2Bi"]')))
+                    WebDriverWait(self.driver, 3).until(EC.presence_of_element_located((By.XPATH, selector.get('cn-textarea-xpath'))))
                 else:
-                    WebDriverWait(self.driver, 3).until(EC.presence_of_element_located((By.XPATH, '//textarea[@class="rc-textarea oTXB57QK8bQN2BKYJ2Bi oTXB57QK8bQN2BKYJ2Bi"]')))
+                    WebDriverWait(self.driver, 3).until(EC.presence_of_element_located((By.XPATH, selector.get('com-textarea-xpath'))))
                 break
             except:
                 self.driver.refresh()
@@ -710,26 +708,39 @@ class ReCrawler:
                 continue
         # 找到对话框的元素element
         if self.cn_com == 'cn':
-            element = self.driver.find_element(by=By.XPATH,
-                            value='//textarea[@class="rc-textarea textarea--oTXB57QK8bQN2BKYJ2Bi textarea--oTXB57QK8bQN2BKYJ2Bi"]')  # .send_keys(text)
+            element = self.driver.find_element(by=By.XPATH, value=selector.get('cn-textarea-xpath'))  # .send_keys(text)
         else:
-            element = self.driver.find_element(By.CSS_SELECTOR, '#root > div:nth-child(2) > div > div > div > div > div.aSIvzUFX9dAs4AK6bTj0 > div.sidesheet-container.UMf9npeM8cVkDi0CDqZ0 > div.TH9DlQU1qwg_KGXdDYzk > div > div.nIP4BqLGD8csFme4CavI > div.WfXRc6x8M2gbaaX2HSxJ > div > div.k7y7pgLJN2EYTHcUikQA > div.AXzy5aeT38Mdxk6pvvuE > div.k5ePpJvczIMzaNIaOwKS > div > textarea')
+            element = self.driver.find_element(By.CSS_SELECTOR, selector.get('com-textarea-css'))
         # send输入较慢换为使用pyperclip粘贴
         pyperclip.copy(text)
         element.send_keys(Keys.CONTROL, 'v')
-        time.sleep(1)
+
+        # 等待发送按钮  todo:若仍报错，尝试使用xpath，附带可点击的属性
+        while True:
+            try:
+                if self.cn_com == 'cn':
+                    WebDriverWait(self.driver, 5).until(EC.presence_of_element_located((By.XPATH, selector.get('cn-sendtext-xpath'))))
+                else:
+                    WebDriverWait(self.driver, 5).until(EC.presence_of_element_located((By.XPATH, selector.get('com-sendtext-xpath'))))
+                break
+            except:
+                element.clear()
+                logger.info('等待发送按钮的出现-p1')
+                element.send_keys(Keys.CONTROL, 'v')
+                continue
+        time.sleep(0.5)
 
         # 点击发送按钮
         if self.cn_com == 'cn':
-            self.driver.find_element(by=By.XPATH, value='//div[@class="textarea-actions-right--vr4WgM3FUuUicP3kJDOU"]').click()
+            self.driver.find_element(by=By.XPATH, value=selector.get('cn-sendtext-xpath')).click()
         else:
-            self.driver.find_element(By.CSS_SELECTOR, '#root > div:nth-child(2) > div > div > div > div > div.aSIvzUFX9dAs4AK6bTj0 > div.sidesheet-container.UMf9npeM8cVkDi0CDqZ0 > div.TH9DlQU1qwg_KGXdDYzk > div > div.nIP4BqLGD8csFme4CavI > div.WfXRc6x8M2gbaaX2HSxJ > div > div.k7y7pgLJN2EYTHcUikQA > div.AXzy5aeT38Mdxk6pvvuE > div.k5ePpJvczIMzaNIaOwKS > div > div > div.vr4WgM3FUuUicP3kJDOU > button').click()
+            self.driver.find_element(By.XPATH, selector.get('com-sendtext-xpath')).click()
         # 等待内容 --出现消耗的token数
         try:
             if self.cn_com == 'cn':
-                WebDriverWait(self.driver, 180).until(EC.presence_of_element_located((By.CSS_SELECTOR, '#root > div:nth-child(2) > div > div > div > div > div.container--aSIvzUFX9dAs4AK6bTj0 > div.sidesheet-container.wrapper-single--UMf9npeM8cVkDi0CDqZ0 > div.message-area--TH9DlQU1qwg_KGXdDYzk > div > div.scroll-view--R_WS6aCLs2gN7PUhpDB0.scroll-view--JlYYJX7uOFwGV6INj0ng > div > div > div.wrapper--nIVxVV6ZU7gCM5i4VQIL.message-group-wrapper > div > div > div:nth-child(1) > div > div > div > div > div.chat-uikit-message-box-container__message > div > div.chat-uikit-message-box-container__message__message-box__footer > div > div.message-info-text--tTSrEd1mQwEgF4_szmBb > div:nth-child(3) > div > div')))
+                WebDriverWait(self.driver, 180).until(EC.presence_of_element_located((By.CSS_SELECTOR, selector.get('cn-tokens-css'))))
             else:
-                WebDriverWait(self.driver, 180).until(EC.presence_of_element_located((By.CSS_SELECTOR, '#root > div:nth-child(2) > div > div > div > div > div.aSIvzUFX9dAs4AK6bTj0 > div.sidesheet-container.UMf9npeM8cVkDi0CDqZ0 > div.TH9DlQU1qwg_KGXdDYzk > div > div.R_WS6aCLs2gN7PUhpDB0.JlYYJX7uOFwGV6INj0ng > div > div > div.nIVxVV6ZU7gCM5i4VQIL.message-group-wrapper > div > div > div:nth-child(1) > div > div > div > div > div.chat-uikit-message-box-container__message > div > div.chat-uikit-message-box-container__message__message-box__footer > div > div.tTSrEd1mQwEgF4_szmBb > div:nth-child(3) > div > div')))
+                WebDriverWait(self.driver, 180).until(EC.presence_of_element_located((By.CSS_SELECTOR, selector.get('com-tokens-css'))))
         # 超时刷新页面，再试一次
         except:
             logger.warning('首次等待内容完成超时，重新刷新页面')
@@ -737,11 +748,10 @@ class ReCrawler:
             while True:
                 try:
                     if self.cn_com == 'cn':
-                        WebDriverWait(self.driver, 3).until(EC.presence_of_element_located((By.XPATH,
-                                                                                            '//textarea[@class="rc-textarea textarea--oTXB57QK8bQN2BKYJ2Bi textarea--oTXB57QK8bQN2BKYJ2Bi"]')))
+                        WebDriverWait(self.driver, 3).until(EC.presence_of_element_located((By.XPATH, selector.get('cn-textarea-xpath'))))
                     else:
                         WebDriverWait(self.driver, 3).until(EC.presence_of_element_located(
-                            (By.XPATH, '//textarea[@class="rc-textarea oTXB57QK8bQN2BKYJ2Bi oTXB57QK8bQN2BKYJ2Bi"]')))
+                            (By.XPATH, selector.get('com-textarea-xpath'))))
                     break
                 except:
                     self.driver.refresh()
@@ -750,30 +760,42 @@ class ReCrawler:
 
             if self.cn_com == 'cn':
                 element = self.driver.find_element(by=By.XPATH,
-                                                   value='//textarea[@class="rc-textarea textarea--oTXB57QK8bQN2BKYJ2Bi textarea--oTXB57QK8bQN2BKYJ2Bi"]')  # .send_keys(text)
+                                                   value=selector.get('cn-textarea-xpath'))  # .send_keys(text)
             else:
-                element = self.driver.find_element(By.CSS_SELECTOR,
-                                                   '#root > div:nth-child(2) > div > div > div > div > div.aSIvzUFX9dAs4AK6bTj0 > div.sidesheet-container.UMf9npeM8cVkDi0CDqZ0 > div.TH9DlQU1qwg_KGXdDYzk > div > div.nIP4BqLGD8csFme4CavI > div.WfXRc6x8M2gbaaX2HSxJ > div > div.k7y7pgLJN2EYTHcUikQA > div.AXzy5aeT38Mdxk6pvvuE > div.k5ePpJvczIMzaNIaOwKS > div > textarea')
+                element = self.driver.find_element(By.CSS_SELECTOR, selector.get('com-textarea-css'))
             # send输入较慢换为使用pyperclip粘贴
             pyperclip.copy(text)
             element.send_keys(Keys.CONTROL, 'v')
-            time.sleep(1)
+
+            # 等待发送按钮 todo:若仍报错，尝试使用xpath，附带可点击的属性
+            while True:
+                try:
+                    if self.cn_com == 'cn':
+                        WebDriverWait(self.driver, 5).until(
+                            EC.presence_of_element_located((By.XPATH, selector.get('cn-sendtext-xpath'))))
+                    else:
+                        WebDriverWait(self.driver, 5).until(
+                            EC.presence_of_element_located((By.XPATH, selector.get('com-sendtext-xpath'))))
+                    break
+                except:
+                    element.clear()
+                    logger.info('等待发送按钮的出现-p2')
+                    element.send_keys(Keys.CONTROL, 'v')
+                    continue
+            time.sleep(0.5)
 
             # 发送
             if self.cn_com == 'cn':
                 self.driver.find_element(by=By.XPATH,
-                                         value='//div[@class="textarea-actions-right--vr4WgM3FUuUicP3kJDOU"]').click()
+                                         value=selector.get('cn-sendtext-xpath')).click()
             else:
-                self.driver.find_element(By.CSS_SELECTOR,
-                                         '#root > div:nth-child(2) > div > div > div > div > div.aSIvzUFX9dAs4AK6bTj0 > div.sidesheet-container.UMf9npeM8cVkDi0CDqZ0 > div.TH9DlQU1qwg_KGXdDYzk > div > div.nIP4BqLGD8csFme4CavI > div.WfXRc6x8M2gbaaX2HSxJ > div > div.k7y7pgLJN2EYTHcUikQA > div.AXzy5aeT38Mdxk6pvvuE > div.k5ePpJvczIMzaNIaOwKS > div > div > div.vr4WgM3FUuUicP3kJDOU > button').click()
+                self.driver.find_element(By.XPATH, selector.get('com-sendtext-xpath')).click()
             # 等待内容
             try:
                 if self.cn_com == 'cn':
-                    WebDriverWait(self.driver, 180).until(EC.presence_of_element_located((By.CSS_SELECTOR,
-                                                                                         '#root > div:nth-child(2) > div > div > div > div > div.container--aSIvzUFX9dAs4AK6bTj0 > div.sidesheet-container.wrapper-single--UMf9npeM8cVkDi0CDqZ0 > div.message-area--TH9DlQU1qwg_KGXdDYzk > div > div.scroll-view--R_WS6aCLs2gN7PUhpDB0.scroll-view--JlYYJX7uOFwGV6INj0ng > div > div > div.wrapper--nIVxVV6ZU7gCM5i4VQIL.message-group-wrapper > div > div > div:nth-child(1) > div > div > div > div > div.chat-uikit-message-box-container__message > div > div.chat-uikit-message-box-container__message__message-box__footer > div > div.message-info-text--tTSrEd1mQwEgF4_szmBb > div:nth-child(3) > div > div')))
+                    WebDriverWait(self.driver, 180).until(EC.presence_of_element_located((By.CSS_SELECTOR, selector.get('cn-tokens-css'))))
                 else:
-                    WebDriverWait(self.driver, 180).until(EC.presence_of_element_located((By.CSS_SELECTOR,
-                                                                                         '#root > div:nth-child(2) > div > div > div > div > div.aSIvzUFX9dAs4AK6bTj0 > div.sidesheet-container.UMf9npeM8cVkDi0CDqZ0 > div.TH9DlQU1qwg_KGXdDYzk > div > div.R_WS6aCLs2gN7PUhpDB0.JlYYJX7uOFwGV6INj0ng > div > div > div.nIVxVV6ZU7gCM5i4VQIL.message-group-wrapper > div > div > div:nth-child(1) > div > div > div > div > div.chat-uikit-message-box-container__message > div > div.chat-uikit-message-box-container__message__message-box__footer > div > div.tTSrEd1mQwEgF4_szmBb > div:nth-child(3) > div > div')))
+                    WebDriverWait(self.driver, 180).until(EC.presence_of_element_located((By.CSS_SELECTOR, selector.get('com-tokens-css'))))
             except:
                 logger.warning('刷新页面后，仍未等到目标回复文本出现。将返回空值，并记录姓名')
                 self.gpt_cant.append(result_direct['name'])
@@ -783,10 +805,9 @@ class ReCrawler:
                     logger.info('尝试清除记录...')
                     if self.cn_com == 'cn':
                         self.driver.find_element(by=By.XPATH,
-                                                 value='//div[@class="left-actions-container--NyvVfPwFXFYvQFyXUtTl"]').click()
+                                                 value=selector.get('cn-clear-xpath')).click()
                     else:
-                        self.driver.find_element(By.CSS_SELECTOR,
-                                                 '#root > div:nth-child(2) > div > div > div > div > div.aSIvzUFX9dAs4AK6bTj0 > div.sidesheet-container.UMf9npeM8cVkDi0CDqZ0 > div.TH9DlQU1qwg_KGXdDYzk > div > div.nIP4BqLGD8csFme4CavI > div.WfXRc6x8M2gbaaX2HSxJ > div > div.k7y7pgLJN2EYTHcUikQA > div.AXzy5aeT38Mdxk6pvvuE > div.NyvVfPwFXFYvQFyXUtTl > button').click()
+                        self.driver.find_element(By.CSS_SELECTOR, selector.get('com-clear-css'))
                     logger.info('记录清除成功')
                 except:
                     logger.info('无记录')
@@ -799,32 +820,42 @@ class ReCrawler:
         # 解析过程
         try:
             if self.cn_com == 'cn':
-                content = self.driver.find_element(by=By.XPATH,
-                                               value='//div[@class="auto-hide-last-sibling-br paragraph_4183d"]').get_attribute('innerText')
+                content = self.driver.find_element(by=By.XPATH, value=selector.get('cn-content-xpath')).get_attribute('innerText')
             else:
-                content = self.driver.find_element(By.XPATH, '//div[@class="auto-hide-last-sibling-br paragraph_1252f paragraph-element"]').get_attribute('innerText')
+                try:
+                    # gemini系列
+                    content = self.driver.find_element(By.XPATH, selector.get('com-content-gemini-xpath')).get_attribute('innerText')
+                except:
+                    # gpt系列
+                    content = self.driver.find_element(By.XPATH, selector.get('com-content-gpt-xpath')).get_attribute('innerText')
         # 第一次就出现了json/元素的定位方式不一样导致报错
         except:
-            logger.warning('找不到回复文本，或者返回的内容是json框。即将重新解析')
+            # gemini系列
+            logger.warning('找不到回复文本,即将重新生成')
+            # gpt系列
+            # logger.warning('找不到回复文本，或者返回的内容是json框。即将重新生成')
             while True:
                 # 点击重新生成按钮
                 # todo:cn的json格式重新生成不知道在哪，暂未完善,遇到再处理
-                logger.info('重新生成--1')
+                logger.info('重新生成--位置1')
                 if self.cn_com == 'cn':
-                    self.driver.find_element(By.CSS_SELECTOR, '#root > div:nth-child(2) > div > div > div > div > div.container--aSIvzUFX9dAs4AK6bTj0 > div.sidesheet-container.wrapper-single--UMf9npeM8cVkDi0CDqZ0 > div.message-area--TH9DlQU1qwg_KGXdDYzk > div > div.scroll-view--R_WS6aCLs2gN7PUhpDB0.scroll-view--JlYYJX7uOFwGV6INj0ng > div > div > div.wrapper--nIVxVV6ZU7gCM5i4VQIL.message-group-wrapper > div > div > div:nth-child(1) > div > div > div > div > div.chat-uikit-message-box-container__message > div > div.chat-uikit-message-box-container__message__message-box__footer > div > div.semi-space.semi-space-align-center.semi-space-horizontal > div:nth-child(2)').click()
+                    self.driver.find_element(By.CSS_SELECTOR, selector.get('cn-regenerate-css')).click()
                     print('请完善cn的css选择器')
                 else:
-                    self.driver.find_element(By.CSS_SELECTOR, '#root > div:nth-child(2) > div > div > div > div > div.aSIvzUFX9dAs4AK6bTj0 > div.sidesheet-container.UMf9npeM8cVkDi0CDqZ0 > div.TH9DlQU1qwg_KGXdDYzk > div > div.R_WS6aCLs2gN7PUhpDB0.JlYYJX7uOFwGV6INj0ng > div > div > div.nIVxVV6ZU7gCM5i4VQIL.message-group-wrapper > div > div > div:nth-child(1) > div > div > div > div > div.chat-uikit-message-box-container__message > div > div.chat-uikit-message-box-container__message__message-box__footer > div > div.semi-space.semi-space-align-center.semi-space-horizontal > div:nth-child(2) > button').click()
+                    self.driver.find_element(By.CSS_SELECTOR, selector.get('com-regenerate-css')).click()
                 # 等待重新生成
                 try:
                     if self.cn_com == 'cn':
-                        WebDriverWait(self.driver, 180).until(EC.presence_of_element_located((By.CSS_SELECTOR,
-                                                                                         '#root > div:nth-child(2) > div > div > div > div > div.container--aSIvzUFX9dAs4AK6bTj0 > div.sidesheet-container.wrapper-single--UMf9npeM8cVkDi0CDqZ0 > div.message-area--TH9DlQU1qwg_KGXdDYzk > div > div.scroll-view--R_WS6aCLs2gN7PUhpDB0.scroll-view--JlYYJX7uOFwGV6INj0ng > div > div > div.wrapper--nIVxVV6ZU7gCM5i4VQIL.message-group-wrapper > div > div > div:nth-child(1) > div > div > div > div > div.chat-uikit-message-box-container__message > div > div.chat-uikit-message-box-container__message__message-box__footer > div > div.message-info-text--tTSrEd1mQwEgF4_szmBb > div:nth-child(3) > div > div')))
-                        content = self.driver.find_element(by=By.XPATH,
-                                                       value='//div[@class="auto-hide-last-sibling-br paragraph_4183d"]').get_attribute('innerText')
+                        WebDriverWait(self.driver, 180).until(EC.presence_of_element_located((By.CSS_SELECTOR, selector.get('cn-tokens-css'))))
+                        content = self.driver.find_element(By.XPATH, selector.get('cn-content-xpath')).get_attribute('innerText')
                     else:
-                        WebDriverWait(self.driver, 180).until(EC.presence_of_element_located((By.CSS_SELECTOR, '#root > div:nth-child(2) > div > div > div > div > div.aSIvzUFX9dAs4AK6bTj0 > div.sidesheet-container.UMf9npeM8cVkDi0CDqZ0 > div.TH9DlQU1qwg_KGXdDYzk > div > div.R_WS6aCLs2gN7PUhpDB0.JlYYJX7uOFwGV6INj0ng > div > div > div.nIVxVV6ZU7gCM5i4VQIL.message-group-wrapper > div > div > div:nth-child(1) > div > div > div > div > div.chat-uikit-message-box-container__message > div > div.chat-uikit-message-box-container__message__message-box__footer > div > div.tTSrEd1mQwEgF4_szmBb > div:nth-child(3) > div > div')))
-                        content = self.driver.find_element(By.XPATH, '//div[@class="auto-hide-last-sibling-br paragraph_1252f paragraph-element"]').get_attribute('innerText')
+                        WebDriverWait(self.driver, 180).until(EC.presence_of_element_located((By.CSS_SELECTOR, selector.get('com-tokens-css'))))
+                        try:
+                            # gemini系列
+                            content = self.driver.find_element(By.XPATH, selector.get('com-content-gemini-xpath')).get_attribute('innerText')
+                        except:
+                            # gpt系列
+                            content = self.driver.find_element(By.XPATH, selector.get('com-content-gpt-xpath')).get_attribute('innerText')
                     # if isinstance(content, list):
                     #     content = ''.join(content)
                     # content = json.loads(content, strict=False)
@@ -840,36 +871,97 @@ class ReCrawler:
         # print(content)
         try:
             content = json.loads(content, strict=False)
+            if re.search('<.*?>', str(content)):
+                logger.warning('发现html标签，即将重新生成')
+                raise
         # 重新解析
         except:
             logger.warning('内容格式无法解析，即将重新生成')
             print(content)
             count = 0
             while True:
-                if count > 1:
-                    logger.warning(f'重新生成了2次均无法解析，可能{result_direct["name"]}内容过长')
+                if count > 3:
+                    logger.warning(f'重新生成了3次均无法解析，可能{result_direct["name"]}内容过长或者存在html标签')
                     self.gpt_cant.append(result_direct['name'])
+                    # 还原模型
+                    restore_model(self.driver)
+                    time.sleep(5)
+
+                    # 刷新页面，防止下一个出问题
+                    while True:
+                        self.driver.refresh()
+                        try:
+                            if self.cn_com == 'cn':
+                                WebDriverWait(self.driver, 3).until(
+                                    EC.presence_of_element_located((By.XPATH, selector.get('cn-textarea-xpath'))))
+                            else:
+                                WebDriverWait(self.driver, 3).until(EC.presence_of_element_located(
+                                    (By.XPATH, selector.get('com-textarea-xpath'))))
+                            break
+                        except:
+                            # time.sleep(2)
+                            continue
                     return None
-                # 点击重新生成按钮
-                logger.info('重新生成--2')
-                if self.cn_com == 'cn':
-                    self.driver.find_element(By.CSS_SELECTOR, '#root > div:nth-child(2) > div > div > div > div > div.container--aSIvzUFX9dAs4AK6bTj0 > div.sidesheet-container.wrapper-single--UMf9npeM8cVkDi0CDqZ0 > div.message-area--TH9DlQU1qwg_KGXdDYzk > div > div.scroll-view--R_WS6aCLs2gN7PUhpDB0.scroll-view--JlYYJX7uOFwGV6INj0ng > div > div > div.wrapper--nIVxVV6ZU7gCM5i4VQIL.message-group-wrapper > div > div > div:nth-child(1) > div > div > div > div > div.chat-uikit-message-box-container__message > div > div.chat-uikit-message-box-container__message__message-box__footer > div > div.semi-space.semi-space-align-center.semi-space-horizontal > div:nth-child(2)').click()
+                elif count > 0:
+                    change_model(count, self.driver)
+                    time.sleep(5)
                 else:
-                    self.driver.find_element(By.CSS_SELECTOR, '#root > div:nth-child(2) > div > div > div > div > div.aSIvzUFX9dAs4AK6bTj0 > div.sidesheet-container.UMf9npeM8cVkDi0CDqZ0 > div.TH9DlQU1qwg_KGXdDYzk > div > div.R_WS6aCLs2gN7PUhpDB0.JlYYJX7uOFwGV6INj0ng > div > div > div:nth-child(2) > div > div > div:nth-child(1) > div > div > div > div > div.chat-uikit-message-box-container__message > div > div.chat-uikit-message-box-container__message__message-box__footer > div > div.semi-space.semi-space-align-center.semi-space-horizontal > div:nth-child(2) > button').click()
+                    logger.info('第一次重新生成，使用Gemini-flash')
+                # 等待重新生成按钮出现,一般情况下不需要等待
+                while True:
+                    try:
+                        if self.cn_com == 'cn':
+                            WebDriverWait(self.driver, 5).until(EC.presence_of_element_located((By.CSS_SELECTOR, selector.get('cn-regenerate-css'))))
+                        else:
+                            WebDriverWait(self.driver, 5).until(EC.presence_of_element_located((By.CSS_SELECTOR, selector.get('com-regenerate-css'))))
+                        break
+                    except:
+                        logger.info('等待重新生成按钮的出现')
+                        continue
+                # 点击重新生成按钮
+                # logger.info('重新生成--2')
+                if self.cn_com == 'cn':
+                    self.driver.find_element(By.CSS_SELECTOR, selector.get('cn-regenerate-css')).click()
+                else:
+                    self.driver.find_element(By.CSS_SELECTOR, selector.get('com-regenerate-css')).click()
                 # 等待重新生成
                 try:
                     # 等待tokens出现
                     if self.cn_com == 'cn':
-                        WebDriverWait(self.driver, 180).until(EC.presence_of_element_located((By.CSS_SELECTOR,
-                                                                                         '#root > div:nth-child(2) > div > div > div > div > div.container--aSIvzUFX9dAs4AK6bTj0 > div.sidesheet-container.wrapper-single--UMf9npeM8cVkDi0CDqZ0 > div.message-area--TH9DlQU1qwg_KGXdDYzk > div > div.scroll-view--R_WS6aCLs2gN7PUhpDB0.scroll-view--JlYYJX7uOFwGV6INj0ng > div > div > div.wrapper--nIVxVV6ZU7gCM5i4VQIL.message-group-wrapper > div > div > div:nth-child(1) > div > div > div > div > div.chat-uikit-message-box-container__message > div > div.chat-uikit-message-box-container__message__message-box__footer > div > div.message-info-text--tTSrEd1mQwEgF4_szmBb > div:nth-child(3) > div > div')))
-                        content = self.driver.find_element(by=By.XPATH,
-                                                       value='//div[@class="auto-hide-last-sibling-br paragraph_4183d"]').get_attribute('innerText')
+                        WebDriverWait(self.driver, 180).until(EC.presence_of_element_located((By.CSS_SELECTOR, selector.get('cn-tokens-css'))))
+                        content = self.driver.find_element(By.XPATH, selector.get('cn-content-xpath')).get_attribute('innerText')
                     else:
-                        WebDriverWait(self.driver, 180).until(EC.presence_of_element_located((By.CSS_SELECTOR, '#root > div:nth-child(2) > div > div > div > div > div.aSIvzUFX9dAs4AK6bTj0 > div.sidesheet-container.UMf9npeM8cVkDi0CDqZ0 > div.TH9DlQU1qwg_KGXdDYzk > div > div.R_WS6aCLs2gN7PUhpDB0.JlYYJX7uOFwGV6INj0ng > div > div > div.nIVxVV6ZU7gCM5i4VQIL.message-group-wrapper > div > div > div:nth-child(1) > div > div > div > div > div.chat-uikit-message-box-container__message > div > div.chat-uikit-message-box-container__message__message-box__footer > div > div.tTSrEd1mQwEgF4_szmBb > div:nth-child(3) > div > div')))
-                        content = self.driver.find_element(By.XPATH, '//div[@class="auto-hide-last-sibling-br paragraph_1252f paragraph-element"]').get_attribute('innerText')
+                        WebDriverWait(self.driver, 180).until(EC.presence_of_element_located((By.CSS_SELECTOR, selector.get('com-tokens-css'))))
+                        # gemini系列
+                        try:
+                            content = self.driver.find_element(By.XPATH, selector.get('com-content-gemini-xpath')).get_attribute('innerText')
+                        # gpt系列
+                        except:
+                            content = self.driver.find_element(By.XPATH, selector.get('com-content-gpt-xpath')).get_attribute('innerText')
                     if isinstance(content, list):
                         content = ''.join(content)
                     content = json.loads(content, strict=False)
+                    if re.search(r'<.*?>', str(content)):
+                        logger.warning('发现html标签，即将重新生成')
+                        raise
+                    # 还原模型
+                    if count > 0:
+                        restore_model(self.driver)
+                        time.sleep(5)
+                    # 刷新页面，防止下一个出问题
+                    while True:
+                        self.driver.refresh()
+                        try:
+                            if self.cn_com == 'cn':
+                                WebDriverWait(self.driver, 3).until(
+                                    EC.presence_of_element_located((By.XPATH, selector.get('cn-textarea-xpath'))))
+                            else:
+                                WebDriverWait(self.driver, 3).until(EC.presence_of_element_located(
+                                    (By.XPATH, selector.get('com-textarea-xpath'))))
+                            break
+                        except:
+                            # time.sleep(2)
+                            continue
                     break
                 except:
                     count += 1
@@ -880,10 +972,9 @@ class ReCrawler:
             logger.info('尝试清除记录...')
             if self.cn_com == 'cn':
                 self.driver.find_element(by=By.XPATH,
-                                         value='//div[@class="left-actions-container--NyvVfPwFXFYvQFyXUtTl"]').click()
+                                         value=selector.get('cn-clear-xpath')).click()
             else:
-                self.driver.find_element(By.CSS_SELECTOR,
-                                         '#root > div:nth-child(2) > div > div > div > div > div.aSIvzUFX9dAs4AK6bTj0 > div.sidesheet-container.UMf9npeM8cVkDi0CDqZ0 > div.TH9DlQU1qwg_KGXdDYzk > div > div.nIP4BqLGD8csFme4CavI > div.WfXRc6x8M2gbaaX2HSxJ > div > div.k7y7pgLJN2EYTHcUikQA > div.AXzy5aeT38Mdxk6pvvuE > div.NyvVfPwFXFYvQFyXUtTl > button').click()
+                self.driver.find_element(By.CSS_SELECTOR, selector.get('com-clear-css')).click()
             logger.info('记录清除成功')
         except:
             logger.info('无记录')
@@ -893,10 +984,9 @@ class ReCrawler:
             self.driver.refresh()
             try:
                 if self.cn_com == 'cn':
-                    WebDriverWait(self.driver, 3).until(EC.presence_of_element_located((By.XPATH,
-                                '//textarea[@class="rc-textarea textarea--oTXB57QK8bQN2BKYJ2Bi textarea--oTXB57QK8bQN2BKYJ2Bi"]')))
+                    WebDriverWait(self.driver, 3).until(EC.presence_of_element_located((By.XPATH, selector.get('cn-textarea-xpath'))))
                 else:
-                    WebDriverWait(self.driver, 3).until(EC.presence_of_element_located((By.XPATH, '//textarea[@class="rc-textarea oTXB57QK8bQN2BKYJ2Bi oTXB57QK8bQN2BKYJ2Bi"]')))
+                    WebDriverWait(self.driver, 3).until(EC.presence_of_element_located((By.XPATH, selector.get('com-textarea-xpath'))))
                 break
             except:
                 continue
@@ -919,7 +1009,7 @@ class ReCrawler:
             'award': content.get('荣誉/获奖') if content.get('荣誉/获奖') else result_direct['award'],
             'paper': content.get('科研论文') if content.get('科研论文') else result_direct['paper'],
             'social_job': content.get('社会兼职') if content.get('社会兼职') else result_direct['social_job'],
-            'picture': parse.urljoin(result_direct['picture'], content.get('照片地址')) if not self.img_url_head else parse.urljoin(self.img_url_head, content.get('照片地址')),
+            'picture': None if not content.get('照片地址') else parse.urljoin(result_direct['picture'], content.get('照片地址')) if not self.img_url_head else parse.urljoin(self.img_url_head, content.get('照片地址')),
             'education': result_direct['education'],
             'qualification': result_direct['qualification'],
             'job_information': result_direct['job_information'],
@@ -1070,5 +1160,3 @@ class ReCrawler:
             # 删除csv
             os.remove(f'./{self.college_id}.csv')
             logger.info('csv文件已删除')
-
-
