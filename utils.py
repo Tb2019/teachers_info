@@ -13,6 +13,8 @@ from fake_headers import Headers
 from urllib.parse import quote_plus
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.action_chains import ActionChains
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
 from sqlalchemy import create_engine
 
@@ -67,6 +69,8 @@ selector = {
 
     # 模型输出文本长度
     'com-text-length-xpath': '//input[@class="semi-input semi-input-default" and @aria-valuemin="1"]',
+    'com-text-length-ensure-1-xpath': '//input[@class="semi-input semi-input-default" and @aria-valuemin="1" and @aria-valuenow="8192"]',
+    'com-text-length-ensure-2-xpath': '//input[@class="semi-input semi-input-default" and @aria-valuemin="1" and @aria-valuenow="4096"]'
 }
 
 headers = Headers(headers=True).generate()
@@ -299,22 +303,28 @@ def change_model(count, driver):
     if count == 1:
         driver.find_element(By.XPATH, selector.get('com-gemini-1.5-pro-xpath')).click()
         time.sleep(0.5)
-        driver.find_element(By.XPATH, selector.get('com-text-length-xpath')).send_keys('8192')
+        length_element = driver.find_element(By.XPATH, selector.get('com-text-length-xpath'))
+        # 确认修改最大输出长度成功
+        while True:
+            try:
+                length_element.click()
+                length_element.send_keys(Keys.CONTROL, 'a')
+                length_element.send_keys(Keys.DELETE)
+                length_element.send_keys('8192')
+                time.sleep(1)
+                WebDriverWait(driver, 5).until(EC.presence_of_element_located((By.XPATH, selector.get('com-text-length-ensure-1-xpath'))))
+                break
+            except:
+                continue
         action.send_keys(Keys.ESCAPE).perform()
         time.sleep(0.5)
         logger.info('第二次重新生成，使用Gemini-pro')
     if count == 2:
         driver.find_element(By.XPATH, selector.get('com-gpt-4o-xpath')).click()
         time.sleep(0.5)
-        driver.find_element(By.XPATH, selector.get('com-text-length-xpath')).send_keys('4096')
-        action.send_keys(Keys.ESCAPE).perform()
-        time.sleep(0.5)
         logger.info('第三次重新生成，使用gpt-4o')
     if count == 3:
         driver.find_element(By.XPATH, selector.get('com-gpt-4-turbo-xpath')).click()
-        time.sleep(0.5)
-        driver.find_element(By.XPATH, selector.get('com-text-length-xpath')).send_keys('4096')
-        action.send_keys(Keys.ESCAPE).perform()
         time.sleep(0.5)
         logger.info('第四次重新生成，使用gpt-4-turbo')
 
@@ -327,7 +337,20 @@ def restore_model(driver):
 
     driver.find_element(By.XPATH, selector.get('com-gemini-1.5-flash-xpath')).click()
     time.sleep(0.5)
-    driver.find_element(By.XPATH, selector.get('com-text-length-xpath')).send_keys('8192')
+    length_element = driver.find_element(By.XPATH, selector.get('com-text-length-xpath'))
+    # 确认修改最大输出长度成功
+    while True:
+        try:
+            length_element.click()
+            length_element.send_keys(Keys.CONTROL, 'a')
+            length_element.send_keys(Keys.DELETE)
+            length_element.send_keys('8192')
+            time.sleep(1)
+            WebDriverWait(driver, 5).until(
+                EC.presence_of_element_located((By.XPATH, selector.get('com-text-length-ensure-1-xpath'))))
+            break
+        except:
+            continue
     action.send_keys(Keys.ESCAPE).perform()
     time.sleep(0.5)
     logger.info('模型已切换回gemini-flash')
