@@ -6,29 +6,29 @@ from asyncio.log import logger
 from utils import csv_2_df, truncate_table, df2mysql, drop_duplicate_collage, local_engine, sf_engine, save_as_json
 from urllib import parse
 
-school_id = 91
-college_id = 149
-school_name = '华东师范大学'
-college_name = '物理与电子科学学院'
+school_id = 88
+college_id = 150
+school_name = '天津大学'
+college_name = '机械工程学院'
 
-img_url_head = 'https://faculty.ecnu.edu.cn/'
+img_url_head = 'https://me.tju.edu.cn/'
 
 data_real = {
-"姓名":"田博博",
+"姓名":"陈锐",
 "电话":"",
-"邮箱":"bbtian@ee.ecnu.edu.cn",
-"职称":"教授",
-"个人简介":"田博博，物理与电子科学学院电子科学系教授，博士生导师。2016年获法国Paris-Saclay大学和中国科学院大学双博士学位（Ph.D.）。主讲本科专业基础课《半导体物理》、《人工智能导论》和《理论力学》，教学获第五届上海高校青年教师教学比赛优秀奖，第十三届华东师范大学青年教师教学比赛一等奖。指导教育部A类科创比赛获得国家级一等奖3项，二等奖1项，省部级一等奖1项，二等奖2项。\n研究方向为基于铁电材料的类脑智能器件。主持含国家自然基金（3项）和上海市项目（3项）在内的科研项目10余项，在Nat. Mater.、Nat. Electron.、Appl. Phys. Rev.、Nat. Commun.等国际重要期刊发表SCI论文100余篇。入选国家优青，中国博士后创新人才计划和中国科学院院长特别奖。担任中国神经科学学会类脑智能分会委员会委员，以及InfoMat (IF:22.7)、NML (IF:26.6)、IJEM (IF:14.7)、Exploration和Brain-X期刊的青年编委。",
-"研究方向":"依托上海类脑智能材料与器件研究中心和极化材料与器件教育部重点实验室，重点利用铁电信息材料开展类脑智能器件、存储、存算一体、感存算一体计算的研究，相关成果发表于Nat. Mater.、Nat. Electron.、Appl. Phys. Rev.、Nat. Commun.、InfoMat、Adv. Funct. Mater.、Adv. sci.等国际重要期刊。欢迎研究生和青年人才加入科研团队。",
+"邮箱":"	chen_rui@tju.edu.cn",
+"职称":"讲席教授",
+"个人简介":"陈锐教授，英国拉夫堡大学（Loughborough University）低碳动力工程的终身教授，天津大学一级讲席教授，上海科学院新能源技术研究所氢能首席科学家，同时在西安交通大学，北京石油化工学院，厦门理工学院等多所大学任兼职教授。\n陈锐教授拥有近40年的学术研究和产业发展经验，是英国氢能和燃料电池研究计划科学委员会成员，科学研究涵盖低碳能源技术的建模和实验领域，内容包括热工学、电化学、流体动力学和系统工程。在英国，已培养博士34人、博士后12人，辅导访问学者20人，发表科研论文220 余篇（引用近6000，h指数37），作为项目负责人领导了40多个有资助研究项目，总计超过700万英镑，作为共同研究者参与了超过5500万英镑的科研项目，同英国、欧盟、中国、美国、韩国、日本、印度等多国的领先行业和科研机构在氢能和燃料电池等低碳技术领域有着广泛的合作。\n近5年主持和参与了20余科研项目，包括英国商业、能源和工业战略部（BEIS）“英国氢气质量标准热能承包示范Hy4Heat”；英国工程和物理科学研究基金会（EPSRC）与路虎（JLR）“电动自动驾驶汽车的智能热能管理”，与Bosch“两级低温氢气燃烧”，与英国太空系统公司（BAE Systems）“下一代无人机氢燃料电池推进系统”；英国文化协会（British Council）“高能量密度甲醇燃料电池的新型催化剂和流场设计”；中国国家自然科学基金国际合作重点项目“极板-电极一体化质子交换膜燃料电池多场耦合传输机理研究”（英方负责人）。\n陈锐教授的研究涵盖应用热流体和应用电化学，以控制排放和提高能量效率为目标，把能源工程领域的研究策略定位于高效率低排放的先进发动机燃烧、燃料电池及其相应的理论分析， 形成了热科学（Thermosciences）、电化学（Electrochemistry）、燃料（Fuels）、混合动力（Hybrid）四大科研领域。自1996年拉夫堡大学任职以来，已发表科技论文200余篇，负责数十项科研项目总计约6万英镑，参与多项科研项目总计约3千万英镑。",
+"研究方向":"Electro-chemistry: PEM Fuel Cells; catalytic reactions; degradation; catalyst agglomeration; electrochemistry impedance spectrum (EIS); battery diagnostics; water polymer electrolysis; H2O2-NaBH4 liquid fuel cell.\nThermo-science: thermo-electric waste heat energy recoveries; avionic thermal analysis and management; combustion kinetics; engine downsize; multi-mode combustion; alternative fuels; catalytic burner; fuel catalytic reforming; battery thermal management; characteristics of super-critical water.\nFluid-dynamics: multi-phase multi-dimensional mass and heat transfer; gas diffusion and numeric modelling; x-ray tomography.\nSystem engineering: avionic environmental control system (ECS); water and thermal management of regenerative fuel cell; More electric aircraft hydrogen propulsion.",
 "专利":"",
-"科研项目":"主持含国家自然科学基金（3项）、省部级项目（5项）在内的科研项目10余项。入选国家级青年、省部级杰青和中国博士后创新等人才计划。",
-"荣誉/获奖":"教学：\n获得第五届上海高校青年教师教学比赛优秀奖，第十三届华东师范大学青年教师教学比赛一等奖，指导教育部A类科创比赛获得国家级一等奖3项，二等奖1项，省部级一等奖1项，二等奖2项。\n科研：\n中国科学院院长特别奖，中科院优博百篇，中国电子教育学会优博，中国博士后创新人才，上海市扬帆人才，上海市晨光人才，国家级青年人才，省部级杰青......",
-"照片地址":"https://faculty.ecnu.edu.cn/_upload/article/images/3a/5b/afaa6191485eb4ee90f4bba8ab4b/4dbd2be0-83de-4336-a08a-5d9be5a5fd4f_s.png",
+"科研项目":"1.“ATF: Moving the UK automotive sector to zero emissions: Classic Car ElectRificatiOn (CICERO)”, Innovate UK (Ref. No.84685), 2020-2022\n2.“重点国际（地区）合作研究项目：极板-电极一体化质子交换膜燃料电池多场耦合传输机理研究”, 中国国家自然科学基金会 National Natural Science Foundation of China (51920105010), 2020 – 12.2024\n3.“Fuel Cell Modelling for Military Applications”, MBDA UK Limited, 2019 – 2020\n4.“Hydrogen Quality Standard Contractor for UK hydrogen for heat demonstration (Hy4Heat)”, Department for Business, Energy and Industrial Strategy (BEIS): 1525/06/2018, 2017 – 2021\n5.“Design and development of a four-wheeled electric vehicle for research, teaching and outreach in Tamil Nadu, India”, The Royal Academy of Engineering, 2019 (2 years)\n6.“Battery extreme environment charge and discharge evaluations”, Mahle Powertrain Ltd., 2019\n7.“Intelligent Thermal Energy Management for Battery Electric and Autonomous Vehicles”, Jaguar Land Rover & EPSRC (iCASE18000088), 2019 – 2023.\n8.“Investigation of methane/hydrogen combustion in Euro VI engines for heavy duty vehicles”, Ricardo and University of Brighton Project, 2018 – 2021.\n9.“Two-Stage Low-Temperature Hydrogen Combustion”, Engineering and Physical Sciences Research Council (EPSRC) and Bosch Thermotechnology Ltd., 2017 – 2021.\n10.“Methanol Fed High Energy Density Fuel Cell System with Novel Catalyst and Flow Field Design”, British Council DST-UKIERI-2016-17-0023, 2017 – 2020.",
+"荣誉/获奖":"",
+"照片地址":"/upload/teacherImg/4f5526b0ba064612a45af9e96598038e.png",
 "最高学历":"研究生",
 "最高学位":"博士",
-"职位":"教授",
-"办公地点":"上海市东川路500号 华东师范大学信息楼",
-"科研论文":"1. Guangdi Feng#, Qiuxiang Zhu#, Xuefeng Liu, Luqiu Chen, Xiaoming Zhao, Jianquan Liu, Shaobing Xiong, Kexiang Shan, Zhenzhong Yang, Qinye Bao, Fangyu Yue, Hui Peng, Rong Huang, Xiaodong Tang, Jie Jiang, Wei Tang, Xiaojun Guo, Jianlu Wang, Anquan Jiang, Brahim Dkhil, Bobo Tian*, Junhao Chu and Chungang Duan. A ferroelectric fin diode for robust non-volatile memory, Nature Communications, 15, 513 (2024). https://doi.org/10.1038/s41467-024-44759-5 \n2.  Guangjian Wu#, Xumeng Zhang#, Guangdi Feng#, Jingli Wang, Keji Zhou,  Jinhua Zeng, Danian Dong, Fangduo Zhu, Chenkai Yang, Xiaoming Zhao,  Danni Gong, Mengru Zhang, Bobo Tian*, Chungang Duan, Qi  Liu*, Jianlu Wang*, Junhao Chu and Ming Liu. Ferroelectric-defined  reconfigurable homojunctions for in-memory sensing and computing, Nature Materials, 22, 1499 (2023). https://www.nature.com/articles/s41563-023-01676-0\n3. Jie Lao#, Mengge Yan#, Bobo Tian*, Chunli  Jiang, Chunhua Luo, Zhuozhuang Xie, Qiuxiang Zhu, Zhiqiang Bao, Ni  Zhong, Xiaodong Tang, Linfeng Sun, Guangjian Wu, Jianlu Wang, Hui Peng*,  Junhao Chu, and Chungang Duan*. Ultralow-Power Machine Vision with  Self-Powered Sensor Reservoir, Advanced Science, 9 (15), 2106092 (2022). (高被引) https://onlinelibrary.wiley.com/doi/full/10.1002/advs.202106092\n4. Guangjian Wu#, Bobo Tian#, Lan Liu#, Wei Lv, Shuang Wu, Xudong Wang, Yan Chen, Jingyu Li, Zhen Wang, Shuaiqin Wu,Hong Shen, Tie Lin, Peng Zhou*, Qi Liu, Chungang Duan, Shantao Zhang, Xiangjian Meng, Shiwei Wu, Weida Hu, Xinran Wang, Junhao Chu and Jianlu Wang*. Programmable transition metal dichalcogenide homojunctions controlled by nonvolatile ferroelectric domains, Nature Electronics, 3, 43 (2020) (高被引)  https://www.nature.com/articles/s41928-019-0350-y\n5. Bobo Tian, Jianlu Wang*, Stephane Fusil, Yang Liu, Xiaolin Zhao, Shuo Sun, Hong Shen, Tie Lin, Jinglan Sun, Chungang Duan*, Manuel Bibes, Agnes Barthélémy, Brahim Dkhil, Vincent Garcia*, Xiangjian Meng and Junhao Chu. Tunnel electroresistance through organic ferroelectrics. Nature Communications 7, 11502 (2016) https://www.nature.com/articles/ncomms11502"
+"职位":"讲席教授",
+"办公地点":"天津市南开区卫津路92号天津大学先进内燃动力全国重点实验室",
+"科研论文":"1.(2024) che zhizhao, tao xingxiao, sun kai, chen rui, lqf01, liu huaiyu, zwz409, wang tianyou, “Effect of gas diffusion layer parameters on cold start of PEMFCs with metal foam flow field”. APEN-D-23-07037R1, Applied Energy.\n2.(2023) Xingxiao Tao, Kai Sun, Rui Chen, Mengshan Suo, Huaiyu Liu, Zhizhao Che, Tianyou Wang, “Two-phase flow in porous metal foam flow fields of PEM fuel cells”. Chemical Engineering Science. Volume 282, 5 December 2023, 119270 https://doi.org/10.1016/j.ces.2023.119270\n3.(2023) Zhen Zeng, Kai Sun, Rui Chen, Mengshan Suo, Zhizhao Che, and Tianyou Wang, “Variation of Critical Crystallization Pressure for the Formation of Square Ice in Graphene Nanocapillaries”. The Journal of Physical Chemistry C - ACS Publications. 2023, 127, 30, 14874–14882. https://doi.org/10.1021/acs.jpcc.3c00619\n4.(2023) Milon Miah, Poulami Hota, Tapas Kumar Mondal, Rui Chen, Shyamal K. Saha, “Mixed metal sulfides (FeNiS2) nanosheets decorated reduced graphene oxide for efficient electrode materials for supercapacitors”. Journal of Alloys and Compounds. Volume 933, 5 February 2023, 167648. https://doi.org/10.1016/j.jallcom.2022.167648\n5.(2023) Ren Zhang, Lin Chen, Haiqiao Wei, Jinguang Li, Yi Ding, Rui Chen, Jiaying Pan, “Experimental investigation on reactivity-controlled compression ignition (RCCI) combustion characteristic of n-heptane/ammonia based on an optical engine”. International Journal of Engine Research. Volume 24, Issue 6. https://doi.org/10.1177/14680874221124452"
 }
 
 data = {
