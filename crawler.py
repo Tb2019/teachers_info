@@ -698,9 +698,9 @@ class ReCrawler:
         while True:
             try:
                 if self.cn_com == 'cn':
-                    WebDriverWait(self.driver, 3).until(EC.presence_of_element_located((By.XPATH, selector.get('cn-textarea-xpath'))))
+                    WebDriverWait(self.driver, 5).until(EC.presence_of_element_located((By.XPATH, selector.get('cn-textarea-xpath'))))
                 else:
-                    WebDriverWait(self.driver, 3).until(EC.presence_of_element_located((By.XPATH, selector.get('com-textarea-xpath'))))
+                    WebDriverWait(self.driver, 5).until(EC.presence_of_element_located((By.XPATH, selector.get('com-textarea-xpath'))))
                 break
             except:
                 self.driver.refresh()
@@ -748,9 +748,9 @@ class ReCrawler:
             while True:
                 try:
                     if self.cn_com == 'cn':
-                        WebDriverWait(self.driver, 3).until(EC.presence_of_element_located((By.XPATH, selector.get('cn-textarea-xpath'))))
+                        WebDriverWait(self.driver, 5).until(EC.presence_of_element_located((By.XPATH, selector.get('cn-textarea-xpath'))))
                     else:
-                        WebDriverWait(self.driver, 3).until(EC.presence_of_element_located(
+                        WebDriverWait(self.driver, 5).until(EC.presence_of_element_located(
                             (By.XPATH, selector.get('com-textarea-xpath'))))
                     break
                 except:
@@ -892,10 +892,10 @@ class ReCrawler:
                         self.driver.refresh()
                         try:
                             if self.cn_com == 'cn':
-                                WebDriverWait(self.driver, 3).until(
+                                WebDriverWait(self.driver, 5).until(
                                     EC.presence_of_element_located((By.XPATH, selector.get('cn-textarea-xpath'))))
                             else:
-                                WebDriverWait(self.driver, 3).until(EC.presence_of_element_located(
+                                WebDriverWait(self.driver, 5).until(EC.presence_of_element_located(
                                     (By.XPATH, selector.get('com-textarea-xpath'))))
                             break
                         except:
@@ -953,10 +953,10 @@ class ReCrawler:
                         self.driver.refresh()
                         try:
                             if self.cn_com == 'cn':
-                                WebDriverWait(self.driver, 3).until(
+                                WebDriverWait(self.driver, 5).until(
                                     EC.presence_of_element_located((By.XPATH, selector.get('cn-textarea-xpath'))))
                             else:
-                                WebDriverWait(self.driver, 3).until(EC.presence_of_element_located(
+                                WebDriverWait(self.driver, 5).until(EC.presence_of_element_located(
                                     (By.XPATH, selector.get('com-textarea-xpath'))))
                             break
                         except:
@@ -984,9 +984,9 @@ class ReCrawler:
             self.driver.refresh()
             try:
                 if self.cn_com == 'cn':
-                    WebDriverWait(self.driver, 3).until(EC.presence_of_element_located((By.XPATH, selector.get('cn-textarea-xpath'))))
+                    WebDriverWait(self.driver, 5).until(EC.presence_of_element_located((By.XPATH, selector.get('cn-textarea-xpath'))))
                 else:
-                    WebDriverWait(self.driver, 3).until(EC.presence_of_element_located((By.XPATH, selector.get('com-textarea-xpath'))))
+                    WebDriverWait(self.driver, 5).until(EC.presence_of_element_located((By.XPATH, selector.get('com-textarea-xpath'))))
                 break
             except:
                 continue
