@@ -256,30 +256,71 @@ def truncate_table(host, user, password: str, database, port, table_name):
         logger.info('truncate {table_name} failed, rollback')
         conn.rollback()
 
-def clean_phone(partition_num, dirty_phone):
+
+def clean_phone(partition_num: str, dirty_phone: str):
     if not dirty_phone:
         return None
 
+    # 格式化
     phone = re.sub(r'—', '-', dirty_phone)
-    phone = re.sub(r'\((.*?)\)', r'\1-', phone)
+    phone = re.sub(r'\((.*?)\)', r'\1', phone)
+    phone = re.sub(r'\+?(?:（|\()?86(?:）|\))?-?', '', phone)
     phone = re.sub(r'\s', '', phone)
-    phone = re.sub(r'\+?86-?', '', phone)
-    phone = re.sub(r'\d{2}-(\d+$)', '\1', phone)
-    phone = re.sub(r'(?<=\d{3})-(\d{4}$)', r'\1', phone)
-    phone = re.sub(r'(?<=\d{4})-(\d{4}$)', r'\1', phone)
 
     try:
-        int(re.sub('-|^0', '', phone))
+        int(re.sub('-|^0|,', '', phone))
     except:
         return None
 
-    if re.match(r'1\d{10}$|\d{3,4}-\d{7,8}$', phone):
-        return phone
-    elif len(phone) == 8 or len(phone) == 7:
-        phone = partition_num + '-' + phone
+    if len(phone) > 13 and re.search(r'-\d{3,4}$', phone):
+        phone = re.sub(r'-\d{3,4}$', '', phone)
+
+    phone = re.sub('-', '', phone)
+
+    if ',' not in phone:
+        if re.match('^' + partition_num, phone):
+            phone = re.sub('^' + partition_num, partition_num + '-', phone)
+        elif re.match('^' + partition_num[1:], phone):
+            phone = re.sub('^' + partition_num[1:], partition_num + '-', phone)
+        elif len(phone) == 7 or len(phone) == 8:
+            phone = partition_num + '-' + phone
+        else:
+            pass
+        # elif len(phone) == 11 and phone.startswith('1'):
+        #     pass
+        # else:
+        #     phone = None
         return phone
     else:
-        return phone
+        res_phone = ''
+        for num in phone.split(','):
+            if re.match('^' + partition_num, num):
+                num = re.sub('^' + partition_num, partition_num + '-', num)
+            elif re.match('^' + partition_num[1:], num):
+                num = re.sub('^' + partition_num[1:], partition_num + '-', num)
+            elif len(phone) == 7 or len(phone) == 8:
+                phone = partition_num + '-' + phone
+            else:
+                pass
+            res_phone = res_phone + ',' + num
+        return res_phone
+
+
+    # phone = re.sub(r'\d{2}-(\d+$)', '\1', phone)
+    # phone = re.sub(r'(?<=\d{3})-(\d{4}$)', r'\1', phone)
+    # phone = re.sub(r'(?<=\d{4})-(\d{4}$)', r'\1', phone)
+    # try:
+    #     int(re.sub('-|^0|,', '', phone))
+    # except:
+    #     return None
+    #
+    # if re.match(r'1\d{10}$|\d{3,4}-\d{7,8}$', phone):
+    #     return phone
+    # elif len(phone) == 8 or len(phone) == 7:
+    #     phone = partition_num + '-' + phone
+    #     return phone
+    # else:
+    #     return phone
 
 
 def replace_quotes_in_text(node):
