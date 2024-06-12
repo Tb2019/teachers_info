@@ -272,12 +272,11 @@ def clean_phone(partition_num: str, dirty_phone: str):
     except:
         return None
 
-    if len(phone) > 13 and re.search(r'-\d{3,4}$', phone):
-        phone = re.sub(r'-\d{3,4}$', '', phone)
-
-    phone = re.sub('-', '', phone)
-
     if ',' not in phone:
+        if len(phone) > 13 and re.search(r'-\d{3,4}$', phone):
+            phone = re.sub(r'-\d{3,4}$', '', phone)
+        phone = re.sub('-', '', phone)
+
         if re.match('^' + partition_num, phone):
             phone = re.sub('^' + partition_num, partition_num + '-', phone)
         elif re.match('^' + partition_num[1:], phone):
@@ -294,6 +293,10 @@ def clean_phone(partition_num: str, dirty_phone: str):
     else:
         res_phone = ''
         for num in phone.split(','):
+            if len(num) > 13 and re.search(r'-\d{3,4}$', num):
+                num = re.sub(r'-\d{3,4}$', '', num)
+            num = re.sub('-', '', num)
+
             if re.match('^' + partition_num, num):
                 num = re.sub('^' + partition_num, partition_num + '-', num)
             elif re.match('^' + partition_num[1:], num):
@@ -302,7 +305,10 @@ def clean_phone(partition_num: str, dirty_phone: str):
                 phone = partition_num + '-' + phone
             else:
                 pass
-            res_phone = res_phone + ',' + num
+            if not res_phone:  # 防止开头多一个逗号
+                res_phone += num
+            else:
+                res_phone = res_phone + ',' + num
         return res_phone
 
 
