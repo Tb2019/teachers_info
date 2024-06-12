@@ -261,6 +261,7 @@ def clean_phone(partition_num, dirty_phone):
         return None
 
     phone = re.sub(r'—', '-', dirty_phone)
+    phone = re.sub(r'\((.*?)\)', r'\1-', phone)
     phone = re.sub(r'\s', '', phone)
     phone = re.sub(r'\+?86-?', '', phone)
     phone = re.sub(r'\d{2}-(\d+$)', '\1', phone)
