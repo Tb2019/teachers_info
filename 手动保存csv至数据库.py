@@ -6,10 +6,10 @@ from asyncio.log import logger
 from utils import csv_2_df, truncate_table, df2mysql, drop_duplicate_collage, local_engine, sf_engine, save_as_json
 from urllib import parse
 
-school_id = 88
-college_id = 150
-school_name = '天津大学'
-college_name = '机械工程学院'
+school_id = 87
+college_id = 151
+school_name = '厦门大学'
+college_name = '化学化工学院(工学部分)'
 
 img_url_head = 'https://me.tju.edu.cn/'
 
