@@ -263,7 +263,7 @@ def clean_phone(partition_num: str, dirty_phone: str):
 
     # 格式化
     phone = re.sub(r'—', '-', dirty_phone)
-    phone = re.sub(r'\((.*?)\)', r'\1', phone)
+    phone = re.sub(r'(?:（|\()(.*?)(?:\)|）)', r'\1', phone)
     phone = re.sub(r'^\+?(?:（|\()?86(?:）|\))?-?', '', phone)
     phone = re.sub(r'\s', '', phone)
 
