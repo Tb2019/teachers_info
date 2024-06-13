@@ -11,7 +11,9 @@ partition_num = '0592'
 start_urls = [
                 'https://chem.xmu.edu.cn/szdw1/jsdw.htm'
               ]
+
 a_s_xpath_str = '//div[@class="zwbt2"]//a[@href!="#"]'
+# a_s_xpath_str = '//div[@class="zwbt2" and position()>321]//a[@href!="#"]'
 target_div_xpath_str = '//div[@class="mainContent"]'
 
 # # 电话
