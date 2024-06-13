@@ -6,12 +6,12 @@ from asyncio.log import logger
 from utils import csv_2_df, truncate_table, df2mysql, drop_duplicate_collage, local_engine, sf_engine, save_as_json
 from urllib import parse
 
-school_id = 87
-college_id = 151
-school_name = '厦门大学'
-college_name = '化学化工学院(工学部分)'
+school_id = 86
+college_id = 152
+school_name = '华南理工大学'
+college_name = '电子与信息学院'
 
-img_url_head = 'https://me.tju.edu.cn/'
+img_url_head = ''
 
 data_real = {
 "姓名":"陈锐",
