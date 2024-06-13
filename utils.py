@@ -371,10 +371,12 @@ def change_model(count, driver):
     if count == 2:
         driver.find_element(By.XPATH, selector.get('com-gpt-4o-xpath')).click()
         time.sleep(0.5)
+        action.send_keys(Keys.ESCAPE).perform()
         logger.info('第三次重新生成，使用gpt-4o')
     if count == 3:
         driver.find_element(By.XPATH, selector.get('com-gpt-4-turbo-xpath')).click()
         time.sleep(0.5)
+        action.send_keys(Keys.ESCAPE).perform()
         logger.info('第四次重新生成，使用gpt-4-turbo')
 
 def restore_model(driver):
