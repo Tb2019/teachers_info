@@ -51,7 +51,8 @@ selector = {
 
     'cn-content-xpath': '//div[@class="auto-hide-last-sibling-br paragraph_4183d"]',
     # 重新生成
-    'com-regenerate-css': '#root > div:nth-child(2) > div > div > div > div > div.aSIvzUFX9dAs4AK6bTj0 > div.sidesheet-container.UMf9npeM8cVkDi0CDqZ0 > div.TH9DlQU1qwg_KGXdDYzk > div > div.R_WS6aCLs2gN7PUhpDB0.JlYYJX7uOFwGV6INj0ng > div > div > div.nIVxVV6ZU7gCM5i4VQIL.message-group-wrapper > div > div > div:nth-child(1) > div > div > div > div > div.chat-uikit-message-box-container__message > div > div.chat-uikit-message-box-container__message__message-box__footer > div > div.semi-space.semi-space-align-center.semi-space-horizontal > div:nth-child(2) > button',
+    'com-regenerate-css': '#root > div:nth-child(2) > div > div > div > div > div.aSIvzUFX9dAs4AK6bTj0 > div.sidesheet-container.UMf9npeM8cVkDi0CDqZ0 > div.TH9DlQU1qwg_KGXdDYzk > div > div.R_WS6aCLs2gN7PUhpDB0.JlYYJX7uOFwGV6INj0ng > div > div > div.nIVxVV6ZU7gCM5i4VQIL.message-group-wrapper > div > div > div:nth-child(1) > div > div > div > div > div.chat-uikit-message-box-container__message > div > div.chat-uikit-message-box-container__message__message-box__footer > div > div.semi-space.semi-space-align-center.semi-space-horizontal > div:nth-child(3) > button',
+                        # '#root > div:nth-child(2) > div > div > div > div > div.aSIvzUFX9dAs4AK6bTj0 > div.sidesheet-container.UMf9npeM8cVkDi0CDqZ0 > div.TH9DlQU1qwg_KGXdDYzk > div > div.R_WS6aCLs2gN7PUhpDB0.JlYYJX7uOFwGV6INj0ng > div > div > div.nIVxVV6ZU7gCM5i4VQIL.message-group-wrapper > div > div > div:nth-child(1) > div > div > div > div > div.chat-uikit-message-box-container__message > div > div.chat-uikit-message-box-container__message__message-box__footer > div > div.semi-space.semi-space-align-center.semi-space-horizontal > div:nth-child(2) > button',
 
     'cn-regenerate-css': '#root > div:nth-child(2) > div > div > div > div > div.container--aSIvzUFX9dAs4AK6bTj0 > div.sidesheet-container.wrapper-single--UMf9npeM8cVkDi0CDqZ0 > div.message-area--TH9DlQU1qwg_KGXdDYzk > div > div.scroll-view--R_WS6aCLs2gN7PUhpDB0.scroll-view--JlYYJX7uOFwGV6INj0ng > div > div > div.wrapper--nIVxVV6ZU7gCM5i4VQIL.message-group-wrapper > div > div > div:nth-child(1) > div > div > div > div > div.chat-uikit-message-box-container__message > div > div.chat-uikit-message-box-container__message__message-box__footer > div > div.semi-space.semi-space-align-center.semi-space-horizontal > div:nth-child(2)',
 
@@ -62,10 +63,10 @@ selector = {
     'com-model-list-xpath': '//div[@class="qNKhq1IFxcAMuhECsZz9"]',
 
     # 选择模型
-    'com-gemini-1.5-flash-xpath': '//div[contains(@id, "-option-0")]',
-    'com-gemini-1.5-pro-xpath': '//div[contains(@id, "-option-1")]',
-    'com-gpt-4o-xpath': '//div[contains(@id, "-option-2")]',
-    'com-gpt-4-turbo-xpath': '//div[contains(@id, "-option-3")]',
+    'com-gemini-1.5-flash-xpath': '//div[@_scrollindex="0"]',  # '//div[contains(@id, "-option-0")]',
+    'com-gemini-1.5-pro-xpath': '//div[@_scrollindex="1"]',  # '//div[contains(@id, "-option-1")]',
+    'com-gpt-4o-xpath': '//div[@_scrollindex="2"]',  # '//div[contains(@id, "-option-2")]',
+    'com-gpt-4-turbo-xpath': '//div[@_scrollindex="3"]',  # '//div[contains(@id, "-option-3")]',
 
     # 模型输出文本长度
     'com-text-length-xpath': '//input[@class="semi-input semi-input-default" and @aria-valuemin="1"]',
