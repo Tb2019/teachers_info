@@ -1,8 +1,11 @@
 import json
 import pyperclip
+from loguru import logger
+from selenium.webdriver import ActionChains
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support import expected_conditions as EC
 from selenium import webdriver
+from utils import change_model, restore_model, selector
 import time
 from cookie_pool import CookiePool
 from selenium.webdriver.common.by import By
@@ -75,6 +78,35 @@ for key in keys:
         driver.close()
         continue
     else:
+        # # 测试修改模型
+        # driver.find_element(By.CSS_SELECTOR, selector.get('com-change-css')).click()
+        # time.sleep(0.5)
+        # driver.find_element(By.XPATH, selector.get('com-model-list-xpath')).click()
+        # time.sleep(0.5)
+        # action = ActionChains(driver)
+        # driver.find_element(By.XPATH, selector.get('com-gemini-1.5-pro-xpath')).click()
+        # time.sleep(0.5)
+        # length_element = driver.find_element(By.XPATH, selector.get('com-text-length-xpath'))
+        # # 确认修改最大输出长度成功
+        # while True:
+        #     try:
+        #         length_element.click()
+        #         length_element.send_keys(Keys.CONTROL, 'a')
+        #         length_element.send_keys(Keys.DELETE)
+        #         length_element.send_keys('8192')
+        #         time.sleep(1)
+        #         WebDriverWait(driver, 5).until(
+        #             EC.presence_of_element_located((By.XPATH, selector.get('com-text-length-ensure-1-xpath'))))
+        #         break
+        #     except:
+        #         continue
+        # time.sleep(1)
+        # action.send_keys(Keys.ESCAPE).perform()
+        # time.sleep(0.5)
+        # logger.info('第二次重新生成，使用Gemini-pro')
+        # print('睡眠开始')
+        # time.sleep(100)
+
         driver.close()
         break
 
@@ -100,3 +132,7 @@ for key in keys:
 #     content = ''.join(content)
 # content = json.loads(content)
 # print(content)
+
+
+
+
