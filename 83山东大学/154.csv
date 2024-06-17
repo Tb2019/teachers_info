@@ -1,0 +1,1634 @@
+name,school_id,college_id,phone,email,job_title,abstracts,directions,education_experience,work_experience,patent,project,award,paper,social_job,picture,education,qualification,job_information,responsibilities,office_address
+王成福,83,154,13869196525,wangcf@sdu.edu.cn,副教授 / 硕士生导师,,电力系统分析、可再生能源发电调度与控制、综合能源系统调度与控制,,,"[1] 专利名称：基于粒子群算法的风电场储能容量控制方法，王成福，梁军，专利号：ZL201210172086.7
+[2] 专利名称：计及风功率分布规律的风电场无功补偿容量优化控制方法，王成福，梁军，专利号ZL2012101172278.8
+[3] 专利名称：考虑预测误差时序分布的含风电机组组合模型建立方法，王成福，王利平，梁军，专利号ZL201510750398.5
+[4] 专利名称：兼顾风场分散性与机组差异性的风电场动态等值，王成福，梁军，专利号ZL201510205252.2
+[5] 专利名称：基于融合信息的风电场群有功优化调控方法，王成福，李哲，董晓明，专利号ZL201610873061.8","[1] 山东大学交叉学科培育项目，区域能源互联系统协同优化调度理论研究，项目负责人，2018-2020
+[2] 区域综合能源系统优化运行模拟仿真实验，王成福，2019，教育部第二批产学合作协同育人项目，教育部，项目负责人，2019-2020
+[3] 国家自然科学基金，计及电网支撑能力影响的风电场电压协调控制理论研究，项目负责人，2016-2019
+[4] 山东省优秀中青年科学家科研奖励基金，主持基于不确定性特征挖掘的可再生能源发电的自律调控理论研究,项目负责人, 2015-2017.
+[5] 山东大学基本科研业务资助项目，多维度下间歇性功率流的渐进性学习型调控方法研究，项目负责人，2014-2017.
+[6] 中国博士后科学基金面上项目，间歇性功率流的多维度渐进式调控方法研究，项目负责人，2013-2014.
+[7] 国家重点基础研究计划（973计划）项目，源网荷协同的智能电网能量管理和运行控制基础研究，科技部，项目单位负责人，2013-2017.
+[8] 国家科技支撑计划项目，以电网低碳化为特征的智能电网综合示范工程，项目单位负责人，2013-2015.
+[9] 国网山东电力公司，综合供能场景下多类型分布式储能的协同优化配置与运行关键技术研究，项目负责人，2019-2020
+[10] 国网山东电力公司，多类型分布式资源典型特性分析与不同网络结构下的协同优化调度方法研究，项目负责人，2019-2020",,"[1] Xi Chen, Chengfu Wang, Qiuwei Wu, Xiaoming Dong,Ming Yang, Suoying He. Optimal Operation of Integrated Energy System Considering Dynamic Heat-gas Characteristics and Uncertain Wind Power. Energy, 198, MAY 1 2020, 1-17(SCI, 通讯)
+[2] Zhe Li; Chengfu Wang; Bowen Li;Jinyu Wang; Penghui Zhao; Wenli Zhu; Ming Yang; Ying Ding. Probability-Interval based Optimal Planning of Integrated Energy System with Uncertain Wind Power. IEEE Transactions on Industry Applications, 18 Jan.-Feb. 2020, Page 4-13(SCI, 通讯)
+[3] Chengfu Wang; Shuai Dong; Shijie Xu; Ming Yang; Suoying He; Xiaoming Dong; Jun Liang. Impact of Power-to-Gas Cost Characteristics on Power-Gas-Heating Integrated System Scheduling. ACCESS, Volume 7: 2019, Page(s):17654 – 17662. (IF 4.098)
+[4] Chengfu Wang*, Qijun Teng, Xiaoyi Liu, Feng Zhang, Suoying He, Zhengtang Liang, Xiaoming Dong. Optimal Sizing of Energy Storage Considering the Spatial-Temporal Correlation of Wind Power Forecast Errors IET renewable power generation. Source: Volume 13, Issue 4, 18 March 2019, p. 530 – 538. (IF 3.605)
+[5] Chengfu Wang, Xijuan Li, Zhaoqing Wang, Xiaoming Dong, Zhengtang Liang, Xiaoyi Liu, Jun Liang, Xueshan Han. Day-ahead unit commitment method considering time sequence feature of wind power forecast error, Electrical Power and Energy Systems 98 2018 156-166(SCI)",,https://www.ee.sdu.edu.cn/__local/8/5E/CC/5B83DAD0B6E009786A7B377C426_6B752605_1DC94.png,研究生,博士,1,教师,
+王孟夏,83,154,13455157773,wangmx@sdu.edu.cn,副教授,,"1. 电力系统经济运行
+2. 新能源发电调度
+3. 输电元件性能评估",,,"1. 另获授权发明专利6项
+2. 主持开发“输电元件载荷能力在线定值软件平台”、“电网接纳风电能力分析软件平台”，获软件著作权2项","1. 山东省重点研发计划，架空导线载流量概率预测研究，2019/01-2020/12，项目负责人
+2. 国家自然科学青年基金，电网消纳风电中的电热协调理论研究，2015/01-2017/12，项目负责人
+3. 教育部产学合作协同育人项目，新形势下新能源发电技术课程教学改革，2020/11-2021/11，项目负责人
+4. 中国博士后科学基金，计及电热耦合的电网静态安全分析与控制方法研究，2012/07-2013/07，项目负责人
+5. 山东大学基本业务经费项目，输电元件实时热定值追踪与应用，项目负责人
+6. 国家973计划项目，源-网-荷协同的智能电网能量管理和运行控制基础研究，2012/08-2017/08 ，技术负责人
+7. 国家自然科学基金，有效利用规模化储能的可再生能源电力系统优化调度与稳定控制，2014/01-2016/12，技术负责人
+8. 国网山东省电力公司科技项目，电力物联网环境下外送间歇性能源发电输电导线选型策略，2020/01-2020/12，项目负责人
+9. 国网山东省电力公司科技项目，输电线路载荷能力态势评估与预警系统开发，2019/01-2020/12，项目负责人
+10. 国网山东省电力公司科技项目，面向智能化发展的地区电网运行形态分析及评价，2016/01-2016/12，项目负责人
+11. 国网冀北电力公司科技项目，面向多级耦合断面送出的大规模新能源细化建模及优化调控技术，2020/01-2022/12，项目负责人
+12. 国网山东省电力公司科技项目，基于四维气象预报的输电线路载流能力预测技术研究，2021/01-2022/12，项目负责人","1. 王孟夏（3/10），风电并网消纳与优化调度关键技术研究及系统应用，河南省科技厅，科技进步奖，二等奖，2016
+2. 王孟夏（3/6），电力系统电热协调理论与应用，山东省科技厅，科技进步奖，三等奖，2015
+3. 获2020年度山东大学青年教师“教学能手”称号
+4. 获2020年度山东大学青年教师讲课比赛一等奖
+5. 获2016年度山东大学“教学质量优秀教师”称号
+6. 获2015、2016和2020年度电气工程学院奖教金","1. X. Jin, M. Wang*, M. Cui, H. Sun and M. Yang, “Joint Probability Density Prediction for Multiperiod Thermal Ratings of Overhead Conductors,“ in IEEE Transactions on Power Delivery, 2021(In press).
+2. Shengyuan Zhou, Mengxia Wang*, Jianhui Wang, Ming Yang. “Time-Process Power Flow Calculation Considering Thermal Behavior of Transmission Components“, IEEE Transactions on Power Systems, vol. 35, no. 6, pp. 4232-4250, Nov. 2020.
+3. Yu Y, Wang, M*, F Yan, et al. Improved convolutional neural network-based quantile regression for regional photovoltaic generation probabilistic forecast[J]. IET Renewable Power Generation, 2020, 14(14):2712-2719.
+4. Mengxia Wang*, Shengyuan Zhou, Ming Yang, Yaqi Zhang. “Calculation of electrothermal coupling power flow for XLPE insulated cable-based distribution systems“, International Journal of Electrical Power and Energy Systems, vol.117, 2020.
+5. Mengxia Wang*, Ming Yang, Xueshan Han. “Optimal power flow considering transient thermal behavior of overhead transmission lines“, International Journal of Electrical Power and Energy Systems, vol.114, 2020.",,https://www.ee.sdu.edu.cn/__local/2/99/81/9D4807C0D2307AC6ACF13581852_4152A6B8_1E000.jpg,研究生,博士,1,,
+王洪涛,83,154,18660111296,whtwhm@sdu.edu.cn,教授,"电力系统研究所
+博士生导师，“泰山学者”特聘教授团队骨干成员，教育部“电网智能化调度与控制”重点实验室特高压电网分析研究中心主任，IEEE高级会员，中国电机工程学会高级会员，中国电机工程学会新能源并网与运行专家委员会委员，公共安全科学技术学会电力安全专委会委员，IEEE PES中国区电力系统动态技术委员会电力系统安全防御与恢复控制技术分委会副主席，《电力系统保护与控制》编委。","1、可再生能源发电并网技术
+2、电网优化运行与控制
+3、电力系统安全防御与快速恢复",,,"1、发明专利：黑启动辅助决策支持系统/训练系统及其方法。专利号：ZL 200810014125.4。
+发明人：王洪涛，刘玉田
+2、发明专利：直流支援弱受端系统恢复过程中最大负荷的确定方法。专利号：ZL 201010588379.4。
+发明人：王洪涛，刘玉田
+3、发明专利：双馈变速风电机组的附加频率控制器设计方法。专利号：ZL 201210045545.5。 
+发明人：王洪涛，刘玉田
+4、发明专利：多无功源分层协调的风电场电压控制方法。专利号：ZL201210045967.2。
+发明人：王洪涛，刘玉田
+5、发明专利：基于广域测量信号的风电场侧阻尼控制器的参数整定方法。专利号：ZL201210046145.6
+发明人：王洪涛，刘玉田
+6、发明专利：多时空导航式恢复辅助决策支持系统。专利号：ZL 201310198881.8。
+发明人：王洪涛，刘玉田，曹曦
+7、发明专利：一种考虑电压约束的风电场并网容量确定方法。专利号：ZL 201510493790.6
+发明人：王春义，王洪涛，曹增功，公昊
+8、申请发明专利：大规模输电网架恢复的分层协同控制与动态决策方法。专利号：201510980702.5
+发明人：王洪涛，曹曦，刘玉田
+9、发明专利：一种风电接入电网的安全与效能评估方法及系统。专利号：201510734481.3
+发明人：王洪涛, 公昊，王春义，李广磊
+10、发明专利：高比例可再生能源电力系统输配协调调度目标级联分析法。专利号：201810465163.5
+发明人：王洪涛，张旭，唐亮，孙辰军，王卓然
+11、发明专利：计及多馈入直流参与的机组恢复顺序优化方法及系统。专利号：201811070039.5 
+发明人：王洪涛,蔺呈倩,刘玉田,杨冬,马欢,王春义
+12、发明专利：HVDC支援受端系统恢复方式下直流控制系统稳定性分析方法。专利号：201811070111.4
+发明人：王洪涛,赵瑾,叶华,刘玉田,杨冬,马欢,赵康.
+13、发明专利：高压直流换流站多层级协调恢复控制技术。专利号：201811117536.6
+发明人：王洪涛,胡海周,李常刚,杨冬,马欢,赵康. 
+14、发明专利：交直流电网对直流系统恢复的适应性评估方法及系统。专利号：201811101801.1 
+发明人：王洪涛;杨善栋;刘玉田;杨冬;马欢;赵康. 
+15、发明专利：高比例风电并网的连锁故障风险评估方法及系统。专利号：201810955790.7 
+发明人：王洪涛;徐迪;唐亮;孙辰军;王卓然. 
+16、发明专利：多馈入直流系统功率恢复阶段保证电压安全性的综合控制方法。专利号：2019110059517 
+发明人：王洪涛;杨善栋;刘玉田;杨冬;马欢;赵康. 
+17、发明专利：一种输配协同负荷恢复优化控制方法及系统. 专利号：2020108486723，
+发明人：王洪涛，赵瑾
+18) 发明专利：多馈入直流系统功率恢复阶段保证电压安全性的综合控制方法及系统，专利号：2019110059517，
+发明人：王洪涛，杨善栋，刘玉田，杨冬，马欢，赵康.
+19) 发明专利：高比例可再生能源电力系统输配协调调度目标级联分析法，专利号：2018104651635，
+发明人：王洪涛，张旭，唐亮，孙辰军，王卓然.
+20) 发明专利：基于整数线性规划的多直流馈入电网恢复分区方法及系统，专利号：2020108016249，
+发明人：王洪涛，梁坤杰，李常刚，杨冬，马欢，赵康.
+21)国际发明专利（韩国）：多馈入直流系统功率恢复阶段保证电压安全性的综合控制方法及系统，专利号：10-2551927号
+发明人：王洪涛，杨善栋，刘玉田，杨冬，马欢，赵康.
+22)发明专利：一种新能源发电单元的有序黑启动方法及系统，申请号或专利号：202211164015.2
+发明人：王洪涛，刘玉田，范学美，李勇","1、新型电力系统全过程恢复控制基础理论与方法，2023-2026，国家自然科学基金企业创新发展联合基金课题.
+2、基于规模化新能源场站的区域电力系统黑启动关键技术研究，2023-2024，国网山东省电力公司科技项目.
+3、含高比例可再生能源的交直流混联系统协同优化运行理论，2016.7-2020.12，国家重点研发计划。
+4、高比例可再生能源并网的电力系统规划与运行基础理论，2017.9-2020.12，国家重点研发计划配套项目
+5、交直流混联电网快速恢复的关键变电站控制技术研究，2018.1-2020.12，国家电网公司总部科技项目
+6、广东电网黑启动电源规划、改造及验证技术研究，2018.7-2019.12，南方电网公司科技项目
+7、大规模风电并网的运行风险预警与协调防御，2012-2015，国家自然科学基金
+8、智能电网关键技术-间歇式能源发电多时空尺度调度系统研究与开发，2011-2014，国家高技术研究发展计划（863计划）
+9、计及联合发电系统的区域电网调度运行技术研究与系统开发，2011-2013，国家科技支撑计划。
+10、特高压交直流山东电网恢复控制策略与辅助决策，2010-2013，山东电力集团公司重点项目
+11、风电并网基础研究平台建设与检测能力提升，2012.1-2014.12，国家电网公司总部科技项目。
+12、间歇式可再生能源海岛电网运行技术研究及工程示范，2012.1-2013.12，国家电网公司科技项目。
+13、山东电网500kV系统黑启动实验，2012-2013，山东电力集团公司项目。
+14、海岛电网消纳多类型间歇式能源的多目标优化控制技术，2012-2013，国家电网公司项目
+15、基于安全稳定与风电效能双重因素的电网可接纳风电能力研究，2014-2015，山东电力集团公司项目","1)超高压电网恢复策略与方案优选.2010年度山东省科技进步一等奖. 
+2)间歇式多源联合发电系统仿真分析与调度控制关键技术及工程应用.2014年国家电网公司科技进步二等奖.
+3)山东电网与邻网互联的安全稳定性研究. 2004 年度山东省科技进步二等奖.
+4)山东电网黑启动方案. 2004年度山东省科技进步三等奖. 
+5) 基于安全稳定与风电效能的大规模风电接纳能力研究与对策. 山东电力科学技术一等奖. ","1、Kunjie Liang, *Hongtao Wang, David Pozo, et al. Power system restoration with large renewable Penetration: State-of-the-Art and future trends[J].International Journal of Electrical Power and Energy Systems,2024,155
+2、Yong Li, *Hongtao Wang, Huiting Yang. A coordinated control strategy for hybrid black start with an LCC HVDC system and an auxiliary synchronous generator. CSEE Journal of Power and Energy Systems, 2024 (Eearly Access), https://ieeexplore.ieee.org/ document/10058859.
+3、Kunjie Liang, *Hongtao Wang, Zhenzhi Lin , et al. Distributed load restoration for interdependent transmission-distribution-gas systems considering pipeline gas storage capacity[J].International Journal of Electrical Power and Energy Systems,2023,153
+4、Yong Li, *Hongtao Wang, Huiting Yang. A Predictive Control Method for LCC HVDC Participated Black Start with Commutation Failure Prevention[J]. IEEE Transactions on Power Delivery, 2023, 38(4):2348-2359.
+5、Aamir Nawaz, *Hongtao Wang. Risk-aware Distributed Optimal Power Flow in Coordinated Transmission and Distribution System. Journal of Modern Power System and Clean Energy. 2021, 9(3):502-515",,https://www.ee.sdu.edu.cn/__local/2/2F/DF/AE26F671738D06EB9B00886A979_8C5156EF_7231A.png,研究生,博士,1,博士生导师,
+王勇,83,154,0531-88395601,yonwong@sdu.edu.cn,副教授,,电力系统可靠性、风险评估、检修决策。,,,,"电网消纳风电中的电热协调理论研究
+电力系统调度中检修与运行协调决策的理论研究
+基于PC集群的输变电设备运行风险评价技术测试
+电网风险评估集群并行计算软件开发
+电力系统运行风险评估系统
+智能电网调度数据的设备性能评价研究",,"王勇,韩学山,丁颖. 厂站接线可靠性分析的改进通用生成函数法[J]. 电网技术,2014,09:2473-2478.
+王勇,韩学山,丁颖,绳洁. 基于马尔科夫链的电力系统运行可靠性快速评估[J]. 电网技术,2013,02:405-410.
+王勇,韩学山,丁颖. 计及站内接线的电网可靠性评估的蒙特卡罗方法[J]. 电力系统保护与控制,2012,05:53-58.
+王勇,韩学山,丁颖. 计及故障切除与故障恢复的主接线可靠性分析[J]. 电网技术,2012,10:159-164.",,https://www.ee.sdu.edu.cn/images/15/10/images/15/10/20/1luvbn9xs8/2md6_image001.jpg,,,1,,
+王振树,83,154,"0531-81696161,13969086018",zhenshuwang@sdu.edu.cn,教授,,"1.电力系统分析与控制
+2.新能源发电与智能电网",,,"1.一种电力负荷动特性的特征提取方法
+2.一种基于交互式多模型算法的电力负荷建模方法
+3.一种基于马尔柯夫蒙特卡罗的负荷特性综合分类方法
+4.基于Metropolis-Hastings与PSO相结合的无功优化方法
+5.一种基于层次分析法的负荷融合建模方法","1.电力系统建模中的精确负荷特性信息获取与准确负荷建模问题研究,国家自然科学基金
+2.基于交直流混联系统的负荷建模及模型适应性研究,山东省自然科学基金
+3.智能配电网设备和先进技术的应用，山东省人民政府
+4.大区电网负荷建模技术支持系统的研究,山东省科技发展计划
+5.基于电力故障录波监测的负荷动特性建模研究,山东省自然科学基金
+6.大区电网电力负荷动特性建模及信息平台的研究,山东省科技发展计划
+7.基于广域测量的电力负荷动特性建模研究,山东省自然科学基金",山东省科技进步二等奖2项，三等奖2项,"1.Model selection mechanism of Interactive Multiple Load Modeling. International Journal of Electrical Power and Energy Systems, v 103, p 58-66, December 2018.
+2.The Power System Environmental Optimal Dispatch Containing Air Quality Forecast. Energy Procedia, v 105, p 3623-3628, 2017.
+3.Accurate Load Modeling Based on Analytic Hierarchy Process. Journal of Electrical and Computer Engineering, v 2016, 2016.
+4.Economic Dispatch of Power System Containing Wind Power and Photovoltaic Considering Carbon Trading and Spare Capacity Variation. International Journal of Green Energy, 2016, 13(12):1267-1280.
+5.The Optimal Dispatch with Combination of Wind Power and Photovoltaic Power Systems. Energy Procedia, v 103, p 94-99, December 1, 2016.",,https://www.ee.sdu.edu.cn/__local/F/49/CD/0E0D7D36C1B9081788CE986B547_AE5B2B2C_10DF.jpg,研究生,博士,1,,
+车仁飞,83,154,18653150916,cherenfei@sdu.edu.cn,副教授,,电力系统运行与控制,,,,"1. 2006，山东省优秀中青年科学家科研奖励基金项目，大规模配电网络实时重构新算法的研究。
+2. 2007-2010，山东省自然科学基金，基于广域同步测量的输电线路故障检测和精确定位的研究。
+3. 2009，教育部留学回国人员科研启动基金，配电网动态重构优化算法的研究。
+4. 2008-2010,电网数字化支撑技术平台开发研究，山东电力集团公司。
+5. 2009-2010,特高压直流在线监测系统，国家电网公司。
+6. 2010-2012，电网损耗计算与降损决策分析系统开发研究，山东省电力集团公司。",,"1. 2008，《电力系统工程基础》。
+2. 2008，10，一种提高故障录波装置测量精度的方法，电力系统自动化。
+3. 2004，一种大规模配电网实时重构新算法，电力系统自动化。
+4. 2004，一种考虑线路参数变化的输电线路双端测距算法，中国电力。
+5. 2003，一种少环配电网三相潮流计算新方法，中国电机工程学报。",,https://www.ee.sdu.edu.cn/images/15/11/16/1kjar91xx6/951b_image001.jpg,,,1,,
+石访,83,154,15553116062,shifang@sdu.edu.cn,副教授/硕士生导师,,电力系统同步量测技术与应用、配电网故障诊断与定位、人工智能在电网稳定性分析与故障诊断中的应用,,,"1. 基于李萨如曲线辨识高阻故障与投切扰动的方法及系统[P]. CN116500383B, 2023-09-05.
+2. 一种基于同步李萨如曲线特征的高阻故障定位方法及系统[P]. CN116500382B, 2023-09-19.
+3. 基于同步相量测量和随机矩阵理论的配电网故障诊断方法[P]. CN110673060B, 2021-07-06.
+4. 一种配电网单相接地故障区段定位方法及系统[P]. CN110596533B, 2020-07-31.
+5. 一种带通滤波方法、系统、存储介质及终端设备[P]. CN109831184B, 2020-08-28.
+6. 基于电网运行与暂态稳定裕度指标关联的稳定评估方法[P]. CN106504116B, 2020-05-22.
+7. 基于同步相量测量和协方差矩阵理论配电网故障诊断方法[P]. CN109507526B, 2020-01-07.
+8. 基于线性判别分析的多属性决策树电网稳定裕度评估方法[P]. CN107274105B, 2020-10-13.","1. 国家科技部, 国家重点研发计划项目子课题, 2021YFB2400803, 提升响应驱动稳定性判别可信度的混合智能增强分析技术, 2021-12至2024-11, 在研, 主持.
+2. 国家科技部, 国家重点研发计划项目子课题, 2017YFB0902802, 基于微型PMU的配电网故障诊断及精确定位技术, 2017-07至2020-12, 结题, 主持.
+3. 山东省自然科学基金委员会, 面上项目, ZR201808210126, 基于PMU同步数据的电力系统稳定趋势预测及协调控制研究, 2019-07至2022-06, 结题, 主持.
+4. 国家自然科学基金委员会, 国家重大科研仪器研制项目子课题, 51627811, 电力电子化电力系统的源网荷全景同步量测系统研制及应用, 2017-01至2021-12, 结题, 参与(2/6).
+5. 国家电网公司总部科技项目课题, 面向分布式资源规模化接入的薄弱配电网故障应急管控技术研究与应用, 2023-12至2025-12, 在研, 主持.
+6. 国家电网公司总部科技项目课题, 高比例新能源电力系统宽频带振荡风险评估及抑制措施研究, 2021-12至2024-12, 在研, 主持.
+7. 全球能源互联网集团有限公司科技项目, 清洁电源与传统电源协同演进优化模型及路径研究, 2020-09至2022-12, 结题, 主持.
+8. 国网北京市电力公司科技项目, 基于多维同步信息的主动配电网故障区段定位方法研究与应用, 2022-109至2023-12, 结题, 主持.
+9. 国网山东省电力公司科技项目, 基于微型同步测量装置的美丽乡村能源互联网运行关键技术研究, 2021-07至2023-12, 结题, 主持.
+10. 国网上海市电力公司科技项目, 配电网PMU装置与技术应用国际标准化研究, 2020-08至2022-12, 结题, 主持.","1. 配电线路早期故障检测与辨识技术、装置及应用. 中国电工技术学会科技进步一等奖. 排名3.
+2. 智能配电网同步相量测量系统关键技术与应用. 国家电网有限公司科技进步一等奖. 排名3.","1. Wei M, Shi F*, Zhang H*, Chen W. Wideband Synchronous Measurement-Based Detection and Location of High Impedance Fault for Resonant Distribution Systems with Integration of DERs [J]. IEEE Transactions on Smart Grid, 2023, 14(2): 1117-34.
+2. Wang X, Zhang H, Shi F*, etc. Location of Single Phase to Ground Faults in Distribution Networks Based on Synchronous Transients Energy Analysis[J]. IEEE Transactions on Smart Grid, 2020, 11(1): 774-785.
+3. Wei M, Liu W, Shi F*, etc. Distortion-Controllable Arc Modelling for High Impedance Arc Fault at the Distribution Network[J]. IEEE Transactions on Power Delivery, 2021, 36(1): 52-63.
+4. Shi F, Zhang L, Zhang H, etc. Diagnosis of the single phase-to-ground fault in distribution network based on feature extraction and transformation from the waveforms[J]. IET Generation, Transmission & Distribution, 2020, 14(25): 6079-6086.
+5. 韦明杰, 石访*, 张恒旭, etc. 基于同步零序电流谐波群体比相的谐振接地系统高阻故障选线及区段定位方法[J]. 中国电机工程学报，2021, 41(24): 8358-72.",,https://www.ee.sdu.edu.cn/__local/D/BF/65/A7F166AED5273F82CF4AF5B05DF_05BD641F_13747.png,研究生,博士,1,副教授,
+叶华,83,154,0531-81696118,yehua@email.sdu.edu.cn,教授,,"1. 电力系统稳定性分析与控制
+2. 信息物理融合电力系统
+3. 柔性直流电网",,,,"1. 提升小扰动稳定性的高惯量储能型同步调相机阻尼控制技术, 国家重点研发计划项目课题, 课题号: 2023YFB2406803, 616万, 负责人, 2023.11-2026.10.
+2. 构网/跟网型新能源发电交互机理与主动控制技术研究, 国网总部科技项目, 182万, 项目负责人, 2023.7-2025.12.
+3. 极高渗透率分布式光伏发电自适应并网与主动同步关键技术, 国家重点研发计划项目子课题, 课题号: 2022YFB2402904, 128万, 负责人, 2022.11-2025.10.
+4. 计及通信时滞和控制器参数不确定性的大规模电力系统小干扰稳定域研究, 国家自然科学基金面上项目, 批准号: 52077126, 58万, 项目负责人, 2021~2024.
+5. 面向不确定性的主动配电系统分布式概率预测辅助状态估计研究, 国家自然科学基金面上项目, 批准号: 52077125, 58万, 第2位, 2021~2024.","1. 大规模时滞电力系统振荡分析与控制关键技术及应用, 2021年山东省科技进步二等奖, 排名第1位.","1. Guanqun Li, Hua Ye, Junru Chen, Qianying Mou. Transient stability analysis and enhancement of wind farm integrated MMC-HVDC system. CSEE Journal of Power and Energy Systems, in press.
+2. Hua Ye, Xiaofan Jia, Muyang Liu, Yutian Liu, Sicong Zhang. Partial solution operator discretization-based methods for efficiently computing least-damped eigenvalues of large time delayed power system. CSEE Journal of Power and Energy Systems, in press.
+3. Guanqun Li, Hua Ye, Zijun Bin. High-frequency oscillation mechanism analysis of wind-farm side MMC station considering converter transformer stray capacitance. International Journal of Electrical Power and Energy Systems, 2023, 153(1), 109179.
+4. Hua Ye, Shilin Gao, Guanqun Li, Yutian Liu. An efficient and general method for estimating short-circuit current in MTDC grid. IEEE Transactions on Industrial Electronics, 2021, 68(1): 258-269.
+5. Shilin Gao, Hua Ye, Yutian Liu. Accurate and efficient estimation of short-circuit current for MTDC grids considering MMC control. IEEE Transactions on Power Delivery, 2020, 35(3): 1541-1552.",,https://www.ee.sdu.edu.cn/__local/4/98/4B/D4D1942629751E03837CE212F19_684BDE7F_7C30.jpg,研究生,博士,1,副院长,
+田立军,83,154,0531-81696123,tlj3796@sdu.edu.cn,教授,,"1. 电能质量分析与控制
+2. 电力系统运行与控制",,,,"1. 山东省自然基金
+2. 山东省优秀中青年科学家科研奖励基金
+3. 国家级课题",,,,https://www.ee.sdu.edu.cn/images/15/11/16/1kjar91xx6/yr9i_image001.jpg,研究生,博士,1,,
+吕天光,83,154,,"tlu@sdu.edu.cn,tlu@seas.harvard.edu",教授,,电力系统运行优化与智能感知，智能配电分层调控，可再生能源并网，电力市场，能源经济与政策,,,,"1.国家自然基金
+2.山东省优秀青年科学基金（海外）
+3.中国科协“青年人才托举工程”
+4.国网总部科技项目
+5.山东大学“齐鲁青年学者”建设项目
+6.上海交通大学优秀博士学位论文培育基金
+7.美国能源部研究项目
+8.China 2030/2050:Energy and Environmental Challenges for the Future，Harvard Global Institute
+9.基于能源细胞-组织架构的区域能源网分层调控、互动机制与市场交易研究，国家自然科学基金重点项目
+10.含高比例可再生能源的交直流混联系统协同优化运行理论，国家重点研发计划","2022，中国电力科技创新奖二等奖
+2021，中国电力科技创新奖一等奖首位
+2021，山东电力科学技术进步奖三等奖
+2021、2022，《电网技术》优秀审稿专家
+2020，山东电机工程学会五四优秀青年科技工作者
+2019，IEEE工业应用协会最佳论文奖
+2019，上海交通大学优秀博士学位论文
+2017，IEEE工业应用协会最佳论文奖
+2017，中国电机工程学报年度优秀作者
+2014，山东省优秀学位论文","1.Tianguang Lu, X. Chen, M. B. McElroy, C. P. Nielsen, Q. Wu, H. He, and Q. Ai. “A reinforcement learning-based decision system for electricity pricing plan selection by smart grid end users.” IEEE Transactions on Smart Grid. （录用，SCI，IF：8.960）
+2.R. Hao, Tianguang Lu*, Q. Ai, and H. He. “Distributed online dispatch for microgrids using hierarchical reinforcement learning embedded with operation knowledge.” IEEE Transactions on Power Systems.（录用，IF：6.663）
+3.R. Hao, Tianguang Lu*, Q. Ai, H. He. “Data-oriented distributed demand response optimization with global inequality constraints based on multi-agent system.” International Journal of Electrical Power & Energy Systems, 2021.（发表，SCI，IF：4.630）
+4.H. Lin, Q. Wu, X. Chen, X. Yang, X. Guo, J. Lv, Tianguang Lu, S. Song, and M. McElroy. “Economic and technological feasibility of using power-to-hydrogen technology under higher wind penetration in China.” Renewable Energy, 2021.（发表，SCI，IF：8.001）
+5.S. Fang, T. Zhao, Y. Xu, and Tianguang Lu. “Coordinated chance constrained programming of a multi-energy microgrid system for balancing operational efficiency and quality-of-service.” Journal of Modern Power Systems and Clean Energy, 2021. （发表，SCI，IF：3.265）",,https://www.ee.sdu.edu.cn/__local/8/DA/28/88C3DFA4D301FBD7BCA819A594B_DB2BFA54_625C.jpeg,研究生,博士,1,教授,
+刘玉田,83,154,0531-88392904,liuyt@sdu.edu.cn,教授,,"1. 新型电力系统运行与控制：复杂电力系统恢复策略与优化决策，高比例新能源交直流混联大电网安全稳定性分析与控制
+2. 人工智能在电力系统中的应用：深度学习，神经网络，进化计算，模糊系统",,,,"1. 大规模新能源发电基地运行风险在线评估、预警及防控技术，国家重点研究发展计划课题, 2022-2026
+2. 新型电力系统全过程恢复控制理论与方法研究，国家自然科学基金国家电网联合重点项目，2022-2026
+3. 大电网一体化安全风险防控和智能决策技术，国家重点研究发展计划,2017-2020
+4. 长距离海缆及谐波对风电机组并网检测的影响研究，国家科技支撑计划,2015-2017
+5. 风机出力有限度可控性与区域风力发电出力爬坡控制，国家重点基础研究发展计划,2012-2016
+6. 大电网结构与稳定基础理论研究，国家电网公司大电网重大专项, 2012-2015
+7. 计及联合发电系统的区域电网调度运行技术研究与系统开发，国家科技支撑计划,2010-2013
+8. 特高压交直流山东电网恢复控制策略与辅助决策，山东电力集团公司,2010-2012
+9. 基于数据仓库的输电网架恢复群体智能决策支持系统研究，国家自然科学基金,2009-2011
+10. 大型工业企业电气综合节能技术与典型应用示范，国家高技术研究发展计划,2009-2011",,"1. Runjia Sun, Yutian Liu. Hybrid reinforcement learning for power transmission network self-healing considering wind power. IEEE Transactions on Neural Networks and Learning Systems，2022
+2. Jiongcheng Yan, Changgang Li, Yutian Liu. Insecurity early warning for large scale hybrid AC/DC grids based on decision tree and semi-supervised deep learning. IEEE Transactions on Power Systems, 2021
+3. Zimin Jiang, Yutian Liu. Low-voltage ride-through remote testing method for offshore wind turbines. IEEE Transactions on Instrumentation and Measurement, 2020
+4. Runjia Sun, Yutian Liu, Liang Wang. An online generator start-up algorithm for transmission system self-healing based on MCTS and sparse autoencoder.IEEE Transactions on Power Systems, 2019
+5. Hua Ye, Qianying Mou, Yutian Liu. Calculation of critical oscillation  modes for large delayed cyber-physical power system using pseudo-spectral  discretization of solution operator. IEEE Transactions  on Power Systems, 2017",,http://202.194.15.5:8080/system/_owners/dqxy/_webprj/images/15/09/10/2zhgktv3v4/xikm_image001.jpg,研究生,博士,1,山东大学电气学院教授,
+刘春阳,83,154,15102978875,liuchunyang@sdu.edu.cn,助理研究员,,"1.储能系统与微电网能量管理
+2.综合能源系统运行优化
+3.电力系统规划与运行优化",,,,"1.国网上海市电力公司，融合高渗透率电动汽车的配电网结构与运行形态研究，2023-11至2024-11，负责人。
+2.山东电力工程咨询院，基于新型燃机和电力市场机制下虚拟电厂建模、评价和优化计算及咨询项目，2023-09至2024-12，负责人。
+3.全球能源互联网集团，跨区域送受端灵活性资源优化配置方法与协同运行方式研究，2023-10至2024-10，主要参与人。
+4.国网北京市电力公司，考虑跨区域时空可转移负荷需求的新型电网规划，2022-05至2022-12，负责人。
+5.山东省自然科学基金委，电力市场环境下考虑电动汽车互动的微电网优化运营策略研究，2022-01至2024-12，负责人。
+3.科学技术部高技术研究发展中心，国家重点研发计划专项“变革性技术关键科学问题”，分布式信息能源系统的智能进化机理和设计，2019-08至2024-08，主要参与人。
+7.国网山东省电力公司经济技术研究院，多源电力系统多时间尺度灵活性资源评价及协调配置方法研究，2019-05至2020-12，共同负责人。
+8.国网山东省电力公司经济技术研究院，考虑源荷不确定性平衡的多源协同规划研究，2019-06至2020-12，共同负责人。
+9.国网山东省潍坊电力公司，适用于多源受端系统的电网柔性规划方法研究，2019-06至2020-12，主要参与人。",,"1. Liu H, Liu C*, Zhao H, et al. Non-intrusive Load Monitoring Method for Multi-Energy Coupling Appliances Considering Spatio-Temporal Coupling[J]. IEEE Transactions on Smart Grid, 2023.
+2. Wang M, Zhao H, Liu C*, et al. Analytical Dynamic Energy-Carbon Flow Model and Application in Cost Allocation for Integrated Energy Systems [J]. IEEE Transactions on Smart Grid, 2023.
+3. Ma H, Liu C*, Zhao H, et al. A novel analytical unified energy flow calculation method for integrated energy systems based on holomorphic embedding[J]. Applied Energy, 2023.
+4. Liu C*, Ma H, Zhang H, et al. A MILP-based battery degradation model for economic scheduling of power system[J]. IEEE Transactions on Sustainable Energy, 2022.
+5. Liu C, Zhang H, Shahidehpour M*, et al. A Two-Layer Model for Microgrid Real-Time Scheduling Using Approximate Future Cost Function[J]. IEEE Transactions on Power Systems, 2021.",,https://www.ee.sdu.edu.cn/_vsl/7DE7EFC14FC015100ED0860DF16DB5F4/0E1F9798/17AD2,研究生,博士,1,,
+苏亚,83,154,18610112882,suya@sdu.edu.cn,副研究员/硕士生导师,,计算机视觉，人工智能与电力系统,,,,"1. 基于深度学习的多步风电功率预测算法研究，山东大学基本科研业务费
+2. 年龄自适应人脸识别算法研究，国家自然科学基金委员会
+3. 高通量材料试验大数据采集与加工技术，科技部
+4. 车路交互式行车安全系统关键技术, 国家863计划
+5. 基于流形分解的年龄无关面部识别, 博士后基金
+6. 海量不确定异构数据的集成管理与分析, 国家863计划
+7. 材料基因组工程专用数据库和材料大数据技术, 国家重点研发计划",,"1. Fast alignment for sparse representation based   face recognition, PATTERN RECOGNITION, 2017. SCI. (IF:5.898)
+2. Submanifold Decomposition. IEEE Transactions   on Circuits and Systems for Video Technology, 2014. SCI. (IF: 4.046) 
+3. Symmetric Face Normalization, Symmetry, 2019,   SCI, (IF: 2.143), 
+4. A Unified Framework for Tracking Based Text   Detection and Recognition from Web Videos, IEEE Transactions on Pattern   Analysis and Machine Intelligence, 2017. SCI. (IF: 17.730) 
+5. Fast-FineCut: Grain boundary detection in   microscopic images considering 3D information, MICRON, 2019, SCI. (IF: 1.53) ",,https://www.ee.sdu.edu.cn/__local/5/14/CA/8B685ABC0D0F463CF9C9187AC43_F6E1D90A_BAB.jpg,研究生,博士,1,,
+李正烁,83,154,,zsli@sdu.edu.cn,教授,,"1. 电力系统能量管理
+2. 综合能源协同优化
+3. 需求侧响应与电力市场",,,"1. 李正烁, 杨畅. 计及可变流量调节的电-热综合能源系统调度方法及系统.（中国发明专利，授权编号：CN 202310306705.5，授权公告日期20231027）.
+2. 李正烁,田野, 刘祥文,李笋,王玥娇,张用,邢家维. 一种基于场景缩减的输配协同随机调度方法及系统.（中国发明专利，授权编号：CN 202310698924.2，授权公告日期20230905）.
+3. 李正烁,刘聪聪. 计及分段点优化的发电商最优供应曲线获取方法及系统.（中国发明专利，授权编号：CN 202211619661.3，授权公告日期20230623）.
+4. 李正烁,刘聪聪. 考虑配电网络安全的聚合商鲁棒运行包络估计方法及系统.（中国发明专利，授权编号：CN 202211538018.8，授权公告日期20230616）.
+5. 李正烁,赵佩尧. 一种天然气输气管网系统动态仿真的求解方法及系统.（中国发明专利，授权编号：CN 202211397298.5，授权公告日期20230602）.
+6. 李正烁,王光瑞,刘聪聪.一种主动配电网可调度能力的多时间尺度评估方法及系统.（中国发明专利，授权编号：CN202211378453.9，授权公告日期20230505）.
+7. 李正烁,李懿鑫.考虑不确定性因素的综合能源生产单元自调度方法和系统.（中国发明专利，授权编号：CN202211397739.1，授权公告日期20230502）.
+8. 李正烁,田野. 一种电力系统前瞻调度方法和系统.（中国发明专利，授权编号：CN202211287025.5，授权公告日期20230418）.
+9. 李正烁,刘奕彤.孤岛微电网下垂控制参数的多阶段优化方法和系统.（中国发明专利，授权编号：CN202211128720.7，授权公告日期20230418）.
+10. 李正烁,田野,高晗. 一种基于双层分解算法的多场景随机机组组合方法及系统.（中国发明专利，授权编号：CN202210389063.5，授权公告日期20230324）.
+11. 李正烁,杨畅,高晗. 一种基于多参数规划的电-气系统分布式协同方法及系统.（中国发明专利，授权编号：CN 202210885693.1，授权公告日期20230324）.
+12. 李正烁,刘奕彤. 交直流微电网对配电网指令的分布式追踪方法及系统.（中国发明专利，授权编号：CN 2022101390184，授权公告日期20220812）.
+13. 李正烁,刘奕彤. 基于序分量坐标的混合交直流微电网潮流分析方法及系统.（中国发明专利，授权编号：CN202110056803.9，授权公告日期20220802）.
+14. 李正烁,高晗.电—气综合能源系统快速协调调度方法及系统. （中国发明专利，授权编号：CN202011541515.4，授权公告日期20220726）.
+15. 孙宏斌,郭庆来,王彬,邓莉荣,李正烁. 一种能源价格的预测方法、装置、定价设备及存储介质. （中国发明专利，授权编号：CN201811214589.X）
+16. 吕天光,李竞,孙树敏,杨明,石访,赵浩然,李正烁,于芃. 基于集群学习的低碳CSP系统协同优化方法及装置. （中国发明专利，授权编号：CN202111071355.6，授权公告日期20211224）.
+17. 李正烁，孙宏斌，郭庆来．输电网预想事故分析的方法及装置．（中国发明专利，授权编号：2017104030298）
+18. 李正烁，袁朝勇，严学庆，赵荣兴．微网离网模式下基于逆变器提供无功支撑的方法．（中国发明专利，授权编号：2013103481475）
+19. 李正烁，袁朝勇，严学庆，赵荣兴. 铅酸电池模型经验公式法中关键参数抗差辨识方法．（中国发明专利，授权编号：2013103478557）
+20. 李正烁，袁朝勇，严学庆，赵荣兴．微网离网模式下基于逆变器的分布式调频方法．（中国发明专利，授权编号：2013103463994）
+21. 李正烁，袁朝勇，严学庆，赵荣兴. 利用分布式蓄电池储能站平衡微网失配功率的控制方法. （中国发明专利，授权编号：2013103482711）
+22. 孙宏斌，郭庆来，张伯明，吴文传，李正烁，辛蜀骏．一种基于单辆电动汽车充电预测的电动汽车实时充电方法．（中国发明专利，授权编号：2013106184396）
+23. 孙宏斌，郭庆来，张伯明，吴文传，李正烁，辛蜀骏．一种基于电动汽车集群充电预测的电动汽车实时充电方法．（中国发明专利，授权编号：2013106250913）
+24. 孙宏斌，郭庆来，张伯明，吴文传，李正烁，辛蜀骏．一种对集群内电动汽车充电功率的分布式优化方法．（中国发明专利，授权编号：2012104365640）
+25. 郭庆来，孙宏斌，张伯明，吴文传，辛蜀骏，李正烁．一种计及交通信息与电网信息的电动汽车充电导航方法．（中国发明专利，授权编号：2012105538810）
+26. 郭庆来，孙宏斌，张伯明，吴文传，王尧，李正烁，辛蜀骏．一种基于智能交通系统的电动汽车充电路径规划方法．（中国发明专利，授权编号：2012101948731）
+27. H. Sun, Q. Guo, B. Zhang, W. Wu, Zhengshuo Li and S. Xin. Method and system for charging electric vehicles in aggregation. (美国发明专利，授权编号：9248755）
+28. H. Sun, Q. Guo, B. Zhang, W. Wu, Zhengshuo Li and S. Xin. Method and device for charging electric vehicle in power system. (美国发明专利，授权编号：9573477）
+29. H. Sun, Q. Guo, B. Zhang, W. Wu, Zhengshuo Li and S. Xin. Method and device for charging electric vehicle in power system. (美国发明专利，授权编号：9573481）
+30. Q. Guo, H. Sun, B. Zhang, W. Wu, X. Shu and Zhengshuo Li. Method and device for navigation electric vehicle in charging. (美国发明专利，授权编号：9228847）","1. 国家自然科学基金委员会，面上项目，52377107，面向大规模新能源消纳的综合能源系统分布式动态安全协同优化方法，2024-1至2027-12，50万元，在研，主持
+2. 中国科技部，国家重点研发计划项目，2022YFB2402900 ，极高渗透率分布式光伏发电自适应并网与主动同步关键技术子课题5.1分布式光伏区域电网在线建模与感知技术，2022-11至2025-10，147万元，在研，主持子课题
+3. 新型电力系统运行与控制全国重点实验室，全国重点实验室项目 ，SKLD22KZ08，计及电力网络约束的可调控资源调度能力评估和分布式在线优化技术，2022-10至2023-12，12万元，在研，主持
+4. 国家自然科学基金委员会，青年科学基金项目，52007105，主动配电网的鲁棒无功可调度能力研究，2021-01至2023-12，24万元，在研，主持 
+5. 中国科技部，国家重点研发计划，2019YFE0118400-1，基于多元柔性挖掘的主动配电网协同运行关键技术与仿真平台研究，2020-12至2023-11，190万元，在研，参与
+6. 中国电机工程学会，青年人才托举工程项目，JLB-2020-170，基于鲁棒可调度能力的输配协同滚动调度方法，2020-01至2021-12，2万元，结题，主持
+7. 中国博士后科学基金会，特别资助项目，2017T100078，基于“等值+追踪”模式的分布式能源分层调控方法研究，2017-11至2018-06，15万，结题，主持
+8. 中国博士后科学基金会，一等面上项目，2016M600091，计及可再生能源不确定性的分布式输配协同能量管理研究，2016-11至2018-06，8万元，结题，主持
+9. 中国科技部，国家重点基础研究发展计划（973计划）项目，2013CB228200，源-网-荷协同的智能电网能量管理和运行控制基础研究，2013-01至2017-10，3000万元，结题，参加
+10. 中国科技部，国家高技术研究发展计划（863计划）项目，2013BAA01B01，含高比例间歇式能源的区域型智能电网集成综合示范，2013-01至2015-02，2019万元，结题，参加
+11. 中国科技部，国家高技术研究发展计划（863计划）项目，2011AA11290，兼容 V2G 技术的高性能电动汽车关键技术研究，2011-12至2014-01，2140万元，结题，参加
+12. 中国科技部，国家高技术研究发展计划（863计划）项目，2010DFA72760，面向中美清洁能源合作的电动汽车前沿技术研究，2010-11至2013-12，3000万元，结题，参加","1. 连续入选美国斯坦福大学全球前2％顶尖科学家榜单，2022-2023
+2. IEEE PES中国专业分会联合会优秀青年工程师奖 (每年评选10人)， 2023
+3. 《IEEE Transactions on Power Systems》杰出论文奖（近三年发表的约1600余篇论文中选出5篇），IEEE，2023
+4. 山东大学首届小米青年学者（全校共评选10人），山东大学，2023
+5. 培养的研究生获IEEE PES Outstanding Student Scholarship(全球每年评选5-6人)，2023
+6. 入选第五届青年人才托举工程，中国电机工程学会，2020
+7. 电力创新奖，中国电力企业联合会，一等，2021
+8. 清华大学优秀博士论文，入选Springer出版社《杰出博士论文系列》丛书，Springer出版社，2018
+9. 论文入选“领跑者5000——中国精品科技期刊顶尖论文(F5000)项目”，科技部中国科学技术信息研究所，一等，2020
+10. 扬州市“绿扬金凤计划”年度领军人才，扬州市人才办公室，2022
+11. “五四”优秀青年科技工作者，山东电机工程学会，2021
+12. 山东大学齐鲁青年学者，山东大学，2019
+13. 山东大学校级教学成果奖，山东大学，二等，2021
+14. 中国电机工程学会期刊优秀论文，中国电机工程学会，三等，2018
+15. 中国博士后科学资金特别资助（全国电气工程领域仅有8人入选），2017
+16. 美国电气和电子工程师协会电力与能源协会全会（《IEEE PES General Meeting》）大会优秀论文，IEEE，2016
+17. 国际顶级期刊《IEEE Transactions on Smart Grid》优秀审稿专家，IEEE，2015
+18. 国际优秀期刊《CSEE Journal of Power and Energy Systems》优秀青年学科编辑，CSEE，2020
+19. 国内顶级期刊《中国电机工程学报》优秀审稿专家，中国电机工程学会，2017-2020
+20. 论文获IEEE 5th International Electrical and Energy Conference最佳论文，IEEE，通讯作者，2022
+21. 论文获5th International Conference on Energy, Electrical and Power Engineering最佳论文，ISTC，通讯作者，2022
+22. 论文获2020 IEEE Student Conference on Electric Machines and Systems最佳论文，IEEE，通讯作者，2020
+23. 山东大学优秀毕业设计论文指导教师，2020,2022
+24. 山东大学青年教师教学比赛，三等奖，2020
+25. 第十届山东省大学生科技创新大赛山东大学校级二等奖项目指导教师，2023","1. Y. Tian, Zhengshuo Li*, “Coordinated Frequency-Constrained Stochastic Economic Dispatch for Integrated Transmission and Distribution System via Distributed Optimization,“ CSEE Journal of Power and Energy Systems,accepted. (IF: 7.1)
+2. Y. Tian, Zhengshuo Li*, W. Wu, and M. Fan, “Joint Chance-Constrained Economic Dispatch Involving Joint Optimization of Frequency-related Inverter Control and Regulation Reserve Allocation,“ CSEE Journal of Power and Energy Systems,accepted. (IF: 7.1)
+3. H. Gao, C. Yang, and Zhengshuo Li*, “A Modified Rank Minimization Algorithm for Nonconvex Dynamic Natural Gas System Dispatch Problems“,CSEE Journal of Power and Energy Systems,accepted. (IF: 7.1)
+4. C. Yang, Zhengshuo Li*, and Y. Xue, “Decentralized Distributionally Robust Joint Chance Constraint Dispatch for an Integrated Power-Heating System via Dynamic Boundary Response“,CSEE Journal of Power and Energy Systems,accepted. (IF: 7.1)
+5. H. Gao, P. Zhao, and Zhengshuo Li*, “Dynamic Security Region of Natural Gas Systems in Integrated Electricity-Gas Systems “,, Energy, vol. 289,pp. 1-14, Feb. 2024. (IF: 9.0)",,https://www.ee.sdu.edu.cn/__local/F/CA/0B/CAE2187638CC36CE26AF1632220_6E66961A_CCD2.jpeg,研究生,博士,1,所长,山东大学电气工程学院电力系统研究所
+李常刚,83,154,0531-81696140,lichgang@sdu.edu.cn,教授,,电力系统安全稳定分析与控制,,,"1. 李常刚, 马振贺, 刘玉田, 叶华. 柔性直流输电系统潮流计算及交直流混联潮流计算方法, 发明专利证书, ZL202210971967.9, 授权日期：2022年11月4日
+2. 李常刚, 李华瑞, 闫炯程, 刘玉田. 交直流混联受端电网直流闭锁多资源紧急控制优化方法, 发明专利, ZL202111219864.9，授权日期：2022年11月1日
+3. 李常刚, 齐航, 任喆, 刘玉田. 基于盲区识别和电气坐标系扩展的电网动态安全评估方法，发明专利，ZL202111219910.5，授权日期：2022年8月19日
+4. 李常刚, 盖晨昊, 徐陶阳, 刘玉田. 基于增殖和缩减进化的电网紧急切负荷优化方法及系统，发明专利，ZL202210287003.2，授权日期：2022年8月16日
+5. 李常刚, 杭志, 刘玉田, 等. 基于电气距离的电网拓扑结构可视化方法、系统及介质，发明专利，ZL202010687866.X，授权日期：2021年10月26日
+6. 李常刚, 齐航, 刘玉田, 等. 基于电气距离的电气坐标系构建方法、介质及设备，ZL 201910324139.4，授权日期：2020年11月6日
+7. 李常刚, 谢宇峥, 张恒旭, 等. 计及风机涉网保护高频分轮次整定方法，ZL 201810872636.3，授权日期：2020年4月23日
+8. 李常刚, 尹雪燕, 刘玉田, 等. 一种基于深度学习的电力系统暂态稳定评估方法及系统，ZL 201810759783.X，授权日期：2020年4月17日
+9. 李常刚, 陈凯. 基于体感温度的短期负荷预测方法，ZL 201710224770.8，授权日期：2020年4月28日","1. 国家自然科学基金，数据驱动的大电网动态安全评估拓扑特征表达研究，2022~2025
+2. 国家重点研发计划，无常规电源支撑的大规模新能源发电基地稳定运行及直流送出关键技术，2022~2026
+3. 国家重点研发计划，大电网智能调度与安全预警关键技术研究及应用，2017~2021
+4. 新型电力系统复杂运行场景在线推演技术研究，2022~2024
+5. 新型电力系统频率电压主动支撑需求评估技术研究，2022~2023
+6. 交直流混联受端电网安全风险智能评估与恢复决策系统，2020~2023
+7. 面向新型电力系统仿真的新能源等值建模技术研究, 2021~2022
+  8.湖南保底电网可视化开发, 2021~2023","1. 大规模时滞电力系统振荡分析与控制关键技术及应用，山东省科技进步二等奖，2021年度
+2. 应对大功率缺额风险的受端电网控制决策技术，山东省科技进步二等奖，2020年度
+3. 大型互联电网联络线安全运行与控制关键技术及应用，中国电力科技进步一等奖，2015年度
+4. 互联电力系统交流联络线功率波动研究及应用，国家电网科技进步一等奖，2015年度
+ 5.电力系统频率动态行为分析与在线监测系统，山东省科技进步二等奖，2013年度","1. 齐航, 任喆, 李常刚*, 刘玉田. 动态安全智能评估中故障位置特征表达的电气坐标距离保持. 中国电机工程学报, 2023
+2. Lizheng Chen, Changgang Li, Zheng Xin, Shurui Nie. Simulation and Risk Assessment of Power System with Cascading Faults Caused by Strong Wind Weather. International Journal of Electrical Power &amp; Energy Systems, 2022, 143:108462
+3. 李常刚, 尚扬, 张慧, 张文, 张恒旭. 基于STEPS的电力系统分析教学软件开发与实验案例设计. 实验技术与管理, 2022, 39(7): 170-175
+4. Yuanzhen Zhu, Tianhao Liu, Changgang Li, Yutian Liu*. Fast Probability Estimation of HVDC Successive Commutation Failure Caused by AC Grid Cascading Failures. International Journal of Electrical Power &amp; Energy Systems, 2022, 135:107618
+5. 齐航, 任喆, 李常刚*，刘玉田, 闫炯程. 故障位置特征表达的盲区识别与电气坐标系扩展, 电力系统自动化, 2022, 46(7): 77-85",,https://www.ee.sdu.edu.cn/__local/3/26/6F/3E7BABECD035C17AFA21417DAB9_258BC937_19797.png,研究生,博士,1,支部书记,电力楼310
+牟倩颖,83,154,15865268703,mouqy@sdu.edu.cn,副研究员,,"1. 电力系统小干扰稳定性分析与控制
+2. 柔性直流输电系统稳定性分析与控制
+3. 新型电力系统同步稳定性分析与控制",,,"1. 叶华，牟倩颖，刘玉田. 一种时滞电力系统特征值计算方法及系统[P]. 中国：ZL 2018 11479987.4, 授权日期：2021-07-01.
+2. 叶华，牟倩颖，刘玉田. 基于低阶IIGD 算法的时滞电力系统特征值分析方法[P]. 中国：ZL 2018 1 0770959.1, 授权日期：2021-03-23.
+3. 叶华，牟倩颖，刘玉田. 基于低阶EIGD 的时滞电力系统稳定性分析方法[P]. 中国：ZL 2018 1 0514831.9, 授权日期：2020-05-08.
+4. 叶华，牟倩颖，刘玉田. 基于SOD-IRK 的时滞电力系统稳定性判别方法[P]. 中国：ZL 2018 1 0157505.7, 授权日期：2019-12-27.
+5. 叶华，牟倩颖，刘玉田. 基于区间振荡模式的广域阻尼控制器最优参数整定方法[P]. 中国：ZL 2017 1 1222574.3, 授权日期：2019-12-20.
+6. 叶华，牟倩颖，刘玉田. 基于SOD-PS-R 算法的时滞电力系统机电振荡模式计算方法[P]. 中国：ZL 2015 1 0829129.8,授权日期：2018-01-30.
+7. 叶华，何敏，李超，牟倩颖，刘玉田. 一种考虑时滞的电力系统附加广域阻尼控制器设计方法[P]. 中国: ZL 2016 10489302.9, 授权日期：2017-08-29.","1. 湖南保底电网可视化开发,项目负责人，2021.12-2023.12，69.8万.
+2. 基于谱离散化和特征值优化的大规模多时滞电力系统广域阻尼协调控制方法研究，国家自然科学基金面上项目，批准号：51677107，主要参与人员，2017.01-2020.12，58 万.",1. 大规模时滞电力系统振荡分析与控制关键技术及应用，2021年山东省科技进步二等奖，排名：4/8.,"1. Qianying Mou, Yan Xu*, Hua Ye, Yutian Liu, “An efficient eigenvalue tracking method for time-delayed power systems based on continuation of invariant subspaces,” IEEE Transactions on Power Systems, vol. 36, no. 4, pp. 3176-3188, 2021.
+2. Qianying Mou, Hua Ye*, Yutian Liu, “Enabling highly efficient eigen-analysis of large delayed cyber-physical power systems by partial spectral discretization,” IEEE Transactions on Power Systems, vol. 35, no. 2, pp. 1499-1508, 2020.
+3. Qianying Mou, Hua Ye*, Yutian Liu, “Nonsmooth optimization based WADC tuning in large delayed cyber-physical power system by interarea mode tracking and gradient sampling,” IEEE Transactions on Power Systems, vol. 34, no. 1, pp. 668-679, 2019.
+4. Hua Ye, Qianying Mou*, Xinlei Wang, Yutian Liu, “Eigen-analysis of large delayed cyber-physical power system by time integra-tion-based solution operator discretization methods,” IEEE Transactions on Power Systems, vol. 33, no. 6, pp. 5968-5978, 2018.
+5. Qianying Mou, Hua Ye*, Yutian Liu, Yan Xu, “A partial solution operator discretization-based method for small signal stability analysis of time-delay power systems,” International Journal of Electrical Power & Energy Systems, vol. 134, pp. 1-14, 2022.",,https://www.ee.sdu.edu.cn/__local/9/A1/A5/5F26B95610DBB8109F9AFCE7C39_A93B0829_2070.jpg,研究生,博士,1,教师,电力楼304
+杨明,83,154,0531-88364961,myang@sdu.edu.cn,教授,,精细化数值气象预报、新能源发电预测、电力系统运行调度、电力市场运行与辅助决策,,,,"1.国家重点研发计划“储能与智能电网技术”专项，大规模风电/光伏多时间尺度供电能力预测技术—极端与转折性天气下风电/光伏功率爬坡及供电能力不足风险预测技术.
+2.国家自然科学基智能电网联合基金，基于灵活性挖掘的区域能源互联网协同运行关键技术与仿真平台研究.
+3.国家自然科学基金面上项目，短期负荷预测自适应动态建模理论与方法研究.
+4.国家重点研发计划中国和美国政府间合作项目，基于多元柔性挖掘的主动配电网协同运行关键技术与仿真平台研究.
+5.国家重点研发计划“智能电网技术与装备”专项，促进可再生能源消纳的风电/光伏发电功率预测技术及应用—多空间尺度风电/光伏短期功率预测及概率预测技术.
+1.山东省本科高校教学改革项目重点项目，“电气工程及其自动化专业项目导引式培养体系改革”虚拟教研室建设研究.
+2.山东省虚拟仿真实验教学项目，东北亚能源互联网虚拟仿真实验平台建设.
+3.中国教育部产学合作协同育人项目，能源互联网建设背景下多情景能源供需仿真实验.
+4.山东大学教育教学综合改革立项项目，适应“一带一路”需求的国际化电气工程人才培养改革与实践.",山东省“泰山学者”特聘专家，山东省优秀科技工作者，全球前2%顶尖科学家影响力排行榜,"1.Wang Mingqiang, Yang Ming*, Fang Zhen, Wang Mengxia, Wu Qiuwei. A Practical Feeder Planning Model for Urban Distribution System [J], IEEE Transactions on Power Systems, 2023, 38(02): 1297-1308.
+2.Li Menglin, Yang Ming*, Yu Yixiao, Wei-Jen Lee. A Wind Speed Correction Method Based on Modified Hidden Markov Model for Enhancing Wind Power Forecast [J], IEEE Transactions on Industry Applications, 2022, 58(01): 656-666.
+3.Li Peng, Yang Ming*, Wu Qiuwei. Confidence Interval Based Distributionally Robust Real-Time Economic Dispatch Approach Considering Wind Power Accommodation Risk [J], IEEE Transactions on Sustainable Energy, 2021, 12(01): 58-69.
+4.Si Zhiyuan, Yang Ming*, Yu Yixiao, Ding Tingting. Photovoltaic power forecast based on satellite images considering effects of solar position [J], Applied Energy, 2021, 302: 117514.
+5.Zeng Xiangjun; Yang Ming*; Bo Yifan. Gearbox oil temperature anomaly detection for wind turbine based on sparse Bayesian probability estimation[J]. International Journal of Electrical Power &amp; Energy Systems. 2020, 123: 106233.",,https://www.ee.sdu.edu.cn/__local/9/1A/F9/F18707126753EBFA465954CBF5E_145791A9_18A89.png,研究生,博士,1,本科生院副院长,
+张利,83,154,0531-81696119,yzhangli@sdu.edu.cn,副教授,,"1. 电力系统运行与控制
+2. 电力市场
+3. 电力需求侧响应",,,,"1. 智能电动汽车电池租金及充电电价定价方法与应用研究（山东电力技术经济研究院）
+2. 山东电网用电特性分析与需求响应评估（山东电力集团）
+3. 节能发电调度机制的理论研究（Y2008F19），山东省自然科学基金
+4. 电力系统运行调度中的电热协调理论研究（50677036），国家自然科学基金
+5. 电力系统运行调度中刚性优化与柔性决策理论研究（50377021），国家自然科学基金",,"1. Xiaofeng  Miao, Li Zhang, Yumin Zhang, Xueshan Han. Error Estimation of Statistical  Baseline Load Methods. 2015 IEEE PES GM, Denver, CO , USA.
+2. Zhuo Peng,  Li Zhang, Kuan Lu, et al. “Operation strategy of EV battery charging and  swapping station,“ Journal of Electronic Science and Technology, 2014，12(1)：26-32.
+3. 刘继东，韩学山，楚成博，张利. 考虑非气象因素的电网夏季降温负荷研究 . 电力自动化设备，2013，33(2)：40-46（EI：20131116114435）
+4. 刘继东，韩学山，韩伟吉，张利. “分时电价下用户需求响应行为的模型与算法”，电网技术，电网技术，2013，37(10)：2973-2978  ( EI:20140117165797)
+5. 楚成博，刘继东，张利. 山东电网夏季降温负荷特性及影响因素分析.  电力需求侧管理，2013，15(1)：20-24",,https://www.ee.sdu.edu.cn/images/15/11/02/107ekta7u1/lrj9_image001.jpg,研究生,硕士,1,,
+张恒旭,83,154,0531-88392838,zhanghx@sdu.edu.cn,教授,,电力系统监测；电力系统稳定性分析与控制,,,,"1. 基于微型同步相量测量的智能配电网运行关键技术研究（2017YFB0902800）, 2017.7.1-2020.12，课题负责人
+2. 电力电子化电力系统的源网荷全景同步量测系统研制及应用(51627811)，国家自然科学基金重大仪器专项，2017.1-2021.12，课题负责人
+3. 高、低压电网动态行为耦合特征及解耦处理方法(51477092)，国家自然科学基金，2015.1-2018.12，负责人
+4. 全球能源互联网的物理与信息系统宏观统筹关键技术研究(SGSDDK00KJJ S1600061)，国家电网公司，2016.1-2017.12，负责人
+5. 面向国际化的卓越电气工程人才培养综合改革，山东省教学改革重点项目，2015.1-2017.12，负责人
+6. 全球能源互联网新工科专业建设探索与实践，山东省教学改革面上项目，2015.1-2017.12，负责人
+7. 大电网稳定基础理论研究（基于响应的电力系统失稳模式判别等），国家电网公司，2012.1-2016.12，负责人
+8. 大电网运行状态感知、风险评估、故障诊断与调度技术(2011AA05A118)，国家863重大项目子课题，2012.1-2014.12，负责人",,"1. Zongshuai Jin, Hengxu Zhang, Fang Shi, Yuanyuan Sun, Vladimir . A robust and adaptive detection scheme for interharmonics in active distribution network. IEEE Transactions on Power Delivery, Vol.33, pp.2524~2534. October 2018.
+2. Hengxu Zhang, Yongji Cao, Yi Zhang, . Quantitative synergy assessment of regional wind-solar energy resources based on MERRA reanalysis data. Applied Energy, Vol.216, pp.172~182. April 2018.
+3. Changgang Li, Yaping Zhang,Hengxu Zhang, Qiuwei Wu, Vladimir . Measurement-Based Transmission Line Parameter Estimation with Adaptive Data Selection Scheme. IEEE Transactions on Smart Grid, Vol.9, pp.5764~5773. November 2018.
+4. Lizheng Chen,Hengxu Zhang, Qiuwei Wu, . A Numerical Approach for Hybrid Simulation of Power System Dynamics Considering Extreme Icing Events. IEEE Transactions on Smart Grid, Vol.9, pp.5038~5046. September 2018.
+5. 于学良, 张恒旭, 王孟夏. 考虑线路温度的电网状态估计方法[J]. 中国电机工程学报, 2018(9)：2561-2570",,https://www.ee.sdu.edu.cn/__local/9/C7/76/69E4AF6DF39263A7D79BBF7C771_786BE6D3_850F.jpg,研究生,博士,1,常务副院长,
+张峰,83,154,,fengzhang@sdu.edu.cn,教授,,新能源并网主动支撑控制、新型电力系统频率安全评估与控制,,,,"1. 国家重点研发计划政府间国际合作重点项目，新能源为调频主体的低碳电网频率安全控制关键技术研究，2023-2025，项目负责人
+2. 国家自然科学基金面上项目，极端天气下高比例新能源新型电力系统的高韧性规划与恢复决策，2023-2026，项目负责人
+3. 国家重点研发计划，光伏/风电场站暂态频率电压主动快速支撑技术子课题，2022-2026，项目负责人
+4. 国家自然科学基金青年项目，间歇性功率流的主动性渐进调控理论研究，2014-2016，项目负责人
+5. 山东省自然科学基金项目，适应高比例新能源电网的风电时变-联动-可知调频参数映射方法研究，2022-2024，项目负责人","1. 山东省优秀博士论文指导教师，山东省教育厅，2022
+2. 中国电工技术学会科技进步奖，“基于能量流协同控制的风电主动支撑关键技术及应用” ，一等奖，2023
+3. 山东大学教学成果奖，面向国家“双碳”战略需求的电气工程创新人才培养体系探索与实践，一等奖，2023
+4. 山东大学电气工程学院优秀教师，2023
+5. 《电力系统自动化》期刊优秀审稿专家，2023","1. Feng Zhang, Zechun Hu, Ke Meng, Lei Ding and Zhaoyang Dong, “HESS Sizing Methodology for an Existing Thermal Generator for the Promotion of AGC Response Ability,“ in IEEE Transactions on Sustainable Energy, vol. 11, no. 2, pp. 608-617, Apr. 2020.
+2. Feng Zhang, Ke Meng, Zhao Xu, Zhaoyang Dong, Li Zhang, Can Wan and Jun Liang, “Battery ESS Planning for Wind Smoothing via Variable-Interval Reference Modulation and Self-Adaptive SOC Control Strategy,“ in IEEE Transactions on Sustainable Energy, vol. 8, no. 2, pp. 695-707, Apr. 2017.
+3. Feng Zhang, Guibin Wang, Ke Meng, Junhua Zhao, Zhao Xu, Zhaoyang Dong and Jun Liang, “Improved Cycle Control and Sizing Scheme for Wind Energy Storage System Based on Multiobjective Optimization,“ in IEEE Transactions on Sustainable Energy, vol. 8, no. 3, pp. 966-977, Jul. 2017.
+4. Gang Zhang, Feng Zhang*, Xin Zhang, Ke Meng and Zhaoyang Dong, “Sequential Disaster Recovery Model for Distribution Systems With Co-Optimization of Maintenance and Restoration Crew Dispatch,“ in IEEE Transactions on Smart Grid, vol. 11, no. 6, pp. 4700-4713, Nov. 2020.
+5. Gang Zhang, Feng Zhang*, Xin Zhang, Zhaoyu Wang, Ke Meng and Zhaoyang Dong. “Mobile Emergency Generator Planning in Resilient Distribution Systems: A Three-Stage Stochastic Model with Nonanticipativity Constraints,“ in IEEE Transactions on Smart Grid, vol. 11, no. 6, pp. 4847-4859, Dec. 2020.",,https://www.ee.sdu.edu.cn/__local/7/DB/5A/0C5F33C994D52561CBB69C26C68_0EBAEA83_A759.png,研究生,博士,1,教授,
+赵浩然,83,154,0531-81696100,hzhao@sdu.edu.cn,教授,"国家特聘教授（2017年入选），博士生导师，齐鲁青年学者（2016年入选）。目前为IEEE高级会员、CIGRE工作组C6.C1.33（综合能源系统）工作组成员、CIGRE C4.56 （大规模电力电子接入的大电网电磁暂态仿真模型）工作组成员、IEC SC 8A工作组专家、山东能源研究会副理事长、电机工程学会配电网控制运行专委会委员、电工技术学会人工智能与电气应用专委会委员、仿真学会综合能源数字孪生专委会委员、可再生能源学会综合能源专委会委员。
+目前担任IEEE Transactions on Sustainable Energy，IEEE Power Engineering Letters，IET Renewable Power Generation/Journal of Engineering等国际期刊Associate Editor，电力保护与控制青年编委，受邀担任IEEE Transactions on Energy Conversion特刊Associate Editor，International Journal of Electrical Power &amp; Energy Systems特刊主编。","1. 新能源发电与并网
+2. 新型电力系统建模与仿真
+3. 综合能源优化运行与控制",,,,"1. 海外高层次人才专项基金，主持。
+2. 国家重点研发计划课题：信息能源耦合节点能量一致标度及其自适应持续进化建模，主持。
+3. 国家重点研发计划子课题：电网故障下风电机组电压/频率暂态主动支撑技术研究，主持。
+4. 国家重点研发计划子课题：大容量风电机组电网友好型控制技术，主持。
+5. 国家自然科学基金项目：基于分布式模型预测控制的风电场有功控制系统的研究，主持。
+6. 国家自然科学基金子项目：综合能源系统统一建模与精细化仿真，主持。
+7. 国网科技项目：基于大型风电场实时仿真等值模型的电力系统动态仿真技术研究，主持。
+8. 国网科技项目：基于DIgSILENT的MMC模型开发与交流系统分析研究，主持。
+9. 国网科技项目：大规模风电场并网宽频震荡风险评估模块开发，主持。
+10. 国网科技项目：混合直流数字物理混合仿真接口算法研究，主持。
+11. 国网科技项目：“新能源场站+共享储能”协同控制与综合评价关键技术研究，主持。
+12. 国网科技项目：新能源电站的实测建模与模型参数优化技术研究，主持。
+13. 电科院项目：风电场精细化模型开发及实时在线仿真技术，主持。
+14. 电科院项目：创新自筹-大规模风电场并网宽频震荡风险评估模块开发，主持。
+15. 南方电网：支持BPA数据转化的DIgSILENTPower Factory电网模型搭建，主持。
+16. 上电科项目：逆变器DIgSILENT建模测试，主持。
+17. 上电科项目：逆变器的PowerFactory建模 ，主持。",,"1. Wang P, Ma Y, Zhao H*. Online assessment of multi-parameter stability region and stability margin of wind power plants[J]. International Journal of Electrical Power &amp; Energy Systems, 2024, 155: 109413.
+2. 马悦鑫，王鹏*，赵浩然，贺敬，等.基于分段仿射阻抗模型的电压源变流器小扰动稳定域在线构造[J]，中国电机工程学报，2023.
+3. Ma H, Liu C*, Zhao H, et al. A novel analytical unified energy flow calculation method for integrated energy systems based on holomorphic embedding[J]. Applied Energy, 2023, 344: 121163.
+4. Huang X, Tian H, Zhao H*, et al. Digital twins of multiple energy networks based on real-time simulation using holomorphic embedding method, Part I: Mechanism-driven modeling[J]. International Journal of Electrical Power &amp; Energy Systems, 2023, 154: 109419.
+5. Tian H, Zhao H*, Li H, et al. Digital twins of multiple energy networks based on real-time simulation using holomorphic embedding method, Part II: Data-driven simulation[J]. International Journal of Electrical Power &amp; Energy Systems, 2023, 153: 109325.",,https://www.ee.sdu.edu.cn/__local/9/61/7C/38E3211563D62299584CAA01BFD_93CC9697_16A2.jpg,研究生,博士,1,副院长,
+施啸寒,83,154,13356662602,shixh@sdu.edu.cn,副教授,,"1. 电能存储建模与管理
+2. 分散灵活资源聚合管控
+3. 基于新型灵活资源的电力系统稳定控制",,,"1. 第一发明人,一种储能系统控制方法及系统,授权
+2. 第一发明人,一种逆变器并网型分布式电源故障模型构建方法,授权
+3. 主要完成人,考虑电池不一致与老化共同演化的电池分选参数确定方法,授权
+4. 主要完成人,一种适用于可动态重构电池储能系统的管理系统及其方法,授权
+5. 第一发明人,一种锂离子电池等值电路参数在线辨识方法及系统,实审
+6. 第一发明人,一种锂离子电池组运行状态的数值模拟方法及系统,实审","1. 非预案式的交直流混联电网自主协同稳定控制技术（2022-2025），国家重点研发计划课题4.1，课题4任务3，研究骨干；
+2. 用于退役电池储能系统的层次化电池动态成组方法研究（2018~2022），国家自然科学基金青年基金，负责人；
+3. 电网友好型乡村综合能源系统关键技术及示范应用技术（2021-2022），山东省电力公司青岛供电公司，负责人；
+4. 储能技术路线选择及商业模式研究（2021），山东核电集团，负责人；
+5. 基于电制燃料和原材料的高比例清洁能源系统长期储能技术分析与优化配置方法研究（2020-2021），全球能源互联网集团有限公司，课题1负责人；
+6. 面向交直流混合微电网的自适应保护技术研究（2018-2019），山东电科院，负责人；
+7. 电池梯次利用储能系统构建及应用研究，山东国瑞电力科技有限公司（2016-2017），负责人；
+8. 基于电池梯次利用储能系统高效接纳分布式能源的关键技术研究与应用（2017-2018），国网山东省电力公司枣庄供电公司，研究骨干；
+9. 基于梯次利用电池储能分布式管控的主动配电网规划运行技术研究（2018-2019），国网山东省电力公司聊城供电公司，研究骨干。",,"1. Zhang Yi, Shi Xiaohan*, Zhang Hengxu, et.al. Review on Deep Learning Applications in Frequency Analysis and Control of Modern Power System. International Journal of Electrical Power and Energy Systems 2022. vol 136.
+2. Rafiq Hasan, Shi Xiaohan*, Zhang Hengxu, et.al. Generalizability Improvement of Deep Learning-Based Non-Intrusive Load Monitoring System Using Data Augmentation. IEEE Trans. on Smart Grid, 2021. vol 12,no 4, pp 3265-3277.
+3. Shi Xiaohan, Wei Chuanzhi, Zhang Hengxu, et.al. Fault modeling of IIDG considering inverters detailed characterist-ics. IEEE ACCESS, 2020, vol 8, pp 83401-83410.
+4. Rafiq Hasan, Shi Xiaohan*, Zhang Hengxu, et.al. A Deep Recurrent Neural Network for Non-Intrusive Load Monitoring Based on Multi-Feature Input Space and Post-Processing. Energies, 2020, vol 13,no 9, pp 2195-3204.
+5. 施啸寒，赵雅文，张恒旭*,基于准零相位滤波器的电池储能系统平滑风电波动控制方法. 电力系统自动化,2021,45(4):45-53.",,https://www.ee.sdu.edu.cn/images/15/10/images/15/10/20/1luvbn9xs8/p7ej_image001.jpg,研究生,博士,1,副教授,
+董晓明,83,154,18654539653,dongxiaoming@sdu.edu.cn,副教授,,"1、电网传输能力计算方法研究。
+2、电力系统静态电压稳定性评估方法研究。
+3、互联电网的运行特性及其计算分析方法的研究",,,,"1、双碳目标下计及高密度能源有序转化的多元能流互动耦合关键技术及工程平台研究（国家自然科学基金联合基金）
+2、基于数据挖掘的电网功率流分析及其优化调控方法的研究（山东省自然科学基金面上）
+3、计及气象因素的新能源并网运行模拟及评估方法研究（中国博士后科学基金）
+4、面向弹性提升的坚强局部电网运行能力评估与扩展规划方法研究（国家电网公司）
+5、 千万千瓦级分层接入直流送受端系统动态行为机理和协调控制措施研究（国家电网公司）",,"1、Yue Ma, Xiaoming Dong*, et. al. Robust Optimization Model of Flexible Distribution Network Considering Source-Load Uncertainty, Electrical Power System Research, 223 (2023): 109698.
+2、Xiaoming Dong, Fan Chen, et. al. SCOPF Considering Voltage and Power Fluctuation Under Renewable Energy Integration. International Journal of Electrical Power & Energy Systems, 2023, 153: 109273.
+3、Yong Wang, Yan Wang, Xiaoming Dong*, et. al. Assessment for Capacity of Wind-Storage Integration System Considering Electro-thermal coupling of Overhead Transmission Lines, IEEE Transactions on Power Systems, doi: 10.1109/TPWRS.2023.3238992.
+4、Xueyong Jia, Xiaoming Dong*, et al. Static Voltage Stability Assessment Considering Impacts of Ambient Conditions on Overhead Transmission Lines. IEEE Transactions on Industry Applications, 2022, doi: 10.1109/TIA.2022.3195974.
+5、Xiaoming Dong, Yue Ma, et al. An Improved Power Flow Calculation Method Based on Linear Regression for Multi-area Networks with Information Barriers[J]. International Journal of Electrical Power & Energy Systems, 2022, 142: 108385.",,https://www.ee.sdu.edu.cn/__local/6/DD/E2/B26FDDD431D9D846B7C4084EAAF_C9D3036C_2377B.png,研究生,博士,1,,
+韩学山,83,154,0531-81696120,xshan@sdu.edu.cn,教授,,"1、电力系统运行分析与控制
+2、优化调度
+3、EMS及电力经济等",,,,"1、电力系统运行调度中刚性优化与柔性决策理论研究，国家自然科学基金项目（50377021），22 万元，已结题。
+2、电力系统运行调度中电热协调理论研究，国家自然科学基金项目（50677036），31 万元，在研。
+3、山东电网输电能力综合评价系统，30 万元，在研。
+4、山东电网用电构成及特性规律分析系统，15 万元，在研。
+5、计及系统风险的输电系统设备检修决策支持研究，45 万元，在研。
+6、风电场并入对山东电网运行影响的有关技术研究，45 万元，在研。","1、电力系统动态优化调度研究获中国高校科技进步二等奖
+2、发电厂运营决策支持系统获山东省科技进步二等奖
+3、电力系统计算机辅助教学系统获原电力工业部优秀教学成果一等奖","1、Dynamic economic dispatch: feasible and optimal solutions  [J]. IEEE Trans.on Power Systems, 2001 
+2、Dispatch problems due to ramp rate constraints:  bottleneck analysis and solutions [J]. Electric Power Components and Systems,  2003
+3、Effective economic dispatch model and algorithm [J].  Electrical Power and Energy Systems，2007
+4、考虑机组爬坡速度和网络安全约束的经济调度解耦算法[J].电力系统自动化，2002
+5、多节点超短期负荷预测方法[J]，电力系统自动化，2007",,https://www.ee.sdu.edu.cn/images/15/09/images/15/09/10/2zhgktv3v4/8u2k_image001.jpg,研究生,博士,1,副院长,
+靳宗帅,83,154,,jzshuai@sdu.edu.cn,副研究员,,电力系统宽频态势深度感知理论方法及应用研究,,,"1. 石访,张恒旭,韩兆儒,靳宗帅,王晓彬. 一种基于同步李萨如曲线特征的高阻故障定位方法及系统[P].CN116500382B,2023-09-19.
+2. 石访,张恒旭,韩兆儒,靳宗帅. 基于李萨如曲线辨识高阻故障与投切扰动的方法及系统[P].CN116500383B,2023-09-05.
+3. 靳宗帅,张恒旭. 超宽频带大规模动态谐波和间谐波实时测量方法及系统[P].CN113904329B,2023-08-11.
+4. 于浩天,靳宗帅,张恒旭. 一种抗衰减直流分量干扰的同步相量测量方法及系统[P].CN111948454B,2021-10-08.
+5. 张恒旭,石访,韦明杰,刘伟生,靳宗帅,施啸寒,刘春阳,徐凯,王晓彬. 一种谐振接地系统高阻故障选线和区段定位方法及系统[P].CN112710921B,2021-10-08.
+6. 靳宗帅,张恒旭,石访. 针对中值滤波平顶畸变的相量计算补偿方法及系统[P].CN109756205B,2020-11-13.
+7. 张恒旭,靳宗帅,刘伟生等. 基于多项式回归平滑修正的增强型中值滤波方法及系统[P].CN109728800B,2020-10-02.
+8. 石访,张恒旭,韩兴臣,靳宗帅,徐凯,孙菊,张林林. 一种带通滤波方法、系统、存储介质及终端设备[P].CN109831184B,2020-08-28.
+9. Hengxu Zhang, Zongshuai Jin, Yingle Fan. Electric vehicle charging pile control system and method considering grid frequency safety [P].US10308127B2, 2019-06
+10. 谢宇峥,靳宗帅,张恒旭等. 计及频率偏移的发电厂仿真系统[P]. CN104808511B,2017-10-24.
+11. 张恒旭,范英乐,靳宗帅. 考虑电网频率稳定的电动汽车充电双向控制系统及方法[P].CN105098941B,2017-06-16.
+12. 靳宗帅,张恒旭,范英乐. 一种考虑电网频率安全的电动汽车充电桩控制系统及方法[P].CN104836292B,2017-01-25.
+13. 张恒旭,靳宗帅,刘玉田. 大范围同步实时气象数据测量及风速风向预测系统与方法[P].CN103616734B,2015-11-18.
+14. 张恒旭,靳宗帅,续昕. 电力系统开放式微型动态模拟与监测系统[P].CN103400523B,2014-10-08.","1. 国家自然科学基金青年项目,高比例新能源电力系统宽频域多模态振荡特征精确深层辨识方法,2022-01至2024-12,主持.
+2. 国家自然科学基金企业创新发展联合基金,电力电子化配电系统谐波传播溯源与主动抑制基础理论研究,2024-01至2027-12,参与.
+3. 山东省自然科学基金青年项目,大规模新能源并网系统宽频域多振荡模态精确辨识与应用,2022-01至2024-12,主持.
+4. 国家电网公司总部科技项目,支撑电网安全稳定的规模化分布式光伏控制保护关键技术研究,2023-06至2025-12,主持.
+5. 国网山东省电力公司科技项目,基于宽频同步测量的直流输电系统谐波在线跟踪与换相失败预警,2023-01至2023-12,主持.
+6. 国网山东省电力公司科技项目,基于宽频带同步测量数据的配电网线路参数辨识技术及应用,2021-06至2022-12,技术负责.
+7. 国家电网公司总部科技项目, 高比例新能源电力系统宽频带振荡风险评估及抑制措施研究,2021-12至2023-12,参与.",,"1. 靳宗帅,张恒旭,曾一鸣,石访,刘远龙.适应频率偏移及动态变化场景的动态谐波相量在线测量方法[J/OL].中国电机工程学报,2024:1-12.
+2. 靳宗帅,张恒旭.电力系统强噪声测量数据快速鲁棒回归平滑降噪[J].电力系统自动化,2023,47(03):169-176.
+3. Z. Jin, H. Zhang and V. Terzija, An Embedded Estimator for Online Harmonic Monitoring in Power-Electronic Grids [J], in IEEE Transactions on Smart Grid, vol. 13, no. 6, pp. 4677-4689, Nov. 2022.
+4. H. Yu, Z. Jin, H. Zhang and V. Terzija, A Phasor Estimation Algorithm Robust to Decaying DC Component [J], in IEEE Transactions on Power Delivery, vol. 37, no. 2, pp. 860-870, April 2022.
+5. 靳宗帅,张恒旭,石访等.宽频带同步测量技术与应用[J].中国电机工程学报,2022,42(07):2497-2508.",,,研究生,博士,1,副研究员,
+褚晓东,83,154,"0531-81696127,13573122659",chuxd@sdu.edu.cn,副教授,,"1. 电力系统稳定性分析与控制
+2. 电力系统灵活性资源优化调度与控制
+3. 可再生能源发电并网
+4. 能源信息-物理系统建模",,,,"1. 具有能量存储特性的电力负荷群集协作控制机制研究，国家自然科学基金
+2. 全球能源互联网信息系统风险建模与评估方法研究，国家电网公司总部科技项目——“全球能源互联网的物理与信息系统宏观统筹关键技术研究”课题4
+3. 基于山东电网的多直流馈入受端电网运行控制技术研究，国网山东省电力公司科技项目
+4. 多能源互补的交直流电网协同调度控制关键技术研究与示范, 国家重点研发计划“智能电网技术与装备”重点专项“支撑低碳冬奥的智能电网综合示范工程”项目课题
+5. 大负荷中心电网中长期电压稳定分析与协调控制研究，国家自然科学基金",,"1. Chunlei   Zhang, Xiaodong Chu, Bing Zhang, et al. A coordinated DC power support   strategy for multi-infeed HVDC systems. Energies, 2018, 11(7): 1637.
+2. Changcheng   Song, Xiaodong Chu, Linlin Ma, et al. An efficient controlled   islanding strategy for large-scale AC/DC power systems. Energies, 2018, 11(6):   1483.
+3. 刘萌, 褚晓东, 张文, 张岩. 基于合作博弈理论的互联电网AGC协调控制. 电网技术, 2017, 41(5): 1590-1597.
+4. Jinyu Liu,   Wen Zhang, Xiaodong Chu, Yutian Liu. Fuzzy logic controller for energy   savings in a smart LED lighting system considering lighting comfort and daylight.   Energy and Buildings, 2016(127): 95–104. 
+5. 刘萌, 褚晓东, 张文, 王洪涛. 计及网络约束的源-荷协同频率控制策略. 电工技术学报, 2016, 31(6): 195-205.",,https://www.ee.sdu.edu.cn/__local/C/EF/B8/64E999DF86317B61E3A10343CB7_17F5A20A_11EB.jpg,研究生,硕士,1,,
+孙润稼,83,154,13256128382,sunrunjia@sdu.edu.cn,副研究员,,"1. 电力系统恢复控制
+2. 电网韧性
+3. 电力系统安全防御",,,"1. Yutian Liu, Runjia Sun. Method and system for online decision making of generator start-up[P], 2018-9-29, 美国、欧盟
+2. 孙润稼, 刘玉田, 范睿. 一种极端天气下电网自适应负荷恢复方法及系统[P]. 中国: ZL 2021 11 580104.0, 2022-10-04.
+3. 刘玉田, 孙润稼, 范睿. 自然灾害下电网应急抢修与恢复调度协同决策方法及系统[P]. 中国: ZL 2022 1 0000490.X, 2022-04-08.
+4. 刘玉田， 孙润稼. 一种机组恢复在线动态决策方法及系统 [P]. 中国： ZL 2018 1 0271593.3, 2019­10­18.","1. 国家自然科学基金青年基金，应对灾后电网元件状态未确知的电力系统人在回路应急恢复决策，2024-2026.
+2. 国家自然科学基金企业创新发展联合基金课题，新型电力系统全过程恢复控制基础理论与方法，2023-2026.
+3. 山东省自然科学基金青年基金，计及骨干网架韧性的未确知电网自愈在线决策技术，2022-2024.","1. 应对极端天气的大型城市电网安全防御与智能恢复关键技术及应用，山东电力科学技术进步奖，5/12,2023年度","1. Runjia Sun, Yutian Liu. Hybrid reinforcement learning for power transmission network self-healing considering wind power[J], IEEE Transactions on Neural Networks and Learning Systems, 2023, 34(9): 6405 - 6415.
+2. Runjia Sun, Yutian Liu, Liang Wang. An online generator start-up algorithm for transmission system self-healing based on MCTS and sparse autoencoder[J], IEEE Transactions on Power Systems, 2019, 34(3): 2061-2070.
+3. Runjia Sun, Yutian Liu, Hainan Zhu, et. al. A network reconfiguration approach for power system restoration based on preference-based multiobjective optimization[J], Applied Soft Computing, 2019, 83: 105656.
+4. 孙润稼, 刘玉田. 基于深度学习和蒙特卡洛树搜索的机组恢复在线决策[J], 电力系统自动化, 2018, 42(14): 40-47
+5. Rizwan ul Hassan, Runjia Sun, Yutian Liu. Online static security assessment for cascading failure using stacked de-noising auto-encoder[J], International Journal of Electrical Power & Energy Systems , 2022, 137: 107852.",,https://www.ee.sdu.edu.cn/__local/F/9E/40/072C0D3A367909A697B86FF4B23_DF92D00F_6B1A.jpeg,研究生,博士,1,副研究员,山东大学电气工程学院
+丁磊,83,154,0531-81696111,dinglei@sdu.edu.cn,教授,,"1. 低惯量电力系统运行控制
+2. 新能源发电并网控制
+3. 电力系统主动解列",,,"1. 双馈风机虚拟惯量调频的动态转速保护方法及系统，ZL201911135568.3，2020.04.02
+2. 基于超速风机释放功率提升的风电调频控制方法及系统，ZL201911137050.3，2020.04.23
+3. 弃风参与电网调频的电转气-储气-燃气轮机容量优化配置方法及系统，ZL201911088121.5，2020.02.02
+4. 单dq控制结构双馈风机正、负序转子电流控制方法及系统，ZL202010790352.7，2020.12.28
+5. 直驱风机不对称故障直流母线二倍频电压抑制方法及系统，ZL202010467590.4，2020.12.21
+6. 风电机组协同调频最优退出时间的确定方法，ZL201610976478.7，2019.01.04
+7. 一种双馈风力机组惯性调频主动转速保护控制系统与方法，ZL201510509286.0，2017.10.27
+8. 模拟惯性与超速相结合的双馈风机有功频率控制器及方法，ZL201510334000.X，2017.03.29
+9. 基于归一化谱聚类和约束谱聚类的两阶段主动解列方法，ZL201110173468.7，2014.01.01
+10. 双馈风机故障穿越的优化虚拟阻抗控制方法及系统，ZL202010435460.2，2021.10.22
+11. 双馈风机故障穿越的优化灭磁控制方法及系统，ZL202010435455.1，2021.11.02
+12. 风储交流微电网自动功率平衡控制方法及系统，ZL201910637213.8，2020.09.25
+13. 无信号传输线路中实现非通信高速距离中继的方法及装置，ZL201910373023.X，2021.12.17
+14. 基于WAMS实测轨迹的电力系统暂态稳定综合判别方法及系统，ZL201810846533.X，2020.07.31
+15. 风储协调的直驱风电机组控制方法及系统，ZL202210221146.3，2022.06.14","1. 不同汇集和送出方式下海上风电机网交互作用机理及量化补偿技术，国家重点研发计划课题，2022.11-2025.10
+2. 电网故障下风电机组电压/频率暂态主动支撑技术，国家重点研发计划课题，2018.7-2021.6
+3. 新型电力系统有功控制基础理论与方法研究，国家自然科学基金联合基金项目，2023-2026
+4. 计及暂态稳定约束和群特性的主动解列策略研究，国家自然科学基金面上项目 2015-2018
+5. 基于谱聚类方法的电力系统主动解列研究，国家自然科学基金青年项目，2012-2014
+6. 含高比例可再生能源的电网频率协同控制技术研究，国网总部科技项目2019.6-2021.12
+7. 高比例新能源接入电力系统分散集群控制，国网总部科技项目2019.1-2021.12",,"1. Ding L, Guo Y, Wall P, et al. Identifying the Timing of Controlled Islanding Using a Controlling UEP Based Method[J]. IEEE Transactions on Power Systems, 2018,33(6): 5913-5922.
+2. Ding L, Ma Z, Wall P, et al. Graph Spectra Based Controlled Islanding for Low Inertia Power Systems[J]. IEEE Transactions on Power Delivery, 2017,32(1): 302-309.
+3. Ding L, Guo Y, Wall P. Performance and Suitability Assessment of Controlled Islanding Methods for Online WAMPAC Application[J]. International Journal of Electrical Power and Energy Systems,2017,84: 252-260.
+4. Ding L, Wall P, Terzija V. Constrained Spectral Clustering Based Controlled Islanding[J]. International Journal of Electrical Power and Energy Systems, 2014,63: 687-694.
+5. Ding L, Wall P, Terzija V, et al. Two-Step Spectral Clustering Controlled Islanding Algorithm[J].IEEE Transactions on Power Systems, 2013,28(1): 75-84.",,https://www.ee.sdu.edu.cn/__local/1/C7/DD/806FE5B9A333ED3D1D9541B8BD3_04147B18_D126.png,研究生,博士,1,"院长
+党委副书记",
+李惠民,83,154,,huiminl@gridnt.com,教授,,"1. 基于人工智能的新能源电网控制优化
+2. 电力设备的人工智能检测
+3. 虚拟电厂及云储能
+4. 智能化变电站技术
+5. 电力系统信息模型",,,"1. 一种高可用性无缝冗余环网重复帧丢弃方法及系统,CN111277480A,2021
+2. 环网智能通信装置及其配置方法,CN109194512B,2021
+3. 一种变电站智能电子装置信息交互过程的表达方法,CN108234237A,2019
+4. 一种光IRIG‑B及FT3码的智能探测接收方法和装置，CN105743585B，2018","1. 国家工信部建设面向区域化人工智能应用发展的公共服务平台项目子课题负责人
+2. 主持国家“863”项目子课题一项：智能电网高级分析与优化运行关键技术（2012AA050213）
+3. 科技部国家中小企业发展创新基金一项：智能变电站数字仿真与信息处理一体化系统
+4. 国家电网科技指南项目项目名称：智能变电站仿真调试与分析一体化技术研究",,"1. Bilevel Optimal Dispatch Strategy for a Multi-Energy System of Industrial Parks by Considering Integrated Demand Response,Energies 2018, 11(8), 1942
+2. 基于卷积神经网络的非侵入式负荷监测《电测与仪表》 第59卷第一期，148
+3. A Deep Recurrent Neural Network for Non-Intrusive Load Monitoring Based on Multi-Feature Input Space and Post-Processing, Energies, 2020,
+13, 2195;
+4. Generalizability Improvement of Deep Learning-Based Non-Intrusive Load Monitoring System Using Data Augmentation,IEEE Transactions on Smart Grid,42020,5",,https://www.ee.sdu.edu.cn/__local/E/56/D3/BE9BBB7E2EBC3B410D6BA47FE76_43C0275E_37E9.jpg,研究生,博士,1,特聘专家,
+郭一飞,83,154,,yfguo.sdu@gmail.com,教授,,新能源电力系统运行优化、稳定控制、保护；最优化理论、复杂网络理论在电力系统中的应用,,,,"1. 国家高层次青年人才项目，“高渗透率新能源配电网电压控制关键技术”，主持
+2. 英国皇家学会基金, “Optimal Transient Control of Grid-Forming Renewable Energy Under Large Disturbances”, 主持
+3. Blink Trust Fund, “Maximizing Dynamic Voltage Support of Renewables in Net Zero Power Grids”, 主持
+4. 英国工程和自然科学基金, “Resilient Operation of Sustainable Energy Systems”,参与
+5. 美国国家科学基金杰出青年项目, “Learning Smart Meter Data to Enhance Distribution Grid Modeling and Observability”, 参与
+6. 美国能源部项目, “Optimal Operation and Impact Assessment of Distributed Wind for Improving Efficiency and Resilience of Rural Electricity Systems”, 参与
+7. 国家自然科学基金，“基于VSC-HVDC并网的大规模海上风电场分布式控制与保护”，参与
+8. 国家重点研发计划，“大型交直流混联电网运行控制和保护”，参与",山东省优秀博士学位论文（同年度电气领域唯一）,"1.  A. Arjomandi-Nezhad, Y. Guo, B. C. Pal, D. Varagnolo, “A model predictive approach for enhancing transient stability of grid-forming converters,” IEEE Transactions on Power Systems, early access, 2024.
+2. R. Luo, H. Gao, F. Peng, Y. Guo, “An adaptive low-Voltage ride-through method for virtual synchronous generators during asymmetrical grid faults,” IEEE Transactions on Sustainable Energy, early access, 2024.
+3. Y. Guo, B. C. Pal, and R. A. Jabr, “Model-free optimal control of inverter for dynamic voltage support,” IEEE Transactions on Power Systems, vol. 38, no. 6, pp. 5860–5871, Nov. 2023. 
+4. Y. Guo, B. C. Pal, R. A. Jabr, and H. Geng, “Global optimality of inverter dynamic voltage support,” IEEE Transactions on Power Systems, vol. 37, no. 5, pp. 3947–3957, Sep. 2022.
+5. Y. Guo, B. C. Pal, and R. A. Jabr, “On the optimality of voltage unbalance attenuation by inverters,” IEEE Transactions on Sustainable Energy, vol. 22, no. 3, pp. 1492–1506, July 2022.",,https://www.ee.sdu.edu.cn/__local/4/3D/0C/15A83E92254C5CF55E1ADDDA7DE_66498F3C_11FB.jpg,研究生,博士,1,教授、博士生导师,山东大学
+王冠中,83,154,,eewgz@sdu.edu.cn,副研究员,,新型电力系统稳定分析与控制(宽频振荡、暂态电压稳定、谐振/谐波、规划运行、优化控制),,,,"1.国家自然科学基金青年项目，项目号：52007163，基于鲁棒广义短路比的高比例新能源电力系统数据驱动随机小干扰稳定性分析，2021/01-2023/12 
+2.中国博士后科学基金项目，项目号：2020M671718，基于广义短路比的直流/新能源混合受端电网强度分析理论与方法，2021/01-2022/12 
+3.智能电网联合基金-重点支持项目，项目号：U2166204，面向“双高系统”多频段电网强度量化的短路电流分析理论与方法，2022.01-2025.12
+4.浙江电科院横向课题，新能源场站异构无功源电压协调支撑技术研究，2023.01-2023.12 
+5.江苏电科院横向课题，适应电力电子同步机制演化规律的电网规划理论研究，2023.01-2023.12 
+6.山东电科院横向课题，提升新型电力系统电压安全的新能源主动支撑技术研究，2022.11-2023.11 
+7.浙江省电力设计院横向课题，新能源并网的电能质量及稳定问题分析和对策研究，2023.01-2023.12 
+8.国家电网公司总部项目，“双高”电力系统短路电流柔性控制关键技术研究，2023.12-2024.12
+9.浙江电科院横向课题，海风汇集站构网型主动支撑控制与装备拓扑技术研究，2024.01-2026.12 
+10.浙江电科院横向课题，异构新能源异构汇集多尺度电压稳定分析与源网协调控制研究，2024.01-2026.12",,"1.Shi Q, Wang G*, Ding L, et al. A sufficient condition for small-signal synchronization stability with applications to PLL-dominated oscillation mode analysis[J]. International Journal of Electrical Power & Energy Systems, 2024, 157: 109882.
+2.Wang Y, Xin H, Wang G*. Iterative Searching Method for Closest Saddle-Node Bifurcation Point in Multi-Infeed HVDC Systems[J]. IEEE Transactions on Power Systems, 2024.
+3.王冠中,王巍,丁磊等. 多机系统锁相环振荡模式的数值域稳定判据[J].电力自动化设备,2024.
+4.王冠中,王巍,丁磊等. 多直流馈入系统最近鞍结分岔点迭代算法[J].电网技术,2024.
+5.江俊贤,陈启超,王冠中*,等.计及不同控制方式的混合直流多馈入系统电网强度评估[J].浙江大学学报(工学版),2023,57(11):2305-2313.",,https://www.ee.sdu.edu.cn/__local/D/69/4B/52ED2CAEE09555AA80C8EF5A654_3049CFDF_987B.jpeg,研究生,博士,1,副研究员,
+朱国防,83,154,,zgfsduee@163.com,讲师,山东宁阳人，1975年10月生。,"新能源发电故障穿越
+智能配电网保护与控制",,,,"国家重点研发计划,“电网故障下风电机组电压/频率暂态主动支撑技术研究”，2018.07-2021.06，在研，参与人",,"朱国防，高厚磊，徐丙垠，等. 配电网电源侧故障下大范围负荷转移优化策略及实现方法[J]．电力系统保护与控制，42(5):73-77,2014
+朱国防，沈培锋，王勇，等. 基于拓扑片的智能分布式馈线拓扑分析[J]．电力系统保护与控制，46(014):152-157,2018
+张黎明, 侯梅毅, 朱国防,等. 基于电压电流协同控制的微网运行模式无缝切换策略[J]. 电力系统自动化[J], 43(005):129-135,158, 2019.
+张明, 朱国防, 嵇文路,等. 基于通信质量检测的自适应分布式智能馈线自动化[J]. 南方电网技术, 2017.
+Zhu Guo-Fang， Gao Hou-Lei; Li Tian-You. A service restoration method for multiple faults in distribution systems based on load balancing distribution, Advanced Materials Research, v 1023, p 160-167, 2014",,https://www.ee.sdu.edu.cn/__local/D/32/DA/6AEB0ED7E2EF58751E41F2195F5_F2CAF8FA_9969.jpg,研究生,博士,1,讲师,山东大学，电气工程学院
+贠志皓,83,154,13969157940,zhihaoyun@sdu.edu.cn,副教授,,"1. 电力系统运行与控制
+2. 大电网静态稳定分析与防控优化
+3. 输配电网的故障定位与测距",,,,"1. 国家重点研发计划-2018智能电网技术与装备专项，2018YFB0904504，多源信息驱动的大电网动态特征分析、安全稳定评估及趋势预测方法，2018/07-2021/12，主持。
+2. 国家重点研发计划-2017智能电网技术与装备专项，2017YFB0902805，智能配电网微型同步相量测量技术集成应用与示范，2017/07-2020/12，主持。
+3. 中国电力科学研究院有限公司，数据驱动的大电网静态稳定态势评估与自适应控制，2018/05-2019/06，主持。
+4. 中国电力科学研究院有限公司，电网静态稳定态势评估与控制基础理论、方法研究和测试，2017/09-2018/01，主持。
+5. 国家自然科学基金面上项目，51177091，渐进学习的电网聚合的调控理论研究，2012/01-2015/12，参加。
+6. 国家863计划子课题，2011AA05A301，大型光伏电站并网关键技术研究，2012/01-2015/12，参加。
+7. 国家863计划子课题，2011AA05A101，间歇式能源发电多时空尺度调度系统研究与开发，2012/01-2015/12，参加。
+8. 国网山东省电力公司电力科学研究院，风电与电网相协调的电网规划技术研究与应用，2012/01-2012/12，主持。
+9. 山东电力集团资助项目，交直流互联方式下山东电网电压稳定分析，2010/01-2010/12，参加。
+10. 国家自然科学基金青年科学基金项目，50807031，大受端电网频率稳定性量化评估理论研究，2009/01-2011/12，参加。
+11. 山东电力集团资助项目，山东电网基于多目标优化的自动电压控制系统，2005/11-2007/12，已结题，参加。",,"1. Zhihao Yun，Xinhui Cui. Online preventive control method for static voltage stability of large power grids, to appear in IEEE Transactions on Power Systems.
+2. Zhihao Yun，Xinhui Cui，Kaigang Ma. Online Thevenin Equivalent Parameter Identification Method of Large Power Grids Using LU Factorization, IEEE Transactions on Power Systems, 2019, 34(6): 4464-4475.
+3. 贠志皓,孙毓婕,丰颖,刘道伟. 大电网静态稳定主导模式在线判别方法研究[J]. 电网技术,2018,42(01):276-284.
+4. 贠志皓,丰颖,咸国富,梁军,刘道伟. 计及发电机无功越限的广域戴维南等值参数在线计算方法[J]. 电力系统自动化,2016,40(11):53-60.
+5. 贠志皓,刘玉田,梁军,王洪涛. 考虑风电功率波动概率特性的主导节点选择方法[J]. 电力系统自动化,2014,38(9):20-25.",,https://www.ee.sdu.edu.cn/__local/D/39/19/C361287659DC8A2E40D7F3547FB_1801F1F1_2B6C6.png,,,1,,
+邹贵彬,83,154,"13505416354,0531-81696197",guibinzou@sdu.edu.cn,教授,,"1. 柔性直流电网与智能配电网的保护控制与故障自愈
+2. 新能源并网控制与送出线路保护
+3. 远海风电全直流组网与送出系统轻型化及控保技术",,,,"1. 柔性直流电网直流侧故障快速处理关键技术，国家自然科学基金项目（2021-2024）
+2. 多端柔性直流电网故障限流与快速保护技术研究，国家自然科学基金（2017-2020）
+3. 智能变电站行波能量比较式快速母线保护研究，国家自然科学基金（2013-2016）
+4. 新能源送出系统继电保护机理研究及虚拟测试平台研制，南网广西电科院项目（2023-2024）
+5. 支持5G通信的有源配电网快速保护与故障自愈技术，国网潍坊供电公司项目（2023-2024）
+6. 有源配电网多端保护算法研究，国网冀北电科院项目（2023-2024）
+7. 含高比例光伏的配电台区储能定容与源储一体化控制技术，国网枣庄供电公司项目（2022-2023）
+8. 中压配电网单相接地故障柔性消弧与选线技术，国网潍坊供电公司项目（2021-2022）
+9. 分布式光伏短路故障暂态特性及保护适应性研究，国网山东电科院项目（2021-2022）
+10. 基于人工智能的电缆故障波形识别技术，山东科汇电力自动化股份有限公司项目（2021-2022）
+11. 智能配电网故障快速自愈理论与实现技术研究，北京和信瑞通电力技术股份有限公司项目（2019-2022）
+12. 面向全断路器配置的配电网分布式保护与故障处理关键技术，国网聊城供电公司项目（2020.1-2020.12）
+13. 直流配电网自适应保护理论与关键技术研究，国网总部科技项目（2017-2020）
+14. 新一代馈线自动化保护控制原理与应用技术研究，山东省重点研发计划（2016-2018）
+15. 有源配电网多源协同优化与故障快速自愈技术研究，国网潍坊供电公司项目（2018-2019）",,"1. Shuo Zhang, Guibin Zou, Feng Gao, Xiuyan Wei, Chenghan Zhou. A comprehensive review of multiport DC circuit breakers for MTdc grid protection, IEEE Transactions on Power Electronics, 38(7), 2023.7.
+2. Chenghan Zhou, Guibin Zou, Shuo Zhang, Maoran Zheng, Junyang Tian, Tao Du. Mathematical morphology-based fault data self-synchronization method for differential protection in distribution networks, IEEE Transactions on Smart Grid, 14(4), 2023.7.
+3. Shuo Zhang, Guibin Zou, Xiuyan Wei, Chenghan Zhou, Chengquan Zhang. Multiport current-limiting hybrid DC circuit breaker for MTdc grids, IEEE Transactions on Industrial Electronics, 70(5), 2023.5.
+4. Xiuyan Wei, Guibin Zou, Chaochao Chen, Shuo Zhang, Chenghan Zhou, Shenglan Song. Single-ended DC line protection scheme based on first peak time of current-limiting reactor voltage, International Journal of Electrical Power & Energy Systems, 152, 2023.10.
+5. Xiuyan Wei, Guibin Zou, Shuo Zhang, Chengquan Zhang. A coupling voltage based adaptive reclosing scheme for flexible DC grid, IET Generation, Transmission & Distribution, 17(5), 2023.3.",,https://www.ee.sdu.edu.cn/__local/0/38/6A/C3F2EE5AFB89CD1D91C91FF399B_32B3EB61_3271.jpeg,研究生,博士,1,,
+陈青,83,154,0531-88392403,qchen@sdu.edu.cn,教授/博导,,"1. 电力系统故障分析与计算
+2. 电网故障诊断
+3. 电力系统继电保护",,,"1. 发明专利：含双馈风电机组的电力系统短路电流计算方法. 专利号：201210324038.5
+2. 发明专利：高压直流输电线路混合故障测距方法. 专利号：201310075147.2
+3. 发明专利：基于电压电流突变方向的高压直流输电线路保护方法. 专利号：201210295511.1","1. 包含FACTS装置的交直流互联系统故障分析方法研究，国家自然科学基金（50877045），2009.1－2011.12；
+2. 基于电力系统广域信息和分布式应用的故障诊断系统研究，省自然科学基金（省科技厅）（项目编号2009ZRB02446），2009.12－2012.12；
+3. 分布式继电保护定值在线校核系统的研究，教育部博士点基金，2013.11-2016.12；
+4. 基于多源信息融合的配电网故障分析技术研究，国家电网重大科技项目(2012093)子课题三， 2012.1－2014.12；
+5. 保护与控制2-智能配电网新型继电保护，“十二五”先进能源技术领域国家科技计划（863计划）子课题(2012AA050213-06)，2012.1－2014.12；
+6. 风电场暂态计算、接入能力及其稳定性数据分析，山东电力集团公司，2011.1－2011.12；
+7. 直流电磁暂态分析及与交流系统的交互影响研究（项目编号5250909），国家电网公司，2009.1－2010.12。","继电保护计算及管理平台RCMBase2000, 国家电力公司中国电力技术奖三等奖, 2002。","1. 停电区域边界断路器信息缺失时的电网故障诊断[J].中国电机工程学报，2013，33(22)。
+2. 同杆双回线故障分析新方法研究，中国电机工程学报, 2005，Vol.25, No.20。
+3. 输电网故障诊断的知识表示方法及其应用[J].中国电机工程学报，2012，32 (4)。
+4. A New Algorithm For Complex Faults and Objected Oriented Programming，    Engineering Intelligent Systems Journal, 2004，SCI。
+5. 基于网格平台的电网故障诊断架构，电力系统自动化，2013,37(3)。",,https://www.ee.sdu.edu.cn/images/15/11/16/1kjar91xx6/w6jw_image001.jpg,研究生,博士,1,继保研究所党支部书记,
+金朝阳,83,154,17862997751,zhaoyang.jin@sdu.edu.cn,副教授,,"①电力系统状态估计
+②新能源并网监测与控制",,,（1）中国专利，金朝阳（#）；丁磊；王晨，一种电力系统预测辅助状态估计方法及系统，已受理，2020.05.09，202010386706.6,"1.国家自然科学基金青年项目，项目号：51907106，适应高比例可再生能源系统的混合状态估计，2020.01-2022.12,28.2万元，已结题，主持；
+2.山东大学青年学者未来计划，2019/09-2024/08，在研，主持；
+3.国网山东电科院 ，储能与火电机组联合调频技术研究，2022.07 -2024.10，25.06万元，在研，主持 ；
+4.国网经研院，电力电子设备在控制器响应过程中的故障近似解析方法研究 ，2022.12 -2023.12 ，29.7万元，在研，主持；
+5.国网日照供电公司，大规模新能源与常规电源协同调峰调频研究，2019.07-2020.12,已结题，主要参与人；
+6.科学技术研究院，适应保护需求的风电机组故障外特性研究，2019.12-2020.12,已结题，主要参与人；
+7.科学技术研究院，张北七端柔直电网工程换流站极控对交流电网的适应性及其优化研究，2019.12-2021.8,已结题，主要参与人；
+8.科学技术研究院，适应储能及新能源参与有偿辅助服务需求的功率控制策略及装置开发研究，2022.01-2024.04，在研，主要参与人；
+9.科学技术研究院，分布式光伏并网点电压控制综合治理方案及应用研究，2022.01-2024.04，在研，主要参与人；
+10.UK Authority Network Innovation Competition(NIC),VISOR (Visualisation of Real Time System Dynamics),2013.01-2017.12,760万英镑，已结题，主要参与人。",,"[1] P.Wall, P. Dattaray, Z.Jin, P. Mohapatra, J. Yu, D. Wilson, V. Terzija (2016). Deployment and demonstration of wide area monitoring system in power system of Great Britain. Journal of Modern Power Systems and Clean Energy, 4(3), 506-518. DOI: 10.1007/s40565-016-0218-3.
+[2] Z. Jin*, P. Dattaray, P. Wall, J. Yu and V. Terzija, “A Screening Rule-Based Iterative Numerical Method for Observability Analysis,“ in the IEEE Transactions on Power Systems, vol. 32, no. 6, pp. 4188-4198, Nov. 2017.
+[3] Z. Jin*; P. Wall; J. Yu; S. Chakrabarti; V. Terzija, “Analysis of Hybrid State Estimators: The Effects of Estimator Formulations“, IEEE Transactions on Power Systems, 2018. (SCI, IF: 5.680)
+[4] Zhaoyang Jin*, Junbo Zhao, Saikat Chakrabarti, Lei Ding, Vladimir Terzija, A hybrid robust forecasting-aided state estimator considering bimodal Gaussian mixture measurement errors, International Journal of Electrical Power & Energy Systems, Volume 120, 2020, 105962, ISSN 0142-0615, https://doi.org/10.1016/j.ijepes.2020.105962.
+[5] Z. Zhu, M. Hou, L. Ding, G. Zhu and Z. Jin, “Optimal Photovoltaic Array Dynamic Reconfiguration Strategy Based on Direct Power Evaluation,“ in IEEE Access, vol. 8, pp. 210267-210276, 2020, doi: 10.1109/ACCESS.2020.3036124.",,https://www.ee.sdu.edu.cn/__local/F/89/0E/CE8A84A4CA8D22596F0C9C42340_B1B87AF7_25704.jpg,研究生,博士,1,,
+郝全睿,83,154,15165173276,haoquanrui@sdu.edu.cn,教授/博导,山东大学“青年学者未来计划”入选者、IEEE PES 直流控制与保护专委会常务理事、《高压电器》青年编委、IEEE 标准工作组 P2837/P2825 成员。,柔性直流输电、直流电网、交直流混合电网,,,"1）基于MMC-UPFC的输电线路三相不平衡治理系统及方法, ZL 2016 1 1196987.4, 2018.11.27
+2）一种限流式快速重合闸直流断路器拓扑结构及控制方法, ZL 2018 1 1 061030.8, 2019.12.27","1）国家自然科学基金面上基金，不对称交流电压下MMC及柔性直流电网基于小信号方法的稳定性研究（51877125），2019.01-2022.12，主持；
+2）国家自然科学基金青年基金，基于三相串联MMC的直流输电线路中间落点控制策略研究（51507093），2016.01-2018.12，主持；
+3）国家重点研发计划子课题，500kV直流断路器拓扑结构电气特性及适应性（2017YFB0902402）, 2017.07- 2020.06，主持；
+4）国家重点研发计划子课题，大容量电力电子装备的多物理场、多时间尺度联合建模和仿真方法（2018YFB0905804），2018.07-2021.06，主持；
+5）山东省自然内科学基金青年基金，基于三相串联模块化多电平换流器的多端混合直流输电关键技术研究（ZR2014EEQ033），2014.12-2017.12，主持；
+1）南方电网公司项目，超（特）高压多端直流输电工程主回路参数计算软件开发，2019.06-2021.12，主持
+2）国家电网公司项目，适用于新疆电网的柔性输电技术应用方法研究，2019.06-2019.12，主持；
+3）国家电网总部项目课题，张北柔直电网送端大规模新能源孤岛系统电压协调控制技术研究，2018.04-2019.12，主持；
+4）国家电网公司项目，新能源接入柔直电网运行特性分析，2017.09- 2017.12，主持；
+5）国家电网公司项目，主动配电网超高速智能配电技术研究及关键设备研制，2014.12- 2015.12，主持；",,"1）Quanrui Hao*, Zheng Li, Chenjing Yue, Feng Gao, Shuying Wang. Small-signal model and dynamics of MMC-HVDC grid under unbalanced grid conditions [J]. IEEE Trans. Power Del., 2020 (Early access).
+2）Quanrui Hao*, Bowei Li, Yifan Sun, Linlin Wu, Shuying Wang. Operating region and boundary control of modular multilevel converter station under unbalanced grid conditions [J]. IEEE Trans. Power Del., vol. 35, no. 3, pp. 1146-1157, Jun. 2020.
+3）Quanrui Hao*, Dong Li, Bowei Li, Shuying Wang. Operating and control of MMC station with constraints of internal variables under unbalanced grid conditions [J]. IET Generation, Transmission and Distribution, vol. 14, no. 10, pp. 1829-1840, May 2020.
+4）Quanrui Hao*, Zheng Li, Feng Gao and Jing Zhang. Reduced-order small-signal models of modular multilevel converter (MMC) and MMC-based HVDC Grid [J]. IEEE Trans. Ind. Electron., vol. 66, no. 3, pp. 2257-2268, Mar. 2019.
+5）Zheng Li, Quanrui Hao*, Feng Gao, Linlin Wu, Minyuan Guan. Nonlinear decoupling control of two-terminal MMC-HVDC based on feedback linearization [J]. IEEE Trans. Power Del., vol. 34, no. 1, pp. 376-386, Feb. 2019.",,https://www.ee.sdu.edu.cn/__local/3/D8/EB/853A18DC3B5D75AE85646F1BB52_097FDB1B_19576.png,研究生,博士,1,教师,
+高厚磊,83,154,"0531-88395401,0531-81696199",houleig@sdu.edu.cn,教授,,"1. 特高压交直流电网继电保护：行波保护，全信息量保护，故障测距
+2. 智能变电站保护与控制：电子式互感器，站域保护，层次化保护
+3. 智能配电网保护与控制：含DG配电网故障特性分析与保护方法，分布式馈线自动化",,,,"1. 大型交直流混联电网故障特性分析与保护，国家重点研发计划专项课题，2016YFBO900603，2016-2021
+2. 电子式互感器行波传变特性分析及应用技术研究，国家自然基金面上项目，51177094，2012-2015
+3. 智能配电网新型继电保护，国家863项目子课题，2012AA050213-06，2012-2015
+4. 主后分离模式下后备保护原理及应用技术研究，国网许继集团科技项目，2016-2017
+5. 适应分布式电源接入的配电网运行控制技术研究，国网山东省电力公司重点项目，2014-2016
+6. 分布式馈线自动化快速保护控制技术研究，国网山东省电力公司科技项目，2013-2014
+7. 高配电网相间故障处理能力关键技术研究与开发，国网公司重点科技项目，2012-2014",,"1. 李娟，高厚磊，徐丙垠，等. 含DG配电网差动保护自同步原理及误差分析[J]. 电力系统自动化，2016，40(9)：78-85
+2. 李娟，高厚磊，朱国防. 考虑逆变类DG特性的有源配电网反时限电流差动保护[J]. 电工技术学报,2016,31（17）：177-186
+3. 程超，高厚磊，邹贵彬. 提高分布式电源接纳能力的配电网一次设备改造[J]. 电力自动化设备，2016,36（6）:102-107
+4. 彭放，高厚磊，刘益青，等.  基于RTDS-GETNET的智能变电站保护装置实用化测试技术及方案[J]. 电力自动化设备，2016,36（5）:160-165
+5. Zhang  Shuai, Gao Houlei, Song Yingtao. A New Fault Location Algorithm for  Extra-high Voltage Mixed Lines Based on Phase Characteristics of Hyperbolic  Tangent Function [J].  IEEE Transactions on Power Delivery, Vol.31,No.3  ,June 2016.",,https://www.ee.sdu.edu.cn/images/15/11/19/1e55vripx2/b8oq_image001.jpg,研究生,博士,1,所长,
+高湛军,83,154,0531-81696136,jacob-gao@sdu.edu.cn,副教授,,"1. 智能变电站故障诊断及保护研究
+2. 配电网故障检测与诊断研究",,,"1. 发明专利：一种智能变电站故障诊断与评估方法
+2. 发明专利：一种用于智能变电站二次系统的故障诊断方法
+3. 发明专利：一种基于概率加权二分图的智能变电站故障诊断方法
+4. 发明专利：一种基于D-S证据理论的配电网故障定位方法
+5. 发明专利：基于数据网格的配电网故障诊断系统
+6. 发明专利：一种结合拓扑与继电保护逻辑的智能变电站故障诊断方法","1. 国家自然基金项目：计及网络化二次系统的智能变电站故障诊断与评估方法研究企
+2. 企事业单位委托项目：智能变电站保护仿真关键技术研究
+3. 国家电网公司横向项目：基于组件的电力系统保护与控制实训仿真系统关键技术研究
+4. 企事业单位委托项目：矿井供电系统安全性、可靠性研究
+5. 863计 划项目：保护与控制2-智能配电网新型继电保护（第六位）",1. 基于组件的电力系统保护与控制实训仿真系统研究，获得山东电力科学技术三等奖,"1. 基于继电保护时空参数的电网故障诊断模型[J]，电力系统自动化，2012
+2. 应用于电网故障诊断的统一信息模型[J]，电力系统自动化，2010
+3. Gao  Zhanjun, Peng Zhengliang, Gao Nuo. “A Distribution Network Fault Data Method  Based on Association Rule Mining”, Power and Energy Engineering Conference (APPEEC), 2014 IEEE PES  Asia-Pacific
+4. Gao  Zhanjun, Wang Junshan, Gao Nuo, “Fault diagnosis method of the intelligent  substation”, Power and Energy Engineering Conference (APPEEC), 2014 IEEE PES  Asia-Pacific
+5. Gao  Zhanjun，Wang Junshan，Gao  Nuo, “ A Substation Fault Diagnosis Method Based on IEC61850.” 2015 IEEE  POWER &amp; ENERGY SOCIETY GENERAL MEETING",,https://www.ee.sdu.edu.cn/images/15/11/02/10qhkd86w8/nulk_image001.jpg,研究生,博士,1,,
+郭一忱,83,154,13285313582,gyichen1990@sdu.edu.cn,助理研究员,,"1. 低惯量电力系统运行控制
+2. 新能源发电并网控制
+3. 电力系统主动解列",,,,"1. 国家自然科学基金委员会, 面上项目, 51477093, 计及暂态稳定约束和群特性的主动解列策略研究, 2015-01 至 2018-12, 77万元, 结题, 主要参与人
+2. 中国电力科学研究院, 国家重点研发计划, 20018YFB0904004, 电网故障下风电机组电压/频率暂态主动支撑技术研究, 2018-07 至 2021-06, 805万元, 结题, 参与
+3. 国网山东省电力公司, 重点科技项目, 1390019031, 含高比例可再生能源的电网频率协同控制技术研究, 2019-01 至 2020-12, 172万元, 结题, 参与",,"1. Lei Ding; Yichen Guo; Power system controlled islanding schemes，In：Monitoring and Control Using Synchrophasors in Power Systems with Renewables, The Institution of Engineering and Technology, 2020 (学术专著)
+2. Lei Ding; Yichen Guo; Peter Wall; Kai Sun; Vladimir Terzija ; Identifying the Timing of Controlled Islanding Using a Controlling UEP Based Method, IEEE Transactions on Power Systems, 2018, 33(6): 5913-5922 (期刊论文期)
+3. Yichen Guo; Weiyu Bao; Lei Ding; Zhifan Liu; Mostafa Kheshti; Qiuwei Wu ; Analytically derived fixed termination time for stepwise inertial control of wind turbines—Part II: Application strategy, International Journal of Electrical Power and Energy Systems, 2020, 121 (期刊论文)
+4. Lei Ding; Yichen Guo; Peter Wall ; Performance and Suitability Assessment of Controlled Islanding Methods for Online WAMPAC Application, International Journal of Electrical and Energy Systems, 2017, 84: 252-260 (期刊论文)
+5. 丁磊; 郭一忱; 陈青; Vladimir Terzija ; 电力系统主动解列的可行解列时窗研究, 电工技术学报, 2015, 30(12): 415-421 (期刊论文)",,https://www.ee.sdu.edu.cn/__local/0/D6/71/03C6FF996FBA94BF6947B478B8B_0CEF2390_250C.jpg,研究生,博士,1,助理研究员,
+蔡德宇,83,154,15618406412,deyucai@sdu.edu.cn,副研究员,,"1. 100%可再生能源交流系统的运行、保护与控制；
+2. 低惯量电力系统动态特性及控制；
+3. 可再生能源接入弱电网的保护与控制；
+4. 电网友好型和电网支撑型逆变器控制技术；
+5. 可再生能源参与电网频率控制及故障穿越技术；
+6. 可再生能源经柔直外送系统联合运行与故障穿越技术。",,,,"1. 国网山东省电力公司日照供电公司科技项目， “大规模新能源与常规电源协同调峰调频研究”， 2019-2020.12，在研，主要参与人；
+2. 国家电网公司总部科技项目“含高比例可再生能源的电网频率协同控制技术研究”，2019-2020.12；
+3. 南瑞集团有限公司， “适应保护需求的风电机组故障外特性研究”， 2019--2020.12，在研，主要参与人
+4. “UK Authority Network Innovation Competition (NIC)”， VISOR (Visualisation of Real Time System Dynamics)， 2013-2017.12，已结题，主要参与人；
+5. “Wide Area Monitoring, Protection and Control for Future GB Power System”, Funded by National Gird, UK, 2008-2012,已结题，项目负责人。",,"1. D. Cai ; P. Regulski ; M. Osborne ; V.  “Wide Area Inter-Area Oscillation Monitoring Using Fast Nonlinear Estimation Algorithm”, IEEE Trans. on Smart Grid ,Vol.4, Iss.3, Sept. 2013,pp 1721 - 1731.
+2. D. Cai ; P. Wall ; M. Osborne ; V.  “Roadmap for the deployment of WAMPAC in the future GB power system”, IET Generation, Transmission &amp; Distribution, Vol.10, Iss.7,May. 2016,pp. 1553–1562.
+3. D. Cai; P. Regulski, V. , “Smart application for inter-area oscillations monitoring based on Newton-type algorithm”INTERNATIONAL TRANSACTIONS ON ELECTRICAL ENERGY SYSTEMS, NOV 2016, Vol. 26, Iss. 11pp. 2370-2384.
+4. D. Cai ; L. Ding ; X. Zhang ; V., “Wide Area Inter-area Oscillation Control System in a GB Electric Power System”, IET, The Journal of Engineering,Vol.2019, Iss.16, Mar. 2019,pp: 3294 – 3300.
+5. V.  ; D. Cai ; V. Stanojevic ; G. Strbac, “Frequency and Power Components Estimation from Instantaneous Power Signal”， IEEE Trans. on Instrumentation and Measurement,Vol.60, Iss: 11, Nov. 2011,pp 3640 - 3649.",,https://www.ee.sdu.edu.cn/__local/E/6B/D9/F4ED2908C9812D7B7E5AD6C4E11_C25C5BB1_BACE.png,研究生,博士,1,,
+鲍威宇,83,154,18615554328,baoweiyu@sdu.edu.cn,副研究员,,"1. 电力系统频率控制
+2. 新能源并网控制",,,"1. 一种风储一体化系统参与电网系统调频的控制方法及系统, CN116111613B，2023年6月
+2. 风电机组协同调频最优退出时间的确定方法，CN106451548B，2019年1月
+3. 风储协调的直驱风电机组控制方法及系统, CN114301103B, 2022年6月
+4. 基于雷达前馈控制的风电调频载荷优化控制方法及系统, CN115370537B, 2023年2月
+5. 一种电网频率扰动过程风储协调控制方法及系统, CN113224774B, 2022年7月
+6. 风储联合系统运行控制方法及控制系统, CN113178897B, 2023年6月
+7. 一种风电机组与储能协调调频控制方法及系统, CN113162073B, 2022年11月","1. 国家自然科学基金企业创新发展联合基金课题，新型电力系统有功控制基础理论和方法研究，2023-2026.
+2. 山东省自然科学基金青年基金，适应新型电力系统频率安全需求的新能源频率支撑方法研究，2024-2026.
+3. 山东大学优秀博士研究生创新能力提升计划，高比例可再生能源电力系统协同调频，2020-2021.
+4. 中国电力科学研究院科技项目，新型电力系统发电机组惯量特性研究，2023.
+5. 交直流局域电力系统动态控制策略研究，山东电力工程咨询院科技项目，2023-2024",,"1. Weiyu Bao, Lei Ding, Yong Cheol Kang, Long Sun. Closed-Loop Synthetic Inertia Control for Wind Turbine Generators in Association with Slightly Over-Speeded Deloading Operation[J]. IEEE Transactions on Power Systems, in press. (SCI收录，影响因子7.326)
+2. Weiyu Bao, Qiuwei Wu*, Lei Ding*, Sheng Huang, Vladimir Terzija. A Hierarchical Inertial Control Scheme for Multiple Wind Farms with BESSs Based on ADMM[J]. IEEE Transactions on Sustainable Energy, 2021, 12(2), 751-760. (SCI收录，影响因子8.310)
+3. Ruiming Wang, Shiyao Qin, Weiyu Bao*, Anxiang Hou, You Ying; Lei Ding. Configuration and Control Strategy for an Integrated System of Wind Turbine Generator and Supercapacitor to Provide Frequency Support[J]. International Journal of Electrical Power and Energy Systems, 2023, accepted. (SCI收录，影响因子5.659)
+4. Weiyu Bao, Lei Ding*, Zhifan Liu, Guofang Zhu, Mostafa Kheshti, Qiuwei Wu, Vladimir Terzija. Analytically derived fixed termination time for stepwise inertial control of wind turbines—Part I: Analytical derivation[J]. International Journal of Electrical Power & Energy Systems, 2020, 121. (SCI收录，影响因子5.659)
+5. Yichen Guo, Weiyu Bao, Lei Ding*, Zhifan Liu, Mostafa Kheshti, Qiuwei Wu, Vladimir Terzija. Analytically derived fixed termination time for stepwise inertial control of wind turbines—Part II: Application strategy[J]. International Journal of Electrical Power & Energy Systems, 2020, 121. (SCI收录，影响因子5.659)",,https://www.ee.sdu.edu.cn/__local/7/1F/1A/57FA468EC194F35B97319182848_4BCE7A6C_1AA582.png,研究生,博士,1,副研究员,山东大学电气工程学院
+王广柱,83,154,0531-81696189,sdwgz@sdu.edu.cnn,教授,,"1.  电力电子技术在电力系统中的应用：柔性交直流输电变换技术、STATCOM、电力有源滤波器、统一潮流控制器等，以及光伏发电并网技术等。
+2.  电力电子系统及其控制：高频开关电源、逆变电源、电动汽车变换器、无线功率传输技术等新型电力电子电路与系统。",,,"1.  王广柱，王明达，模块化多电平变换器电容电压自平衡电路，2015.12.9-2035.12  .9，中国，CN201310694315.6。
+2.  王广柱，王凤荣，李峰，张兰华，孙常鹏，刘汝峰，PWM功率变换器模拟仿真电路及仿真方法，2015.7.1-2035.7.1，中国，CN201310244587.6。
+3.  王广柱，一种模块化多电平矩阵变换器电容预充电系统及方法，2015.5.20-2035.  5.20，中国，CN201210562824.9。
+4.  王广柱，一种模块化多电平变换器电容分组预充电的系统及方法，2015.7.8-2035  .7.8，中国，CN201210350682.X。
+5.  王广柱，一种矩阵式交-交高压变频器拓扑结构，2014.7.16-2034.7.16，中国，C N201210066019.7。
+6.  王广柱，张兰华，一种模块化多电平变换器的综合控制系统及其方法，2013.1.2-  2033.1.2，中国，CN201110050759.7",主持国家自然基金项目2项、863子课题1项、省部级及横向课题10余项。,,"1.  王广柱，李峰，王凤荣，孙常鹏，刘汝峰，模块化多电平变换器模拟仿真技术，电力系统自动化，2015，（14）：145-150。
+2.  王广柱，孙常鹏，刘汝峰，王凤荣，李峰，基于桥臂电流控制的模块化多电平变换器综合控制策略，中国电机工程学报，2015，35（02）：458-464。
+3.  王广柱，贾春娟，张立斌，一种带钢铠的低压电力电缆故障精确定位新方法，电力系统自动化，2014，38（03）：161-165。
+4.  王广柱，模块化多电平换流器桥臂电流直接控制方案，电力系统自动化，20 13，37（15）：35-39+46。
+5.  王广柱，王玉斌，贾春娟，参数变化对抛物线PWM电流控制的影响及其对策，中国电机工程学报，2012，（36）：9-14+20。",,https://www.ee.sdu.edu.cn/images/16/03/images/16/03/03/1ew0w7tyna/1auz_image001.jpg,研究生,硕士,1,,
+王玉斌,83,154,0531-81696190,yb_wang@sdu.edu.cn,教授,,电力电子变换器拓扑与控制技术、新能源与分布式发电、高增益DC/DC变换器、电能质量与谐波综合治理、软开关技术等领域的科研与教学工作,,,"1. 王玉斌，王璠等. 一种低电压纹波多相高增益双向dc-dc变换器及其控制方法，中国发明专利ZL202010681258.8， 2021. 9.14授权.
+2. 王玉斌，王璠等. 一种多相高增益双向直流变换器、控制方法及系统, 中国发明专ZL202010407610.9，2021.3.2授权.
+3. 王玉斌，郭政等。一种双向dc-dc软开关电路及宽范围软开关控制方法，中国发明专利ZL201911311015.9，2020.10.30授权.
+4. 王玉斌，王璠, 等. 宽输入宽输出三相高增益直流变换器及控制方法，中国发明专利201911060036.8.(2020.8.4授权)
+5. 王玉斌，王璠, 等. 一种高增益双向三相DC-DC变换器及控制方法，中国发明专利201810031749.0.( 2020.3.31 授权)
+6. 王玉斌，王璠, 等. 一种串联式多相交错耦合电感结构及其控制方法, 中国发明专利201810339887.5.(2019.9.27授权)
+7. 王玉斌，王璠, 等. 一种基于耦合电感的高增益双向四相DC-DC变换器及控制方法, 中国发明专利201810215005.4. (2019.6.14授权).
+8. 王玉斌，于程皓, 李厚芝. 一种高压SIC器件过流检测与保护电路、装置及方法, 中国发明专利201610394900.8. (2018.07.17授权) .
+9. 王玉斌，林意斐, 等. 一种用于两模块DC-DC变换器并联的均流控制系统和方法, 中国发明专利201510411610.5. （2017.6.16授权）.
+10. 王玉斌，林意斐, 等. 用于多模块并联组合DC-DC变换器的均流控制系统及控制方法, 中国发明专利201510412918.1. （2017.5.24授权）.
+11. 王玉斌，董彦彦, 林意斐, 封波. 用于软开关ZVT变换器的自适应可调延时电路, 中国发明专利201410294420.5.（2016.8.24授权）.","1. 教育部产学研协同育人项目“基于固玮PTS系列电力电子师资培训”，2021.03-2022.03，主持。
+2. 教育部产学研协同育人项目“基于固玮PTS系列电力电子实训系统的电力电子实验指导书”，2020.04-2021.04，主持。
+3. 国家自然科学基金面上项目“不对称交流电压下MMC及柔性直流电网基于小信号方法的稳定性研究”（51877125），2019.1-2022.12，第二位。
+4. 山东省自然科学基金面上项目“基于固态变压器的直流微网的稳定性和能量管理协调管理关键技术研究”（ZR2018MEE037），2018.3-2021.6，主持。
+5. 国家自然科学基金面上项目“用于智能微网的软开关固态变压器及其控制技术研究”（51277115），2013.1-2016.12，主持。
+6. 国家自然科学基金面上项目“用于智能电网的级联模块化多电平矩阵变换器及其控制技术”（51177095），2012.1-2015.12，主要参与。
+7. 国家自然科学基金项目“微电网的多端口混合储能拓扑优化与多目标控制策略研究”（51107068），2012.1-2014.12，第二位。
+8. 山东省自然科学基金面上项目“应用于智能微网的软开关逆变器拓扑和PWM固态开关技术的研究”（ZR2011EEM026），2011.7-2014.7，主持。
+9. 教育部留学归国人员科研启动基金项目“软开关并网ZVT逆变器拓扑优化与微电网无缝切换控制技术的研究”（教外司留[2010]609号），2010.6-2013.6, 主持。
+10. 济南市科技局--高校院所自主创新项目“新型高效软开关型并网/独立双模式运行的光伏逆变器”（201202093），2012-2014, 主持.",,"1. Fan Wang, Yubin Wang*, et al. Multiphase Low Stresses High Step-Up DC–DCConverter With Self-Balancing Capacitor Voltagesand Self-Averaging Inductor Currents. IEEE Trans. on Power Electronics, 2022. 37(6):6913-6926. （SCI 1区）
+2. Xinna Tian, Yubin Wang*, et al. An adaptive nonlinear droop control for accurate load current sharing and DC bus voltage compensation in a DC power system. Journal of Power Electronics. 2022. 22(2):308-317. （SCI收录）
+3. 明佳，王玉斌*，等. 直流微网的大信号稳定性分析及有源阻尼补偿方法. 电工技术学报，2021.36（S2）, 517-529. （EI收录）
+4. Shenhong Wang, Yubin Wang*, et al. Low current ripple high step-up interleaved boost converter with switched-capacitors and switched-inductors. Journal of Power Electronics. 2021. 21:1646–1658.（SCI收录）
+5. Zheng Guo, Yubin Wang*, et al. Wide input/output control strategy for multiphase series capacitor bidirectional DC-DC converters. Journal of Power Electronics. 2021. 21:735-746. （SCI收录）",,https://www.ee.sdu.edu.cn/__local/8/F6/17/3103DF6EBD261F527B9952BE834_2F44A07B_3980.jpg,,,1,研究所所长,
+王志军,83,154,15908083001,wangzhijun@sdu.edu.cn,副教授,,100%新能源电力系统运行与控制；风力发电、光伏发电并网；柔性直流输电；分布式发电反孤岛保护,,,,"1. 国网山东省电力公司电力科学研究院，含高比例可再生能源的电网频率协同控制技术研究，2019/06-2020-12，20万元，负责人。
+2. 山东大学基本科研业务费资助项目，2019/01-2021/12，15万元，负责人。
+3. 中国电力科学院，高比例新能源接入电力系统分散集群控制研究，2019/01-2020/12, 100万元，主要参与人。
+4. 中国电力科学院，张北七端柔直电网工程换流站极控对交流电网的适应性及其优化研究，2019/12/-2020/8, 39万元，主要参与人。",,"1. Z. Wang, J. Xiong, X. Wang*, Investigation of frequency oscillation caused distributed generation nuisance trips, IEEE Transactions on Smart Grid, 2019, 10(6), 6092-6101.
+2. T. Wang, M. Meskin, X. Su, I. Grinberg, Z. Wang*, Optimal inverter based distributed generation units control strategy to improve voltage profiles in unbalanced distribution networks, IET Generation, Transmission & Distribution, 2019, 13(21): 4910-4921.
+3. J. Zheng*, Z. Ma, Z. Wang, X. Wang, S. Zhu, L. Wei, Feature distance based online cluster modeling of LVRT controlled PV power plants, Electric Power Systems Research, 154(2018): 223-233.
+4. W. Meng, X. Wang*, Z. Wang, I. Kamwa, Impact of causality on performance of phasor measurement unit algorithms, IEEE Transactions on Power Systems, 2018, 33(2): 1555-1565.
+5. S. Liu*, P. Liu, X. Wang, Z. Wang, W. Meng, Effects of correlated photovoltaic power and load uncertainties on grid-connected microgrid day-ahead scheduling, IET Generation, Transmission & Distribution, 2017, 11(14): 3620-3627.",,https://www.ee.sdu.edu.cn/__local/A/4C/73/7A178525F38BA4A755E54CD1CAB_81E25A4D_1188D.png,研究生,博士,1,副研究员,
+王辉,83,154,0531-81696191,sddlwh@sdu.edu.cn,教授,,"1. 大功率电力电子技术
+2. 新能源与分布式发电
+3. 电动汽车驱动与充电
+4. 电能质量与谐波综合治理",,,,"1. 电动汽车驱动系统与蓄电池高效充电一体化混合拓扑优化与控制，国家自然科学基金，主持
+2. 微源逆变器与储能装置在微电网独立运行模式下的控制策略研究，国家自然科学基金，主持
+3. 纯电动汽车驱动与充电一体化混合拓扑优化与控制研究，山东省自然科学基金，主持
+4. 微电网独立运行模式下的控制策略研究，山东省自然科学基金，主持
+5. 500kV直流断路器拓扑结构电气特性及适应性,国家重点研发计划子课题，第二
+6. 用于智能电网的级联模块化多电平矩阵变换器及其控制技术，国家自然科学基金，第二
+7. 适用于新能源孤岛送出系统的电压源型换流器的拓扑结构研究，2019-2021，横向
+8. 配电网电能质量薄弱点评估方法及电能设备协调控制研究， 2019-2020,横向。",,"1. Huizhong Sun, Hui Wang, Wenlong Qi. Automatic Power Decoupling Controller of Dependent Power Decoupling Circuit for Enhanced Transient Performance[J]. IEEE Transactions on Industrial Electronics, 2019, 66(3):1820-1831. 
+2. Huizhong Sun, Hui Wang, Xinchen Zhao. Line Braking Torque Allocation Scheme for Minimal Braking Loss of Four-Wheel-Drive Electric Vehicles[J]. IEEE Transactions on Vehicular Technology, 2019, Jan, 68(1):180-192. 
+3. Hui Wang, Kun Yan, Zhixiang Ling, Jinhao Gan. Switching Strategy for Isolated Dual-Active-Bridge Converter[J]. IET on Power Electronics, JAN 20 2017, 10(1): 29-37.
+4. Hui Wang, Ying Liu, Kun Yan, Yongsheng Fu, Chenghui Zhang. Analysis of static VAr compensators installed in different positions in electric railways[J]. IET Electrical System in Transportation, Sep 2015, 5(3):129-134. 
+5. 王 辉，马 超，郝全睿，韩国庆.一种强制换流型混合式高压直流断路器方案[J]. 高电压技术, 2019, 45(8):2425-2433 .",,https://www.ee.sdu.edu.cn/__local/D/5F/6C/F4C103D8630D49891966FCADC30_63AA5D7E_178FD.png,研究生,博士,1,副所长,
+王鹏,83,154,13964197187,p.wang@sdu.edu.cn,助理研究员,,"1. 风力发电控制与稳定性评估
+2. 直流电网建模与稳定性分析
+3. 电力电子化电力系统建模与稳定运行",,,"1. 王鹏, 赵浩然, 罗嘉, 等. 基于全动态阻抗模型的风电并网稳定性判定方法及系统.
+2. 基于分段仿射的风电场阻抗在线构造方法及系统
+3. 风电场小扰动稳定梯度裕度边界在线构造方法及系统","1. 新能源电站的实测建模与模型参数优化技术研究，国网科技项目，主持。
+2. 混合直流数字物理混合仿真接口算法研究，国网科技项目，参与
+3. 德国多端多形态直流电网及新能源友好并网技术研究，德国联邦经济与能源部，子课题负责人
+4. 逆变器的PowerFactory建模，企业委托项目，主持
+5. 新一代全SiC电力电子变压器核心装备开发，企业委托项目，主持",,"1. Peng Wang, Maren Kuschke, Kai Strunz. Analytical Modeling of Modular Multilevel Converter Under Pole-to-Pole DC Fault and Application to System Design and Protection[J]. IEEE Transactions on Energy Conversion, 2022, 37(4): 2722-2736.
+2. Peng Wang, Maren Kuschke, Kai Strunz. Equal-Area Criterion and Analytical Model for Transient Stability Assessment of Hybrid AC–DC Transmission System Using Voltage Sourced Converter[J]. IET Renewable Power Generation, 2023, 17(1): 18-35.
+3. Peng Wang. Analytical Modeling for Evaluation of Efficiency and Fault Transients of the Modular Multilevel Converter in HVDC Systems, doctoral thesis, 博士论文获得“summa cum laude (最优)”称号
+4. Shunig Gao, Haoran Zhao, Peng Wang. Comparative Study of Symmetrical Controlled Grid-Connected Inverters[J]. IEEE Transactions on Power Electronics, 2021, 37(4): 3954-3968.
+5. Yuexin Ma, Haoran Zhao, Peng Wang, Jia Luo, Weijie Zheng, Jinlong Wang, “Parameter Identification and Stability Analysis of DFIG,“ The 6th International Conference on Power Energy Systems and Applications, Singapore, 2022.",,https://www.ee.sdu.edu.cn/__local/F/9E/4E/490C896BA0F79D2177E4CE910D8_C7CF33D4_6F97.jpeg,研究生,博士,1,,
+白树忠,83,154,18605312560,baishzh@sdu.edu.cn,副教授,,电力电子变换器控制技术、分布式发电技术、电能质量分析、信号与信息处理,,,,"1. 主持“双频四通道高精度金属检测机开发”。2012.11-2013.12
+2. 主持“高压设备无线测温系统开发”，2012.11-2014.12
+3. 国家自然科学基金面上项目“用于智能微网的软开关固态变压器及其控制技术研究”（51277115），2013.1-2016.12。第三位",,"1. Text Independent Speaker Verification  Based on Mixing ICA Overcomplete Basis Functions. 3rd International Conference on International Information Hiding  and Multimedia Signal Processing, IIHMSP 2007. (EI)
+2. An Improved L1-Norm  Algorithm for Underdetermined Blind Source Separation Using Sparse  Representation. 41st  Asilomar Conference on Signals, Systems and Computers, ACSSC2007. (EI)
+3. Algorithm for Underdetermined Blind  Source Separation Based on Least-Mean-Square Error and Sparse Features.   Third International Conference on Innovative Computing, Information and  Control. ICICIC08. (EI)
+4. 基于最小均方误差和稀疏特征的欠定盲源分离，山东大学学报工学版；2008.08
+5. Space Vector Based Hysteresis Control  Strategy with Fixed Switching Frequency for UPQC. International Journal of  Automation and Power Engineering (IJAPE). May 2013. 151-156.",,https://www.ee.sdu.edu.cn/system/_owners/dqxy/_webprj/images/15/11/17/1mhcepl3ei/6wmu_image001.jpg,,,1,,
+朱珂,83,154,13589008410,zhuke@sdu.edu.cn,副教授,,"1.智能配电网状态监测与故障诊断
+2.电力电子技术在电力系统中的应用
+3.含分布式清洁能源配电网继电保护",,,,"1）基于电力电子信号技术的主动配电网故障诊断技术研究，福建省电力公司，2023年，50万，(主持)
+2）基于物联网技术的配电开关一二次深度融合与精益运维关键技术研究及应用子课题，国家电网公司，2020年，60万，（主持） 
+3）一二次融合成套设备智能化提升关键技术研究，福建省电力公司，2020年，87万，(主持)
+4）一二次融合设备模块制作与样机测试，福建省电力公司，2019年，20万，(主持)
+5）电力电子扰动技术及其在谐振接地系统状态监测中的应用研究，省重点研发计划，2018年，20万，(主持)
+6）面相主动配电网运行状态分析的数据挖掘方法研究，国家电网公司，2018年，50万，(主持)
+7）智能配电网三相自适应重合闸技术研究，省自然科学基金，2017年，9万，(主持)
+8）配电线路三相自适应重合闸技术及其在智能配电网停电线路故障检测中的应用研究，国家电网公司，2017年，75万，(主持)
+9）电压跌落源监测实验平台测试，山东省电力公司，2016年，27万，(主持)
+10）电压跌落源监测定位系统测试，山东省电力公司，2016年，10万，(主持)
+11）电压跌落源监测及定位方法研究，山东省电力公司，2016年，24万，(主持)
+12）孤岛监测装置开发研究，山东省电力公司，2015年，45万，(主持)
+13）10kV配电系统TSC装置开发应用，山东省电力公司，2015年，72万，(主持)
+14）自适应控流型故障选线方案，省青年奖励基金，2014年，5万，(主持)
+15）自适应控流型故障选线装置开发应用，山东省电力公司，2014年，37万，(主持)",,"1) Jiabi Liang, Ke Zhu*. Distribution Capacitor Health Monitoring Based on the Disturbances of Element Breakdown Faults, IEEE Transaction on Power Delivery.2022,37(5):4064-4071.
+2) Jiabi Liang, Ke Zhu*. Transient Characteristics Analysis of Shunt Capacitor Asynchronous Energizing, IEEE Transaction on Power Delivery.2020,35(5):2186-2195.
+3) Ke Zhu, Rundong Lv. A three-phase adaptive reclosure technology for distribution feeders based on parameter identification, IEEE Transaction on Power Delivery.2019,34(6):2173-2181.
+4) Jiabi Liang, Ke Zhu*. Coded Switching Scheme for Monitoring the Operation of Distribution Capacitors, IEEE Transaction on Power Delivery. 2018, 33(6): 3075-3084.
+5) Men Xiyan, Ke Zhu*. Effectiveness evaluation of representative transient reactive power location algorithms, 2022 Power System and Green Energy Conference,2022,843-847.",,https://www.ee.sdu.edu.cn/__local/8/57/6F/570E2EE91421D73A0F98900DFBC_FAC39C31_CA2C.png,研究生,博士,1,教师,
+孙媛媛,83,154,13953164589,sunyy@sdu.edu.cn,教授,教授、博士生导师，山东省“泰山学者”青年专家，泉城产业领军人才，山东大学青年学者未来计划，IEEE Senior Member，中国电机工程学会高级会员，中国电工技术学会高级会员；IEEE PES中国区低压直流供用电技术分委会秘书长，IEEE PES中国区输配电技术委员会优质供电分委会常务理事，中国建筑节能协会光储直柔专委会副主任，山东省电工技术学会常务理事，《电力系统保护与控制》青年编委，《供用电》期刊编委。,"1. 电力系统电能质量
+2. 柔性直流供用电系统
+3. 智能配电网",,,"1. A harmonic contribution evaluation system based on cloud-edge-end collaboration, 申请号：PCT/CN2022/137579, 申请日：2022.12.8.（PCT国际专利）
+2. 一种配电网光伏最大准入功率评估方法及系统, ZL202310973049.4, 2023.10.27.
+3. 分布式光伏谐波定量评估方法、系统、终端设备及介质, ZL202310658384.5, 2023.08.18.
+4. 新能源孤岛经柔直电网送出系统参数优化方法及系统, ZL202110908364.X, 2023.08.08.
+5. 基于双重相关指标的谐波发射水平模糊评价方法及系统, ZL202310092927.1, 2023.05.09.
+6. 一种考虑分布式光伏谐波耦合的时变电流评估方法及系统, ZL202211017156.1, 2023.04.11.
+7. 用于抑制电压越限的光伏逆变器控制方法及系统, ZL 202210394803.4, 2023.03.24.
+8. 一种非理想条件下多脉波整流器的谐波评估方法, ZL 202210972065.7, 2023.03.17.
+9. 三相不平衡运行工况下6脉波整流器谐波电流评估方法, ZL 202210395958.X, 2023.03.17.
+10. 一种基于云边端协同的谐波溯源系统及方法, ZL 202210979469.9, 2022.11.18.
+11. 分布式光伏智能住宅的需求响应调度方法及系统, ZL 202211030305.8, 2022.11.18.
+12. 一种LCC-MMC混合级联直流电网受端MMC稳定运行域的确定方法, ZL 202211010621.9, 2022.11.18.
+13. 基于源荷等效导纳的台区谐波责任定性评估方法及系统, ZL 202210997501.6, 2022.11.15.
+14. 考虑寄生参数的多有源桥变换器暂态振荡抑制方法及电路, ZL 202210952793.1, 2022.11.01.
+15. 一种基于有限量测的配电网分区谐波责任评估方法及系统, ZL 202210415230.9, 2022.10.18.
+16. 基于功率分段的电弧炉供电系统谐波评估方法与系统, ZL 202210874719.2, 2022.10.14.
+17. 基于扩展谐波域模型的风力发电系统输出监测方法及系统, ZL 2020105480693, 2022.07.01.
+18. 一种直驱风机经柔直送出系统稳定性分析方法及系统, ZL 202110161033.4, 2022.06.21.
+19. 一种海上平台干式变压器状态监测与故障预警方法, ZL 202010021502.8, 2022.05.03.
+20. 一种用于分析电网不确定性潮流的方法及系统, ZL 202010115626.2, 2022.03.11.
+21. 基于虚拟调制的闭锁故障后直流过电压抑制方法及系统, ZL 202010104816.4, 2021.10.26.
+22. 一种双馈入VSC输电系统稳定性评估方法及系统, ZL 202010759368.1, 2021.09.24.
+23. 一种用于建立集合性居民负荷的谐波建模方法及系统, ZL 201911090121.9, 2021.09.03.
+24. 基于改进热网络模型的变压器热点温度识别方法及系统, ZL 202010467489.9, 2021.05.18.
+25. 弱电网连接下电压源型换流器电压前馈环节作用分析方法, ZL 201911113979.2, 2021.01.05.
+26. 一种基于实测数据建立家用电器负荷谐波模型的方法, ZL 201811258954.7, 2020.10.30.
+27. 一种配电系统抗短路故障干扰的谐波责任划分方法, ZL 201810891385.3, 2020.10.02.
+28. 一种数据驱动的供电薄弱环节识别方法及系统, ZL 201911044830.3, 2020.06.09.
+29. 一种电动汽车充电过程时变谐波电流评估方法及系统, ZL 201910690166.3, 2020.04.21.
+30. 一种配电系统中公共耦合点处不平衡责任的定量计算方法, ZL 201710408798.7, 2020.01.14.","1. 国家自然科学基金（联合基金项目），电力电子化配电系统谐波传播溯源与主动抑制基础理论研究，2024.01-2027.12，主持；
+2. 国家自然科学基金（面上项目），考虑多元源荷深度互动的交直流混合配电网谐波耦合特性与传播规律研究，2020.01-2023.12，主持；
+3. 国家自然科学基金（面上项目），民用负荷的谐波随机性分析及综合治理措施研究，2016.01-2019.12，主持；
+4. 国家自然科学基金（面上项目），电动汽车驱动系统与蓄电池高效充电一体化混合拓扑优化与控制，2016.01-2019.12，第2位；
+5. 国家自然科学基金（青年科学基金项目），基于实测数据的谐波源责任划分方法研究，2012.01-2014.12，主持；
+6. 国家重点研发计划子课题，高比例可再生能源配用电系统电能质量智能感知与协同控制技术，2023.12-2026.11，主持；
+7. 国家重点研发计划子课题，海上多平台互联电力系统关键部件的动态模型和应力特征研究，2018.07-2021.07，主持；
+8. 国家重点研发计划子课题，基于微型PMU的配电网故障诊断及精确定位技术，2017.07-2021.07，主持；
+9. 山东省重点研发计划（公益类）项目，多元源荷深度互动下的电能质量扰动源特性分析与综合评估关键技术研究，2019.01-2021.12，主持；
+10. 山东省重点研发计划（软科学）项目，新型交直流混合配电网灵活组网形态研究，2022.10-2023.10，主持；
+11. 山东省优秀中青年科学家科研奖励基金，电压型变流器类负荷的谐波集合效应及其对系统谐振的影响研究，2013.01-2015.12，主持；
+12. 国家电网公司总部科技项目，大规模分布式光伏接入的低压配电网综合治理关键技术及装备研制，2022.07-2024.12，主持；
+13. 国网山东省电力公司科技项目，鲁北新能源绿色高地建设研究，2023.09-2023.12，主持；
+14. 国网山东省电力公司科技项目，双高有源配电网电能质量评估与改善技术研究，2022.06- 2023.11，主持；
+15. 国网冀北电力有限公司技术改造项目，国网冀北电科院分布式光伏电能质量智能管控模块升级改造，2022.09-2023.09，主持；
+16. 国网山东省电力公司科技项目，源网荷互动下含高渗透率光伏的区域配电网电压质量分析与提升，2021.06-2022.12，主持；
+17. 国网山东省电力公司科技项目，电能质量扰动源建模与责任划分方法的研究与应用，2019.12-2020.12，主持；
+18. 国网山东省电力公司科技项目，含高比例分布式光伏接入的新型配电系统云边端协同谐波溯源技术研究与应用，2023.04-2023.12，主持；
+19. 国网山东省电力公司科技项目，有源配电网谐振机理与谐波损耗分析技术研究项目，2022.07-2023.11，主持；
+20. 国家电网公司总部科技项目，大规模新能源柔直电网无源送出系统协调控制理论与控制方法研究，2018.08-2020.02，主持。","1. 山东省科技进步二等奖（第1位）
+2. 国家电网科技进步奖
+3. 山东省电工技术学会奖
+4. 日内瓦国家发明奖银奖","1. Yuanyuan Sun*, Xiangmin Xie, Qingyan Wang, Linghan Zhang, Yahui Li, Zongshuai Jin. A bottom-up approach to evaluate the harmonics and power of home appliances in residential areas [J]. Applied Energy, 2020, 259: 114207. (SCI)
+2. Yuanyuan Sun*, Xiangmin Xie, Linghan Zhang, Shurong Li. A voltage adaptive dynamic harmonic model of nonlinear home appliances [J]. IEEE Transactions on Industrial Electronics, 2020, 67(5): 3607-3617. (SCI)
+3. Yahui Li, Yuanyuan Sun*, Qingyan Wang, Kaiqi Sun, Kejun Li, Yan Zhang. Probabilistic harmonic forecasting of the distribution system considering time-varying uncertainties of the distributed energy resources and electrical loads[J]. Applied Energy, 2023, 329. (SCI)
+4. Yahui Li, Yuanyuan Sun*, Kejun Li, Kaiqi Sun, Zhijie Liu, Qingshen Xu. Harmonic modeling of the series-connected multipulse rectifiers under unbalanced conditions[J]. IEEE Transactions on Industrial Electronics, 2023, 70(7):6494-6505. (SCI)
+5. Yuanyuan Sun*, Shurong Li, Qingshen Xu, Xiangmin Xie, Zongshuai Jin, Fang Shi, Hengxu Zhang. Harmonic contribution evaluation based on the distribution-level PMUs[J]. IEEE Transactions on Power Delivery, 2020, 36(2): 909-919. (SCI)",,https://www.ee.sdu.edu.cn/_vsl/50ED6925C48B2F56BB4BEA1792C01912/1E54DC1A/95999D,研究生,博士,1,副院长、电力电子与电力传动研究所所长、支部书记,
+武守远,83,154,13501235339,Shouyuan_wu@sdu.edu.cn,教授/博导,,"1. 电力系统分析与综合控制
+2. 电力智能装备与新能源综合利用
+3. 电能质量综合治理",,,1. 一种串补装置的电容器平台，201120550563.X，实用新型专利，2014年，电网公司专利奖，省部级奖，排名1,"1. 500kV输电线路重构式支流融冰兼SVC装置研制及工程示范，项目负责人；获国家能源科技进步奖，省部级，排名1，2013年1月4日
+2. 超高压、大容量TSC+TCR型静止无功补偿系统的研发与应用，获国家能源科技进步奖，项目技术负责人；省部级，三等奖，排名1，2013年1月4日
+1. 750kV可控并联电抗器关键技术研究、成套设备集成及工程示范，项目技术负责人；国家电网公司科技进步奖，一等，省部级，排名1，2013年度。
+2. 超高压、大容量TSC+TCR型静止无功补偿系统的研发与应用，2013年国网公司科技进步特等奖，省部级，排名第四，装置研制及工程应用，装置研制项目技术负责人，
+3. 特高压串补关键技术研究、装置研制及工程应用，装置研制技术负责人。2014年中国电力科学技术一等奖，行业奖，排名第四，","1. 国家能源科技进步奖，省部级，排名1，2013年1月4日
+2. 国家能源科技进步奖，项目技术负责人；省部级，三等奖，排名1，2013年1月4日
+1. 国家电网公司科技进步奖，一等，省部级，排名1，2013年度。
+2. 2013年国网公司科技进步特等奖，省部级，排名第四，装置研制及工程应用，装置研制项目技术负责人，
+3. 2014年中国电力科学技术一等奖，行业奖，排名第四，
+4. 电网公司专利奖，省部级奖，排名1",,,https://www.ee.sdu.edu.cn/__local/8/5F/AA/53038D8F3A272FF18EC7E613BA9_507B2653_1244.jpg,研究生,博士,1,,
+贾春娟,83,154,13305313128,jiachunjuan@sdu.edu.cn,副教授,,"1. 电力电子技术
+2. 新能源与分布式发电
+3. 交直流混合微电网
+4. 电能质量与谐波综合治理等",,,,"1. 主动配电网中并联逆变器功率控制与惯量自适应研究，国家重点实验室开放基金项目，2020-2021，主持。
+2. 含储能新能源发电友好型主动支撑技术研究，山东省电力行业重点立项课题，2020-2022，主持。
+3. 微电网的多端口混合储能拓扑优化与多目标控制策略研究，国家自然科学青年基金，2012-2014，参与。
+4. 用于VSC-HVDC的模块化多电平变换技术研究，省自然科学基金，2009-2012，参与。
+5. 风光互补发电接入系统影响分析，横向项目，2016-2018，主持。
+6. 风光储能电站容量配比及功率预测方案研究，横向项目，2013-2015，主持。
+7. 太阳能电站无功补偿容量工程计算方法，横向项目，2011-2012，主持。
+8. 大型冲击负荷和电气化铁路接入系统评估及治理技术研究，横向项目，2012-2013，主持。
+9. 电能质量综合治理技术研究项目，横向项目，2019-2020，参与。",,"1. Mei, Hongkun;   Jia, Chunjuan; Fu, Jun; Luan, Xiaoming. Low voltage ride through control   strategy for MMC photovoltaic system based on model predictive control[J].International   Journal of Electrical Power and Energy Systems，125(2021) 106530: 25-33.
+2.   Xu, Zhiwei; Jia, Chunjuan; Fu, Jun.A Power Decoupling Method for   Virtual Synchronous Machine in Low Voltage Micro-grid[C]. 2020 IEEE/IAS Industrial and   Commercial Power System Asia, I and CPS Asia 2020, 35-41.
+3.   Ruidong, Zhang ;Tianqu, Hao ; Chunjuan, Jia. On-line Monitoring of   Filter Inductance Suitable for Voltage Sensor-less Direct Power Control[C]. 2020 IEEE/IAS   Industrial and Commercial Power System Asia, I and CPS Asia 2020, 1309-1314.
+4.   Mei, Hongkun ; Fu, Jun; Jia, Chunjuan. Optimization of grid -   Connected wind - Storage capacity based on adaptive genetic algorithm[C]. 2018 China   International Conference on Electricity Distribution, CICED 2018, 2143-2147.
+5.   : Fu, Yuankui; Jia, Chunjuan; Huang, Yulong;   Ren, Wei. . Influence of electric vehicles on reliability of power system   containing wind power[C]. 2017 IEEE Transportation Electrification Conference and Expo,   Asia-Pacific, ITEC Asia-Pacific 2017.",,https://www.ee.sdu.edu.cn/__local/4/96/25/5A389FEB2900A219256CB9D7480_7101D57A_8DF2.jpg,研究生,硕士,1,电力电子所支部书记,
+董政,83,154,15882437685,dongzheng@sdu.edu.cn,副教授,山东大学“青年学者未来计划”入选者；2021年第六届IEEE PRECEDE国际会议出版主席；数次国际会议Session Chair；2022年度山东省科技进步二等奖（评审中）；发表学术论文30余篇，其中SCI论文10余篇；申请发明专利数项。,"①微电网运行与控制；
+②先进储能技术；
+③大功率多端口功率变换。",,,"1. 董政，李绪铭，张祯滨，韩明昊，秦家旺，“基于预测控制的DAB变换器关断损耗优化控制方法及系统”，发明专利，授权公告日：2022-7-12，专利号：ZL 2021 1 1171923.X
+2. 许建平，董政，舒立三，张士宇，“一种宽输入电压宽负载范围直直变换器控制方法及其装置”，发明专利，授权公告日：2015-10-14，专利号：ZL 2013 1 0188962.X
+3. 发明专利：一种多直流微网分布式协同控制系统。
+4. 发明专利：一种TAB变换器移相离散集模型预测解耦控制策略及系统。
+5. 发明专利：一种基于模型预测控制的DAB变换器控制方法及系统。","[1] 电流源型单电感多端口供电系统及其控制策略研究，国家自然科学基金青年项目，2021-2023，负责人。
+[2] 山东大学“青年学者未来计划”，2020-2025，负责人。
+[3] 基于碳化硅双向DC/DC变换器的检错容错教学实验平台开发，教育部产学合作协同育人项目，2022-2023，负责人。
+[4] 基于储能的低压配电台区优化设计与新能源多维度协同调控技术研究及应用，企业委托项目，2022-2023，负责人。
+[5] 并网变流器系统控制方法及关键技术研究子课题，企业委托项目，2020-2022，负责人。
+[6] Sustainable Lighting Technology: From Devices to Systems（T22-715/12-N），香港研究资助局，已结题，主要参与人。
+[7] 10MW级海上风电装备与控制创新团队，济南市“高校20条“资助项目，2021-2023，主要参与人
+[8] 高压并网SVG及储能PCS设备性能提升关键技术开发，企业委托项目，2021-2025，主要参与人。",2022年度山东省科技进步二等奖（评审中）,"1. F. Xu, J. Liu and Z. Dong (通信作者), Minimum Backflow Power and ZVS Design For Dual-Active-Bridge DC-DC Converters, in IEEE Transactions on Industrial Electronics, doi: 10.1109/TIE.2022.3156159. (Early Access, SCI一区)
+2. F. Wang, Y. Wang, Z. Dong and S. Wang, Multiphase Low Stresses High Step-Up DC–DC Converter With Self-Balancing Capacitor Voltages and Self-Averaging Inductor Currents, in IEEE Transactions on Power Electronics, vol. 37, no. 6, pp. 6913-6926, June 2022, (SCI一区)
+3. Z. Dong, X. L. Li, C. K. Tse and Z. Zhang. Derivation of Single-Input Dual-Output Converters With Simple Control and No Cross Regulation, IEEE Transactions on Power Electronics, vol. 35, no. 11, pp. 11930-11941, Nov. 2020. (SCI一区)
+4. Z. Dong, C. K. Tse, S. Y. Hui. Circuit Theoretic Considerations of LED Driving: Voltage-Source Versus Current-Source Driving. IEEE Transactions on Power Electronics, vol. 34, no. 5, pp. 4689-4702, 2019. (SCI一区)
+5. X. Li, Z. Dong (通信作者), C. K. Tse. Complete Family of Two-Stage Single-Input Multi-Output Configurations of Interconnected Power Converters. IEEE Transactions on Power Electronics, vol. 35, no. 4, pp. 3713-3728, 2020. (SCI一区)",,,研究生,博士,1,副研究员,
+陈德亮,83,154,,"C.Deliang@foxmail.com,chendeliang@sdu.edu.cn",,,详见以下主页,,,,,,,,https://www.ee.sdu.edu.cn/__local/A/FD/6A/EE10DF65E142E273CCE5151B040_E94DA18F_56CC.jpg,研究生,博士,1,,
+于大洋,83,154,,yudayang@email.sdu.edu.cn,副教授,,电力系统优化方法,,,,"1 基于协同调度的智慧能源关键技术研究与系统开发
+2 基于大数据的电力智能运维关键技术研究与开发 
+3 基于互联网+智慧能源的能源互联网智能管控与运营模式研究 
+4 一种电力系统仿真软件输入数据转换方法
+5 一种网络电动汽车充电桩
+6 基于运检大数据的故障检测信息建模与在线培训技术研究
+7 配网分布式资源协同调度技术研究与系统开发
+8 调控一体化数据处理技术研究与系统开发
+9 基于红外影像的电力设备故障预警技术研究与系统开发
+10 基于运检大数据的故障检测信息建模与在线培训技术研究
+11 电力系统协同调度的理论研究
+12 杭州充换电设施运维分析与测试
+13 直流多馈入混联山东电网动态特性分析研究
+14 运检大数据分析研究与系统开发 
+15 微网系统协同调度系统
+16 微网接入系统
+17 分布式光伏发电协同调度应用系统 
+18 充换电服务网络规划算法与规划及运营模拟系统开发
+19 分布式电源接入主网控制技术及微网与主网协调运行技术研究
+20 直流电多馈入混联山东电网电磁暂态模型建立与应用 
+21 分布式储能协同调度应用系统
+22 分布式发电、储能及微网接入通信系统
+23 渐进学习的电网聚合的调控理论研究
+24 分布式电网的协同调度理论研究 
+25 大型光伏电站并网关键技术研究
+26 电动汽车充换电网络规划系统维护
+27 电动汽车充放电站的智能调度系统研发
+28 电力系统调度中检修与运行协调决策的理论研究 
+29 分布式资源与电网相互作用的机理及其协同调度技术的研究
+30 间歇性电源与地区电网间的协调控制理论研究 
+31 电动汽车充放电与风力发电的协同调度及其碳减排效益的研究",,"1 DayangYu,   XueshanHan, JianguoZhao. A Method to Assess the Regional Wind Power   Fluctuation Based on the Meteorological Observing System[J]. International   Journal of Green Energy, 2010, 7(5):516-529.
+2 Yu D, Liang J,   Han X, et al. Profiling the regional wind power fluctuation in China[J].   Energy Policy, 2011, 39(1):299-306.
+3 于大洋, 韩学山, 梁军,等. 基于NASA地球观测数据库的区域风电功率波动特性分析[J]. 电力系统自动化, 2011, 35(5):77-81.
+4 于大洋, 宋曙光, 张波,等. 区域电网电动汽车充电与风电协同调度的分析[J]. 电力系统自动化, 2011, 35(14):24-29.
+5 Dayang Y U, Song   S, Bo Z, et al. Synergistic Dispatch of PEVs Charging and Wind Power in   Chinese Regional Power Grids[J]. Automation of Electric Power Systems, 2011,   35(14):24-29.",,https://www.ee.sdu.edu.cn/__local/1/8E/35/9A8FD4155993296E8199A238165_BD151B10_1013.jpg,研究生,博士,1,,
+仲慧,83,154,0531-81696182,zhonghui@sdu.edu.cn,副教授,,"1. 特种电机
+2. 新能源发电
+3. 电磁计算
+4. 电磁兼容",,,,"1. 基于有气隙感应式旋转变压器的交流励磁无刷双馈风力发电机研究，国家自然科学基金项目
+2. 高性能单相永磁同步电动机及其相关理论的研究，中国博士后基金项目
+3. 新型三绕组串联式单相永磁同步电动机研究，山东大学自主创新基金项目
+4. 基于居里温度特性的输电线路接点感温在线指示器，陕西省电力公司渭南市供电公司项目",,《电磁场导论》，中国电力出版社，北京，2008,,https://www.ee.sdu.edu.cn/images/15/10/images/15/10/29/1l6k8refza/jn4m_image001.jpg,研究生,博士,1,,
+刘亚迪,83,154,17805318640,liuyadi@sdu.edu.cn,副研究员,,"低温等离子体能源转化
+放电机理与气液相互作用",,,,"1. 国家自然科学基金委员会, 青年科学基金项目, 液相气泡放电等离子体与重油模型化合物相互作用的机理研究, 2022.01-2024.12, 30万元, 在研, 主持
+2. 山东大学, 基本科研业务费资助项目, 非热平衡等离子体与重油、生物油模化物相互作用机制研究, 2022.11-2024.12, 15万元, 在研, 主持
+3. 河北建投海上风电有限公司, 技术服务项目, 220 kV帆菩线（陆海线）电缆接地方式安全性评估, 2021.07-2021.12， 49.5万元, 结题, 执行负责人
+4. 国家自然科学基金委员会, 面上项目, 鼓泡脉冲放电聚束强声调控机制及碎岩能效优化研究, 2024.01-2027.12, 50万元, 在研, 参与
+5. 中华人民共和国科学技术部, 重点研发政府间国际合作项目, 大气压重复脉冲放电：等离子体产生机制、特性及与物质相互作用, 2021.01-2023.12, 296万元, 执行期满, 参与
+6. 国家自然科学基金委员会, 联合基金项目,脉冲电场下金属化薄膜电容器绝缘失效、老化评估和性能提升的研究, 2022.01-2024.12, 260万元, 在研, 参与
+7. 国家自然科学基金委员会, 专项项目, 可再生能源放电等离子体技术助推“双碳”目标策略与路线, 2022.01-2022.12, 10万元, 结题, 参与
+8. 国家自然科学基金委员会, 面上项目, 脉冲介质阻挡放电等离子体协同催化合成氨及其标度关系研究, 2021.01-2024.12, 60万元, 在研, 参与
+9. 中国科学院电工研究所, 所长基金项目, 等离子体水下声波系统, 2021.01-2023.12, 100万元, 结题, 参与",,"1. Liu Y, Dou L, Zhou R, Sun H, Fan Z, Zhang C, Ostrikov K, Shao T*, Liquid-phase methane bubble plasma discharge for heavy oil processing: Insights into free radicals-induced hydrogenation, Energy Conversion and Management, 2021, 250, 114896. (中科院1区，IF =10.4)
+2. Liu Y, Dou L, Sun H, Zhang C, Murphy Anthony B, Shao T*, Selective clipping of a lignin-derived monomer by plasmas for bio-oil upgrading, ACS Sustainable Chemistry & Engineering, 2023, 11, 101-112. (中科院1区，IF =8.4)
+3. Liu Y, Wu X, Wang X*, Sun H, Shao T, Insights into the role of H radicals in a plasma-enabled hydrogenation of heavy oil model compound, Fuel, 2024, 357, 129988. (中科院1区，IF = 7.4)
+4. Dou L, Liu Y, Gao Y, Li J, Hu X, Zhang S, Ostrikov K, Shao T*, Disentangling metallic cobalt sites and oxygen vacancy effects in synergistic plasma-catalytic CO2/CH4 conversion into oxygenates, Applied Catalysis B: Environmental, 2022, 318, 121830. (共同1作，中科院1区，IF =22.1)
+5. Liu Y, Sun H, Fan Z, Zhang C, Shao T*, Pulsed discharge plasma induced hydrogenation of aromatic compound in heavy oil: Reaction mechanism upon impact by operating conditions, Journal of the Energy Institute, 2022, 105, 454-462. (共同1作，中科院2区，IF =5.7)",,https://www.ee.sdu.edu.cn/__local/1/FF/6B/AF242C7AD779285FE9A00D336A4_904EB80D_D072.png,研究生,博士,1,副研究员,
+刘淑琴,83,154,0531-88399385,lshuqin@sdu.edu.cn,教授,,"1. 磁悬浮轴承理论与高速旋转机械
+2. 垂直轴风力发电机组，新能源微电网设计与运行控制
+3. 磁悬浮人工心脏泵
+4. 工程电磁场理论与应用",,,,"1. 军工项目 2项
+2. 植入式磁悬浮人工心脏泵关键技术研究，国家自然科学基金，项目号：51075236
+3. 磁悬浮大增速比风电齿轮箱关键技术研究，山东省自然科学基金：项目号 ZR2012EEM031
+4. 离网型磁悬浮垂直轴风光互补小型电站效率和可靠性研究。各级政府联动项目援助计划，苏州工业园区科技发展局，项目号：SIP1302PT180",,,,https://www.ee.sdu.edu.cn/images/16/05/images/16/05/13/1eerf1mo4q/c2cf_image001.jpg,研究生,博士,1,,
+李红伟,83,154,13335157635,Lhw08@sdu.edu.cn,副教授,,"1. 磁悬浮技术与应用
+2. 电磁设备电磁场分析",,,,主持完成国家自然科学基金项目和山东省自然科学基金项目各1项，参与完成国家重点研发计划项目1项，主持横向项目多项。,,"1. Zongqiang Ren, Hongwei Li*, Wentao Yu. Research on Coil Impedance of Self-inductive Displacement Sensor Considering Core Eddy Current[J]. Sensors, 2021, 21, 6292. (SCI: MEDLINE:34577499)
+2. 叶品州, 李红伟*, 于文涛, 仲慧. 考虑材料非线性及涡流影响的径向电磁轴承等效磁路建模[J]. 电工技术学报, 2020, 35(09): 1858-1867. （EI：20202108684894）
+3. YE Pinzhou, LI Hongwei*, TIAN Jing, YU Wentao. Influence of Rotor Vibration on Magnetic Field Distribution of Radial Active magnetic Bearings[C]. 14th IEEE Conference on Industrial Electronics and Applications, ICIEA 2019, 2019, pp.2399-2404. (EI: 20194107525706)
+4. Rui Chen, Hongwei Li*, Jing Tian. Structure design and simulation analysis of inductive displacement sensor[C]. 2018 13th IEEE Conference on Industrial Electronics and Applications (ICIEA), Wuhan, 2018, pp. 1620-1626. （EI：20183005587247）
+5. Jing Tian, Hongwei Li*, Rui Chen. Structural optimization and finite element analysis of axial AMBs[C]. 2018 13th IEEE Conference on Industrial Electronics and Applications (ICIEA), Wuhan, 2018, pp. 2264-2269.  （EI：20183005587475）",,https://www.ee.sdu.edu.cn/__local/6/C3/E0/81764F9E88821A515AC042B1EA2_97EB8E64_91C7.png,研究生,硕士,1,,
+谷廷坤,83,154,0531-81696154,gutk@gmail.com,教授,,"1. 光伏发电技术
+2. 新能源材料与器件",,,,"1. 二元过渡金属氧化物阻变存储器微观机理的理论研究，山东省自然基金
+2. 熔融半导体材料的原子和电子结构与其宏观物理性质的相关性研究，国家自然基金",,"1. Gu  Tingkun. Metallic filament formation by aligned oxygen vacancies in ZnO-based  resistive switches. Journal of Applied Physics 115, 203707 (2014)
+2. Gu  Tungkun, Role of oxygen vacancies in TiO2-based resistive switches. Journal  of Applied Physics 113, 033707(2013)
+3. Gu  Tingkun, Correlation between local structure and electrical resistivity in  gallium-antimony melts, Applied Physics Letters 100, 1719081(2012).
+4. Gu  Tingkun, Relationship between the short-range order and electrical resistivity  in liquid indium-antimony, Journal of Non-crystalline Solids 358, 1892(2012).
+5. Gu  Tingkun, Zhang Tao, Qi Yuanhua, Qin Jingyu, From atomic and electronic  structures of molten multicomponent alloys to their glass-forming ability  First-principles simulations, Journal of Non-Crystalline Solids 356, 2807(  2010).",,https://www.ee.sdu.edu.cn/images/16/03/images/16/03/07/1b3fg2pvz7/1t4y_image001.jpg,,,1,,
+张云鹏,83,154,13589032764,zhangyp@sdu.edu.cn,副教授、硕导,研究所电工理论与新技术学术身份硕士生导师，IEEE Member,"1. 电磁场理论与应用
+2. 新能源发电预测
+3. 医工交叉科学",,,已授权发明专利6项目，实用新型专利5项。,"1. 国家自然科学基金青年基金1项，项目负责人；
+2. 山东省优秀中青年科学家科研奖励基金1项，项目负责人；
+3. 山东大学自主创新基金1项，项目负责人；
+4. 中国博士后科学基金面上资助1项，项目负责人；
+5. 山东省博士后创新基金项目1项，项目负责人；",,"1. Zhang, Y., Hao, P., Lu, H., Ma, J., Yang, M., “Modelling and estimating performance for PV module under varying operating conditions independent of reference condition”， Applied Energy, 310, 118527, (2022). （SCI期刊，IF=9.746）
+2. Zhang, Y., Hao, P., Lu, H., Gu, T., Yang, M. “A novel method for performance estimation of photovoltaic module without setting reference condition”，International Journal of Electrical Power and Energy Systems，134，107439 (2022). （SCI期刊，IF=4.630）
+3. Wang, S., Zhang, Y.*, Hao, P., Lu, H.,“An improved method for PV output prediction using artificial neural network with overlap training range”, Journal of Renewable and Sustainable Energy, 13 (6), 063502 (2021). （SCI期刊，IF=2.219）
+4. Hao, P., Zhang, Y.*, Lu, H., Lang, Z.,“A novel method for parameter identification and performance estimation of PV module under varying operating conditions”,Energy Conversion and Management，247, 114689 (2021). （SCI期刊，IF=9.709）
+5. Hao, P., Zhang, Y.*. “An Improved Method for Parameter Identification and Performance Estimation of PV Modules From Manufacturer Datasheet Based On Temperature-Dependent Single-Diode Model”，IEEE Journal of Photovoltaics，11 (6), pp. 1446-1457 (2021). （SCI期刊，IF=3.887）",,https://www.ee.sdu.edu.cn/__local/D/C2/EB/317D8169F3C8967AC28FF5F9FB2_23A3CD4E_83AD.jpeg,研究生,博士,1,副教授,
+邹亮,83,154,,zouliang@sdu.edu.cn,教授,主要从事高电压与绝缘技术、计算高电压学、计算电磁学、电力系统故障限流技术、新能源微网运行等科学研究工作。,"高电压与绝缘技术
+计算高电压学
+计算电磁学
+电力系统故障限流技术
+新能源微网运行",,,,"低/零碳燃料船舶高效电力系统和多能联合推进技术，科技部国家重点研发计划课题，国家级，主持
+低碳多能源微网弹性运行能量优化管理技术，科技部国家重点研发计划子课题，国家级，主持
+融合多源信息特征的能源变换装备故障预警与寿命评估方法，科技部国家重点研发计划子课题，国家级，主持
+纳米晶软磁复合材料高频微观磁作用机制与磁-热性能协同优化方法，国家自然科学基金面上项目，国家级，主持
+纳米晶铁芯的介观高频饱和机理与双尺度耦合建模方法，国家自然科学基金青年科学基金项目，国家级，主持
+面向远海风电送出的DRU与MMC混联多端直流轻型化组网方法，广东省基础与应用基础研究基金项目，省部级，参与
+智能电网多端口混合储能拓扑与多目标优化控制方法,中国博士后科学基金，省部级，主持
+基于纳米晶铁芯的介观高频饱和机理的双尺度耦合建模方法，教育部博士点基金，省部级，主持
+基于宏观-微观高频磁作用机制的纳米晶SMC磁-热性能协同优化研究，能源电力系统国家重点实验室开放课题，省部级，主持
+基于宏观-介观双尺度耦合模拟的纳米晶铁芯高饱和机理研究，能源电力系统国家重点实验室开放课题，省部级，主持
+桥臂电抗器异常温升的多物理场仿真研究，南方电网重点实验室开放课题，主持
+新型变电站电缆和沟道火灾预警及防火灭火技术研究，国家电网公司科技项目子课题，主持
+变电站内低压动力电缆沟道火灾预警技术研究，国网山东省电力公司科技项目，主持
+大气压非平衡等离子体灭活致病菌的机理研究，山东大学交叉学科培育项目，主持",,"1. K. Guo , L. Zou* , L. Dai , et al.Micromagnetic Simulation of Saturation Magnetization of Nanocrystalline Soft Magnetic Alloys under High-Frequency Excitation [J].Symmetry,2022,14(7):1443-1443.
+2. M. Ding, L. Zou*, L. Zhang, T. Zhao, and Q. Li, “ Molecular Dynamics Simulation of the Influence of Functionalized Doping on Thermodynamic Properties of Cross-Linked Epoxy/Carbon Nanotube Composites,“ Diangong Jishu Xuebao/Transactions of China Electrotechnical Society,vol. 36, no. 23, pp. 5046-5057, 2021. 
+3. M. Yuan, L. Zou*, Z. Li, L. Pang, T. Zhao, L. Zhang, J. Zhou, P. Xiao, S. Akram, Z. Wang, and S. He., “A review on factors that affect surface charge accumulation and charge-induced surface flashover,“ Nanotechnology, vol. 32, no. 26, 2021. 
+4. Y. Lv, L. Zou*, H. Li, Z. Cehn, X. Wang, Y. Sun, L. Fang, T. Zhao, and Y. Zhang., “Investigation of non-thermal atmospheric plasma for the degradation of avermectin solution,“ Plasma Science and Technology, vol. 23, no. 5, 2021.
+5. Y. Sun, L. Zou*, Q. Liu, L. Dai, L. Zhang, and T. Zhao, “Research on Five-Loop Simplified Scaling Model for Dry-Type Air-Core Reactors with Inter-Turn Short Circuit Fault,“ IEEE Access,vol. 9, pp. 163707-163715, 2021.
+6. Lin Shen, Liang Zou*, Mi Ding, et al. Investigation of physical properties of epoxy-functionalized graphene nanoplatelets composite coatings on DC-GIL insulators by molecular dynamics simulation[J]. Applied Surface Science 505 (2020) 144197
+7. Liang Zou, Jiale Wu, Zhiyun Han, et al. Influence of the External and Internal Factors on Saturation Magnetization Process for Nanocrystalline Alloy[J]. IEEE Transactions on magnetics, 2018, 54(10):7205708.
+8. Rongzhao Jia, Liang Zou*, Tong Zhao, et al. Experimental study on inactivation of Escherichia coli by atmospheric pressure non-equilibrium plasma combined with photocatalysis[J]. Japanese Journal of Applied Physics, 2018.",,https://www.ee.sdu.edu.cn/__local/A/CA/68/72A029A51B541F4E127086E3D56_A77B526A_924F.jpg,研究生,博士,1,电工理论与新技术研究所所长,
+梁振光,83,154,15963113037,Lzg@sdu.edu.cn,教授,,电磁兼容、工程电磁场理论和应用,,,,"1. 输电线路电磁环境及人体电磁感应研究，2012-2013
+2. 电子设备中印刷电路板抗静电放电能力的研究，2009-2011
+3. 基于电磁拓扑分析的变电站电磁兼容研究，2006-2008",,"1. 传输线脉冲发生器研制及其对电路板抗静电放电干扰的测试. 高电压技术,2015(5). (EI收录)
+2. 静电放电电流表示方法的比较. 高电压技术,2009(10). (EI收录)
+3. 变电站电磁骚扰耦合路径分析. 高电压技术,2008(11). (EI收录)
+4. 500kV变电站工频电场的测量与分析. 高电压技术,2006(11). (EI收录)
+5. 三相传输线产生的旋转电场. 高电压技术,2006(10). (EI收录)",,https://www.ee.sdu.edu.cn/images/15/11/16/1kjar91xx6/qbdd_image001.jpg,,,1,,
+王兴华,83,154,13006579399,Wangxinghua@sdu.edu.cn,副教授,,"1）高速永磁电机设计及其控制；
+2）永磁电机无位置传感技术研究",,,,主持国家仪器设备重大专项子任务1项；参与国家自然科学基金和省部级科研项目3项。主持并完成企业横向科研课题多项。,,,,https://www.ee.sdu.edu.cn/images/15/10/images/15/10/09/3c0y2rhr1y/o9u7_image001.jpg,研究生,硕士,1,,
+王秀和,83,154,0531-88395869,wangxh@sdu.edu.cn,教授,,"永磁电机共性基础理论与关键技术研究
+新结构新原理电机的研究
+高效节能电机的研究与开发
+新能源永磁发电机研究",,,,国家自然科学基金面上项目3项、省部级课题7项。,享受国务院政府特殊津贴专家，教育部新世纪优秀人才，山东省有突出贡献的中青年专家,"[1] 王秀和 等. 永磁电机. 北京：中国电力出版社.2011.01.
+[2] 王秀和，杨玉波，朱常青. 异步起动永磁同步电动机¾理论、设计与测试. 北京：机械工业出版社. 2009.06
+[3] 王秀和、孙雨萍、李光友、徐衍亮、王建民、刘志珍. 电机学 “十二五”国家级规划教材
+[4] Xiuhe Wang, Hui Zhong, Yubo Yang,  Xiaolei Mu. Study  of a Novel Energy Efficient Single -phase Induction Motor with Three  Series-connected Windings and Two Capacitors. IEEE transaction on energy  conversion  Vol. 25 , Issue 2, 2010.
+[5] Daohan Wang, Xiuhe Wang,  Dongwei Qiao, Ying Pei,  Sang-Yong Jung. Reducing Cogging Torque in Surface-Mounted Permanent-Magnet  Motors by Nonuniformly Distributed Teeth Method.  IEEE Transactions  on  Magnetics, Vol. 47 , Issue 9  Page(s): 2231 - 2239, September  2011.",,https://www.ee.sdu.edu.cn/images/15/11/16/1kjar91xx6/oey0_image001.jpg,,,1,副院长,
+王建民,83,154,13969158864,wjm@sdu.edu.cn,教授,,"电机调速与运动控制技术
+电力电子与电力传动",,,,"新型摆式直驱高功率密度海洋波浪能磁阻发电机研究，国家自然基金，2014-2017
+高速小型复合分子泵永磁无刷电机的设计开发与控制技术研究，2013-2016",,"Analysis and  Improvement of Pulsating Current Injection Based Sensorless Control of  Permanent Magnet Synchronous Motor. ICEMS2014，（EI  20150800537143）
+Improved Square-Wave  Voltage Injection Method for Sensorless Control of PMSM and Its Adaptability  to Motor Parameter Variations. ICEMS2014，（EI 20150800537054）
+Several Methods to  Improve the Accuracy of Adaptive Harmonic Current Detection for Single-Phase  Circuits. ICEMI2013，（EI 20141217471679）
+Influence of speed  EMF on position estimation error in carrier signal injection based sensorless  control of PMSM. ICEMS 2012, （EI 20130716015682）
+Analysis of Stator  Resistance Effects in Carrier Signal Injection Based Sensorless Control of  Permanent Magnet Synchronous Machine. Applied Mechanics and Materials Vols.  383-390, 2012, pp5951-5957，（EI 20115114623039）
+Analysis of  Position Estimation Error Resulted from Filter in Carrier Signal Injection  Based Sensorless Control of PMSM. ICEMS 2011，（EI 20115014604546）
+异步电动机软起动过程中的振荡. 电工技术学报，2007.2",,https://www.ee.sdu.edu.cn/images/15/10/images/15/10/09/3c0y2rhr1y/0whw_image001.jpg,研究生,硕士,1,,
+王道涵,83,154,0531-81696179,dhwang@sdu.edu.cn,教授博导、硕导,"课题组从事先进电气传动/智能电驱动系统、新能源发电装备及医工交叉科学等领域研究，包括以下研究方向：
+①先进电气传动系统力能品质提升技术；
+②新能源汽车高能效驱动-充电以及与电网互联V2G技术；
+③Med+X智能诊疗医工交叉学科研究；
+④高速长行程大推力直驱牵引推进装备；
+⑤海上风-波多能互补发电装备及能量流信息流协调控制。","①先进电气传动系统力能品质提升技术；
+②新能源汽车高能效驱动-充电以及与电网互联V2G技术；
+③Med+X智能诊疗医工交叉学科研究；
+④高速长行程大推力直驱牵引推进装备；
+⑤海上风-波多能互补发电装备及能量流信息流协调控制。",,,,"1.“高效能能量转换和新能源发电装备”，主持
+2.“高速精密电动微动力系统”，主持
+3.“生物质能冷热电联产与发电并网控制”，主持
+4.“海浪发电捕能效率提升关键技术研究”，主持
+5.“双边驱动无绳电梯高推力密度磁阻推进系统研究”，主持
+6.“新型摆式直驱海洋波浪能磁阻发电系统关键技术研究”，主持
+7.“新型模块化轨道无绳电梯高有效载荷比无轭部直线电机系统关键基础问题”，主持
+8.山东省杰出青年科学基金项目，人才计划专项，主持
+9.山东大学齐鲁青年项目，人才计划专项，主持
+10.山东大学杰出中青年学者项目，人才计划专项，主持","·博士生导师，硕士生导师；
+·齐鲁青年学者；
+·仲英青年学者；
+·山东大学“杰出中青年学者”；
+·山东省杰出青年基金获得者；
+·IEEE-PES电动汽车电驱动理事会理事；
+·智能诊疗青年交叉科学创新群体牵头人；","1.D. Wang, Z. Feng, H. Zheng and X. Wang, “Comparative Analysis of Different Topologies of Linear Switched Reluctance Motor with Segmented Secondary for Vertical Actuation Systems“
+IEEE Transactions on Energy Conversion, 2021. 
+(IF:4.5, SCI二区)
+2.C. Peng, D. Wang, Z. Feng and B. Wang, “A New Segmented Rotor to Mitigate Torque Ripple and Electromagnetic Vibration of Interior Permanent Magnet Machine“
+IEEE Transactions on Industrial Electronics, 2021. 
+(IF:7.5, SCI一区)
+3.D. Wang, D. Zhang, D. Xue, C. Peng and X. Wang, “A New Hybrid Excitation Permanent Magnet Machine With an Independent AC Excitation Port“
+IEEE Transactions on Industrial Electronics, 2019. 
+(IF:7.5, SCI一区)
+4.D. Wang, C. Peng, D. Xue, D. Zhang and X. Wang, “Performance Assessment and Comparative Study of a Permanent Magnet Machine With Axial Flux Regulator“
+IEEE Transactions on Energy Conversion, 2019. 
+(IF:4.5, SCI二区)
+5.D. Wang, D. Zhang, X. Du and X. Wang, “Unitized Design Methodology of Linear Switched Reluctance Motor With Segmental Secondary for Long Rail Propulsion Application“
+IEEE Transactions on Industrial Electronics, 2018. 
+(IF:7.5, SCI一区)",,https://www.ee.sdu.edu.cn/__local/9/2D/68/A79F56F99674221E8F798169E03_3C05B942_5F9C.jpeg,研究生,博士,1,教授,
+刘志珍,83,154,0531-81696181,liuzhizhen@sdu.edu.cn,教授,,无线电能传输技术、电能质量控制以及电气设备的设计优化,,,"1、一种金属检测器 ZL201130957502.9
+2、一种电动汽车充电站选址优化方法 ZL201210391040.4
+3、一种电动汽车充电站选址优化方法 ZL201210391040.4
+4、基于剩磁预测和断路器离散性改进的抑制涌流系统及方法 ZL201410623589.0
+5、一种具有金属异物检测的电动汽车无线充电系统 ZL201510178620.9
+6、一种用于电动汽车无线充电的定位系统 ZL201510207898.1
+7、一种电动汽车无线充电对位及金属异物检测系统及其方法 ZL201510767990.6
+8、一种电动汽车无线与交流联合充电系统及其方法 ZL201610891393.9
+9、采用锁相环进行异物检测的电动汽车无线充电系统及方法 ZL201710454705.4
+10、一种应用于水下无线充电的耦合线圈和磁芯结构与系统 ZL201710388670.9
+11、一种金属异物检测方法及磁耦合谐振式无线充电装置 ZL201810252417
+12、电动汽车充放电调度及方法 ZL201811330939
+13、一种多频率磁耦合谐振式无线电能传输系统及充电系统 ZL20181094893.6
+14、一种基于阵列式线圈的金属物体检测系统及方法 ZL202010499432.7
+15、一种金属物体检测传感器及检测装置 ZL20201049473.6","1、 “基于数据驱动预测控制的混合动力汽车转矩协调控制策略研究”，2014年国家自然科学基金项目，25万。
+2、 “基于平衡线圈技术的电动汽车无线充电异物检测及对位技术研究”，山东省2016年重点研发计划资助，25万。
+3、 “电动汽车高效快速无线充电技术研究”，山东省2016年重大关键技术项目，100万。
+4、 “配合变压器经济运行的励磁涌流抑制技术研究”，山东省2016年重点研发计划资助，20万。
+5、 “3.0T……共振线圈关键技术研究”，山东省2016年军民融合项目，500万。
+6、 “颅脑新生儿核磁共振技术研究”，山东省2019年重大创新项目，1000万。
+7、 “特锐德箱式电力设备智能工厂”，2017年国家工信部智能制造新模式应用项目，2亿。
+8、 “电动汽车充换电对局域电网的影响”，国家电网2012年项目，310万。
+9、 “海尔电器电脑控制板评估”，海尔集团，2016-2022,100万。
+10、 “电动汽车用大功率永磁同步电机驱动系统的研究”，济南市科技局2012年项目，50万。
+11、 “基于磁耦合谐振的电动汽车无线充电技术研究”，横向委托课题，2018-2021,330万。
+12、 “电饭煲无线供电的金属异物检测技术研究”，2014年海尔委托课题，50万。
+13、 “电磁搅拌系统研发”，横向委托课题，2020-2021,66万。
+14、 “磁控电抗器无功补偿及箱变涌流抑制切换系统”，2016-2017，特锐德委托课题，80万。
+15、 “互联网+电气应用及精细金属检测研发”，2021-2024，横向委托课题，300万。
+16、 “换电柜充电装置研发”，2021-2022，横向委托课题，34万。
+17、 1997-1999年，作为博士论文课题，为西安变压器厂开发了“换流变压器的漏磁场计算及杂散损耗的分析”软件，这期间还参与研发了国家经贸委重点计划项目“电气化铁路三相变两相平衡牵引变压器”。
+18、 2002-2004年，作为博士后课题为山东渤海活塞集团股份公司筹划电解铝项目中的电气配置,并承担中国博士后科学基金项目“铝电解槽磁场分布的遗传算法优化研究”，并就整流器谐波抑制问题，“有源滤波器和可控无源滤波器混合抑制装置”获得2003年山东省教育厅基金资助。
+19、 2004年，获得山东省经贸委资助开发“三相四线制中线零序谐波电流的抑制”。
+20、 2004年10月，“铝电解槽三维磁场的计算与优化”获得山东省优秀青年奖励基金资助。
+21、 2005年，为费斯托公司完成“电磁阀的磁场分析软件开发”；承担 “电－气PWM调制数字比例阀的开发”项目。
+22、 2006年，参与国家自然科学基金项目“车用新型带辅助极永磁起动机研究”。
+23、 2007年承担山东省重点研发计划项目“基于平衡线圈技术的高精度金属探测器研究”，并受济南市科技明星计划资助。
+24、 2007年7月承担山东省博士后项目“游梁式抽油机综合节能系统的研究”。","1、 2001.10, “解析法计算任意形状薄钢板的涡流损耗”获得山东电机工程学会优秀论文二等奖；
+2、 2005.1，“大型电力变压器涡流场计算方法研究”项目获得山东高等学校优秀科研成果三等奖；
+3、 2005.5，“A novel hybrid FEM-BEM method for 3D eddy current field calculation using J”获得山东电机工程学会优秀论文一等奖；
+4、 2007年，“车用新型带辅助极永磁起动机研究”获得山东省科技进步二等奖；
+5、 2009.1，“磁悬浮轴承电主轴在磨床上的应用研究”获得山东省科技进步二等奖；
+6、 2017.5，“电动汽车充换电对电网的影响”获得国家科技进步奖提名；
+7、 2017年，“中国天网无线电力传输”荣获第九届“挑战杯”大学生创业计划全国二等奖，山东省金奖；
+8、 2018年，“电动汽车无线充电”荣获第十届“挑战杯”大学生创业计划全国二等奖，山东省金奖；
+9、 2020年，“3.0T核磁共振技术”荣获第十二届“挑战杯”大学生创业计划全国二等奖，山东省金奖；
+10、 2020年，“无线电力传输技术”荣获全国研究生电力电子设计大赛全国二等奖。
+11、 2021年，“电动汽车新型双频无线充电装置”荣获“力诺瑞特杯”第十四届全国大学生节能减排社会实践与科技竞赛全国二等奖；
+12、 济南市5150计划高层次人才；潍坊市鸢都学者计划；
+13、 中国电机工程学会高级会员，中国电机学报、电工技术学报、国家自然基金、IEEE MAG、ENERGIES等评审专家。","1 Feng Guowen, Liu Zhizhen, Hou Yanjin, Luo Xueqing, Sun Shuyao, Ding Ran, Yu Aiguo. Parameter Optimization of Double LCC MCRWPT System Based on ZVS. Energies,2021,8(SCI、EI检索)
+2 Fan Shujing, Liu Zhizhen, Feng Guowen, Ali Naghmash, Hou Yanjin. Dynamic Process Analysis and Voltage Stabilization Control of Multi-Load Wireless Power Supply System. Energies,2021.3(SCI、EI检索)
+3 朱旭帅, 刘志珍, 刘振友, 魏小钊, 冯国文. 3.0T颅脑磁共振主磁体线圈优化设计. 电气自动化,2021,43(03)
+4 Ali Naghmash, Liu Zhizhen, Armghan Hammad, Ahmad Iftikhar, Hou Yanjin. LCC-S-Based Integral Terminal Sliding Mode Controller for a Hybrid Energy Storage System Using a Wireless Power System. Energies,2021,3(SCI、EI检索)
+5 张新城，刘志珍，侯延进，范书静. 计及冬季预热需求的居民区电动汽车负荷调度策略. 电力自动化设备,2020.11(EI检索)",,https://www.ee.sdu.edu.cn/images/15/10/images/15/10/09/3c0y2rhr1y/6w2n_image001.jpg,研究生,博士,1,,
+杨玉波,83,154,13031715059,ybyang@sdu.edu.cn,副教授,,"1. 永磁电机的共性基础问题；
+2. 新结构、新原理永磁电机；
+3. 高性能电机研发",,,,"1. 主持 国家自然科学基金 面上项目，新型分块动子磁通切换旋转直线两自由度电机系统研究，58万元，2022.01-2025.12
+2. 主持 国家自然科学基金 面上项目，高电压中大功率鼠笼复合实心转子自起动永磁同步电动机系统研究，61万元，2018.01-2021.12
+3. 主持 国家自然科学基金 青年基金，混合励磁磁通切换型磁阻电机系统的研究，25万元，2012.01-2014.12
+4. 主持 山东省自然科学基金，新型低速大转矩游标混合电机系统研究，18万元，2016.11-2019.6
+5. 参与 国家自然科学基金重点项目(第二位)，变频器供电永磁同步电动机电磁振动关键基础问题研究，307万元，2018.01-2022.12
+6. 参与 国家自然科学基金 面上项目，异步起动永磁同步电动机若干难点问题的研究，
+7. 参与 国家自然科学基金 青年基金，新型非对称转子永磁聚磁式同步磁阻电机研究",,"1. Yubo Yang, Guopeng Liu, Xiaotong Yang, Xiuhe Wang, Analytical Electromagnetic Performance Calculation of Vernier Hybrid Permanent Magnet Machine, IEEE Transactions on Magnetics, Vol. 54, No. 6, PP. 8202612, 2018.
+2. Yubo Yang, Xiaotong Yang, Peng Chen, and Xiuhe Wang, Electromagnetic Performance Analysis of Hybrid Excited Segmental Rotor Flux Switching Machine, IEEE Transactions on Magnetics, Vol. 54, No. 11, PP.8106605, 2018.
+3. Yubo Yang, Xiuhe Wang, Zongsheng Zhang, Performance Analysis of Novel Single-Phase Parallel Hybrid Excited Flux Switching Machine, IEEE Transactions on Magnetics, Vol. 54, No. 12, PP. 8110813, 2018.
+4. Yubo Yang, Jian Chen, Bo Yan, Changqing Zhu, Xiuhe Wang, Analytical Magnetic Field Prediction of Flux-Switching Machine with Segmental Rotor, IET Electric power applications, 2019, vol. 13, No. 1, pp. 91-100.
+5. Yubo Yang, Xiuhe Wang, Zongsheng Zhang, Analytical calculation of magnetic field and electromagnetic performance of flux reversal machines, IET Electric power applications, Vol. 8, No. 5, PP. 178-188, 2014. ",,https://www.ee.sdu.edu.cn/__local/5/11/3A/F7B7EABDE2BD6454F71C5BC2F3E_B2AF5D47_E6F7.png,研究生,博士,1,副所长,
+张岳,83,154,,yzhang35@sdu.edu.cn,教授,,"（1）高功率密度高速永磁电机及其能量变换系统
+（2）大功率高可靠特种风力发电机及其控制技术
+（3）特种电机及其控制系统的多学科协同优化设计方法",,,,"（1） 国家自然科学基金面上项目:粉块层级结构永磁转子高速电机及其模块化控制研究，2021-2024，项目负责人。
+（2） 国家重点研发计划项目：区域飞机“绿色滑行”高效机电能量转换系统关键技术合作研究，课题负责人
+（3） 中国科协“青年人才托举工程”项目，项目负责人
+（4） 省自然科学基金项目：基于磁性保护套转子的高可靠高速永磁电机，项目负责人
+（5） 国家自然科学基金重点国际合作研究项目：基于硬磁粉与碳纤维多层复合近零涡流损耗转子的高速方波永磁电机系统关键基础问题研究，2020-2024，主要承担者。
+（6） 山东大学“齐鲁青年学者”建设项目。
+（7） 英国工程和自然科学研究委员会（简称EPSRC）项目：Motor Design and Control for Electrical Vehicle，2014-2017，项目执行负责人。
+（8） 欧盟国际合作项目（European Commission FP7   International research project）：Evaluation and   development of wind turbine generator technologies (简称EDWTGT)，2012-2016，项目主要完成人。",,,,https://www.ee.sdu.edu.cn/__local/A/6F/0E/7405D9CB2D6199C2730D500F652_19F5DC90_18220.png,研究生,博士,1,教授,
+赵文良,83,154,13953135625,wlzhao@sdu.edu.cn,教授/博导、硕导,齐鲁青年学者，山东省“泰山学者”青年专家，山东省“优青”，江苏省扬州市“绿扬金凤计划”领军人才，山东大学青年学者未来计划，中国电机工程学会青年人才托举工程。IEEE Member，Associate Editors of IEEE TIE、CES TEMS，国际大电网委员会会员，中国电机工程学会会员，中国电工技术学会高级会员，中国电工技术学会磁场调制电机专委会委员，中国机械工业教育协会电器专委会委员，山东省电工技术学会理事，IEEE-PES电动汽车电驱动技术分委会理事。,"1. 海上风力发电技术及测试装备
+2. 高品质电机及智能控制技术
+3. 新能源汽车电机系统设计及驱动控制
+4. 低损耗软磁材料及大容量高频变压器设计
+5. 心脏血液机械循环辅助装置电驱动系统",,,,"1. 国家自然科学基金面上项目，新型高效能磁链正弦化高速轴向磁通永磁电机系统研究，主持
+2. 国家自然科学基金青年项目，新型非对称转子永磁聚磁式同步磁阻电机研究，主持
+3. 国家自然科学基金重点项目，变频器供电永磁同步电动机电磁振动关键基础问题研究（子课题），主持
+4. 国家重点研发计划，大容量海上风电机组全工况模拟及并网试验关键技术和装备（子课题），主持
+5. 国家重点研发计划，低损耗高频软磁材料及兆伏安级高频变压器研制（子课题），主持
+6. 国家重点实验室开放课题，新型永磁电机高倍弱磁及无位置传感器控制研究，主持
+7. 山东省重点研发计划（重大创新工程），电动汽车用轻量化高功率密度智能永磁电驱动系统产业化，主研
+8. 山东省重点研发计划（重大创新工程），高推力密度永磁同步变频直线电机油气举升智能成套装备关键技术研究与产业化开发，主研
+9. 山东省自然科学基金优秀青年基金，人才计划项目，主持
+10. 山东大学“齐鲁青年学者”建设项目，人才计划项目，主持
+11. 中国电机工程学会“青年人才托举工程”项目，人才计划项目，主持
+12. 山东大学“青年学者未来计划”项目，人才计划项目，主持
+13. 山东大学人才引进与培养类专项项目，主持
+14. 山东大学学科交叉研究计划，植入式新型混流式人工心脏的研发及测试，主持
+15. 国网公司项目：电力变压器主动及被动降噪技术研究与工程示范，主持
+16. 国网公司项目：复杂工况下换流变压器局部过热、产气规律及过热故障点定位研究，主持",,"1. W. Zhao, H. Shen, T. A. Lipo, X. Wang, “A New Hybrid Permanent Magnet Synchronous Reluctance Machine with Axially Sandwiched Magnets for Performance Improvement,” IEEE Transactions on Energy Conversion.
+2. W. Zhao, T. A. Lipo, B. Kwon, “Material-Efficient Permanent-Magnet Shape for Torque Pulsation Minimization in SPM Motors for Automotive Applications,” IEEE Transactions on Industrial Electronics.
+3. Z. Xing, X. Wang, W. Zhao, “An accurate calculation method of natural frequencies of the radial-flux slotted motors considering end covers,” IEEE Transactions on Industrial Electronics.
+4. Z. Xing, X. Wang, W. Zhao, “Fast calculation of electromagnetic vibration of surface-mounted PMSM considering teeth saturation and tangential electromagnetic force,” IEEE Transactions on Industrial Electronics.
+5. Z. Xing, X. Wang, W. Zhao, L. Sun, N. Niu, “Calculation method for natural frequencies of stator of permanent magnet synchronous motors based on three-dimensional elastic theory,” IEEE Transactions on Energy Conversion.",,https://www.ee.sdu.edu.cn/__local/B/4A/94/F3BF43DDD174C0DB08C3200FB11_F66E8ED5_ABFF.jpg,研究生,博士,1,所长,
+宫金林,83,154,18660157499,gongjinlin@sdu.edu.cn,副教授,,"1.运行高可靠性多相电机设计、故障诊断和容错控制
+2.高性能永磁驱动系统无位置传感器控制研究
+3. 伺服驱动控制研究",,,,"主持的在研项目：
+国家自然基金面上项目（2022.01-2025.12）
+山东省自然基金面上项目（2021.01-2023.12）
+矿用防爆型永磁电机驱动系统研发（企业委托2023-2026）
+低速大功率永磁直驱系统设计与控制研发（企业委托2021-2024）
+高速大功率永磁直驱电机设计（企业委托2023-2024）
+主持的部分结题项目：
+国家自然基金青年项目、教育部留学人员科研启动基金、山东省重点研发计划","第八届山东大学“青年教学能手”
+2016年度山东大学青年教师课堂比赛“二等奖”","1. J. Gong, X. Wang, B. Zhao, F. Tan, E. Semail, N. Nguyen, N. Bracikowski, Design, Analysis of a Seven-Phase fault-tolerant Bi-Harmonic Permanent Magnet Machine with Three Active Air Gaps for In-Wheel Traction Applications, IEEE Transactions on Energy Conversion, Early Access.
+2. J. Gong, B. Zhao, Y. Huang, E. Semail, N. Nguyen, Quantitative Comparisons of Outer-Rotor Permanent-Magnet Machines of Different Structures/Phases for In-Wheel Electrical Vehicle Application, Energies 2022, 15(18), 6688; pp. 1-19.
+3. B. Zhao, J. Gong* et al, A Novel Five-Phase Fractional Slot Concentrated Winding with Low Space Harmonic Contents, IEEE Transactions on Magnetics, Vol. 57, No. 6, June 2021.
+4. J. Gong, H. Zhang, B. Zhao, D. Fu, F. Gillon, Proposal of a Bi-Objective Kriging Adapted Output Space Mapping Technique for Electromagnetic Design Optimization, IEEE Transactions on Magnetics, Vol. 55, No. 6, June 2019.
+5. J. Gong, H. Zahr, E. Semail, M. Trabelsi, B. Aslan, F. Scuiller, Design Considerations of Five-Phase Machine with Double p/3p Polarity. IEEE Transactions on Energy Conversion, Vol. 34, No. 1, March 2019, pp.12-24.",,https://www.ee.sdu.edu.cn/__local/0/7F/18/5A62244E68982763F32FC8997BD_0D606643_A439.png,研究生,博士,1,,
+徐衍亮,83,154,"0531-81696170,13012983145",xuyanliang@sdu.edu.cn,教授,,"1. 永磁电机及特种电机的设计及控制
+2. 电动汽车电驱动系统研究
+3. 磁悬浮轴承的设计及控制",,,"1. 徐衍亮，ZL200410075764.3, 一种双转子永磁电机
+2. 徐衍亮，鲁炳林，马昕，顾建军，ZL201210529481.6，仿生眼球用正交圆柱结构两自由度步进电机
+3. 徐衍亮，鲁炳林，马昕，顾建军，ZL201210529484.X，仿生眼球用两自由度混合式步进电机
+4. 徐衍亮，鲁炳林，ZL201410092470.5，一种永磁永磁型混合步进电机
+5. 徐衍亮，付东山，ZL201510925350.3，一种双磁路E型结构横向磁通直线开关磁阻电机
+6. 徐衍亮，付东山，ZL201510916866.1，一种短端部磁路分块式开关磁阻电机及其控制电路
+7. 徐衍亮，付东山，ZL201510917011.0，一种双永磁体横向磁通直线永磁电机
+8. 徐衍亮，付东山，ZL201510925305.8，一种双面双磁路横向磁通直线永磁电机
+9. 徐衍亮，鲁炳林，马昕，ZL201610910529.6，机器人用正交圆柱结构两自由度混合式步进电机
+10. 徐衍亮，鲁炳林，马昕，ZL201610910671.0，一种球形结构两自由度混合式步进电动机及其应用
+11. 徐衍亮，ZL201610911179.5，分球形正交结构两自由度混合式步进电动机及其方法
+12. 徐衍亮，ZL201610911764.5，一种机器人仿生眼球用两自由度混合式步进电机","1. 2013.01—2016.12，基于电磁负荷独立设置的新型轴向磁场永磁无刷电机研究，国家自然基金（51277111/E070303），经费75万元，项目主持人
+2. 2015.01—2018.10，仿生眼感知与识别处理关键技术研究——仿生眼一体化结构设计及其驱动控制，国家863计划项目（2015AA041005），项目总经费300万元，子课题主持人
+3. 2015.01—2017.12，基于SMC的电动汽车驱动电机研发，山东省科技重大专项（新兴产业）（2015ZDXX0601B01），经费100万元，技术负责人
+4. 2017.01—2019.12，基于软磁复合材料的工业机器人用高性能伺服电机与驱动器研发，山东省2017年重点研发计划（2017CXGC0906），经费300万元，项目主持人
+5. 2018.12—2020.12，高速磁悬浮轴承永磁同步电机电磁技术开发，横向项目，经费100万元，项目主持人",,"1. 鲁炳林，徐衍亮，“Development and analysis of a novel spherical 2-Degree-of-Freedom(2-DOF) hybird stepping motor”, energies, 2018.11.41(SCI，EI收录)；
+2. 鲁炳林，徐衍亮，辛峰，“定子永磁和转子永磁混合式步进电机性能比较研究”，中国电机工程学报，37（21），Nov. 5,2017(EI收录)；
+3. 付东山，徐衍亮，“Presentation of novel E-core transverse-flux permanent magnet linear motor and its magnetic field analysis based on SC mapping method”, J Elect Eng Technol, 12(5), 2017, pp 1961-1969(SCI,EI收录)；
+4. 徐龙江，徐衍亮，Analysis and optimization of cogging torque in yokeless and segmented armature axial-fulx permanent magnet machine with soft-magnetic composite core, Trans. on Magn. 54(11), Nov. 2018(SCI,EI收录)；
+5. 付东山，徐衍亮等，Presentation of a novel Transverse-flux permanent magnet linear motor and its magnetic field analysis based sc mapping method, IEEE Trans. on Magnetics. 54(3), Mar. 2018（SCI,EI收录）",,https://www.ee.sdu.edu.cn/system/_owners/dqxy/_webprj/images/15/11/16/1kjar91xx6/8blg_image001.jpg,研究生,博士,1,研究所所长,
+王冠,83,154,18678778259,"guanpallas@sdu.edu.cn,guanpallas@163.com",副教授,,"高电压新技术
+高电压绝缘诊断技术
+输变电设备状态监测与故障诊断",,,,"(1) 国网山东省电力公司济宁供电公司，含多种分布式电源及电动汽车接入的主动配电网能量优化与控制。
+(2) 济南银河电气有限公司，广义有源滤波器及谐波综合治理方案研究。
+(3) 国网山东省电力公司电力科学研究院，高速气流对复合绝缘子表面积污特性影响及沿海地区绝缘子积污预测分析。
+(4) 国家自然科学基金委员会，青年基金项目，智能电网用基于空间电磁能的无线集能转换器拓扑与优化方法研究。
+(5) 国家电网华东分部，华东电网500kV变电站串内实际电流分布影响因素及机理研究技术。
+(6) 国家自然科学基金委员会，青年基金项目，长行程快速电磁操动机构的组合模式与机理研究。
+(7) 山东省自然科学基金，青年基金项目, 特高压半波长输电线路的潜供电弧特性与抑制技术研究。
+(8) 国家电网公司，特高压半波长输电线路的潜供电弧特性与抑制。
+(9) 山东电力工程咨询院，特高压系统过电压分析与抑制。
+(10) 国家电网公司，特高压直流电磁暂态分析及与交流系统的交互影响研究.",,"1.王冠，芙蓉薇，朱振华，李宏仲. 利用重启动精化Arnoldi方法计算动态电压稳定分析中的关键特征值[J]. 电工技术学报，2007，22(10): 150-155.
+2.王冠，吕鑫昌，孙秋芹，等. 半波长交流输电技术的研究现状与展望[J]. 电力系统自动化，2010，34（16）：13-18+68.
+3.LIU Jinxin*, WANG Guan*, ZHAO Tong, et al. The Research of OLTC On-line Detection System Based on Embedded and Wireless Sensor Networks, IEEE International Conference on High Voltage Engineering and Application, Chengdu, China on September 19-22, 2016（EI）.
+4.Zenghao Tian, Guan Wang, Hongshun Liu, Peng Wu. Topology optimization of magnetic energy converter in high-voltage substation［C］.2016 China International Conference on Electricity Distribution (CICED 2016) Xi’an, 10-13 Aug, 2016：7579259.（EI）
+5.Guan Wang, ZengHao Tian, Ye Kuang, HongShun Liu, JiaJu Wang. ENERGY SCAVENGING TECHNOLOGY BASED ON SPATIAL ELECTROMAGNETIC ENERGY FOR POWERING WIRELESS SENSORS[C]. 20th International Symposium on High Voltage Engineering (ISH2017). Buenos Aires, Argentina. August, 2017.",,https://www.ee.sdu.edu.cn/__local/E/0C/64/D299D35617DCB2031E8E4CAE3D1_54AA638E_17075.png,研究生,硕士,1,党支部书记,
+任富强,83,154,,renfuqiang@sdu.edu.cn,副研究员,,"1. 新型电力系统构建背景下电力设备多场耦合分析及可靠性提升
+2. 电力设备运行状态评估及故障诊断方法",,,,"1. 考虑变压器关键结构的绕组集总等效网络参数反演机理与方法研究，国家自然科学基金委员会，国家自然科学青年基金，2024.01-2026.12，在研，主持。
+2. 基于多传感的新一代高压电器设备在线监测关键技术研究及产品研制-子课题1，山东省科技厅，山东省重点研发计划（重大科技创新工程）项目，2021.05-2024.06，在研，主持。
+3. 变压器绕组梯形等效网络参数辨识及其应用研究，山东省科学技术厅，山东省自然科学基金青年项目，2022.01-2024.12，在研，主持。",,"1. Fuqiang Ren, Zhaoyang Kang, Shengchang Ji, et al. High-Frequency Ladder Network Synthesis of Transformer Winding for its Mechanical Condition Assessment[J]. IEEE Transactions on Industrial Electronics, 2023, 70(6): 6261-6271.
+2. Fuqiang Ren, Hongru Zhang, Yong Liu, et al. Ladder Network Synthesis in Wide Frequency Range for Transformer Winding From its Driving-Point Admittance Data[J]. IEEE Transactions on Power Delivery, 2022, 37(3): 1370-1379.
+3. Fuqiang Ren, Shengchang Ji, Yong Liu, et al. Application of Gauss–Newton iteration algorithm on winding radial deformation diagnosis[J]. IEEE Transactions on Power Delivery, 2019, 34(4): 1736-1746.
+4. Fuqiang Ren, Shengchang Ji, Lingyu Zhu, et al. Generic algorithm to calculate Jacobian matrix used for ladder network parameters identification and winding fault diagnosis[J]. IET Generation, Transmission & Distribution, 2019, 13(15): 3370-3377.
+5. Fuqiang Ren, Yao Xiao, Cao Zhan, et al. Ladder network parameters identification of an isolated winding by combining the intelligent optimisation algorithm and GNIA[J]. IET Generation, Transmission & Distribution, 2019, 13(2): 296-304.",,https://www.ee.sdu.edu.cn/__local/4/78/02/397536FD38F0127AC96EEBFF420_5525E879_95C1.jpeg,研究生,博士,1,副研究员,
+刘洪顺,83,154,18560756639,lhs@sdu.edu.cn,副教授,"高电压与绝缘技术研究所
+山东省特高压输变电技术与装备重点实验室
+博士研究生导师，中国电机工程学会高级会员、山东电工技术学会高电压与电工材料专委副主任、中国电机工程学会“电力之光”科学传播专家",电气设备诊断与大数据分析、电磁暂态分析与抑制、电弧放电理论及其应用（特高压潜供电弧与油中放电等）和电工装备电磁兼容技术等。,,,"1.刘洪顺;李清泉;何东欣;曲文韬;姜建平; 张海杰; 吕婷婷. 一种电力变压器故障分类方法及系统[P].中国发明专利: ZL202010778651.9, 2022/11/18.
+2.刘洪顺; 李清泉; 韩明明; 吕婷婷; 赵彤; 邹亮; 李斌. 混合无功补偿变电站内特快速暂态波幅频特性分析方法[P].中国发明专利: ZL201510489812.1, 2017/6/16.
+3.刘洪顺; 韩明明; 李斌; 李清泉; 李庆民; 娄杰; 孙秋芹.  面向单相重合闸的多变量作用下潜供电弧特性预测方法[P].中国发明专利: ZL201610322702.0, 2018/7/10.
+4.刘洪顺; 薛志通; 李斯盟; 李清泉; 王晓龙; 何东欣. 复合电压下针板油隙局部放电建模与分析方法[P]. 中国发明专利: ZL201810796963.5, 2019/10/11.
+5.王晓龙; 张皓; 邹亮等; 张远涛; 刘洪顺; 孙滢; 段玉兵. 高压输电线路异物清理机器人及清理方法[P]. 中国发明专利: ZL202010403210.0, 2021/3/2.
+6.王晓龙; 张远涛; 赵彤; 邹亮; 刘洪顺; 孙滢. 用于对电力设备进行局部放电检测的检测设备及方法[P]. 中国发明专利: ZL201910340824.6, 2020/3/27.
+7.王晓龙;刘洪顺; 李清泉; 张士亮; 段玉兵. 可精确定位的局部放电检测装置[P]. 中国实用新型专利: ZL201910074193.8, 2019/09/20.
+8.李航; 孙百聪; 汪家铭;刘洪顺; 陈泰羽. 基于高压静电除尘原理的尾气净化装置及其应用[P]. 中国实用新型专利: ZL201720627207.0, 2017/06/01.","1. 多场耦合极端冲击作用下高速滑轨电接触燃弧烧蚀机理与微观失效机制，国家自然科学基金重大研究计划项目[92266112]（2023.1-2025.12）
+2.电-热-机械多物理场耦合作用下换流变压器油纸绝缘劣化机理研究，国家自然科学基金智能电网联合基金子课题[U1966209]（2020.1-2023.12）
+3.多物理场耦合作用下换流变压器油纸绝缘局部放电机理及其状态评估与预测，山东省自然科学基金面上项目[ZR2020ME196]（2021.1-2023.12）
+4.换流变压器绝缘油中电弧放电演化与气泡运动物理机制，国家重点实验室开放课题[LAP22001]（2022.3-2023.12）
+5.特高压混合无功补偿对单相接地故障开断与潜供电弧特性的影响机理，国家自然科学基金青年基金项目[51507095]（2016.1-2018.12）
+6.特高压混合无功补偿作用下低频振荡对单相故障电磁暂态的影响机理，山东省优秀中青年科学家奖励基金[BS2015NJ011]（2016.1-2017.12）
+7.国网山东电科院变压器压力异常发展规律研究项目，国网山东省电力公司电力科学研究院项目（2022.6-2024.12）
+8.基于局部放电和空间电荷分布的换流变压器油纸绝缘劣化机理与状态评估系统研究，国网新疆电力有限公司电力科学研究院项目（2022.6-2023.12）
+9.深圳供电局有限公司轨道交通杂散电流对电网系统综合影响评估及关键防治技术研究，深圳供电局有限公司项目（2022.2-2024.6）
+10.基于边缘计算的低压配电网故障预警与故障定位的研究及应用，国网江苏省电力有限公司盐城供电分公司项目（2021.2-2023.12）
+11.昆柳龙工程柔性直流联接变压器与常规直流换流变压器运行特性及运维策略差异化对比研究，中国南方电网有限责任公司超高压输电公司广州局项目（2020.8-2020.12）
+12.提高二次系统抗干扰性能关键技术研究，中国南方电网有限责任公司超高压输电公司梧州局项目（2019.12-2021.9）
+13.基于大数据分析的220KV变电站设备状态动态评估与预测，国网山东省电力公司科技项目（2018.1-2019.12）
+14.GIS外壳环流与地电位升高研究，国网山东省电力公司科技项目（2017.1-2018.12）
+15.发电厂避雷器过电压绝缘配合方案研究，山东电力工程咨询院项目（2016.1-2017.12）
+16.中国博士后科学基金面上项目[2015M572032]（2016.1-2017.12）
+1.海上风机雷击电弧冲击损伤机制与高频次生电磁效应，国家自然科学基金面上项目[51677110]（2017.1-2020.12）
+2.电动汽车驱动系统与蓄电池高效充电一体化混合拓扑优化与控制，国家自然科学基金面上项目[51577109]（2016.1-2019.12）
+3.多物理场下换流变压器油纸绝缘劣化机理与状态评估技术研究，国家电网公司总部科技项目（2020.1-2021.12）","1.张黎,李庆民,邹亮,王晓龙,刘洪顺,丛浩熹,孙秋芹,段玉兵,冯新岩,王晖; 2023 年度山东省科学进步二等奖; 山东省人民政府.
+2.李庆民,丛浩熹,孙秋芹,邹亮,刘洪顺,王健,任翰文,张黎,于宗波,程志万; 2023 年度科学技术进步二等奖; 中国电工技术学会.","1.Yifan Wang; Hongshun Liu*; Ziyue Zhang; Qizhao Zhang; Hanliang Lin; Hongbin Wu; Qingquan Li, “Study on the Dynamic Evolution of Bubbles in Oil/Pressboard Insulation,“ in IEEE Transactions on Dielectrics and Electrical Insulation, vol. 30, no. 5, pp. 2295-2304, Oct. 2023.（SCI）
+2.Zhang Qizhao; Liu Hongshun*; Guo Jian; Wang Yifan; Liu Luyao; Liu Hongzheng; Cong Haoxi, “Improved GWO-MCSVM algorithm based on nonlinear convergence factor and tent chaotic mapping and its application in transformer condition assessment,“ in Electric Power System Research, vol. 224, Nov. 2023.（SCI）
+3.Hongshun Liu; Ziyue Zhang; Tian Xia; Jingjing Yang; Qingquan Li; Dongxin He; Yifan Wang, “Investigation on the Influencing Factors of Arcing Time for Secondary Arcs,“ in IEEE Transactions on Industrial Electronics, vol. 69, no. 12, pp. 13607-13615, Dec. 2022.（SCI）
+4.Hongshun Liu; Tian Xia; Dongxin He; Mingming Han; Qingquan Li; Yubing Duan, “The influence of VFTO on SCSR windings with an equivalent PEEC model,“ in International Journal of Electrical Power &amp; Energy Systems, vol. 110, pp. 283-292, Sept. 2019.（SCI）
+5.Hongshun Liu; Jian Guo; Dongxin He; Mingming Han; Ying Sun; Jingjing Yang; Qingquan Li, “Multi-variable dependent forecast algorithm for predicting secondary arc,“ in CSEE Journal of Power and Energy Systems, vol. 6, no. 2, pp. 469-478, June 2020.（SCI）",,https://www.ee.sdu.edu.cn/__local/4/2C/64/02F11557AB4875A38DE783EA2FA_CD82D9FF_C366.png,研究生,博士,1,副所长,
+孙滢,83,154,15662783282,ys2018@sdu.edu.cn,副研究员,,"1. 液相放电等离子体、冲击波及应用
+2. 低温气体放电等离子体及生物医学应用",,,,"1. 水中气泡纳秒脉冲放电冲击波精准调控和声能效率优化，国家自然科学基金青年项目，[项目号:51907108]，主持，2020-2022，23万元。
+2. 火星沙尘事件中放电现象的计算与实验研究，国家自然科学基金面上项目，[项目号:11975142]，主要参与人，2020-2023，65万元。
+3. 水下纳秒脉冲放电-冲击波系统机理研究与应用，山东大学未来学者计划，主持，2019-2024，50万元。
+4. 山东大学基本科研业务费资助项目，主持，2019-2022，15万元。",,"1. Y. Sun and I. Timoshkin, et al, ‘Impulsive discharges in water: acoustic and hydrodynamic parameters,’ IEEE Transactions on Plasma Science, vol. 44, pp 2156-2166, Oct.2016.
+2. Y. Sun and I. Timoshkin, et al, ‘Electrical and acoustic parameters of wire-guided discharges in water: experimental determination and phenomenological scaling,’ IEEE Transactions on Plasma Science, vol. 45, pp 2648-2655, Oct. 2017.
+3. Y. Sun and I. Timoshkin, et al, ‘Acoustic impulses generated by air-bubble stimulated underwater spark discharges’, IEEE Transactions on Dielectrics and Electrical Insulation, vol. 25, pp 1915-1923, Oct. 2018.
+4. Y. Sun, I. V. Timoshkin, M. J. Given, M. P. Wilson, T. Wang, S. J. MacGregor and N. Bonifaci, “Hydrodynamic parameters of air-bubble stimulated underwater spark discharges,” in IEEE 19th ICDL, Manchester, UK, Jun. 25 – 29, 2017, pp. 1-4.
+5. I. V. Timoshkin, Y. Sun, M. J. Given, M. P. Wilson, T. Wang, S. J. MacGregor and N. Bonifaci, “Impulsive breakdown in water: optimisation of energy delivery for high acoustic output,” in IEEE 19th ICDL, Manchester, UK, Jun. 25 – 29, 2017, pp. 1-4.",,https://www.ee.sdu.edu.cn/__local/2/78/75/87FA2A9955A86DF4DA4DA969E2B_1EC83787_14118.png,研究生,博士,1,,
+李清泉,83,154,0531-81696115,lqq@sdu.edu.cn,教授,,"1. 高压设备复合绝缘的放电特性
+2. 绝缘的劣化机理
+3. 绝缘状态评估
+4. 人工智能在电力设备中的应用",,,,"1. 2021.05-2024.06，基于多传感的新一代高压电器设备在线监测关键技研究及产品研制，山东省重点研发计划项目，项目负责人
+2. 2020.01-2023.12，电-热-机械多物理场耦合作用下换流变压器油纸绝缘劣化机理研究，国家自然科学基金智能电网联合基金重点项目，项目负责人
+3. 2020.01-2022.12，变压器交直流耐压试验超宽频带局放智能检测关键技术研究及应用，国网上海市电力公司，项目负责人
+4. 2020.01-2021.12，多物理场下换流变压器油纸绝缘劣化机理与状态评估技术研究，国家电网公司总部科技项目，项目负责人
+5. 2018.01-2021.12，换流变压器油纸绝缘局部放电特性与机理研究及绝缘状态评估，国家自然科学基金面上项目，项目负责人
+6. 2018.01-2019.12，基于大数据的变压器故障诊断专家数据库系统的研究，贵州电网有限责任公司贵阳供电局，项目负责人",,"1. D. He, W. Gong, Z. Xu, P. Geng, H. Liu, and Q. Li, “Effect of the DC Electric Field Polarity and Amplitude on Partial Discharge of Oil-Paper Insulated Under Wedge-Shaped Electrodes,“ IEEE TRANSACTIONS ON DIELECTRICS AND ELECTRICAL INSULATION, vol. 29, pp. 599-606, 2022-01-01 2022.
+2. C. Liu, Q. Li, X. Tian, and C. Li, “Optimal Virtual Inertial-Based Power System Frequency Regulation Through Multi-Cluster Wind Turbines Using BWOA,“ FRONTIERS IN ENERGY RESEARCH, vol. 10, 2022-01-01 2022.
+3. C. Liu, Q. Li, X. Tian, L. Wei, Y. Chi, and C. Li, “Multi-Objective Mayfly Optimization-Based Frequency Regulation for Power Grid With Wind Energy Penetration,“ FRONTIERS IN ENERGY RESEARCH, vol. 10, 2022-01-01 2022.
+4. D. He, Z. Xu, H. Liu, Q. Zang, Q. Li, S. Le Roy, and G. Teyssedre, “The Influence of Physical Parameters on Space Charge Characteristics in Cable Insulation Under AC Electric Field,“ IEEE TRANSACTIONS ON INDUSTRY APPLICATIONS, vol. 58, pp. 59-66, 2022-01-01 2022.
+5. Z. Xu, D. He, H. Liu, Q. Li, Q. Zang, S. Le Roy, and G. Teyssedre, “Study on the influencing factors of space charge dynamic behavior in XLPE insulation under alternating current electric field,“ JOURNAL OF PHYSICS D-APPLIED PHYSICS, vol. 55, 2022-01-01 2022.",,https://www.ee.sdu.edu.cn/__local/B/17/26/58A84DB3625D169089A0C5AC700_9C5E94AE_3807.jpeg,研究生,博士,1,,
+何东欣,83,154,,hdx@sdu.edu.cn,副教授,,"1. 电缆、变压器等电气设备在线监测与故障诊断
+2. 电力设备绝缘空间电荷测试及应用研究",,,,"1. 2021.01-2023.12，中国科协青年人才托举工程（2021QNRC01），脉冲电场下电荷行为特性及抑制技术，负责人
+2. 2023.01-2026.12，国家自然科学基金面上项目（52277155），纳秒脉冲电场下有机硅弹性体劣化机制及调控策略，负责人
+3. 2020.01-2022.12，国家自然科学基金青年项目（51907105），周期性脉冲电场下电力电子装备绝缘空间电荷特性研究，负责人
+4. 2020.01-2023.12，国家自然科学基金智能电网联合基金子课题（U1966209），电-热-机械多物理场耦合作用下换流变压器油纸绝缘劣化机理研究，负责人
+5. 2021.09-2024.05，山东省重大科技创新工程课题 (2021CXGC010210-2)，换流变压器热点温度监测系统研制，负责人
+6. 2019.07-2022.06，山东省自然科学基金，（ZR2019QEE013），计及正负极性空间电荷运动机制差异的电缆绝缘电树枝起始机理研究，负责人
+7. 2018.01-2019.12，国网天津市电力公司科技项目，基于空间电荷特性的应力锥处电缆绝缘缺陷检测及故障预警技术研究，负责人
+8. 2022.01-2023.12，国网山东省电力公司超高压公司科技项目，基于先进传感的变压器过热点位置探测技术，负责人
+9. 2022.01-2022.12，国网山东省电力公司东营供电公司科技项目，基于空间电荷检测的电缆终端潜在故障预警技术，负责人
+10. 2022.01-2022.12，国网新疆电力公司科技项目，油纸绝缘局部放电与电荷分布实验平台搭建，负责人
+11. 2020.09-2025.09，山东大学青年学者未来计划，负责人
+12. 2017.01-2019.12，中央高校基本科研业务费资助项目，负责人",,"1. Dongxin He, Wenjie Gong, Zhe Xu, Pan Geng, Hongshun Liu, Qingquan Li. Effect of the DC Electric Field Polarity and Amplitude on Partial Discharge of Oil–Paper Insulated Under Wedge-Shaped Electrodesm IEEE Transactions on Dielectrics & Electrical Insulation, 2022, 29(2): 599-606.
+2. Dongxin He, Fansong Meng, Hongshun Liu, et al. The Influence Mechanism of Semiconductive Material on Space Charge Accumulation in HVDC Cable Accessory. IEEE Transactions on Dielectrics & Electrical Insulation, 2019, 26(5): 1479-1486. 
+3. Dongxin He*, Xiaoran Wang, Hongshun Liu, et al. Space Charge Behavior in XLPE Cable Insulation Under ac Stress and Its Relation to Thermo-electrical Aging. IEEE Transactions on Dielectrics and Electrical Insulation, 2018, 25(2): 541-550. 
+4. Dongxin He*, Wei Wang, Jian Lu, et al. Space Charge Characteristics of Power Cable under AC Stress and Temperature Gradient,IEEE Transactions on Dielectrics and Electrical Insulation, 2016, 23(4): 2404-2412. 
+5. Tao Zhang, Dongxin He*, Junyu Wei, Hongshun Liu, Qingquan Li, Gilbert Teyssedre. Charge Vibration Behaviour in Polyimide Under the Pulse Voltage with Different Rise and Fall Times. High Voltage, 2022, 7(1): 64-74. （一区Top）",,https://www.ee.sdu.edu.cn/__local/2/E5/B4/FDEBDCC236F3350AA5734D810E2_35BDC890_CF83.jpeg,研究生,博士,1,教师,
+张远涛,83,154,0531-81696307,"ytzhang@sdu.edu.cn,yuantaozhang@gmail.com",教授,,"1. 气体放电与等离子体；
+2. 计算高电压工程学；
+3. 等离子体与生物相互作用",,,,"1. 基于AMAR算法的大气压脉冲放电等离子体快速数值模拟研究，国家自然科学基金
+2. 大气压等离子体与细胞相互作用的理论研究，国家自然科学基金
+3. 大气压脉冲放电中活性粒子产生与优化的动理学模拟研究，强电磁工程与新技术国家重点实验室开放课题
+4. 大气压脉冲放电等离子体稳定性与活性的数值模拟研究，山东省自然科学基金
+5. 新型微波等离子体光源与LED光源技术研究，横向项目
+6. 等离子体与细胞相互作用机理的理论研究，山东大学基本科研业务费交叉学科项目",,"1. Y. T.  Zhang*, Y. Y. Chi, and J. He, Numerical simulation on the production of  reactive oxygen species in atmospheric pulse-modulated RF discharges with  He/O2 mixtures, Plasma Process. Polym. 11, 639-646 (2014)
+2. Y. Y.  Chi, and Y. T. Zhang*, Theoretical study on the characteristics of  atmospheric radio frequency discharges by altering electrode gap, Plasma Sci.  Technol. 16,6,582-587 (2014)
+3. J. He,  and Y. T. Zhang*, Generation of reactive oxygen species in Helium-Oxygen  radio-frequency discharges at atmospheric pressure, IEEE Tran. Plasma Sci. 41，2979-2986 （2013）
+4. J. He,  J. Hu, D. Liu, and Y. T. Zhang*, Experimental and numerical study on the  optimization of pulse modulated radio-frequency discharges, Plasma Sources  Sci. Technol. 22, 035008 (2013)
+5. Y. T.  Zhang*, J. Lou, Q.Q. Li, and Q. M. Li, Electrode gap effects on the electron  density and electron temperature in atmospheric radio frequency discharges,  IEEE Tran. Plasma Sci. 41(3), 414-420 ( 2013) ",,https://www.ee.sdu.edu.cn/__local/8/3E/5E/DC6926EB3947E64205EAB157193_CCFA1504_B171.jpg,研究生,博士,1,,
+张黎,83,154,0531-81696129,zhleee@sdu.edu.cn,副教授,,"高电压与绝缘技术
+新能源电力系统雷击防护
+新型电工绝缘材料
+电磁炮发射技术
+电力系统电磁兼容",,,"基于雷电防护的规模化风电场空间优化布置方法
+基于雷电物理的风机叶片动态击距与电气几何模型的构建方法
+电压不平衡下三相四开关并联型APF控制方法
+电力变压器有源降噪中次级声源的参数优化方法
+基于缩比准则的多包封干式空心电抗器的磁场分析方法
+基于空间电磁能的无线传感器自供能调理电路
+基于空间电磁能的无线传感器自供能系统
+基于模糊信息粒化的变压器绕组热点温度波动范围预测方法","强冲击电流下高速滑轨电接触燃弧时空演化机理与耐烧蚀电枢材料改性设计，国家自然科学基金，重大研究计划培育项目（国家级）
+高频电应力下聚酰亚胺绝缘放电机理与多因子等价性试验评估方法研究，国家自然科学基金，面上项目（国家级）
+海上风机雷击电弧冲击损伤机制与高频次生电磁效应，国家自然科学基金，面上项目（国家级）
+电力变压器强磁振动发生传播机理与有源降噪研究，国家自然科学基金，青年项目（国家级）
+面向环境低影响的公路交通能源系统开发方案与运维优化策略，国家重点研发计划子课题（国家级）
+低/零碳燃料船舶内燃机智能控制技术，国家重点研发计划子课题（国家级）
+GF2023极端***系统，山东省重点研发计划（军民融合）课题（省部级重点）
+高可靠性高端换流变压器关键技术研究及产品研制-换流变压器振动噪声产生、传播机理及其抑制措施研究，山东省重大科技创新工程课题（省部级重点）
+抑制换流变压器振动和降低噪声的关键技术研究，国家电网公司总部科技项目（国网重点）
+平波电抗器空间电磁干扰防护研究，国家电网公司总部科技项目（国网重点）
+强场空间电荷效应下特高压直流高端设备的电场计算方法，中国博士后科学基金一等资助（省部级）
+大功率变压器振动机理与有源噪声抑制技术研究，山东省自然科学基金项目（省部级）
+基于空气间隙放电虚拟仿真软件的电力系统过电压教学改革与培训，教育部协同育人项目（省部级）","山东省科学技术进步奖，二等奖（第1完成人，2023）
+山东省科学技术进步奖，一等奖（第3完成人，2011）
+第四十九届日内瓦国际发明展，金奖（2024）
+中国电力企业联合会电力创新奖，一等奖（2023）
+中国电工技术学会科技进步奖，二等奖（2023）
+中国电工技术学会发明奖，三等奖（2017）
+河南省自然科学学术奖，二等奖（2015）
+Wiley中国开放科学年度作者奖（2022）
+IEEE SPIES国际会议最佳论文奖（2022）
+IEEE IAEERO国际会议最佳论文奖（2021）
+《中国电机工程学报》年度特殊贡献奖（2019）
+第三届山东大学教师教学创新大赛，一等奖（2022）
+第二届山东大学教师教学创新大赛，二等奖（2021）
+山东省高等教育学会优秀案例奖，三等奖（2023）
+山东省教育厅研究生优秀科技创新成果奖，三等奖（2018）
+山东省教育厅省级一流本科课程，（2024）","Shengrui Zhou, Li Zhang, Liang Zou, Guan Wang, Yiwei Wang. Analysis of atomic oxygen erosion resistance mechanism of polyimide composite materials enhanced by polyhydroxysilylazane [J]. Applied Surface Science, 2024, 657, 159814. （TOP期刊）
+Li Zhang, Jiao Ma, Peng Hao, Guorong Li, Hao Lu, Yunpeng Zhang. Comprehensive overview of available objective functions for parameter identification of photovoltaic modules [J]. Sustainable Energy Technologies and Assessments, 2023, 60, 103507. （TOP期刊）
+Xingdou Liu, Li Zhang, Jiangong Wang, Yue Zhou, Wei Gan. A unified multi-step wind speed forecasting framework based on numerical weather prediction grids and wind farm monitoring data [J]. Renewable Energy, 2023, 211, 948-963. （TOP期刊）
+B. I. Ayubi, Li Zhang, Shengrui Zhou, Yiwei Wang, Liang Zou. A Four Factor Lifetime Estimation Model of Polyimide (PI.) Insulations Using Full Factorial Design of Experiment Method (DOE) [J]. IEEE Transactions on Dielectrics and Electrical Insulation, 2024, 31(2): 844-851.
+Li Zhang, Y. Wang, L. Zou, K. Guo, Y. Li and Q. Sun. Effect of Grain Size on Magnetic Loss of Nanocrystalline Alloy Under High-Frequency Non-Sinusoidal Excitation[J]. IEEE Transactions on Magnetics, 2023, 59(7): 1-11.",,https://www.ee.sdu.edu.cn/__local/7/D4/FB/6D45D7CCF2D1644AB3CC17A9D1B_C3A9D6C0_3C98.jpeg,研究生,博士,1,支部书记,
+赵彤,83,154,0531-81696129,zhaotong@sdu.edu.cn,教授,,"1. 高电压绝缘介电现象与理论
+2. 放电物理与等离子体技术
+3. 输变电设备状态监测与运行维护管理",,,,"1. 等离子体与肺癌细胞相互作用机理的分子动力学模拟及实验研究，国家自然科学基金.
+2. 基于MHD的双特征平面内X箍缩内爆动力学过程的二维数值模拟研究, 国家自然科学基金.
+3. X箍缩内爆动力学过程的物理特性及二维MHD 数值模拟研究, 国家自然科学基金.
+4. 电力变压器强磁振动发生传播机理与智能化有源降噪研究，山东省重点研发计划.
+5. 直流 GIL绝缘子纳米复合涂层改性微观机制与界面绝缘增强设计研究，山东省自然科学基金.
+6. 基于X箍缩的乳腺肿瘤X射线位相衬度成像, 中国博士后科学基金.
+7. 变压器真空有载分接开关运行状态全面感知技术研究, 国网山东省电力公司科技项目.
+8. 基于多特征参量的组合电器隔离开关状态感知技术与故障诊断综合系统研究，国网山东省电力公司科技项目.
+9. 基于盲源分离与近场声全息成像的变压器运行状态监测与故障诊断技术研究，国网山东省电力公司科技项目.
+10. 基于新型传感的大型变压器套管非接触式绝缘状态监测与故障预警技术研究，国网山东省电力公司科技项目.
+11. 有载分接开关3D建模及电磁仿真分析技术，南方电网公司科技项目.
+12. 基于振声特性的变压器绕组异常状态检测和故障诊断技术研究，国网山东省电力公司科技项目.
+13. 特高压电网主设备多维度综合评估方法研究，国网山东省电力公司科技项目.
+14. 基于异常振动分析的GIS机械缺陷诊断技术研究，国网安徽省电力公司科技项目.
+15. 有载分接开关机械性能在线监测技术研究，国网上海市电力公司科技项目.
+16. 中短程无线电力传输技术对电网安全运行的影响研究, 国网山东省电力公司科技项目.
+17. 新能源及储能接入电力系统无功补偿及过电压评估研究, 国网上海市电力公司科技项目.","1. 高压数字化与FACTS变电站电磁兼容研究及工程应用, 山东省科技进步奖，一等奖，2011.
+2. X-pinch软X射线辐射点源及应用基础研究, 教育部自然科学奖，二等奖，2012.
+3. 电力变压器有载分接开关机械性能的在线监测系统，山东省科技进步奖，二等奖，2007.
+4. 振动信号的混沌动力学分析方法，山东高等学校优秀科研成果奖（自然科学类），二等奖，2006.","1. Huichao Wang, Tong Zhao*, Zichen Wang, Xiaolong Wang, Dao han Wang, Yuantao Zhang. Molecular dynamics simulations of cancer cell membrane electroporation under the plasma electric field effect. Plasma Processes and Polymers, 2022, 19(11): e2200159. （期刊封面文章）
+2. Huichao Wang, Tong Zhao*, Xiaolong Wang, Daohan Wang, Yuantao Zhang. ReaxFF-based molecular dynamics simulation of the interactions between OH radicals in plasma and succinate dehydrogenase in cancer cell mitochondria. Plasma Processes and Polymers, 2022, 19(8): e2200083. （期刊封面文章）
+3. Yanxiu Cui, Tong Zhao*, Huichao Wang, Xiaolong Wang, Daohan Wang, Yuantao Zhang. Molecular dynamics simulation of the transmembrane transport process of reactive species under the synergistic effect of plasma oxidation and an electric field. Free Radical Biology and Medicine, 2023, 208: 372-383.
+4. Xiaosong Wang, Tong Zhao*, Chenlei Liu, Xiaolong Wang, Yuantao Zhang. Microscopic decomposition mechanism and property calculation of high-nitrile polyimide based on ReaxFF molecular dynamics simulation. Materials Today Chemistry, 2023, 28: 101349.
+5. Jinghui Tuo, Chenlei Liu, Tong Zhao, Ying Sun, Xiaosong Wang, Xiaolong Wang. An MD Simulation Study of Decomposition Characteristics of C5F10O/CO2 Gas Mixture Under the Presence of Thermal and Electric Field. IEEE Transactions on Dielectrics and Electrical Insulation, 2023, 30(4): 1714-1724.",,https://www.ee.sdu.edu.cn/__local/F/D5/39/480FF6FB1FC655A7E2BF0387A46_28192D14_29F68.png,研究生,博士,1,,
+李可军,83,154,0531-81696309,Lkjun@sdu.edu.cn,教授,,直流电网、智能配电网、状态监测与态势感知、可再生能源并网及高效利用,,,,国家自然科学基金、山东省重点研发计划、山东省自然科学基金、国家电网公司总部科技项目、山东电力科技项目,省部级科技进步奖,,,https://www.ee.sdu.edu.cn/__local/E/60/3A/1939A4BDEE7016A2AB26E0CC85C_C1004412_2481A.png,,,1,,
+王明强,83,154,15069163160,wang0367@sdu.edu.cn,副教授/博导,,电力系统安全经济运行，微电网,,,,"纵向项目：
+源网牵制下的备用决策研究 2014-2017 国家自然科学基金青年基金 22 万；项目负责人
+横向项目
+1 中航商用航空发动机临港基地用电35kv接入系统对电网电能质量影响 2014-2016 3.5 万；项目负责人
+2 特高压接入背景下源网协同调度理论研究 2015-2017 44.5 万；项目负责人
+3 交大航空发动机测试基地电增容工程项目对电网电能质量影响补充评估 2015-2016 2.1 万；项目负责人
+4 考虑新要素接入的主动配电网多目标优化规划研究 2016-2018 58.6 万；项目负责人
+5 独立电网电源规划建模及算法研究 2017-2018 15 万；项目负责人
+6 高比例可再生能源并网条件下计及源网协同效应的输电网规划体系研究 2017-2020 69.6 万；共同负责人
+7 特高压交直流馈入受端电网时变性能评估与优化规划研究 2018-2020 74.6 万；项目负责人
+8 主动配电网态势感知与多源协同优化运行关键技术研究 2018-2022 55.6万；项目负责人",,"1)M. Q. Wang* and H. B. Gooi, “Spinning reserve estimation in   microgrids,” IEEE Trans.   Power Syst., vol. 26, no. 3, pp. 1164-1174, Aug. 2011.
+2)M. Q. Wang*, H. B. Gooi and S. X. Chen, “Optimizing probabilistic   spinning reserve using an analytical EENS formulation,” IEE Proc.-Gener.   Transm. Distrib., vol. 5, no. 7, pp. 772-780, Aug. 2011.
+3)M. Q. Wang*, H. B. Gooi, S. X. Chen, and S. Lu, “A mixed integer   quadratic programming for dynamic economic dispatch with valve point effect,” IEEE Trans. Power Syst., vol. 29, no. 5, pp. 2097-2106, 2014.
+4)M. Q. Wang*, H. B. Gooi and X. S. Han, “A tradeoff between unit   capacity and average production cost in spinning reserve optimization,” Int   J Electr Power Energy Syst, vol. 71, pp. 215-221, Oct. 2015.
+5)Ming Yang, Mingqiang Wang*, Fenglu Cheng, and Wei-jen Lee, “Robust   Economic Dispatch Considering Automatic Generation Control with Affine   Recourse Process,” Int J Electr Power Energy Syst.,   vol. 81, pp. 289-298, Oct., 2016.",,https://www.ee.sdu.edu.cn/__local/6/64/45/B0F2B5BC26F1DBFE40123DAA456_89FE1C48_A772.jpg,研究生,博士,1,副教授,山东大学电气工程学院
+王晓辉,83,154,13911722385,wangxiaohui@sdu.edu.cn,副教授,,"新能源电力系统运行与控制
+电力电子化电力系统连锁故障
+交直流混联电网安全稳定",,,"抑制多直流换相失败连锁的关键线路阻抗调节方法及系统，ZL 2020 1 0682921.6
+两级式光伏并网系统低电压穿越动态评估方法及系统，ZL 2020 1 0161033.X
+阻断多直流换相失败连锁的电网临时解列方法及系统，ZL 2020 1 0555588.2
+交直流混联受端电网的直流分群规划方法，ZL 2019 1 0375955.8","含高比例电力电子装备的电力系统大扰动稳定和连锁故障演化基础理论，2021-2024，国家自然科学基金集成项目，子课题负责人
+拉萨换流站加装调相机工程，2021-2023，国网西藏电力有限公司，项目负责人
+新能源高渗透率电力系统成本效益量化模型与方法研究，2021-2022，全球能源互联网集团有限公司，项目负责人
+馈入受端系统的LCC、VSC暂态特性和承载能力评估技术研究，2021-2022，国网江苏省电力有限公司经济技术研究院，项目负责人
+直流近区电网稳定影响因素研究服务，2020-2021，中国电力科学研究院有限公司南京分院，项目负责人
+清洁电源与传统电源协同演进优化模型及路径研究，2020-2021，全球能源互联网集团有限公司，项目负责人
+远距离变频驱动技术研究，2019-2021，中海石油（中国）有限公司北京研究中心，项目负责人
+国网江苏电科院基于可控移相器的电网电压稳定性提升措施研究，2019-2020，国网江苏省电力有限公司电力科学研究院，项目负责人
+大规模光伏发电接入送受端直流近区的电网安控措施研究，2019-2020，中国电力科学研究院有限公司南京分院，项目负责人
+特高压交直流电网解耦模型及实证研究，2019-2020，国网经济技术研究院有限公司，项目负责人
+电网量化评估算法实现，2018，中国电力科学研究院有限公司，项目负责人
+舟山海岛电网无功优化专题研究，2017-2018，舟山启明电力设计院有限公司，项目负责人
+全球能源互联网框架下的交直流混联电网规划策略和优化方法研究，2017-2018，国网河南省电力公司经济技术研究院，项目负责人
+面向主动配电网新特征的智能感知技术研究与应用，2017-2018，国网山东省电力公司潍坊供电公司，项目负责人
+利用评估软件研究提高受端电网安全性的受端电网直流受电规模计算方法，2015-2017，国网江苏省电力有限公司电力科学研究院，项目负责人
+发电机出线导体磁场热效应及防护措施研究，2016-2017，山东电力工程咨询院有限公司，第二位",,"Xiaohui Wang, Lei Ding*, Zhenbin Ma, Rasoul Azizipanah-Abarghooee and Vladimir Terzija, “Perturbation Based Sensitivity Analysis of Slow Coherency with Variable Power System Inertia,” IEEE Transactions on Power Systems, vol. 36, no. 2, pp. 1121-1129, Mar. 2021. (SCI)
+Zhao Yu, Shuanbao Niu, Chao Huo, Ning Chen, Kaige Song*, Xiaohui Wangand Yu Bai, “Multi-objective Partition Planning for Multi-infeed HVDC System,” Global Energy Interconnection, vol. 4, no. 1, pp. 81-90, Feb. 2021. (EI)
+Zhan Ma, Feng Gao*, Xin Gu, Nan Li, Qiang Wu, Xiaohui Wangand Xiaolong Wang, “Multilayer SOH Equalization Scheme for MMC Battery Energy Storage System,” IEEE Transactions on Power Electronics, vol. 35, no. 12, pp. 13514-13527, Dec. 2020. (SCI)
+Xiaohui Wang, Peng Wang, Yunbo Wang and Fang Shi*, “Online Estimation of Short-Circuit Fault Level in Active Distribution Network,” Applied Sciences-Basel, vol. 10, no. 11, Jun. 2020. (SCI)
+Edward Christopher*, Mark Sumner, David Thomas, Xiaohui Wangand Frans de Wildt, “Fault Location in a Zonal DC Marine Power System Using Active Impedance Estimation,” IEEE Transaction on Industry Applications, vol. 49, no. 2, pp. 860-865, Mar. 2013. (SCI)",,https://www.ee.sdu.edu.cn/__local/7/05/4D/0B6592C225A4394AA4D610FD606_7C82D8E5_1E3D7.png,研究生,博士,1,副所长（可再生能源与智能电网研究所）,
+刘彦华,83,154,13145315375,y.liu@sdu.edu.cn,助理研究员,,"1. 离岸可再生能源高可靠优化及智慧运维
+2. 漂浮式风电载荷减震控制
+3. 海上风电容错控制及故障诊断
+4. 波浪能转换器先进控制
+5. 数据驱动控制",,,"尹瑞，刘彦华，明镜. 超声波智能导盲装置，实用新型专利，ZL201120045366.2[P], 2011.","1. 国家自然科学基金委员会青年科学基金项目，风浪耦合影响下漂浮式风机变桨控制的增稳抑振机理研究，2024-01至2026-012，30万元，在研，主持。
+2. 国家重点研发计划青年科学家项目，大功率低成本海上风电高效能量传变理论与控制技术，2023.3-2027.2，5万元，在研，参与。
+3. 国家自然科学基金（面上），微电网系统高品质协同预测控制，2023至2026，57万元，第二主要参与人。
+4. 国网山东综合能源服务有限公司，云边协同柔性负荷管控平台，2022-09至2022-12，18万元，在研，主持。
+5. 山东鲁软数字科技有限公司，新能源场站一次调频策略研究，2022-09至2022-12，19万元，在研，主持。
+6. 包头北方创业有限责任公司，快速栈桥电气部分算法验证，2022-03至2022-05，45万元，在研，主持。
+7. 山东鲁能控制工程有限公司，工业燃气轮机软件控制算法设计，2020-01至2020-06，10万，结题，主持。
+8. 英国提赛德大学、赫尔大学和约克大学共同资助，生物制药控制算法优化，2020-02至2021-01，10万元，结题，主持子课题。
+9. 英国EPSRC，海上风电变桨和转子系统级故障监控，2019-07至2022-12，结题，主持子课题。
+10. 英国能源部BEIS，综合能源云边协同控制，2019-11至2020-5，12万元，结题，主持子课题。
+11. 山东大学基本科研业务费资助项目，2022-05至2024-12，10万元，主持。
+12. 教育部产学合作协同育人项目，南京研旭电气科技有限公司，2022.9-2024.9，主持。",,"1. Y. Liu, R. J. Patton*, S. Shi. Actuator fault tolerant offshore wind turbine load mitigation control [J]. Renewable Energy, 2023, 205, 432-446.
+2. Y. Liu, S. Shi, Z. Zhang*, Z. Di and O. Babayomi. Data-driven model predictive control for wave energy converters using Gaussian process [J]. Symmetry, 2022, 14(7):1284.
+3. Y. Liu, R. J. Patton*, S. Shi, Wind turbine asymmetrical load reduction with pitch sensor fault compensation [J]. Wind Energy, 2020, 23(7): 1523-1541.
+4. 刘彦华，董泽. 风速及风电功率超短期动态选择线性组合[J]，太阳能学报，2016, 37(4):1009-1016.
+5. Y. Liu, R. J. Patton*, S. Shi. Monte Carlo Analysis of Bayesian Optimization-based Pitch Controller with Pitch Fault Compensation for Offshore Wind Turbine[J]. IFAC Safeprocess 2022, 2022, 55(6): 384-389.",,https://www.ee.sdu.edu.cn/__local/F/3A/C7/81D5646355226A3AF5EB852D5DD_63E1D48B_2C98.jpeg,研究生,博士,1,研究生导师,
+刘智杰,83,154,18253162068,liuzj@sdu.edu.cn,副研究员/硕士生导师,,"1. 可再生能源并网控制
+2. 柔性直流输配电运行策略
+3. 模块化多电平换流器运行与控制",,,,"1. 宽范围运行MMC的内部能量动态优化机理与方法研究，国家自然科学基金项目，2022-2025，项目负责人;
+2. 模块化多电平海上风电换流站的轻量化优化原理与方法研究，山东省自然科学基金项目，2021-2024，项目负责人;
+3. MMC型海上风电换流站功率输出能力提升机理及策略研究，山东省人力资源和社会保障厅创新项目，2021-2022，项目负责人;
+4. 分布式光伏规模化接入系统智能管控分析平台研究项目，山东省电力公司科技项目，2022-2023，项目负责人;
+5. 面向配电网源网互动的光储集电技术研究项目，山东省电力公司科技项目，2022-2023，项目负责人;
+6. 县域配电网光储一体化集电装备加工与测试，山东省电力公司科技项目，2022-2023，项目负责人;
+7. 防御多馈入直流换相失败的换流站级控制方法研究，国家重点研发计划子课题，2022-2025，主要成员(第2位次)。",,"1. Zhijie Liu (刘智杰), J. Wang, L. 时Chen, and J. Wang, A Time-domain Analysis Model  for Modular Multilevel Based Grid-Forming Converters in Isolated Power  Supply. IEEE Transactions on Power Electronics, 2023. (中科院1区SCI收录)
+2. Zhijie Liu (刘智杰), K. Li, J. Wang, A General Model of Modular  Multilevel Converter for Analyzing the Steady-state Performance Optimization.  IEEE Transactions on Industrial Electronics, 2021, 68(2): 925-937. (中科院1区SCI收录)
+3. Zhijie Liu (刘智杰), K. Li, J. Wang, Z. Javid, M. Wang, and K. Sun,  Research on Capacitance Selection for Modular Multi-Level Converter. IEEE  Transactions on Power Electronics, 2019, 34(9): 8417-8434. (中科院1区SCI收录)
+4. Zhijie Liu (刘智杰), K. Li, J. Wang, and L. Li, A side‐effect‐free  method of reducing capacitance requirement for modular multilevel converters.  IET High Voltage, 2022: DOI: eceiv10.1049/hve2. 12168. (中科院1区SCI收录)
+5. Zhijie Liu (刘智杰), K. Li, Z. Guo, J. Wang and J. Qian, Evaluating  the Over-modulation Risk of Modular Multilevel Converters by Using Dynamic  Modulation Ratio. IEEE Journal of Emerging and Selected Topics in Power  Electronics, 2022 (中科院2区SCI收录)",,https://www.ee.sdu.edu.cn/__local/2/C3/34/8EC5E58DEE208C2D4CEA87AA08A_B4CCC048_8803.jpg,研究生,博士,1,教师,
+江艺宝,83,154,,yjiang@sdu.edu.cn,助理研究员,担任IEEE Trans. Power Systems/Smart Grid/Sustainable Energy、Applied Energy等国内外顶级期刊审稿人,"1. 综合能源系统
+2. 风力发电
+3. 人工智能与电力能源",,,,"1. 国家电网有限公司科技项目， “新能源场站+共享储能”协同控制与综合评价关键技术研究， 2022-10至2024-12， 参与
+2. 国家重点研发计划课题， 分布式信息能源系统的智能进化机理和设计——信息能源耦合节点能量一致标度及其自适应持续进化建模， 2020-01至2024-12， 参与
+3. 国家重点研发计划课题， 面向新型城镇的能源互联网关键技术及应用——城镇能源互联网多能预测、交易模式及信息支撑技术， 2018-07至2021-06， 参与
+4.  国家自然科学基金 面上项目， 电力系统间歇性可再生能源发电功率概率预测理论 及其应用研究， 2019-01至2022-12, 参与",,"1. Jiang Yibao; Wan Can; Chen Chen; Shahidehpour Mohammad; Song Yonghua; A Hybrid Stochastic-Interval Operation Strategy for Multi-Energy Microgrids, IEEE Transactions on Smart Grid, 2020, 11(1): 440-456
+2. Jiang Yibao; Wan Can; Botterud Audun; Song Yonghua; Dong Zhao Yang; Efficient Robust Scheduling of Integrated Electricity and Heat Systems: A Direct Constraint Tightening Approach, IEEE Transactions on Smart Grid, 2021, 12(4): 3016-3029
+3. Jiang Yibao; Wan Can; Botterud Audun; Song Yonghua; Shahidehpour Mohammad; Convex Relaxation of Combined Heat and Power Dispatch, IEEE Transactions on Power Systems, 2021, 36(2): 1442-1458
+4. Jiang Yibao; Wan Can; Botterud Audun; Song Yonghua; Xia Shiwei; Exploiting Flexibility of District Heating Networks in Combined Heat and Power Dispatch, IEEE Transactions on
+Sustainable Energy, 2020, 11(4): 2174-2188
+5. Jiang Yibao; Wan Can; Wang Jianhui; Song Yonghua; Dong Zhao Yang; Stochastic Receding Horizon Control of Active Distribution Networks With Distributed Renewables, IEEE Transactions on Power Systems, 2019, 34(2): 1325-1341",,https://www.ee.sdu.edu.cn/__local/7/FE/9F/422DC1719FE2F61F0D4D6C50AE4_F109F308_7101.jpeg,研究生,博士,1,助理研究员,山东大学
+孙凯祺,83,154,,skq@sdu.edu.cn,副研究员,,并网换流器运行与控制，柔性直流网络运行控制，柔性互联配电网、可再生能源并网、针对换流器的网络攻击防御,,,申请/授权专利16项（美国专利1项）,"[1]新能源换流器主动支撑机理与连续运行控制，第九届中国科学技术学会“青年人才托举工程”，负责人
+[2]国家自然科学基金青年项目，面向电网故障的新能源场站主动响应机理及协同控制策略研究，负责人；
+[3]国家自然科学基金联合基金课题，电力电子化配电系统谐波传播溯源与主动抑制基础理论研究，负责人
+[4]国家重点研发计划子课题，电能质量调节资源优化与多层级协同运行技术，负责人
+[5]山东省自然科学基金青年项目，新一代城镇电网用并网换流器运行边界及控制切换判据研究，负责人；
+[6]中国科学技术协会科技智库青年人才计划（全国425人），考虑并网换流器大规模接入的城镇电网发展模式及对策研究，负责人；
+[7]国家重点研发计划，光伏/风电场站暂态频率电压主动快速支撑技术，项目骨干。
+[1]基于山东德州庆云储能电站支撑区域绿色发展的资源灵活优化调度与储能电站价值挖掘研究，负责人。
+[2]面向新型配电网短路故障自愈水平提升的分布式光伏主动控制关键技术研究，负责人。
+[3]新型电力系统新能源主动控制机理及协同控制策略研究，负责人。","山东省科技进步一等奖
+2021 R&D 100 Awards（每年全球筛选 100 项最具创新性的技术）
+第四十八届日内瓦国际发明展，银奖，第一位；
+第四十八届日内瓦国际发明展，银奖，第二位；
+2023 Committee Prize Paper Award, IEEE IAS I&CPS department.
+Best paper award, SCEMS 2020；
+Excellent paper award, ECAI 2020；
+Best Student Paper, I&CPS ASIA 2020。
+第一届高校电气电子工程创新大赛优秀指导老师（一等奖）
+山东大学青年教师教学比赛一等奖
+山东大学青年教学能手","[1] Kaiqi Sun, Wei Qiu, Yuqing Dong, Chengwen Zhang, He Yin, Wenxuan Yao, Yilu Liu, “WAMS-Based HVDC Damping Control for Cyber Attack Defense,“ IEEE Transactions on Power Systems, vol. 38, no. 1, pp. 702-713, Jan. 2023. (ESI highly cited paper)
+[2] Kaiqi Sun, Huangqing Xiao, Jiuping Pan and Yilu Liu, “VSC-HVDC Interties for Urban Power Grid Enhancement,“ IEEE Transactions on Power Systems, vol. 36, no. 5, pp. 4745-4753, Sept. 2021.
+[3] Kaiqi Sun, Wei Qiu, Wenxuan Yao, Shutang You, He Yin and Yilu Liu, “Frequency Injection Based HVDC Attack-Defense Control Via Squeeze-Excitation Double CNN,“ IEEE Transactions on Power Systems, vol. 36, no. 6, pp. 5305-5316, Nov. 2021
+[4] Kaiqi Sun, Huangqing Xiao, Jiuping Pan and Yilu Liu, “A Station-hybrid HVDC System Structure and Control Strategies for Cross-seam Power Transmission,“ IEEE Transactions on Power Systems, vol. 36, no. 1, pp. 379-388, Jan. 2021. (ESI highly cited paper)
+[5] Kaiqi Sun, Ke-Jun Li, Jiuping Pan, Yong Liu, Yilu Liu, “An optimal combined operation scheme for pumped storage and hybrid wind-photovoltaic complementary power generation system,“ Applied Energy, 242:1155-1163,May. 2019.",,https://www.ee.sdu.edu.cn/__local/5/0E/B2/1B88103203A7F12210AC2BF89B1_A509C852_31AC.jpeg,研究生,博士,1,副研究员,
+梁永亮,83,154,,liangyl@sdu.edu.cn,副研究员,,"①智能配电网的故障研判
+②综合能源系统的优化调度",,,"[1]一种基于趋势分析的变压器潜伏性故障预警方法，ZL201710822442.8. 2020-11-24授权。
+[2]基于故障特征气体间关联特征的变压器故障类型识别方法，ZL201810251648.4. 2020-07-28授权。
+[3]一种多工况参数辨识优化的变压器热点温度预测方法，ZL 201610323832.6","[1]山东省自然科学基金青年项目，变压器绝缘状态参量多元关联特征与故障诊断.
+[2]国家重点研发计划，防御多馈入直流换相失败的换流站级控制方法研究，参与.
+[1]复杂电网模式下配网接地故障识别及保护技术研究.
+[2]中压配电电缆潜伏性故障检测与定位技术研究.
+[3]能源互联网多能流耦合特性分析与建模方法研究.","[1]基于数据驱动的配电网安全可控关键技术及应用, 中国电力企业联合会, 技术成果, 省部一等奖, 2021.
+[2]配电网安全可控关键技术及应用, 国家电网有限公司, 科技进步, 省部二等奖, 2022.
+[3]基于配电自动化系统的单相接地故障检测与辨识关键技术及应用, 国网湖北省电力有限公司, 科技进步一等奖,  2020.
+[4]基于电网大数据的小电流接地系统单相接地故障选线技术研究；德州市科技进步一等奖，2022.","[1]Yong-Liang Liang, Ke-Jun Li, Chen-Xian Guo, and Ming-Yang Li．Economic Scheduling of Compressed Natural Gas Main Station Considering Critical Peak Pricing[J]．Applied Energy，2021，V292，15 June 2021, 116937. (SCI一区，top)
+[2]YongliangLiang, Zhongyi Zhang, Ke-Jun Li, Yu-Chuan Li. New Correlation Features for DGA-Based Transformer Fault Diagnosis Based on Maximal Information Coefficient[J], High Voltage, 2022;7:302–313.(SCI一区，top)
+[3]Y. Liang, K. Li, Z. Ma and W. Lee．Typical Fault Cause Recognition of Single-Phase-to-Ground Fault for Overhead Lines in Nonsolidly Earthed Distribution Networks[J]．IEEE Transactions on Industry Applications, 2020，56(6): 6298-6306. (SCI二区)
+[4]Y. Liang, K. -J. Li, Z. Ma and W. -J. Lee．Multilabel Classification Model for Type Recognition of Single-Phase-to-Ground Fault Based on KNN-Bayesian Method[J]．IEEE Transactions on Industry Applications, 2021，57(2): 1294-1302. (SCI二区)
+[5]梁永亮, 吴跃斌, 马钊*, 等. 新一代低压直流供用电系统在“新基建”中的应用技术分析及发展展望. 中国电机工程学报, 2021, 41(1): 13-24.",,https://www.ee.sdu.edu.cn/__local/8/B2/DC/EAE598DE77A85BC5798F4AB7791_962360D6_256C.jpeg,研究生,博士,1,副研究员,
+丛伟,83,154,0531-81696134,weicong@sdu.edu.cn,教授,,"1. 电力系统继电保护
+2. 智能配电网故障自愈
+3. 配电网弹性保护与控制",,,"1. 基于故障分量电流幅值与相位差的电流差动保护方法
+2. 基于可达性矩阵的智能配电网电网分区及孤岛辨识方法
+3. 一种基于电压变化量幅值比较的故障方向判定方法
+4. 一种基于正序极化电压相位比较的故障方向判定方法
+5. 一种抽水蓄能机组在抽水工况下并网参数的整定方法
+6. 基于区域纵联比较原理的距离后备保护方法
+7. 基于合闸电压幅值控制的变压器励磁涌流抑制系统及方法
+8. 一种配电网拓扑的分布式管控与识别方法
+9. 一种智能配电网分布式故障检测方法
+10. 面向同杆双回线内部的零序反时限过流保护相继动作方法
+11. 面向同杆双回线相邻线路的零序反时限过流保护加速方法
+12. 适用于多用户的智能电表终端及用电管理方法
+13. 基于智能电表终端的用电服务系统及方法
+14. 基于三相电压电流的10kV配电线路断线故障判定方法
+15. 面向被保护元件模型的智能配电网故障检测方法及系统
+16. 多用户共用电表场景下的电费准确计量分摊系统及方法
+17. 基于信息码和远程控制的智能电表控制系统及方法
+18. 家庭用户多能源综合利用场景下的多表合一系统及方法
+19. 一种面向电网气象灾害的应急物资需求预测方法及系统
+20. 基于行波波形距离的高压输电线路行波保护方法及系统
+21. 基于初始电压行波频域衰减速率的直流输电线路保护方法
+22. 基于电压波形比较的交直流混联电网纵联保护方法及系统
+23. 用户侧综合能源优化利用区间规划方法及系统
+24. 一种多端柔性直流配电网纵联比较保护方法及系统
+25. 一种考虑储能系统的配电网分布式供电恢复方法","1. 智能配电网分布式故障自愈理论与关键技术研究，国家自然科学基金面上项目，2019—2022
+2. 面向智能配电网故障自愈的保护方法研究，国家自然科学基金面上项目，2014—2017
+3. 基于数字通道的统一纵联保护原理与实现技术研究，国家自然科学基金青年基金，2009—2011
+4. 智能配电网故障自愈原理与实现技术研究，山东省自然科学基金面上项目，2013—2016
+5. 配电线路全线速切继电保护原理与技术研究，山东省自然科学基金青年奖励基金，2007—2009
+6. 多源异构配电网分布式保护与供电恢复原理研究，山东省自然科学基金面上项目，2019—2022
+7. 基于综合能源系统的智能配电网弹性技术与应用基础研究，国网公司总部科技项目，2019—2020
+8. 智能电网统一纵联保护系统，国网山东省电力公司科技项目，2011—2012
+9. 基于PMU数据的输电线路参数在线计算系统研究，国网山东省电力公司科技项目，2011—2012
+10. 电网物理模拟系统运行与控制系统，国网技术学院科技项目，2012—2014
+11. 智能变电站故障数据分析与处理技术研究，国网山东省电力公司科技项目，2013—2014
+12. 特高压电网广域继电保护技术研究，国网山东省电力公司科技项目，2014—2015
+13. 配网侧短路故障隔离技术研究，国网山东省电力公司科技项目，2014—2015
+14. 抽水蓄能电站机组不同工况下同期并网设定值的研究，国网新源公司科技项目，2014—2015
+15. 智能配网故障自愈保护技术研究，国网山东省电力公司科技项目，2015—2016
+16. 变电站施工作业现场主动式智能安全管控系统研究与开发，国网山东省电力公司科技项目，2019—2020
+17. 用户侧综合能源智能管理与优化利用方法研究，国网山东省电力公司科技项目，2020-2021
+18. 配电台区电能计量装置批量换装智能管控系统关键技术研究与开发,国网山东省电力公司科技项目，2021-2023
+19. 基于区块链技术的继电保护定值管理方法研究，南京南瑞继保工程技术有限公司科技项目，2021-2023
+20. 继电保护定值全过程数字化运行管控关键技术研究，国网山东省电力公司科技项目，2022-2024","1. 电网致灾预警及应急处置关键技术与应用，山东省科技进步一等奖，2018年
+2. 基于数据驱动的电力保护系统智能决策平台研究与应用，中国电力科学技术进步二等奖，2020年
+3. 多元约束配电网智能控制与故障防御关键技术及应用，山东省科技进步三等奖，2021年
+4. 智能有源配电网快速故障自愈控制技术研究，山东电力科技进步二等奖，2018年","1. Cong   Wei,Wang Zeqian.Fault Judgment Method for Feeder in Smart Distribution   Network Based on Voltage Phase Comparison[J].IEEE   Transactions on Industry Applications,2023.
+2. Cong   Wei,Zhang Hongzhe,et al.Longitudinal Protection Method Based on Voltage Wave   Comparison in AC/DC Hybrid System[J].IEEE Transactions on Industry Applications,2022,58(2):1564-1572.
+3. Zhang   Yunqi,Cong Wei.An improved single-ended frequency-domain-based fault   detection scheme for MMC-HVDC transmission lines[J].International Journal of Electrical Power and   Energy Systems,2021(125).
+4. Zhang   Yunqi,Cong Wei.Single-ended MMC-MTDC line protection based on dual-frequency   amplitude ratio of traveling[J].Electric   Power Systems Research,2020(189).
+5. 丛伟,潘贞存,赵建国.基于纵联比较原理的广域继电保护算法研究[J].中国电机工程学报,2006,26(21):8-14.",,https://www.ee.sdu.edu.cn/__local/4/4F/6C/0D2FD1F1CDC2CE1AC08ACD24C01_D5796F6B_C7265.jpg,研究生,博士,1,实验中心主任,
+刘世明,83,154,0531-81696138,lsm@sdu.edu.cn,应用研究员,,"电力系统继电保护
+电力设备在线监测
+变电站自动化
+智能电子设备应用及开发",,,,,,,,https://www.ee.sdu.edu.cn/images/15/11/02/1mps0ydzbq/aln1_image001.jpg,研究生,博士,1,教师,
+随慧斌,83,154,0531-81696190,suihuibin@sdu.edu.cn,副教授,,"1、电力系统分析
+2、智能电网
+3、智能配电网",,,,"1、吉林省电力有限公司，吉林省重点城市配电网评估及对策研究， 40万，1，2012.1-2012.12
+2、济南市科技计划项目,隧道智能监控终端的研究,8万，1，2011年12月-2012年12月",,"1、Huibin Sui，   Nonlinear Fuzzy Model for  Operating Condition Evaluation of Power Cables in Tunnels， IEEE-IAS 2012 Annual Meeting, LasVegas，USA.  Oct. 2012.
+2、Huibin  Sui,  Advanced Metering Infrastructure for Distributed Generation Energy  Management, Applied Mechanics and Materials 2012,vol.229-231: 1081-1084
+3、随慧斌； 李靖强； 杨晓娟；等，XLPE电缆局部放电在线监测系统研究，山东大学学报(工学版)，2012，（4）：
+4、Huibin Sui, Ying Sun,  Wei-Jen Lee, A Demand Side Management Model Based on Advanced Metering  Infrastructure, The Fourth International Conference on Electric Utility  Deregulation and Restructuring and Power Technologies (DRPT 2011),Weihai,  July 6-9, 2011.
+5、Huibin Sui，Wei-Jen Lee，An  AMI Based Measurement and Control System in Smart Distribution Grid，IEEE Industry and Commercial Power System Technology (ICPS2011)  Newport CA，USA, May 1-4, 2011 
+6、随慧斌； 赵建国； 李可军； 牛林；考虑不均衡区域负荷增长的在线电压稳定评估电力自动化设备, Electric Power Automation Equipment, 2011, 31(3):57-61 ",,https://www.ee.sdu.edu.cn/images/15/11/02/10qhkd86w8/lir2_image001.jpg,,,1,教师,
