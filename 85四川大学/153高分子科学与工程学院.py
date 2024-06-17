@@ -9,7 +9,9 @@ college_id = 153
 img_url_head = None
 partition_num = '028'
 start_urls = [
-                'https://cpse.scu.edu.cn/szdw/zrjs/gfzclx.htm'  # 高分子材料系
+                # 'https://cpse.scu.edu.cn/szdw/zrjs/gfzclx.htm',  # 高分子材料系
+                # 'https://cpse.scu.edu.cn/szdw/zrjs/gfzcljggcx.htm',  # 高分子科学与工程
+                'https://cpse.scu.edu.cn/szdw/zrjs/yygfzclx.htm'  # 医用高分子材料
               ]
 
 

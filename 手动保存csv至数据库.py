@@ -6,29 +6,29 @@ from asyncio.log import logger
 from utils import csv_2_df, truncate_table, df2mysql, drop_duplicate_collage, local_engine, sf_engine, save_as_json
 from urllib import parse
 
-school_id = 86
-college_id = 152
-school_name = '华南理工大学'
-college_name = '电子与信息学院'
+school_id = 85
+college_id = 153
+school_name = '四川大学'
+college_name = '高分子科学与工程学院'
 
 img_url_head = ''
 
 data_real = {
-"姓名":"冯文杰",
-"电话":"",
-"邮箱":"eewjfeng@scut.edu.cn",
+"姓名":"张杰",
+"电话":"13086681699",
+"邮箱":"zhangjie@scu.edu.cn",
 "职称":"教授",
-"个人简介":"冯文杰：男, 1985年1月生，2013年10月毕业于南京理工大学，获工学博士学位，现为华南理工大学电信学院教授，博士生导师，国家优青(2018)，广东省毫米波太赫兹重点实验室副主任，曾任电磁仿真与射频感知工信部重点实验室副主任。主要研究领域为微波/毫米波电路与器件。曾获得2015年“江苏省科学技术二等奖”、2021年中国电子学会科技进步二等奖、2017年江苏省“青蓝工程”优秀青年骨干教师、2018年ACES-China青年科学家奖等。\n主持国家及省部级等项目共计10余项。在国际期刊和会议上发表论文200余篇，其中SCI收录IEEE期刊论文110余篇 (IEEE Transactions论文80余篇)，论文引用5000余次。受邀合作编写英文书籍的一章 , 获授权国家发明专利30余项。目前担任多个SCI期刊的副主编。已培养江苏省优秀硕士论文2名，获国内外学术会议最佳学生论文奖4项。",
-"研究方向":"微波毫米波集成电路、天线理论与技术、电路封装等",
-"专利":"[1] 一种高效率滤波天线阵列及通信设备，发明专利，2021.12.14授权， 发明人：冯文杰，程俊淇，施永荣，倪啸宇，伍文斌，车文荃，薛泉，专利号：ZL202111118032.8\n[2] 基于180°理想反相器的三频平衡式耦合器,发明专利，2021.2.12授权， 发明人：冯文杰，赵宇，车文荃，陈海东，尹蕊，商玉霞，专利号：ZL 201710736136.2\n[3] 基于SSPPs的四端口差分结构，发明专利，2021.3.2授权，发明人：冯文杰，冯炎皓，段茜文，袁淼，郭璐，专利号：ZL201910377061.2\n[4] 基于脊间隙波导的毫米波高增益高辐射效率槽天线阵列，发明专利，2021.5.4授权，发明人：冯文杰，倪啸宇，施永荣，郭璐，沈瑞亮，王慧，专利号：ZL202110114394.3\n[5] 一种紧凑高增益双极化差分滤波天线，发明专利，2020.5.22授权，发明人：冯文杰，荀孟祝，杨琬琛，车文荃，陈思，孟倩，专利号：ZL201811327158.4",
-"科研项目":"1. 国家自然科学基金重点项目（62231014）：多功能集成封装的微波毫米波无源器件与电路，2023.1-2027.12，在研，项目负责人\n2. 国家重点研发计划“6G高密度射频前端技术”专项课题（2020YFB1807405）：高密度射频芯片与天线封装互连技术，2020.12-2023.11, 在研，项目负责人\n3. 国家自然科学基金优秀青年科学基金项目（61822110）：微波电路与器件-可重构微波电路与器件的理论和技术研究，2019.1-2021.12, 结题，项目负责人\n4. 国家自然科学基金青年基金项目（61401206）：基于LTCC的宽带及平衡式滤波电路的设计方法与应用研究，2015.1-2017.12, 结题，项目负责人\n5. 江苏省自然科学基金青年基金项目（BK20140791）：新型宽带LTCC滤波电路的设计方法与应用研究，2014.7-2017.6, 结题，项目负责人\n6. 装备发展部预先研究项目（61404130407）：新型太赫兹天线技术，2019.1-2020.12, 结题，项目负责人\n7. 校企合作基金项目（61971387）：W波段基板封装与电路集成技术，2020.1-2021.6，结题，项目负责人\n8. 中国航天科技集团有限公司第八研究院，横向项目，校准天线阵列采购，2022.1.-2022.6,结题，项目负责人\n9. 中国航天科技集团有限公司第八研究院，产学研合作基金， 面向相控阵集成应用的新型三维复杂网络理论与技术研究，2021.1-2022.12，项目负责人；\n10. 中国人民解放军****, 横向项目, 0.15um工艺GaN微波集成电路技术, 2022-01 至2024-06, 在研, 项目负责人",
-"荣誉/获奖":"2018.08  2018年国家优秀青年科学基金获得者\n2016.02  2015年江苏省科技进步二等奖\n2021.12  2021年中国电子学会科技进步二等奖\n2017.05  2017 年江苏省 “青蓝工程”优秀青年骨干教师\n2015.09  2015 年江苏省优秀博士论文\n2017.12  2017年中国电子教育学会首届优秀博士学位论文提名奖\n2018.07  ACES-China 2018青年科学家奖",
-"照片地址":"https://yanzhao.scut.edu.cn/public/GetPhotoFile.aspx?file=iPEeevCNsCC!B844T52NgSMXw4wrATfPzFDDOX9CTKyWZTw2FjIIXvcG7D5La9hU",
+"个人简介":"  张杰教授，博士生导师。1987年本科毕业于原成都科技大学，1987年至1991年在杭州照相机械研究所工作，1991年至1994在四川大学高分子材料成型加工专业攻读硕士学位，毕业后留校任教。2002年获博士学位，2004年至2005年在英国 Loughborough University作访问学者，2007年晋升教授，是四川省海外高层次留学人才、四川省学术和技术带头人后备人选。先后担任中国模具标准化技术委员会委员/专家组成员、中国生产工程学会模具制造专业委员会委员、《塑料机械》杂志编委、成都市机械工程学会模具分会理事长、成都市模具工业协会常务理事等职。\n主要从事先进聚合物加工方法和技术的研究，通过材料凝聚态结构的设计与定构，实现聚合物材料的高性能化。如在注射成型过程中引入振动场的振动注射成型技术、在挤出过程中通过施加周向剪切场实现复合管材高性能化的挤出成型技术、聚合物基功能复合材料3D打印加工技术、聚合物熔体解缠结技术、模具CAD/CAE技术、微注塑成型技术等。主持或参加了包括国家自然科学基金重大科研仪器研制项目、国家自然科学基金重点项目、国家自然科学基金国际合作重大项目、国家自然科学基金面上项目、四川省科技支撑项目、教育部留学回国人员科研启动基金、高分子材料工程国家重点实验室主任基金、高分子材料工程国家重点实验室自主课题、聚合物分子工程国家重点实验室（复旦大学）开放课题、大连理工大学精密与特种加工教育部重点实验室开放课题、四川大学青年基金在内的多个项目，同时主持过多个与企业合作的横向项目。\n共发表学术论文140多篇，其中以第一作者或通讯作者在包括Macromolecules、Carbon、Additive Manufacturing、Composites Part B-Engineering、 Polymer等杂志上发表SCI收录论文90余篇。主编专著两部，已授权专利8项。已培养硕博士研究生39人，在读11人。2020年获四川省科学技术进步一等奖、2018年获中国循环经济协会科学技术奖一等奖、2016年获佛山市科学技术二等奖。",
+"研究方向":"主要从事先进聚合物加工方法和技术的研究，通过材料凝聚态结构的设计与定构，实现聚合物材料的高性能化。",
+"专利":"已授权专利8项",
+"科研项目":"主持或参加了包括国家自然科学基金重大科研仪器研制项目、国家自然科学基金重点项目、国家自然科学基金国际合作重大项目、国家自然科学基金面上项目、四川省科技支撑项目、教育部留学回国人员科研启动基金、高分子材料工程国家重点实验室主任基金、高分子材料工程国家重点实验室自主课题、聚合物分子工程国家重点实验室（复旦大学）开放课题、大连理工大学精密与特种加工教育部重点实验室开放课题、四川大学青年基金在内的多个项目，同时主持过多个与企业合作的横向项目。",
+"荣誉/获奖":"2020年获四川省科学技术进步一等奖、2018年获中国循环经济协会科学技术奖一等奖、2016年获佛山市科学技术二等奖。",
+"照片地址":"https://cpse.scu.edu.cn/__local/5/BC/DF/483C0A6D191906AA87CF953261C_28A7C300_520D4.jpg",
 "最高学历":"研究生",
 "最高学位":"博士",
 "职位":"教授",
-"办公地点":"广州市天河区五山路381号电子与信息学院",
-"科研论文":"[1] Wenjie Feng, Quan Xue and Wenquan Che, “Compact Planar Magic-T Based on the Double-Sided Parallel-Strip Line and the Slotline Coupling,” IEEE Transactions on Microwave Theory and Techniques, vol. 58, no. 11, pp. 2915–2923, Nov. 2010.\n[2] Wenjie Feng, Wenquan Che, “Novel Wideband Differential Bandpass Filters Based on T-Shaped Structure,” IEEE Transactions on Microwave Theory and Techniques, vol. 60, no. 6, pp. 1560–1568, Jun. 2012.\n[3] Wenjie Feng, Wenquan Che, Yumei Chang, Suyang Shi and Quan Xue, “High Selectivity Fifth-Order Wideband Bandpass Filters With Multiple Transmission Zeros Based on Transversal Signal-Interaction Concepts,” IEEE Transactions on Microwave Theory and Techniques, vol. 61, no. 1, pp. 89–97, Jan. 2013.  \n[4] Wenjie Feng, Haotian Zhu, Wenquan Che, Quan Xue, “Wideband In-Phase and Out-of-Phase Balanced Power Dividing and Combining Networks”, IEEE Transactions on Microwave Theory and Techniques, vol. 62, no. 5, pp. 1192–1202, May 2014.\n[5] Wenjie Feng, Chaoying Zhao, Wenquan Che, Quan Xue, “Wideband Balanced Network with High Isolation Using Double-Sided Parallel-Strip Line”, IEEE Transactions on Microwave Theory and Techniques, vol. 63, no. 12, pp. 4113–4118, Dec. 2015."
+"办公地点":"",
+"科研论文":"1. Jiang, Yixin; Leng, Jie; Zhang, Jie*. A high-efficiency way to improve the shape memory property of 4D-printed polyurethane/polylactide composite by forming in situ microfibers during extrusion-based additive manufacturing, ADDITIVE MANUFACTURING , 2021, 38\n2. Luo, Jiaxu; Liu, Mingjin; Chen, Jin; Min, Jie; Fu, Qiang*; Zhang, Jie*. Effectively maintaining the disentangled state of isotactic polypropylene in the presence of graphene nanoplatelet, POLYMER, 2021, 226\n3. Hong, Rui; Jiang, Yi-Xin; Leng, Jie; Liu, Ming-Jin; Shen, Kai-Zhi; Fu, Qiang; Zhang, Jie*. Synergic Enhancement of High-density Polyethylene through Ultrahigh Molecular Weight Polyethylene and Multi-flow Vibration Injection Molding: A Facile Fabrication with Potential Industrial Prospects, CHINESE JOURNAL OF POLYMER SCIENCE, 2021, 39(6): 756-769\n4. Jiang, Yixin; Wu, Junjie; Leng, Jie; Cardon, Ludwig; Zhang, Jie*. Reinforced and toughened PP/PS composites prepared by Fused Filament Fabrication (FFF) with in-situ microfibril and shish-kebab structure, POLYMER, 186\n5. Liu, Mingjin; Luo, Jiaxu; Chen, Jin; Gao, Xueqin; Fu, Qiang; Zhang, Jie*. Unique Slow Crack Growth Behavior of Isotactic Polypropylene: The Role of Shear Layer-Spherulites Layer Alternated Structure, POLYMERS , 2020, 12(11)"
 }
 
 data = {
