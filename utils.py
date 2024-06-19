@@ -75,12 +75,48 @@ selector = {
 }
 
 headers = Headers(headers=True).generate()
-api_headers = {
-    'Authorization': 'Bearer pat_BeF0pCJRtoqSyqesxUUtaQgajL9EAcHzRjlI1ZqFyhGhFV3mTRfIuyKvU5nRHhIB',
-    'Content-Type': 'application/json',
-    'Accept': '*/*',
-    'Host': 'api.coze.com',
-    'Connection': 'keep-alive',
+# api_headers = {
+#     'Authorization': 'Bearer pat_BeF0pCJRtoqSyqesxUUtaQgajL9EAcHzRjlI1ZqFyhGhFV3mTRfIuyKvU5nRHhIB',
+#     'Content-Type': 'application/json',
+#     'Accept': '*/*',
+#     'Host': 'api.coze.com',
+#     'Connection': 'keep-alive',
+# }
+
+prompt = {
+    'prompt_1': '',
+    'prompt_2': '',
+    'prompt_3': ''
+}
+
+api_info = {
+    'deepseek': {
+        'headers': {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json',
+            'Authorization': 'Bearer sk-c24af9e3068948ba98f8f49a3b83ef79'
+        },
+        'payload': {
+            "messages": [{
+                  "content": None,
+                  "role": "system"
+                },
+                {
+                  "content": None,
+                  "role": "user"
+                }],
+            "model": "deepseek-chat",
+            "frequency_penalty": 0,
+            "max_tokens": 4096,
+            "presence_penalty": 0,
+            "stop": None,
+            "stream": False,
+            "temperature": 1,
+            "top_p": 1,
+            "logprobs": False,
+            "top_logprobs": None
+        }
+    }
 }
 
 semaphore = Semaphore(5)
@@ -122,22 +158,36 @@ async def get_response_async(url, session, **kwargs):
         except:
             pass
 
-
-async def api_parse(result_gen, session):
-    for unpack in result_gen:
-        content_with_label, result = unpack
-    data = {
-        "conversation_id": "123",
-        "bot_id": "7363503511164207109",
-        "user": "123333333",
-        "query": content_with_label,
-        "stream": False
-    }
+async def get_api_resp(session, data, api_headers):
     async with semaphore_api:
         logger.info('request api to parse')
-        async with session.post(api_base_url, data=json.dumps(data), headers=api_headers, proxy='http://127.0.0.1:7890') as resp:
+        async with session.post(api_base_url, data=json.dumps(data), headers=api_headers,
+                                proxy='http://127.0.0.1:7890') as resp:
             if resp.ok:
-                return await resp.json(), result
+                return await resp.json()
+
+
+def api_payload_info(api, turn, content):
+    if api == 'deepseek':
+        api_info['deepseek']['payload']['messages'][0]['content'] = prompt[f'prompt_{turn}']
+        api_info['deepseek']['payload']['messages'][1]['content'] = content
+        payload = api_info['deepseek']['payload']
+        return payload
+
+async def api_parse(result_gen, session):
+    # for unpack in result_gen:
+    content_with_label, result = result_gen
+    # todo: 切换api的逻辑
+    # for count in range(3):  # 切换api
+    #     api = list(api_info.keys())[count]
+    api = 'deepseek'
+    for turn in range(1, 4):
+        await get_api_resp(session, data=api_payload_info(api, turn, content_with_label), api_headers=api_info[api]['headers'])
+        if result:  # 返回了结果
+            pass
+        else:  # 400
+
+            return None
 
 
 def result_dict_2_df(empty_df, result: dict):
