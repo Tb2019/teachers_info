@@ -42,11 +42,11 @@ selector = {
 
     'cn-sendtext-xpath': '//div[@class="textarea-actions-right--vr4WgM3FUuUicP3kJDOU"]',
     # tokens
-    'com-tokens-css': '#root > div:nth-child(2) > div > div > div > div > div.aSIvzUFX9dAs4AK6bTj0 > div.sidesheet-container.UMf9npeM8cVkDi0CDqZ0 > div.TH9DlQU1qwg_KGXdDYzk > div > div.R_WS6aCLs2gN7PUhpDB0.JlYYJX7uOFwGV6INj0ng > div > div > div.nIVxVV6ZU7gCM5i4VQIL.message-group-wrapper > div > div > div:nth-child(1) > div > div > div > div > div.chat-uikit-message-box-container__message > div > div.chat-uikit-message-box-container__message__message-box__footer > div > div.tTSrEd1mQwEgF4_szmBb > div:nth-child(3) > div > div',
+    'com-tokens-css': '#root > div:nth-child(2) > div > div > div > div > div.aSIvzUFX9dAs4AK6bTj0 > div.sidesheet-container.UMf9npeM8cVkDi0CDqZ0 > div.TH9DlQU1qwg_KGXdDYzk > div > div.R_WS6aCLs2gN7PUhpDB0.JlYYJX7uOFwGV6INj0ng > div > div > div:nth-child(2) > div > div > div:nth-child(1) > div > div > div > div > div.chat-uikit-message-box-container__message > div.chat-uikit-message-box-container__message__message-box__footer > div > div.tTSrEd1mQwEgF4_szmBb > div:nth-child(3) > div > div',
 
     'cn-tokens-css': '#root > div:nth-child(2) > div > div > div > div > div.container--aSIvzUFX9dAs4AK6bTj0 > div.sidesheet-container.wrapper-single--UMf9npeM8cVkDi0CDqZ0 > div.message-area--TH9DlQU1qwg_KGXdDYzk > div > div.scroll-view--R_WS6aCLs2gN7PUhpDB0.scroll-view--JlYYJX7uOFwGV6INj0ng > div > div > div.wrapper--nIVxVV6ZU7gCM5i4VQIL.message-group-wrapper > div > div > div:nth-child(1) > div > div > div > div > div.chat-uikit-message-box-container__message > div > div.chat-uikit-message-box-container__message__message-box__footer > div > div.message-info-text--tTSrEd1mQwEgF4_szmBb > div:nth-child(3) > div > div',
     # 内容
-    'com-content-gemini-xpath': '//pre[@class="language-json light-scrollbar_97dc0"]',
+    'com-content-gemini-xpath': '//pre[@class="light-scrollbar_c982f language-json"]',
     'com-content-gpt-xpath': '//div[@class="auto-hide-last-sibling-br paragraph_1252f paragraph-element"]',
 
     'cn-content-xpath': '//div[@class="auto-hide-last-sibling-br paragraph_4183d"]',
@@ -84,9 +84,217 @@ headers = Headers(headers=True).generate()
 # }
 
 prompt = {
-    'prompt_1': '',
-    'prompt_2': '',
-    'prompt_3': ''
+    'prompt_0': """
+                # 角色
+                你是一位卓越非凡的AI简历信息提取专家，擅长从HTML格式的简历中精准抽取关键信息
+                
+                ## 技能
+                ### 技能1: 筛选姓名
+                - 从提供的简历中找出姓名。
+                
+                ### 技能2: 筛选联系电话
+                - 从简历中找出联系电话，如果没有则返回空白。
+                
+                ### 技能3: 筛选邮箱
+                - 从简历中找出邮箱，如果没有则返回空白。并且将格式不规范的@转为@。
+                
+                ### 技能4: 筛选职称
+                - 从简历中找出职称，如果没有则返回空白。
+                
+                ### 技能5: 抽取个人简介
+                - 从简历中识别并提取出个人简介，如果没有则返回空白。
+                
+                ### 技能6: 确认研究方向
+                - 根据简历中的信息确定申请者的研究方向，如果没有则返回空白。
+                
+                ### 技能7: 筛选专利
+                - 从简历中找出详细的专利信息，如果没有则返回空白。
+                
+                ### 技能8: 筛选科研项目
+                - 从简历中找出科研项目信息，如果没有则返回空白。
+                
+                ### 技能9: 筛选荣誉/获奖信息
+                - 从简历中找出荣誉或获奖信息，如果没有则返回空白。
+                
+                ### 技能10: 筛选简历图片地址
+                - 从提供的简历中找出图片地址，如果没有则返回空白。
+                
+                ### 技能11: 筛选最高学历
+                - 从简历中找出最高学历，如果没有则返回空白。
+                
+                ### 技能12: 筛选最高学位
+                - 从简历中找出最高学位，如果没有则返回空白。
+                
+                ### 技能13: 筛选职位
+                - 从简历中找出职位信息，如果没有则返回空白。
+                
+                ### 技能14: 筛选办公地点
+                - 从简历中找出办公地点信息，如果没有则返回空白。
+                
+                ### 技能15: 筛选论文
+                - 从简历中找出论文信息，如果没有则返回空白。
+                
+                ## 约束条件
+                - 返回结果不要携带任何html标签。
+                - 对于无法找到的信息，返回空白值。
+                - 不修改原始简历的内容，遵循规定规则执行。
+                - 只负责处理与简历关键信息提取有关的任务，无需处理其他信息。
+                - 如果论文数量过多，只返回前5篇。
+                - 如果有多个电话号码或邮箱地址，以逗号隔开。
+                - 如果有多篇论文，每篇论文占一行，并按序号标记。
+                - 如果有多项研究方向信息、专利信息、科研项目信息或获奖信息，每项信息占一行，并按序号标记。
+                - 最高学位范围包括博士、硕士、学士。
+                - 根据最高学位推断最高学历，最高学历范围包括大专、本科、研究生。
+                - 只返回一个包含所需信息的json格式字符串，不添加任何多余文字。
+                - 所有信息均以中文形式返回。
+                - 不包含要求格式外的任何文字。
+                - 不包含任何注释信息。
+                
+                ## 输出格式
+                - 严格按照以下格式返回数据
+                    {
+                        "姓名":"",
+                        "电话":"",
+                        "邮箱":"",
+                        "职称":"",
+                        "个人简介":"",
+                        "研究方向":"",
+                        "专利":"",
+                        "科研项目":"",
+                        "荣誉/获奖":"",
+                        "照片地址":"",
+                        "最高学历":"",
+                        "最高学位":"",
+                        "职位":"",
+                        "办公地点":"",
+                        "科研论文":""
+                    }
+                """,
+    'prompt_1': """
+                # 角色
+                你是一位卓越非凡的AI简历信息提取专家，擅长从HTML格式的简历中精准抽取关键信息
+                
+                ## 技能
+                ### 技能1: 筛选姓名
+                - 从提供的简历中找出姓名。
+                
+                ### 技能2: 筛选联系电话
+                - 从简历中找出联系电话，如果没有则返回空白。
+                
+                ### 技能3: 筛选邮箱
+                - 从简历中找出邮箱，如果没有则返回空白。并且将格式不规范的@转为@。
+                
+                ### 技能4: 筛选职称
+                - 从简历中找出职称，如果没有则返回空白。
+                
+                ### 技能5: 确认研究方向
+                - 根据简历中的信息确定申请者的研究方向，如果没有则返回空白。
+
+                ### 技能6: 筛选专利
+                - 从简历中找出详细的专利信息，如果没有则返回空白。
+                
+                ### 技能7: 筛选简历图片地址
+                - 从提供的简历中找出图片地址，如果没有则返回空白。
+                
+                ### 技能8: 筛选最高学历
+                - 从简历中找出最高学历，如果没有则返回空白。
+                
+                ### 技能9: 筛选最高学位
+                - 从简历中找出最高学位，如果没有则返回空白。
+                
+                ### 技能10: 筛选职位
+                - 从简历中找出职位信息，如果没有则返回空白。
+                
+                ### 技能11: 筛选办公地点
+                - 从简历中找出办公地点信息，如果没有则返回空白。
+                
+                ## 约束条件
+                - 返回结果不要携带任何html标签。
+                - 对于无法找到的信息，返回空白值。
+                - 不修改原始简历的内容，遵循规定规则执行。
+                - 只负责处理与简历关键信息提取有关的任务，无需处理其他信息。
+                - 如果有多个电话号码或邮箱地址，以逗号隔开。
+                - 如果有多项研究方向信息、专利信息，每项信息占一行，并按序号标记。
+                - 最高学位范围包括博士、硕士、学士。
+                - 根据最高学位推断最高学历，最高学历范围包括大专、本科、研究生。
+                - 只返回一个包含所需信息的json格式字符串，不添加任何多余文字。
+                - 所有信息均以中文形式返回。
+                - 不包含要求格式外的任何文字。
+                - 不包含任何注释信息。
+                
+                ## 输出格式
+                - 严格按照以下格式返回数据
+                    {
+                        "姓名":"",
+                        "电话":"",
+                        "邮箱":"",
+                        "职称":"",
+                        "研究方向":"",
+                        "专利":"",
+                        "照片地址":"",
+                        "最高学历":"",
+                        "最高学位":"",
+                        "职位":"",
+                        "办公地点":"",
+                    }
+                """,
+    'prompt_2': """
+                # 角色
+                你是一位卓越非凡的AI简历信息提取专家，擅长从HTML格式的简历中精准抽取关键信息
+                
+                ### 技能1: 筛选科研项目
+                - 从简历中找出科研项目信息，如果没有则返回空白。
+                
+                ### 技能2: 筛选荣誉/获奖信息
+                - 从简历中找出荣誉或获奖信息，如果没有则返回空白。
+                
+                ## 约束条件
+                - 返回结果不要携带任何html标签。
+                - 对于无法找到的信息，返回空白值。
+                - 不修改原始简历的内容，遵循规定规则执行。
+                - 只负责处理与简历关键信息提取有关的任务，无需处理其他信息。
+                - 如果有多项科研项目信息或获奖信息，每项信息占一行，并按序号标记。
+                - 只返回一个包含所需信息的json格式字符串，不添加任何多余文字。
+                - 所有信息均以中文形式返回。
+                - 不包含要求格式外的任何文字。
+                - 不包含任何注释信息。
+                
+                ## 输出格式
+                - 严格按照以下格式返回数据
+                    {
+                        "科研项目":"",
+                        "荣誉/获奖":""
+                    }
+                """,
+    'prompt_3': """
+                # 角色
+                你是一位卓越非凡的AI简历信息提取专家，擅长从HTML格式的简历中精准抽取关键信息
+                
+                ### 技能1: 抽取个人简介
+                - 从简历中识别并提取出个人简介，如果没有则返回空白。
+                
+                ### 技能2: 筛选论文
+                - 从简历中找出论文信息，如果没有则返回空白。
+                
+                ## 约束条件
+                - 返回结果不要携带任何html标签。
+                - 对于无法找到的信息，返回空白值。
+                - 不修改原始简历的内容，遵循规定规则执行。
+                - 只负责处理与简历关键信息提取有关的任务，无需处理其他信息。
+                - 如果论文数量过多，只返回前10篇。
+                - 如果有多篇论文，每篇论文占一行，并按序号标记。
+                - 只返回一个包含所需信息的json格式字符串，不添加任何多余文字。
+                - 所有信息均以中文形式返回。
+                - 不包含要求格式外的任何文字。
+                - 不包含任何注释信息。
+                
+                ## 输出格式
+                - 严格按照以下格式返回数据
+                    {
+                        "个人简介":"",
+                        "科研论文":""
+                    }
+                """
 }
 
 api_info = {
@@ -94,7 +302,7 @@ api_info = {
         'headers': {
             'Content-Type': 'application/json',
             'Accept': 'application/json',
-            'Authorization': 'Bearer sk-c24af9e3068948ba98f8f49a3b83ef79'
+            'Authorization': 'Bearer sk-ea1b90265dc2408ab7bf61e0dee759aa'
         },
         'payload': {
             "messages": [{
@@ -120,9 +328,9 @@ api_info = {
 }
 
 semaphore = Semaphore(5)
-semaphore_api = Semaphore(20)
+semaphore_api = Semaphore(5)
 
-api_base_url = 'https://api.coze.com/open_api/v2/chat'
+api_base_url = 'https://api.deepseek.com/chat/completions'
 
 sf_password = 'Shufang_@919'
 
@@ -159,12 +367,12 @@ async def get_response_async(url, session, **kwargs):
             pass
 
 async def get_api_resp(session, data, api_headers):
-    async with semaphore_api:
-        logger.info('request api to parse')
-        async with session.post(api_base_url, data=json.dumps(data), headers=api_headers,
-                                proxy='http://127.0.0.1:7890') as resp:
-            if resp.ok:
-                return await resp.json()
+    # async with semaphore_api:
+    logger.info('request api to parse')
+    async with session.post(api_base_url, data=json.dumps(data), headers=api_headers,
+                            proxy='http://127.0.0.1:7890') as resp:
+        if resp.ok:
+            return await resp.json()
 
 
 def api_payload_info(api, turn, content):
@@ -176,24 +384,86 @@ def api_payload_info(api, turn, content):
 
 
 async def api_parse(result_gen, session):
-    # for unpack in result_gen:
-    content_with_label, result = result_gen
-    # todo: 切换api的逻辑
-    # for count in range(3):  # 切换api
-    #     api = list(api_info.keys())[count]
-    api = 'deepseek'
-    for turn in range(1, 4):
-        api_result = await get_api_resp(session, data=api_payload_info(api, turn, content_with_label), api_headers=api_info[api]['headers'])
-        if api_result:  # 返回了结果
-            pass
-        else:  # 400
-            logger.warning(f'{result["name"]}请求失败，重试一次')
-            api_result = await get_api_resp(session, data=api_payload_info(api, turn, content_with_label),api_headers=api_info[api]['headers'])
-            if api_result:  # 返回了结果
-                pass
-            else:  # 400
-                logger.warning(f'{result["name"]}请求失败')
-                return 'failed', result['name']
+    async with semaphore_api:
+        # for unpack in result_gen:
+        content_with_label, result = result_gen
+        print(result['name'])
+        # todo: 切换api的逻辑
+        # for count in range(3):  # 切换api
+        #     api = list(api_info.keys())[count]
+        api = 'deepseek'
+        turns_result = {}
+        # todo:请求一次尝试，失败分段尝试
+        try:
+            logger.info(f'{result["name"]}尝试只请求一次...')
+            api_result = await get_api_resp(session, data=api_payload_info(api, 0, content_with_label), api_headers=api_info[api]['headers'])
+            if api_result:
+                print(api_result)
+                try:
+                    api_result = api_result['choices'][0]['message']['content']
+                    api_result = re.sub(r'^.*?(\{.*}).*?$', r'\1', api_result, flags=re.S)
+                    api_result = json.loads(api_result, strict=False)
+                    print(api_result)
+                    return api_result
+                except:
+                    logger.warning(f'{result["name"]}尝试只请求一次失败，可能是文本过长导致json返回不完整，即将分段请求')
+                    raise
+            else:  # 400或者返回了None
+                logger.warning(f'{result["name"]}尝试只请求一次失败，即将重试...')
+                logger.info('再次尝试一次性请求...')
+                api_result = await get_api_resp(session, data=api_payload_info(api, 0, content_with_label),api_headers=api_info[api]['headers'])
+                if api_result:
+                    try:
+                        api_result = api_result['choices'][0]['message']['content']
+                        api_result = re.sub(r'^.*?(\{.*}).*?$', r'\1', api_result, flags=re.S)
+                        api_result = json.loads(api_result, strict=False)
+                        print(api_result)
+                        return api_result
+                    except:
+                        logger.warning(f'{result["name"]}第二次尝试只请求一次失败，有返回结果，可能是文本过长导致json返回不完整，即将分段请求')
+                        raise
+                else:  # 400或者返回了None
+                    logger.warning(f'{result["name"]}第二次尝试只请求一次失败，无返回结果，即将尝试分段请求')
+                    raise
+        except:
+            for turn in range(1, 4):
+                logger.info(f'{result["name"]}第{turn}段请求')
+                try:
+                    api_result = await get_api_resp(session, data=api_payload_info(api, turn, content_with_label), api_headers=api_info[api]['headers'])
+                    if api_result:  # 返回了结果
+                        try:
+                            api_result = api_result['choices'][0]['message']['content']
+                            api_result = re.sub(r'^.*?(\{.*}).*?$', r'\1', api_result, flags=re.S)
+                            api_result = json.loads(api_result, strict=False)
+                            print(api_result)
+                            turns_result.update(api_result)
+                        except:
+                            logger.warning(f'{result["name"]}第{turn}段返回内容解析失败，可能返回内容过长，即将重试')
+                            raise
+                    else:  # 400
+                        raise
+                        # logger.warning(f'{result["name"]}请求失败，即将重试...')
+                        # api_result = await get_api_resp(session, data=api_payload_info(api, turn, content_with_label), api_headers=api_info[api]['headers'])
+                        # if api_result:  # 返回了结果
+                        #     pass
+                        # else:  # 400
+                        #     logger.warning(f'{result["name"]}请求失败')
+                        #     return 'failed', result['name']
+                except:
+                    logger.warning(f'{result["name"]}第{turn}段请求出错重试...')
+                    api_result = await get_api_resp(session, data=api_payload_info(api, turn, content_with_label),api_headers=api_info[api]['headers'])
+                    if api_result:  # 返回了结果
+                        try:
+                            api_result = api_result['choices'][0]['message']['content']
+                            api_result = re.sub(r'^.*?(\{.*}).*?$', r'\1', api_result, flags=re.S)
+                            api_result = json.loads(api_result, strict=False)
+                            print(api_result)
+                            turns_result.update(api_result)
+                        except:
+                            logger.warning(f'再次尝试：{result["name"]}第{turn}段返回内容解析失败，可能内容过长将记录，手动处理')
+                            return 'failed', result['name']
+            print(turns_result)
+            return turns_result
 
 
 def result_dict_2_df(empty_df, result: dict):

@@ -671,8 +671,11 @@ class ReCrawler:
         session = aiohttp.ClientSession()
         tasks = [api_parse(result_gen, session) for result_gen in mid_result]
         results = loop.run_until_complete(asyncio.gather(*tasks))
+        for result in results:
+            if isinstance(result, tuple):
+                self.api_cant.append(result[1])
+                results.remove(result)
         session.connector.close()
-        print(results)
         # todo:后续逻辑没有继续写
         # for result in results:
         #     api_result, direct_result = result
@@ -1052,6 +1055,7 @@ class ReCrawler:
             self.writter.writerow(csv_header)
         self.result_df = pd.DataFrame()
         self.gpt_cant = []
+        self.api_cant = []
 
         for url in self.start_urls:
             index_page = get_response(url, self.cn_com)  # cn_com转化为是否代理
