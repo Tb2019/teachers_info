@@ -174,6 +174,7 @@ def api_payload_info(api, turn, content):
         payload = api_info['deepseek']['payload']
         return payload
 
+
 async def api_parse(result_gen, session):
     # for unpack in result_gen:
     content_with_label, result = result_gen
@@ -182,12 +183,17 @@ async def api_parse(result_gen, session):
     #     api = list(api_info.keys())[count]
     api = 'deepseek'
     for turn in range(1, 4):
-        await get_api_resp(session, data=api_payload_info(api, turn, content_with_label), api_headers=api_info[api]['headers'])
-        if result:  # 返回了结果
+        api_result = await get_api_resp(session, data=api_payload_info(api, turn, content_with_label), api_headers=api_info[api]['headers'])
+        if api_result:  # 返回了结果
             pass
         else:  # 400
-
-            return None
+            logger.warning(f'{result["name"]}请求失败，重试一次')
+            api_result = await get_api_resp(session, data=api_payload_info(api, turn, content_with_label),api_headers=api_info[api]['headers'])
+            if api_result:  # 返回了结果
+                pass
+            else:  # 400
+                logger.warning(f'{result["name"]}请求失败')
+                return 'failed', result['name']
 
 
 def result_dict_2_df(empty_df, result: dict):
@@ -312,21 +318,43 @@ def clean_phone(partition_num: str, dirty_phone: str):
     if not dirty_phone:
         return None
 
-    # 格式化
-    phone = re.sub(r'—', '-', dirty_phone)
-    phone = re.sub(r'\s', '', phone)
-    phone = re.sub(r'(?<!^)(?:\(|（).*?(?:）|\))$', '', phone)
-    phone = re.sub(r'(?:（|\()(.*?)(?:\)|）)', r'\1', phone)
-    phone = re.sub(r'^\+?(?:（|\()?86(?:）|\))?-?', '', phone)
+    if ',' not in dirty_phone:
+        # 格式化
+        phone = re.sub(r'—', '-', dirty_phone)
+        phone = re.sub(r'\s', '', phone)
+        phone = re.sub(r'(?<!^)(?:\(|（).*?(?:）|\))$', '', phone)
+        phone = re.sub(r'(?:（|\()(.*?)(?:\)|）)', r'\1', phone)
+        phone = re.sub(r'^\+?(?:（|\()?86(?:）|\))?\+?-?', '', phone)
+        phone = re.sub(r'\+', '-', phone)
 
-    try:
-        int(re.sub('-|^0|,', '', phone))
-    except:
-        return None
+        try:
+            int(re.sub('-|^0|,', '', phone))
+        except:
+            return None
 
-    if ',' not in phone:
         if len(phone) > 13 and re.search(r'-\d{3,4}$', phone):
             phone = re.sub(r'-\d{3,4}$', '', phone)
+
+        # 识别错误区号
+        if re.match('^' + partition_num, phone) or re.match('^' + partition_num[1:], phone):
+            pass
+        else:
+            if not re.match('^' + partition_num, phone) and phone.startswith('0'):
+                if '-' in phone:
+                    return phone
+                if '-' not in phone and (phone.replace('0', '').startswith('1') or phone.replace('0', '').startswith('2')):
+                    return re.sub(r'(^\d{3})', r'\1-', phone)
+                else:
+                    return re.sub(r'(^\d{4})', r'\1-', phone)
+            elif (not re.match('^' + partition_num[1:], phone) and (len(re.sub(r'-', '', phone)) != 11 or len(re.sub(r'-', '', phone)) == 11 and not phone.startswith('1')) and len(re.sub(r'-', '', phone)) > 8):
+                if '-' in phone:
+                    return '0' + phone
+                if '-' not in phone and (phone.startswith('1') or phone.startswith('2')):
+                    return '0' + re.sub(r'(^\d{2})', r'\1-', phone)
+                else:
+                    return '0' + re.sub(r'(^\d{3})', r'\1-', phone)
+
+
         phone = re.sub('-', '', phone)
 
         if re.match('^' + partition_num, phone):
@@ -344,7 +372,54 @@ def clean_phone(partition_num: str, dirty_phone: str):
         return phone
     else:
         res_phone = ''
-        for num in phone.split(','):
+        for num in dirty_phone.split(','):
+
+            # 格式化
+            num = re.sub(r'—', '-', num)
+            num = re.sub(r'\s', '', num)
+            num = re.sub(r'(?<!^)(?:\(|（).*?(?:）|\))$', '', num)
+            num = re.sub(r'(?:（|\()(.*?)(?:\)|）)', r'\1', num)
+            num = re.sub(r'^\+?(?:（|\()?86(?:）|\))?\+?-?', '', num)
+            num = re.sub(r'\+', '-', num)
+
+            try:
+                int(re.sub('-|^0|,', '', num))
+            except:
+                return None
+
+            # 识别错误区号
+                # 识别错误区号
+            if re.match('^' + partition_num, num) or re.match('^' + partition_num[1:], num):
+                pass
+            else:
+                if not re.match('^' + partition_num, num) and num.startswith('0'):
+                    if '-' in num:
+                        pass
+                    elif '-' not in num and (num.replace('0', '').startswith('1') or num.replace('0', '').startswith('2')):
+                        num = re.sub(r'(^\d{3})', r'\1-', num)
+                    else:
+                        num = re.sub(r'(^\d{4})', r'\1-', num)
+
+                    if not res_phone:  # 防止开头多一个逗号
+                        res_phone += num
+                    else:
+                        res_phone = res_phone + ',' + num
+                    continue
+                elif (not re.match('^' + partition_num[1:], num) and (len(re.sub(r'-', '', num)) != 11 or len(re.sub(r'-', '', num)) == 11 and not num.startswith('1')) and len(re.sub(r'-', '', num)) > 8):
+                    if '-' in num:
+                        num = '0' + num
+                    elif '-' not in num and (num.startswith('1') or num.startswith('2')):
+                        num = '0' + re.sub(r'(^\d{2})', r'\1-', num)
+                    else:
+                        num = '0' + re.sub(r'(^\d{3})', r'\1-', num)
+
+                    if not res_phone:  # 防止开头多一个逗号
+                        res_phone += num
+                    else:
+                        res_phone = res_phone + ',' + num
+                    continue
+
+            # 区号正常
             if len(num) > 13 and re.search(r'-\d{3,4}$', num):
                 num = re.sub(r'-\d{3,4}$', '', num)
             num = re.sub('-', '', num)
@@ -353,8 +428,8 @@ def clean_phone(partition_num: str, dirty_phone: str):
                 num = re.sub('^' + partition_num, partition_num + '-', num)
             elif re.match('^' + partition_num[1:], num):
                 num = re.sub('^' + partition_num[1:], partition_num + '-', num)
-            elif len(phone) == 7 or len(phone) == 8:
-                phone = partition_num + '-' + phone
+            elif len(num) == 7 or len(num) == 8:
+                num = partition_num + '-' + num
             else:
                 pass
             if not res_phone:  # 防止开头多一个逗号
@@ -362,23 +437,6 @@ def clean_phone(partition_num: str, dirty_phone: str):
             else:
                 res_phone = res_phone + ',' + num
         return res_phone
-
-
-    # phone = re.sub(r'\d{2}-(\d+$)', '\1', phone)
-    # phone = re.sub(r'(?<=\d{3})-(\d{4}$)', r'\1', phone)
-    # phone = re.sub(r'(?<=\d{4})-(\d{4}$)', r'\1', phone)
-    # try:
-    #     int(re.sub('-|^0|,', '', phone))
-    # except:
-    #     return None
-    #
-    # if re.match(r'1\d{10}$|\d{3,4}-\d{7,8}$', phone):
-    #     return phone
-    # elif len(phone) == 8 or len(phone) == 7:
-    #     phone = partition_num + '-' + phone
-    #     return phone
-    # else:
-    #     return phone
 
 
 def replace_quotes_in_text(node):
