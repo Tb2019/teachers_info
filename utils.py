@@ -6,6 +6,7 @@ import pymysql
 import requests
 import pandas as pd
 import numpy as np
+from urllib import parse
 from loguru import logger
 from itertools import chain
 from asyncio import Semaphore
@@ -155,19 +156,19 @@ prompt = {
                     {
                         "姓名":"",
                         "电话":"",
-                        "邮箱":"",
-                        "职称":"",
+                        "邮箱":[],
+                        "职称":[],
                         "个人简介":"",
-                        "研究方向":"",
-                        "专利":"",
-                        "科研项目":"",
-                        "荣誉/获奖":"",
+                        "研究方向":[],
+                        "专利":[],
+                        "科研项目":[],
+                        "荣誉/获奖":[],
                         "照片地址":"",
                         "最高学历":"",
                         "最高学位":"",
-                        "职位":"",
+                        "职位":[],
                         "办公地点":"",
-                        "科研论文":""
+                        "科研论文":[]
                     }
                 """,
     'prompt_1': """
@@ -226,15 +227,15 @@ prompt = {
                 - 严格按照以下格式返回数据
                     {
                         "姓名":"",
-                        "电话":"",
-                        "邮箱":"",
-                        "职称":"",
-                        "研究方向":"",
-                        "专利":"",
+                        "电话":,
+                        "邮箱":[],
+                        "职称":[],
+                        "研究方向":[],
+                        "专利":[],
                         "照片地址":"",
                         "最高学历":"",
                         "最高学位":"",
-                        "职位":"",
+                        "职位":[],
                         "办公地点":"",
                     }
                 """,
@@ -262,8 +263,9 @@ prompt = {
                 ## 输出格式
                 - 严格按照以下格式返回数据
                     {
-                        "科研项目":"",
-                        "荣誉/获奖":""
+                        "姓名":"",
+                        "科研项目":[],
+                        "荣誉/获奖":[]
                     }
                 """,
     'prompt_3': """
@@ -291,8 +293,9 @@ prompt = {
                 ## 输出格式
                 - 严格按照以下格式返回数据
                     {
+                        "姓名":"",
                         "个人简介":"",
-                        "科研论文":""
+                        "科研论文":[]
                     }
                 """
 }
@@ -328,7 +331,7 @@ api_info = {
 }
 
 semaphore = Semaphore(5)
-semaphore_api = Semaphore(5)
+semaphore_api = Semaphore(6)
 
 api_base_url = 'https://api.deepseek.com/chat/completions'
 
@@ -382,63 +385,165 @@ def api_payload_info(api, turn, content):
         payload = api_info['deepseek']['payload']
         return payload
 
+def list2str(result: dict):
+    for key in result.keys():
+        if isinstance(result[key], list):
+            # 添加标号
+            # for i in range(len(result[key])):
+            #     result[key][i] = f'[{i + 1}] ' + result[key][i]
+            result[key] = '\n'.join(result[key])
+    return result
 
-async def api_parse(result_gen, session):
+def get_format_result(turn, content: dict, result_direct: dict, partition_num, img_url_head):
+    if turn == 1:
+        phone = clean_phone(partition_num, content.get('电话'))
+        result = {
+            'name': result_direct['name'],
+            'school_id': result_direct['school_id'],
+            'college_id': result_direct['college_id'],
+            'phone': phone if phone else result_direct['phone'],
+            'email': content.get('邮箱') if content.get('邮箱') else result_direct['email'],
+            'job_title': content.get('职称') if content.get('职称') else result_direct['job_title'],
+            'directions': content.get('研究方向') if content.get('研究方向') else result_direct['directions'],
+            'education_experience': content.get('教育经历') if content.get('教育经历') else result_direct[
+                'education_experience'],
+            'work_experience': content.get('工作经历') if content.get('工作经历') else result_direct['work_experience'],
+            'patent': content.get('专利') if content.get('专利') else result_direct['patent'],
+            'social_job': content.get('社会兼职') if content.get('社会兼职') else result_direct['social_job'],
+            'picture': None if not content.get('照片地址') else parse.urljoin(result_direct['picture'], content.get(
+                '照片地址')) if not img_url_head else parse.urljoin(img_url_head, content.get('照片地址')),
+            'education': result_direct['education'],
+            'qualification': result_direct['qualification'],
+            'job_information': result_direct['job_information'],
+            'responsibilities': content.get('职位') if content.get('职位') else result_direct['responsibilities'],
+            'office_address': content.get('办公地点') if content.get('办公地点') else result_direct['office_address']
+        }
+    elif turn == 2:
+        result = {
+            'project': content.get('科研项目') if content.get('科研项目') else result_direct['project'],
+            'award': content.get('荣誉/获奖') if content.get('荣誉/获奖') else result_direct['award']
+        }
+    elif turn == 3:
+        result = {
+            'abstracts': content.get('个人简介') if content.get('个人简介') else result_direct['abstracts'],
+            'paper': content.get('科研论文') if content.get('科研论文') else result_direct['paper']
+        }
+    else:
+        phone = clean_phone(partition_num, content.get('电话'))
+        result = {
+            'name': result_direct['name'],
+            'school_id': result_direct['school_id'],
+            'college_id': result_direct['college_id'],
+            'phone': phone if phone else result_direct['phone'],
+            'email': content.get('邮箱') if content.get('邮箱') else result_direct['email'],
+            'job_title': content.get('职称') if content.get('职称') else result_direct['job_title'],
+            'abstracts': content.get('个人简介') if content.get('个人简介') else result_direct['abstracts'],
+            'directions': content.get('研究方向') if content.get('研究方向') else result_direct['directions'],
+            'education_experience': content.get('教育经历') if content.get('教育经历') else result_direct[
+                'education_experience'],
+            'work_experience': content.get('工作经历') if content.get('工作经历') else result_direct['work_experience'],
+            'patent': content.get('专利') if content.get('专利') else result_direct['patent'],
+            'project': content.get('科研项目') if content.get('科研项目') else result_direct['project'],
+            'award': content.get('荣誉/获奖') if content.get('荣誉/获奖') else result_direct['award'],
+            'paper': content.get('科研论文') if content.get('科研论文') else result_direct['paper'],
+            'social_job': content.get('社会兼职') if content.get('社会兼职') else result_direct['social_job'],
+            'picture': None if not content.get('照片地址') else parse.urljoin(result_direct['picture'], content.get('照片地址')) if not img_url_head else parse.urljoin(img_url_head, content.get('照片地址')),
+            'education': result_direct['education'],
+            'qualification': result_direct['qualification'],
+            'job_information': result_direct['job_information'],
+            'responsibilities': content.get('职位') if content.get('职位') else result_direct['responsibilities'],
+            'office_address': content.get('办公地点') if content.get('办公地点') else result_direct['office_address']
+        }
+    return result
+
+
+async def api_parse(result_gen, session, partition_num, img_url_head):
     async with semaphore_api:
         # for unpack in result_gen:
-        content_with_label, result = result_gen
-        print(result['name'])
+        content_with_label, result_direct = result_gen
+        # print(result_direct['name'])
         # todo: 切换api的逻辑
         # for count in range(3):  # 切换api
         #     api = list(api_info.keys())[count]
         api = 'deepseek'
-        turns_result = {}
         # todo:请求一次尝试，失败分段尝试
         try:
-            logger.info(f'{result["name"]}尝试只请求一次...')
+            logger.info(f'{result_direct["name"]}尝试只请求一次...')
             api_result = await get_api_resp(session, data=api_payload_info(api, 0, content_with_label), api_headers=api_info[api]['headers'])
             if api_result:
-                print(api_result)
+                # if result_direct["name"] == '周伟英':
+                #     print(api_result)
+                # print(api_result)
                 try:
                     api_result = api_result['choices'][0]['message']['content']
                     api_result = re.sub(r'^.*?(\{.*}).*?$', r'\1', api_result, flags=re.S)
+                    api_result = re.sub(r'(,\s*)(?=}$)', '', api_result, flags=re.S)
                     api_result = json.loads(api_result, strict=False)
-                    print(api_result)
-                    return api_result
+                    api_result = list2str(api_result)
+                    result = get_format_result(0, api_result, result_direct, partition_num, img_url_head)
+                    # print(api_result)
+                    # return api_result
                 except:
-                    logger.warning(f'{result["name"]}尝试只请求一次失败，可能是文本过长导致json返回不完整，即将分段请求')
+                    logger.warning(f'{result_direct["name"]}尝试只请求一次失败，可能是文本过长导致json返回不完整，即将分段请求')
                     raise
             else:  # 400或者返回了None
-                logger.warning(f'{result["name"]}尝试只请求一次失败，即将重试...')
+                logger.warning(f'{result_direct["name"]}尝试只请求一次失败，即将重试...')
                 logger.info('再次尝试一次性请求...')
                 api_result = await get_api_resp(session, data=api_payload_info(api, 0, content_with_label),api_headers=api_info[api]['headers'])
                 if api_result:
                     try:
                         api_result = api_result['choices'][0]['message']['content']
                         api_result = re.sub(r'^.*?(\{.*}).*?$', r'\1', api_result, flags=re.S)
+                        api_result = re.sub(r'(,\s*)(?=}$)', '', api_result, flags=re.S)
                         api_result = json.loads(api_result, strict=False)
-                        print(api_result)
-                        return api_result
+                        api_result = list2str(api_result)
+                        result = get_format_result(0, api_result, result_direct, partition_num, img_url_head)
+                        # print(api_result)
+                        # return api_result
                     except:
-                        logger.warning(f'{result["name"]}第二次尝试只请求一次失败，有返回结果，可能是文本过长导致json返回不完整，即将分段请求')
+                        logger.warning(f'{result_direct["name"]}第二次尝试只请求一次失败，有返回结果，可能是文本过长导致json返回不完整，即将分段请求')
                         raise
                 else:  # 400或者返回了None
-                    logger.warning(f'{result["name"]}第二次尝试只请求一次失败，无返回结果，即将尝试分段请求')
+                    logger.warning(f'{result_direct["name"]}第二次尝试只请求一次失败，无返回结果，即将尝试分段请求')
                     raise
         except:
+            result = {
+                        'name': '',
+                        'school_id': '',
+                        'college_id': '',
+                        'phone': '',
+                        'email': '',
+                        'job_title': '',
+                        'directions': '',
+                        'education_experience': '',
+                        'work_experience': '',
+                        'patent': '',
+                        'social_job': '',
+                        'picture': '',
+                        'education': '',
+                        'qualification': '',
+                        'job_information': '',
+                        'responsibilities': '',
+                        'office_address': ''
+                    }
             for turn in range(1, 4):
-                logger.info(f'{result["name"]}第{turn}段请求')
+                logger.info(f'{result_direct["name"]}第{turn}段请求')
                 try:
                     api_result = await get_api_resp(session, data=api_payload_info(api, turn, content_with_label), api_headers=api_info[api]['headers'])
                     if api_result:  # 返回了结果
+                        # if result_direct["name"] == '朱剑锋':
+                        #     print(api_result)
                         try:
                             api_result = api_result['choices'][0]['message']['content']
                             api_result = re.sub(r'^.*?(\{.*}).*?$', r'\1', api_result, flags=re.S)
+                            api_result = re.sub(r'(,\s*)(?=}$)', '', api_result, flags=re.S)
                             api_result = json.loads(api_result, strict=False)
-                            print(api_result)
-                            turns_result.update(api_result)
+                            api_result = list2str(api_result)
+                            api_result = get_format_result(turn, api_result, result_direct, partition_num, img_url_head)
+                            # print(api_result)
+                            result.update(api_result)
                         except:
-                            logger.warning(f'{result["name"]}第{turn}段返回内容解析失败，可能返回内容过长，即将重试')
+                            logger.warning(f'{result_direct["name"]}第{turn}段返回内容解析失败，可能返回内容过长，即将重试')
                             raise
                     else:  # 400
                         raise
@@ -450,20 +555,23 @@ async def api_parse(result_gen, session):
                         #     logger.warning(f'{result["name"]}请求失败')
                         #     return 'failed', result['name']
                 except:
-                    logger.warning(f'{result["name"]}第{turn}段请求出错重试...')
+                    logger.warning(f'{result_direct["name"]}第{turn}段请求出错重试...')
                     api_result = await get_api_resp(session, data=api_payload_info(api, turn, content_with_label),api_headers=api_info[api]['headers'])
                     if api_result:  # 返回了结果
                         try:
                             api_result = api_result['choices'][0]['message']['content']
                             api_result = re.sub(r'^.*?(\{.*}).*?$', r'\1', api_result, flags=re.S)
+                            api_result = re.sub(r'(,\s*)(?=}$)', '', api_result, flags=re.S)
                             api_result = json.loads(api_result, strict=False)
-                            print(api_result)
-                            turns_result.update(api_result)
+                            api_result = list2str(api_result)
+                            api_result = get_format_result(turn, api_result, result_direct, partition_num, img_url_head)
+                            # print(api_result)
+                            result.update(api_result)
                         except:
-                            logger.warning(f'再次尝试：{result["name"]}第{turn}段返回内容解析失败，可能内容过长将记录，手动处理')
-                            return 'failed', result['name']
-            print(turns_result)
-            return turns_result
+                            logger.warning(f'再次尝试：{result_direct["name"]}第{turn}段返回内容解析失败，可能内容过长将记录，手动处理')
+                            return 'failed', result_direct['name']
+        print(result)
+        return result
 
 
 def result_dict_2_df(empty_df, result: dict):
