@@ -6,6 +6,7 @@ import pymysql
 import requests
 import pandas as pd
 import numpy as np
+from urllib import parse
 from loguru import logger
 from itertools import chain
 from asyncio import Semaphore
@@ -42,11 +43,11 @@ selector = {
 
     'cn-sendtext-xpath': '//div[@class="textarea-actions-right--vr4WgM3FUuUicP3kJDOU"]',
     # tokens
-    'com-tokens-css': '#root > div:nth-child(2) > div > div > div > div > div.aSIvzUFX9dAs4AK6bTj0 > div.sidesheet-container.UMf9npeM8cVkDi0CDqZ0 > div.TH9DlQU1qwg_KGXdDYzk > div > div.R_WS6aCLs2gN7PUhpDB0.JlYYJX7uOFwGV6INj0ng > div > div > div.nIVxVV6ZU7gCM5i4VQIL.message-group-wrapper > div > div > div:nth-child(1) > div > div > div > div > div.chat-uikit-message-box-container__message > div > div.chat-uikit-message-box-container__message__message-box__footer > div > div.tTSrEd1mQwEgF4_szmBb > div:nth-child(3) > div > div',
+    'com-tokens-css': '#root > div:nth-child(2) > div > div > div > div > div.aSIvzUFX9dAs4AK6bTj0 > div.sidesheet-container.UMf9npeM8cVkDi0CDqZ0 > div.TH9DlQU1qwg_KGXdDYzk > div > div.R_WS6aCLs2gN7PUhpDB0.JlYYJX7uOFwGV6INj0ng > div > div > div:nth-child(2) > div > div > div:nth-child(1) > div > div > div > div > div.chat-uikit-message-box-container__message > div.chat-uikit-message-box-container__message__message-box__footer > div > div.tTSrEd1mQwEgF4_szmBb > div:nth-child(3) > div > div',
 
     'cn-tokens-css': '#root > div:nth-child(2) > div > div > div > div > div.container--aSIvzUFX9dAs4AK6bTj0 > div.sidesheet-container.wrapper-single--UMf9npeM8cVkDi0CDqZ0 > div.message-area--TH9DlQU1qwg_KGXdDYzk > div > div.scroll-view--R_WS6aCLs2gN7PUhpDB0.scroll-view--JlYYJX7uOFwGV6INj0ng > div > div > div.wrapper--nIVxVV6ZU7gCM5i4VQIL.message-group-wrapper > div > div > div:nth-child(1) > div > div > div > div > div.chat-uikit-message-box-container__message > div > div.chat-uikit-message-box-container__message__message-box__footer > div > div.message-info-text--tTSrEd1mQwEgF4_szmBb > div:nth-child(3) > div > div',
     # 内容
-    'com-content-gemini-xpath': '//pre[@class="language-json light-scrollbar_97dc0"]',
+    'com-content-gemini-xpath': '//pre[@class="light-scrollbar_c982f language-json"]',
     'com-content-gpt-xpath': '//div[@class="auto-hide-last-sibling-br paragraph_1252f paragraph-element"]',
 
     'cn-content-xpath': '//div[@class="auto-hide-last-sibling-br paragraph_4183d"]',
@@ -75,18 +76,264 @@ selector = {
 }
 
 headers = Headers(headers=True).generate()
-api_headers = {
-    'Authorization': 'Bearer pat_BeF0pCJRtoqSyqesxUUtaQgajL9EAcHzRjlI1ZqFyhGhFV3mTRfIuyKvU5nRHhIB',
-    'Content-Type': 'application/json',
-    'Accept': '*/*',
-    'Host': 'api.coze.com',
-    'Connection': 'keep-alive',
+# api_headers = {
+#     'Authorization': 'Bearer pat_BeF0pCJRtoqSyqesxUUtaQgajL9EAcHzRjlI1ZqFyhGhFV3mTRfIuyKvU5nRHhIB',
+#     'Content-Type': 'application/json',
+#     'Accept': '*/*',
+#     'Host': 'api.coze.com',
+#     'Connection': 'keep-alive',
+# }
+
+prompt = {
+    'prompt_0': """
+                # 角色
+                你是一位卓越非凡的AI简历信息提取专家，擅长从HTML格式的简历中精准抽取关键信息
+                
+                ## 技能
+                ### 技能1: 筛选姓名
+                - 从提供的简历中找出姓名。
+                
+                ### 技能2: 筛选联系电话
+                - 从简历中找出联系电话，如果没有则返回空白。
+                
+                ### 技能3: 筛选邮箱
+                - 从简历中找出邮箱，如果没有则返回空白。并且将格式不规范的@转为@。
+                
+                ### 技能4: 筛选职称
+                - 从简历中找出职称，如果没有则返回空白。
+                
+                ### 技能5: 抽取个人简介
+                - 从简历中识别并提取出个人简介，如果没有则返回空白。
+                
+                ### 技能6: 确认研究方向
+                - 根据简历中的信息确定申请者的研究方向，如果没有则返回空白。
+                
+                ### 技能7: 筛选专利
+                - 从简历中找出详细的专利信息，如果没有则返回空白。
+                
+                ### 技能8: 筛选科研项目
+                - 从简历中找出科研项目信息，如果没有则返回空白。
+                
+                ### 技能9: 筛选荣誉/获奖信息
+                - 从简历中找出荣誉或获奖信息，如果没有则返回空白。
+                
+                ### 技能10: 筛选简历图片地址
+                - 从提供的简历中找出图片地址，如果没有则返回空白。
+                
+                ### 技能11: 筛选最高学历
+                - 从简历中找出最高学历，如果没有则返回空白。
+                
+                ### 技能12: 筛选最高学位
+                - 从简历中找出最高学位，如果没有则返回空白。
+                
+                ### 技能13: 筛选职位
+                - 从简历中找出职位信息，如果没有则返回空白。
+                
+                ### 技能14: 筛选办公地点
+                - 从简历中找出办公地点信息，如果没有则返回空白。
+                
+                ### 技能15: 筛选论文
+                - 从简历中找出论文信息，如果没有则返回空白。
+                
+                ## 约束条件
+                - 返回结果不要携带任何html标签。
+                - 对于无法找到的信息，返回空白值。
+                - 不修改原始简历的内容，遵循规定规则执行。
+                - 只负责处理与简历关键信息提取有关的任务，无需处理其他信息。
+                - 如果论文数量过多，只返回前5篇。
+                - 如果有多个电话号码或邮箱地址，以逗号隔开。
+                - 如果有多篇论文，每篇论文占一行，并按序号标记。
+                - 如果有多项研究方向信息、专利信息、科研项目信息或获奖信息，每项信息占一行，并按序号标记。
+                - 最高学位范围包括博士、硕士、学士。
+                - 根据最高学位推断最高学历，最高学历范围包括大专、本科、研究生。
+                - 只返回一个包含所需信息的json格式字符串，不添加任何多余文字。
+                - 所有信息均以中文形式返回。
+                - 不包含要求格式外的任何文字。
+                - 不包含任何注释信息。
+                
+                ## 输出格式
+                - 严格按照以下格式返回数据
+                    {
+                        "姓名":"",
+                        "电话":"",
+                        "邮箱":[],
+                        "职称":[],
+                        "个人简介":"",
+                        "研究方向":[],
+                        "专利":[],
+                        "科研项目":[],
+                        "荣誉/获奖":[],
+                        "照片地址":"",
+                        "最高学历":"",
+                        "最高学位":"",
+                        "职位":[],
+                        "办公地点":"",
+                        "科研论文":[]
+                    }
+                """,
+    'prompt_1': """
+                # 角色
+                你是一位卓越非凡的AI简历信息提取专家，擅长从HTML格式的简历中精准抽取关键信息
+                
+                ## 技能
+                ### 技能1: 筛选姓名
+                - 从提供的简历中找出姓名。
+                
+                ### 技能2: 筛选联系电话
+                - 从简历中找出联系电话，如果没有则返回空白。
+                
+                ### 技能3: 筛选邮箱
+                - 从简历中找出邮箱，如果没有则返回空白。并且将格式不规范的@转为@。
+                
+                ### 技能4: 筛选职称
+                - 从简历中找出职称，如果没有则返回空白。
+                
+                ### 技能5: 确认研究方向
+                - 根据简历中的信息确定申请者的研究方向，如果没有则返回空白。
+
+                ### 技能6: 筛选专利
+                - 从简历中找出详细的专利信息，如果没有则返回空白。
+                
+                ### 技能7: 筛选简历图片地址
+                - 从提供的简历中找出图片地址，如果没有则返回空白。
+                
+                ### 技能8: 筛选最高学历
+                - 从简历中找出最高学历，如果没有则返回空白。
+                
+                ### 技能9: 筛选最高学位
+                - 从简历中找出最高学位，如果没有则返回空白。
+                
+                ### 技能10: 筛选职位
+                - 从简历中找出职位信息，如果没有则返回空白。
+                
+                ### 技能11: 筛选办公地点
+                - 从简历中找出办公地点信息，如果没有则返回空白。
+                
+                ## 约束条件
+                - 返回结果不要携带任何html标签。
+                - 对于无法找到的信息，返回空白值。
+                - 不修改原始简历的内容，遵循规定规则执行。
+                - 只负责处理与简历关键信息提取有关的任务，无需处理其他信息。
+                - 如果有多个电话号码或邮箱地址，以逗号隔开。
+                - 如果有多项研究方向信息、专利信息，每项信息占一行，并按序号标记。
+                - 最高学位范围包括博士、硕士、学士。
+                - 根据最高学位推断最高学历，最高学历范围包括大专、本科、研究生。
+                - 只返回一个包含所需信息的json格式字符串，不添加任何多余文字。
+                - 所有信息均以中文形式返回。
+                - 不包含要求格式外的任何文字。
+                - 不包含任何注释信息。
+                
+                ## 输出格式
+                - 严格按照以下格式返回数据
+                    {
+                        "姓名":"",
+                        "电话":,
+                        "邮箱":[],
+                        "职称":[],
+                        "研究方向":[],
+                        "专利":[],
+                        "照片地址":"",
+                        "最高学历":"",
+                        "最高学位":"",
+                        "职位":[],
+                        "办公地点":"",
+                    }
+                """,
+    'prompt_2': """
+                # 角色
+                你是一位卓越非凡的AI简历信息提取专家，擅长从HTML格式的简历中精准抽取关键信息
+                
+                ### 技能1: 筛选科研项目
+                - 从简历中找出科研项目信息，如果没有则返回空白。
+                
+                ### 技能2: 筛选荣誉/获奖信息
+                - 从简历中找出荣誉或获奖信息，如果没有则返回空白。
+                
+                ## 约束条件
+                - 返回结果不要携带任何html标签。
+                - 对于无法找到的信息，返回空白值。
+                - 不修改原始简历的内容，遵循规定规则执行。
+                - 只负责处理与简历关键信息提取有关的任务，无需处理其他信息。
+                - 如果有多项科研项目信息或获奖信息，每项信息占一行，并按序号标记。
+                - 只返回一个包含所需信息的json格式字符串，不添加任何多余文字。
+                - 所有信息均以中文形式返回。
+                - 不包含要求格式外的任何文字。
+                - 不包含任何注释信息。
+                
+                ## 输出格式
+                - 严格按照以下格式返回数据
+                    {
+                        "姓名":"",
+                        "科研项目":[],
+                        "荣誉/获奖":[]
+                    }
+                """,
+    'prompt_3': """
+                # 角色
+                你是一位卓越非凡的AI简历信息提取专家，擅长从HTML格式的简历中精准抽取关键信息
+                
+                ### 技能1: 抽取个人简介
+                - 从简历中识别并提取出个人简介，如果没有则返回空白。
+                
+                ### 技能2: 筛选论文
+                - 从简历中找出论文信息，如果没有则返回空白。
+                
+                ## 约束条件
+                - 返回结果不要携带任何html标签。
+                - 对于无法找到的信息，返回空白值。
+                - 不修改原始简历的内容，遵循规定规则执行。
+                - 只负责处理与简历关键信息提取有关的任务，无需处理其他信息。
+                - 如果论文数量过多，只返回前10篇。
+                - 如果有多篇论文，每篇论文占一行，并按序号标记。
+                - 只返回一个包含所需信息的json格式字符串，不添加任何多余文字。
+                - 所有信息均以中文形式返回。
+                - 不包含要求格式外的任何文字。
+                - 不包含任何注释信息。
+                
+                ## 输出格式
+                - 严格按照以下格式返回数据
+                    {
+                        "姓名":"",
+                        "个人简介":"",
+                        "科研论文":[]
+                    }
+                """
+}
+
+api_info = {
+    'deepseek': {
+        'headers': {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json',
+            'Authorization': 'Bearer sk-ea1b90265dc2408ab7bf61e0dee759aa'
+        },
+        'payload': {
+            "messages": [{
+                  "content": None,
+                  "role": "system"
+                },
+                {
+                  "content": None,
+                  "role": "user"
+                }],
+            "model": "deepseek-chat",
+            "frequency_penalty": 0,
+            "max_tokens": 4096,
+            "presence_penalty": 0,
+            "stop": None,
+            "stream": False,
+            "temperature": 1,
+            "top_p": 1,
+            "logprobs": False,
+            "top_logprobs": None
+        }
+    }
 }
 
 semaphore = Semaphore(5)
-semaphore_api = Semaphore(20)
+semaphore_api = Semaphore(6)
 
-api_base_url = 'https://api.coze.com/open_api/v2/chat'
+api_base_url = 'https://api.deepseek.com/chat/completions'
 
 sf_password = 'Shufang_@919'
 
@@ -122,22 +369,209 @@ async def get_response_async(url, session, **kwargs):
         except:
             pass
 
+async def get_api_resp(session, data, api_headers):
+    # async with semaphore_api:
+    logger.info('request api to parse')
+    async with session.post(api_base_url, data=json.dumps(data), headers=api_headers,
+                            proxy='http://127.0.0.1:7890') as resp:
+        if resp.ok:
+            return await resp.json()
 
-async def api_parse(result_gen, session):
-    for unpack in result_gen:
-        content_with_label, result = unpack
-    data = {
-        "conversation_id": "123",
-        "bot_id": "7363503511164207109",
-        "user": "123333333",
-        "query": content_with_label,
-        "stream": False
-    }
+
+def api_payload_info(api, turn, content):
+    if api == 'deepseek':
+        api_info['deepseek']['payload']['messages'][0]['content'] = prompt[f'prompt_{turn}']
+        api_info['deepseek']['payload']['messages'][1]['content'] = content
+        payload = api_info['deepseek']['payload']
+        return payload
+
+def list2str(result: dict):
+    for key in result.keys():
+        if isinstance(result[key], list):
+            # 添加标号
+            # for i in range(len(result[key])):
+            #     result[key][i] = f'[{i + 1}] ' + result[key][i]
+            result[key] = '\n'.join(result[key])
+    return result
+
+def get_format_result(turn, content: dict, result_direct: dict, partition_num, img_url_head):
+    if turn == 1:
+        phone = clean_phone(partition_num, content.get('电话'))
+        result = {
+            'name': result_direct['name'],
+            'school_id': result_direct['school_id'],
+            'college_id': result_direct['college_id'],
+            'phone': phone if phone else result_direct['phone'],
+            'email': content.get('邮箱') if content.get('邮箱') else result_direct['email'],
+            'job_title': content.get('职称') if content.get('职称') else result_direct['job_title'],
+            'directions': content.get('研究方向') if content.get('研究方向') else result_direct['directions'],
+            'education_experience': content.get('教育经历') if content.get('教育经历') else result_direct[
+                'education_experience'],
+            'work_experience': content.get('工作经历') if content.get('工作经历') else result_direct['work_experience'],
+            'patent': content.get('专利') if content.get('专利') else result_direct['patent'],
+            'social_job': content.get('社会兼职') if content.get('社会兼职') else result_direct['social_job'],
+            'picture': None if not content.get('照片地址') else parse.urljoin(result_direct['picture'], content.get(
+                '照片地址')) if not img_url_head else parse.urljoin(img_url_head, content.get('照片地址')),
+            'education': result_direct['education'],
+            'qualification': result_direct['qualification'],
+            'job_information': result_direct['job_information'],
+            'responsibilities': content.get('职位') if content.get('职位') else result_direct['responsibilities'],
+            'office_address': content.get('办公地点') if content.get('办公地点') else result_direct['office_address']
+        }
+    elif turn == 2:
+        result = {
+            'project': content.get('科研项目') if content.get('科研项目') else result_direct['project'],
+            'award': content.get('荣誉/获奖') if content.get('荣誉/获奖') else result_direct['award']
+        }
+    elif turn == 3:
+        result = {
+            'abstracts': content.get('个人简介') if content.get('个人简介') else result_direct['abstracts'],
+            'paper': content.get('科研论文') if content.get('科研论文') else result_direct['paper']
+        }
+    else:
+        phone = clean_phone(partition_num, content.get('电话'))
+        result = {
+            'name': result_direct['name'],
+            'school_id': result_direct['school_id'],
+            'college_id': result_direct['college_id'],
+            'phone': phone if phone else result_direct['phone'],
+            'email': content.get('邮箱') if content.get('邮箱') else result_direct['email'],
+            'job_title': content.get('职称') if content.get('职称') else result_direct['job_title'],
+            'abstracts': content.get('个人简介') if content.get('个人简介') else result_direct['abstracts'],
+            'directions': content.get('研究方向') if content.get('研究方向') else result_direct['directions'],
+            'education_experience': content.get('教育经历') if content.get('教育经历') else result_direct[
+                'education_experience'],
+            'work_experience': content.get('工作经历') if content.get('工作经历') else result_direct['work_experience'],
+            'patent': content.get('专利') if content.get('专利') else result_direct['patent'],
+            'project': content.get('科研项目') if content.get('科研项目') else result_direct['project'],
+            'award': content.get('荣誉/获奖') if content.get('荣誉/获奖') else result_direct['award'],
+            'paper': content.get('科研论文') if content.get('科研论文') else result_direct['paper'],
+            'social_job': content.get('社会兼职') if content.get('社会兼职') else result_direct['social_job'],
+            'picture': None if not content.get('照片地址') else parse.urljoin(result_direct['picture'], content.get('照片地址')) if not img_url_head else parse.urljoin(img_url_head, content.get('照片地址')),
+            'education': result_direct['education'],
+            'qualification': result_direct['qualification'],
+            'job_information': result_direct['job_information'],
+            'responsibilities': content.get('职位') if content.get('职位') else result_direct['responsibilities'],
+            'office_address': content.get('办公地点') if content.get('办公地点') else result_direct['office_address']
+        }
+    return result
+
+
+async def api_parse(result_gen, session, partition_num, img_url_head):
     async with semaphore_api:
-        logger.info('request api to parse')
-        async with session.post(api_base_url, data=json.dumps(data), headers=api_headers, proxy='http://127.0.0.1:7890') as resp:
-            if resp.ok:
-                return await resp.json(), result
+        # for unpack in result_gen:
+        content_with_label, result_direct = result_gen
+        # print(result_direct['name'])
+        # todo: 切换api的逻辑
+        # for count in range(3):  # 切换api
+        #     api = list(api_info.keys())[count]
+        api = 'deepseek'
+        # todo:请求一次尝试，失败分段尝试
+        try:
+            logger.info(f'{result_direct["name"]}尝试只请求一次...')
+            api_result = await get_api_resp(session, data=api_payload_info(api, 0, content_with_label), api_headers=api_info[api]['headers'])
+            if api_result:
+                # if result_direct["name"] == '周伟英':
+                #     print(api_result)
+                # print(api_result)
+                try:
+                    api_result = api_result['choices'][0]['message']['content']
+                    api_result = re.sub(r'^.*?(\{.*}).*?$', r'\1', api_result, flags=re.S)
+                    api_result = re.sub(r'(,\s*)(?=}$)', '', api_result, flags=re.S)
+                    api_result = json.loads(api_result, strict=False)
+                    api_result = list2str(api_result)
+                    result = get_format_result(0, api_result, result_direct, partition_num, img_url_head)
+                    # print(api_result)
+                    # return api_result
+                except:
+                    logger.warning(f'{result_direct["name"]}尝试只请求一次失败，可能是文本过长导致json返回不完整，即将分段请求')
+                    raise
+            else:  # 400或者返回了None
+                logger.warning(f'{result_direct["name"]}尝试只请求一次失败，即将重试...')
+                logger.info('再次尝试一次性请求...')
+                api_result = await get_api_resp(session, data=api_payload_info(api, 0, content_with_label),api_headers=api_info[api]['headers'])
+                if api_result:
+                    try:
+                        api_result = api_result['choices'][0]['message']['content']
+                        api_result = re.sub(r'^.*?(\{.*}).*?$', r'\1', api_result, flags=re.S)
+                        api_result = re.sub(r'(,\s*)(?=}$)', '', api_result, flags=re.S)
+                        api_result = json.loads(api_result, strict=False)
+                        api_result = list2str(api_result)
+                        result = get_format_result(0, api_result, result_direct, partition_num, img_url_head)
+                        # print(api_result)
+                        # return api_result
+                    except:
+                        logger.warning(f'{result_direct["name"]}第二次尝试只请求一次失败，有返回结果，可能是文本过长导致json返回不完整，即将分段请求')
+                        raise
+                else:  # 400或者返回了None
+                    logger.warning(f'{result_direct["name"]}第二次尝试只请求一次失败，无返回结果，即将尝试分段请求')
+                    raise
+        except:
+            result = {
+                        'name': '',
+                        'school_id': '',
+                        'college_id': '',
+                        'phone': '',
+                        'email': '',
+                        'job_title': '',
+                        'directions': '',
+                        'education_experience': '',
+                        'work_experience': '',
+                        'patent': '',
+                        'social_job': '',
+                        'picture': '',
+                        'education': '',
+                        'qualification': '',
+                        'job_information': '',
+                        'responsibilities': '',
+                        'office_address': ''
+                    }
+            for turn in range(1, 4):
+                logger.info(f'{result_direct["name"]}第{turn}段请求')
+                try:
+                    api_result = await get_api_resp(session, data=api_payload_info(api, turn, content_with_label), api_headers=api_info[api]['headers'])
+                    if api_result:  # 返回了结果
+                        # if result_direct["name"] == '朱剑锋':
+                        #     print(api_result)
+                        try:
+                            api_result = api_result['choices'][0]['message']['content']
+                            api_result = re.sub(r'^.*?(\{.*}).*?$', r'\1', api_result, flags=re.S)
+                            api_result = re.sub(r'(,\s*)(?=}$)', '', api_result, flags=re.S)
+                            api_result = json.loads(api_result, strict=False)
+                            api_result = list2str(api_result)
+                            api_result = get_format_result(turn, api_result, result_direct, partition_num, img_url_head)
+                            # print(api_result)
+                            result.update(api_result)
+                        except:
+                            logger.warning(f'{result_direct["name"]}第{turn}段返回内容解析失败，可能返回内容过长，即将重试')
+                            raise
+                    else:  # 400
+                        raise
+                        # logger.warning(f'{result["name"]}请求失败，即将重试...')
+                        # api_result = await get_api_resp(session, data=api_payload_info(api, turn, content_with_label), api_headers=api_info[api]['headers'])
+                        # if api_result:  # 返回了结果
+                        #     pass
+                        # else:  # 400
+                        #     logger.warning(f'{result["name"]}请求失败')
+                        #     return 'failed', result['name']
+                except:
+                    logger.warning(f'{result_direct["name"]}第{turn}段请求出错重试...')
+                    api_result = await get_api_resp(session, data=api_payload_info(api, turn, content_with_label),api_headers=api_info[api]['headers'])
+                    if api_result:  # 返回了结果
+                        try:
+                            api_result = api_result['choices'][0]['message']['content']
+                            api_result = re.sub(r'^.*?(\{.*}).*?$', r'\1', api_result, flags=re.S)
+                            api_result = re.sub(r'(,\s*)(?=}$)', '', api_result, flags=re.S)
+                            api_result = json.loads(api_result, strict=False)
+                            api_result = list2str(api_result)
+                            api_result = get_format_result(turn, api_result, result_direct, partition_num, img_url_head)
+                            # print(api_result)
+                            result.update(api_result)
+                        except:
+                            logger.warning(f'再次尝试：{result_direct["name"]}第{turn}段返回内容解析失败，可能内容过长将记录，手动处理')
+                            return 'failed', result_direct['name']
+        print(result)
+        return result
 
 
 def result_dict_2_df(empty_df, result: dict):
@@ -262,21 +696,43 @@ def clean_phone(partition_num: str, dirty_phone: str):
     if not dirty_phone:
         return None
 
-    # 格式化
-    phone = re.sub(r'—', '-', dirty_phone)
-    phone = re.sub(r'\s', '', phone)
-    phone = re.sub(r'(?<!^)(?:\(|（).*?(?:）|\))$', '', phone)
-    phone = re.sub(r'(?:（|\()(.*?)(?:\)|）)', r'\1', phone)
-    phone = re.sub(r'^\+?(?:（|\()?86(?:）|\))?-?', '', phone)
+    if ',' not in dirty_phone:
+        # 格式化
+        phone = re.sub(r'—', '-', dirty_phone)
+        phone = re.sub(r'\s', '', phone)
+        phone = re.sub(r'(?<!^)(?:\(|（).*?(?:）|\))$', '', phone)
+        phone = re.sub(r'(?:（|\()(.*?)(?:\)|）)', r'\1', phone)
+        phone = re.sub(r'^\+?(?:（|\()?86(?:）|\))?\+?-?', '', phone)
+        phone = re.sub(r'\+', '-', phone)
 
-    try:
-        int(re.sub('-|^0|,', '', phone))
-    except:
-        return None
+        try:
+            int(re.sub('-|^0|,', '', phone))
+        except:
+            return None
 
-    if ',' not in phone:
         if len(phone) > 13 and re.search(r'-\d{3,4}$', phone):
             phone = re.sub(r'-\d{3,4}$', '', phone)
+
+        # 识别错误区号
+        if re.match('^' + partition_num, phone) or re.match('^' + partition_num[1:], phone):
+            pass
+        else:
+            if not re.match('^' + partition_num, phone) and phone.startswith('0'):
+                if '-' in phone:
+                    return phone
+                if '-' not in phone and (phone.replace('0', '').startswith('1') or phone.replace('0', '').startswith('2')):
+                    return re.sub(r'(^\d{3})', r'\1-', phone)
+                else:
+                    return re.sub(r'(^\d{4})', r'\1-', phone)
+            elif (not re.match('^' + partition_num[1:], phone) and (len(re.sub(r'-', '', phone)) != 11 or len(re.sub(r'-', '', phone)) == 11 and not phone.startswith('1')) and len(re.sub(r'-', '', phone)) > 8):
+                if '-' in phone:
+                    return '0' + phone
+                if '-' not in phone and (phone.startswith('1') or phone.startswith('2')):
+                    return '0' + re.sub(r'(^\d{2})', r'\1-', phone)
+                else:
+                    return '0' + re.sub(r'(^\d{3})', r'\1-', phone)
+
+
         phone = re.sub('-', '', phone)
 
         if re.match('^' + partition_num, phone):
@@ -294,7 +750,54 @@ def clean_phone(partition_num: str, dirty_phone: str):
         return phone
     else:
         res_phone = ''
-        for num in phone.split(','):
+        for num in dirty_phone.split(','):
+
+            # 格式化
+            num = re.sub(r'—', '-', num)
+            num = re.sub(r'\s', '', num)
+            num = re.sub(r'(?<!^)(?:\(|（).*?(?:）|\))$', '', num)
+            num = re.sub(r'(?:（|\()(.*?)(?:\)|）)', r'\1', num)
+            num = re.sub(r'^\+?(?:（|\()?86(?:）|\))?\+?-?', '', num)
+            num = re.sub(r'\+', '-', num)
+
+            try:
+                int(re.sub('-|^0|,', '', num))
+            except:
+                return None
+
+            # 识别错误区号
+                # 识别错误区号
+            if re.match('^' + partition_num, num) or re.match('^' + partition_num[1:], num):
+                pass
+            else:
+                if not re.match('^' + partition_num, num) and num.startswith('0'):
+                    if '-' in num:
+                        pass
+                    elif '-' not in num and (num.replace('0', '').startswith('1') or num.replace('0', '').startswith('2')):
+                        num = re.sub(r'(^\d{3})', r'\1-', num)
+                    else:
+                        num = re.sub(r'(^\d{4})', r'\1-', num)
+
+                    if not res_phone:  # 防止开头多一个逗号
+                        res_phone += num
+                    else:
+                        res_phone = res_phone + ',' + num
+                    continue
+                elif (not re.match('^' + partition_num[1:], num) and (len(re.sub(r'-', '', num)) != 11 or len(re.sub(r'-', '', num)) == 11 and not num.startswith('1')) and len(re.sub(r'-', '', num)) > 8):
+                    if '-' in num:
+                        num = '0' + num
+                    elif '-' not in num and (num.startswith('1') or num.startswith('2')):
+                        num = '0' + re.sub(r'(^\d{2})', r'\1-', num)
+                    else:
+                        num = '0' + re.sub(r'(^\d{3})', r'\1-', num)
+
+                    if not res_phone:  # 防止开头多一个逗号
+                        res_phone += num
+                    else:
+                        res_phone = res_phone + ',' + num
+                    continue
+
+            # 区号正常
             if len(num) > 13 and re.search(r'-\d{3,4}$', num):
                 num = re.sub(r'-\d{3,4}$', '', num)
             num = re.sub('-', '', num)
@@ -303,8 +806,8 @@ def clean_phone(partition_num: str, dirty_phone: str):
                 num = re.sub('^' + partition_num, partition_num + '-', num)
             elif re.match('^' + partition_num[1:], num):
                 num = re.sub('^' + partition_num[1:], partition_num + '-', num)
-            elif len(phone) == 7 or len(phone) == 8:
-                phone = partition_num + '-' + phone
+            elif len(num) == 7 or len(num) == 8:
+                num = partition_num + '-' + num
             else:
                 pass
             if not res_phone:  # 防止开头多一个逗号
@@ -312,23 +815,6 @@ def clean_phone(partition_num: str, dirty_phone: str):
             else:
                 res_phone = res_phone + ',' + num
         return res_phone
-
-
-    # phone = re.sub(r'\d{2}-(\d+$)', '\1', phone)
-    # phone = re.sub(r'(?<=\d{3})-(\d{4}$)', r'\1', phone)
-    # phone = re.sub(r'(?<=\d{4})-(\d{4}$)', r'\1', phone)
-    # try:
-    #     int(re.sub('-|^0|,', '', phone))
-    # except:
-    #     return None
-    #
-    # if re.match(r'1\d{10}$|\d{3,4}-\d{7,8}$', phone):
-    #     return phone
-    # elif len(phone) == 8 or len(phone) == 7:
-    #     phone = partition_num + '-' + phone
-    #     return phone
-    # else:
-    #     return phone
 
 
 def replace_quotes_in_text(node):

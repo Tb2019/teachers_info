@@ -669,13 +669,20 @@ class ReCrawler:
 
         loop = asyncio.get_event_loop()
         session = aiohttp.ClientSession()
-        tasks = [api_parse(result_gen, session) for result_gen in mid_result]
+        tasks = [api_parse(result_gen, session, self.partition_num, self.img_url_head) for result_gen in mid_result]
         results = loop.run_until_complete(asyncio.gather(*tasks))
         session.connector.close()
-        print(results)
-        # todo:后续逻辑没有继续写
-        # for result in results:
-        #     api_result, direct_result = result
+
+        for result in results:
+            if isinstance(result, tuple):
+                self.api_cant.append(result[1])
+                results.remove(result)
+            else:
+                self.writter.writerow(result.values())
+
+        print('*** api failed ***', self.api_cant)
+        return pd.DataFrame(results)
+
 
     # @retry(exceptions=Exception, tries=1, delay=1)
     def parse_detail_gpt(self, text, result_direct):
@@ -1043,15 +1050,22 @@ class ReCrawler:
         logger.info('处理完毕')
 
     def run(self):
-        if os.path.exists(f'{self.college_id}.csv'):
-            file = open(f'{self.college_id}.csv', mode='a', newline='', encoding='utf-8')
-            self.writter = csv.writer(file)
-        else:
-            file = open(f'{self.college_id}.csv', mode='a', newline='', encoding='utf-8')
-            self.writter = csv.writer(file)
-            self.writter.writerow(csv_header)
+        if self.api:
+            self.selenium_gpt = False
+
+        file = None
+        if self.selenium_gpt or self.api:
+            if os.path.exists(f'{self.college_id}.csv'):
+                file = open(f'{self.college_id}.csv', mode='a', newline='', encoding='utf-8')
+                self.writter = csv.writer(file)
+            else:
+                file = open(f'{self.college_id}.csv', mode='a', newline='', encoding='utf-8')
+                self.writter = csv.writer(file)
+                self.writter.writerow(csv_header)
+
         self.result_df = pd.DataFrame()
         self.gpt_cant = []
+        self.api_cant = []
 
         for url in self.start_urls:
             index_page = get_response(url, self.cn_com)  # cn_com转化为是否代理
@@ -1061,7 +1075,7 @@ class ReCrawler:
             if self.api:
                 print('接入api')
                 mid_results = [self.parse_detail(detail_page, url) for detail_page in detail_pages]
-                result = self.parse_by_api(mid_results)
+                self.result_df = self.parse_by_api(mid_results)
             elif self.selenium_gpt:
                 print('接入gpt')
                 mid_results = [self.parse_detail(detail_page, url) for detail_page in detail_pages]
@@ -1080,7 +1094,8 @@ class ReCrawler:
                         self.result_df = result_dict_2_df(self.result_df, result)
                     else:
                         continue
-        file.close()
+        if file:
+            file.close()
 
         # 去重
         # result_df.drop_duplicates(inplace=True, keep='first', subset=['name', 'email'])
@@ -1088,7 +1103,57 @@ class ReCrawler:
 
         # 保存至数据库
         if self.api:
-            pass
+            if not self.api_cant:
+                try:
+                    result_df = csv_2_df(f'./{self.college_id}.csv')
+                    result_df = drop_duplicate_collage(result_df)
+                    if self.save2target == 'no':
+                        pass
+                    elif self.save2target == 'test':
+                        truncate_table(host='localhost', user='root', password='123456', database='alpha_search',
+                                       port=3306,
+                                       table_name='search_teacher_test')
+                        df2mysql(engine=local_engine, df=result_df, table_name='search_teacher_test')
+                        # elif self.save2target == 'local':
+                        #     df2mysql(engine=local_engine, df=result_df, table_name='search_teacher')
+                        logger.info('数据保存成功')
+                    elif self.save2target == 'target':
+                        df2mysql(engine=sf_engine, df=result_df, table_name='search_teacher')
+                        save_as_json(result_df, self.school_name, self.college_name)
+                        logger.info('数据保存成功')
+                    # 删除csv
+                    # os.remove(f'./{self.college_id}.csv')
+                    # logger.info('csv文件已删除')
+                except:
+                    wait = input('数据有问题，请在excel中修改，修改完成后请输入1：')
+                    if wait == '1':
+                        try:
+                            result_df = csv_2_df(f'./{self.college_id}.csv')
+                            result_df = drop_duplicate_collage(result_df)
+                            print(result_df)
+                            logger.info('再次保存中...')
+                            if self.save2target == 'no':
+                                pass
+                            elif self.save2target == 'test':
+                                truncate_table(host='localhost', user='root', password='123456',
+                                               database='alpha_search',
+                                               port=3306,
+                                               table_name='search_teacher_test')
+                                df2mysql(engine=local_engine, df=result_df, table_name='search_teacher_test')
+                                logger.info('数据保存成功')
+                            # elif self.save2target == 'local':
+                            #     df2mysql(engine=local_engine, df=result_df, table_name='search_teacher')
+                            elif self.save2target == 'target':
+                                df2mysql(engine=sf_engine, df=result_df, table_name='search_teacher')
+                                save_as_json(result_df, self.school_name, self.college_name)
+                                logger.info('数据保存成功')
+                            # 删除csv
+                            # os.remove(f'./{self.college_id}.csv')
+                            # logger.info('csv文件已删除')
+                        except:
+                            logger.warning('文件仍有错误，请修改，之后手动存储，并删除csv文件')
+            else:
+                logger.info('存在未能解析的数据，请手动补充数据之后再手动存储数据')
         # gpt改用csv文件存储数据至数据库
         elif self.selenium_gpt:
             if not self.gpt_cant:
