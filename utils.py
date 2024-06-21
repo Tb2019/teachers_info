@@ -18,7 +18,7 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
 from sqlalchemy import create_engine
-
+from gptparser import GptParser
 
 proxy = {
     'http': '127.0.0.1:7890',
@@ -43,7 +43,8 @@ selector = {
 
     'cn-sendtext-xpath': '//div[@class="textarea-actions-right--vr4WgM3FUuUicP3kJDOU"]',
     # tokens
-    'com-tokens-css': '#root > div:nth-child(2) > div > div > div > div > div.aSIvzUFX9dAs4AK6bTj0 > div.sidesheet-container.UMf9npeM8cVkDi0CDqZ0 > div.TH9DlQU1qwg_KGXdDYzk > div > div.R_WS6aCLs2gN7PUhpDB0.JlYYJX7uOFwGV6INj0ng > div > div > div:nth-child(2) > div > div > div:nth-child(1) > div > div > div > div > div.chat-uikit-message-box-container__message > div.chat-uikit-message-box-container__message__message-box__footer > div > div.tTSrEd1mQwEgF4_szmBb > div:nth-child(3) > div > div',
+    # 'com-tokens-css': '#root > div:nth-child(2) > div > div > div > div > div.aSIvzUFX9dAs4AK6bTj0 > div.sidesheet-container.UMf9npeM8cVkDi0CDqZ0 > div.TH9DlQU1qwg_KGXdDYzk > div > div.R_WS6aCLs2gN7PUhpDB0.JlYYJX7uOFwGV6INj0ng > div > div > div:nth-child(2) > div > div > div:nth-child(1) > div > div > div > div > div.chat-uikit-message-box-container__message > div.chat-uikit-message-box-container__message__message-box__footer > div > div.tTSrEd1mQwEgF4_szmBb > div:nth-child(3) > div > div',
+    'com-tokens-css': '#root > div:nth-child(2) > div > div > div > div > div.aSIvzUFX9dAs4AK6bTj0 > div.sidesheet-container.UMf9npeM8cVkDi0CDqZ0 > div.TH9DlQU1qwg_KGXdDYzk > div > div.R_WS6aCLs2gN7PUhpDB0.JlYYJX7uOFwGV6INj0ng > div > div > div.nIVxVV6ZU7gCM5i4VQIL.message-group-wrapper > div > div > div:nth-child(1) > div > div > div > div > div.chat-uikit-message-box-container__message > div > div.chat-uikit-message-box-container__message__message-box__footer > div > div.tTSrEd1mQwEgF4_szmBb > div:nth-child(3) > div',
 
     'cn-tokens-css': '#root > div:nth-child(2) > div > div > div > div > div.container--aSIvzUFX9dAs4AK6bTj0 > div.sidesheet-container.wrapper-single--UMf9npeM8cVkDi0CDqZ0 > div.message-area--TH9DlQU1qwg_KGXdDYzk > div > div.scroll-view--R_WS6aCLs2gN7PUhpDB0.scroll-view--JlYYJX7uOFwGV6INj0ng > div > div > div.wrapper--nIVxVV6ZU7gCM5i4VQIL.message-group-wrapper > div > div > div:nth-child(1) > div > div > div > div > div.chat-uikit-message-box-container__message > div > div.chat-uikit-message-box-container__message__message-box__footer > div > div.message-info-text--tTSrEd1mQwEgF4_szmBb > div:nth-child(3) > div > div',
     # 内容
@@ -331,7 +332,7 @@ api_info = {
 }
 
 semaphore = Semaphore(5)
-semaphore_api = Semaphore(6)
+semaphore_api = Semaphore(1)
 
 api_base_url = 'https://api.deepseek.com/chat/completions'
 
@@ -456,8 +457,19 @@ def get_format_result(turn, content: dict, result_direct: dict, partition_num, i
         }
     return result
 
+def gpt_api(result_gen, cn_com):
+    from crawler import ReCrawler
+    crawler_ins = ReCrawler(partition_num='', school_name='',college_name='', school_id=None, college_id=None, cn_com='com', start_urls=[], a_s_xpath_str='', target_div_xpath_str='', name_filter_re='')
+    parser = GptParser(cn_com)
+    driver = parser.init_driver()
+    crawler_ins.driver = driver
+    text, result_direct = result_gen
+    result_gpt = crawler_ins.parse_detail_gpt(text, result_direct)
+    # print(result_gpt)
+    driver.close()
+    return result_gpt
 
-async def api_parse(result_gen, session, partition_num, img_url_head):
+async def api_parse(result_gen, session, partition_num, img_url_head, cn_com):
     async with semaphore_api:
         # for unpack in result_gen:
         content_with_label, result_direct = result_gen
@@ -471,46 +483,52 @@ async def api_parse(result_gen, session, partition_num, img_url_head):
             logger.info(f'{result_direct["name"]}尝试只请求一次...')
             api_result = await get_api_resp(session, data=api_payload_info(api, 0, content_with_label), api_headers=api_info[api]['headers'])
             if api_result:
-                # if result_direct["name"] == '周伟英':
+                # if result_direct["name"] == '汤方栋':
                 #     print(api_result)
                 # print(api_result)
                 try:
                     api_result = api_result['choices'][0]['message']['content']
                     api_result = re.sub(r'^.*?(\{.*}).*?$', r'\1', api_result, flags=re.S)
                     api_result = re.sub(r'(,\s*)(?=}$)', '', api_result, flags=re.S)
+                    api_result = re.sub(r'<.*?>', '', api_result)
                     api_result = json.loads(api_result, strict=False)
                     api_result = list2str(api_result)
                     result = get_format_result(0, api_result, result_direct, partition_num, img_url_head)
                     # print(api_result)
                     # return api_result
                 except:
-                    logger.warning(f'{result_direct["name"]}尝试只请求一次失败，可能是文本过长导致json返回不完整，即将分段请求')
+                    logger.warning(f'{result_direct["name"]}尝试只请求一次失败--解析层，可能是文本过长导致json返回不完整，即将分段请求...')
                     raise
             else:  # 400或者返回了None
-                logger.warning(f'{result_direct["name"]}尝试只请求一次失败，即将重试...')
-                logger.info('再次尝试一次性请求...')
+                logger.warning(f'{result_direct["name"]}尝试只请求一次失败--请求层，即将重试...')
+                logger.info(f'{result_direct["name"]}再次尝试一次性请求...')
                 api_result = await get_api_resp(session, data=api_payload_info(api, 0, content_with_label),api_headers=api_info[api]['headers'])
                 if api_result:
                     try:
                         api_result = api_result['choices'][0]['message']['content']
                         api_result = re.sub(r'^.*?(\{.*}).*?$', r'\1', api_result, flags=re.S)
                         api_result = re.sub(r'(,\s*)(?=}$)', '', api_result, flags=re.S)
+                        api_result = re.sub(r'<.*?>', '', api_result)
                         api_result = json.loads(api_result, strict=False)
                         api_result = list2str(api_result)
                         result = get_format_result(0, api_result, result_direct, partition_num, img_url_head)
                         # print(api_result)
                         # return api_result
                     except:
-                        logger.warning(f'{result_direct["name"]}第二次尝试只请求一次失败，有返回结果，可能是文本过长导致json返回不完整，即将分段请求')
+                        logger.warning(f'{result_direct["name"]}第二次尝试只请求一次失败--解析层，可能是文本过长导致json返回不完整，即将分段请求...')
                         raise
                 else:  # 400或者返回了None
-                    logger.warning(f'{result_direct["name"]}第二次尝试只请求一次失败，无返回结果，即将尝试分段请求')
-                    raise
+                    logger.info(f'{result_direct["name"]}第二次尝试只请求一次失败--请求层,对接gpt处理...')
+                    # try:
+                    result = gpt_api(result_gen, cn_com)
+                    # except:
+                    #     logger.warning(f'{result_direct["name"]}处理失败，将记录...')
+                    #     return 'failed', result_direct['name']
         except:
             result = {
-                        'name': '',
-                        'school_id': '',
-                        'college_id': '',
+                        'name': result_direct['name'],
+                        'school_id': result_direct['school_id'],
+                        'college_id': result_direct['college_id'],
                         'phone': '',
                         'email': '',
                         'job_title': '',
@@ -531,23 +549,24 @@ async def api_parse(result_gen, session, partition_num, img_url_head):
                 try:
                     api_result = await get_api_resp(session, data=api_payload_info(api, turn, content_with_label), api_headers=api_info[api]['headers'])
                     if api_result:  # 返回了结果
-                        # if result_direct["name"] == '朱剑锋':
+                        # if result_direct["name"] == '汤方栋':
                         #     print(api_result)
                         try:
                             api_result = api_result['choices'][0]['message']['content']
                             api_result = re.sub(r'^.*?(\{.*}).*?$', r'\1', api_result, flags=re.S)
                             api_result = re.sub(r'(,\s*)(?=}$)', '', api_result, flags=re.S)
+                            api_result = re.sub(r'<.*?>', '', api_result)
                             api_result = json.loads(api_result, strict=False)
                             api_result = list2str(api_result)
                             api_result = get_format_result(turn, api_result, result_direct, partition_num, img_url_head)
                             # print(api_result)
                             result.update(api_result)
                         except:
-                            logger.warning(f'{result_direct["name"]}第{turn}段返回内容解析失败，可能返回内容过长，即将重试')
+                            logger.warning(f'{result_direct["name"]}第{turn}段返回内容解析失败--解析层，可能返回内容过长，即将重试...')
                             raise
                     else:  # 400
+                        logger.warning(f'{result_direct["name"]}第{turn}段请求失败--请求层，即将重试...')
                         raise
-                        # logger.warning(f'{result["name"]}请求失败，即将重试...')
                         # api_result = await get_api_resp(session, data=api_payload_info(api, turn, content_with_label), api_headers=api_info[api]['headers'])
                         # if api_result:  # 返回了结果
                         #     pass
@@ -555,21 +574,25 @@ async def api_parse(result_gen, session, partition_num, img_url_head):
                         #     logger.warning(f'{result["name"]}请求失败')
                         #     return 'failed', result['name']
                 except:
-                    logger.warning(f'{result_direct["name"]}第{turn}段请求出错重试...')
+                    logger.warning(f'{result_direct["name"]}第{turn}段请求出错重试中...')
                     api_result = await get_api_resp(session, data=api_payload_info(api, turn, content_with_label),api_headers=api_info[api]['headers'])
                     if api_result:  # 返回了结果
                         try:
                             api_result = api_result['choices'][0]['message']['content']
                             api_result = re.sub(r'^.*?(\{.*}).*?$', r'\1', api_result, flags=re.S)
                             api_result = re.sub(r'(,\s*)(?=}$)', '', api_result, flags=re.S)
+                            api_result = re.sub(r'<.*?>', '', api_result)
                             api_result = json.loads(api_result, strict=False)
                             api_result = list2str(api_result)
                             api_result = get_format_result(turn, api_result, result_direct, partition_num, img_url_head)
                             # print(api_result)
                             result.update(api_result)
                         except:
-                            logger.warning(f'再次尝试：{result_direct["name"]}第{turn}段返回内容解析失败，可能内容过长将记录，手动处理')
+                            logger.warning(f'{result_direct["name"]}第{turn}段重试，返回内容依然解析失败--解析层，可能内容过长将记录，手动处理')
                             return 'failed', result_direct['name']
+                    else:
+                        logger.warning(f'{result_direct["name"]}第{turn}段第二次尝试请求失败--请求层，将记录...')
+                        return 'failed', result_direct['name']
         print(result)
         return result
 

@@ -669,7 +669,7 @@ class ReCrawler:
 
         loop = asyncio.get_event_loop()
         session = aiohttp.ClientSession()
-        tasks = [api_parse(result_gen, session, self.partition_num, self.img_url_head) for result_gen in mid_result]
+        tasks = [api_parse(result_gen, session, self.partition_num, self.img_url_head, self.cn_com) for result_gen in mid_result]
         results = loop.run_until_complete(asyncio.gather(*tasks))
         session.connector.close()
 
