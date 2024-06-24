@@ -6,29 +6,32 @@ from asyncio.log import logger
 from utils import csv_2_df, truncate_table, df2mysql, drop_duplicate_collage, local_engine, sf_engine, save_as_json
 from urllib import parse
 
-school_id = 82
-college_id = 155
-school_name = '重庆大学'
-college_name = '物理学院'
+school_id = 106
+college_id = 1
+school_name = '清华大学'
+college_name = '建筑学院'
 
 img_url_head = ''
 
 data_real = {
-"姓名":"张杰",
-"电话":"13086681699",
-"邮箱":"zhangjie@scu.edu.cn",
-"职称":"教授",
-"个人简介":"  张杰教授，博士生导师。1987年本科毕业于原成都科技大学，1987年至1991年在杭州照相机械研究所工作，1991年至1994在四川大学高分子材料成型加工专业攻读硕士学位，毕业后留校任教。2002年获博士学位，2004年至2005年在英国 Loughborough University作访问学者，2007年晋升教授，是四川省海外高层次留学人才、四川省学术和技术带头人后备人选。先后担任中国模具标准化技术委员会委员/专家组成员、中国生产工程学会模具制造专业委员会委员、《塑料机械》杂志编委、成都市机械工程学会模具分会理事长、成都市模具工业协会常务理事等职。\n主要从事先进聚合物加工方法和技术的研究，通过材料凝聚态结构的设计与定构，实现聚合物材料的高性能化。如在注射成型过程中引入振动场的振动注射成型技术、在挤出过程中通过施加周向剪切场实现复合管材高性能化的挤出成型技术、聚合物基功能复合材料3D打印加工技术、聚合物熔体解缠结技术、模具CAD/CAE技术、微注塑成型技术等。主持或参加了包括国家自然科学基金重大科研仪器研制项目、国家自然科学基金重点项目、国家自然科学基金国际合作重大项目、国家自然科学基金面上项目、四川省科技支撑项目、教育部留学回国人员科研启动基金、高分子材料工程国家重点实验室主任基金、高分子材料工程国家重点实验室自主课题、聚合物分子工程国家重点实验室（复旦大学）开放课题、大连理工大学精密与特种加工教育部重点实验室开放课题、四川大学青年基金在内的多个项目，同时主持过多个与企业合作的横向项目。\n共发表学术论文140多篇，其中以第一作者或通讯作者在包括Macromolecules、Carbon、Additive Manufacturing、Composites Part B-Engineering、 Polymer等杂志上发表SCI收录论文90余篇。主编专著两部，已授权专利8项。已培养硕博士研究生39人，在读11人。2020年获四川省科学技术进步一等奖、2018年获中国循环经济协会科学技术奖一等奖、2016年获佛山市科学技术二等奖。",
-"研究方向":"主要从事先进聚合物加工方法和技术的研究，通过材料凝聚态结构的设计与定构，实现聚合物材料的高性能化。",
-"专利":"已授权专利8项",
-"科研项目":"主持或参加了包括国家自然科学基金重大科研仪器研制项目、国家自然科学基金重点项目、国家自然科学基金国际合作重大项目、国家自然科学基金面上项目、四川省科技支撑项目、教育部留学回国人员科研启动基金、高分子材料工程国家重点实验室主任基金、高分子材料工程国家重点实验室自主课题、聚合物分子工程国家重点实验室（复旦大学）开放课题、大连理工大学精密与特种加工教育部重点实验室开放课题、四川大学青年基金在内的多个项目，同时主持过多个与企业合作的横向项目。",
-"荣誉/获奖":"2020年获四川省科学技术进步一等奖、2018年获中国循环经济协会科学技术奖一等奖、2016年获佛山市科学技术二等奖。",
-"照片地址":"https://cpse.scu.edu.cn/__local/5/BC/DF/483C0A6D191906AA87CF953261C_28A7C300_520D4.jpg",
-"最高学历":"研究生",
-"最高学位":"博士",
-"职位":"教授",
-"办公地点":"",
-"科研论文":"1. Jiang, Yixin; Leng, Jie; Zhang, Jie*. A high-efficiency way to improve the shape memory property of 4D-printed polyurethane/polylactide composite by forming in situ microfibers during extrusion-based additive manufacturing, ADDITIVE MANUFACTURING , 2021, 38\n2. Luo, Jiaxu; Liu, Mingjin; Chen, Jin; Min, Jie; Fu, Qiang*; Zhang, Jie*. Effectively maintaining the disentangled state of isotactic polypropylene in the presence of graphene nanoplatelet, POLYMER, 2021, 226\n3. Hong, Rui; Jiang, Yi-Xin; Leng, Jie; Liu, Ming-Jin; Shen, Kai-Zhi; Fu, Qiang; Zhang, Jie*. Synergic Enhancement of High-density Polyethylene through Ultrahigh Molecular Weight Polyethylene and Multi-flow Vibration Injection Molding: A Facile Fabrication with Potential Industrial Prospects, CHINESE JOURNAL OF POLYMER SCIENCE, 2021, 39(6): 756-769\n4. Jiang, Yixin; Wu, Junjie; Leng, Jie; Cardon, Ludwig; Zhang, Jie*. Reinforced and toughened PP/PS composites prepared by Fused Filament Fabrication (FFF) with in-situ microfibril and shish-kebab structure, POLYMER, 186\n5. Liu, Mingjin; Luo, Jiaxu; Chen, Jin; Gao, Xueqin; Fu, Qiang; Zhang, Jie*. Unique Slow Crack Growth Behavior of Isotactic Polypropylene: The Role of Shear Layer-Spherulites Layer Alternated Structure, POLYMERS , 2020, 12(11)"
+"姓名": "朱颖心",
+"电话": "010-62782746",
+"邮箱": "zhuyx@mail.tsinghua.edu.cn",
+"职称": "教授",
+"个人简介": "   ",
+"研究方向": "可持续建筑与建筑节能研究\n人体热舒适理论研究",
+"人才称号": "",
+"行政称号": "",
+"专利": "",
+"科研项目": "[1]      国家自然科学基金面上项目52178079，\"热环境对睡眠热舒适影响的关键问题研究\"，2022.1-2025.12，负责人。\n[2]      国家自然科学基金面上项目51678330，\"建筑环境适应性热舒适的机理研究\"，2017.1-2020.12，负责人。\n[3]      国家重点研发计划课题2018YFC0705003，\"地下交通建筑节能关键技术与设备开发\"，2018.7~2021.6，负责人\n[4]      国际能源署-建筑与社区节能国际合作项目：IEA-EBC Annex 69: Strategy and Practice of Adaptive Thermal Comfort in Low Energy Buildings（适应性热舒适在低能耗建筑中的应用策略与实践），2015.1- 2021.12，负责人\n[5]      国家“十二五”科技支撑计划课题 2014BAJ04B03，“大型航站楼绿色建筑关键技术研究与示范”，2014.1-2017.12，负责人\n[6]      973项目子课题 2012CB720104-2，座舱热舒适设计参数优化，2012.1-2016.9，负责人\n[7]      国家自然科学基金重点项目 50838003，动态热环境与人体热舒适的基础研究，2009.1-2012.12，负责人\n[8]      国家“十一五”科技支撑计划课题 2006BAJ01A01，“建筑节能设计方法与模拟分析软件开发”，2006.9-2010.12，负责人",
+"荣誉/获奖": "[1]      2020年 吴元炜暖通空调奖，中国建筑学会暖通空调分会\n[2]      2018年度 清华大学教学优秀奖\n[3]      2018年 井上宇市亚洲国际奖，日本“空气调和×卫生工学”学会\n[4]      2013年 清华大学“教书育人”奖\n[5]      2012年 清华大学优秀博士学位论文指导教师\n[6]      2008年度 北京市高等学校教学名师，2008年6月24日，北京市教委\n[7]      2007年度 宝钢教育基金会优秀教师奖\n[8]      2003年 清华大学“教书育人”奖\n[9]      2003年 清华大学“良师益友”奖\n[10]   1997年度 北京市优秀教师",
+"照片地址": "http://www.arch.tsinghua.edu.cn/upload_files/image/1650584695821_9A.png",
+"最高学历": "研究生",
+"最高学位": "博士",
+"职位": "教授",
+"办公地点": "中国北京海淀区 清华大学建筑学院建筑技术科学系（清华大学二校门东北侧 旧土木工程馆219室）",
+"科研论文": "[1]     Jia Xinyu, Cao Bin, Zhu Yingxin. A Climate Chamber Study on Subjective and Physiological Responses of Airport Passengers from Walking to a Sedentary Status in Summer. Building and Environment, 207(2022) 108547.\n[2]     Huang Yenhsiang, Jia Xinyu, Zhu Yingxin, Zhang Deyin, Lin Borong. Research on indoor spaces and passenger satisfaction with terminal buildings in China, Journal of Building Engineering, 43(2021) 102873\n[3]     Wang Zihan, Cao Bin, Zhu Yingxin. Questionnaire survey and field investigation on sleep thermal comfort and behavioral adjustments in bedrooms of Chinese residents. Energy and Buildings, 2021, 253: 111462.\n[4]     Jia Xinyu, Huang Yenhsiang, Cao Bin, Yingxin Zhu, Wang Chunqing. Field Investigation on Thermal Comfort of Passengers in an Airport Terminal in the Severe Cold Zone of China. Building and Environment, 2021, 189: 107514.\n[5]     Xinyu Jia, Bin Cao, Yingxin Zhu, Yenhsiang Huang. Field Studies on Thermal Comfort of Passengers in Airport Terminals and High-Speed Railway Stations in Summer. Building and Environment, 2021, 206: 108319",
+"源地址": "http://www.arch.tsinghua.edu.cn/info/rw_jzhj/1476"
 }
 
 data = {
@@ -40,6 +43,8 @@ data = {
     "职称": data_real["职称"],
     "个人简介": data_real["个人简介"],
     "研究方向": data_real["研究方向"],
+    "人才称号": data_real["人才称号"],
+    "行政称号": data_real["行政称号"],
     "教育经历": "",
     "工作经历": "",
     "专利": data_real["专利"],
@@ -52,7 +57,8 @@ data = {
     "最高学位": data_real["最高学位"],
     "在职信息": 1,
     "职位": data_real["职位"],
-    "办公地点": data_real["办公地点"]
+    "办公地点": data_real["办公地点"],
+    "源地址": data_real["源地址"]
 }
 
 add = input('是否需要手动增加数据？是请输入1：')

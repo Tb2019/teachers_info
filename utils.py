@@ -48,8 +48,8 @@ selector = {
 
     'cn-tokens-css': '#root > div:nth-child(2) > div > div > div > div > div.container--aSIvzUFX9dAs4AK6bTj0 > div.sidesheet-container.wrapper-single--UMf9npeM8cVkDi0CDqZ0 > div.message-area--TH9DlQU1qwg_KGXdDYzk > div > div.scroll-view--R_WS6aCLs2gN7PUhpDB0.scroll-view--JlYYJX7uOFwGV6INj0ng > div > div > div.wrapper--nIVxVV6ZU7gCM5i4VQIL.message-group-wrapper > div > div > div:nth-child(1) > div > div > div > div > div.chat-uikit-message-box-container__message > div > div.chat-uikit-message-box-container__message__message-box__footer > div > div.message-info-text--tTSrEd1mQwEgF4_szmBb > div:nth-child(3) > div > div',
     # 内容
-    'com-content-gemini-xpath': '//pre[@class="light-scrollbar_c982f language-json"]',
-    'com-content-gpt-xpath': '//div[@class="auto-hide-last-sibling-br paragraph_1252f paragraph-element"]',
+    'com-content-gemini-xpath': '//pre[@class="language-json light-scrollbar_c982f"]',
+    'com-content-gpt-xpath': '//div[@class="auto-hide-last-sibling-br paragraph_9dc5f paragraph-element"]',
 
     'cn-content-xpath': '//div[@class="auto-hide-last-sibling-br paragraph_4183d"]',
     # 重新生成
@@ -332,7 +332,7 @@ api_info = {
 }
 
 semaphore = Semaphore(5)
-semaphore_api = Semaphore(1)
+semaphore_api = Semaphore(10)
 
 api_base_url = 'https://api.deepseek.com/chat/completions'
 
@@ -342,7 +342,7 @@ sf_password = 'Shufang_@919'
 local_engine = create_engine('mysql+pymysql://root:123456@127.0.0.1:3306/alpha_search?charset=utf8')
 sf_engine = create_engine(f'mysql+pymysql://root:{quote_plus(sf_password)}@192.168.2.12:3306/alpha_search?charset=utf8')
 
-csv_header = ['name', 'school_id', 'college_id', 'phone', 'email', 'job_title', 'abstracts', 'directions', 'education_experience', 'work_experience', 'patent', 'project', 'award', 'paper', 'social_job', 'picture', 'education', 'qualification', 'job_information', 'responsibilities', 'office_address']
+csv_header = ['name', 'school_id', 'college_id', 'phone', 'email', 'job_title', 'abstracts', 'directions', 'talent_title', 'administrative_title', 'education_experience', 'work_experience', 'patent', 'project', 'award', 'paper', 'social_job', 'picture', 'education', 'qualification', 'job_information', 'responsibilities', 'office_address', 'origin']
 
 
 def get_response(url, cn_com):
@@ -364,7 +364,7 @@ async def get_response_async(url, session, **kwargs):
             logger.info(f'async crawling {url}...')
             async with session.get(url, headers=headers) as resp:
                 if resp.ok:
-                    return await resp.text(encoding='utf-8'), [*zip(kwargs.keys(), kwargs.values())]
+                    return await resp.text(encoding='utf-8'), url, [*zip(kwargs.keys(), kwargs.values())]
                 else:
                     print('请求失败', url)
         except:
@@ -399,13 +399,12 @@ def get_format_result(turn, content: dict, result_direct: dict, partition_num, i
     if turn == 1:
         phone = clean_phone(partition_num, content.get('电话'))
         result = {
-            'name': result_direct['name'],
-            'school_id': result_direct['school_id'],
-            'college_id': result_direct['college_id'],
             'phone': phone if phone else result_direct['phone'],
             'email': content.get('邮箱') if content.get('邮箱') else result_direct['email'],
             'job_title': content.get('职称') if content.get('职称') else result_direct['job_title'],
             'directions': content.get('研究方向') if content.get('研究方向') else result_direct['directions'],
+            'talent_title': result_direct['talent_title'],
+            'administrative_title': result_direct['administrative_title'],
             'education_experience': content.get('教育经历') if content.get('教育经历') else result_direct[
                 'education_experience'],
             'work_experience': content.get('工作经历') if content.get('工作经历') else result_direct['work_experience'],
@@ -440,6 +439,8 @@ def get_format_result(turn, content: dict, result_direct: dict, partition_num, i
             'job_title': content.get('职称') if content.get('职称') else result_direct['job_title'],
             'abstracts': content.get('个人简介') if content.get('个人简介') else result_direct['abstracts'],
             'directions': content.get('研究方向') if content.get('研究方向') else result_direct['directions'],
+            'talent_title': result_direct['talent_title'],
+            'administrative_title': result_direct['administrative_title'],
             'education_experience': content.get('教育经历') if content.get('教育经历') else result_direct[
                 'education_experience'],
             'work_experience': content.get('工作经历') if content.get('工作经历') else result_direct['work_experience'],
@@ -453,21 +454,26 @@ def get_format_result(turn, content: dict, result_direct: dict, partition_num, i
             'qualification': result_direct['qualification'],
             'job_information': result_direct['job_information'],
             'responsibilities': content.get('职位') if content.get('职位') else result_direct['responsibilities'],
-            'office_address': content.get('办公地点') if content.get('办公地点') else result_direct['office_address']
+            'office_address': content.get('办公地点') if content.get('办公地点') else result_direct['office_address'],
+            'origin': result_direct['origin']
         }
     return result
 
-def gpt_api(result_gen, cn_com):
+def gpt_api(result_gen, cn_com, partition_num):
     from crawler import ReCrawler
-    crawler_ins = ReCrawler(partition_num='', school_name='',college_name='', school_id=None, college_id=None, cn_com='com', start_urls=[], a_s_xpath_str='', target_div_xpath_str='', name_filter_re='')
+    crawler_ins = ReCrawler(partition_num=partition_num, school_name='', college_name='', school_id=None, college_id=None, cn_com='com', start_urls=[], a_s_xpath_str='', target_div_xpath_str='', name_filter_re='')
     parser = GptParser(cn_com)
     driver = parser.init_driver()
     crawler_ins.driver = driver
+    crawler_ins.gpt_cant = []
     text, result_direct = result_gen
     result_gpt = crawler_ins.parse_detail_gpt(text, result_direct)
     # print(result_gpt)
     driver.close()
-    return result_gpt
+    if crawler_ins.gpt_cant:
+        return 'failed', result_direct['name']
+    else:
+        return result_gpt
 
 async def api_parse(result_gen, session, partition_num, img_url_head, cn_com):
     async with semaphore_api:
@@ -520,7 +526,7 @@ async def api_parse(result_gen, session, partition_num, img_url_head, cn_com):
                 else:  # 400或者返回了None
                     logger.info(f'{result_direct["name"]}第二次尝试只请求一次失败--请求层,对接gpt处理...')
                     # try:
-                    result = gpt_api(result_gen, cn_com)
+                    result = gpt_api(result_gen, cn_com, partition_num)
                     # except:
                     #     logger.warning(f'{result_direct["name"]}处理失败，将记录...')
                     #     return 'failed', result_direct['name']
@@ -532,17 +538,24 @@ async def api_parse(result_gen, session, partition_num, img_url_head, cn_com):
                         'phone': '',
                         'email': '',
                         'job_title': '',
+                        'abstracts': '',
                         'directions': '',
+                        'talent_title': '',
+                        'administrative_title': '',
                         'education_experience': '',
                         'work_experience': '',
                         'patent': '',
+                        'project': '',
+                        'award': '',
+                        'paper': '',
                         'social_job': '',
                         'picture': '',
                         'education': '',
                         'qualification': '',
                         'job_information': '',
                         'responsibilities': '',
-                        'office_address': ''
+                        'office_address': '',
+                        'origin': result_direct['origin']
                     }
             for turn in range(1, 4):
                 logger.info(f'{result_direct["name"]}第{turn}段请求')
@@ -593,7 +606,8 @@ async def api_parse(result_gen, session, partition_num, img_url_head, cn_com):
                     else:
                         logger.warning(f'{result_direct["name"]}第{turn}段第二次尝试请求失败--请求层，将记录...')
                         return 'failed', result_direct['name']
-        print(result)
+        if  not isinstance(result, tuple):  # gpt可能失败，返回一个元组
+            print(result)
         return result
 
 

@@ -208,12 +208,12 @@ class ReCrawler:
             from urllib import parse
 
         if detail_page:
-            page, info_s = detail_page
+            page, origin_url, info_s = detail_page
             page_tree = etree.HTML(page)
             try:
                 target_div = page_tree.xpath(self.target_div_xpath_str)[0]
             except:
-                print('未发现内容标签', url)
+                print('未发现内容标签', origin_url)
                 return None
             all_content = ''.join(
                 [re.sub(r'\s*', '', i) for i in target_div.xpath('.//text()') if re.sub(r'\s+', '', i)]
@@ -635,6 +635,8 @@ class ReCrawler:
                 'job_title': job_title,
                 'abstracts': abstracts,
                 'directions': directions,
+                'talent_title': '',
+                'administrative_title': '',
                 'education_experience': education_experience,
                 'work_experience': work_experience,
                 'patent': patent,
@@ -647,7 +649,8 @@ class ReCrawler:
                 'qualification': qualification,
                 'job_information': job_information,
                 'responsibilities': responsibilities,
-                'office_address': office_address
+                'office_address': office_address,
+                'origin': origin_url
             }
             # return result
             if self.api or self.selenium_gpt:  # 使用第三方api解析
@@ -1009,6 +1012,8 @@ class ReCrawler:
             'job_title': content.get('职称') if content.get('职称') else result_direct['job_title'],
             'abstracts': content.get('个人简介') if content.get('个人简介') else result_direct['abstracts'],
             'directions': content.get('研究方向') if content.get('研究方向') else result_direct['directions'],
+            'talent_title': result_direct['talent_title'],
+            'administrative_title': result_direct['administrative_title'],
             'education_experience': content.get('教育经历') if content.get('教育经历') else result_direct['education_experience'],
             'work_experience': content.get('工作经历') if content.get('工作经历') else result_direct['work_experience'],
             'patent': content.get('专利') if content.get('专利') else result_direct['patent'],
@@ -1021,7 +1026,8 @@ class ReCrawler:
             'qualification': result_direct['qualification'],
             'job_information': result_direct['job_information'],
             'responsibilities': content.get('职位') if content.get('职位') else result_direct['responsibilities'],
-            'office_address': content.get('办公地点') if content.get('办公地点') else result_direct['office_address']
+            'office_address': content.get('办公地点') if content.get('办公地点') else result_direct['office_address'],
+            'origin': result_direct['origin']
         }
         return result
 
@@ -1223,5 +1229,5 @@ class ReCrawler:
 
             # update_rel_table(schoolid=self.school_id)
             # 删除csv
-            os.remove(f'./{self.college_id}.csv')
-            logger.info('csv文件已删除')
+            # os.remove(f'./{self.college_id}.csv')
+            # logger.info('csv文件已删除')
