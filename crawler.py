@@ -1118,7 +1118,7 @@ class ReCrawler:
                         #     df2mysql(engine=local_engine, df=result_df, table_name='search_teacher')
                         logger.info('数据保存成功')
                     elif self.save2target == 'target':
-                        df2mysql(engine=sf_engine, df=result_df, table_name='search_teacher')
+                        df2mysql(engine=sf_engine, df=result_df, table_name='search_teacher_update')
                         save_as_json(result_df, self.school_name, self.college_name)
                         logger.info('数据保存成功')
                     # 删除csv
@@ -1144,7 +1144,7 @@ class ReCrawler:
                             # elif self.save2target == 'local':
                             #     df2mysql(engine=local_engine, df=result_df, table_name='search_teacher')
                             elif self.save2target == 'target':
-                                df2mysql(engine=sf_engine, df=result_df, table_name='search_teacher')
+                                df2mysql(engine=sf_engine, df=result_df, table_name='search_teacher_update')
                                 save_as_json(result_df, self.school_name, self.college_name)
                                 logger.info('数据保存成功')
                             # 删除csv
@@ -1170,7 +1170,7 @@ class ReCrawler:
                     #     df2mysql(engine=local_engine, df=result_df, table_name='search_teacher')
                         logger.info('数据保存成功')
                     elif self.save2target == 'target':
-                        df2mysql(engine=sf_engine, df=result_df, table_name='search_teacher')
+                        df2mysql(engine=sf_engine, df=result_df, table_name='search_teacher_update')
                         save_as_json(result_df, self.school_name, self.college_name)
                         logger.info('数据保存成功')
                     # 删除csv
@@ -1195,7 +1195,7 @@ class ReCrawler:
                             # elif self.save2target == 'local':
                             #     df2mysql(engine=local_engine, df=result_df, table_name='search_teacher')
                             elif self.save2target == 'target':
-                                df2mysql(engine=sf_engine, df=result_df, table_name='search_teacher')
+                                df2mysql(engine=sf_engine, df=result_df, table_name='search_teacher_update')
                                 save_as_json(result_df, self.school_name, self.college_name)
                                 logger.info('数据保存成功')
                             # 删除csv
@@ -1214,7 +1214,7 @@ class ReCrawler:
             # elif self.save2target == 'local':
             #     df2mysql(engine=local_engine, df=result_df, table_name='search_teacher')
             elif self.save2target == 'target':
-                df2mysql(engine=sf_engine, df=result_df, table_name='search_teacher')
+                df2mysql(engine=sf_engine, df=result_df, table_name='search_teacher_update')
                 save_as_json(result_df, self.school_name, self.college_name)
             # elif self.save2target == 'simple':
             #     df2mysql(engine=sf_engine, df=result_df, table_name='search_teacher_simple')

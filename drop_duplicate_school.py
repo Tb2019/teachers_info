@@ -152,8 +152,8 @@ if __name__ == '__main__':
     #
     # df2mysql(engine=local_engine, df=search_college_teacher_rel, table_name=rel_table_name)
     school_id = 105  # 去重目标院校
-    table = 'search_teacher'  # 需要去重的数据所在的表名
-    rel_table_name = 'search_college_teacher_rel'  # 学院-教师表名
+    table = 'search_teacher_update'  # 需要去重的数据所在的表名
+    rel_table_name = 'search_college_teacher_rel_update'  # 学院-教师表名
 
     # 数据库连接信息(要求教师信息表和学院-教师表共用一个连接，即两张表在一个库中)
     host = '192.168.2.12'
