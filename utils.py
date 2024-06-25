@@ -606,7 +606,7 @@ async def api_parse(result_gen, session, partition_num, img_url_head, cn_com):
                     else:
                         logger.warning(f'{result_direct["name"]}第{turn}段第二次尝试请求失败--请求层，将记录...')
                         return 'failed', result_direct['name']
-        if  not isinstance(result, tuple):  # gpt可能失败，返回一个元组
+        if not isinstance(result, tuple):  # gpt可能失败，返回一个元组
             print(result)
         return result
 
