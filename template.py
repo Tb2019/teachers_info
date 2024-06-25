@@ -120,6 +120,10 @@ spider = ReCrawler(
                    a_s_xpath_str=a_s_xpath_str,
                    target_div_xpath_str=target_div_xpath_str,
 
+                   save2target='no',
+                   selenium_gpt=False,
+                   cn_com='',
+                   api=False,
                    # directions_pattern_list=directions_pattern_list,
                    # abstracts_pattern_list=abstracts_pattern_list,
                    # office_address_pattern_list=office_address_pattern_list,
@@ -151,11 +155,6 @@ spider = ReCrawler(
                    # paper_xpath=paper_xpath,
                    # social_job_xpath=social_job_xpath,
                    # img_xpath=img_xpath,
-
-                   save2target='no',
-                   selenium_gpt=False,
-                   cn_com='',
-                   api=False,
                    )
 
 spider.run()
