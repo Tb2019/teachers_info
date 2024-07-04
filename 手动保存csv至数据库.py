@@ -7,9 +7,9 @@ from utils import csv_2_df, truncate_table, df2mysql, drop_duplicate_collage, lo
 from urllib import parse
 
 school_id = 106
-college_id = 1
+college_id = 2
 school_name = '清华大学'
-college_name = '建筑学院'
+college_name = '土木水利学院'
 
 img_url_head = ''
 
