@@ -340,7 +340,7 @@ sf_password = 'Shufang_@919'
 
 # engine = create_engine('mysql+pymysql://root:123456@127.0.0.1:3306/alpha_search?charset=utf8')
 local_engine = create_engine('mysql+pymysql://root:123456@127.0.0.1:3306/alpha_search?charset=utf8')
-sf_engine = create_engine(f'mysql+pymysql://root:{quote_plus(sf_password)}@192.168.2.12:3306/alpha_search?charset=utf8')
+sf_engine = create_engine(f'mysql+pymysql://root:{quote_plus(sf_password)}@192.168.2.12:3306/alpha_search_update?charset=utf8')
 
 csv_header = ['name', 'school_id', 'college_id', 'phone', 'email', 'job_title', 'abstracts', 'directions', 'talent_title', 'administrative_title', 'education_experience', 'work_experience', 'patent', 'project', 'award', 'paper', 'social_job', 'picture', 'education', 'qualification', 'job_information', 'responsibilities', 'office_address', 'origin']
 
@@ -524,9 +524,10 @@ async def api_parse(result_gen, session, partition_num, img_url_head, cn_com):
                         logger.warning(f'{result_direct["name"]}第二次尝试只请求一次失败--解析层，可能是文本过长导致json返回不完整，即将分段请求...')
                         raise
                 else:  # 400或者返回了None
-                    logger.info(f'{result_direct["name"]}第二次尝试只请求一次失败--请求层,对接gpt处理...')
+                    logger.info(f'{result_direct["name"]}第二次尝试只请求一次失败--请求层,即将尝试分段请求...')
+                    raise
                     # try:
-                    result = gpt_api(result_gen, cn_com, partition_num)
+                    # result = gpt_api(result_gen, cn_com, partition_num)
                     # except:
                     #     logger.warning(f'{result_direct["name"]}处理失败，将记录...')
                     #     return 'failed', result_direct['name']
