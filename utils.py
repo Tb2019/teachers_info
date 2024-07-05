@@ -373,8 +373,8 @@ async def get_response_async(url, session, **kwargs):
 async def get_api_resp(session, data, api_headers):
     # async with semaphore_api:
     logger.info('request api to parse')
-    async with session.post(api_base_url, data=json.dumps(data), headers=api_headers,
-                            proxy='http://127.0.0.1:7890') as resp:
+    # async with session.post(api_base_url, data=json.dumps(data), headers=api_headers, proxy='http://127.0.0.1:7890') as resp:
+    async with session.post(api_base_url, data=json.dumps(data), headers=api_headers) as resp:
         if resp.ok:
             return await resp.json()
 

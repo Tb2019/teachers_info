@@ -84,5 +84,5 @@ if ensure == '1':
     # elif self.save2target == 'local':
     #     df2mysql(engine=local_engine, df=result_df, table_name='search_teacher')
     # elif self.save2target == 'target':
-    df2mysql(engine=sf_engine, df=result_df, table_name='search_teacher_update')
+    df2mysql(engine=sf_engine, df=result_df, table_name='search_teacher')
     save_as_json(result_df, school_name, college_name, path=1)
