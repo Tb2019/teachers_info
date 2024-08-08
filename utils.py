@@ -157,8 +157,8 @@ prompt = {
                     {
                         "姓名":"",
                         "电话":"",
-                        "邮箱":[],
-                        "职称":[],
+                        "邮箱":"",
+                        "职称":"",
                         "个人简介":"",
                         "研究方向":[],
                         "专利":[],
@@ -167,7 +167,7 @@ prompt = {
                         "照片地址":"",
                         "最高学历":"",
                         "最高学位":"",
-                        "职位":[],
+                        "职位":"",
                         "办公地点":"",
                         "科研论文":[]
                     }
@@ -228,15 +228,15 @@ prompt = {
                 - 严格按照以下格式返回数据
                     {
                         "姓名":"",
-                        "电话":,
-                        "邮箱":[],
-                        "职称":[],
+                        "电话":"",
+                        "邮箱":"",
+                        "职称":"",
                         "研究方向":[],
                         "专利":[],
                         "照片地址":"",
                         "最高学历":"",
                         "最高学位":"",
-                        "职位":[],
+                        "职位":"",
                         "办公地点":"",
                     }
                 """,
@@ -339,8 +339,8 @@ api_base_url = 'https://api.deepseek.com/chat/completions'
 sf_password = 'Shufang_@919'
 
 # engine = create_engine('mysql+pymysql://root:123456@127.0.0.1:3306/alpha_search?charset=utf8')
-local_engine = create_engine('mysql+pymysql://root:123456@127.0.0.1:3306/alpha_search?charset=utf8')
-sf_engine = create_engine(f'mysql+pymysql://root:{quote_plus(sf_password)}@192.168.2.12:3306/alpha_search_update?charset=utf8')
+local_engine = create_engine('mysql+pymysql://root:123456@127.0.0.1:3306/alpha_search?charset=utf8mb4')
+sf_engine = create_engine(f'mysql+pymysql://root:{quote_plus(sf_password)}@192.168.2.12:3306/alpha_search_update?charset=utf8mb4')
 
 csv_header = ['name', 'school_id', 'college_id', 'phone', 'email', 'job_title', 'abstracts', 'directions', 'talent_title', 'administrative_title', 'education_experience', 'work_experience', 'patent', 'project', 'award', 'paper', 'social_job', 'picture', 'education', 'qualification', 'job_information', 'responsibilities', 'office_address', 'origin']
 
@@ -364,7 +364,13 @@ async def get_response_async(url, session, **kwargs):
             logger.info(f'async crawling {url}...')
             async with session.get(url, headers=headers) as resp:
                 if resp.ok:
-                    return await resp.text(encoding='utf-8'), url, [*zip(kwargs.keys(), kwargs.values())]
+                    try:
+                        return await resp.text(encoding='utf-8'), url, [*zip(kwargs.keys(), kwargs.values())]
+                    except:
+                        logger.info('utf-8编码有问题，手动解码')
+                        resp = await resp.read()
+                        resp = resp.decode('utf-8', errors='ignore')
+                        return resp, url, [*zip(kwargs.keys(), kwargs.values())]
                 else:
                     print('请求失败', url)
         except:
@@ -392,26 +398,38 @@ def list2str(result: dict):
             # 添加标号
             # for i in range(len(result[key])):
             #     result[key][i] = f'[{i + 1}] ' + result[key][i]
+
+            # if key in ('邮箱', '职称'):
+            #     result[key] = ','.join(result[key])
+            # else:
             result[key] = '\n'.join(result[key])
     return result
 
 def get_format_result(turn, content: dict, result_direct: dict, partition_num, img_url_head):
     if turn == 1:
-        phone = clean_phone(partition_num, content.get('电话'))
+        phone = content.get('电话')
+        phone = re.sub(r'，|\\|/|;', ',', phone)
+        phone = re.sub(r'\s', '', phone)
+        phone = clean_phone(partition_num, phone)
+
+        email = content.get('邮箱')
+        email = re.sub(r'，|\\|/|;', ',', email)
+        email = re.sub(r'\s', '', email)
         result = {
             'phone': phone if phone else result_direct['phone'],
-            'email': content.get('邮箱') if content.get('邮箱') else result_direct['email'],
+            # 'phone': result_direct['phone'],
+            'email': email if email else result_direct['email'],
+            # 'email': result_direct['email'],
             'job_title': content.get('职称') if content.get('职称') else result_direct['job_title'],
             'directions': content.get('研究方向') if content.get('研究方向') else result_direct['directions'],
             'talent_title': result_direct['talent_title'],
             'administrative_title': result_direct['administrative_title'],
-            'education_experience': content.get('教育经历') if content.get('教育经历') else result_direct[
-                'education_experience'],
+            'education_experience': content.get('教育经历') if content.get('教育经历') else result_direct['education_experience'],
             'work_experience': content.get('工作经历') if content.get('工作经历') else result_direct['work_experience'],
             'patent': content.get('专利') if content.get('专利') else result_direct['patent'],
             'social_job': content.get('社会兼职') if content.get('社会兼职') else result_direct['social_job'],
-            'picture': None if not content.get('照片地址') else parse.urljoin(result_direct['picture'], content.get(
-                '照片地址')) if not img_url_head else parse.urljoin(img_url_head, content.get('照片地址')),
+            'picture': None if not content.get('照片地址') else parse.urljoin(result_direct['origin'], content.get('照片地址')) if not img_url_head else parse.urljoin(img_url_head, content.get('照片地址')),
+            # 'picture': result_direct['picture'],
             'education': result_direct['education'],
             'qualification': result_direct['qualification'],
             'job_information': result_direct['job_information'],
@@ -429,27 +447,36 @@ def get_format_result(turn, content: dict, result_direct: dict, partition_num, i
             'paper': content.get('科研论文') if content.get('科研论文') else result_direct['paper']
         }
     else:
-        phone = clean_phone(partition_num, content.get('电话'))
+        phone = content.get('电话')
+        phone = re.sub(r'，|\\|/|;', ',', phone)
+        phone = re.sub(r'\s', '', phone)
+        phone = clean_phone(partition_num, phone)
+
+        email = content.get('邮箱')
+        email = re.sub(r'，|\\|/|;', ',', email)
+        email = re.sub(r'\s', '', email)
         result = {
             'name': result_direct['name'],
             'school_id': result_direct['school_id'],
             'college_id': result_direct['college_id'],
             'phone': phone if phone else result_direct['phone'],
-            'email': content.get('邮箱') if content.get('邮箱') else result_direct['email'],
+            # 'phone': result_direct['phone'],
+            'email': email if email else result_direct['email'],
+            # 'email': result_direct['email'],
             'job_title': content.get('职称') if content.get('职称') else result_direct['job_title'],
             'abstracts': content.get('个人简介') if content.get('个人简介') else result_direct['abstracts'],
             'directions': content.get('研究方向') if content.get('研究方向') else result_direct['directions'],
             'talent_title': result_direct['talent_title'],
             'administrative_title': result_direct['administrative_title'],
-            'education_experience': content.get('教育经历') if content.get('教育经历') else result_direct[
-                'education_experience'],
+            'education_experience': content.get('教育经历') if content.get('教育经历') else result_direct['education_experience'],
             'work_experience': content.get('工作经历') if content.get('工作经历') else result_direct['work_experience'],
             'patent': content.get('专利') if content.get('专利') else result_direct['patent'],
             'project': content.get('科研项目') if content.get('科研项目') else result_direct['project'],
             'award': content.get('荣誉/获奖') if content.get('荣誉/获奖') else result_direct['award'],
             'paper': content.get('科研论文') if content.get('科研论文') else result_direct['paper'],
             'social_job': content.get('社会兼职') if content.get('社会兼职') else result_direct['social_job'],
-            'picture': None if not content.get('照片地址') else parse.urljoin(result_direct['picture'], content.get('照片地址')) if not img_url_head else parse.urljoin(img_url_head, content.get('照片地址')),
+            'picture': None if not content.get('照片地址') else parse.urljoin(result_direct['origin'], content.get('照片地址')) if not img_url_head else parse.urljoin(img_url_head, content.get('照片地址')),
+            # 'picture': result_direct['picture'],
             'education': result_direct['education'],
             'qualification': result_direct['qualification'],
             'job_information': result_direct['job_information'],
@@ -508,7 +535,7 @@ async def api_parse(result_gen, session, partition_num, img_url_head, cn_com):
             else:  # 400或者返回了None
                 logger.warning(f'{result_direct["name"]}尝试只请求一次失败--请求层，即将重试...')
                 logger.info(f'{result_direct["name"]}再次尝试一次性请求...')
-                api_result = await get_api_resp(session, data=api_payload_info(api, 0, content_with_label),api_headers=api_info[api]['headers'])
+                api_result = await get_api_resp(session, data=api_payload_info(api, 0, content_with_label), api_headers=api_info[api]['headers'])
                 if api_result:
                     try:
                         api_result = api_result['choices'][0]['message']['content']
@@ -736,7 +763,7 @@ def clean_phone(partition_num: str, dirty_phone: str):
 
     if ',' not in dirty_phone:
         # 格式化
-        phone = re.sub(r'—', '-', dirty_phone)
+        phone = re.sub(r'—|~', '-', dirty_phone)
         phone = re.sub(r'\s', '', phone)
         phone = re.sub(r'(?<!^)(?:\(|（).*?(?:）|\))$', '', phone)
         phone = re.sub(r'(?:（|\()(.*?)(?:\)|）)', r'\1', phone)
@@ -791,7 +818,7 @@ def clean_phone(partition_num: str, dirty_phone: str):
         for num in dirty_phone.split(','):
 
             # 格式化
-            num = re.sub(r'—', '-', num)
+            num = re.sub(r'—|~', '-', num)
             num = re.sub(r'\s', '', num)
             num = re.sub(r'(?<!^)(?:\(|（).*?(?:）|\))$', '', num)
             num = re.sub(r'(?:（|\()(.*?)(?:\)|）)', r'\1', num)

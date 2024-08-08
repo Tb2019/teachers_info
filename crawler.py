@@ -247,6 +247,32 @@ class ReCrawler:
             # 学院id
             college_id = self.college_id
 
+            # 图片
+            full_src = None
+            if self.img_xpath:
+                try:
+                    img_list = target_div.xpath(self.img_xpath)
+                    src = ','.join(img_list) if ','.join(img_list) else None
+                    if src:
+                        if self.img_url_head:
+                            full_src = parse.urljoin(self.img_url_head, src)
+                        else:
+                            full_src = parse.urljoin(origin_url, src)
+                except:
+                    print('img_xpath错误')
+            else:
+                try:
+                    src = target_div.xpath('.//img[@src!=""]/@src')[0]
+                    src = re.sub(r'^.*?base64.*$', '', src)
+                    if src:
+                        if self.img_url_head:
+                            full_src = parse.urljoin(self.img_url_head, src)
+                        else:
+                            full_src = parse.urljoin(origin_url, src)
+                except:
+                    pass
+            # full_src = parse.urljoin(url, src)
+
         # if not self.api:  # 不使用第三方api解析
             # 电话
             phone = None
@@ -480,26 +506,6 @@ class ReCrawler:
                                 continue
                         except:
                             continue
-
-            # 图片
-            full_src = None
-            if self.img_xpath:
-                try:
-                    img_list = target_div.xpath(self.img_xpath)
-                    src = ','.join(img_list) if ','.join(img_list) else None
-                    if src:
-                        full_src = parse.urljoin(url, src)
-                except:
-                    print('img_xpath错误')
-            else:
-                try:
-                    src = target_div.xpath('.//img[@src!=""]/@src')[0]
-                    src = re.sub(r'^.*?base64.*$', '', src)
-                    if src:
-                        full_src = parse.urljoin(url, src)
-                except:
-                    pass
-            # full_src = parse.urljoin(url, src)
 
             # 论文
             paper = None
