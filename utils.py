@@ -319,7 +319,7 @@ api_info = {
                 }],
             "model": "deepseek-chat",
             "frequency_penalty": 0,
-            "max_tokens": 4096,
+            "max_tokens": 8192,
             "presence_penalty": 0,
             "stop": None,
             "stream": False,
@@ -332,9 +332,9 @@ api_info = {
 }
 
 semaphore = Semaphore(5)
-semaphore_api = Semaphore(10)
+semaphore_api = Semaphore(50)
 
-api_base_url = 'https://api.deepseek.com/chat/completions'
+api_base_url = 'https://api.deepseek.com/beta/chat/completions'
 
 sf_password = 'Shufang_@919'
 
