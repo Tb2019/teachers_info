@@ -306,7 +306,7 @@ api_info = {
         'headers': {
             'Content-Type': 'application/json',
             'Accept': 'application/json',
-            'Authorization': 'Bearer sk-ea1b90265dc2408ab7bf61e0dee759aa'
+            'Authorization': 'Bearer sk-5638e407f7ba4cde89071164a6240e43'
         },
         'payload': {
             "messages": [{
