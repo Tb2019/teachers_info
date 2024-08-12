@@ -273,9 +273,11 @@ class SpecialSpider(ReCrawler):
         for name, url in index_result:
             if len(name) >= 2:
                 driver.get(url)
-                time.sleep(2)
+                time.sleep(1)
                 page = driver.page_source
                 detail_pages.append((page, url, [('name', name)]))
+            else:
+                continue
         driver.close()
         return detail_pages
     '''
