@@ -7,31 +7,31 @@ from utils import csv_2_df, truncate_table, df2mysql, drop_duplicate_collage, lo
 from urllib import parse
 
 school_id = 110
-college_id = 3
+college_id = 5
 school_name = '哈尔滨工业大学'
-college_name = '材料科学与工程学院'
+college_name = '电气工程及自动化学院'
 
 img_url_head = ''
 
 data_real = {
-"姓名": "赵连城",
-"电话": "",
-"邮箱": "",
-"职称": "中国工程院院士",
-"个人简介": "赵连城是中国著名的光电信息科学与工程专家，为推进光电信息科学与工程应用作出了突出贡献，赵连城心系国家发展，积极为中国功能材料产业的发展建言献策，赵连城十分关心中国工程院的工作，积极参加中国工程院的各项活动，为中国工程院的发展作出了重要贡献，赵连城热爱祖国、追求真理、尊重科学、勇于创新、严谨治学、为人师表、敬业奉献，是中国工程科技界的楷模和学习的榜样。（中国工程院原院长周济评）",
-"研究方向": "分子学\n材料科学\n信息科学\n光电薄膜\n分子荧光",
+"姓名": "聂秋月",
+"电话": "18945092312",
+"邮箱": "nieqiuyue@hit.edu.cn,nieqiu@sina.com",
+"职称": "教授",
+"个人简介": "聂秋月，哈尔滨工业大学电气工程及自动化学院，教授，博士生导师，IEEE高级会员，国家自然科学基金优秀青年基金获得者，入选哈尔滨工业大学青年拔尖人才、青年科学家工作室学术带头人。主要从事等离子体产生及参数调控技术、等离子体调制电磁波特性研究及应用研究。作为负责人主持国家“863”计划预研项目1项、国家重点研发计划课题1项、国家“973”计划项目专题1项、国家自然科学基金6项（重点项目1项、优青1项、面上2项、青年1项、专项1项）、省/部级项目和国家重点实验室开放课题3项；并担任国家重大科技基础设施（国家大科学工程）“空间环境地面模拟装置”主管设计师，全面负责临近空间等离子体环境地面模拟与研究平台建设工作。发表学术论文70余篇，累计SCI引用500余次；应邀做国际/国内会议特邀报告21次，主持专刊1项，授权国家发明专利24项，获辽宁省优秀博士学位论文奖、清华大学实验技术成果奖二等奖（排名第二）、2019年黑龙江省高校科学技术奖一等奖（第一完成人）。\n当选中国电工技术学会第九届理事会青年工作委员会副主任委员、中国电工技术学会等离子体及应用专业委员会委员、中国力学学会等离子体科学与技术专委会低温等离子体专业组副组长、IEEE senior member；任“全国高电压与放电等离子体学术会议”2018年大会副主席、2020年大会主席、2020年ICOPS空间等离子体专题召集人；CPL/CPB/物理学报青年编委、《哈尔滨工业大学学报》编委、PST客座编辑等。",
+"研究方向": "",
 "人才称号": "",
 "行政称号": "",
-"专利": "",
-"科研项目": "",
-"荣誉/获奖": "",
-"照片地址": "https://ysg.ckcest.cn/ysgOld/uploadfile/acInfoHome/7d80ebff-e120-4ebb-b455-d62cbe6c6d9b.png",
-"最高学历": "本科",
-"最高学位": "学士",
-"职位": "",
-"办公地点": "",
-"科研论文": "",
-"源地址": "https://ysg.ckcest.cn/html/details/274/index.html"
+"专利": "一种适用于单、双频驱动大气压介质阻挡弥散放电电学特性等效电路及其计算方法,ZL202110372586.4\n一种等离子体包覆双齿形结构的可调带阻滤波器,ZL202210017317.0\n一种多通道电弧等离子体源级联铜片水冷装置及其优化方法,ZL202110942578.9\n一种临近空间等离子体环境地面模拟装置及其模拟方法,ZL202111191959.4\n一种适用于穿舱结构的宽频段小型化天线阵列吊装机构,ZL202111086438.2",
+"科研项目": "国家自然科学基金重大研究计划重点支持项目,92271202, 跨域复杂电磁环境感知与自适应信息传输关键技术研究，2023-01至2026-12，300万，在研，主持\n国家自然科学基金优秀青年科学基金项目，52022026，等离子体调控电磁波基础理论及应用技术，2021-01至2023-12，120万，在研，主持\n国家自然科学基金专项项目，11942513，第三届（2020年）全国高电压与放电等离子体学术会议，2020-01至2020-07，15万元，在研，主持\n国家自然科学基金面上项目，11875118 ，亚波长等离子体结构调制增强微波电磁辐射特性及机理研究，2019-01至2022-12，66万元，在研，主持\n国家重点研发计划项目课题，2018YFE0303105，高热负荷条件下偏滤器材料与部件行为研究，2018-12至2023-11，547万元，在研，主持",
+"荣誉/获奖": "清华大学实验技术成果奖二等奖（排名第二）\n哈尔滨工业大学青年拔尖人才计划\n2016-2017年度哈尔滨工业大学优秀专兼职学生工作者\n哈尔滨工业大学优秀硕士论文指导教师\n黑龙江省高校科学技术奖一等奖（排名第一）\n哈尔滨工业大学本科生优秀毕业设计指导教师\n中国电工技术学会优秀会员",
+"照片地址": "http://homepage.hit.edu.cn/file/showHP.do?d=1972&&w=200&&h=204&&1723528729053",
+"最高学历": "研究生",
+"最高学位": "博士",
+"职位": "中国电工技术学会等离子体及应用专业委员会委员。\n中国电工技术学会第八届理事会青年工作委员会委员。\n中国电工技术学会第九届理事会青年工作委员会副主任委员。\n中国力学学会等离子体科学与技术专委会低温等离子体专业组副组长\nIEEE Senior Member。\n2016年“全国高电压与放电等离子体学术会议”技术委员会委员；2018年该会议副主席，2020年大会主席。\nThe 47th IEEE International Conference on Plasma Science（ICOPS，2020）空间等离子体专题召集人。\n2022年第20届“全国等离子体科学技术会议”共同执行主席。\n2022年第二届全国直线等离子体装置研讨会共同主席。\n哈尔滨工业大学学报期刊编委、PST期刊编委\nChinese Physics Letters (CPL)、Chinese Physics B (CPB)、《物理学报》和《物理》四刊联合青年编委；\nIEEE ACCESS、Physics of Plasmas、IEEE Transactions on plasma science、Journal of Applied Physics、Plasma science and technology、Chinese Physic B 、 物理学报 、高电压技术、 电工技术学报、中国科学：物理学 力学 天文学等期刊审稿人；",
+"办公地点": "哈尔滨市南岗区一匡街2号哈工大科学园C2栋402室",
+"科研论文": "Self-organized pattern formation of an atmospheric pressure plasma jet in a dielectric barrier discharge configuration;Nie, Qiu-Yue; Ren, Chun-Sheng; Wang, De-Zhen; Li, Shou-Zhe;Zhang, Jia-Liang;Kong, M. G;2007;Applied Physics Letters;90(22)：221504\nA simple cold Ar plasma jet generated with a floating electrode at atmospheric pressure;Nie, Qiu-Yue; Ren, Chun-Sheng ; Wang, De-Zhen ; Zhang, Jia-Liang;2008;Applied Physics Letters;93(1)：011503\nOnline diagnosis of electron excitation temperature in CH4+H-2 discharge plasma at atmospheric pressure by optical emission spectra;Cui JinHua ; Xu ZhenFeng ; Zhang JiaLiang ; Nie QiuYue ; Xu GenHui ; Ren LongLiang;2008;SCIENCE IN CHINA SERIES G-PHYSICS MECHANICS & ASTRONOMY;51(12)：1892-1896\nElectron dynamics and metastable species generation in atmospheric pressure non-equilibrium plasmas controlled by dual LF-RF frequency discharges;Yilin Yu1, Zhonglin Zhang *, Qiuyue Nie ,Jiacheng Zeng, Zhibo Zhao1 and Xiaogang Wang;2023;FRONTIERS IN PHYSICS;11：113725\nInvestigation on the near-field cutoff effect in a subwavelength plasma shell with near-zero permittivity;Peiqi Chen , 1 Qiuyue Nie,1,2,* Shu Lin,3 Liang Qian,4 Zhonglin Zhang , 2 Xiaogang Wang,2,4 Zhuotao Meng,1 and Guoqiang Wei4;2023;PHYSICAL REVIEW E;107, 065204",
+"源地址": "http://homepage.hit.edu.cn/nieqiuyue"
 }
 
 data = {
