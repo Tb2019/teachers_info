@@ -22,12 +22,12 @@ options.add_experimental_option('detach', True)
 options.add_experimental_option("excludeSwitches", ["enable-automation"])
 options.add_experimental_option('useAutomationExtension', False)
 
-school_name = ''
+school_name = '上海交通大学'
 college_name = ''
-school_id = None
+school_id = 104
 college_id = None
 img_url_head = None
-partition_num = ''
+partition_num = '021'
 start_urls = [
                 '',
                 '',
@@ -53,6 +53,7 @@ class SpecialSpider(ReCrawler):
                 name = ''.join(name)
                 if not re.match(r'[A-Za-z\s]*$', name, re.S):  # 中文名替换空格
                     name = re.sub(r'\s*', '', name)
+                name = re.sub(r'^\s*(\w.*?\w)\s*$', r'\1', name)
                 name = re.sub(self.name_filter_re, '', name)
                 try:
                     link = a.xpath('./@href')[0]
@@ -88,7 +89,7 @@ class SpecialSpider(ReCrawler):
             page, origin_url, info_s = detail_page
             page_tree = etree.HTML(page)
             try:
-                target_div = page_tree.xpath(self.target_div_xpath_str)[0]
+                target_div = page_tree.xpath(self.target_div_xpath_str)
             except:
                 print('未发现内容标签', origin_url)
                 return None
@@ -98,12 +99,26 @@ class SpecialSpider(ReCrawler):
             all_content = re.sub(r'-{5,}', '', all_content)
 
             if self.api or self.selenium_gpt:
+               content_with_label = ''
                 # 替代引号
-                replace_quotes_in_text(target_div)
-                content_with_label = tostring(target_div, encoding='utf-8').decode('utf-8')
+                for i in target_div:
+                    replace_quotes_in_text(i)
+                    content_with_label += tostring(i, encoding='utf-8').decode('utf-8')
                 # 去除base64编码的图片标签
                 soup = BeautifulSoup(content_with_label, 'html.parser')
                 base64_imgs = soup.find_all('img', src=re.compile(r'base64'))
+                #删除导航栏和页脚的尝试
+                try:
+                    back_img = soup.find('div', class_="banner")
+                    back_img_ = soup.find('div', id="banner")
+                    footer = soup.find('div', class_="footer")
+                    footer_ = soup.find('div', id="footer")
+                    back_img and back_img.decompose()
+                    back_img_ and back_img_.decompose()
+                    footer and footer.decompose()
+                    footer_ and footer_.decompose()
+                except:
+                    pass
                 for img in base64_imgs:
                     img.decompose()
                 # 去除除img标签外的所有标签属性
@@ -299,11 +314,11 @@ class SpecialSpider(ReCrawler):
 
         file = None
         if self.selenium_gpt or self.api:
-            if os.path.exists(f'{self.laboratory_id}.csv'):
-                file = open(f'{self.laboratory_id}.csv', mode='a', newline='', encoding='utf-8')
+            if os.path.exists(f'{self.college_id}.csv'):
+                file = open(f'{self.college_id}.csv', mode='a', newline='', encoding='utf-8')
                 self.writter = csv.writer(file)
             else:
-                file = open(f'{self.laboratory_id}.csv', mode='a', newline='', encoding='utf-8')
+                file = open(f'{self.college_id}.csv', mode='a', newline='', encoding='utf-8')
                 self.writter = csv.writer(file)
                 self.writter.writerow(csv_header)
 
@@ -360,13 +375,14 @@ class SpecialSpider(ReCrawler):
 
         # 去重
         # result_df.drop_duplicates(inplace=True, keep='first', subset=['name', 'email'])
-        result_df = drop_duplicate_collage(self.result_df)
+        if not self.result_df.empty:
+            result_df = drop_duplicate_collage(self.result_df)
 
         # 保存至数据库
         if self.api:
             if not self.api_cant:
                 try:
-                    result_df = csv_2_df(f'./{self.laboratory_id}.csv')
+                    result_df = csv_2_df(f'./{self.college_id}.csv')
                     result_df = drop_duplicate_collage(result_df)
                     if self.save2target == 'no':
                         pass
@@ -379,8 +395,8 @@ class SpecialSpider(ReCrawler):
                         #     df2mysql(engine=local_engine, df=result_df, table_name='search_teacher')
                         logger.info('数据保存成功')
                     elif self.save2target == 'target':
-                        df2mysql(engine=sf_engine, df=result_df, table_name='search_institute_user')
-                        save_as_json(result_df, self.institute_name, self.laboratory_name)
+                        df2mysql(engine=sf_engine, df=result_df, table_name='search_teacher')
+                        save_as_json(result_df, self.school_name, self.college_name)
                         logger.info('数据保存成功')
                     # 删除csv
                     # os.remove(f'./{self.college_id}.csv')
@@ -389,7 +405,7 @@ class SpecialSpider(ReCrawler):
                     wait = input('数据有问题，请在excel中修改，修改完成后请输入1：')
                     if wait == '1':
                         try:
-                            result_df = csv_2_df(f'./{self.laboratory_id}.csv')
+                            result_df = csv_2_df(f'./{self.college_id}.csv')
                             result_df = drop_duplicate_collage(result_df)
                             print(result_df)
                             logger.info('再次保存中...')
@@ -405,8 +421,8 @@ class SpecialSpider(ReCrawler):
                             # elif self.save2target == 'local':
                             #     df2mysql(engine=local_engine, df=result_df, table_name='search_teacher')
                             elif self.save2target == 'target':
-                                df2mysql(engine=sf_engine, df=result_df, table_name='search_institute_user')
-                                save_as_json(result_df, self.institute_name, self.laboratory_name)
+                                df2mysql(engine=sf_engine, df=result_df, table_name='search_teacher')
+                                save_as_json(result_df, self.school_name, self.college_name)
                                 logger.info('数据保存成功')
                             # 删除csv
                             # os.remove(f'./{self.college_id}.csv')
@@ -419,7 +435,7 @@ class SpecialSpider(ReCrawler):
         elif self.selenium_gpt:
             if not self.gpt_cant:
                 try:
-                    result_df = csv_2_df(f'./{self.laboratory_id}.csv')
+                    result_df = csv_2_df(f'./{self.college_id}.csv')
                     result_df = drop_duplicate_collage(result_df)
                     if self.save2target == 'no':
                         pass
@@ -431,8 +447,8 @@ class SpecialSpider(ReCrawler):
                     #     df2mysql(engine=local_engine, df=result_df, table_name='search_teacher')
                         logger.info('数据保存成功')
                     elif self.save2target == 'target':
-                        df2mysql(engine=sf_engine, df=result_df, table_name='search_institute_user')
-                        save_as_json(result_df, self.institute_name, self.laboratory_name)
+                        df2mysql(engine=sf_engine, df=result_df, table_name='search_teacher')
+                        save_as_json(result_df, self.school_name, self.college_name)
                         logger.info('数据保存成功')
                     # 删除csv
                     # os.remove(f'./{self.college_id}.csv')
@@ -441,7 +457,7 @@ class SpecialSpider(ReCrawler):
                     wait = input('数据有问题，请在excel中修改，修改完成后请输入1：')
                     if wait == '1':
                         try:
-                            result_df = csv_2_df(f'./{self.laboratory_id}.csv')
+                            result_df = csv_2_df(f'./{self.college_id}.csv')
                             result_df = drop_duplicate_collage(result_df)
                             print(result_df)
                             logger.info('再次保存中...')
@@ -456,8 +472,8 @@ class SpecialSpider(ReCrawler):
                             # elif self.save2target == 'local':
                             #     df2mysql(engine=local_engine, df=result_df, table_name='search_teacher')
                             elif self.save2target == 'target':
-                                df2mysql(engine=sf_engine, df=result_df, table_name='search_institute_user')
-                                save_as_json(result_df, self.institute_name, self.laboratory_name)
+                                df2mysql(engine=sf_engine, df=result_df, table_name='search_teacher')
+                                save_as_json(result_df, self.school_name, self.college_name)
                                 logger.info('数据保存成功')
                             # 删除csv
                             # os.remove(f'./{self.college_id}.csv')
@@ -475,8 +491,8 @@ class SpecialSpider(ReCrawler):
             # elif self.save2target == 'local':
             #     df2mysql(engine=local_engine, df=result_df, table_name='search_teacher')
             elif self.save2target == 'target':
-                df2mysql(engine=sf_engine, df=result_df, table_name='search_institute_user')
-                save_as_json(result_df, self.institute_name, self.laboratory_name)
+                df2mysql(engine=sf_engine, df=result_df, table_name='search_teacher')
+                save_as_json(result_df, self.school_name, self.college_name)
     '''
 
 spider = ReCrawler(
@@ -485,18 +501,17 @@ spider = ReCrawler(
                    partition_num=partition_num,
                    school_id=school_id,
                    college_id=college_id,
-                   name_filter_re=r'简介',
+                   name_filter_re=r'(?:\(|（).*?(?:）|\))',
                    start_urls=start_urls,
                    img_url_head=img_url_head,
                    a_s_xpath_str=a_s_xpath_str,
                    target_div_xpath_str=target_div_xpath_str,
 
-                   save2target='no',
+                   save2target='target',
                    selenium_gpt=False,
                    cn_com='',
-                   api=False,
+                   api=True,
                    )
 
 spider.run()
-
 

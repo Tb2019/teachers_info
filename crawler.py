@@ -2,6 +2,7 @@ import csv
 import json
 import os
 import time
+import demjson3
 from bs4 import BeautifulSoup
 from lxml import etree
 from lxml.html import fromstring, tostring
@@ -156,13 +157,6 @@ class ReCrawler:
         self.img_xpath = img_xpath
 
     def parse_index(self, index_page, url):
-        # 方法重写时引入包
-        global etree, parse
-        if not globals().get('etree'):
-            from lxml import etree
-        if not globals().get('parse'):
-            from urllib import parse
-
         page = etree.HTML(index_page)
         a_s = page.xpath(self.a_s_xpath_str)
         for a in a_s:
@@ -172,6 +166,7 @@ class ReCrawler:
                 name = ''.join(name)
                 if not re.match(r'[A-Za-z\s]*$', name, re.S):  # 中文名替换空格
                     name = re.sub(r'\s*', '', name)
+                name = re.sub(r'^\s*(\w.*?\w)\s*$', r'\1', name)
                 name = re.sub(self.name_filter_re, '', name)
                 try:
                     link = a.xpath('./@href')[0]
@@ -186,15 +181,6 @@ class ReCrawler:
             yield name, link
 
     def get_detail_page(self, index_result):
-        # 方法重写时引入包
-        global asyncio, aiohttp, get_response_async
-        if not globals().get('asyncio'):
-            import asyncio
-        if not globals().get('aiohttp'):
-            import aiohttp
-        if not globals().get('get_response_async'):
-            from utils import get_response_async
-
         loop = asyncio.get_event_loop()
         session = aiohttp.ClientSession()
         tasks = [get_response_async(url, session, name=name) for name, url in index_result if len(name) >= 2]
@@ -203,35 +189,48 @@ class ReCrawler:
         return detail_pages
 
     def parse_detail(self, detail_page, url):
-        # 方法重写时引入包
-        global etree, tostring, parse
-        if not globals().get('etree'):
-            from lxml import etree
-        if not globals().get('tostring'):
-            from lxml.html import tostring
-        if not globals().get('parse'):
-            from urllib import parse
-
         if detail_page:
             page, origin_url, info_s = detail_page
             page_tree = etree.HTML(page)
             try:
-                target_div = page_tree.xpath(self.target_div_xpath_str)[0]
+                target_div = page_tree.xpath(self.target_div_xpath_str)
             except:
                 print('未发现内容标签', origin_url)
                 return None
             all_content = ''.join(
-                [re.sub(r'\s*', '', i) for i in target_div.xpath('.//text()') if re.sub(r'\s+', '', i)]
+                [re.sub(r'\s*', '', i) for j in target_div for i in j.xpath('.//text()') if re.sub(r'\s+', '', i)]
             )
             all_content = re.sub(r'-{5,}', '', all_content)
 
             if self.api or self.selenium_gpt:
+                content_with_label = ''
                 # 替代引号
-                replace_quotes_in_text(target_div)
-                content_with_label = tostring(target_div, encoding='utf-8').decode('utf-8')
+                for i in target_div:
+                    replace_quotes_in_text(i)
+                    content_with_label += tostring(i, encoding='utf-8').decode('utf-8')
                 # 去除base64编码的图片标签
                 soup = BeautifulSoup(content_with_label, 'html.parser')
                 base64_imgs = soup.find_all('img', src=re.compile(r'base64'))
+                #删除导航栏和页脚的尝试
+                try:
+                    back_img = soup.find_all('div', class_="banner")
+                    back_img_ = soup.find_all('div', id="banner")
+                    footer = soup.find_all('div', class_="footer")
+                    footer_ = soup.find_all('div', id="footer")
+                    if back_img:
+                        for ele in back_img:
+                            ele.decompose()
+                    if back_img_:
+                        for ele in back_img:
+                            ele.decompose()
+                    if footer:
+                        for ele in back_img:
+                            ele.decompose()
+                    if footer_:
+                        for ele in back_img:
+                            ele.decompose()
+                except:
+                    pass
                 for img in base64_imgs:
                     img.decompose()
                 # 去除除img标签外的所有标签属性
@@ -672,30 +671,22 @@ class ReCrawler:
             print('对应页面的请求失败,返回None')
 
     def parse_by_api(self, mid_result):
-        # 方法重写时引入包
-        global asyncio, aiohttp, api_parse
-        if not globals().get('asyncio'):
-            import asyncio
-        if not globals().get('aiohttp'):
-            import aiohttp
-        if not globals().get('api_parse'):
-            from utils import api_parse
-
         loop = asyncio.get_event_loop()
         session = aiohttp.ClientSession()
         tasks = [api_parse(result_gen, session, self.partition_num, self.img_url_head, self.cn_com) for result_gen in mid_result if result_gen]
         results = loop.run_until_complete(asyncio.gather(*tasks))
         session.connector.close()
-
+        temp = []
         for result in results:
             if isinstance(result, tuple):
                 self.api_cant.append(result[1])
-                results.remove(result)
+                # results.remove(result)
             else:
+                temp.append(result)
                 self.writter.writerow(result.values())
 
         print('*** api failed ***', self.api_cant)
-        return pd.DataFrame(results)
+        return pd.DataFrame(temp)
 
 
     # @retry(exceptions=Exception, tries=1, delay=1)
@@ -891,7 +882,8 @@ class ReCrawler:
         # content = re.sub(r'\r|\n', '', content)
         # print(content)
         try:
-            content = json.loads(content, strict=False)
+            # content = json.loads(content, strict=False)
+            content = demjson3.decode(content)
             if re.search('<.*?>', str(content)):
                 logger.warning('发现html标签，即将重新生成')
                 raise
@@ -961,7 +953,8 @@ class ReCrawler:
                             content = self.driver.find_element(By.XPATH, selector.get('com-content-gpt-xpath')).get_attribute('innerText')
                     if isinstance(content, list):
                         content = ''.join(content)
-                    content = json.loads(content, strict=False)
+                    # content = json.loads(content, strict=False)
+                    content = demjson3.decode(content)
                     if re.search(r'<.*?>', str(content)):
                         logger.warning('发现html标签，即将重新生成')
                         raise
@@ -1116,7 +1109,8 @@ class ReCrawler:
 
         # 去重
         # result_df.drop_duplicates(inplace=True, keep='first', subset=['name', 'email'])
-        result_df = drop_duplicate_collage(self.result_df)
+        if not self.result_df.empty:
+            result_df = drop_duplicate_collage(self.result_df)
 
         # 保存至数据库
         if self.api:
