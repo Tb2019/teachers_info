@@ -810,8 +810,8 @@ def clean_phone(partition_num: str, dirty_phone: str):
         except:
             return None
 
-        if len(phone) > 13 and re.search(r'-\d{3,4}$', phone):
-            phone = re.sub(r'-\d{3,4}$', '', phone)
+        if len(phone) > 13 and re.search(r'-\d{3,7}$', phone):
+            phone = re.sub(r'-\d{3,7}$', '', phone)
 
         # 识别错误区号
         if re.match('^' + partition_num, phone) or re.match('^' + partition_num[1:], phone):
@@ -898,8 +898,8 @@ def clean_phone(partition_num: str, dirty_phone: str):
                     continue
 
             # 区号正常
-            if len(num) > 13 and re.search(r'-\d{3,4}$', num):
-                num = re.sub(r'-\d{3,4}$', '', num)
+            if len(num) > 13 and re.search(r'-\d{3,7}$', num):
+                num = re.sub(r'-\d{3,7}$', '', num)
             num = re.sub('-', '', num)
 
             if re.match('^' + partition_num, num):
