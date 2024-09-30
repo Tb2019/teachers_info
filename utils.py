@@ -317,7 +317,7 @@ api_info = {
         'headers': {
             'Content-Type': 'application/json',
             'Accept': 'application/json',
-            'Authorization': 'Bearer sk-5638e407f7ba4cde89071164a6240e43'
+            'Authorization': 'Bearer sk-a81c2aa869d34d5ab96d8ef1e7cd0cd8'
         },
         'payload': {
             "messages": [{
@@ -440,8 +440,8 @@ def get_format_result(turn, content: dict, result_direct: dict, partition_num, i
         result = {
             'phone': phone if phone else result_direct['phone'],
             # 'phone': result_direct['phone'],
-            # 'email': email if email else result_direct['email'],
-            'email': result_direct['email'],
+            'email': email if email else result_direct['email'],
+            # 'email': result_direct['email'],
             'job_title': content.get('职称') if content.get('职称') else result_direct['job_title'],
             'directions': content.get('研究方向') if content.get('研究方向') else result_direct['directions'],
             # 'directions': result_direct['directions'],
@@ -484,8 +484,8 @@ def get_format_result(turn, content: dict, result_direct: dict, partition_num, i
             'college_id': result_direct['college_id'],
             'phone': phone if phone else result_direct['phone'],
             # 'phone': result_direct['phone'],
-            # 'email': email if email else result_direct['email'],
-            'email': result_direct['email'],
+            'email': email if email else result_direct['email'],
+            # 'email': result_direct['email'],
             'job_title': content.get('职称') if content.get('职称') else result_direct['job_title'],
             'abstracts': content.get('个人简介') if content.get('个人简介') else result_direct['abstracts'],
             'directions': content.get('研究方向') if content.get('研究方向') else result_direct['directions'],
@@ -542,7 +542,6 @@ async def api_parse(result_gen, session, partition_num, img_url_head, cn_com):
             if api_result:
                 # if result_direct["name"] == '汤方栋':
                 #     print(api_result)
-                # print(api_result)
                 try:
                     api_result = api_result['choices'][0]['message']['content']
                     api_result = re.sub(r'^.*?(\{.*}).*?$', r'\1', api_result, flags=re.S)
@@ -810,8 +809,8 @@ def clean_phone(partition_num: str, dirty_phone: str):
         except:
             return None
 
-        if len(phone) > 13 and re.search(r'-\d{3,7}$', phone):
-            phone = re.sub(r'-\d{3,7}$', '', phone)
+        if len(phone) > 13 and re.search(r'-\d{3,4}$', phone):
+            phone = re.sub(r'-\d{3,4}$', '', phone)
 
         # 识别错误区号
         if re.match('^' + partition_num, phone) or re.match('^' + partition_num[1:], phone):
@@ -898,8 +897,8 @@ def clean_phone(partition_num: str, dirty_phone: str):
                     continue
 
             # 区号正常
-            if len(num) > 13 and re.search(r'-\d{3,7}$', num):
-                num = re.sub(r'-\d{3,7}$', '', num)
+            if len(num) > 13 and re.search(r'-\d{3,4}$', num):
+                num = re.sub(r'-\d{3,4}$', '', num)
             num = re.sub('-', '', num)
 
             if re.match('^' + partition_num, num):

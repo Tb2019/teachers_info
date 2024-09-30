@@ -7,33 +7,33 @@ from utils import csv_2_df, truncate_table, df2mysql, drop_duplicate_collage, lo
 from urllib import parse
 
 school_id = 104
-college_id = 251
+college_id = 281
 school_name = '上海交通大学'
-college_name = '医学院'
+college_name = '自然科学研究院'
 
 img_url_head = ''
 
 data_real = {
-"姓名": "谢幼专",
+"姓名": "金石",
 "电话": "",
-"邮箱": "phoque711@163.com",
+"邮箱": "",
 "职称": "",
 "个人简介": "",
 "教育经历": "",
 "工作经历": "",
-"研究方向": "脊柱外科，生物材料，组织工程，骨质疏松，脊柱康复",
+"研究方向": "",
 "人才称号": "",
 "行政称号": "",
 "专利": "",
 "科研项目": "",
-"荣誉/获奖": "内镜手术联合富血小板血浆治疗腰椎间盘突出症\n老年常见骨关节疾病综合康复体系研究\n可控释β-磷酸三钙抗生素缓释系统的试制及 其缓释规律的研究\n抗结核生物陶瓷仿生人工椎体的构建及其生物学特性研究\n利用原位诱导包膜促进大段骨缺损修复的研究",
-"照片地址": "https://daoshi.shsmu.edu.cn/Telerik.Web.UI.WebResource.axd?imgid=94bc7d1dd57f4b918568d1f7bd61bf58&type=rbi",
+"荣誉/获奖": "Sigma Xi Young Faculty Award, Georgia Tech, 1997\nFeng Kang Prize for Scientific Computing, Chinese Academy of Sciences, 2001\nDistinguished Overseas Young Scientist Award , National Science Foundation of China, 2002-2005.\nVan Vleck Distinguished Research Prize, Department of Mathematics, University of Wisconsin-Madison, 2007-2011.\nMorningside Silver Medal of Mathematics, Fourth International Congress of Chinese Mathematicians, Dec. 2007.\nCopernicus Visiting Scientist,, University of Ferrara, Italy, June 2010\nVilas Associate Award,, University of Wisconsin-Madison, 2010-2012\nSupervised a National Excellent Doctoral Thesis of China (honorable mention), Ministry of Education of China, 2012\nInaugural class of Fellow of the American Mathematical Society (AMS Fellow), 2012.\nFellow of the Society for Industrial and Applied Mathematics (SIAM Fellow), 2013.\nVilas Distinguished Achievement Professorship, University of Wisconsin-Madison, 2015.\nNelder Visiting Fellow, Imperial College, London, UK, 2018.\nInvited Speaker, International Congress of Mathematicians (ICM) , Rio de Janeiro, Brazil, 2018.\n(Inaugural) Best Article Award , Research in the Mathematical Sciences, Springer, 2019.\nOne of the Best Papers of 2019 , M3AS.\nInaugural class of Fellow of China Society of Industrial and Applied Mathematics (CSIAM Fellow)， 2020.\nThe Jean-Morlet Chair, CIRM, France, 2021.\nJournal of Computational Physics Seminar series (based on articles selected by the editorial board for being particularly innovative and/or having had significant recent impact)，Nov. 2021.\nFellow of European Academy of Sciences, 2021.\nForeign Member of Academia Europaea, 2021.\nTop Ten Advances in Sciences and Technology of Shanghai Jiao Tong University in year 2020, (for works in Random Batch Methods in interacting particle systems and molecular dynamics), 2022.\nJournal of Computational Physics Seminar series (based on articles selected by the editorial board for being particularly innovative and/or having had significant recent impact)，Nov. 2023.",
+"照片地址": "https://ins.sjtu.edu.cn/people/shijin/images/people-6a3d39e5.jpg",
 "最高学历": "",
 "最高学位": "",
-"职位": "硕士生导师",
-"办公地点": "上海市制造局路639号7号楼13楼上海交通大学医学院附属第九人民医院骨科",
-"科研论文": "A novel biocompatible PDA/IR820/DAP coating for antibiotic/photodynamic/photothermal triple therapy to inhibit and eliminate Staphylococcus aureus biofilm.Junkai Zeng, Yitong Wang, Zhenyu Sun,Haishuang Chang, Mi Cao, Jie Zhao,Kaili Lin, Youzhuan Xie （通讯作者）.Chemical Engineering Journal 2020\nOsteoblastic and anti-osteoclastic activities of strontium-substituted silicocarnotite ceramics: In vitro and in vivo studies.Junkai Zeng, Jingshu Guo, Zhenyu Sun, Fanyan Deng, Congqin Ning, Youzhuan Xie （通讯作者）.Bioactive materials 2020.\nNanosized-Ag-doped porous β-tricalcium phosphate for biological applications.Junjie Yuan, Baoxin Wang, Chen Han, Xiaoyan Huang, Haijun Xiao, Xiao Lu, Jianxi Lu, Dong Zhang, Feng Xue,Youzhuan Xie （通讯作者）.	Materials Science & Engineering C 2020 ",
-"源地址": "https://daoshi.shsmu.edu.cn/Pages/TeacherInformationView.aspx?uid=EE784F55-5362-4A67-A81C-4DDC2DF79D11&from=s&pId=all&tId="
+"职位": "",
+"办公地点": "",
+"科研论文": "[234] Junpeng Hu, Shi Jin, Lei Zhang, Quantum algorithms for multiscale partial differential equations, (SIAM) Multiscale Model. Simulation 22， 1030–1067， 2024.\nShi Jin and Nana Liu, Quantum simulation of discrete linear dynamical systems and simple iterative methods in linear algebra via Schrodingerisation, Proc. Royal Soc. London A, 480, 20230370, 2024.\nShi Jin, Xiantao Li， Nana Liu and Yue Yu, Quantum Simulation for Quantum Dynamics with Artificial Boundary Conditions, SIAM J. Sci. Comp., 46， B403–B421， 2024.\nYiwen Lin, Shi Jin, Error estimates of a bi-fidelity method for a multi-phase Navier-Stokes-Vlasov-Fokker-Planck system with random inputs, Kinetic and Related Models 17, 807-837， 2024.\nShi Jin and Nana Liu, Quantum algorithms for nonlinear partial differential equations, Bull. Math. Sci., 194，103457， 2024.",
+"源地址": "https://ins.sjtu.edu.cn/people/shijin/#former-ph-d-students"
 }
 
 data = {
