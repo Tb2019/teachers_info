@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 import csv
 import os
 import re
@@ -23,20 +24,20 @@ options.add_experimental_option("excludeSwitches", ["enable-automation"])
 options.add_experimental_option('useAutomationExtension', False)
 
 school_name = '华中科技大学'
-college_name = ''
+college_name = '电子信息与通信学院'
 school_id = 95
-college_id = None
+college_id = 321
 img_url_head = None
 partition_num = '027'
 start_urls = [
-                '',
-                '',
-                '',
-                ''
+                'http://ei.hust.edu.cn/xygk/szdw/txgcx.htm',
+                'http://ei.hust.edu.cn/xygk/szdw/xxgcx.htm',
+                'http://ei.hust.edu.cn/xygk/szdw/dzgcx.htm',
+                'http://ei.hust.edu.cn/xygk/szdw/jxsyzx.htm'
               ]
 
-a_s_xpath_str = ''
-target_div_xpath_str = ''
+a_s_xpath_str = '//div[@class="teachers clearfix"]/div//a[@href!="#"]'
+target_div_xpath_str = '//body'
 
 # 重写方法
 class SpecialSpider(ReCrawler):
@@ -275,7 +276,7 @@ class SpecialSpider(ReCrawler):
 
     # todo:方法四
     # 自动化工具获取 详情页 时重写(解开注释即可)
-    '''
+
     def get_detail_page(self, index_result):
         detail_pages = []
 
@@ -303,11 +304,11 @@ class SpecialSpider(ReCrawler):
                 continue
         driver.close()
         return detail_pages
-    '''
+
 
     # todo:方法五
     # 自动化工具获取 首页 时重写(解开注释即可)
-    '''
+
     def run(self):
         if self.api:
             self.selenium_gpt = False
@@ -493,9 +494,9 @@ class SpecialSpider(ReCrawler):
             elif self.save2target == 'target':
                 df2mysql(engine=sf_engine, df=result_df, table_name='search_teacher')
                 save_as_json(result_df, self.school_name, self.college_name)
-    '''
 
-spider = ReCrawler(
+
+spider = SpecialSpider(
                    school_name=school_name,
                    college_name=college_name,
                    partition_num=partition_num,

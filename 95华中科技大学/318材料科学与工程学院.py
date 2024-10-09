@@ -23,20 +23,17 @@ options.add_experimental_option("excludeSwitches", ["enable-automation"])
 options.add_experimental_option('useAutomationExtension', False)
 
 school_name = '华中科技大学'
-college_name = ''
+college_name = '材料科学与工程学院'
 school_id = 95
-college_id = None
+college_id = 318
 img_url_head = None
 partition_num = '027'
 start_urls = [
-                '',
-                '',
-                '',
-                ''
+                'http://mat.hust.edu.cn/szdw/zrjs.htm',
               ]
 
-a_s_xpath_str = ''
-target_div_xpath_str = ''
+a_s_xpath_str = '/html/body/div[3]/div/div[3]/div[3]/div[2]/div[1]/div[2]/div[1]/ul/li/a'
+target_div_xpath_str = '//div[@class="main" or @class="dft-main clearfix" or @class="introbox clearfix"]|//body'
 
 # 重写方法
 class SpecialSpider(ReCrawler):
@@ -275,7 +272,7 @@ class SpecialSpider(ReCrawler):
 
     # todo:方法四
     # 自动化工具获取 详情页 时重写(解开注释即可)
-    '''
+
     def get_detail_page(self, index_result):
         detail_pages = []
 
@@ -303,11 +300,11 @@ class SpecialSpider(ReCrawler):
                 continue
         driver.close()
         return detail_pages
-    '''
+
 
     # todo:方法五
     # 自动化工具获取 首页 时重写(解开注释即可)
-    '''
+
     def run(self):
         if self.api:
             self.selenium_gpt = False
@@ -493,9 +490,9 @@ class SpecialSpider(ReCrawler):
             elif self.save2target == 'target':
                 df2mysql(engine=sf_engine, df=result_df, table_name='search_teacher')
                 save_as_json(result_df, self.school_name, self.college_name)
-    '''
 
-spider = ReCrawler(
+
+spider = SpecialSpider(
                    school_name=school_name,
                    college_name=college_name,
                    partition_num=partition_num,
@@ -507,7 +504,7 @@ spider = ReCrawler(
                    a_s_xpath_str=a_s_xpath_str,
                    target_div_xpath_str=target_div_xpath_str,
 
-                   save2target='target',
+                   save2target='no',
                    selenium_gpt=False,
                    cn_com='',
                    api=True,

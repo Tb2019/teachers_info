@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 import csv
 import os
 import re
@@ -23,20 +24,19 @@ options.add_experimental_option("excludeSwitches", ["enable-automation"])
 options.add_experimental_option('useAutomationExtension', False)
 
 school_name = '华中科技大学'
-college_name = ''
+college_name = '法医学系'
 school_id = 95
-college_id = None
+college_id = 323
 img_url_head = None
 partition_num = '027'
 start_urls = [
-                '',
-                '',
-                '',
-                ''
+                'http://fayixi.tjmu.edu.cn/szdw/js.htm',
+                'http://fayixi.tjmu.edu.cn/szdw/fjs.htm',
+                'http://fayixi.tjmu.edu.cn/szdw/js1.htm',
               ]
 
-a_s_xpath_str = ''
-target_div_xpath_str = ''
+a_s_xpath_str = '/html/body/div[2]/div[2]/ul/li/p/a'
+target_div_xpath_str = '//form[@name="_newscontent_fromname"]'
 
 # 重写方法
 class SpecialSpider(ReCrawler):
