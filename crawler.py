@@ -192,6 +192,16 @@ class ReCrawler:
         if detail_page:
             page, origin_url, info_s = detail_page
             page_tree = etree.HTML(page)
+
+            # for item in self.target_div_xpath_str:
+            #     try:
+            #         target_div = page_tree.xpath(item)
+            #         break
+            #     except:
+            #         continue
+            # else:
+            #     print('未发现内容标签', origin_url)
+            #     return None
             try:
                 target_div = page_tree.xpath(self.target_div_xpath_str)
             except:
