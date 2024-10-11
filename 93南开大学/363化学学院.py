@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 import csv
 import os
 import re
@@ -23,20 +24,23 @@ options.add_experimental_option("excludeSwitches", ["enable-automation"])
 options.add_experimental_option('useAutomationExtension', False)
 
 school_name = '南开大学'
-college_name = ''
+college_name = '化学学院'
 school_id = 93
-college_id = None
+college_id = 36333
 img_url_head = None
 partition_num = '022'
 start_urls = [
-                '',
-                '',
-                '',
-                ''
+                'https://chem.nankai.edu.cn/hxx/main.htm',
+                'https://chem.nankai.edu.cn/yss/main.htm',
+                'https://chem.nankai.edu.cn/gfzs/main.htm',
+                'https://chem.nankai.edu.cn/yhs/main.htm',
+                'https://chem.nankai.edu.cn/fxkxzx/main.htm',
+                'https://chem.nankai.edu.cn/nygczx/main.htm',
+                'https://chem.nankai.edu.cn/_s312/jg/main.psp'
               ]
 
-a_s_xpath_str = ''
-target_div_xpath_str = ''
+a_s_xpath_str = '//div[@class="page-con-list-qtjs"]//a'
+target_div_xpath_str = '//div[@class="page-con-main"]'
 
 # 重写方法
 class SpecialSpider(ReCrawler):
@@ -507,7 +511,7 @@ spider = ReCrawler(
                    a_s_xpath_str=a_s_xpath_str,
                    target_div_xpath_str=target_div_xpath_str,
 
-                   save2target='target',
+                   save2target='no',
                    selenium_gpt=False,
                    cn_com='',
                    api=True,

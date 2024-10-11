@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 import csv
 import os
 import re
@@ -23,50 +24,58 @@ options.add_experimental_option("excludeSwitches", ["enable-automation"])
 options.add_experimental_option('useAutomationExtension', False)
 
 school_name = '南开大学'
-college_name = ''
+college_name = '物理科学学院'
 school_id = 93
-college_id = None
+college_id = 361
 img_url_head = None
 partition_num = '022'
 start_urls = [
-                '',
-                '',
-                '',
-                ''
+                'https://physics.nankai.edu.cn/3193/list.htm'
               ]
 
 a_s_xpath_str = ''
-target_div_xpath_str = ''
+target_div_xpath_str = '//div[contains(@id, "container")]'
 
 # 重写方法
 class SpecialSpider(ReCrawler):
     # todo：方法一
     # 姓名和超链接需要单独获取时，重写姓名和链接的获取方式(添加代码)
     # 首页需要增加信息时（在首页获取照片信息），增加额外信息的获取方式，并且重写 方法二
-    '''
+
     def parse_index(self, index_page, url):
-        page = etree.HTML(index_page)
-        a_s = page.xpath(self.a_s_xpath_str)
-        for a in a_s:
-            name = a.xpath('.//text()')
-            if name:
-                name = ''.join(name)
-                if not re.match(r'[A-Za-z\s]*$', name, re.S):  # 中文名替换空格
-                    name = re.sub(r'\s*', '', name)
-                name = re.sub(r'^\s*(\w.*?\w)\s*$', r'\1', name)
-                name = re.sub(self.name_filter_re, '', name)
-                try:
-                    link = a.xpath('./@href')[0]
-                    if link in ('#',):
-                        continue
-                    link = parse.urljoin(url, link)
-                except:
-                    continue
-            else:
-                print('未解析到name，请检查：a_s_xpath_str')
-                continue
+        import requests
+
+        url = "https://physics.nankai.edu.cn/_wp3services/generalQuery?queryObj=teacherHome"
+
+        payload = "siteId=21&pageIndex=&rows=160&conditions=%5B%7B%22field%22%3A%22published%22%2C%22value%22%3A1%2C%22judge%22%3A%22%3D%22%7D%2C%7B%22field%22%3A%22language%22%2C%22value%22%3A%221%22%2C%22judge%22%3A%22%3D%22%7D%5D&orders=%5B%7B%22field%22%3A%22letter%22%2C%22type%22%3A%22asc%22%7D%5D&returnInfos=%5B%7B%22field%22%3A%22title%22%2C%22name%22%3A%22title%22%7D%2C%7B%22field%22%3A%22letter%22%2C%22name%22%3A%22letter%22%7D%2C%7B%22field%22%3A%22firstLetter%22%2C%22name%22%3A%22firstLetter%22%7D%2C%7B%22field%22%3A%22exField1%22%2C%22name%22%3A%22exField1%22%7D%2C%7B%22field%22%3A%22exField2%22%2C%22name%22%3A%22exField2%22%7D%2C%7B%22field%22%3A%22exField3%22%2C%22name%22%3A%22exField3%22%7D%2C%7B%22field%22%3A%22exField4%22%2C%22name%22%3A%22exField4%22%7D%2C%7B%22field%22%3A%22exField5%22%2C%22name%22%3A%22exField5%22%7D%2C%7B%22field%22%3A%22department%22%2C%22name%22%3A%22department%22%7D%2C%7B%22field%22%3A%22headerPic%22%2C%22name%22%3A%22headerPic%22%7D%2C%7B%22field%22%3A%22cnUrl%22%2C%22name%22%3A%22cnUrl%22%7D%5D&articleType=1&level=1"
+        headers = {
+            'Accept': 'application/json, text/javascript, */*; q=0.01',
+            'Accept-Language': 'zh-CN,zh;q=0.9,en-US;q=0.8,en;q=0.7',
+            'Cache-Control': 'no-cache',
+            'Connection': 'keep-alive',
+            'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8',
+            'Cookie': 'JSESSIONID=0C60E512C4D1E3B4C25EB8CD5102E398',
+            'DNT': '1',
+            'Origin': 'https://physics.nankai.edu.cn',
+            'Pragma': 'no-cache',
+            'Referer': 'https://physics.nankai.edu.cn/3193/list.htm',
+            'Sec-Fetch-Dest': 'empty',
+            'Sec-Fetch-Mode': 'cors',
+            'Sec-Fetch-Site': 'same-origin',
+            'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36 Edg/127.0.0.0',
+            'X-Requested-With': 'XMLHttpRequest',
+            'sec-ch-ua': '"Not)A;Brand";v="99", "Microsoft Edge";v="127", "Chromium";v="127"',
+            'sec-ch-ua-mobile': '?0',
+            'sec-ch-ua-platform': '"Windows"'
+        }
+
+        response = requests.request("POST", url, headers=headers, data=payload).json()['data']
+
+        for item in response:
+            name = item['title']
+            link = item['cnUrl']
             yield name, link
-    '''
+
 
     # todo：方法二
     # 方法一增加首页获取的信息时，需要重写(添加代码)
@@ -495,7 +504,7 @@ class SpecialSpider(ReCrawler):
                 save_as_json(result_df, self.school_name, self.college_name)
     '''
 
-spider = ReCrawler(
+spider = SpecialSpider(
                    school_name=school_name,
                    college_name=college_name,
                    partition_num=partition_num,

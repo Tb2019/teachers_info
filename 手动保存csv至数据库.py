@@ -6,34 +6,34 @@ from asyncio.log import logger
 from utils import csv_2_df, truncate_table, df2mysql, drop_duplicate_collage, local_engine, sf_engine, save_as_json
 from urllib import parse
 
-school_id = 95
-college_id = 340
-school_name = '华中科技大学'
-college_name = '集成电路学院'
+school_id = 93
+college_id = 363
+school_name = '南开大学'
+college_name = '化学学院'
 
 img_url_head = ''
 
 data_real = {
-"姓名": "邹雪城",
-"电话": "027-87611245",
-"邮箱": "estxczou@gmail.com",
-"职称": "教授",
-"个人简介": "1985年毕业于华中理工大学固体电子学系，获得工学学士学位，1988年于华中理工大学获得半导体器件与微电子技术专业工学硕士学位，并于1995年在华中理工大学获得工学博士学位，专业为微电子学与固体电子学。1993年任华中理工大学固体电子学系副教授。1996年6月赴香港城市大学电子工程学系从事博士后研究工作，1998年6月返校复职。\n现任华中科技大学集成电路学院教授、博士生导师、电子系主任，超大规模集成电路与系统研究中心主任，校学术委员会委员，校学位评定委员会委员，国家集成电路人才培养（武汉）基地主任，武汉集成电路设计工程技术研究中心主任，武汉集成电路产业化基地首席专家，IEEE会员，MRS会员，中国电子学会半导体与集成技术分会委员，武汉市人民政府科技咨询专家委员会委员，湖北省青年科协副主席，国家自然科学基金“半导体集成化芯片系统基础研究”重大研究计划指导专家组成员，国家集成电路人才培养专家指导委员会委员，国家教学指导委员会电子科学与技术专业分委员会委员。\n一直从事电子信息工程与微电子技术方面的研究工作，以项目负责人身份承担了国家自然科学基金、国家“863”计划项目、国家攻关、教育部骨干青年教师基金、企业技术开发项目等共20余项科学研究与开发项目。在国内外重要学术期刊和学术会议上发表论文近300篇，申请发明专利10项，获得部级科研成果奖2项。在大规模集成电路研究与设计、集成微纳电子器件与系统等方面具有丰富的经验。现主要从事超大规模集成电路的研究与设计、微电子与微光子学以及集成微纳电子器件与系统等方面的教学、研究与开发工作。",
-"教育经历": "1985年毕业于华中理工大学固体电子学系，获得工学学士学位，1988年于华中理工大学获得半导体器件与微电子技术专业工学硕士学位，并于1995年在华中理工大学获得工学博士学位，专业为微电子学与固体电子学。",
-"工作经历": "1993年任华中理工大学固体电子学系副教授。1996年6月赴香港城市大学电子工程学系从事博士后研究工作，1998年6月返校复职。",
-"研究方向": "超大规模集成电路",
+"姓名": "于勐",
+"电话": "",
+"邮箱": "nkyu2023@nankai.edu.cn",
+"职称": "副教授",
+"个人简介": "于勐，博士，副教授，应用化学与工程研究所，毕业于南开大学，天津人。",
+"教育经历": "2009年9月 − 2013年7月，上海交通大学电子信息与电气工程学院，本科\n2013年8月 − 2015年5月，美国南加州大学维特比工程学院，硕士\n2015年6月 − 2019年6月，南开大学电子信息与光学工程学院，博士",
+"工作经历": "2019年7月 – 2022年6月，南开大学化学学院，博士后\n2022年7月 – 2023年9月，南开大学电子信息与光学工程学院，博士后\n2023年10月至今，南开大学化学学院，副教授",
+"研究方向": "能源材料化学，电催化材料与器件",
 "人才称号": "",
 "行政称号": "",
-"专利": "邹雪城;刘政林;陈晓飞;李思臻;甘 泉;张 浩;张 涛;吴 俊一种单周期前馈开关控制电路 中国发明专利，申请号200810046621.8，公开号CN101217251,2008\n邹雪城;刘政林;陈晓飞;李思臻;甘 泉;张 浩;张 涛;吴 俊 一种脉宽调制DC-DC开关电源的软启动电路中国发明专利，申请号200810046622.2，公开号CN101217252,2008\n邹雪城;刘政林;刘冬生;余 琼;谭 波;惠雪梅;李 玲;刘 旭 一种用于EEPROM的灵敏放大器及由其构成的读电路中国发明专利，申请号200810046620.3，公开号CN101221814,2008\n刘政林;邹雪城;蔡 梦 一种可配置可重构的动态混频器中国发明专利，申请号200810047029.X，公开号CN101242158,2008\n邹雪城;张科峰;蔡 梦 可动态配置自重构宽频带频率合成器中国发明专利，申请号200810046922.0，公开号CN101242185,2008",
-"科研项目": "《基于数据传输触发的流计算体系结构研究与原型设计》，国家高技术研究发展计划（863计划），2009年，项目负责人\n《面向三维堆叠封装的芯片间电感耦合无线互联技术研究》，国家自然科学基金，2009年，项目负责人\n《安全静态随机存储器(SRAM)的研究与设计》，国家自然科学基金 2008～2010，项目负责人\n《面向数据密度计算的超高性能低功耗多核处理器的研究与实现》，湖北身自然科学基金重点项目，2008年～2010年，项目负责人\n《超大规模SOC设计方法及CAD技术研究》，国家高新技术研究发展（863）计划资助项目，2005年结题，项目负责人\n《基于校园网络的IC课程设计平台课的研究》，湖北省教学改革项目，2004～2006，项目负责人\n《基于项目管理的二年制工学硕士生的培养模式与实践》，校研究生教学改革项目，2006～2008，项目负责人\n《电子科学与技术专业师生互动式实践教学综合管理平台的探索与实践》，校教改项目，2008～2010，项目负责人。\n《低成本、低功耗、高安全性无线传感器网络节点芯片设计》，国家高新技术研究发展（863）计划资助项目，在研项目，第二项目负责人\n《DVD/VCD/CD伺服控制芯片的研发》，湖北省科技攻关计划项目，2005年结题，项目负责人",
-"荣誉/获奖": "",
-"照片地址": "https://ic.hust.edu.cn/__local/C/E3/A5/903668AC27FA504A4C127212BDF_8DED9BD5_2EC3.jpg",
+"专利": "获发明专利授权专利1项",
+"科研项目": "作为项目负责人或骨干成员承担国家自然科学基金青年项目、国家重点研发计划“催化科学”专项等科研任务。",
+"荣誉/获奖": "2022年天津市自然科学二等奖（第二完成人）\n第二十次全国电化学大会优秀论文奖\nJournal of Energy Chemistry2022年作者交流会最佳报告奖",
+"照片地址": "https://chem.nankai.edu.cn/_upload/article/images/df/0f/38a6228f424cb1595751e78a505d/3263b494-6b8c-452d-9e90-c1fb364996f5.jpg",
 "最高学历": "研究生",
 "最高学位": "博士",
-"职位": "现任华中科技大学集成电路学院教授、博士生导师、电子系主任，超大规模集成电路与系统研究中心主任，校学术委员会委员，校学位评定委员会委员，国家集成电路人才培养（武汉）基地主任，武汉集成电路设计工程技术研究中心主任，武汉集成电路产业化基地首席专家，IEEE会员，MRS会员，中国电子学会半导体与集成技术分会委员，武汉市人民政府科技咨询专家委员会委员，湖北省青年科协副主席，国家自然科学基金“半导体集成化芯片系统基础研究”重大研究计划指导专家组成员，国家集成电路人才培养专家指导委员会委员，国家教学指导委员会电子科学与技术专业分委员会委员。",
-"办公地点": "华中科技大学光电信息大楼C742",
-"科研论文": "陈黎明,邹雪城,雷鑑铭,刘政林On-line Cache Resizing for Low-Power MicroprocessorsJournal of Southwest J iaotong University,2009\n易立华,邹雪城,刘政林,但永平基于无线传感网络的AES协处理器设计微电子学与计算机,June 2009\n艾金鹏,刘政林,陈毅成,邹雪城无线传感器网络SoC休眠唤醒机制的设计实现微电子学与计算机,June 2009\n吴俊,邹雪城,李思臻,鲁力,杨诗洋,洪毅一种改进的高精度低功耗过温保护电路微电子学与计算机,February 2009",
-"源地址": "https://ic.hust.edu.cn/info/1146/1231.htm"
+"职位": "副教授",
+"办公地点": "天津市南开区卫津路94号南开大学联合楼A703室",
+"科研论文": "1. Jinhan Li, Keqiang Xu, Fangming Liu, Youzeng Li, Yanfang Hu, Xijie Chen, Huan Wang*, Wence Xu, Youxuan Ni, Guoyu Ding, Tete Zhao, Meng Yu*, Wei Xie, Fangyi Cheng*. Hollow Hierarchical Cu2O-Derived Electrocatalysts Steering CO2 Reduction to Multi-Carbon Chemicals at Low Overpotentials. Advanced Materials 2023, 35, 2301127.\n2. Tete Zhao, Jinhan Li, Jiuding Liu, Fangming Liu, Keqiang Xu, Meng Yu*, Wence Xu, Fangyi Cheng*. Tailoring the Catalytic Microenvironment of Cu2O with SiO2 to Enhance C2+ Product Selectivity in CO2 Electroreduction. ACS Catalysis 2023, 13, 4444.\n3. Tete Zhao, Xupeng Zong, Jiuding Liu, Jialei Chen, Keqiang Xu, Xiao Wang, Xijie Chen, Wutong Yang, Fangming Liu, Meng Yu*, Fangyi Cheng*. Functionalizing Cu nanoparticles with fluoric polymer to enhance C2+ roduct selectivity in membraned CO2 reduction. Applied Catalysis B: Environmental 2024, 340, 123281.\n4. Meng Yu#, Fangming Liu#, Jinhan Li, Jiuding Liu, Yudong Zhang, Fangyi Cheng*. Multidimensional nonstoichiometric electrode materials for electrochemical energy conversion and storage. Advanced Energy Materials 2021, 2100640.\n5. Meng Yu, Jinhan Li, Fangming Liu, Jiuding Liu, Wence Xu, Honglu Hu, Xijie Chen, Weichao Wang, Fangyi Cheng*. Anionic formulation of electrolyte additive towards stable lectrocatalytic oxygen evolution in seawater splitting. Journal of Energy Chemistry 2022, 72, 361.",
+"源地址": "https://chem.nankai.edu.cn/2019/0906/c24393a540862/page.htm"
 }
 
 data = {

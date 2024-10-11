@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 import csv
 import os
 import re
@@ -22,21 +23,24 @@ options.add_experimental_option('detach', True)
 options.add_experimental_option("excludeSwitches", ["enable-automation"])
 options.add_experimental_option('useAutomationExtension', False)
 
-school_name = '南开大学'
-college_name = ''
-school_id = 93
-college_id = None
+school_name = '华中科技大学'
+college_name = '武汉光电国家研究中心'
+school_id = 95
+college_id = 354
 img_url_head = None
-partition_num = '022'
+partition_num = '027'
 start_urls = [
-                '',
-                '',
-                '',
-                ''
+                'https://wnlo.hust.edu.cn/rcdw/szdw/jcgzxyjb.htm',
+                'https://wnlo.hust.edu.cn/rcdw/szdw/gdxxccyjb.htm',
+                'https://wnlo.hust.edu.cn/rcdw/szdw/jgkxyjsyjb.htm',
+                'https://wnlo.hust.edu.cn/rcdw/szdw/nygzxyjb.htm',
+                'https://wnlo.hust.edu.cn/rcdw/szdw/swyxgzxyjb.htm',
+                'https://wnlo.hust.edu.cn/rcdw/szdw/dmtfzyxyjb.htm',
+                'https://wnlo.hust.edu.cn/rcdw/szdw/smfzwlypxyjb.htm',
               ]
 
-a_s_xpath_str = ''
-target_div_xpath_str = ''
+a_s_xpath_str = '/html/body/div/div[4]/div[2]/div[2]/div/ul/li/span/a'
+target_div_xpath_str = '//div[@class="main" or @class="dft-main clearfix" or @class="introbox clearfix" or @class="conbox" or @class="v_news_content"]|//form[@name="_newscontent_fromname"]|//body'
 
 # 重写方法
 class SpecialSpider(ReCrawler):
@@ -275,7 +279,7 @@ class SpecialSpider(ReCrawler):
 
     # todo:方法四
     # 自动化工具获取 详情页 时重写(解开注释即可)
-    '''
+
     def get_detail_page(self, index_result):
         detail_pages = []
 
@@ -303,11 +307,11 @@ class SpecialSpider(ReCrawler):
                 continue
         driver.close()
         return detail_pages
-    '''
+
 
     # todo:方法五
     # 自动化工具获取 首页 时重写(解开注释即可)
-    '''
+
     def run(self):
         if self.api:
             self.selenium_gpt = False
@@ -493,9 +497,9 @@ class SpecialSpider(ReCrawler):
             elif self.save2target == 'target':
                 df2mysql(engine=sf_engine, df=result_df, table_name='search_teacher')
                 save_as_json(result_df, self.school_name, self.college_name)
-    '''
 
-spider = ReCrawler(
+
+spider = SpecialSpider(
                    school_name=school_name,
                    college_name=college_name,
                    partition_num=partition_num,

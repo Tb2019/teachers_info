@@ -395,6 +395,8 @@ async def get_api_resp(session, data, api_headers):
         async with session.post(api_base_url, data=json.dumps(data), headers=api_headers) as resp:
             if resp.ok:
                 return await resp.json()
+            else:
+                logger.error('可能请求文本过长，无法处理--请求层')
     except Exception as e:
             logger.error('错误，即将重试或记录...')
 

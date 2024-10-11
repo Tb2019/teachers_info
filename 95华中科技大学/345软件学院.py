@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 import csv
 import os
 import re
@@ -22,21 +23,24 @@ options.add_experimental_option('detach', True)
 options.add_experimental_option("excludeSwitches", ["enable-automation"])
 options.add_experimental_option('useAutomationExtension', False)
 
-school_name = '南开大学'
-college_name = ''
-school_id = 93
-college_id = None
+school_name = '华中科技大学'
+college_name = '软件学院'
+school_id = 95
+college_id = 345
 img_url_head = None
-partition_num = '022'
+partition_num = '027'
 start_urls = [
-                '',
-                '',
-                '',
-                ''
+                # 'https://sse.hust.edu.cn/szdw1/js_yjy.htm',
+                # 'https://sse.hust.edu.cn/szdw1/fjs.htm',
+                # 'https://sse.hust.edu.cn/szdw1/fjs/1.htm',
+                # 'https://sse.hust.edu.cn/szdw1/js1.htm',
+
+                'https://sse.hust.edu.cn/szdw1/spjs.htm'
               ]
 
-a_s_xpath_str = ''
-target_div_xpath_str = ''
+# a_s_xpath_str = '/html/body/div[6]/div/div[1]/div[2]/ul/li/a'
+a_s_xpath_str = '//div[@class="text-list text-listx"]/div[@class="team_list"]//li/a'
+target_div_xpath_str = '//div[@class="main" or @class="dft-main clearfix" or @class="introbox clearfix" or @class="conbox" or @class="v_news_content"]|//form[@name="_newscontent_fromname"]|//body'
 
 # 重写方法
 class SpecialSpider(ReCrawler):
@@ -48,7 +52,7 @@ class SpecialSpider(ReCrawler):
         page = etree.HTML(index_page)
         a_s = page.xpath(self.a_s_xpath_str)
         for a in a_s:
-            name = a.xpath('.//text()')
+            name = a.xpath('.//p/text()')
             if name:
                 name = ''.join(name)
                 if not re.match(r'[A-Za-z\s]*$', name, re.S):  # 中文名替换空格
@@ -275,7 +279,7 @@ class SpecialSpider(ReCrawler):
 
     # todo:方法四
     # 自动化工具获取 详情页 时重写(解开注释即可)
-    '''
+
     def get_detail_page(self, index_result):
         detail_pages = []
 
@@ -303,7 +307,7 @@ class SpecialSpider(ReCrawler):
                 continue
         driver.close()
         return detail_pages
-    '''
+
 
     # todo:方法五
     # 自动化工具获取 首页 时重写(解开注释即可)
@@ -495,7 +499,7 @@ class SpecialSpider(ReCrawler):
                 save_as_json(result_df, self.school_name, self.college_name)
     '''
 
-spider = ReCrawler(
+spider = SpecialSpider(
                    school_name=school_name,
                    college_name=college_name,
                    partition_num=partition_num,

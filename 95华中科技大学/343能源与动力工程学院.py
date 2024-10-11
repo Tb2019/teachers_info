@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 import csv
 import os
 import re
@@ -22,21 +23,18 @@ options.add_experimental_option('detach', True)
 options.add_experimental_option("excludeSwitches", ["enable-automation"])
 options.add_experimental_option('useAutomationExtension', False)
 
-school_name = '南开大学'
-college_name = ''
-school_id = 93
-college_id = None
+school_name = '华中科技大学'
+college_name = '能源与动力工程学院'
+school_id = 95
+college_id = 343
 img_url_head = None
-partition_num = '022'
+partition_num = '027'
 start_urls = [
-                '',
-                '',
-                '',
-                ''
+                'http://energy.hust.edu.cn/szdw/jsml.htm',
               ]
 
-a_s_xpath_str = ''
-target_div_xpath_str = ''
+a_s_xpath_str = '/html/body/div[4]/div[2]/div[3]/div//div[2]/ul/li/a'
+target_div_xpath_str = '//form[@name="_newscontent_fromname"]'
 
 # 重写方法
 class SpecialSpider(ReCrawler):

@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 import csv
 import os
 import re
@@ -22,33 +23,30 @@ options.add_experimental_option('detach', True)
 options.add_experimental_option("excludeSwitches", ["enable-automation"])
 options.add_experimental_option('useAutomationExtension', False)
 
-school_name = '南开大学'
-college_name = ''
-school_id = 93
-college_id = None
+school_name = '华中科技大学'
+college_name = '中欧清洁与可再生能源学院'
+school_id = 95
+college_id = 358
 img_url_head = None
-partition_num = '022'
+partition_num = '027'
 start_urls = [
-                '',
-                '',
-                '',
-                ''
+                'http://icare.hust.edu.cn/szdw.htm',
               ]
 
-a_s_xpath_str = ''
-target_div_xpath_str = ''
+a_s_xpath_str = '/html/body/div/div[3]/div[2]/ul/table/tbody/tr[1]/td[2]'
+target_div_xpath_str = '//form[@name="_newscontent_fromname"]'
 
 # 重写方法
 class SpecialSpider(ReCrawler):
     # todo：方法一
     # 姓名和超链接需要单独获取时，重写姓名和链接的获取方式(添加代码)
     # 首页需要增加信息时（在首页获取照片信息），增加额外信息的获取方式，并且重写 方法二
-    '''
+
     def parse_index(self, index_page, url):
         page = etree.HTML(index_page)
         a_s = page.xpath(self.a_s_xpath_str)
         for a in a_s:
-            name = a.xpath('.//text()')
+            name = a.xpath('./strong/text()')
             if name:
                 name = ''.join(name)
                 if not re.match(r'[A-Za-z\s]*$', name, re.S):  # 中文名替换空格
@@ -56,7 +54,7 @@ class SpecialSpider(ReCrawler):
                 name = re.sub(r'^\s*(\w.*?\w)\s*$', r'\1', name)
                 name = re.sub(self.name_filter_re, '', name)
                 try:
-                    link = a.xpath('./@href')[0]
+                    link = a.xpath('.//a/@href')[0]
                     if link in ('#',):
                         continue
                     link = parse.urljoin(url, link)
@@ -66,7 +64,7 @@ class SpecialSpider(ReCrawler):
                 print('未解析到name，请检查：a_s_xpath_str')
                 continue
             yield name, link
-    '''
+
 
     # todo：方法二
     # 方法一增加首页获取的信息时，需要重写(添加代码)
@@ -307,7 +305,7 @@ class SpecialSpider(ReCrawler):
 
     # todo:方法五
     # 自动化工具获取 首页 时重写(解开注释即可)
-    '''
+
     def run(self):
         if self.api:
             self.selenium_gpt = False
@@ -493,9 +491,9 @@ class SpecialSpider(ReCrawler):
             elif self.save2target == 'target':
                 df2mysql(engine=sf_engine, df=result_df, table_name='search_teacher')
                 save_as_json(result_df, self.school_name, self.college_name)
-    '''
 
-spider = ReCrawler(
+
+spider = SpecialSpider(
                    school_name=school_name,
                    college_name=college_name,
                    partition_num=partition_num,

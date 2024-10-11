@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 import csv
 import os
 import re
@@ -22,21 +23,27 @@ options.add_experimental_option('detach', True)
 options.add_experimental_option("excludeSwitches", ["enable-automation"])
 options.add_experimental_option('useAutomationExtension', False)
 
-school_name = '南开大学'
-college_name = ''
-school_id = 93
-college_id = None
+school_name = '华中科技大学'
+college_name = '物理学院'
+school_id = 95
+college_id = 353
 img_url_head = None
-partition_num = '022'
+partition_num = '027'
 start_urls = [
-                '',
-                '',
-                '',
-                ''
+                'https://phys.hust.edu.cn/szdw2/js.htm',
+                'https://phys.hust.edu.cn/szdw2/fjs.htm',
+                'https://phys.hust.edu.cn/szdw2/yjy.htm',
+                'https://phys.hust.edu.cn/szdw2/fyjy.htm',
+                'https://phys.hust.edu.cn/szdw2/zlyjy.htm',
+                'https://phys.hust.edu.cn/szdw2/js1.htm',
+                'https://phys.hust.edu.cn/szdw2/spjs.htm',
+                'https://phys.hust.edu.cn/szdw2/jzjs.htm',
+                'https://phys.hust.edu.cn/szdw2/jsry.htm',
+                'https://phys.hust.edu.cn/szdw2/bsh.htm',
               ]
 
-a_s_xpath_str = ''
-target_div_xpath_str = ''
+a_s_xpath_str = '//div[@id="lbrc_1"]/ul/li/span/a'
+target_div_xpath_str = '//div[@class="main" or @class="dft-main clearfix" or @class="introbox clearfix" or @class="conbox" or @class="v_news_content"]|//form[@name="_newscontent_fromname"]|//body'
 
 # 重写方法
 class SpecialSpider(ReCrawler):
@@ -275,7 +282,7 @@ class SpecialSpider(ReCrawler):
 
     # todo:方法四
     # 自动化工具获取 详情页 时重写(解开注释即可)
-    '''
+
     def get_detail_page(self, index_result):
         detail_pages = []
 
@@ -303,7 +310,7 @@ class SpecialSpider(ReCrawler):
                 continue
         driver.close()
         return detail_pages
-    '''
+
 
     # todo:方法五
     # 自动化工具获取 首页 时重写(解开注释即可)
@@ -495,7 +502,7 @@ class SpecialSpider(ReCrawler):
                 save_as_json(result_df, self.school_name, self.college_name)
     '''
 
-spider = ReCrawler(
+spider = SpecialSpider(
                    school_name=school_name,
                    college_name=college_name,
                    partition_num=partition_num,
