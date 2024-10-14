@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 import csv
 import os
 import re
@@ -22,28 +23,28 @@ options.add_experimental_option('detach', True)
 options.add_experimental_option("excludeSwitches", ["enable-automation"])
 options.add_experimental_option('useAutomationExtension', False)
 
-school_name = '华东师范大学'
-college_name = ''
-school_id = 91
-college_id = None
+school_name = '南开大学'
+college_name = '网络空间安全学院'
+school_id = 93
+college_id = 374
 img_url_head = None
-partition_num = '021'
+partition_num = '022'
 start_urls = [
-                '',
-                '',
-                '',
-                ''
+                'https://cyber.nankai.edu.cn/13336/list.htm',
+                'https://cyber.nankai.edu.cn/fjswfyjy/list.htm',
+                'https://cyber.nankai.edu.cn/js/list.htm',
+                'https://cyber.nankai.edu.cn/syjxdw/list.htm'
               ]
 
-a_s_xpath_str = ''
-target_div_xpath_str = ''
+a_s_xpath_str = '//div[@id="wp_news_w440"]/div//a'
+target_div_xpath_str = '//div[contains(@class, "introduce-form")]'
 
 # 重写方法
 class SpecialSpider(ReCrawler):
     # todo：方法一
     # 姓名和超链接需要单独获取时，重写姓名和链接的获取方式(添加代码)
     # 首页需要增加信息时（在首页获取照片信息），增加额外信息的获取方式，并且重写 方法二
-    '''
+
     def parse_index(self, index_page, url):
         page = etree.HTML(index_page)
         a_s = page.xpath(self.a_s_xpath_str)
@@ -55,6 +56,7 @@ class SpecialSpider(ReCrawler):
                     name = re.sub(r'\s*', '', name)
                 name = re.sub(r'^\s*(\w.*?\w)\s*$', r'\1', name)
                 name = re.sub(self.name_filter_re, '', name)
+                name = re.sub(r'副?(?:教授|研究员)|讲师|(?:高级|助理)?(?:实验师|工程师)', '', name)
                 try:
                     link = a.xpath('./@href')[0]
                     if link in ('#',):
@@ -66,7 +68,7 @@ class SpecialSpider(ReCrawler):
                 print('未解析到name，请检查：a_s_xpath_str')
                 continue
             yield name, link
-    '''
+
 
     # todo：方法二
     # 方法一增加首页获取的信息时，需要重写(添加代码)
@@ -128,8 +130,6 @@ class SpecialSpider(ReCrawler):
                 content_with_label = str(soup)
                 # 去掉标签之间空白字符
                 content_with_label = re.sub(r'>\s*<', r'><', content_with_label)
-                # 去除注释内容
-                content_with_label = re.sub(r'<!--.*?-->', r'', content_with_label)
 
 
             # 姓名
@@ -497,7 +497,7 @@ class SpecialSpider(ReCrawler):
                 save_as_json(result_df, self.school_name, self.college_name)
     '''
 
-spider = ReCrawler(
+spider = SpecialSpider(
                    school_name=school_name,
                    college_name=college_name,
                    partition_num=partition_num,

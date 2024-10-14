@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 import csv
 import os
 import re
@@ -22,21 +23,26 @@ options.add_experimental_option('detach', True)
 options.add_experimental_option("excludeSwitches", ["enable-automation"])
 options.add_experimental_option('useAutomationExtension', False)
 
-school_name = '华东师范大学'
-college_name = ''
-school_id = 91
-college_id = None
+school_name = '南开大学'
+college_name = '新一代人工智能发展战略研究院'
+school_id = 93
+college_id = 378
 img_url_head = None
-partition_num = '021'
+partition_num = '022'
 start_urls = [
-                '',
-                '',
-                '',
-                ''
+                'https://cingai.nankai.edu.cn/rytd/list.htm',
+                'https://cingai.nankai.edu.cn/rytd/list2.htm',
+                'https://cingai.nankai.edu.cn/rytd/list3.htm',
+                'https://cingai.nankai.edu.cn/yjtdry/list.htm',
+                'https://cingai.nankai.edu.cn/yjtdry/list2.htm',
+                'https://cingai.nankai.edu.cn/yjtdry/list3.htm',
+                'https://cingai.nankai.edu.cn/yjtdry/list4.htm',
+                'https://cingai.nankai.edu.cn/yjtdry/list5.htm',
+                'https://cingai.nankai.edu.cn/yjtdry/list6.htm',
               ]
 
-a_s_xpath_str = ''
-target_div_xpath_str = ''
+a_s_xpath_str = '/html/body/div[1]/div[7]/div/div[3]/div[2]/div/div/div/table/tbody//div[3]//a'
+target_div_xpath_str = '//div[@frag="窗口06"]/div[last()]'
 
 # 重写方法
 class SpecialSpider(ReCrawler):
@@ -128,8 +134,6 @@ class SpecialSpider(ReCrawler):
                 content_with_label = str(soup)
                 # 去掉标签之间空白字符
                 content_with_label = re.sub(r'>\s*<', r'><', content_with_label)
-                # 去除注释内容
-                content_with_label = re.sub(r'<!--.*?-->', r'', content_with_label)
 
 
             # 姓名
@@ -309,7 +313,7 @@ class SpecialSpider(ReCrawler):
 
     # todo:方法五
     # 自动化工具获取 首页 时重写(解开注释即可)
-    '''
+
     def run(self):
         if self.api:
             self.selenium_gpt = False
@@ -495,9 +499,9 @@ class SpecialSpider(ReCrawler):
             elif self.save2target == 'target':
                 df2mysql(engine=sf_engine, df=result_df, table_name='search_teacher')
                 save_as_json(result_df, self.school_name, self.college_name)
-    '''
 
-spider = ReCrawler(
+
+spider = SpecialSpider(
                    school_name=school_name,
                    college_name=college_name,
                    partition_num=partition_num,

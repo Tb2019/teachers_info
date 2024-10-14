@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 import csv
 import os
 import re
@@ -22,21 +23,18 @@ options.add_experimental_option('detach', True)
 options.add_experimental_option("excludeSwitches", ["enable-automation"])
 options.add_experimental_option('useAutomationExtension', False)
 
-school_name = '华东师范大学'
-college_name = ''
-school_id = 91
-college_id = None
+school_name = '南开大学'
+college_name = '材料科学与工程学院'
+school_id = 93
+college_id = 372
 img_url_head = None
-partition_num = '021'
+partition_num = '022'
 start_urls = [
-                '',
-                '',
-                '',
-                ''
+                'https://mse.nankai.edu.cn/9281/list.htm'
               ]
 
-a_s_xpath_str = ''
-target_div_xpath_str = ''
+a_s_xpath_str = '//div[@class="col_news"]//ul//ul//li//a'
+target_div_xpath_str = '//div[@class="maincon" or @class="article"]'
 
 # 重写方法
 class SpecialSpider(ReCrawler):
@@ -128,8 +126,6 @@ class SpecialSpider(ReCrawler):
                 content_with_label = str(soup)
                 # 去掉标签之间空白字符
                 content_with_label = re.sub(r'>\s*<', r'><', content_with_label)
-                # 去除注释内容
-                content_with_label = re.sub(r'<!--.*?-->', r'', content_with_label)
 
 
             # 姓名

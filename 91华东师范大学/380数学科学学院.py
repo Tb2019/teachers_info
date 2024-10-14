@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 import csv
 import os
 import re
@@ -23,20 +24,18 @@ options.add_experimental_option("excludeSwitches", ["enable-automation"])
 options.add_experimental_option('useAutomationExtension', False)
 
 school_name = '华东师范大学'
-college_name = ''
+college_name = '数学科学学院'
 school_id = 91
-college_id = None
+college_id = 380
 img_url_head = None
 partition_num = '021'
 start_urls = [
-                '',
-                '',
-                '',
-                ''
+                'https://math.ecnu.edu.cn/faculty.html',
+                'https://math.ecnu.edu.cn/faculty.html?type=bsh',
               ]
 
-a_s_xpath_str = ''
-target_div_xpath_str = ''
+a_s_xpath_str = '/html/body/div[2]/div[2]/div[2]/div[3]/table/tbody//a'
+target_div_xpath_str = '//div[@class="con-body"]'
 
 # 重写方法
 class SpecialSpider(ReCrawler):
@@ -128,8 +127,6 @@ class SpecialSpider(ReCrawler):
                 content_with_label = str(soup)
                 # 去掉标签之间空白字符
                 content_with_label = re.sub(r'>\s*<', r'><', content_with_label)
-                # 去除注释内容
-                content_with_label = re.sub(r'<!--.*?-->', r'', content_with_label)
 
 
             # 姓名
@@ -277,7 +274,7 @@ class SpecialSpider(ReCrawler):
 
     # todo:方法四
     # 自动化工具获取 详情页 时重写(解开注释即可)
-    '''
+
     def get_detail_page(self, index_result):
         detail_pages = []
 
@@ -305,11 +302,11 @@ class SpecialSpider(ReCrawler):
                 continue
         driver.close()
         return detail_pages
-    '''
+
 
     # todo:方法五
     # 自动化工具获取 首页 时重写(解开注释即可)
-    '''
+
     def run(self):
         if self.api:
             self.selenium_gpt = False
@@ -495,9 +492,9 @@ class SpecialSpider(ReCrawler):
             elif self.save2target == 'target':
                 df2mysql(engine=sf_engine, df=result_df, table_name='search_teacher')
                 save_as_json(result_df, self.school_name, self.college_name)
-    '''
 
-spider = ReCrawler(
+
+spider = SpecialSpider(
                    school_name=school_name,
                    college_name=college_name,
                    partition_num=partition_num,
