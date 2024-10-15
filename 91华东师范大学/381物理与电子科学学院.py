@@ -33,7 +33,7 @@ start_urls = [
                 'https://phy.ecnu.edu.cn/5846/list.htm'
               ]
 
-a_s_xpath_str = '//ul[@class="pic-list"]/li[158]//a'
+a_s_xpath_str = '//ul[@class="pic-list"]/li//a'
 target_div_xpath_str = '//div[contains(@id,"container")]|//body'
 
 # 重写方法
