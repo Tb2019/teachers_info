@@ -7,33 +7,33 @@ from utils import csv_2_df, truncate_table, df2mysql, drop_duplicate_collage, lo
 from urllib import parse
 
 school_id = 91
-college_id = 380
+college_id = 387
 school_name = '华东师范大学'
-college_name = '数学科学学院'
+college_name = '地理科学学院'
 
 img_url_head = ''
 
 data_real = {
-"姓名": "赵强",
-"电话": "022-83662855",
-"邮箱": "qiangzhao@nankai.edu.cn",
+"姓名": "姜雪峰",
+"电话": "021-62233009",
+"邮箱": "xfjiang@chem.ecnu.edu.cn",
 "职称": "教授",
-"个人简介": "博士，南开大学生命科学学院暨药物化学生物学国家重点实验室教授（博士生导师），教育部生物活性材料重点实验室副主任，天津市重点实验室主任。先后获得国家杰出青年科学基金（2019）、国家优秀青年科学基金（2015）和天津市杰出青年科学基金（2018）资助。入选天津市131创新型人才第一层次。担任中国生物医学工程学会理事、中国解剖学会血管分会常委、中国生物医学工程学会干细胞工程技术分会常委、中国生理学会基质生物学分会委员（青委会主委）、Fundamental Research编委、Engineered Regeneration 副主编等。",
-"教育经历": "2004/3 - 2006/9，天津大学，材料学，博士 \n2001/9 - 2004/2，天津大学，材料学，硕士 \n1997/9 - 2001/7，西北工业大学，高分子材料与工程，学士",
-"工作经历": "2014/12 - 至今， 南开大学，生命科学学院，教授 \n2009/11 – 2014/12，南开大学，生命科学学院，副教授 \n2014/3 - 2014/4， 英国伦敦大学国王学院，医学院，访问学者 \n2006/9 - 2009/9， 香港城市大学，物理与材料科学系，博士后研究员",
-"研究方向": "主要从事心血管生物材料与再生医学研究，利用工程材料科学、化学生物学等新技术、新方法，开展交叉研究，发展用于心血管修复再生与心血管疾病治疗的新材料与新技术。主持国家重点研发计划等省部级以上科研项目10余项。在国际权威学术期刊Nat Chem Biol、Nat Commun、Cell Rep、Adv Mater、Cir Res、Adv Sci、J Am Soc Nephrol、Biomaterials、J Control Release等发表SCI收录论文90余篇，论文他人引用>4000次，学术影响h-指数=38。在国际权威出版机构RSC、Springer等出版著作章节6部。申请并获得授权发明多项。先后获得天津市自然科学一等奖（2019，2/11）和天津市科技进步二等奖（2016，1/8；2021，5/8）。",
+"个人简介": "姜雪峰，华东师范大学二级教授，中国化学会会士，英国皇家化学会会士，上海市政协委员（第十三、十四届），上海市青联副主席，上海市青科协副主席。国家杰青、国家优青、国家万人，教育部青年长江学者、新世纪优秀人才、霍英东基金，上海市领军人才、优秀学术带头人、东方学者及优秀跟踪、五四青年奖章、青年岗位能手。曾获2024年全国颠覆性技术创新大赛奖，2023年全国创新争先奖，2023年上海市十大青年科技杰出贡献奖，2023年上海市海聚英才全球创新创业大赛金奖，2023年上海市未来产业风云奖，2023年上海市科学技术普及一等奖，2022年上海市大众科学传播杰出人物，2021年上海产学研合作优秀项目奖二等奖，2020年中美化学与化学生物学教授协会杰出教授奖，2020年上海市科普贡献个人一等奖，2019年中国均相催化青年奖，2019年亚洲联合化学会Rising Stars Lectureship Award，2018年IUPAC元素周期表青年科学家硫元素代言人，2017年药明康德生命化学研究奖，德国Thieme Chemistry Journal Award，日本ACP Lectureship Award，2020-2023连续四年Elsevier中国高被引学者。中国化学会有机化学学科委员会委员，中国化学会糖化学专业委员会，中国化学会公共安全化学专业委员会委员，中国化学会催化委员会均相催化专业委员会委员，中国化学会科普工作委员会委员，中国化学会青委会委员，中国化工学会专业委员会委员，中国感光协会委员，中国生物医药产业链创新转化（CBIITA）联合体原料药专委会副主委。中国青年科技工作者协会理事，上海科技传播协会理事，上海市科普作协理事，上海科普协会院士专家指导团。《Green Synthesis and Catalysis》、《Essential Chem》、《化学教育》、《化学试剂》副主编，《National Science Review》、《Science Bulletin》、《化学通讯》编委，美国化学会《ACS Sustainable Chemistry & Engineering》、《Organometallics》，Wiley《European Journal of Organic Chemistry》、《Heteroatom Chemistry》、《Journal of Sulfur Chemistry》、《Phosphorus Sulfur Silicon and the Related Elements》，《Tetrahedron》、《Tetrahedron Letters》顾问编委。",
+"教育经历": "2008-2011： 美国Scripps研究所，博士后，导师：K. C.Nicolaou教授\n2003-2008： 中国科学院上海有机化学研究所，博士，导师：麻生明 院士\n1999-2003： 西北大学化学与材料科学学院，学士",
+"工作经历": "2011.9-至今：华东师范大学化学系，教授，博士生导师",
+"研究方向": "1）合成方法创制导向的药用天然产物全合成、功能材料合成。\n2）科学本质建模导向的高端仪器开发、合成自动化与智能化。",
 "人才称号": "",
 "行政称号": "",
 "专利": "",
-"科研项目": "1. 国家杰出青年科学基金项目“心血管生物材料” (项目批准号：81925021)，项目负责人\n2. 国家重点研发计划-战略性国际科技创新合作重点专项“基于化学生物学‘凸凹互补’原理的工程化酶的理性设计与医学应用” (项目批准号：2018YFE0200500)，项目负责人\n3. 国家优秀青年科学基金项目“心血管生物材料” (项目批准号：81522023)，项目负责人\n4. 国家自然科学基金创新研究群体项目“组织器官损伤的修复与再生” (项目批准号：81921004)，项目骨干\n5. 国家自然科学基金重大研究计划（培育项目）“通过仿生天然细胞外基质构建功能型人工血管促进组织再生重构” (项目批准号：91639113)，项目负责人\n6. 国家自然科学基金（面上项目）“基于化学生物学“凸凹互补”原理构建靶向一氧化氮递送系统用于缺血性疾病治疗” (项目批准号：81871500)，项目负责人\n7. 国家自然科学基金（面上项目）“具有微/纳米复合纤维结构的小口径人工血管构建及对组织再生的引导作用” (项目批准号：81371699)，项目负责人\n8. 国家自然科学基金（青年基金）“人工血管材料的多重功能化修饰及空间分布调控” (项目批准号：81000680)，项目负责人\n9. 国家自然科学基金（国际（地区）合作与交流项目）“用于血管再生的新型生物材料研究” (项目批准号：81310108034)，项目负责人\n10. 高等学校博士学科点专项科研基金（新教师类）“活性人工血管的构建和功能评价”(项目批准号：20100031120021)， 项目负责人\n11. 天津市杰出青年科学基金“心血管生物材料” (项目批准号：18JCJQJC46900)，项目负责人\n12. 天津市应用基础与前沿技术研究计划（自然科学基金）青年项目资金“通过可控降解和功能梯度改善细胞向支架材料内生长” (项目批准号：12JCQNJC09300)， 项目负责人\n13. 分子科学国家实验室开放基金“具有可控释放一氧化氮（NO）功能的心血管生物材料研究”，项目",
-"荣誉/获奖": "国家杰出青年科学基金（2019）\n国家优秀青年科学基金（2015）\n天津市杰出青年科学基金（2018）\n天津市“131人才”第一层次（2018）\n南开大学“百名青年学科带头人”（2016）\n南开大学第七届“良师益友”奖（2016）",
-"照片地址": "https://sky.nankai.edu.cn/_upload/article/images/29/9c/2532c7f94dd9a4b29918d126efcb/31db881c-4dc3-464a-9a61-767353f42926_s.jpg",
+"科研项目": "国家杰出青年科学基金（22125103）\n国家优秀青年科学基金（21722202，结题优秀）\n国家自然科学基金“面上基金”（21971065, 21672069, 21472050, 21272075）\n“万人计划”青年拔尖人才\n教育部“长江学者奖励计划”青年项目（2017）\n教育部“新世纪优秀人才”（120178）\n教育部“霍英东基金”（141011）\n教育部“博士点博导基金”（20130076110023）\n教育部“创新团队发展计划”基金（2012, 2017, 参与）\n教育部首批优秀创新创业导师（2017）\n教育部“国家培养计划”授课专家（2017）\n国家重点研发计划：“农业生物药物分子靶标发现与绿色药物分子设计” (2017YFD0200500, 参与）\n科技部“973”（2015CB856600, 参与）\n上海市基础研究领域项目“室温低能耗真实塑料的降解及单体的回收”（22JC1401000，主持）\n上海市“优秀学术带头人”（20XD1421500）\n上海市“青年岗位能手”（2015）\n上海市“青年五四奖章” (2014)\n上海市“青年科技启明星” (15QA1401800, 结题优秀)\n上海市“人才发展资金” (2011022, 结题)\n上海市普陀区“拔尖人才” (2013, 结题)\n上海市基础研究领域项目“模拟维生素B6与B12相关酶仿生构建手性胺的研究”（20JC1416800, 参与）\n上海市基础研究领域项目“电化学氧化促进的碳氢键选择性转化”（18JC1415600, 参与）\n上海市教委协同创新团队项目（SSMU-ZLCX20180501, 参与）",
+"荣誉/获奖": "华东师范大学青年科学奖（A类）（2019）\n紫江优秀青年学者（2015，结题优秀）\n青年英才学者（2011，结题优秀）\n2024 全国颠覆性技术创新大赛\n2023 全国创新争先奖\n2023 上海市十大青年科技杰出贡献奖\n2023 上海市海聚英才全球创新创业大赛金奖\n2023 上海市科学技术普及一等奖\n2023 上海市高价值专利运营大赛高校组第一名\n2023 未来产业风云奖\n2023 春申金字塔杰出人才\n2022 Elsevier中国高被引学者\n2022  生命科学新力量年度人物\n2022 上海市大众科学传播杰出人物\n2021 中科院Clarivate化学与材料科学十大热点前沿：\n\t1. 二氧化硫插入策略合成磺酰类功能分子； 2. 非共价相互作用（卤键、硫键）\n2021  Elsevier2020年中国高被引学者\n2021 上海市产学研合作项目二等奖\n2020 上海市科普贡献奖个人一等奖\n2020 中美化学与化学生物学教授协会杰出教授奖(CAPA Distinguished Faculty Award) \n2019 中国均相催化青年奖\n2019 “Asian Rising Stars” Lectureship Award\n2019  2018 RSC Top 1%高被引中国作者\n2019 Excellent Research Advisor in ACS Shanghai Chapter \n2018 Ambassador of “Sulfur”in “Periodic Table of Younger Chemists”\n2017 药明康德生命化学研究奖 ( WuXi AppTec)\n2016 Asian Core Program Lectureship Award (Singapore)\n2015 New Organosulfur Chemistry at Pacifichem  (Co-chairman, Hawaii, USA)\n2014 Asian Core Program Lectureship Award ( Japan)\n2014 Asian Core Program Lectureship Award (Singapore)\n2013 Thieme Chemistry Journal Award(Germany)",
+"照片地址": "https://faculty.ecnu.edu.cn/_upload/article/images/54/03/fe0f0eef4c9489fa42f7e3acab76/9b6fe313-c1f5-4e26-9275-5d64db8e4b61_s.jpg",
 "最高学历": "研究生",
 "最高学位": "博士",
 "职位": "教授",
-"办公地点": "天津市南开区卫津路南开大学分子生物学研究所209",
-"科研论文": "1. Hou J, Pan Y, Zhu D, Fan Y, Feng G, Wei Y, Wang H, Qin K, Zhao T, Yang Q, Zhu Y, Che Y, Liu Y, Cheng J*, Kong D, Wang PG, Shen J*, Zhao Q*. Targeted delivery of nitric oxide via a “bump-and-hole”-based enzyme-prodrug pair. Nat Chem Biol 2019, 15: 151-60 (recommended by F1000).\n2. Zhu D, Hou J, Qian M, Jin D, Hao T, Pan Y, Wang H, Wu S, Liu S, Wang F, Wu L, Zhong Y, Yang Z, Che Y, Shen J, Kong D, Yin M*, Zhao Q*. Nitrate-functionalized patch confers cardioprotection and improves heart repair after myocardial infarction via local nitric oxide delivery. Nat Commun 2021, 12: 4501.\n3. Wang F, Qin K, Wang K, Wang H, Liu Q, Qian M, Chen S, Sun Y, Hou J, Wei Y, Hu Y, Li Z, Xu Q*, Zhao Q*. Nitric oxide improves regeneration and prevents calcification in bio-hybrid vascular grafts via regulation of vascular stem/progenitor cells. Cell Rep 2022, 39:110981.\n4.  Midgley AC, Wei Y, Li Z, Kong D, Zhao Q*. Nitric oxide–releasing biomaterial regulation of the stem cell microenvironment in regenerative medicine. Adv Mater 2020, e1805818.\n5.  Hao T, Qian M, Zhang Y, Liu Q, Midgley AC, Liu Y, Che Ye, Hou J, Zhao Q*. An injectable dual-function hydrogel protects against myocardial ischaemia/reperfusion injury by modulating ROS/NO disequilibrium. Adv Sci 2022, 9: 2105408. ",
-"源地址": "https://sky.nankai.edu.cn/zq1/list.htm"
+"办公地点": "上海市普陀区中山北路3663号化学馆A-321室",
+"科研论文": "214. Photouranium-Catalyzed C−F Activation Hydroxylation via Water Splitting,X. Zhao, L. Bai, J. Li,  X. Jiang*,J. Am. Chem. Soc. 2024, 146, 11173-11180.\n213. Bilateral Unsymmetrical Disulfurating Reagent Design for Polysulfide Construction,Q. Yu, X. Zhang, X. Jiang*,Angew. Chem. Int. Ed. 2024, e202408158.\n212. From Polyester Plastics to Diverse Monomers via Low-Energy Upcycling,L. Ji, J. Meng, C. Li, M. Wang, X. Jiang*,Advanced Science 2024, 11, 2403002.\n211. C-SuFEx Linkage of Sulfonimidoyl Fluorides and Organotrifluoroborates,S. Zhao, D. Zeng, M. Wang*, X. Jiang*,Nat. Commun. 2024, 15, 727.\n210. From Aryl Chlorides to Phenols: Photouranium-Catalyzed Hydroxylation via Water-splitting,M. Sun, L. Bai, C. Li, X. Jiang*,Chem Catal. 2024, 4, 101027.",
+"源地址": "https://faculty.ecnu.edu.cn/_s34/jxf/main.psp"
 }
 
 data = {

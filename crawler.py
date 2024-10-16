@@ -182,7 +182,7 @@ class ReCrawler:
 
     def get_detail_page(self, index_result):
         loop = asyncio.get_event_loop()
-        session = aiohttp.ClientSession()
+        session = aiohttp.ClientSession(timeout=aiohttp.ClientTimeout(total=600))
         tasks = [get_response_async(url, session, name=name) for name, url in index_result if len(name) >= 2]
         detail_pages = loop.run_until_complete(asyncio.gather(*tasks))
         session.connector.close()
