@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 import csv
 import os
 import re
@@ -15,28 +16,27 @@ from lxml.etree import tostring
 from selenium.webdriver.chrome.service import Service
 from utils import csv_header, result_dict_2_df, csv_2_df, drop_duplicate_collage, truncate_table, df2mysql, \
     local_engine, sf_engine, save_as_json, get_response_async, api_parse, replace_quotes_in_text
+from DrissionPage import Chromium
 
 service = Service('D:/Software/anaconda/envs/spider/chromedriver.exe')
 options = webdriver.ChromeOptions()
 options.add_experimental_option('detach', True)
 options.add_experimental_option("excludeSwitches", ["enable-automation"])
 options.add_experimental_option('useAutomationExtension', False)
+# options.add_argument("--disable-blink-features=AutomationControlled")
 
 school_name = '电子科技大学'
-college_name = ''
+college_name = '电子科学与工程学院'
 school_id = 90
-college_id = None
+college_id = 403
 img_url_head = None
 partition_num = '028'
 start_urls = [
-                '',
-                '',
-                '',
-                ''
+                'https://www.ese.uestc.edu.cn/szdw/jsml.htm'
               ]
 
-a_s_xpath_str = ''
-target_div_xpath_str = ''
+a_s_xpath_str = '//div[@class="js-list"]//a'
+target_div_xpath_str = '//form[@name="_newscontent_fromname"]'
 
 # 重写方法
 class SpecialSpider(ReCrawler):
@@ -277,39 +277,28 @@ class SpecialSpider(ReCrawler):
 
     # todo:方法四
     # 自动化工具获取 详情页 时重写(解开注释即可)
-    '''
     def get_detail_page(self, index_result):
         detail_pages = []
 
-        driver = webdriver.Chrome(options=options, service=service)
-        driver.execute_cdp_cmd("Page.addScriptToEvaluateOnNewDocument", {
-            "source": """
-                                Object.defineProperty(navigator, 'webdriver', {
-                                  get: () => undefined
-                                })
-                              """
-        })
-        driver.execute_cdp_cmd("Network.enable", {})
-        driver.execute_cdp_cmd("Network.setExtraHTTPHeaders", {"headers": {"User-Agent": "browser1"}})
+        tab = Chromium().latest_tab
 
         for name, url in index_result:
             if len(name) >= 2:
                 try:
-                    driver.get(url)
+                    tab.get(url)
                     time.sleep(1)
                 except:
                     continue
-                page = driver.page_source
+                page = tab.html
                 detail_pages.append((page, url, [('name', name)]))
             else:
                 continue
-        driver.close()
+        tab.close()
         return detail_pages
-    '''
 
     # todo:方法五
     # 自动化工具获取 首页 时重写(解开注释即可)
-    '''
+
     def run(self):
         if self.api:
             self.selenium_gpt = False
@@ -329,24 +318,15 @@ class SpecialSpider(ReCrawler):
         self.api_cant = []
 
         for url in self.start_urls:
+            tab = Chromium().latest_tab
 
-            driver = webdriver.Chrome(options=options, service=service)
-            driver.execute_cdp_cmd("Page.addScriptToEvaluateOnNewDocument", {
-                "source": """
-                                            Object.defineProperty(navigator, 'webdriver', {
-                                              get: () => undefined
-                                            })
-                                          """
-            })
-            driver.execute_cdp_cmd("Network.enable", {})
-            driver.execute_cdp_cmd("Network.setExtraHTTPHeaders", {"headers": {"User-Agent": "browser1"}})
             try:
-                driver.get(url)
+                tab.get(url)
                 time.sleep(2)
             except:
                 continue
-            index_page = driver.page_source
-            driver.close()
+            index_page = tab.html
+            tab.close()
             index_result = self.parse_index(index_page, url)
 
             detail_pages = self.get_detail_page(index_result)
@@ -495,9 +475,9 @@ class SpecialSpider(ReCrawler):
             elif self.save2target == 'target':
                 df2mysql(engine=sf_engine, df=result_df, table_name='search_teacher')
                 save_as_json(result_df, self.school_name, self.college_name)
-    '''
 
-spider = ReCrawler(
+
+spider = SpecialSpider(
                    school_name=school_name,
                    college_name=college_name,
                    partition_num=partition_num,

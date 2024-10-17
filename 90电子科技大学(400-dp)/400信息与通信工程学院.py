@@ -1,8 +1,12 @@
+# -*- coding: utf-8 -*-
 import csv
+import json
 import os
 import re
 import time
 import asyncio
+import urllib.parse
+
 import aiohttp
 import pandas as pd
 from lxml import etree
@@ -15,6 +19,7 @@ from lxml.etree import tostring
 from selenium.webdriver.chrome.service import Service
 from utils import csv_header, result_dict_2_df, csv_2_df, drop_duplicate_collage, truncate_table, df2mysql, \
     local_engine, sf_engine, save_as_json, get_response_async, api_parse, replace_quotes_in_text
+from DrissionPage import Chromium
 
 service = Service('D:/Software/anaconda/envs/spider/chromedriver.exe')
 options = webdriver.ChromeOptions()
@@ -22,51 +27,34 @@ options.add_experimental_option('detach', True)
 options.add_experimental_option("excludeSwitches", ["enable-automation"])
 options.add_experimental_option('useAutomationExtension', False)
 
+
+
 school_name = '电子科技大学'
-college_name = ''
+college_name = '信息与通信工程学院'
 school_id = 90
-college_id = None
+college_id = 400
 img_url_head = None
 partition_num = '028'
 start_urls = [
-                '',
-                '',
-                '',
-                ''
+                'https://www.sice.uestc.edu.cn/szdw/jsml1.htm'
               ]
 
 a_s_xpath_str = ''
-target_div_xpath_str = ''
+target_div_xpath_str = '//div[@class="teacher-info"]'
 
 # 重写方法
 class SpecialSpider(ReCrawler):
     # todo：方法一
     # 姓名和超链接需要单独获取时，重写姓名和链接的获取方式(添加代码)
     # 首页需要增加信息时（在首页获取照片信息），增加额外信息的获取方式，并且重写 方法二
-    '''
+
     def parse_index(self, index_page, url):
-        page = etree.HTML(index_page)
-        a_s = page.xpath(self.a_s_xpath_str)
-        for a in a_s:
-            name = a.xpath('.//text()')
-            if name:
-                name = ''.join(name)
-                if not re.match(r'[A-Za-z\s]*$', name, re.S):  # 中文名替换空格
-                    name = re.sub(r'\s*', '', name)
-                name = re.sub(r'^\s*(\w.*?\w)\s*$', r'\1', name)
-                name = re.sub(self.name_filter_re, '', name)
-                try:
-                    link = a.xpath('./@href')[0]
-                    if link in ('#',):
-                        continue
-                    link = parse.urljoin(url, link)
-                except:
-                    continue
-            else:
-                print('未解析到name，请检查：a_s_xpath_str')
-                continue
+        info = json.loads(re.search('var.*?ret\s?=\s?(.*?)(?<=]);', index_page, re.S).group(1))
+        for item in info:
+            name = item['showTitle']
+            link = urllib.parse.urljoin('https://www.sice.uestc.edu.cn/', item['url'])
             yield name, link
-    '''
+
 
     # todo：方法二
     # 方法一增加首页获取的信息时，需要重写(添加代码)
@@ -277,39 +265,30 @@ class SpecialSpider(ReCrawler):
 
     # todo:方法四
     # 自动化工具获取 详情页 时重写(解开注释即可)
-    '''
+
     def get_detail_page(self, index_result):
         detail_pages = []
 
-        driver = webdriver.Chrome(options=options, service=service)
-        driver.execute_cdp_cmd("Page.addScriptToEvaluateOnNewDocument", {
-            "source": """
-                                Object.defineProperty(navigator, 'webdriver', {
-                                  get: () => undefined
-                                })
-                              """
-        })
-        driver.execute_cdp_cmd("Network.enable", {})
-        driver.execute_cdp_cmd("Network.setExtraHTTPHeaders", {"headers": {"User-Agent": "browser1"}})
+        tab = Chromium().latest_tab
 
         for name, url in index_result:
             if len(name) >= 2:
                 try:
-                    driver.get(url)
+                    tab.get(url)
                     time.sleep(1)
                 except:
                     continue
-                page = driver.page_source
+                page = tab.html
                 detail_pages.append((page, url, [('name', name)]))
             else:
                 continue
-        driver.close()
+        tab.close()
         return detail_pages
-    '''
+
 
     # todo:方法五
     # 自动化工具获取 首页 时重写(解开注释即可)
-    '''
+
     def run(self):
         if self.api:
             self.selenium_gpt = False
@@ -329,24 +308,15 @@ class SpecialSpider(ReCrawler):
         self.api_cant = []
 
         for url in self.start_urls:
+            tab = Chromium().latest_tab
 
-            driver = webdriver.Chrome(options=options, service=service)
-            driver.execute_cdp_cmd("Page.addScriptToEvaluateOnNewDocument", {
-                "source": """
-                                            Object.defineProperty(navigator, 'webdriver', {
-                                              get: () => undefined
-                                            })
-                                          """
-            })
-            driver.execute_cdp_cmd("Network.enable", {})
-            driver.execute_cdp_cmd("Network.setExtraHTTPHeaders", {"headers": {"User-Agent": "browser1"}})
             try:
-                driver.get(url)
+                tab.get(url)
                 time.sleep(2)
             except:
                 continue
-            index_page = driver.page_source
-            driver.close()
+            index_page = tab.html
+            tab.close()
             index_result = self.parse_index(index_page, url)
 
             detail_pages = self.get_detail_page(index_result)
@@ -495,9 +465,9 @@ class SpecialSpider(ReCrawler):
             elif self.save2target == 'target':
                 df2mysql(engine=sf_engine, df=result_df, table_name='search_teacher')
                 save_as_json(result_df, self.school_name, self.college_name)
-    '''
 
-spider = ReCrawler(
+
+spider = SpecialSpider(
                    school_name=school_name,
                    college_name=college_name,
                    partition_num=partition_num,
