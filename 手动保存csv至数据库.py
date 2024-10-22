@@ -7,33 +7,33 @@ from utils import csv_2_df, truncate_table, df2mysql, drop_duplicate_collage, lo
 from urllib import parse
 
 school_id = 90
-college_id = 415
+college_id = 444
 school_name = '电子科技大学(dp)'
-college_name = '电子科技大学（深圳）高等研究院'
+college_name = '电子科技大学重庆微电子产业技术研究院'
 
 img_url_head = ''
 
 data_real = {
-"姓名": "姜雪峰",
-"电话": "021-62233009",
-"邮箱": "xfjiang@chem.ecnu.edu.cn",
-"职称": "教授",
-"个人简介": "姜雪峰，华东师范大学二级教授，中国化学会会士，英国皇家化学会会士，上海市政协委员（第十三、十四届），上海市青联副主席，上海市青科协副主席。国家杰青、国家优青、国家万人，教育部青年长江学者、新世纪优秀人才、霍英东基金，上海市领军人才、优秀学术带头人、东方学者及优秀跟踪、五四青年奖章、青年岗位能手。曾获2024年全国颠覆性技术创新大赛奖，2023年全国创新争先奖，2023年上海市十大青年科技杰出贡献奖，2023年上海市海聚英才全球创新创业大赛金奖，2023年上海市未来产业风云奖，2023年上海市科学技术普及一等奖，2022年上海市大众科学传播杰出人物，2021年上海产学研合作优秀项目奖二等奖，2020年中美化学与化学生物学教授协会杰出教授奖，2020年上海市科普贡献个人一等奖，2019年中国均相催化青年奖，2019年亚洲联合化学会Rising Stars Lectureship Award，2018年IUPAC元素周期表青年科学家硫元素代言人，2017年药明康德生命化学研究奖，德国Thieme Chemistry Journal Award，日本ACP Lectureship Award，2020-2023连续四年Elsevier中国高被引学者。中国化学会有机化学学科委员会委员，中国化学会糖化学专业委员会，中国化学会公共安全化学专业委员会委员，中国化学会催化委员会均相催化专业委员会委员，中国化学会科普工作委员会委员，中国化学会青委会委员，中国化工学会专业委员会委员，中国感光协会委员，中国生物医药产业链创新转化（CBIITA）联合体原料药专委会副主委。中国青年科技工作者协会理事，上海科技传播协会理事，上海市科普作协理事，上海科普协会院士专家指导团。《Green Synthesis and Catalysis》、《Essential Chem》、《化学教育》、《化学试剂》副主编，《National Science Review》、《Science Bulletin》、《化学通讯》编委，美国化学会《ACS Sustainable Chemistry & Engineering》、《Organometallics》，Wiley《European Journal of Organic Chemistry》、《Heteroatom Chemistry》、《Journal of Sulfur Chemistry》、《Phosphorus Sulfur Silicon and the Related Elements》，《Tetrahedron》、《Tetrahedron Letters》顾问编委。",
-"教育经历": "2008-2011： 美国Scripps研究所，博士后，导师：K. C.Nicolaou教授\n2003-2008： 中国科学院上海有机化学研究所，博士，导师：麻生明 院士\n1999-2003： 西北大学化学与材料科学学院，学士",
-"工作经历": "2011.9-至今：华东师范大学化学系，教授，博士生导师",
-"研究方向": "1）合成方法创制导向的药用天然产物全合成、功能材料合成。\n2）科学本质建模导向的高端仪器开发、合成自动化与智能化。",
+"姓名": "张文旭",
+"电话": "028-61831506",
+"邮箱": "xwzhang@uestc.edu.cn",
+"职称": "副教授",
+"个人简介": "",
+"教育经历": "Sept.1995~July 1999, Electronic Material and Device at UESTC，\n1995年9月~1999年7月：磁性材料 专业，本科，信息材料工程学院，电子科技大学\nSept.1999~Apr 2002, Material Physics and Chemistry at UESTC，\n1999年9月~2002年4月：材料物理与化学 专业，硕士，导师：杨仕清 教授，微电子与固体电子学院，电子科技大学\nFeb.2003~June,2004, Tongji Univ. German courses，\n2003年2月~2004年6月：德语培训，同济大学\nSept.2004~July, 2008, theoretical physics under Prof. Helmut Eschrig, at TU Dresden，\n2004年9月~2008年7月：理论物理 专业，博士，Dresden工业大学，德国",
+"工作经历": "2014年7月~8月， 丹麦工业大学，访问研究\n2011年8月~今 ，电子科技大学，副教授\n2008年8月~2011年7月，电子科技大学，讲师\n2002年4月~2008年7月，电子科技大学，助教\nApr. 2002- July. 2008, Teaching assistant at UESTC, Chengdu, China\nAug. 2008~July, 2011, Lecturer at UESTC, Chengdu, China\nAug. 2011~now Associate Professor at UESTC\nJuly. 2014~Aug. 2014, Visiting scienctists, Denmark Technical University",
+"研究方向": "1. Electronic structure and magnetism by density functional theory （Main direction）材料的电子结构，输运特性及磁性能等第一性原理计算\n2. Micromagnetic simulations (experienced)微磁学模拟\n3. Magnetic thin films, esp. magnetoresistance thin films and ferrites for microwave devices",
 "人才称号": "",
 "行政称号": "",
 "专利": "",
-"科研项目": "国家杰出青年科学基金（22125103）\n国家优秀青年科学基金（21722202，结题优秀）\n国家自然科学基金“面上基金”（21971065, 21672069, 21472050, 21272075）\n“万人计划”青年拔尖人才\n教育部“长江学者奖励计划”青年项目（2017）\n教育部“新世纪优秀人才”（120178）\n教育部“霍英东基金”（141011）\n教育部“博士点博导基金”（20130076110023）\n教育部“创新团队发展计划”基金（2012, 2017, 参与）\n教育部首批优秀创新创业导师（2017）\n教育部“国家培养计划”授课专家（2017）\n国家重点研发计划：“农业生物药物分子靶标发现与绿色药物分子设计” (2017YFD0200500, 参与）\n科技部“973”（2015CB856600, 参与）\n上海市基础研究领域项目“室温低能耗真实塑料的降解及单体的回收”（22JC1401000，主持）\n上海市“优秀学术带头人”（20XD1421500）\n上海市“青年岗位能手”（2015）\n上海市“青年五四奖章” (2014)\n上海市“青年科技启明星” (15QA1401800, 结题优秀)\n上海市“人才发展资金” (2011022, 结题)\n上海市普陀区“拔尖人才” (2013, 结题)\n上海市基础研究领域项目“模拟维生素B6与B12相关酶仿生构建手性胺的研究”（20JC1416800, 参与）\n上海市基础研究领域项目“电化学氧化促进的碳氢键选择性转化”（18JC1415600, 参与）\n上海市教委协同创新团队项目（SSMU-ZLCX20180501, 参与）",
-"荣誉/获奖": "华东师范大学青年科学奖（A类）（2019）\n紫江优秀青年学者（2015，结题优秀）\n青年英才学者（2011，结题优秀）\n2024 全国颠覆性技术创新大赛\n2023 全国创新争先奖\n2023 上海市十大青年科技杰出贡献奖\n2023 上海市海聚英才全球创新创业大赛金奖\n2023 上海市科学技术普及一等奖\n2023 上海市高价值专利运营大赛高校组第一名\n2023 未来产业风云奖\n2023 春申金字塔杰出人才\n2022 Elsevier中国高被引学者\n2022  生命科学新力量年度人物\n2022 上海市大众科学传播杰出人物\n2021 中科院Clarivate化学与材料科学十大热点前沿：\n\t1. 二氧化硫插入策略合成磺酰类功能分子； 2. 非共价相互作用（卤键、硫键）\n2021  Elsevier2020年中国高被引学者\n2021 上海市产学研合作项目二等奖\n2020 上海市科普贡献奖个人一等奖\n2020 中美化学与化学生物学教授协会杰出教授奖(CAPA Distinguished Faculty Award) \n2019 中国均相催化青年奖\n2019 “Asian Rising Stars” Lectureship Award\n2019  2018 RSC Top 1%高被引中国作者\n2019 Excellent Research Advisor in ACS Shanghai Chapter \n2018 Ambassador of “Sulfur”in “Periodic Table of Younger Chemists”\n2017 药明康德生命化学研究奖 ( WuXi AppTec)\n2016 Asian Core Program Lectureship Award (Singapore)\n2015 New Organosulfur Chemistry at Pacifichem  (Co-chairman, Hawaii, USA)\n2014 Asian Core Program Lectureship Award ( Japan)\n2014 Asian Core Program Lectureship Award (Singapore)\n2013 Thieme Chemistry Journal Award(Germany)",
-"照片地址": "https://faculty.ecnu.edu.cn/_upload/article/images/54/03/fe0f0eef4c9489fa42f7e3acab76/9b6fe313-c1f5-4e26-9275-5d64db8e4b61_s.jpg",
+"科研项目": "",
+"荣誉/获奖": "",
+"照片地址": "https://cq.uestc.edu.cn/__local/6/E5/D8/AFA378EE20C7E59AA2218FAFB2C_CEA5944B_C50A.jpg",
 "最高学历": "研究生",
 "最高学位": "博士",
 "职位": "教授",
-"办公地点": "上海市普陀区中山北路3663号化学馆A-321室",
-"科研论文": "214. Photouranium-Catalyzed C−F Activation Hydroxylation via Water Splitting,X. Zhao, L. Bai, J. Li,  X. Jiang*,J. Am. Chem. Soc. 2024, 146, 11173-11180.\n213. Bilateral Unsymmetrical Disulfurating Reagent Design for Polysulfide Construction,Q. Yu, X. Zhang, X. Jiang*,Angew. Chem. Int. Ed. 2024, e202408158.\n212. From Polyester Plastics to Diverse Monomers via Low-Energy Upcycling,L. Ji, J. Meng, C. Li, M. Wang, X. Jiang*,Advanced Science 2024, 11, 2403002.\n211. C-SuFEx Linkage of Sulfonimidoyl Fluorides and Organotrifluoroborates,S. Zhao, D. Zeng, M. Wang*, X. Jiang*,Nat. Commun. 2024, 15, 727.\n210. From Aryl Chlorides to Phenols: Photouranium-Catalyzed Hydroxylation via Water-splitting,M. Sun, L. Bai, C. Li, X. Jiang*,Chem Catal. 2024, 4, 101027.",
-"源地址": "https://faculty.ecnu.edu.cn/_s34/jxf/main.psp"
+"办公地点": "",
+"科研论文": "[36]Qiuru Wang,Wenxu Zhang*, Bin Peng, and Wanli Zhang, Inverse spin Hall effects in Nd doped SrTiO3,AIP ADVANCES7, 125218 (2017), https://doi.org/10.1063/1.4986324\n[35]Wenxu Zhang*, Jiantao Qin, Zhishuo Huang, Wanli Zhang, THE MECHANISM OF LAYER NUMBER AND STRAIN DEPENDENT BANDGAP OF 2D CRYSTAL PtSe2,J. Appl. Phys., 122, 205701 (2017) https://doi.org/10.1063/1.5000419\n[34]Qiuru Wang,Wenxu Zhang*,Bin Peng, Huizhong Zeng, and Wanli Zhang, Spin to charge conversion at the conducting TiO2surface,Phys. Status Solidi RRL,1700149 (2017), https://doi.org/10.1002/pssr.201700149\n[33]Wenxu Zhang*, Qiuru Wang, Bin Peng, Huizhong Zeng, Wee Tee Soh, Chong Kim Ong, and Wanli Zhang, Spin galvanic effect at the conducting SrTiO3surfaces,Appl. Phys. Lett.. 109, 262402 (2016); doi: 10.1063/1.4973479\n[32]Wenxu Zhang*, Ting Wu, Bin Peng, Wanli Zhang, Resistivity dependence of the spin mixing conductance and the anisotropic magnetoresistance in permalloy,Journal of Alloys and Compounds696 (2017) 234-238; DOI:/10.1016/j.jallcom.2016.11.274",
+"源地址": "https://cq.uestc.edu.cn/info/1115/1629.htm"
 }
 
 data = {
