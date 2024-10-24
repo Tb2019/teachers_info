@@ -343,7 +343,7 @@ api_info = {
 }
 
 semaphore = Semaphore(5)
-semaphore_api = Semaphore(50)
+semaphore_api = Semaphore(20)
 
 api_base_url = 'https://api.deepseek.com/beta/chat/completions'
 

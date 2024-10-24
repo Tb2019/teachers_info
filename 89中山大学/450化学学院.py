@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 import csv
 import os
 import re
@@ -23,20 +24,17 @@ options.add_experimental_option("excludeSwitches", ["enable-automation"])
 options.add_experimental_option('useAutomationExtension', False)
 
 school_name = '中山大学'
-college_name = ''
+college_name = '化学学院'
 school_id = 89
-college_id = None
+college_id = 450
 img_url_head = None
 partition_num = '020'
 start_urls = [
-                '',
-                '',
-                '',
-                ''
+                'https://ce.sysu.edu.cn/zh-hans/taxonomy/term/257'
               ]
 
-a_s_xpath_str = ''
-target_div_xpath_str = ''
+a_s_xpath_str = '//div[@class="views-teacher item-list"]/ul/li/a'
+target_div_xpath_str = '//div[@id="main"]/div[@id="content"]//div[@class="row"][2]'
 
 # 重写方法
 class SpecialSpider(ReCrawler):

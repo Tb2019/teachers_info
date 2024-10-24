@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 import csv
 import os
 import re
@@ -15,6 +16,7 @@ from lxml.etree import tostring
 from selenium.webdriver.chrome.service import Service
 from utils import csv_header, result_dict_2_df, csv_2_df, drop_duplicate_collage, truncate_table, df2mysql, \
     local_engine, sf_engine, save_as_json, get_response_async, api_parse, replace_quotes_in_text
+from DrissionPage import Chromium
 
 service = Service('D:/Software/anaconda/envs/spider/chromedriver.exe')
 options = webdriver.ChromeOptions()
@@ -23,32 +25,29 @@ options.add_experimental_option("excludeSwitches", ["enable-automation"])
 options.add_experimental_option('useAutomationExtension', False)
 
 school_name = '中山大学'
-college_name = ''
+college_name = '生命科学学院'
 school_id = 89
-college_id = None
+college_id = 451
 img_url_head = None
 partition_num = '020'
 start_urls = [
-                '',
-                '',
-                '',
-                ''
+                'https://lifesciences.sysu.edu.cn/zh-hans/teacher/faculty'
               ]
 
-a_s_xpath_str = ''
-target_div_xpath_str = ''
+a_s_xpath_str = '//div[@class="faculty-list-wrap"]/a'
+target_div_xpath_str = '//article'
 
 # 重写方法
 class SpecialSpider(ReCrawler):
     # todo：方法一
     # 姓名和超链接需要单独获取时，重写姓名和链接的获取方式(添加代码)
     # 首页需要增加信息时（在首页获取照片信息），增加额外信息的获取方式，并且重写 方法二
-    '''
+
     def parse_index(self, index_page, url):
         page = etree.HTML(index_page)
         a_s = page.xpath(self.a_s_xpath_str)
         for a in a_s:
-            name = a.xpath('.//text()')
+            name = a.xpath('.//h4/text()')
             if name:
                 name = ''.join(name)
                 if not re.match(r'[A-Za-z\s]*$', name, re.S):  # 中文名替换空格
@@ -66,7 +65,7 @@ class SpecialSpider(ReCrawler):
                 print('未解析到name，请检查：a_s_xpath_str')
                 continue
             yield name, link
-    '''
+
 
     # todo：方法二
     # 方法一增加首页获取的信息时，需要重写(添加代码)
@@ -281,29 +280,20 @@ class SpecialSpider(ReCrawler):
     def get_detail_page(self, index_result):
         detail_pages = []
 
-        driver = webdriver.Chrome(options=options, service=service)
-        driver.execute_cdp_cmd("Page.addScriptToEvaluateOnNewDocument", {
-            "source": """
-                                Object.defineProperty(navigator, 'webdriver', {
-                                  get: () => undefined
-                                })
-                              """
-        })
-        driver.execute_cdp_cmd("Network.enable", {})
-        driver.execute_cdp_cmd("Network.setExtraHTTPHeaders", {"headers": {"User-Agent": "browser1"}})
+        tab = Chromium().latest_tab
 
         for name, url in index_result:
             if len(name) >= 2:
                 try:
-                    driver.get(url)
+                    tab.get(url)
                     time.sleep(1)
                 except:
                     continue
-                page = driver.page_source
+                page = tab.html
                 detail_pages.append((page, url, [('name', name)]))
             else:
                 continue
-        driver.close()
+        tab.close()
         return detail_pages
 
 

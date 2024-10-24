@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 import csv
 import os
 import re
@@ -23,20 +24,19 @@ options.add_experimental_option("excludeSwitches", ["enable-automation"])
 options.add_experimental_option('useAutomationExtension', False)
 
 school_name = '中山大学'
-college_name = ''
+college_name = '中山医学院'
 school_id = 89
-college_id = None
+college_id = 462
 img_url_head = None
 partition_num = '020'
 start_urls = [
-                '',
-                '',
-                '',
-                ''
+                'https://zssom.sysu.edu.cn/zh-hans/senior',
+                'https://zssom.sysu.edu.cn/zh-hans/vise-senior',
+                'https://zssom.sysu.edu.cn/zh-hans/middle',
               ]
 
-a_s_xpath_str = ''
-target_div_xpath_str = ''
+a_s_xpath_str = '//div[@class="item-list"]//li//a'
+target_div_xpath_str = '//div[@id="content"]//div[@class="row"][2]'
 
 # 重写方法
 class SpecialSpider(ReCrawler):

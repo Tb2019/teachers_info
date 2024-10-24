@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 import csv
 import os
 import re
@@ -23,32 +24,35 @@ options.add_experimental_option("excludeSwitches", ["enable-automation"])
 options.add_experimental_option('useAutomationExtension', False)
 
 school_name = '中山大学'
-college_name = ''
+college_name = '信息管理学院'
 school_id = 89
-college_id = None
+college_id = 449
 img_url_head = None
 partition_num = '020'
 start_urls = [
-                '',
-                '',
-                '',
-                ''
+                'https://ischool.sysu.edu.cn/zh-hans/faculty/teacher/professor',
+                'https://ischool.sysu.edu.cn/zh-hans/faculty/teacher/professor?page=1',
+                'https://ischool.sysu.edu.cn/zh-hans/faculty/teacher/assoprofessor',
+                'https://ischool.sysu.edu.cn/zh-hans/faculty/teacher/assoprofessor?page=1',
+                'https://ischool.sysu.edu.cn/zh-hans/faculty/teacher/lecturer',
+                'https://ischool.sysu.edu.cn/zh-hans/faculty/teacher/part-time%20teachers',
+                'https://ischool.sysu.edu.cn/zh-hans/faculty/researcher'
               ]
 
-a_s_xpath_str = ''
-target_div_xpath_str = ''
+a_s_xpath_str = '//div[@class="col-sm-12 col-md-6"]//div[@class="list-content"]'
+target_div_xpath_str = '//div[@id="main"]/div[@id="content"]//div[@class="row"][2]'
 
 # 重写方法
 class SpecialSpider(ReCrawler):
     # todo：方法一
     # 姓名和超链接需要单独获取时，重写姓名和链接的获取方式(添加代码)
     # 首页需要增加信息时（在首页获取照片信息），增加额外信息的获取方式，并且重写 方法二
-    '''
+
     def parse_index(self, index_page, url):
         page = etree.HTML(index_page)
         a_s = page.xpath(self.a_s_xpath_str)
         for a in a_s:
-            name = a.xpath('.//text()')
+            name = a.xpath('./h4/strong/text()')
             if name:
                 name = ''.join(name)
                 if not re.match(r'[A-Za-z\s]*$', name, re.S):  # 中文名替换空格
@@ -56,7 +60,7 @@ class SpecialSpider(ReCrawler):
                 name = re.sub(r'^\s*(\w.*?\w)\s*$', r'\1', name)
                 name = re.sub(self.name_filter_re, '', name)
                 try:
-                    link = a.xpath('./@href')[0]
+                    link = a.xpath('.//a/@href')[0]
                     if link in ('#',):
                         continue
                     link = parse.urljoin(url, link)
@@ -66,7 +70,7 @@ class SpecialSpider(ReCrawler):
                 print('未解析到name，请检查：a_s_xpath_str')
                 continue
             yield name, link
-    '''
+
 
     # todo：方法二
     # 方法一增加首页获取的信息时，需要重写(添加代码)
