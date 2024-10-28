@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 import csv
 import os
 import re
@@ -23,20 +24,26 @@ options.add_experimental_option("excludeSwitches", ["enable-automation"])
 options.add_experimental_option('useAutomationExtension', False)
 
 school_name = '中山大学'
-college_name = ''
+college_name = '药学院'
 school_id = 89
-college_id = None
+college_id = 466
 img_url_head = None
 partition_num = '0755'
 start_urls = [
-                '',
-                '',
-                '',
-                ''
+                'https://yxysz.sysu.edu.cn/zh-hans/teachers/leader',
+                'https://yxysz.sysu.edu.cn/zh-hans/teachers/pharmacology-toxicology',
+                'https://yxysz.sysu.edu.cn/zh-hans/teachers/medicinal-chemistry',
+                'https://yxysz.sysu.edu.cn/zh-hans/teachers/pharmacy',
+                'https://yxysz.sysu.edu.cn/zh-hans/teachers/bio-pharmacy-analysis',
+                'https://yxysz.sysu.edu.cn/zh-hans/teachers/microbio-biochem-pharmacy',
+                'https://yxysz.sysu.edu.cn/zh-hans/teachers/traditional-natural-medicine',
+                'https://yxysz.sysu.edu.cn/zh-hans/teachers/clinical-managerial-pharmacy',
+                'https://yxysz.sysu.edu.cn/zh-hans/teachers/mentor',
+                'https://yxysz.sysu.edu.cn/zh-hans/teachers/experimenter',
               ]
 
-a_s_xpath_str = ''
-target_div_xpath_str = ''
+a_s_xpath_str = '//div[@class="views-row"]/div[@class="views-field views-field-title"]//a'
+target_div_xpath_str = '//div[@class="node__content"]'
 
 # 重写方法
 class SpecialSpider(ReCrawler):
@@ -503,7 +510,7 @@ spider = SpecialSpider(
                    partition_num=partition_num,
                    school_id=school_id,
                    college_id=college_id,
-                   name_filter_re=r'(?:\(|（).*?(?:）|\))',
+                   name_filter_re=r'副?院长(?:助理)?|党委(?:副)?书记',
                    start_urls=start_urls,
                    img_url_head=img_url_head,
                    a_s_xpath_str=a_s_xpath_str,

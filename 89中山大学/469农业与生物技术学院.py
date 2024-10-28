@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 import csv
 import os
 import re
@@ -23,20 +24,22 @@ options.add_experimental_option("excludeSwitches", ["enable-automation"])
 options.add_experimental_option('useAutomationExtension', False)
 
 school_name = '中山大学'
-college_name = ''
+college_name = '农业与生物技术学院'
 school_id = 89
-college_id = None
+college_id = 469
 img_url_head = None
 partition_num = '0755'
 start_urls = [
-                '',
-                '',
-                '',
-                ''
+                # 'https://ab.sysu.edu.cn/zh-hans/taxonomy/term/64',
+                # 'https://ab.sysu.edu.cn/zh-hans/taxonomy/term/65',
+                # 'https://ab.sysu.edu.cn/zh-hans/taxonomy/term/65?page=1',
+                # 'https://ab.sysu.edu.cn/zh-hans/taxonomy/term/65?page=2',
+                'https://ab.sysu.edu.cn/zh-hans/taxonomy/term/145',
+                # 'https://ab.sysu.edu.cn/zh-hans/taxonomy/term/146',
               ]
 
-a_s_xpath_str = ''
-target_div_xpath_str = ''
+a_s_xpath_str = '//div[@class="col-sm-12 faculty-wrap"][1]//h4/a'
+target_div_xpath_str = '//div[@id="content"]//div[@class="row"][2]'
 
 # 重写方法
 class SpecialSpider(ReCrawler):
