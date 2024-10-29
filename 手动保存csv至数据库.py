@@ -7,33 +7,33 @@ from utils import csv_2_df, truncate_table, df2mysql, drop_duplicate_collage, lo
 from urllib import parse
 
 school_id = 89
-college_id = 469
+college_id = 479
 school_name = '中山大学'
-college_name = '农业与生物技术学院'
+college_name = '网络空间安全学院'
 
 img_url_head = ''
 
 data_real = {
-"姓名": "张文旭",
-"电话": "028-61831506",
-"邮箱": "xwzhang@uestc.edu.cn",
-"职称": "副教授",
-"个人简介": "",
-"教育经历": "Sept.1995~July 1999, Electronic Material and Device at UESTC，\n1995年9月~1999年7月：磁性材料 专业，本科，信息材料工程学院，电子科技大学\nSept.1999~Apr 2002, Material Physics and Chemistry at UESTC，\n1999年9月~2002年4月：材料物理与化学 专业，硕士，导师：杨仕清 教授，微电子与固体电子学院，电子科技大学\nFeb.2003~June,2004, Tongji Univ. German courses，\n2003年2月~2004年6月：德语培训，同济大学\nSept.2004~July, 2008, theoretical physics under Prof. Helmut Eschrig, at TU Dresden，\n2004年9月~2008年7月：理论物理 专业，博士，Dresden工业大学，德国",
-"工作经历": "2014年7月~8月， 丹麦工业大学，访问研究\n2011年8月~今 ，电子科技大学，副教授\n2008年8月~2011年7月，电子科技大学，讲师\n2002年4月~2008年7月，电子科技大学，助教\nApr. 2002- July. 2008, Teaching assistant at UESTC, Chengdu, China\nAug. 2008~July, 2011, Lecturer at UESTC, Chengdu, China\nAug. 2011~now Associate Professor at UESTC\nJuly. 2014~Aug. 2014, Visiting scienctists, Denmark Technical University",
-"研究方向": "1. Electronic structure and magnetism by density functional theory （Main direction）材料的电子结构，输运特性及磁性能等第一性原理计算\n2. Micromagnetic simulations (experienced)微磁学模拟\n3. Magnetic thin films, esp. magnetoresistance thin films and ferrites for microwave devices",
+"姓名": "戴宪华",
+"电话": "",
+"邮箱": "issdxh@mail.sysu.edu.cn",
+"职称": "教授",
+"个人简介": "戴宪华，教授，博士生导师。目前主要研究领域为无线移动通信、人工智能深度学习算法（图像识别，自然语言处理）、生物信息处理。近年来，在领域内发表论文200余篇，其中SCI、EI收录论文150余篇；申请国内发明专利60余项 。已先后主持完成包括6项国家自然科学基金项目在内的共20项省市级项目、参与包括华为、阿里、浩鲸云等公司的多项企业合作、应用技术落地项目。主要从事信号处理类、通信类课程教学，每年2门本科生课程课堂教学、1门研究生课程课堂教学。截止目前共培养毕业(含校外培养)博士生20+、硕士150+。",
+"教育经历": "国内某大学 声呐专业 工学学士\n东南大学 信号与信息处理专业 工学硕士\n东南大学 信号与信息处理专业 工学博士\n华南理工大学 通信与信息系统专业 博士后\n美国新泽西理工学院(NJIT)电机与计算机工程系（ECE）访问学者",
+"工作经历": "",
+"研究方向": "",
 "人才称号": "",
 "行政称号": "",
-"专利": "",
-"科研项目": "",
+"专利": "申请国内发明专利60余项 。",
+"科研项目": "国家自然科学基金项目，《重大疾病多组学与医学大数据挖掘 基础理论及关键技术》，时间2018.01-2022.01，67万，在研；\n广东省自然科学基金重大基础研究培育， 《下一代千兆 NG-DSL 通信系统关键技术研究》 ，时间 2015,1-2018,12，100 万，在研，主持；\n广州市科技计划项目，《异构无线网络的资源管理与调度》，项目编号：20143500042050472，2014.01-2015.12，8万，主持；\n国家自然科学基金项目《细胞命运控制统计模型建模与机理分析》，项目批准号：61174163，时间：2012,1-2015,12。主持；\n国家自然科学基金项目《基于隐藏导频的感知无线电时变信道估计与 长超前预测》 ，项目批准号：60772132；起止时间：2008，1-2009，12。主持；\n国家自然科学基金项目《基于信息几何的真核生物基因表达与系统调控的新理论新方法研》 ，项目批准号：60474075；起止时间：2005,1-2005,12。主持；\n国家自然科学基金项目《线性时变系统盲辨识与长超前预测理论研究及应用》 ，项目批准号：60272068；起止时间：2003,1-2005,12。主持；\n国家自然科学基金项目《非线性自适应信号处理新理论新方法的研究》 ，项目批准号：69872021；起止时间：1999,1-2001,12。主持；\n教育部骨干教师资助项目《盲信号处理理论及应用研究》，2000-2001。主持；\n教育部科学技术研究重点项目《基于盲信号处理的现代通信理论与技术研究》， 2002，1-2004，12。主持；\n广东省自然科学基金《非线性自适应信号处理理论及应用》，1999-2001。主持；\n广东省自然科学基金《基于信息几何的非线性信号处理》，1998-1999。主持；\n华为等企业委托横向项目多项。",
 "荣誉/获奖": "",
-"照片地址": "https://cq.uestc.edu.cn/__local/6/E5/D8/AFA378EE20C7E59AA2218FAFB2C_CEA5944B_C50A.jpg",
+"照片地址": "",
 "最高学历": "研究生",
 "最高学位": "博士",
 "职位": "教授",
 "办公地点": "",
-"科研论文": "[36]Qiuru Wang,Wenxu Zhang*, Bin Peng, and Wanli Zhang, Inverse spin Hall effects in Nd doped SrTiO3,AIP ADVANCES7, 125218 (2017), https://doi.org/10.1063/1.4986324\n[35]Wenxu Zhang*, Jiantao Qin, Zhishuo Huang, Wanli Zhang, THE MECHANISM OF LAYER NUMBER AND STRAIN DEPENDENT BANDGAP OF 2D CRYSTAL PtSe2,J. Appl. Phys., 122, 205701 (2017) https://doi.org/10.1063/1.5000419\n[34]Qiuru Wang,Wenxu Zhang*,Bin Peng, Huizhong Zeng, and Wanli Zhang, Spin to charge conversion at the conducting TiO2surface,Phys. Status Solidi RRL,1700149 (2017), https://doi.org/10.1002/pssr.201700149\n[33]Wenxu Zhang*, Qiuru Wang, Bin Peng, Huizhong Zeng, Wee Tee Soh, Chong Kim Ong, and Wanli Zhang, Spin galvanic effect at the conducting SrTiO3surfaces,Appl. Phys. Lett.. 109, 262402 (2016); doi: 10.1063/1.4973479\n[32]Wenxu Zhang*, Ting Wu, Bin Peng, Wanli Zhang, Resistivity dependence of the spin mixing conductance and the anisotropic magnetoresistance in permalloy,Journal of Alloys and Compounds696 (2017) 234-238; DOI:/10.1016/j.jallcom.2016.11.274",
-"源地址": "https://cq.uestc.edu.cn/info/1115/1629.htm"
+"科研论文": "Guishan Zhang, Zhiming Dai, Xianhua Dai. C-RNNCrispr: Prediction of CRISPR/Cas9 sgRNA activity using convolutional and recurrent neural networks. Computational and Structural Biotechnology Journal, 18 (2020): 344-354. [SCI]期刊论文\nGuishan Zhang, Yiyun Deng, Qingyu Liu, Bingxu Ye, Zhiming Dai, Yaowen Chen, Xianhua Dai. Identifying circular RNA and predicting its regulatory interactions by machine learning. Frontiers in Genetics 11(2020) DOI: 10.3389/fgene.2020.00655  [SCI]期刊论文\nBaoxian Yu, Changjian Guo, Sen Zhang, Tianjian Zuo, Lei Liu, Han Zhang, Xianhua Dai, Alan Pak Tao Lau, Chao Lu. Chromatic dispersion mitigation using a SEFDM based diversity technique for IM/DD long reach optical links [J]. Optics Express, ,2019, 27(26), 38579-38592 [SCI]期刊论文\nBaoxian Yu, Changjian Guo, Langyu Yi, Han Zhang, Jie Liu, Xianhua Dai, Alan Pak Tao Lau, Chao Lu. 150-Gb/s SEFDM IM/DD transmission using log-MAP Viterbi decoding for short reach optical links [J],  Optics Express，2018, 26(24), 31075-31084. [SCI]期刊论文\nBaoxian Yu, Han Zhang, Xudong Hong, Changjian Guo, Alan Pak Tao Lau, Chao Lu, Xianhua Dai. Channel equalisation and data detection for SEFDM over frequency selective fading channels [J]. Communications, IET, 2018, 12(18):2315-2323 [SCI]期刊论文",
+"源地址": "https://scst.sysu.edu.cn/members/members01/1410202.htm"
 }
 
 data = {
