@@ -1,5 +1,8 @@
+import asyncio
 import os
 import json
+import traceback
+
 import demjson3
 import re
 import time
@@ -398,7 +401,8 @@ async def get_api_resp(session, data, api_headers):
             else:
                 logger.error('可能请求文本过长，无法处理--请求层')
     except Exception as e:
-            logger.error('错误，即将重试或记录...')
+        # print('异常堆栈信息：', traceback.format_exc())
+        logger.error('错误，即将重试或记录...')
 
 
 def api_payload_info(api, turn, content):
