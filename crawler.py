@@ -684,7 +684,8 @@ class ReCrawler:
 
     def parse_by_api(self, mid_result):
         loop = asyncio.get_event_loop()
-        session = aiohttp.ClientSession()
+        timeout = aiohttp.ClientTimeout(total=60)
+        session = aiohttp.ClientSession(timeout=timeout)
         tasks = [api_parse(result_gen, session, self.partition_num, self.img_url_head, self.cn_com) for result_gen in mid_result if result_gen]
         results = loop.run_until_complete(asyncio.gather(*tasks))
         session.connector.close()
