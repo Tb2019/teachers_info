@@ -1,8 +1,6 @@
-import asyncio
+import traceback
 import os
 import json
-import traceback
-
 import demjson3
 import re
 import time
