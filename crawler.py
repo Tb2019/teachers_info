@@ -182,7 +182,7 @@ class ReCrawler:
 
     def get_detail_page(self, index_result):
         loop = asyncio.get_event_loop()
-        session = aiohttp.ClientSession(timeout=aiohttp.ClientTimeout(total=600))
+        session = aiohttp.ClientSession(timeout=aiohttp.ClientTimeout(total=60))
         tasks = [get_response_async(url, session, name=name) for name, url in index_result if len(name) >= 2]
         detail_pages = loop.run_until_complete(asyncio.gather(*tasks))
         session.connector.close()
@@ -684,7 +684,7 @@ class ReCrawler:
 
     def parse_by_api(self, mid_result):
         loop = asyncio.get_event_loop()
-        timeout = aiohttp.ClientTimeout(total=60)
+        timeout = aiohttp.ClientTimeout(total=600)
         session = aiohttp.ClientSession(timeout=timeout)
         tasks = [api_parse(result_gen, session, self.partition_num, self.img_url_head, self.cn_com) for result_gen in mid_result if result_gen]
         results = loop.run_until_complete(asyncio.gather(*tasks))
