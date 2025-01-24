@@ -21,6 +21,9 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
 from sqlalchemy import create_engine
 from gptparser import GptParser
+import os
+
+deepseek_key = os.getenv("deepseek_key")
 
 proxy = {
     'http': '127.0.0.1:7890',
@@ -318,7 +321,7 @@ api_info = {
         'headers': {
             'Content-Type': 'application/json',
             'Accept': 'application/json',
-            'Authorization': 'Bearer sk-a81c2aa869d34d5ab96d8ef1e7cd0cd8'
+            'Authorization': deepseek_key
         },
         'payload': {
             "messages": [{
@@ -484,6 +487,7 @@ def get_format_result(turn, content: dict, result_direct: dict, partition_num, i
         email = re.sub(r'\s', '', email)
         result = {
             'name': result_direct['name'],
+            # 'name': content.get('姓名') if content.get('姓名') else result_direct['name'],
             'school_id': result_direct['school_id'],
             'college_id': result_direct['college_id'],
             'phone': phone if phone else result_direct['phone'],
